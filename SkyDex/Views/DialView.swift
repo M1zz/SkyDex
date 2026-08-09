@@ -14,10 +14,13 @@ struct DialView: View {
     @AppStorage("latitude") private var latitude = SolarClock.deviceDefault.latitude
     @AppStorage("longitude") private var longitude = SolarClock.deviceDefault.longitude
 
+    @AppStorage("clearSkyAlerts") private var clearSkyAlerts = false
+
     @State private var showCapture = false
     @State private var showHorizon = false
     @State private var selectedEntry: SkyEntry?
     @State private var selectedReference: ReferenceSky?
+    @Environment(ForecastStore.self) private var forecast
 
     private var clock: SolarClock { SolarClock(latitude: latitude, longitude: longitude) }
     private var seasonKey: String { Season.key(for: .now) }
@@ -60,6 +63,13 @@ struct DialView: View {
                     }
                 }
 
+                if let (day, reference) = forecast.actionable(clock: clock) {
+                    ForecastStrip(forecast: day, day: reference)
+                        .padding(.horizontal, 20)
+                        .padding(.bottom, 14)
+                        .transition(.opacity)
+                }
+
                 Button {
                     showCapture = true
                 } label: {
@@ -72,6 +82,7 @@ struct DialView: View {
                 .padding(.horizontal, 24)
                 .padding(.bottom, 12)
             }
+            .skyBackdrop(forecast, clock: clock)
             .navigationTitle(Season.label(forKey: seasonKey))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -84,7 +95,9 @@ struct DialView: View {
                 CaptureSheet(held: heldByBand, clock: clock, seasonKey: seasonKey)
             }
             .sheet(isPresented: $showHorizon) {
-                HorizonSettingsView(latitude: $latitude, longitude: $longitude)
+                HorizonSettingsView(
+                    latitude: $latitude, longitude: $longitude, alerts: $clearSkyAlerts
+                )
             }
             .sheet(item: $selectedEntry) { EntryDetailView(entry: $0) }
             .sheet(item: $selectedReference) { reference in
@@ -111,6 +124,11 @@ struct DialView: View {
         return ZStack {
             ArcDisc(center: center, radius: rim)
                 .fill(Color(red: 0.48, green: 0.65, blue: 0.83).opacity(0.13))
+            // Once the page behind can be tinted, a fill this pale is no longer
+            // guaranteed to separate from it. The outline is what keeps the
+            // shape readable on a blue day.
+            ArcDisc(center: center, radius: rim)
+                .stroke(Color.secondary.opacity(0.22), lineWidth: 0.75)
 
             ForEach([DialGeometry.innerFraction, 0.6, DialGeometry.outerFraction], id: \.self) {
                 fraction in

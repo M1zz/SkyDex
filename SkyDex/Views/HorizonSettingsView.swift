@@ -12,7 +12,9 @@ import SwiftUI
 struct HorizonSettingsView: View {
     @Binding var latitude: Double
     @Binding var longitude: Double
+    @Binding var alerts: Bool
     @Environment(\.dismiss) private var dismiss
+    @State private var deniedAlerts = false
 
     private var clock: SolarClock { SolarClock(latitude: latitude, longitude: longitude) }
 
@@ -54,6 +56,10 @@ struct HorizonSettingsView: View {
                         }
                     }
 
+                    Divider()
+
+                    alertSection
+
                     Spacer(minLength: 0)
                 }
                 .padding(24)
@@ -67,6 +73,44 @@ struct HorizonSettingsView: View {
             }
         }
         .presentationDetents([.large])
+    }
+
+    /// The one notification the app is willing to send, and it is opt-in.
+    ///
+    /// The copy names the condition rather than the schedule, because what a
+    /// person is agreeing to is "tell me when the sky is worth it", not "send
+    /// me something at eight".
+    private var alertSection: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Toggle(isOn: $alerts) {
+                VStack(alignment: .leading, spacing: 3) {
+                    Text("맑은 날 미리 알기")
+                        .font(.subheadline)
+                    Text("내일 하늘이 트이는 날에만, 전날 저녁 \(ClearSkyNotifier.eveningHour)시에 한 번.")
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                }
+            }
+            .onChange(of: alerts) { _, isOn in
+                guard isOn else { return }
+                Task {
+                    if await ClearSkyNotifier.requestAuthorization() == false {
+                        alerts = false
+                        deniedAlerts = true
+                    }
+                }
+            }
+
+            if deniedAlerts {
+                Text("설정 앱에서 SkyDex 알림을 허용해야 켤 수 있어요.")
+                    .font(.footnote)
+                    .foregroundStyle(.orange)
+            }
+
+            Text("흐린 날에는 아무것도 보내지 않고, 며칠 안 찍었다고 재촉하지도 않습니다.")
+                .font(.footnote)
+                .foregroundStyle(.secondary)
+        }
     }
 
     private func labelled(_ title: String, _ value: String) -> some View {

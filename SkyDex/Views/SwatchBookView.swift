@@ -10,6 +10,10 @@ struct SwatchBookView: View {
     @Query(sort: \SkyEntry.capturedAt, order: .reverse) private var entries: [SkyEntry]
     @Environment(\.modelContext) private var context
 
+    @Environment(ForecastStore.self) private var forecast
+    @AppStorage("latitude") private var latitude = SolarClock.deviceDefault.latitude
+    @AppStorage("longitude") private var longitude = SolarClock.deviceDefault.longitude
+
     @State private var selected: SkyEntry?
     @State private var showPanorama = false
 
@@ -54,8 +58,15 @@ struct SwatchBookView: View {
                         }
                         .padding(.vertical, 12)
                     }
+                    // The wash has to show through the grid, which otherwise
+                    // paints its own opaque background over it.
+                    .scrollContentBackground(.hidden)
                 }
             }
+            .skyBackdrop(
+                forecast,
+                clock: SolarClock(latitude: latitude, longitude: longitude)
+            )
             .navigationTitle("팔레트")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
