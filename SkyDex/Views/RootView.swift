@@ -26,10 +26,15 @@ struct RootView: View {
         .environment(forecast)
         .environment(\.skyTheme, theme)
         // Text has to follow the sky rather than the phone: white on a night
-        // sky, black at noon. Handing the scheme to the whole app means the
-        // system's own colours — labels, bars, controls — come out right
-        // instead of each one needing to be overridden by hand.
-        .environment(\.colorScheme, theme.colorScheme)
+        // sky, black at noon.
+        //
+        // This must be `preferredColorScheme` and not an environment override.
+        // Overriding the environment repaints SwiftUI's own text and leaves
+        // everything UIKit draws — sheet backgrounds above all — on the
+        // device's real appearance, which is how the capture sheet ended up
+        // printing white text onto a white card. The preference changes the
+        // window itself, so presented sheets come along.
+        .preferredColorScheme(theme.colorScheme)
         // Keyed on the coordinate so moving the sliders refetches, and on the
         // toggle so turning alerts on schedules without a relaunch.
         .task(id: "\(latitude),\(longitude),\(clearSkyAlerts)") {

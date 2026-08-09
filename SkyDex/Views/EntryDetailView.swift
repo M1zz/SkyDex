@@ -48,16 +48,19 @@ struct EntryDetailView: View {
     private var naming: some View {
         VStack(alignment: .leading, spacing: 7) {
             Text("이름")
-                .font(.caption)
-                .foregroundStyle(.secondary)
+                .font(.subheadline.weight(.medium))
+                .foregroundStyle(.primary.opacity(0.7))
             HStack(alignment: .firstTextBaseline, spacing: 6) {
                 TextField("무슨 하늘이었나요", text: $entry.name, axis: .vertical)
+                    .font(.title3)
                     .lineLimit(1...3)
-                Text("하늘").foregroundStyle(.tertiary)
+                Text("하늘")
+                    .font(.title3)
+                    .foregroundStyle(.primary.opacity(0.5))
             }
-            .padding(.bottom, 8)
+            .padding(.bottom, 10)
             .overlay(alignment: .bottom) {
-                Rectangle().fill(Color.secondary.opacity(0.25)).frame(height: 0.5)
+                Rectangle().fill(Color.primary.opacity(0.3)).frame(height: 1)
             }
         }
     }
@@ -74,19 +77,17 @@ struct EntryDetailView: View {
                     row("이 구간의", "첫 하늘")
                 }
             } else if entry.phase == .night {
-                Text("해가 진 뒤에 찍은 하늘이에요. 다이얼에는 올라가지 않지만, 올려다본 기록과 이름은 남습니다.")
-                    .font(.caption).foregroundStyle(.secondary)
+                row("다이얼", "해가 진 뒤")
             } else if let distance = entry.noveltyDistance {
                 row("이미 가진 색과", "ΔE " + String(format: "%.1f", distance))
-                Text("다이얼에는 올라가지 않았지만, 같은 색 아래에서 한 생각은 그날 것이에요.")
-                    .font(.caption).foregroundStyle(.secondary)
             }
             if !entry.paletteHexes.isEmpty {
                 row("팔레트", "\(entry.paletteHexes.count)색 · 오차 ΔE " + String(format: "%.1f", entry.reconstructionError))
             }
             if entry.isStale {
-                Label("추출기가 개선됐어요. 사진이 남아 있어 다시 뽑을 수 있습니다.", systemImage: "sparkles")
-                    .font(.caption).foregroundStyle(.secondary)
+                Label("다시 뽑을 수 있어요", systemImage: "sparkles")
+                    .font(.subheadline)
+                    .foregroundStyle(.primary.opacity(0.7))
             }
         }
     }
@@ -114,16 +115,19 @@ struct EntryDetailView: View {
                             startPoint: .top, endPoint: .bottom
                         ))
                         .frame(width: 46, height: 34)
-                    VStack(alignment: .leading, spacing: 2) {
+                    VStack(alignment: .leading, spacing: 3) {
                         Text(match.entry.displayName + " 하늘")
-                            .font(.footnote)
+                            .font(.subheadline)
                             .lineLimit(2)
                         Text(match.entry.capturedAt.formatted(.dateTime.year().month().day()))
-                            .font(.caption2).foregroundStyle(.secondary)
+                            .font(.footnote)
+                            .foregroundStyle(.primary.opacity(0.6))
                     }
                     Spacer()
                     Text("ΔE " + String(format: "%.1f", match.distance))
-                        .font(.caption2).monospacedDigit().foregroundStyle(.tertiary)
+                        .font(.footnote)
+                        .monospacedDigit()
+                        .foregroundStyle(.primary.opacity(0.6))
                 }
             }
         }

@@ -93,9 +93,9 @@ struct SkyCardView: View {
                 .frame(minHeight: compact ? 34 : 0, alignment: .top)
                 .padding(.top, 3)
             Text(metaLine)
-                .font(.system(size: compact ? 9.5 : 11))
+                .font(.system(size: compact ? 11 : 13))
                 .monospacedDigit()
-                .foregroundStyle(.tertiary)
+                .foregroundStyle(.primary.opacity(0.55))
                 .padding(.top, 5)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
