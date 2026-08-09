@@ -10,23 +10,25 @@ struct ForecastStrip: View {
     let forecast: SkyForecast
     let day: SkyForecast.DayReference
 
+    @Environment(\.skyTheme) private var theme
+
     var body: some View {
         HStack(spacing: 12) {
             Image(systemName: forecast.symbolName)
-                .font(.system(size: 22))
+                .font(.system(size: 24))
                 .symbolRenderingMode(.multicolor)
-                .frame(width: 30)
+                .frame(width: 32)
 
             Text(forecast.invitation(for: day))
-                .font(.subheadline)
-                .foregroundStyle(.primary.opacity(0.8))
+                .font(.body)
+                .foregroundStyle(.primary)
                 .fixedSize(horizontal: false, vertical: true)
 
             Spacer(minLength: 0)
         }
         .padding(.horizontal, 16)
-        .padding(.vertical, 12)
-        .background(Color.secondary.opacity(0.09), in: RoundedRectangle(cornerRadius: 14))
+        .padding(.vertical, 13)
+        .background(theme.panel, in: RoundedRectangle(cornerRadius: 14))
         .overlay(alignment: .bottomTrailing) {
             // Required whenever WeatherKit data is shown.
             Link(destination: URL(string: "https://weatherkit.apple.com/legal-attribution.html")!) {
@@ -43,12 +45,16 @@ struct ForecastStrip: View {
 }
 
 #Preview {
-    VStack(spacing: 12) {
-        ForecastStrip(forecast: .sample(tone: .clear), day: .tomorrow)
-        ForecastStrip(forecast: .sample(tone: .breaking), day: .tomorrow)
-        ForecastStrip(forecast: .sample(tone: .mixed), day: .today)
-        ForecastStrip(forecast: .sample(tone: .dull), day: .today)
-        ForecastStrip(forecast: .sample(tone: .wet), day: .tomorrow)
+    ZStack {
+        SkyBackdrop(theme: .of(tone: .clear, phase: .day))
+        VStack(spacing: 12) {
+            ForecastStrip(forecast: .sample(tone: .clear), day: .tomorrow)
+            ForecastStrip(forecast: .sample(tone: .breaking), day: .tomorrow)
+            ForecastStrip(forecast: .sample(tone: .mixed), day: .today)
+            ForecastStrip(forecast: .sample(tone: .dull), day: .today)
+            ForecastStrip(forecast: .sample(tone: .wet), day: .tomorrow)
+        }
+        .padding(20)
     }
-    .padding(20)
+    .environment(\.skyTheme, .of(tone: .clear, phase: .day))
 }

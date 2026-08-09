@@ -10,9 +10,7 @@ struct SwatchBookView: View {
     @Query(sort: \SkyEntry.capturedAt, order: .reverse) private var entries: [SkyEntry]
     @Environment(\.modelContext) private var context
 
-    @Environment(ForecastStore.self) private var forecast
-    @AppStorage("latitude") private var latitude = SolarClock.deviceDefault.latitude
-    @AppStorage("longitude") private var longitude = SolarClock.deviceDefault.longitude
+    @Environment(\.skyTheme) private var theme
 
     @State private var selected: SkyEntry?
     @State private var showPanorama = false
@@ -31,8 +29,7 @@ struct SwatchBookView: View {
                 if entries.isEmpty {
                     ContentUnavailableView(
                         "아직 이름 붙인 하늘이 없어요",
-                        systemImage: "square.grid.2x2",
-                        description: Text("밖을 한 번 올려다보는 것으로 시작합니다.")
+                        systemImage: "square.grid.2x2"
                     )
                 } else {
                     ScrollView {
@@ -63,10 +60,7 @@ struct SwatchBookView: View {
                     .scrollContentBackground(.hidden)
                 }
             }
-            .skyBackdrop(
-                forecast,
-                clock: SolarClock(latitude: latitude, longitude: longitude)
-            )
+            .skyBackdrop(theme)
             .navigationTitle("팔레트")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {

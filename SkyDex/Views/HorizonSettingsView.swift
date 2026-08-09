@@ -38,10 +38,6 @@ struct HorizonSettingsView: View {
                         }
                     }
 
-                    Text("실제 일출·일몰 시각과 맞을 때까지 아래를 움직이세요. 위치 권한은 쓰지 않고, 이 값이 촬영 기록에 붙지도 않습니다.")
-                        .font(.footnote)
-                        .foregroundStyle(.secondary)
-
                     slider("위도", value: $latitude, range: -66...66, unit: "°N", step: 0.5)
                     slider("경도", value: $longitude, range: -180...180, unit: "°E", step: 0.5)
 
@@ -77,39 +73,29 @@ struct HorizonSettingsView: View {
 
     /// The one notification the app is willing to send, and it is opt-in.
     ///
-    /// The copy names the condition rather than the schedule, because what a
+    /// The label names the condition rather than the schedule, because what a
     /// person is agreeing to is "tell me when the sky is worth it", not "send
-    /// me something at eight".
+    /// me something at eight". Everything else the old copy explained is either
+    /// visible in the app or not worth a paragraph.
     private var alertSection: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Toggle(isOn: $alerts) {
-                VStack(alignment: .leading, spacing: 3) {
-                    Text("맑은 날 미리 알기")
-                        .font(.subheadline)
-                    Text("내일 하늘이 트이는 날에만, 전날 저녁 \(ClearSkyNotifier.eveningHour)시에 한 번.")
-                        .font(.footnote)
-                        .foregroundStyle(.secondary)
-                }
-            }
-            .onChange(of: alerts) { _, isOn in
-                guard isOn else { return }
-                Task {
-                    if await ClearSkyNotifier.requestAuthorization() == false {
-                        alerts = false
-                        deniedAlerts = true
+            Toggle("맑은 날 미리 알기", isOn: $alerts)
+                .font(.subheadline)
+                .onChange(of: alerts) { _, isOn in
+                    guard isOn else { return }
+                    Task {
+                        if await ClearSkyNotifier.requestAuthorization() == false {
+                            alerts = false
+                            deniedAlerts = true
+                        }
                     }
                 }
-            }
 
             if deniedAlerts {
-                Text("설정 앱에서 SkyDex 알림을 허용해야 켤 수 있어요.")
+                Text("설정 앱에서 알림을 허용해주세요")
                     .font(.footnote)
                     .foregroundStyle(.orange)
             }
-
-            Text("흐린 날에는 아무것도 보내지 않고, 며칠 안 찍었다고 재촉하지도 않습니다.")
-                .font(.footnote)
-                .foregroundStyle(.secondary)
         }
     }
 

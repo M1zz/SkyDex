@@ -1,5 +1,6 @@
 import SwiftUI
 import SwiftData
+import TipKit
 
 /// The arc.
 ///
@@ -21,6 +22,10 @@ struct DialView: View {
     @State private var selectedEntry: SkyEntry?
     @State private var selectedReference: ReferenceSky?
     @Environment(ForecastStore.self) private var forecast
+    @Environment(\.skyTheme) private var theme
+
+    private let captureTip = CaptureTip()
+    private let horizonTip = HorizonTip()
 
     private var clock: SolarClock { SolarClock(latitude: latitude, longitude: longitude) }
     private var seasonKey: String { Season.key(for: .now) }
@@ -81,14 +86,22 @@ struct DialView: View {
                 .buttonStyle(.borderedProminent)
                 .padding(.horizontal, 24)
                 .padding(.bottom, 12)
+                .popoverTip(captureTip)
             }
-            .skyBackdrop(forecast, clock: clock)
+            .skyBackdrop(theme)
+            // The tips retire themselves once the app has been used, so the
+            // explanation never becomes furniture.
+            .task(id: dots.count) {
+                CaptureTip.hasCaptured = !entries.isEmpty
+                HorizonTip.hasCaptured = !entries.isEmpty
+            }
             .navigationTitle(Season.label(forKey: seasonKey))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button { showHorizon = true } label: { Image(systemName: "sun.horizon") }
                         .accessibilityLabel("지평선 맞추기")
+                        .popoverTip(horizonTip)
                 }
             }
             .sheet(isPresented: $showCapture) {
@@ -123,27 +136,26 @@ struct DialView: View {
 
         return ZStack {
             ArcDisc(center: center, radius: rim)
-                .fill(Color(red: 0.48, green: 0.65, blue: 0.83).opacity(0.13))
-            // Once the page behind can be tinted, a fill this pale is no longer
-            // guaranteed to separate from it. The outline is what keeps the
-            // shape readable on a blue day.
+                .fill(theme.arcFill)
+            // The fill alone cannot be trusted to separate from a sky that is
+            // itself blue. The outline is what keeps the shape readable.
             ArcDisc(center: center, radius: rim)
-                .stroke(Color.secondary.opacity(0.22), lineWidth: 0.75)
+                .stroke(theme.arcEdge, lineWidth: 1)
 
             ForEach([DialGeometry.innerFraction, 0.6, DialGeometry.outerFraction], id: \.self) {
                 fraction in
                 ArcDisc(center: center, radius: unit * fraction, closed: false)
-                    .stroke(Color.secondary.opacity(0.13), lineWidth: 0.5)
+                    .stroke(theme.hairline, lineWidth: 0.75)
             }
 
             Path { path in
                 path.move(to: CGPoint(x: center.x - rim, y: center.y))
                 path.addLine(to: CGPoint(x: center.x + rim, y: center.y))
             }
-            .stroke(Color.secondary.opacity(0.35), lineWidth: 0.5)
+            .stroke(theme.arcEdge, lineWidth: 1)
 
             ClockTicks(center: center, unit: unit, clock: clock, date: .now)
-                .stroke(Color.secondary.opacity(0.3), lineWidth: 0.5)
+                .stroke(theme.hairline, lineWidth: 1)
 
             ForEach(Palette.references) { reference in
                 ReferenceDotView(
@@ -187,8 +199,8 @@ struct DialView: View {
             }
 
             Image(systemName: "sun.max.fill")
-                .font(.system(size: 19))
-                .foregroundStyle(.secondary)
+                .font(.system(size: 20, weight: .medium))
+                .foregroundStyle(.primary.opacity(0.75))
                 .accessibilityLabel("정오")
                 .position(x: center.x, y: center.y - rim - 18)
 
@@ -196,17 +208,6 @@ struct DialView: View {
                 .position(x: leftTipX, y: tipY + 26)
             tipLabel("sunset.fill", today?.sunset, name: "일몰")
                 .position(x: rightTipX, y: tipY + 26)
-
-            // The empty wedge under the horizon is the one place a first-time
-            // reading of the arc can be handed over without crowding it.
-            if dots.isEmpty {
-                Text("해가 떠 있는 동안 하늘을 찍으면\n찍은 시각과 밝기 자리에 색이 남습니다")
-                    .font(.footnote)
-                    .multilineTextAlignment(.center)
-                    .foregroundStyle(.tertiary)
-                    .frame(maxWidth: min(rim * 1.25, width - 80))
-                    .position(x: center.x, y: center.y + 42)
-            }
         }
         // The labels inside the arc are pinned to geometry, not to a stack that
         // can reflow, so they are held at a size the reserved room fits.
@@ -222,17 +223,15 @@ struct DialView: View {
     private func tipLabel(_ symbol: String, _ hour: Double?, name: String) -> some View {
         VStack(spacing: 3) {
             Image(systemName: symbol)
-                .font(.system(size: 19))
-                .symbolRenderingMode(.hierarchical)
+                .font(.system(size: 20, weight: .medium))
                 .accessibilityLabel(name)
             if let hour {
                 Text(SolarClock.clockString(hour))
-                    .font(.subheadline.weight(.semibold))
+                    .font(.body.weight(.semibold))
                     .monospacedDigit()
-                    .foregroundStyle(.primary.opacity(0.7))
             }
         }
-        .foregroundStyle(.secondary)
+        .foregroundStyle(.primary.opacity(0.8))
         .fixedSize()
     }
 
@@ -253,21 +252,21 @@ struct DialView: View {
     private func stat(_ value: String, _ label: String) -> some View {
         VStack(spacing: 4) {
             Text(value)
-                .font(.title2.weight(.semibold))
+                .font(.title.weight(.semibold))
                 .monospacedDigit()
-                .minimumScaleFactor(0.7)
+                .minimumScaleFactor(0.6)
                 .lineLimit(1)
             Text(label)
-                .font(.subheadline)
-                .foregroundStyle(.secondary)
+                .font(.subheadline.weight(.medium))
+                .foregroundStyle(.primary.opacity(0.7))
         }
         .frame(maxWidth: .infinity)
     }
 
     private var statDivider: some View {
         Rectangle()
-            .fill(Color.secondary.opacity(0.2))
-            .frame(width: 0.5, height: 34)
+            .fill(theme.hairline)
+            .frame(width: 1, height: 38)
     }
 
     /// A fact about the world, not a nudge about the user. "Four hours of light

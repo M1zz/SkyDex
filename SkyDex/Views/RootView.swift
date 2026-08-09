@@ -12,6 +12,10 @@ struct RootView: View {
 
     private var clock: SolarClock { SolarClock(latitude: latitude, longitude: longitude) }
 
+    private var theme: SkyTheme {
+        .of(tone: forecast.today?.tone, phase: clock.position(of: .now).phase)
+    }
+
     var body: some View {
         TabView {
             DialView()
@@ -20,6 +24,12 @@ struct RootView: View {
                 .tabItem { Label("팔레트", systemImage: "square.grid.2x2") }
         }
         .environment(forecast)
+        .environment(\.skyTheme, theme)
+        // Text has to follow the sky rather than the phone: white on a night
+        // sky, black at noon. Handing the scheme to the whole app means the
+        // system's own colours — labels, bars, controls — come out right
+        // instead of each one needing to be overridden by hand.
+        .environment(\.colorScheme, theme.colorScheme)
         // Keyed on the coordinate so moving the sliders refetches, and on the
         // toggle so turning alerts on schedules without a relaunch.
         .task(id: "\(latitude),\(longitude),\(clearSkyAlerts)") {
@@ -30,17 +40,12 @@ struct RootView: View {
 }
 
 extension View {
-    /// The weather wash, plus the one thing it costs: bars are told to stay
-    /// clear so the gradient runs edge to edge instead of stopping under a
+    /// The sky behind a screen, plus the one thing it costs: bars are told to
+    /// stay clear so the gradient runs edge to edge instead of stopping under a
     /// frosted strip at each end.
-    func skyBackdrop(_ forecast: ForecastStore, clock: SolarClock) -> some View {
-        background {
-            SkyBackdrop(
-                tone: forecast.today?.tone,
-                isNight: clock.position(of: .now).phase == .night
-            )
-        }
-        .toolbarBackground(.hidden, for: .navigationBar)
+    func skyBackdrop(_ theme: SkyTheme) -> some View {
+        background { SkyBackdrop(theme: theme) }
+            .toolbarBackground(.hidden, for: .navigationBar)
     }
 }
 

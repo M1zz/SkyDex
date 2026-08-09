@@ -49,14 +49,8 @@ struct CaptureSheet: View {
                 .font(.system(size: 44))
                 .foregroundStyle(.secondary)
 
-            VStack(spacing: 6) {
-                Text("하늘이 화면 위쪽을 채우도록")
-                    .font(.headline)
-                Text("위쪽 3분의 1만 잘라 작게 보관합니다. 위치 정보는 지워집니다.")
-                    .font(.footnote)
-                    .foregroundStyle(.secondary)
-                    .multilineTextAlignment(.center)
-            }
+            Text("하늘이 화면 위쪽을 채우도록")
+                .font(.headline)
 
             if CameraPicker.isAvailable {
                 Button { showCamera = true } label: {
@@ -119,9 +113,6 @@ struct CaptureSheet: View {
             .overlay(alignment: .bottom) {
                 Rectangle().fill(Color.secondary.opacity(0.25)).frame(height: 0.5)
             }
-            Text("비워두어도 저장됩니다 · 나중에 채워 넣을 수 있어요")
-                .font(.caption2)
-                .foregroundStyle(.tertiary)
         }
         .frame(maxWidth: 340)
     }
