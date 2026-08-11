@@ -30,6 +30,8 @@ import SwiftUI
 /// A slot is chosen by the clock, never by the user, and no photo is ever
 /// turned away — the only thing a capture has to do is exist.
 struct BoardView: View {
+    @Binding var screen: Screen
+
     @Environment(\.modelContext) private var context
 
     /// Ascending, so building the map leaves the most recent capture in each
@@ -177,14 +179,18 @@ struct BoardView: View {
             }
             .buttonStyle(.borderedProminent)
 
+            // Where importing from the library used to be. The library is still
+            // reachable, from inside the camera, which is where someone who
+            // wants to file an old photo already is.
             Button {
-                showLibrary = true
+                screen = .archive
             } label: {
-                Image(systemName: "photo.on.rectangle")
+                Image(systemName: "list.bullet")
                     .font(.system(size: 17, weight: .medium))
                     .frame(width: 44, height: 44)
             }
             .buttonStyle(.bordered)
+            .accessibilityLabel("기록")
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 10)
@@ -404,6 +410,6 @@ private struct EmptySlotSheet: View {
 }
 
 #Preview {
-    BoardView()
+    BoardView(screen: .constant(.board))
         .modelContainer(for: SkyEntry.self, inMemory: true)
 }

@@ -7,6 +7,8 @@ import SwiftUI
 /// many. This is where the calendar lives, and where captures that landed in
 /// an already-filled slot are still visible.
 struct ArchiveView: View {
+    @Binding var screen: Screen
+
     @Query(sort: \SkyEntry.capturedAt, order: .reverse) private var entries: [SkyEntry]
     @Environment(\.modelContext) private var context
 
@@ -42,6 +44,18 @@ struct ArchiveView: View {
                 }
             }
             .navigationTitle("기록")
+            .toolbar {
+                // The other half of the board's switch, so the pair is a round
+                // trip and not a one-way door.
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        screen = .board
+                    } label: {
+                        Image(systemName: "circle.grid.3x3.fill")
+                    }
+                    .accessibilityLabel("하늘")
+                }
+            }
             .sheet(item: $selected) { entry in
                 PhotoDetailView(entry: entry)
             }
