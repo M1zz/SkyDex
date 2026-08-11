@@ -4,10 +4,10 @@ import SwiftUI
 
 /// The board.
 ///
-/// All forty-eight slots are drawn from the first launch, each showing the sky
-/// its time of day usually is at low opacity. Capturing paints one of them in
-/// the colour you actually got. So the gradient is visible before you own any
-/// of it, and filling it in is the collection.
+/// All forty-eight slots are drawn from the first launch as open rings in the
+/// colour that time of day usually is. Capturing fills one of them in with the
+/// colour you actually got. So the gradient is visible before you own any of
+/// it, and filling it in is the collection.
 ///
 /// There is no text on it. Band names, clock ranges and a running count were
 /// all saying what the colours already say — the top is night, it lightens
@@ -54,24 +54,30 @@ struct BoardView: View {
         NavigationStack {
             GeometryReader { area in
                 let diameter = beadDiameter(in: area.size)
-                LazyVGrid(
-                    columns: Array(
-                        repeating: GridItem(.fixed(diameter), spacing: gap),
-                        count: SkyBoard.columns
-                    ),
-                    spacing: gap
-                ) {
-                    ForEach(SkyBoard.slots) { slot in
-                        Bead(
-                            slot: slot,
-                            entry: filled[slot.id],
-                            isNew: landed == slot.id,
-                            diameter: diameter
-                        )
-                        .onTapGesture { opened = slot }
+                // The marked slot has to move with the clock, not with whatever
+                // happens to redraw the view.
+                TimelineView(.periodic(from: .now, by: 60)) { clock in
+                    let nowSlot = SkyBoard.slot(forMinute: SkyEntry.minuteOfDay(of: clock.date)).id
+                    LazyVGrid(
+                        columns: Array(
+                            repeating: GridItem(.fixed(diameter), spacing: gap),
+                            count: SkyBoard.columns
+                        ),
+                        spacing: gap
+                    ) {
+                        ForEach(SkyBoard.slots) { slot in
+                            Bead(
+                                slot: slot,
+                                entry: filled[slot.id],
+                                isNew: landed == slot.id,
+                                isNow: slot.id == nowSlot,
+                                diameter: diameter
+                            )
+                            .onTapGesture { opened = slot }
+                        }
                     }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
             }
             .toolbar(.hidden, for: .navigationBar)
             .safeAreaInset(edge: .bottom) { captureBar }
@@ -165,37 +171,49 @@ struct BoardView: View {
 
 /// One slot.
 ///
-/// Empty is not blank: it carries its own colour at low opacity, so an unfilled
-/// board still shows the shape of a day and a filled bead reads as that colour
-/// arriving at full strength rather than as a box being ticked.
+/// Collected and not collected are told apart by shape, not by colour: a
+/// captured sky is a solid disc, an empty one is a ring with its middle open.
+/// Shape survives what colour cannot — a pale overcast noon and the pale noon
+/// reference are nearly the same blue, and no amount of opacity separates them
+/// reliably. Diameter is deliberately not used, so the board stays an even grid.
+///
+/// The slot the clock is currently in wears a second ring outside itself, and
+/// its own ring runs at full strength — that is the colour the sky is likely to
+/// be right now, and where it would land.
 private struct Bead: View {
     let slot: SkySlot
     let entry: SkyEntry?
     let isNew: Bool
+    let isNow: Bool
     let diameter: CGFloat
 
+    private var ringWidth: CGFloat { max(3, diameter * 0.17) }
+
     var body: some View {
-        Group {
+        ZStack {
             if let entry {
-                Color(entry.rgb)
+                Circle().fill(Color(entry.rgb))
             } else {
-                Color(slot.rgb).opacity(0.28)
+                Circle()
+                    .strokeBorder(
+                        Color(slot.rgb).opacity(isNow ? 1 : 0.5),
+                        lineWidth: isNow ? ringWidth + 1 : ringWidth
+                    )
             }
         }
         .frame(width: diameter, height: diameter)
-        .clipShape(Circle())
         .overlay {
-            if entry == nil {
-                Circle().strokeBorder(Color(slot.rgb).opacity(0.45), lineWidth: 1)
+            // Sits outside the bead and laps over the gap into its neighbours,
+            // so the current slot is findable at a glance on a full board.
+            if isNow {
+                Circle()
+                    .strokeBorder(Color.primary.opacity(0.55), lineWidth: 1.5)
+                    .frame(width: diameter + 11, height: diameter + 11)
             }
         }
-        .overlay {
-            if isNew {
-                Circle().strokeBorder(.white, lineWidth: 2.5)
-            }
-        }
+        .overlay { if isNew { Circle().strokeBorder(.white, lineWidth: 2.5) } }
         .scaleEffect(isNew ? 1.14 : 1)
-        .zIndex(isNew ? 1 : 0)
+        .zIndex(isNew ? 2 : (isNow ? 1 : 0))
         .animation(.spring(response: 0.35, dampingFraction: 0.55), value: isNew)
         .contentShape(Circle())
     }
@@ -212,8 +230,7 @@ private struct EmptySlotSheet: View {
         NavigationStack {
             VStack(spacing: 20) {
                 Circle()
-                    .fill(Color(slot.rgb).opacity(0.28))
-                    .overlay(Circle().strokeBorder(Color(slot.rgb).opacity(0.45), lineWidth: 1))
+                    .strokeBorder(Color(slot.rgb).opacity(0.55), lineWidth: 16)
                     .frame(width: 96, height: 96)
 
                 VStack(spacing: 6) {
