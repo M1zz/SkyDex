@@ -9,6 +9,12 @@ import SwiftUI
 /// the colour you actually got. So the gradient is visible before you own any
 /// of it, and filling it in is the collection.
 ///
+/// There is no text on it. Band names, clock ranges and a running count were
+/// all saying what the colours already say — the top is night, it lightens
+/// downward into day and darkens again at the bottom. Reading that off the
+/// grid takes no words, and the words were competing with the only thing worth
+/// looking at.
+///
 /// A slot is chosen by the clock, never by the user, and no photo is ever
 /// turned away — the only thing a capture has to do is exist.
 struct BoardView: View {
@@ -31,42 +37,43 @@ struct BoardView: View {
         return map
     }
 
-    private let gap: CGFloat = 8
-    private let bandGap: CGFloat = 10
-    private let headerBlock: CGFloat = 20      // band label plus its gap to the grid
-    private let chromeExtra: CGFloat = 42      // footer and outer padding
+    private let gap: CGFloat = 10
+    private let sidePadding: CGFloat = 16
 
     /// The whole board has to be visible at once — a board you scroll is a
-    /// feed. So the bead size comes from the height that is left after the
-    /// labels, not from the width.
+    /// feed — so the bead size is whichever of the two axes runs out first.
     private func beadDiameter(in size: CGSize) -> CGFloat {
+        let columns = CGFloat(SkyBoard.columns)
         let rows = CGFloat(SkyBoard.slots.count / SkyBoard.columns)
-        let intraBandGaps = CGFloat(SkyBoard.bands.filter { $0.slots.count > SkyBoard.columns }.count)
-        let chrome = CGFloat(SkyBoard.bands.count) * headerBlock
-            + CGFloat(SkyBoard.bands.count - 1) * bandGap
-            + intraBandGaps * gap
-            + chromeExtra
-        let byHeight = (size.height - chrome) / rows
-        let byWidth = (size.width - 28 - gap * CGFloat(SkyBoard.columns - 1)) / CGFloat(SkyBoard.columns)
-        return max(28, min(byWidth, byHeight))
+        let byWidth = (size.width - sidePadding * 2 - gap * (columns - 1)) / columns
+        let byHeight = (size.height - 24 - gap * (rows - 1)) / rows
+        return max(24, min(byWidth, byHeight))
     }
 
     var body: some View {
         NavigationStack {
             GeometryReader { area in
                 let diameter = beadDiameter(in: area.size)
-                VStack(alignment: .leading, spacing: bandGap) {
-                    ForEach(SkyBoard.bands, id: \.name) { band in
-                        section(band, diameter: diameter)
+                LazyVGrid(
+                    columns: Array(
+                        repeating: GridItem(.fixed(diameter), spacing: gap),
+                        count: SkyBoard.columns
+                    ),
+                    spacing: gap
+                ) {
+                    ForEach(SkyBoard.slots) { slot in
+                        Bead(
+                            slot: slot,
+                            entry: filled[slot.id],
+                            isNew: landed == slot.id,
+                            diameter: diameter
+                        )
+                        .onTapGesture { opened = slot }
                     }
-                    footer
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-                .padding(.horizontal, 14)
-                .padding(.top, 2)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
             }
-            .navigationTitle("하늘")
-            .navigationBarTitleDisplayMode(.inline)
+            .toolbar(.hidden, for: .navigationBar)
             .safeAreaInset(edge: .bottom) { captureBar }
             .fullScreenCover(isPresented: $showCamera) {
                 SquareCameraView(
@@ -94,55 +101,6 @@ struct BoardView: View {
                 Task { await loadFromLibrary(item) }
             }
         }
-    }
-
-    // MARK: - Board
-
-    private func section(_ band: (name: String, slots: [SkySlot]), diameter: CGFloat) -> some View {
-        VStack(alignment: .leading, spacing: 5) {
-            HStack(alignment: .firstTextBaseline, spacing: 6) {
-                Text(band.name)
-                    .font(.caption2.weight(.semibold))
-                Text(bandRange(band.slots))
-                    .font(.caption2)
-                    .monospacedDigit()
-                    .foregroundStyle(.secondary)
-                Spacer()
-            }
-            LazyVGrid(
-                columns: Array(repeating: GridItem(.fixed(diameter), spacing: gap), count: SkyBoard.columns),
-                spacing: gap
-            ) {
-                ForEach(band.slots) { slot in
-                    Bead(
-                        slot: slot,
-                        entry: filled[slot.id],
-                        isNew: landed == slot.id,
-                        diameter: diameter
-                    )
-                    .onTapGesture { opened = slot }
-                }
-            }
-            .frame(maxWidth: .infinity, alignment: .center)
-        }
-    }
-
-    private func bandRange(_ slots: [SkySlot]) -> String {
-        guard let first = slots.first, let last = slots.last else { return "" }
-        return String(
-            format: "%02d–%02d시",
-            first.startMinute / 60,
-            (last.endMinute / 60) % 24 == 0 && last.endMinute > 0 ? 24 : last.endMinute / 60
-        )
-    }
-
-    private var footer: some View {
-        Text("모은 하늘 \(filled.count)")
-            .font(.caption.weight(.medium))
-            .monospacedDigit()
-            .foregroundStyle(.secondary)
-            .frame(maxWidth: .infinity)
-            .padding(.top, 6)
     }
 
     private var captureBar: some View {

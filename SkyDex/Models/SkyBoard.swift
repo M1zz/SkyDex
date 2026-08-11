@@ -11,8 +11,13 @@ import Foundation
 ///
 /// Slots are not equal lengths, because the sky does not change at an even
 /// rate. The five hours after midnight get six beads; the three hours of
-/// sunset and afterglow get twelve. Every band is a whole number of six-bead
-/// rows, so the grid never splits a band across a ragged line.
+/// sunset and afterglow get twelve. Each band is a whole number of six-bead
+/// rows, so a row never straddles two parts of the day — which is what lets
+/// the board carry no labels at all and still read top to bottom as night,
+/// dawn, day, sunset, night.
+///
+/// `band` survives only as a word for the detail sheets to use. Nothing groups
+/// the grid by it.
 enum SkyBoard {
 
     static let columns = 6
@@ -76,19 +81,4 @@ enum SkyBoard {
     static func slot(id: Int) -> SkySlot {
         slots.first { $0.id == id } ?? slots[0]
     }
-
-    /// Consecutive slots sharing a band name, in board order — the row groups
-    /// the board is drawn in.
-    static let bands: [(name: String, slots: [SkySlot])] = {
-        var groups: [(name: String, slots: [SkySlot])] = []
-        for slot in slots {
-            if var last = groups.last, last.name == slot.band {
-                last.slots.append(slot)
-                groups[groups.count - 1] = last
-            } else {
-                groups.append((name: slot.band, slots: [slot]))
-            }
-        }
-        return groups
-    }()
 }
