@@ -2,18 +2,22 @@ import Foundation
 
 /// One place on the board.
 ///
-/// A slot is a stretch of the day, not a colour to be matched. Its `hex` is the
-/// sky that time of day usually is — it shows through faintly while the slot is
-/// empty, so the gradient you are filling in is visible before you fill it.
-/// Nothing compares a photo against it.
+/// A slot is a stretch of the day, not a colour to be matched. Its `rgb` is the
+/// sky that time of day usually is — it draws the empty ring, so the gradient
+/// you are filling in is visible before you fill it. Nothing compares a photo
+/// against it.
+///
+/// `id` is an index within one board, so it only means anything alongside the
+/// `level` it came from.
 struct SkySlot: Identifiable, Hashable {
     let id: Int
+    let level: Int
     let startMinute: Int
     let endMinute: Int
-    let hex: String
+    let rgb: RGB
     let band: String
 
-    var rgb: RGB { RGB(hex: hex) ?? RGB(r: 0, g: 0, b: 0) }
+    var hex: String { rgb.hex }
 
     var timeLabel: String {
         String(

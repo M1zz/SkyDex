@@ -45,3 +45,38 @@ struct Lab: Equatable, Hashable {
         self.b = 200 * (fy - fz)
     }
 }
+
+extension RGB {
+
+    /// The inverse of `Lab(_:)`, so a colour can be interpolated in Lab and
+    /// brought back out. The board's whole palette is built this way: mixing
+    /// two sky colours in RGB drags the midpoint through a muddy grey, and the
+    /// dawn steps are where that shows worst.
+    ///
+    /// Out-of-gamut results are clamped by `init(r:g:b:)`. Every colour on the
+    /// day curve is a real sky, so nothing lands far outside sRGB.
+    init(_ lab: Lab) {
+        let fy = (lab.l + 16) / 116
+        let fx = fy + lab.a / 500
+        let fz = fy - lab.b / 200
+
+        func inverse(_ t: Double) -> Double {
+            let cubed = t * t * t
+            return cubed > 0.008856 ? cubed : (t - 16.0 / 116.0) / 7.787
+        }
+
+        let x = inverse(fx) * 0.95047
+        let y = inverse(fy) * 1.00000
+        let z = inverse(fz) * 1.08883
+
+        let r = x *  3.2404542 + y * -1.5371385 + z * -0.4985314
+        let g = x * -0.9692660 + y *  1.8760108 + z *  0.0415560
+        let b = x *  0.0556434 + y * -0.2040259 + z *  1.0572252
+
+        func gamma(_ c: Double) -> Double {
+            c <= 0.0031308 ? c * 12.92 : 1.055 * pow(c, 1 / 2.4) - 0.055
+        }
+
+        self.init(r: gamma(r), g: gamma(g), b: gamma(b))
+    }
+}

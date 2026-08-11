@@ -4,10 +4,16 @@ import SwiftUI
 
 /// The board.
 ///
-/// All forty-eight slots are drawn from the first launch as open rings in the
-/// colour that time of day usually is. Capturing fills one of them in with the
-/// colour you actually got. So the gradient is visible before you own any of
-/// it, and filling it in is the collection.
+/// Every slot is drawn from the first launch as an open ring in the colour that
+/// time of day usually is. Capturing fills one of them in with the colour you
+/// actually got. So the gradient is visible before you own any of it, and
+/// filling it in is the collection.
+///
+/// Filling all of them does not end it. The board halves — forty-eight slots
+/// become ninety-six, then a hundred and ninety-two — and the same day comes
+/// back finer. Nothing resets and no photo is lost; the collection just gets
+/// more exact about what time it was. The level is latched at the highest ever
+/// reached, so deleting one photo never coarsens a board you already earned.
 ///
 /// There is no text on it. Band names, clock ranges and a running count were
 /// all saying what the colours already say — the top is night, it lightens
@@ -25,29 +31,58 @@ struct BoardView: View {
     /// being locked out by a first attempt you did not like.
     @Query(sort: \SkyEntry.capturedAt, order: .forward) private var entries: [SkyEntry]
 
+    @AppStorage("skydex.boardLevel") private var earnedLevel = 0
+
     @State private var showCamera = false
     @State private var showLibrary = false
     @State private var pickerItem: PhotosPickerItem?
-    @State private var opened: SkySlot?
+    @State private var presented: Presented?
     @State private var landed: Int?
 
+    private var completedLevel: Int {
+        SkyBoard.level(forMinutes: entries.map(\.minuteOfDay))
+    }
+
+    private var level: Int { max(earnedLevel, completedLevel) }
+
+    private var slots: [SkySlot] { SkyBoard.slots(level: level) }
+
+    /// One sheet handles both, because two `.sheet` modifiers on the same view
+    /// race each other and only one ever wins.
+    private enum Presented: Identifiable {
+        case slot(SkySlot)
+        case levelUp(Int)
+
+        var id: String {
+            switch self {
+            case .slot(let slot): return "slot-\(slot.level)-\(slot.id)"
+            case .levelUp(let level): return "level-\(level)"
+            }
+        }
+    }
+
     private var filled: [Int: SkyEntry] {
+        let level = self.level
         var map: [Int: SkyEntry] = [:]
-        for entry in entries { map[entry.slotID] = entry }
+        for entry in entries {
+            map[SkyBoard.slot(forMinute: entry.minuteOfDay, level: level).id] = entry
+        }
         return map
     }
 
-    private let gap: CGFloat = 10
     private let sidePadding: CGFloat = 16
+
+    /// Tighter as the board gets finer, so the extra rows have somewhere to go.
+    private var gap: CGFloat { [10, 7, 5][min(level, SkyBoard.maxLevel)] }
 
     /// The whole board has to be visible at once — a board you scroll is a
     /// feed — so the bead size is whichever of the two axes runs out first.
     private func beadDiameter(in size: CGSize) -> CGFloat {
-        let columns = CGFloat(SkyBoard.columns)
-        let rows = CGFloat(SkyBoard.slots.count / SkyBoard.columns)
+        let columns = CGFloat(SkyBoard.columns(level: level))
+        let rows = CGFloat(slots.count / SkyBoard.columns(level: level))
         let byWidth = (size.width - sidePadding * 2 - gap * (columns - 1)) / columns
         let byHeight = (size.height - 24 - gap * (rows - 1)) / rows
-        return max(24, min(byWidth, byHeight))
+        return max(18, min(byWidth, byHeight))
     }
 
     var body: some View {
@@ -57,15 +92,18 @@ struct BoardView: View {
                 // The marked slot has to move with the clock, not with whatever
                 // happens to redraw the view.
                 TimelineView(.periodic(from: .now, by: 60)) { clock in
-                    let nowSlot = SkyBoard.slot(forMinute: SkyEntry.minuteOfDay(of: clock.date)).id
+                    let nowSlot = SkyBoard.slot(
+                        forMinute: SkyEntry.minuteOfDay(of: clock.date),
+                        level: level
+                    ).id
                     LazyVGrid(
                         columns: Array(
                             repeating: GridItem(.fixed(diameter), spacing: gap),
-                            count: SkyBoard.columns
+                            count: SkyBoard.columns(level: level)
                         ),
                         spacing: gap
                     ) {
-                        ForEach(SkyBoard.slots) { slot in
+                        ForEach(slots) { slot in
                             Bead(
                                 slot: slot,
                                 entry: filled[slot.id],
@@ -73,7 +111,7 @@ struct BoardView: View {
                                 isNow: slot.id == nowSlot,
                                 diameter: diameter
                             )
-                            .onTapGesture { opened = slot }
+                            .onTapGesture { presented = .slot(slot) }
                         }
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
@@ -94,12 +132,24 @@ struct BoardView: View {
                     }
                 )
             }
-            .sheet(item: $opened) { slot in
-                if let entry = filled[slot.id] {
-                    PhotoDetailView(entry: entry)
-                } else {
-                    EmptySlotSheet(slot: slot)
+            .sheet(item: $presented) { item in
+                switch item {
+                case .slot(let slot):
+                    if let entry = filled[slot.id] {
+                        PhotoDetailView(entry: entry)
+                    } else {
+                        EmptySlotSheet(slot: slot)
+                    }
+                case .levelUp(let reached):
+                    BoardSplitSheet(level: reached)
                 }
+            }
+            .onChange(of: completedLevel, initial: true) { _, reached in
+                guard reached > earnedLevel else { return }
+                earnedLevel = reached
+                // Without this the board would quietly appear half empty the
+                // moment it was finished, which reads as data loss.
+                presented = .levelUp(reached)
             }
             .photosPicker(isPresented: $showLibrary, selection: $pickerItem, matching: .images)
             .onChange(of: pickerItem) { _, item in
@@ -158,7 +208,7 @@ struct BoardView: View {
         )
         context.insert(entry)
 
-        let slot = entry.slotID
+        let slot = SkyBoard.slot(forMinute: entry.minuteOfDay, level: level).id
         landed = slot
         Task {
             try? await Task.sleep(for: .seconds(1.8))
@@ -216,6 +266,74 @@ private struct Bead: View {
         .zIndex(isNew ? 2 : (isNow ? 1 : 0))
         .animation(.spring(response: 0.35, dampingFraction: 0.55), value: isNew)
         .contentShape(Circle())
+    }
+}
+
+/// What the board says the one time it splits.
+///
+/// It has to say something. Finishing forty-eight slots and finding the board
+/// suddenly half empty reads as data loss unless someone explains that it grew.
+/// It should not say more than that — no score, no streak, no next target.
+private struct BoardSplitSheet: View {
+    let level: Int
+
+    @Environment(\.dismiss) private var dismiss
+
+    private var previous: Int { SkyBoard.slots(level: level - 1).count }
+    private var current: Int { SkyBoard.slots(level: level).count }
+
+    var body: some View {
+        NavigationStack {
+            VStack(spacing: 22) {
+                HStack(spacing: 18) {
+                    ring(count: 6, filled: true)
+                    Image(systemName: "arrow.right")
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                    ring(count: 12, filled: false)
+                }
+                .padding(.top, 8)
+
+                VStack(spacing: 8) {
+                    Text("하루를 다 모았어요")
+                        .font(.title3.weight(.medium))
+                    Text("\(previous)칸이 \(current)칸이 됩니다. 같은 하루가 더 촘촘해질 뿐, 지금까지 모은 건 그대로 있습니다.")
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal, 8)
+                }
+
+                Button("좋아요") { dismiss() }
+                    .buttonStyle(.borderedProminent)
+            }
+            .padding(28)
+            .frame(maxWidth: .infinity)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("닫기") { dismiss() }
+                }
+            }
+        }
+        .presentationDetents([.height(340)])
+    }
+
+    private func ring(count: Int, filled: Bool) -> some View {
+        let size: CGFloat = count == 6 ? 15 : 9
+        return HStack(spacing: 3) {
+            ForEach(0..<count, id: \.self) { index in
+                let colour = Color(SkyBoard.colour(atMinute: 1080 + index * (180 / count)))
+                Group {
+                    if filled {
+                        Circle().fill(colour)
+                    } else {
+                        Circle().strokeBorder(colour.opacity(0.6), lineWidth: max(2, size * 0.3))
+                    }
+                }
+                .frame(width: size, height: size)
+            }
+        }
     }
 }
 

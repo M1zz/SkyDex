@@ -71,7 +71,7 @@ struct ArchiveView: View {
             VStack(alignment: .leading, spacing: 2) {
                 Text(entry.capturedAt, format: .dateTime.month().day().hour().minute())
                     .font(.subheadline)
-                Text(entry.note.isEmpty ? entry.slot.timeLabel : entry.note)
+                Text(entry.note.isEmpty ? entry.band : entry.note)
                     .font(.caption)
                     .foregroundStyle(.secondary)
                     .lineLimit(1)

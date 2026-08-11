@@ -8,15 +8,18 @@ import UIKit
 /// and it fills the slot its clock time falls in — no tolerance, no rejection,
 /// no way to aim at an easier slot.
 ///
-/// `minuteOfDay` and `slotID` are both stored even though either could be
-/// derived from `capturedAt`, because `@Query` can only sort and group on
-/// stored properties.
+/// `minuteOfDay` is stored even though it could be derived from `capturedAt`,
+/// because `@Query` can only sort on stored properties.
+///
+/// Which slot a photo occupies is deliberately *not* stored. The board changes
+/// resolution as it fills, so a slot number written at one level would be wrong
+/// at the next. The minute is the fact; the slot is a question you ask the
+/// board.
 @Model
 final class SkyEntry {
     var uuid: UUID = UUID()
     var capturedAt: Date = Date()
     var minuteOfDay: Int = 0
-    var slotID: Int = 0
     var hex: String = "#000000"
     var labL: Double = 0
     var labA: Double = 0
@@ -43,7 +46,6 @@ final class SkyEntry {
         self.uuid = UUID()
         self.capturedAt = capturedAt
         self.minuteOfDay = minute
-        self.slotID = SkyBoard.slot(forMinute: minute).id
         self.hex = rgb.hex
         self.labL = lab.l
         self.labA = lab.a
@@ -59,10 +61,9 @@ final class SkyEntry {
         return (parts.hour ?? 0) * 60 + (parts.minute ?? 0)
     }
 
-    /// Rows written before the board have no `slotID` and, from the version
-    /// before that, no `minuteOfDay` or `uuid` either — lightweight migration
-    /// hands them the schema defaults, which would file every old capture in
-    /// the first slot of the day. Runs once per schema change.
+    /// Rows written before the board have no `minuteOfDay` or `uuid` —
+    /// lightweight migration hands them the schema defaults, which would file
+    /// every old capture at midnight. Runs once.
     static func repairLegacyRows(in context: ModelContext) {
         let flag = "skydex.repairedForBoard"
         guard !UserDefaults.standard.bool(forKey: flag) else { return }
@@ -72,8 +73,6 @@ final class SkyEntry {
         for entry in all {
             let minute = minuteOfDay(of: entry.capturedAt)
             if entry.minuteOfDay != minute { entry.minuteOfDay = minute }
-            let slot = SkyBoard.slot(forMinute: minute).id
-            if entry.slotID != slot { entry.slotID = slot }
             if !seen.insert(entry.uuid).inserted {
                 entry.uuid = UUID()
                 seen.insert(entry.uuid)
@@ -86,7 +85,13 @@ final class SkyEntry {
 
     var rgb: RGB { RGB(hex: hex) ?? RGB(r: 0, g: 0, b: 0) }
     var lab: Lab { Lab(l: labL, a: labA, b: labB) }
-    var slot: SkySlot { SkyBoard.slot(id: slotID) }
+    /// The part of the day this was taken in — a name that does not depend on
+    /// how fine the board currently is.
+    var band: String { SkyBoard.band(forMinute: minuteOfDay) }
+
+    func slot(atLevel level: Int) -> SkySlot {
+        SkyBoard.slot(forMinute: minuteOfDay, level: level)
+    }
 
     var thumbnail: UIImage? {
         guard let thumbnailData else { return nil }

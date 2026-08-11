@@ -124,9 +124,9 @@ struct PhotoDetailView: View {
         .padding(.bottom, 24)
     }
 
-    private var slotNote: String {
-        "\(entry.slot.timeLabel) · \(entry.slot.band)"
-    }
+    /// The band, not a slot range. The board changes resolution as it fills,
+    /// so a range printed here would go stale; "낮" never does.
+    private var slotNote: String { entry.band }
 
     private func delete() {
         ThumbnailCache.forget(id: entry.uuid.uuidString)
