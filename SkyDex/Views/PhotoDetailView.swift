@@ -3,9 +3,15 @@ import SwiftUI
 
 /// One filled slot, opened.
 ///
-/// The line under the swatch names the slot this sky landed in and what that
-/// time of day usually looks like. It is an observation, never a score — the
-/// board has no notion of a capture being off-colour.
+/// The line the person wrote comes first, right under the date and set larger
+/// than anything else here. The hex and the slot are what the app worked out;
+/// they sit below, because they are the least interesting thing about the day
+/// you took the photo.
+///
+/// An empty line opens with the keyboard already up. Nothing else on the sheet
+/// is waiting for input, so there is no cost to guessing, and a note you have
+/// to go looking for is a note that never gets written. A line that is already
+/// there does not steal focus — you came back to read it.
 struct PhotoDetailView: View {
     @Bindable var entry: SkyEntry
 
@@ -13,6 +19,7 @@ struct PhotoDetailView: View {
     @Environment(\.modelContext) private var context
 
     @State private var confirmingDelete = false
+    @FocusState private var writing: Bool
 
     var body: some View {
         NavigationStack {
@@ -23,7 +30,18 @@ struct PhotoDetailView: View {
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
+            .task {
+                guard entry.note.isEmpty else { return }
+                // A beat, so focus lands after the sheet has finished its
+                // presentation animation rather than fighting it.
+                try? await Task.sleep(for: .milliseconds(450))
+                writing = true
+            }
             .toolbar {
+                ToolbarItemGroup(placement: .keyboard) {
+                    Spacer()
+                    Button("완료") { writing = false }
+                }
                 ToolbarItem(placement: .topBarLeading) {
                     Button(role: .destructive) {
                         confirmingDelete = true
@@ -32,7 +50,10 @@ struct PhotoDetailView: View {
                     }
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("닫기") { dismiss() }
+                    Button("닫기") {
+                        writing = false
+                        dismiss()
+                    }
                 }
             }
             .confirmationDialog(
@@ -62,13 +83,21 @@ struct PhotoDetailView: View {
     }
 
     private var details: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            VStack(alignment: .leading, spacing: 2) {
-                Text(entry.capturedAt, format: .dateTime.year().month().day().weekday(.wide))
-                    .font(.headline)
-                Text(entry.capturedAt, format: .dateTime.hour().minute())
-                    .font(.subheadline)
+        VStack(alignment: .leading, spacing: 18) {
+            VStack(alignment: .leading, spacing: 10) {
+                Text(entry.capturedAt, format: .dateTime.year().month().day().weekday(.wide).hour().minute())
+                    .font(.footnote)
                     .foregroundStyle(.secondary)
+
+                // The line sits directly under the date and is set larger than
+                // anything else on the sheet. It is the only part of a capture
+                // the person wrote themselves; the hex and the slot are just
+                // what the app worked out.
+                TextField("그때 무슨 생각을 했나요", text: $entry.note, axis: .vertical)
+                    .font(.title3)
+                    .lineLimit(1...5)
+                    .textFieldStyle(.plain)
+                    .focused($writing)
             }
 
             Divider()
@@ -76,7 +105,7 @@ struct PhotoDetailView: View {
             HStack(spacing: 12) {
                 RoundedRectangle(cornerRadius: 6, style: .continuous)
                     .fill(Color(entry.rgb))
-                    .frame(width: 44, height: 44)
+                    .frame(width: 40, height: 40)
                     .overlay(
                         RoundedRectangle(cornerRadius: 6, style: .continuous)
                             .strokeBorder(Color.primary.opacity(0.1), lineWidth: 1)
@@ -89,17 +118,6 @@ struct PhotoDetailView: View {
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
-            }
-
-            Divider()
-
-            VStack(alignment: .leading, spacing: 6) {
-                Text("한 줄")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-                TextField("그때 무슨 생각을 했나요", text: $entry.note, axis: .vertical)
-                    .lineLimit(2...4)
-                    .textFieldStyle(.roundedBorder)
             }
         }
         .padding(.horizontal, 20)
