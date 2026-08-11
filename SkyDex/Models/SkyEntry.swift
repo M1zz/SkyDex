@@ -1,84 +1,100 @@
 import Foundation
 import SwiftData
+import UIKit
 
-/// One capture.
+/// One collected sky.
 ///
-/// Every sky that was read gets an entry, whether or not it earned a dot.
-/// Looking up is always a success; catching a colour you did not already own is
-/// the rarer thing on top. `isNovel` is the only difference between them.
+/// Nothing here judges the photo. A capture is written the moment it is taken
+/// and it fills the slot its clock time falls in — no tolerance, no rejection,
+/// no way to aim at an easier slot.
+///
+/// `minuteOfDay` and `slotID` are both stored even though either could be
+/// derived from `capturedAt`, because `@Query` can only sort and group on
+/// stored properties.
 @Model
 final class SkyEntry {
+    var uuid: UUID = UUID()
     var capturedAt: Date = Date()
-
-    /// The dominant sky colour — the one the dial, the code and the novelty
-    /// rule all use.
-    var anchorHex: String = "#000000"
+    var minuteOfDay: Int = 0
+    var slotID: Int = 0
+    var hex: String = "#000000"
     var labL: Double = 0
     var labA: Double = 0
     var labB: Double = 0
-
-    /// The whole palette, ordered top of frame to horizon.
-    var paletteHexes: [String] = []
-    var reconstructionError: Double = 0
-    var extractorVersion: Int = 0
-
-    /// Filename in `PhotoStore.directory`. Empty when the picture is gone.
-    var photoName: String = ""
-
-    var bandKey: String = "midday"
-    var phaseRaw: String = SolarPhase.day.rawValue
-    var solarProgress: Double = 0.5
-
     var seasonKey: String = ""
-    var isNovel: Bool = false
-    var noveltyDistance: Double?
+    var note: String = ""
 
-    /// What the user called this sky. The app supplies the trailing "하늘".
-    var name: String = ""
+    /// Small enough that the board can decode every photo it might show.
+    var thumbnailData: Data?
+
+    /// External storage keeps the blob out of the row, so reading the board
+    /// never faults a megabyte of JPEG it is not going to draw.
+    @Attribute(.externalStorage) var photoData: Data?
 
     init(
         capturedAt: Date,
-        palette: SkyPalette,
-        position: SolarPosition,
-        bandKey: String,
-        seasonKey: String,
-        isNovel: Bool,
-        noveltyDistance: Double?,
-        photoName: String,
-        name: String = ""
+        rgb: RGB,
+        lab: Lab,
+        photoData: Data?,
+        thumbnailData: Data?,
+        note: String = ""
     ) {
+        let minute = SkyEntry.minuteOfDay(of: capturedAt)
+        self.uuid = UUID()
         self.capturedAt = capturedAt
-        self.anchorHex = palette.anchor.hex
-        self.labL = palette.anchorLab.l
-        self.labA = palette.anchorLab.a
-        self.labB = palette.anchorLab.b
-        self.paletteHexes = palette.colors.map(\.hex)
-        self.reconstructionError = palette.reconstructionError
-        self.extractorVersion = SkyColorExtractor.version
-        self.photoName = photoName
-        self.bandKey = bandKey
-        self.phaseRaw = position.phase.rawValue
-        self.solarProgress = position.progress
-        self.seasonKey = seasonKey
-        self.isNovel = isNovel
-        self.noveltyDistance = noveltyDistance
-        self.name = name
+        self.minuteOfDay = minute
+        self.slotID = SkyBoard.slot(forMinute: minute).id
+        self.hex = rgb.hex
+        self.labL = lab.l
+        self.labA = lab.a
+        self.labB = lab.b
+        self.seasonKey = Season.key(for: capturedAt)
+        self.note = note
+        self.photoData = photoData
+        self.thumbnailData = thumbnailData
     }
 
-    var anchor: RGB { RGB(hex: anchorHex) ?? RGB(r: 0, g: 0, b: 0) }
+    static func minuteOfDay(of date: Date) -> Int {
+        let parts = Calendar.current.dateComponents([.hour, .minute], from: date)
+        return (parts.hour ?? 0) * 60 + (parts.minute ?? 0)
+    }
+
+    /// Rows written before the board have no `slotID` and, from the version
+    /// before that, no `minuteOfDay` or `uuid` either — lightweight migration
+    /// hands them the schema defaults, which would file every old capture in
+    /// the first slot of the day. Runs once per schema change.
+    static func repairLegacyRows(in context: ModelContext) {
+        let flag = "skydex.repairedForBoard"
+        guard !UserDefaults.standard.bool(forKey: flag) else { return }
+
+        guard let all = try? context.fetch(FetchDescriptor<SkyEntry>()) else { return }
+        var seen = Set<UUID>()
+        for entry in all {
+            let minute = minuteOfDay(of: entry.capturedAt)
+            if entry.minuteOfDay != minute { entry.minuteOfDay = minute }
+            let slot = SkyBoard.slot(forMinute: minute).id
+            if entry.slotID != slot { entry.slotID = slot }
+            if !seen.insert(entry.uuid).inserted {
+                entry.uuid = UUID()
+                seen.insert(entry.uuid)
+            }
+        }
+        try? context.save()
+
+        UserDefaults.standard.set(true, forKey: flag)
+    }
+
+    var rgb: RGB { RGB(hex: hex) ?? RGB(r: 0, g: 0, b: 0) }
     var lab: Lab { Lab(l: labL, a: labA, b: labB) }
-    var palette: [RGB] { paletteHexes.compactMap { RGB(hex: $0) } }
-    var code: String { lab.skyCode }
+    var slot: SkySlot { SkyBoard.slot(id: slotID) }
 
-    var phase: SolarPhase { SolarPhase(rawValue: phaseRaw) ?? .day }
-    var position: SolarPosition { SolarPosition(phase: phase, progress: solarProgress) }
-    var dialAngle: Double? { position.dialAngle }
-
-    var bandName: String {
-        guard phase != .night else { return "밤" }
-        return Palette.band(forKey: bandKey)?.name ?? bandKey
+    var thumbnail: UIImage? {
+        guard let thumbnailData else { return nil }
+        return ThumbnailCache.image(id: uuid.uuidString, data: thumbnailData)
     }
 
-    var displayName: String { name.isEmpty ? "이름 없는" : name }
-    var isStale: Bool { extractorVersion < SkyColorExtractor.version && !photoName.isEmpty }
+    var photo: UIImage? {
+        guard let photoData else { return nil }
+        return UIImage(data: photoData)
+    }
 }

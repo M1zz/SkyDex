@@ -1,28 +1,23 @@
 # macOS
 .DS_Store
 
-# Xcode
+# Xcode — per-user state, never shared
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+
+# Build products
 build/
 DerivedData/
-*.moved-aside
-*.pbxuser
-!default.pbxuser
-*.mode1v3
-!default.mode1v3
-*.mode2v3
-!default.mode2v3
-*.perspectivev3
-!default.perspectivev3
-
-# Per-user Xcode state
-xcuserdata/
-*.xcscmblueprint
-*.xccheckout
+*.ipa
+*.dSYM.zip
+*.dSYM
 
 # Swift Package Manager
 .build/
 .swiftpm/
+Packages/
 
-# CocoaPods / Carthage (unused, but harmless to guard)
-Pods/
-Carthage/Build/
+# Fastlane / provisioning
+*.mobileprovision
+*.p12

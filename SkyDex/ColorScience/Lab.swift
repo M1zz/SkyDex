@@ -45,16 +45,3 @@ struct Lab: Equatable, Hashable {
         self.b = 200 * (fy - fz)
     }
 }
-
-extension Lab {
-    var chroma: Double { sqrt(a * a + b * b) }
-
-    /// Hue angle in degrees. Meaningless for near-grey colours, so callers
-    /// should check `chroma` before trusting it.
-    var hueDegrees: Double {
-        guard chroma > 0.0001 else { return 0 }
-        var h = atan2(b, a) * 180 / .pi
-        if h < 0 { h += 360 }
-        return h
-    }
-}
