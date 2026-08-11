@@ -4,10 +4,16 @@ import SwiftUI
 
 /// The board.
 ///
-/// Every slot is drawn from the first launch as an open ring in the colour that
-/// time of day usually is. Capturing fills one of them in with the colour you
-/// actually got. So the gradient is visible before you own any of it, and
-/// filling it in is the collection.
+/// Every slot is drawn from the first launch as an open ring, faded to a hint
+/// of the colour that time of day usually is. Capturing fills one in with the
+/// colour you actually got, at full strength. So the shape of the day is there
+/// from the start — where the dawn blues sit, where the sunset band begins —
+/// and collecting is the act of bringing it up to strength.
+///
+/// The hint is doing one job: placing a colour. It is faded far enough that it
+/// could never be mistaken for a sky someone went out and got, which is what a
+/// board of ghosts and a board of photographs have to keep straight between
+/// them.
 ///
 /// Filling all of them does not end it. The board halves — forty-eight slots
 /// become ninety-six, then a hundred and ninety-two — and the same day comes
@@ -221,15 +227,17 @@ struct BoardView: View {
 
 /// One slot.
 ///
-/// Collected and not collected are told apart by shape, not by colour: a
-/// captured sky is a solid disc, an empty one is a ring with its middle open.
-/// Shape survives what colour cannot — a pale overcast noon and the pale noon
-/// reference are nearly the same blue, and no amount of opacity separates them
-/// reliably. Diameter is deliberately not used, so the board stays an even grid.
+/// Collected and not collected are told apart twice over: a captured sky is a
+/// solid disc, an empty one an open ring, and the disc carries the colour at
+/// full strength while the ring only hints at it. Shape has to be there —
+/// a pale overcast noon and the pale noon reference are nearly the same blue,
+/// and no amount of fading separates those reliably. Strength has to be there
+/// too — a ring alone is easy to lose on a busy board. Diameter is deliberately
+/// not used, so the board stays an even grid.
 ///
-/// The slot the clock is currently in wears a second ring outside itself, and
-/// its own ring runs at full strength — that is the colour the sky is likely to
-/// be right now, and where it would land.
+/// The slot the clock is currently in wears a second ring outside itself and
+/// takes its colour undimmed: that is the sky right now, and where a capture
+/// would land.
 private struct Bead: View {
     let slot: SkySlot
     let entry: SkyEntry?
@@ -243,12 +251,10 @@ private struct Bead: View {
         ZStack {
             if let entry {
                 Circle().fill(Color(entry.rgb))
+            } else if isNow {
+                Circle().strokeBorder(Color(slot.rgb), lineWidth: ringWidth + 1)
             } else {
-                Circle()
-                    .strokeBorder(
-                        Color(slot.rgb).opacity(isNow ? 1 : 0.5),
-                        lineWidth: isNow ? ringWidth + 1 : ringWidth
-                    )
+                Circle().strokeBorder(Color(slot.ghost), lineWidth: ringWidth)
             }
         }
         .frame(width: diameter, height: diameter)
@@ -286,11 +292,11 @@ private struct BoardSplitSheet: View {
         NavigationStack {
             VStack(spacing: 22) {
                 HStack(spacing: 18) {
-                    ring(count: 6, filled: true)
+                    ring(count: 6, split: false)
                     Image(systemName: "arrow.right")
                         .font(.footnote)
                         .foregroundStyle(.secondary)
-                    ring(count: 12, filled: false)
+                    ring(count: 12, split: true)
                 }
                 .padding(.top, 8)
 
@@ -319,16 +325,22 @@ private struct BoardSplitSheet: View {
         .presentationDetents([.height(340)])
     }
 
-    private func ring(count: Int, filled: Bool) -> some View {
+    /// Six filled beads become twelve slots with the same six still filled —
+    /// every other one. Drawing the wider board as all empty would illustrate
+    /// exactly the loss this sheet exists to deny.
+    private func ring(count: Int, split: Bool) -> some View {
         let size: CGFloat = count == 6 ? 15 : 9
         return HStack(spacing: 3) {
             ForEach(0..<count, id: \.self) { index in
-                let colour = Color(SkyBoard.colour(atMinute: 1080 + index * (180 / count)))
+                let colour = SkyBoard.colour(atMinute: 1080 + index * (180 / count))
                 Group {
-                    if filled {
-                        Circle().fill(colour)
+                    if split, !index.isMultiple(of: 2) {
+                        Circle().strokeBorder(
+                            Color(SkyBoard.ghost(of: colour)),
+                            lineWidth: max(2, size * 0.3)
+                        )
                     } else {
-                        Circle().strokeBorder(colour.opacity(0.6), lineWidth: max(2, size * 0.3))
+                        Circle().fill(Color(colour))
                     }
                 }
                 .frame(width: size, height: size)
@@ -347,8 +359,10 @@ private struct EmptySlotSheet: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
+                // Faded, like the bead that was tapped. Its full strength is
+                // on the swatch further down, next to the hex.
                 Circle()
-                    .strokeBorder(Color(slot.rgb).opacity(0.55), lineWidth: 16)
+                    .strokeBorder(Color(slot.ghost), lineWidth: 16)
                     .frame(width: 96, height: 96)
 
                 VStack(spacing: 6) {

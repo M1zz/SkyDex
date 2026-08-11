@@ -54,6 +54,31 @@ enum SkyBoard {
         return RGB(curve[curve.count - 1].lab)
     }
 
+    /// The colour an empty slot is drawn in: the sky that time of day usually
+    /// is, faded until it can only place a colour, never stand in for one.
+    ///
+    /// Fading by opacity would not survive both appearances. Over white a
+    /// translucent midnight goes pale and legible; over black it goes to black
+    /// and the top of the board disappears. So the fade happens in Lab instead,
+    /// and in two moves.
+    ///
+    /// Lightness is pulled most of the way to the neutral `L*52` the board is
+    /// built around, keeping only a third of the sky's own. Enough is left that
+    /// night still reads as the dark end and midday as the bright one, but no
+    /// ring ever gets close enough to either paper to vanish into it.
+    ///
+    /// Chroma is cut to a bit over a third. The hue is what does the placing —
+    /// it says where the sunset band starts — while the paleness is what keeps a
+    /// collected sky, drawn at full strength, unmistakably the real thing.
+    static func ghost(of rgb: RGB) -> RGB {
+        let lab = Lab(rgb)
+        return RGB(Lab(
+            l: 52 + (lab.l - 52) * 0.32,
+            a: lab.a * 0.38,
+            b: lab.b * 0.38
+        ))
+    }
+
     // MARK: - Slots
 
     /// Slot counts at level 0. The sky does not change at an even rate, so the
@@ -117,13 +142,15 @@ enum SkyBoard {
             for index in 0..<count {
                 let start = band.start + Int((width * Double(index)).rounded())
                 let end = band.start + Int((width * Double(index + 1)).rounded())
+                let rgb = colour(atMinute: (start + end) / 2)
                 result.append(
                     SkySlot(
                         id: result.count,
                         level: level,
                         startMinute: start,
                         endMinute: end,
-                        rgb: colour(atMinute: (start + end) / 2),
+                        rgb: rgb,
+                        ghost: ghost(of: rgb),
                         band: band.name
                     )
                 )
