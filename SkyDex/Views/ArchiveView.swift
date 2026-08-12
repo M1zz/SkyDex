@@ -17,6 +17,7 @@ struct ArchiveView: View {
 
     @State private var selected: SkyEntry?
     @State private var showing: Showing = .list
+    @State private var groups: [PaletteGroup] = []
 
     private enum Showing: String, CaseIterable, Identifiable {
         case list = "기록"
@@ -95,43 +96,107 @@ struct ArchiveView: View {
             .map { (key: $0.key, value: $0.value) }
     }
 
-    /// The collection as one long day: every colour ever collected, in the order
-    /// the sky wears them rather than the order they were taken.
+    /// The collection as a swatch page.
     ///
-    /// Sorted by where each colour sits on the canonical curve, which is fixed —
-    /// a palette that reshuffles itself every morning is not a palette. Two
-    /// photos of the same blue sit next to each other even if they are months
-    /// apart, which is the whole point of collecting colours.
+    /// A grid of floating circles was a list of colours; a palette is a thing you
+    /// hold up against something. So the colours are packed — three points apart,
+    /// barely rounded, no borders — and grouped by the part of the day they belong
+    /// to, with the count of each in small type. Structure and restraint do the
+    /// work; nothing here is decorated.
+    ///
+    /// Grouped by the band each **colour** belongs to, not the hour it was taken
+    /// in. A midnight blue photographed at noon under a storm is a midnight blue,
+    /// and the axis of this app is colour.
     private var palette: some View {
         ScrollView {
-            LazyVGrid(
-                columns: [GridItem(.adaptive(minimum: 54, maximum: 84), spacing: 10)],
-                spacing: 10
-            ) {
-                ForEach(spectrum) { entry in
-                    Button {
-                        selected = entry
-                    } label: {
-                        Circle()
-                            .fill(Color(entry.rgb))
-                            .aspectRatio(1, contentMode: .fit)
-                            .overlay {
-                                Circle().strokeBorder(Color.primary.opacity(0.08), lineWidth: 1)
+            LazyVStack(alignment: .leading, spacing: 28) {
+                ForEach(groups) { group in
+                    VStack(alignment: .leading, spacing: 9) {
+                        HStack(alignment: .firstTextBaseline) {
+                            Text(group.band)
+                                .font(.subheadline.weight(.medium))
+                                .foregroundStyle(.secondary)
+                            Spacer()
+                            Text("\(group.entries.count)")
+                                .font(.caption2)
+                                .monospacedDigit()
+                                .foregroundStyle(.tertiary)
+                        }
+                        .padding(.horizontal, 3)
+
+                        LazyVGrid(
+                            columns: Array(
+                                repeating: GridItem(.flexible(), spacing: 3),
+                                count: ArchiveView.columns(for: group.entries.count)
+                            ),
+                            spacing: 3
+                        ) {
+                            ForEach(group.entries) { entry in
+                                Button {
+                                    selected = entry
+                                } label: {
+                                    RoundedRectangle(cornerRadius: 5, style: .continuous)
+                                        .fill(Color(entry.rgb))
+                                        // One height for every band, so a band
+                                        // with two colours in it is a wide chip
+                                        // rather than a pair of tiles twice
+                                        // everything else's size. The page reads
+                                        // as a stack of swatch bars.
+                                        .frame(height: 64)
+                                }
+                                .buttonStyle(.plain)
                             }
+                        }
                     }
-                    .buttonStyle(.plain)
                 }
             }
-            .padding(20)
+            .padding(.horizontal, 20)
+            .padding(.vertical, 12)
         }
+        .task { regroup() }
+        .onChange(of: entries.count) { _, _ in regroup() }
         .sensoryFeedback(.selection, trigger: selected?.uuid)
     }
 
-    private var spectrum: [SkyEntry] {
-        entries
-            .map { (entry: $0, position: SkyDay.spectrumPosition(of: $0.lab)) }
-            .sorted { $0.position < $1.position }
-            .map(\.entry)
+    /// How many across a band of this size should run.
+    ///
+    /// A short band takes one row and the tiles share the width, which is what a
+    /// paint chip card looks like. A long one is split so the last row is as full
+    /// as it can be — a row of six with a single tile hanging under it reads as
+    /// unfinished rather than as a swatch.
+    private static func columns(for count: Int) -> Int {
+        guard count > 8 else { return count }
+        return (5...7).max { a, b in
+            (lastRow(count, a), a) < (lastRow(count, b), b)
+        } ?? 6
+    }
+
+    /// How full the last row would be, counting a clean fit as full.
+    private static func lastRow(_ count: Int, _ columns: Int) -> Int {
+        let remainder = count % columns
+        return remainder == 0 ? columns : remainder
+    }
+
+    private struct PaletteGroup: Identifiable {
+        let band: String
+        let entries: [SkyEntry]
+        var id: String { band }
+    }
+
+    /// Placing a colour on the day costs a scan of the curve, so it is done once
+    /// per change rather than once per draw.
+    private func regroup() {
+        let placed = entries.map { (entry: $0, position: SkyDay.spectrumPosition(of: $0.lab)) }
+        let byBand = Dictionary(grouping: placed) {
+            SkyBoard.band(forMinute: Int($0.position))
+        }
+        groups = SkyBoard.bandNames.compactMap { band in
+            guard let items = byBand[band], !items.isEmpty else { return nil }
+            return PaletteGroup(
+                band: band,
+                entries: items.sorted { $0.position < $1.position }.map(\.entry)
+            )
+        }
     }
 
     private func row(_ entry: SkyEntry) -> some View {

@@ -29,6 +29,10 @@ enum SkyBoard {
 
     static let slots: [SkySlot] = build()
 
+    /// The parts of the day, in order. A palette groups colours by which of
+    /// these they belong to, so it needs them as a list rather than as a lookup.
+    static let bandNames: [String] = bands.map(\.name)
+
     /// Six across, eight down. Wide enough that the beads stay big enough to
     /// aim at, and the whole board still fits on one screen without scrolling.
     static let columns = 6
