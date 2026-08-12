@@ -1,58 +1,70 @@
 import Foundation
 
-/// The board, at whatever resolution it has earned.
+/// The board.
 ///
-/// One day is divided into slots and laid out in a grid. Fill every slot and
-/// the board does not end — it halves, and the same day comes back finer. Level
-/// 0 is forty-eight slots, level 1 ninety-six, level 2 a hundred and
-/// ninety-two. Nothing resets and nothing is lost; the collection just gets
-/// more exact about what time it was.
+/// One day is divided into forty-eight slots and laid out in a six-by-eight
+/// grid. That is the whole board and it never gets finer — a day split past
+/// this is a day measured, and the beads get too small to aim at. Filling it is
+/// not the end of anything either: slots fade as their photos age, so a full
+/// board is something you keep rather than something you finish.
 ///
-/// That is why the colours are not a table. They come off a curve — anchor
-/// colours pinned to real moments of the day, interpolated in CIELAB — so any
-/// resolution samples the same day. Interpolating in RGB instead would drag the
-/// dawn blues through a muddy grey, which is exactly where the extra slots go.
+/// A slot is a stretch of the clock and nothing else. It carries no colour of
+/// its own, because what a given half hour looks like depends on the date and
+/// the place — that belongs to `SkyDay`. What has to stay fixed is which slot a
+/// photo falls into, so a capture filed this morning still means the same thing
+/// in December.
 enum SkyBoard {
 
-    /// Past this the slots are minutes wide and the beads are too small to
-    /// aim at. A board this fine is a distant edge, not a goal.
-    static let maxLevel = 2
-
-    // MARK: - The day curve
-
-    /// Minute of day → the sky at that moment. Pinned to real events: civil
-    /// twilight, sunrise, zenith, golden hour, sunset, afterglow. The last
-    /// anchor repeats the first so midnight closes on itself.
-    private static let anchors: [(minute: Int, hex: String)] = [
-        (0,    "#080D18"), (200,  "#0B1120"), (290,  "#141D33"), (330,  "#2B3856"),
-        (365,  "#4E5F8C"), (395,  "#7E90B6"), (420,  "#A2AFCA"), (470,  "#7FA4CE"),
-        (540,  "#5590C6"), (660,  "#2F7BBE"), (750,  "#1C6DB4"), (870,  "#2A76B8"),
-        (960,  "#4C8AC4"), (1020, "#7FA6CD"), (1075, "#C1A07E"), (1110, "#D68F55"),
-        (1140, "#B85A34"), (1170, "#8E4340"), (1200, "#5E3A54"), (1240, "#33304C"),
-        (1300, "#161C31"), (1380, "#0A101E"), (1440, "#080D18")
+    /// The sky does not change at an even rate, so the five hours after
+    /// midnight get six slots and the three hours of sunset and afterglow get
+    /// twelve.
+    private static let bands: [(name: String, start: Int, end: Int, slots: Int)] = [
+        ("한밤", 0, 300, 6),
+        ("여명", 300, 480, 6),
+        ("낮", 480, 960, 12),
+        ("늦은 오후", 960, 1080, 6),
+        ("노을", 1080, 1260, 12),
+        ("밤", 1260, 1440, 6)
     ]
 
-    private static let curve: [(minute: Int, lab: Lab)] = anchors.map {
-        (minute: $0.minute, lab: Lab(RGB(hex: $0.hex) ?? RGB(r: 0, g: 0, b: 0)))
+    static let slots: [SkySlot] = build()
+
+    /// Six across, eight down. Wide enough that the beads stay big enough to
+    /// aim at, and the whole board still fits on one screen without scrolling.
+    static let columns = 6
+
+    static func slot(forMinute minute: Int) -> SkySlot {
+        let clamped = min(1439, max(0, minute))
+        return slots.last { $0.startMinute <= clamped } ?? slots[0]
     }
 
-    static func colour(atMinute minute: Int) -> RGB {
-        let m = ((minute % 1440) + 1440) % 1440
-        for index in 0..<(curve.count - 1) {
-            let (m0, lab0) = curve[index]
-            let (m1, lab1) = curve[index + 1]
-            guard m >= m0, m <= m1 else { continue }
-            let raw = m1 == m0 ? 0 : Double(m - m0) / Double(m1 - m0)
-            // Smoothstep, so the anchors do not show up as creases in the ramp.
-            let t = raw * raw * (3 - 2 * raw)
-            return RGB(Lab(
-                l: lab0.l + (lab1.l - lab0.l) * t,
-                a: lab0.a + (lab1.a - lab0.a) * t,
-                b: lab0.b + (lab1.b - lab0.b) * t
-            ))
-        }
-        return RGB(curve[curve.count - 1].lab)
+    /// Which bead a point on the board belongs to.
+    ///
+    /// The grid is a fixed pitch, so this is division rather than a hit test
+    /// against forty-eight views. The gutter between two beads counts as part of
+    /// the one before it: a finger between beads should land somewhere rather
+    /// than nowhere, and a board with dead strips in it is a board that ignores
+    /// presses for no reason a person can see.
+    ///
+    /// Points outside the grid return nil, which is how lifting a finger off the
+    /// board takes a press back.
+    static func slot(at point: CGPoint, diameter: CGFloat, gap: CGFloat) -> SkySlot? {
+        guard point.x >= 0, point.y >= 0 else { return nil }
+        let pitch = diameter + gap
+        let column = Int((point.x / pitch).rounded(.down))
+        let row = Int((point.y / pitch).rounded(.down))
+        guard column < columns else { return nil }
+        let index = row * columns + column
+        guard index < slots.count else { return nil }
+        return slots[index]
     }
+
+    static func band(forMinute minute: Int) -> String {
+        let clamped = min(1439, max(0, minute))
+        return bands.last { $0.start <= clamped }?.name ?? bands[0].name
+    }
+
+    // MARK: - How a colour is drawn
 
     /// The colour an empty slot is drawn in: the sky that time of day usually
     /// is, faded until it can only place a colour, never stand in for one.
@@ -79,78 +91,31 @@ enum SkyBoard {
         ))
     }
 
-    // MARK: - Slots
-
-    /// Slot counts at level 0. The sky does not change at an even rate, so the
-    /// five hours after midnight get six slots and the three hours of sunset
-    /// and afterglow get twelve. Every level doubles these.
-    private static let bands: [(name: String, start: Int, end: Int, slots: Int)] = [
-        ("한밤", 0, 300, 6),
-        ("여명", 300, 480, 6),
-        ("낮", 480, 960, 12),
-        ("늦은 오후", 960, 1080, 6),
-        ("노을", 1080, 1260, 12),
-        ("밤", 1260, 1440, 6)
-    ]
-
-    private static let boards: [[SkySlot]] = (0...maxLevel).map { build(level: $0) }
-
-    static func slots(level: Int) -> [SkySlot] {
-        boards[min(max(level, 0), maxLevel)]
+    /// A collected sky drawn at its age: its own colour while it is current,
+    /// and about three fifths of the way to its empty colour once it has gone
+    /// stale.
+    ///
+    /// It never travels the whole way. A slot that was collected has to keep
+    /// reading as collected even at its faintest, and shape should not be the
+    /// only thing left saying so.
+    static func faded(_ rgb: RGB, freshness: Double) -> RGB {
+        guard freshness < 1 else { return rgb }
+        return RGB(Lab(rgb).blended(toward: Lab(ghost(of: rgb)), by: (1 - freshness) * 0.62))
     }
 
-    /// Wider at level 0 so the beads stay large; more columns as the board
-    /// gets finer, so it keeps roughly the shape of a screen and keeps fitting
-    /// on one without scrolling.
-    static func columns(level: Int) -> Int {
-        [6, 8, 12][min(max(level, 0), maxLevel)]
-    }
-
-    static func slot(forMinute minute: Int, level: Int) -> SkySlot {
-        let board = slots(level: level)
-        let clamped = min(1439, max(0, minute))
-        return board.last { $0.startMinute <= clamped } ?? board[0]
-    }
-
-    static func band(forMinute minute: Int) -> String {
-        let clamped = min(1439, max(0, minute))
-        return bands.last { $0.start <= clamped }?.name ?? bands[0].name
-    }
-
-    /// The finest board every slot of which has been filled. Derived rather
-    /// than stored, so it can never disagree with the photos.
-    static func level(forMinutes minutes: [Int]) -> Int {
-        var level = 0
-        while level < maxLevel {
-            let board = slots(level: level)
-            var covered = Set<Int>()
-            for minute in minutes {
-                covered.insert(slot(forMinute: minute, level: level).id)
-            }
-            guard covered.count >= board.count else { break }
-            level += 1
-        }
-        return level
-    }
-
-    private static func build(level: Int) -> [SkySlot] {
+    private static func build() -> [SkySlot] {
         var result: [SkySlot] = []
-        let factor = 1 << level
         for band in bands {
-            let count = band.slots * factor
+            let count = band.slots
             let width = Double(band.end - band.start) / Double(count)
             for index in 0..<count {
                 let start = band.start + Int((width * Double(index)).rounded())
                 let end = band.start + Int((width * Double(index + 1)).rounded())
-                let rgb = colour(atMinute: (start + end) / 2)
                 result.append(
                     SkySlot(
                         id: result.count,
-                        level: level,
                         startMinute: start,
                         endMinute: end,
-                        rgb: rgb,
-                        ghost: ghost(of: rgb),
                         band: band.name
                     )
                 )

@@ -143,3 +143,31 @@ enum ThumbnailCache {
         cache.removeObject(forKey: id as NSString)
     }
 }
+
+/// Decoded full-size photos, bounded by bytes rather than by count.
+///
+/// The feed scrolls past these one after another and a 1280-square decode is
+/// about 6.5MB, so a count limit of any useful size would let the total run into
+/// gigabytes. A cost limit lets the system drop the coldest as soon as the pile
+/// gets fat, which is the failure mode that actually matters here — this app has
+/// already been killed once for holding too many pixels at once.
+enum PhotoCache {
+    private static let cache: NSCache<NSString, UIImage> = {
+        let cache = NSCache<NSString, UIImage>()
+        cache.totalCostLimit = 48 * 1024 * 1024
+        return cache
+    }()
+
+    static func image(id: String, data: Data) -> UIImage? {
+        let key = id as NSString
+        if let hit = cache.object(forKey: key) { return hit }
+        guard let image = UIImage(data: data) else { return nil }
+        let pixels = image.size.width * image.scale * image.size.height * image.scale
+        cache.setObject(image, forKey: key, cost: Int(pixels) * 4)
+        return image
+    }
+
+    static func forget(id: String) {
+        cache.removeObject(forKey: id as NSString)
+    }
+}

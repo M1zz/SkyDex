@@ -17,6 +17,17 @@ struct Lab: Equatable, Hashable {
         self.b = b
     }
 
+    /// Straight-line mix in Lab. Every blend in the app goes through here:
+    /// the day curve between its anchors, an empty slot's fade, and a collected
+    /// slot's fade as it ages.
+    func blended(toward other: Lab, by t: Double) -> Lab {
+        Lab(
+            l: l + (other.l - l) * t,
+            a: a + (other.a - a) * t,
+            b: b + (other.b - b) * t
+        )
+    }
+
     init(_ rgb: RGB) {
         func linearize(_ c: Double) -> Double {
             c <= 0.04045 ? c / 12.92 : pow((c + 0.055) / 1.055, 2.4)

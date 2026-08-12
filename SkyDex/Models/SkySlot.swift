@@ -2,23 +2,17 @@ import Foundation
 
 /// One place on the board.
 ///
-/// A slot is a stretch of the day, not a colour to be matched. Its `rgb` is the
-/// sky that time of day usually is; nothing ever compares a photo against it.
-/// `ghost` is that same colour faded — what the slot is drawn in until it has
-/// been collected, so an empty board still tells you where each colour goes.
+/// A slot is a stretch of the day, not a colour to be matched. It knows when it
+/// is and what part of the day it belongs to, and nothing about how it looks —
+/// ask `SkyDay` for that, because the same half hour is a different sky in
+/// January than in July.
 ///
-/// `id` is an index within one board, so it only means anything alongside the
-/// `level` it came from.
+/// `id` is the slot's index on the board, 0–47, running midnight to midnight.
 struct SkySlot: Identifiable, Hashable {
     let id: Int
-    let level: Int
     let startMinute: Int
     let endMinute: Int
-    let rgb: RGB
-    let ghost: RGB
     let band: String
-
-    var hex: String { rgb.hex }
 
     var timeLabel: String {
         String(

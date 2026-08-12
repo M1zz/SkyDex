@@ -1,5 +1,6 @@
 import SwiftData
 import SwiftUI
+import TipKit
 
 @main
 struct SkyDexApp: App {
@@ -11,6 +12,13 @@ struct SkyDexApp: App {
         // is already reading the rows it rewrites.
         SkyEntry.repairLegacyRows(in: container.mainContext)
         self.container = container
+
+        // Once a day at most. The forecast has something to say every morning
+        // and that is exactly why it must not say it every time the app opens.
+        try? Tips.configure([
+            .displayFrequency(.daily),
+            .datastoreLocation(.applicationDefault)
+        ])
     }
 
     var body: some Scene {

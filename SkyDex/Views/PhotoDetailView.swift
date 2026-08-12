@@ -1,17 +1,31 @@
 import SwiftData
 import SwiftUI
 
-/// One filled slot, opened.
+/// One collected sky, as a card you write on.
 ///
-/// The line the person wrote comes first, right under the date and set larger
-/// than anything else here. The hex and the slot are what the app worked out;
-/// they sit below, because they are the least interesting thing about the day
+/// This used to be a photo with a form under it: a field, a divider, a hex code.
+/// A field is a thing you fill in when something requires it, and nothing here
+/// requires it — so the line went unwritten.
+///
+/// So the photo and the line are one object now. The sky is the top of the card
+/// and the writing sits on the same surface directly beneath it, close enough
+/// that the empty space belongs to the picture rather than to a form. The prompt
+/// asks a question instead of naming a field: "한 줄" tells you what to type,
+/// "이 하늘을 보면서 들었던 생각" tells you what to say.
+///
+/// The way out doubles as the confirmation. With nothing written it is "닫기";
+/// the moment there is a line it becomes a green tick, and pressing it writes the
+/// store to disk rather than trusting the autosave timer. A note left through a
+/// button that says "close" does not feel like it was kept.
+///
+/// An empty card opens with the keyboard already up. Nothing else here is waiting
+/// for input, so there is no cost to guessing, and a note you have to go looking
+/// for is a note that never gets written. A card that already has a line on it
+/// does not steal focus — you came back to read it.
+///
+/// What the app worked out — the hour, the part of the day, the colour — sits
+/// below the card in small type. It is the least interesting thing about the day
 /// you took the photo.
-///
-/// An empty line opens with the keyboard already up. Nothing else on the sheet
-/// is waiting for input, so there is no cost to guessing, and a note you have
-/// to go looking for is a note that never gets written. A line that is already
-/// there does not steal focus — you came back to read it.
 struct PhotoDetailView: View {
     @Bindable var entry: SkyEntry
 
@@ -19,21 +33,28 @@ struct PhotoDetailView: View {
     @Environment(\.modelContext) private var context
 
     @State private var confirmingDelete = false
+    @State private var saves = 0
     @FocusState private var writing: Bool
+
+    private var written: Bool { !entry.note.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
 
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(alignment: .leading, spacing: 20) {
-                    photo
+                VStack(spacing: 14) {
+                    card
                     details
                 }
+                .padding(.horizontal, 16)
+                .padding(.top, 8)
+                .padding(.bottom, 32)
             }
+            .scrollDismissesKeyboard(.interactively)
             .navigationBarTitleDisplayMode(.inline)
             .task {
                 guard entry.note.isEmpty else { return }
-                // A beat, so focus lands after the sheet has finished its
-                // presentation animation rather than fighting it.
+                // A beat, so focus lands after the screen has finished arriving
+                // rather than fighting it.
                 try? await Task.sleep(for: .milliseconds(450))
                 writing = true
             }
@@ -50,12 +71,35 @@ struct PhotoDetailView: View {
                     }
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("닫기") {
+                    // Once there is a line on the card, the way out stops being
+                    // "닫기" and becomes a green tick. Leaving a note through a
+                    // button labelled "close" felt like walking away from it;
+                    // this says the card took it.
+                    Button {
                         writing = false
+                        // And it really is saved, not just labelled that way.
+                        // The context autosaves, but a tick that means "kept"
+                        // should not be waiting on a timer to become true.
+                        try? context.save()
+                        saves += 1
                         dismiss()
+                    } label: {
+                        if written {
+                            Image(systemName: "checkmark.circle.fill")
+                                .font(.title2)
+                                .symbolRenderingMode(.palette)
+                                .foregroundStyle(.white, .green)
+                                .transition(.scale(scale: 0.4).combined(with: .opacity))
+                        } else {
+                            Text("닫기")
+                                .transition(.opacity)
+                        }
                     }
+                    .animation(.spring(response: 0.32, dampingFraction: 0.65), value: written)
+                    .accessibilityLabel(written ? "저장" : "닫기")
                 }
             }
+            .sensoryFeedback(.success, trigger: saves)
             .confirmationDialog(
                 "이 하늘을 지울까요?",
                 isPresented: $confirmingDelete,
@@ -69,67 +113,80 @@ struct PhotoDetailView: View {
         }
     }
 
+    /// The card: sky on top, your line underneath, one surface.
+    private var card: some View {
+        VStack(spacing: 0) {
+            photo
+                .aspectRatio(1, contentMode: .fill)
+                .frame(maxWidth: .infinity)
+                .clipped()
+
+            ZStack(alignment: .topLeading) {
+                // The invitation is drawn rather than handed to the field: a
+                // `TextField` prompt is one line and truncates, and half a
+                // question is not a question.
+                if entry.note.isEmpty {
+                    Text("이 하늘을 보면서 들었던 생각,\n하고 싶은 한 마디")
+                        .foregroundStyle(.tertiary)
+                        .allowsHitTesting(false)
+                }
+
+                TextField("", text: $entry.note, axis: .vertical)
+                    .textFieldStyle(.plain)
+                    .focused($writing)
+                    // The caret takes the colour of the sky it is written under.
+                    .tint(Color(entry.rgb))
+            }
+            .font(.title3)
+            .lineSpacing(5)
+            .lineLimit(2...6)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.horizontal, 20)
+            .padding(.top, 20)
+            .padding(.bottom, 24)
+            // The whole lower half of the card is the writing surface, not just
+            // the line of text sitting in it.
+            .contentShape(Rectangle())
+            .onTapGesture { writing = true }
+        }
+        .background(Color(.secondarySystemBackground))
+        .clipShape(RoundedRectangle(cornerRadius: 26, style: .continuous))
+    }
+
     @ViewBuilder
     private var photo: some View {
         if let image = entry.photo {
             Image(uiImage: image)
                 .resizable()
-                .scaledToFit()
-                .frame(maxWidth: .infinity)
+                .scaledToFill()
         } else {
             Color(entry.rgb)
-                .aspectRatio(1, contentMode: .fit)
         }
     }
 
+    /// Underneath and quiet: when it was, what part of the day, what colour.
     private var details: some View {
-        VStack(alignment: .leading, spacing: 18) {
-            VStack(alignment: .leading, spacing: 10) {
-                Text(entry.capturedAt, format: .dateTime.year().month().day().weekday(.wide).hour().minute())
-                    .font(.footnote)
-                    .foregroundStyle(.secondary)
+        HStack(spacing: 8) {
+            Circle()
+                .fill(Color(entry.rgb))
+                .frame(width: 11, height: 11)
 
-                // The line sits directly under the date and is set larger than
-                // anything else on the sheet. It is the only part of a capture
-                // the person wrote themselves; the hex and the slot are just
-                // what the app worked out.
-                TextField("그때 무슨 생각을 했나요", text: $entry.note, axis: .vertical)
-                    .font(.title3)
-                    .lineLimit(1...5)
-                    .textFieldStyle(.plain)
-                    .focused($writing)
-            }
+            Text(entry.capturedAt, format: .dateTime.year().month().day().weekday().hour().minute())
+            Text("·")
+            Text(entry.band)
 
-            Divider()
+            Spacer()
 
-            HStack(spacing: 12) {
-                RoundedRectangle(cornerRadius: 6, style: .continuous)
-                    .fill(Color(entry.rgb))
-                    .frame(width: 40, height: 40)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 6, style: .continuous)
-                            .strokeBorder(Color.primary.opacity(0.1), lineWidth: 1)
-                    )
-                VStack(alignment: .leading, spacing: 2) {
-                    Text(entry.hex)
-                        .font(.subheadline)
-                        .monospaced()
-                    Text(slotNote)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                }
-            }
+            Text(entry.hex)
+                .monospaced()
         }
-        .padding(.horizontal, 20)
-        .padding(.bottom, 24)
+        .font(.caption)
+        .foregroundStyle(.secondary)
+        .padding(.horizontal, 4)
     }
-
-    /// The band, not a slot range. The board changes resolution as it fills,
-    /// so a range printed here would go stale; "낮" never does.
-    private var slotNote: String { entry.band }
 
     private func delete() {
-        ThumbnailCache.forget(id: entry.uuid.uuidString)
+        entry.forgetImages()
         context.delete(entry)
         dismiss()
     }

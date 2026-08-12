@@ -4,17 +4,17 @@ import UIKit
 
 /// One collected sky.
 ///
-/// Nothing here judges the photo. A capture is written the moment it is taken
-/// and it fills the slot its clock time falls in — no tolerance, no rejection,
-/// no way to aim at an easier slot.
+/// Nothing here judges the photo. A capture is written the moment it is taken and
+/// kept — no tolerance, no rejection, nothing to pass.
 ///
 /// `minuteOfDay` is stored even though it could be derived from `capturedAt`,
 /// because `@Query` can only sort on stored properties.
 ///
-/// Which slot a photo occupies is deliberately *not* stored. The board changes
-/// resolution as it fills, so a slot number written at one level would be wrong
-/// at the next. The minute is the fact; the slot is a question you ask the
-/// board.
+/// A photo does not belong to a slot. The board is a set of colours for one day,
+/// and whether this sky fills one of them is a question about colour, asked fresh
+/// every time the board is drawn — tomorrow's board asks it again and gets a
+/// different answer. What is stored is what was true: when it was taken and what
+/// colour it came out.
 @Model
 final class SkyEntry {
     var uuid: UUID = UUID()
@@ -89,9 +89,25 @@ final class SkyEntry {
     /// how fine the board currently is.
     var band: String { SkyBoard.band(forMinute: minuteOfDay) }
 
-    func slot(atLevel level: Int) -> SkySlot {
-        SkyBoard.slot(forMinute: minuteOfDay, level: level)
+    /// How current this capture still is, `1` down to `0`.
+    ///
+    /// A week at full, then eight weeks running down to nothing. The board draws
+    /// a stale slot closer to its empty colour, so a board left alone slowly
+    /// goes quiet and one photo brings its slot straight back.
+    ///
+    /// The point is not to punish a gap. Nothing is deleted, no count breaks,
+    /// and a slot at zero is still visibly collected — it just stops looking
+    /// like today. Fading is the one honest way for a board of skies to say that
+    /// a sky was a while ago.
+    func freshness(at now: Date) -> Double {
+        let days = now.timeIntervalSince(capturedAt) / 86_400
+        guard days > SkyEntry.freshDays else { return 1 }
+        let fading = (days - SkyEntry.freshDays) / SkyEntry.fadingDays
+        return max(0, 1 - min(1, fading))
     }
+
+    static let freshDays: Double = 7
+    static let fadingDays: Double = 56
 
     var thumbnail: UIImage? {
         guard let thumbnailData else { return nil }
@@ -100,6 +116,12 @@ final class SkyEntry {
 
     var photo: UIImage? {
         guard let photoData else { return nil }
-        return UIImage(data: photoData)
+        return PhotoCache.image(id: uuid.uuidString, data: photoData)
+    }
+
+    /// Both caches, because both hold something keyed to this row.
+    func forgetImages() {
+        ThumbnailCache.forget(id: uuid.uuidString)
+        PhotoCache.forget(id: uuid.uuidString)
     }
 }
