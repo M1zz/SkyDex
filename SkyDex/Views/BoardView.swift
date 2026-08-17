@@ -69,6 +69,12 @@ struct BoardView: View {
     /// to fire on.
     @State private var opens = 0
 
+    /// Bumped every time the app comes back to the front, only so the timeline
+    /// has a value to be rebuilt on.
+    @State private var returns = 0
+
+    @Environment(\.scenePhase) private var scenePhase
+
     /// Matching every photo against today's forty-eight is done once per day,
     /// not once per frame. The cache is state so it survives the redraws.
     @State private var cache = SkyMatchCache()
@@ -103,7 +109,17 @@ struct BoardView: View {
                 let diameter = beadDiameter(in: area.size)
                 // The marked slot has to move with the clock, and so does the
                 // fading, rather than waiting for something else to redraw.
-                TimelineView(.periodic(from: .now, by: 60)) { clock in
+                //
+                // On the minute, not every sixty seconds. `.periodic(from: .now,
+                // by: 60)` counts from whenever the board happened to open, so a
+                // board opened at 21:00:47 updated at 21:01:47, 21:02:47, and
+                // moved the ring to the 21:30 bead at 21:30:47 — up to a minute
+                // after the slot it points at had ended. And `from: .now` is
+                // read again every time this body runs, so a forecast arriving
+                // or a capture landing re-anchored that offset to some new
+                // arbitrary second. `.everyMinute` fires on the minute boundary
+                // itself, which is where a clock changes.
+                TimelineView(.everyMinute) { clock in
                     // Rebuilt on the minute along with everything else, so a
                     // board left open overnight is drawing tomorrow's sun by
                     // morning.
@@ -209,12 +225,21 @@ struct BoardView: View {
                     .sensoryFeedback(.impact(weight: .light), trigger: opens)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                 }
+                // A schedule does not run while the app is away, so the board
+                // you come back to was drawn whenever you left. Coming back is
+                // exactly when a person looks at the ring, so the timeline is
+                // rebuilt then and reads the clock again on the spot rather than
+                // waiting for its next minute to come round.
+                .id(returns)
             }
             .toolbar(.hidden, for: .navigationBar)
             .task {
                 place.refresh()
                 if !revealed { revealed = true }
                 await weather.refresh(latitude: place.latitude, longitude: place.longitude)
+            }
+            .onChange(of: scenePhase) { _, phase in
+                if phase == .active { returns += 1 }
             }
             // The first fix usually lands after the board is already up, and a
             // forecast for the wrong city is worth replacing.
