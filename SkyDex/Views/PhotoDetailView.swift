@@ -26,6 +26,14 @@ import SwiftUI
 /// What the app worked out — the hour, the part of the day, the colour — sits
 /// below the card in small type. It is the least interesting thing about the day
 /// you took the photo.
+///
+/// The one exception is the name. `#BEA3C9` is small type because it is a
+/// serial number; 담자색 is not, because it is the answer to what this sky was.
+/// So the nearest name sits directly under the card at a size you read rather
+/// than check, with where it comes from and one line saying what it means — a
+/// name you do not recognise is not yet a name. Whether it says *this* colour or
+/// merely the *closest* one is stated, not blurred: the table has sixty names and
+/// the sky has all of them in between.
 struct PhotoDetailView: View {
     @Bindable var entry: SkyEntry
 
@@ -43,6 +51,7 @@ struct PhotoDetailView: View {
             ScrollView {
                 VStack(spacing: 14) {
                     card
+                    naming
                     details
                 }
                 .padding(.horizontal, 16)
@@ -162,6 +171,39 @@ struct PhotoDetailView: View {
         } else {
             Color(entry.rgb)
         }
+    }
+
+    /// The name of this sky, or the nearest one to it.
+    ///
+    /// The heading is the honest part. Inside five units of CIEDE2000 the colour
+    /// and the name are the same colour to look at, so it says "이 하늘의 이름";
+    /// past that it says "가장 가까운 이름" and means it. Sixty names cannot land
+    /// on every sky, and a card that rounds the difference away would be putting
+    /// words in the sky's mouth.
+    private var naming: some View {
+        let match = SkyNames.nearest(to: entry.lab)
+        return VStack(alignment: .leading, spacing: 5) {
+            Text(match.isClose ? "이 하늘의 이름" : "가장 가까운 이름")
+                .font(.caption2)
+                .foregroundStyle(.tertiary)
+
+            HStack(alignment: .firstTextBaseline, spacing: 7) {
+                Text(match.name.name)
+                    .font(.title3.weight(.semibold))
+                Text(match.name.origin.rawValue)
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
+                    .padding(.horizontal, 7)
+                    .padding(.vertical, 2)
+                    .background(.fill.tertiary, in: Capsule())
+            }
+
+            Text(match.name.gloss)
+                .font(.caption)
+                .foregroundStyle(.secondary)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.horizontal, 4)
     }
 
     /// Underneath and quiet: when it was, what part of the day, what colour.
