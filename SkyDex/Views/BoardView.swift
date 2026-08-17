@@ -26,6 +26,15 @@ import SwiftUI
 /// grid takes no words, and the words were competing with the only thing worth
 /// looking at.
 ///
+/// Which bead a sky fills is answered two ways, and the clock has the last
+/// word. Anything in the collection fills a bead whose colour it is near enough
+/// to — that is what makes the board a question about today. But a sky taken
+/// today fills the bead for the half hour it was taken in no matter what colour
+/// it came out, because the bead's colour was only ever a forecast and the
+/// photo was actually there. An overcast four o'clock that the forecast had as
+/// blue is not a miss; it is what four o'clock looked like, and the board says
+/// so in the colour you got.
+///
 /// A slot is chosen by the clock, never by the user, and no photo is ever
 /// turned away — the only thing a capture has to do is exist.
 struct BoardView: View {
@@ -104,10 +113,12 @@ struct BoardView: View {
                         longitude: place.longitude,
                         forecast: weather.forecast
                     )
-                    // Which of today's colours the collection already covers.
+                    // Which of today's colours the collection already covers,
+                    // plus whatever was shot today in each stretch of the clock.
                     let filled = cache.map(
                         targets: day.targets,
                         entries: entries,
+                        on: clock.date,
                         key: [
                             ISO8601DateFormatter.string(
                                 from: Calendar.current.startOfDay(for: clock.date),
@@ -121,15 +132,16 @@ struct BoardView: View {
                         ].joined(separator: "|")
                     )
 
-                    // The colour the sky is expected to be at this exact minute,
-                    // and therefore the bead you could go and fill right now.
-                    let nowColour = Lab(day.colour(atMinute: Double(
-                        SkyEntry.minuteOfDay(of: clock.date)
-                    )))
-                    let nowSlot = day.targets
-                        .enumerated()
-                        .min { deltaE2000(nowColour, $0.element) < deltaE2000(nowColour, $1.element) }?
-                        .offset
+                    // The bead a photo taken right now would fill. It used to be
+                    // whichever of today's colours this minute's sky is nearest,
+                    // back when a capture could only land by colour. Now a
+                    // capture lands in the stretch of clock it was taken in, so
+                    // the mark follows the clock — the ring is on the bead that
+                    // is about to change, which is the only thing it was ever
+                    // for.
+                    let nowSlot = SkyBoard.slot(
+                        forMinute: SkyEntry.minuteOfDay(of: clock.date)
+                    ).id
                     let columns = CGFloat(SkyBoard.columns)
                     let rows = CGFloat(SkyBoard.slots.count / SkyBoard.columns)
                     LazyVGrid(
@@ -238,7 +250,9 @@ struct BoardView: View {
 /// around the thumb rather than under it.
 ///
 /// The slot the clock is currently in wears a second ring outside itself, and
-/// that is all it gets. It used to keep its colour undimmed as well, from back
+/// that is all it gets. It is the bead a photo taken this minute would fill, so
+/// the ring is a pointer at the one thing on the board that is about to change.
+/// It used to keep its colour undimmed as well, from back
 /// when every other empty slot was grey and this was the only place a colour
 /// could be read off the board. Now that every empty ring carries its own faded
 /// sky, that treatment was saying a thing the neighbours already said, in the

@@ -12,6 +12,10 @@ import SwiftUI
 /// is a different colour and holds different photos, because what it asks is
 /// "what have I got that looks like this", not "what did I take at this hour".
 ///
+/// Today is the exception, here as on the board: a sky taken today in this
+/// slot's half hour is listed whatever colour it came out. It is what filled
+/// the bead, so it has to be what is behind it.
+///
 /// Everything, in the order it happened, is what the archive is for.
 ///
 /// Full screen rather than a sheet. A sheet is a card laid over the thing you
@@ -32,7 +36,9 @@ struct TimelineFeedView: View {
 
     @State private var opened: SkyEntry?
 
-    private var entries: [SkyEntry] { SkyMatch.all(near: target, in: all) }
+    private var entries: [SkyEntry] {
+        SkyMatch.all(near: target, in: all, filling: slot, on: .now)
+    }
 
     var body: some View {
         NavigationStack {

@@ -198,26 +198,25 @@ struct RootView: View {
         // the board it just landed on.
         screen = .board
 
-        // Which bead lights up is a colour question now, and the answer is
-        // whichever of today's colours this sky is nearest — if any of them are
-        // near enough at all. A sky that matches nothing today still gets kept;
-        // it simply has nowhere to pulse.
-        let day = SkyDay(
-            date: date,
-            latitude: place.latitude,
-            longitude: place.longitude,
-            forecast: weather.forecast
-        )
-        let nearest = day.targets
-            .enumerated()
-            .filter { deltaE2000($0.element, colour.lab) <= SkyMatch.radius }
-            .min { deltaE2000($0.element, colour.lab) < deltaE2000($1.element, colour.lab) }?
-            .offset
+        // The bead that lights up is the one this sky was taken in. It used to
+        // be a colour question — whichever of today's colours this sky was
+        // nearest, and nothing at all if none of them were near enough — which
+        // meant a photo of a sky the forecast had got wrong went into the
+        // collection with nowhere to pulse. A sky taken now is what now looks
+        // like, so it fills its own half hour and there is always somewhere.
+        //
+        // Only for a sky taken today, which is every sky the app can take right
+        // now. A photo brought in from an older day is still a colour question,
+        // and pulsing a bead it did not fill would be a lie the moment library
+        // imports start carrying their own date.
+        let landing = Calendar.current.isDateInToday(date)
+            ? SkyBoard.slot(forMinute: SkyEntry.minuteOfDay(of: date)).id
+            : nil
 
-        landed = nearest
+        landed = landing
         Task {
             try? await Task.sleep(for: .seconds(1.8))
-            if landed == nearest {
+            if landed == landing {
                 withAnimation(.easeOut(duration: 0.3)) { landed = nil }
             }
         }
