@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>하늘색 — 개인정보 처리방침</title>
+<meta name="description" content="iOS 앱 '하늘색'의 개인정보 처리방침. 개발자는 어떤 개인정보도 수집하지 않습니다.">
+<link rel="canonical" href="https://m1zz.github.io/SkyDex/privacy.html">
+<style>
+  :root {
+    --ink: #16202e;
+    --ink-soft: #5d6773;
+    --paper: #f4f5f7;
+    --card: #ffffff;
+    --line: #e2e5ea;
+    --accent: #2f7bbe;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #eef1f5;
+      --ink-soft: #a2acb8;
+      --paper: #0b111c;
+      --card: #141c28;
+      --line: #26303e;
+      --accent: #7fa4ce;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0 20px 72px;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.72 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+      "Pretendard", "Segoe UI", Roboto, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 680px; margin: 0 auto; }
+  h1 {
+    font-size: 28px; line-height: 1.35; letter-spacing: -0.02em;
+    margin: 48px 0 6px; font-weight: 700;
+  }
+  .meta { color: var(--ink-soft); font-size: 15px; }
+  h2 {
+    font-size: 19px; letter-spacing: -0.01em; margin: 40px 0 12px;
+    padding-top: 24px; border-top: 1px solid var(--line);
+  }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 1.2em; }
+  li { margin-bottom: 8px; }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  .card {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 16px; padding: 20px 22px; margin: 24px 0 8px;
+  }
+  .card p:last-child { margin-bottom: 0; }
+  .en {
+    margin-top: 44px; padding-top: 24px; border-top: 1px solid var(--line);
+    color: var(--ink-soft); font-size: 15.5px;
+  }
+  .en h2 { border-top: 0; padding-top: 0; color: var(--ink); }
+  footer {
+    margin-top: 48px; padding-top: 22px; border-top: 1px solid var(--line);
+    color: var(--ink-soft); font-size: 15px;
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <h1>개인정보 처리방침</h1>
+  <p class="meta">iOS 앱 <strong>하늘색</strong> · 시행일 2026년 8월 17일</p>
+
+  <div class="card">
+    <p><strong>요약.</strong> 이 앱은 서버가 없고 계정이 없습니다. 개발자는 이용자의
+    개인정보를 수집하지 않습니다. 찍은 사진과 색은 기기 안에만 저장됩니다.
+    분석 도구, 광고, 추적, 제3자 SDK를 쓰지 않습니다.</p>
+  </div>
+
+  <h2>1. 사진과 기록</h2>
+  <p>앱에서 촬영하거나 앨범에서 고른 사진, 그 사진에서 뽑아낸 색, 촬영 시각,
+  적어 넣은 한 줄은 모두 <strong>기기 안의 앱 저장소</strong>에만 보관됩니다.
+  개발자에게 전송되지 않고, 외부 서버로 올라가지 않습니다.</p>
+  <p>기기 백업(iCloud 또는 컴퓨터 백업)을 켜두셨다면 다른 앱 데이터와 마찬가지로
+  이 저장소도 백업에 포함될 수 있습니다. 그 백업은 Apple 계정에 속하며 개발자는
+  접근할 수 없습니다.</p>
+
+  <h2>2. 위치</h2>
+  <p>위치는 두 가지에만 쓰입니다.</p>
+  <ul>
+    <li>그 자리의 <strong>일출·일몰 시각</strong>을 계산해, 판의 기준 하늘색이
+      제 시간에 오게 하는 것</li>
+    <li>그 자리의 <strong>오늘 시간별 예보</strong>(구름·비)를 받아오는 것</li>
+  </ul>
+  <p>정확도는 킬로미터 단위로만 요청합니다. 마지막 좌표는 기기 안에 저장되며,
+  사진에 붙지 않고 개발자에게 전송되지 않습니다.</p>
+  <p>예보를 받기 위해 이 대략적인 좌표가 <strong>Apple의 날씨 서비스(WeatherKit)로
+  전송</strong>됩니다. 이 전송은 Apple의 처리방침을 따릅니다 —
+  <a href="https://www.apple.com/legal/privacy/">Apple 개인정보 보호 정책</a>,
+  <a href="https://weatherkit.apple.com/legal-attribution.html">Apple Weather 고지</a>.</p>
+  <p>위치 권한을 거부해도 앱은 그대로 동작합니다. 이때는 기본 좌표(서울)로 색을
+  계산하고, 예보 없이 맑은 하늘 기준으로 그립니다.</p>
+
+  <h2>3. 카메라와 사진 앨범</h2>
+  <p>카메라는 하늘을 촬영할 때만 켜집니다. 앨범에서는 이용자가 직접 고른 사진 한 장만
+  읽어 들이며, 앨범 전체를 훑지 않습니다. 앱이 이용자의 앨범에 사진을 저장하지도
+  않습니다.</p>
+
+  <h2>4. 수집하지 않는 것</h2>
+  <ul>
+    <li>이름, 이메일, 전화번호, 계정 — 로그인 자체가 없습니다</li>
+    <li>사용 기록, 통계, 크래시 수집 도구 — 설치돼 있지 않습니다</li>
+    <li>광고 식별자, 추적, 프로필링 — 쓰지 않습니다</li>
+  </ul>
+
+  <h2>5. 보관과 삭제</h2>
+  <p>기록은 이용자가 지울 때까지 기기에 남습니다. 사진을 열어 <strong>지우기</strong>를
+  누르거나 기록 화면에서 왼쪽으로 밀면 그 기록이 지워집니다. 앱을 삭제하면 모아둔
+  하늘과 저장된 좌표가 함께 사라집니다. 개발자가 가진 사본은 없으므로 별도의
+  삭제 요청 절차가 필요하지 않습니다.</p>
+
+  <h2>6. 아동</h2>
+  <p>이 앱은 어떤 이용자로부터도 개인정보를 수집하지 않으며, 아동으로부터도
+  수집하지 않습니다.</p>
+
+  <h2>7. 변경</h2>
+  <p>방침이 바뀌면 이 페이지를 고치고 위의 시행일을 갱신합니다. 변경 이력은
+  <a href="https://github.com/M1zz/SkyDex/commits/main/docs/privacy.html">GitHub 커밋 기록</a>에
+  그대로 남습니다.</p>
+
+  <h2>8. 문의</h2>
+  <p><a href="mailto:mizzking75@gmail.com">mizzking75@gmail.com</a></p>
+
+  <section class="en">
+    <h2>Summary in English</h2>
+    <p><strong>하늘색 (SkyDex)</strong> collects no personal data. There is no
+    server, no account, and no analytics, advertising, tracking or third-party
+    SDK in the app.</p>
+    <p>Photos you take or pick, the colour extracted from them, the capture time
+    and any note you write stay in the app's own storage on your device. They are
+    never sent to the developer.</p>
+    <p>Location is requested at kilometre accuracy and used only to (a) compute
+    local sunrise and sunset so the board's reference colours land at the right
+    time of day, and (b) fetch today's hourly cloud and rain forecast. The
+    coarse coordinate is stored on the device, is never attached to a photo, and
+    is never sent to the developer. It is sent to Apple's WeatherKit service to
+    retrieve the forecast, which is governed by
+    <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>.
+    Denying location permission is fine: the app falls back to a default
+    coordinate and a clear-sky reference.</p>
+    <p>Deleting an entry in the app, or deleting the app, removes the data. The
+    developer holds no copy. Contact:
+    <a href="mailto:mizzking75@gmail.com">mizzking75@gmail.com</a>.</p>
+  </section>
+
+  <footer>
+    <a href="./">지원 페이지</a> ·
+    <a href="https://github.com/M1zz/SkyDex">GitHub</a>
+  </footer>
+
+</main>
+</body>
+</html>

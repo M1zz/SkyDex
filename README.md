@@ -1,7 +1,15 @@
 # SkyDex
 
 빈 판을 하루 하늘색으로 채워나가는 iOS 앱. 마흔여덟 칸이고, 채운 칸은 사진이 오래되면
-천천히 흐려집니다.
+천천히 흐려집니다. 화면에 보이는 앱 이름은 **하늘색**이고, `SkyDex`는 저장소와 타깃의
+이름으로만 남아 있습니다.
+
+- 지원 페이지 — <https://m1zz.github.io/SkyDex/>
+- 개인정보 처리방침 — <https://m1zz.github.io/SkyDex/privacy.html>
+
+두 페이지는 `docs/`에 있고 GitHub Pages(`main` 브랜치의 `/docs`)가 그대로 서비스합니다.
+App Store Connect의 **지원 URL**과 **개인정보 처리방침 URL**에 이 두 주소를 넣으면 됩니다.
+방침을 고칠 일이 생기면 `docs/privacy.html`을 고치고 문서 안의 시행일도 함께 갱신하세요.
 
 Xcode 16 이상에서 `SkyDex.xcodeproj`를 열고 실행하세요. iOS 17.0+, SwiftUI + SwiftData,
 외부 의존성 없음. 실행 전 타깃 설정에서 Bundle Identifier(`com.yourname.SkyDex`)와 팀만
