@@ -59,6 +59,11 @@ struct RootView: View {
     /// from the archive — a reveal that replays on every visit is a stutter.
     @State private var boardRevealed = false
 
+    /// The sky currently laid under the board, if any. Held here rather than in
+    /// `BoardView` because the bar draws over it and has to know whether it is
+    /// standing on paper or on a photograph.
+    @State private var reading: ReadingSky?
+
     var body: some View {
         ZStack {
             // The archive lives to the right of the board, so it arrives from
@@ -71,7 +76,8 @@ struct RootView: View {
                     landed: landed,
                     place: place,
                     weather: weather,
-                    revealed: $boardRevealed
+                    revealed: $boardRevealed,
+                    reading: $reading
                 )
                     .transition(.move(edge: .leading).combined(with: .opacity))
             case .archive:
@@ -80,6 +86,10 @@ struct RootView: View {
             }
         }
         .animation(.spring(response: 0.42, dampingFraction: 0.88), value: screen)
+        // A photograph laid under the board belongs to the board. Leaving it up
+        // behind the archive, or waiting under it for the trip back, would make
+        // it a mode rather than something you are looking at.
+        .onChange(of: screen) { _, _ in reading = nil }
         // The bar sits outside the transition and does not move. It is the one
         // thing on screen that is in the same place before and after.
         .safeAreaInset(edge: .bottom) { bar }
@@ -163,7 +173,12 @@ struct RootView: View {
             // A material would do the same job, at the cost of drawing a seam
             // across a board that is meant to be one field of colour.
             LinearGradient(
-                colors: [Color(.systemBackground).opacity(0), Color(.systemBackground)],
+                // With a sky laid under the board the page is a photograph, and
+                // fading it into white at the bottom would draw the seam this
+                // gradient exists to avoid. It fades into the dark instead.
+                colors: reading == nil
+                    ? [Color(.systemBackground).opacity(0), Color(.systemBackground)]
+                    : [.black.opacity(0), .black.opacity(0.45)],
                 startPoint: .top,
                 endPoint: .bottom
             )
@@ -197,6 +212,8 @@ struct RootView: View {
         // A capture taken from the archive has no bead to pulse, so go and show
         // the board it just landed on.
         screen = .board
+        // And it lands on the board itself, not under whatever was being read.
+        reading = nil
 
         // The bead that lights up is the one this sky was taken in. It used to
         // be a colour question — whichever of today's colours this sky was

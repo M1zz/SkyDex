@@ -20,11 +20,16 @@ import SwiftUI
 /// gets old, so a full board is something kept rather than something finished,
 /// and one photo brings its slot back to full.
 ///
-/// There is no text on it. Band names, clock ranges and a running count were
-/// all saying what the colours already say — the top is night, it lightens
-/// downward into day and darkens again at the bottom. Reading that off the
-/// grid takes no words, and the words were competing with the only thing worth
-/// looking at.
+/// There is no text on it until you ask for some. Band names, clock ranges and
+/// a running count were all saying what the colours already say — the top is
+/// night, it lightens downward into day and darkens again at the bottom.
+/// Reading that off the grid takes no words, and the words were competing with
+/// the only thing worth looking at.
+///
+/// Pressing a collected bead is the asking. The photograph goes under the whole
+/// board, the rest of the beads go quiet, and the name of that colour — 담자색,
+/// where the name comes from, one line of what it means — is written on it.
+/// Nothing opens and nothing is covered; the same press again puts it away.
 ///
 /// Which bead a sky fills is answered two ways, and the clock has the last
 /// word. Anything in the collection fills a bead whose colour it is near enough
@@ -52,6 +57,11 @@ struct BoardView: View {
     /// the archive does not replay it.
     @Binding var revealed: Bool
 
+    /// The sky being read right now — its photograph is under the board and its
+    /// name is on it. Owned by the shell, because the bar at the bottom has to
+    /// know whether it is standing on paper or on a photograph.
+    @Binding var reading: ReadingSky?
+
     /// Ascending, so building the map leaves the most recent capture in each
     /// slot: shooting the same half-hour again replaces the bead rather than
     /// being locked out by a first attempt you did not like.
@@ -59,6 +69,9 @@ struct BoardView: View {
 
     @State private var tappedEmpty: SkySlot?
     @State private var openedSlot: SkySlot?
+
+    /// The card for the sky being read, when it is asked for by name.
+    @State private var writingCard: SkyEntry?
 
     /// The bead under the finger right now. One gesture covers the whole board
     /// rather than a tap per bead, so a press can be dragged across the grid and
@@ -101,6 +114,135 @@ struct BoardView: View {
         let byWidth = (size.width - sidePadding * 2 - gap * (columns - 1)) / columns
         let byHeight = (size.height - 24 - gap * (rows - 1)) / rows
         return max(18, min(byWidth, byHeight))
+    }
+
+    /// Put a sky up, or put it away.
+    private func show(_ sky: ReadingSky?) {
+        withAnimation(.easeOut(duration: sky == nil ? 0.25 : 0.34)) {
+            reading = sky
+        }
+    }
+
+    /// The photograph, laid under the board.
+    ///
+    /// Pressing a bead used to throw a full screen over the board, and the board
+    /// is the picture of the day — covering it to look at one sky in it threw the
+    /// day away, and the way back was a button labelled 닫기. So the sky comes up
+    /// *behind* the beads instead. The rest of the board steps back to a fifth of
+    /// its strength, the bead you pressed stays exactly where it is with a white
+    /// ring on it, and you are still on the same screen. Anywhere you press next
+    /// is either another sky or the way out.
+    ///
+    /// The dark over it is not decoration. Beads are drawn in the colours of the
+    /// sky and the photograph underneath is a sky, so without it a pale bead on a
+    /// pale cloud disappears; the words could not be white either.
+    private func backdrop(_ sky: ReadingSky) -> some View {
+        ZStack {
+            Group {
+                if let image = sky.entry.photo {
+                    Image(uiImage: image)
+                        .resizable()
+                        .scaledToFill()
+                } else {
+                    Color(sky.entry.rgb)
+                }
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .clipped()
+
+            Color.black.opacity(0.28)
+
+            // Heavier at the end the words are at.
+            LinearGradient(
+                colors: [.black.opacity(0.55), .clear],
+                startPoint: sky.captionAtTop ? .top : .bottom,
+                endPoint: .center
+            )
+        }
+        .ignoresSafeArea()
+        .contentShape(Rectangle())
+        // The board's own gesture only covers the grid; this catches the rest.
+        .onTapGesture { show(nil) }
+        .transition(.opacity)
+    }
+
+    /// What this sky is called, on the board.
+    ///
+    /// The name lived on the photo card, which meant it was only ever read by
+    /// someone who had gone into the archive and opened one. It belongs here: the
+    /// board is where you look at your skies, and a colour you cannot name is a
+    /// colour you cannot go looking for again. Whether it is *this* sky's name or
+    /// merely the nearest one is said out loud, exactly as it is on the card —
+    /// the table has a hundred and twenty-two names and the sky has all of them
+    /// in between.
+    ///
+    /// It is also the way in to the card itself, since the bead no longer opens
+    /// anything: the block is a button, with the chevron to say so.
+    private func caption(_ sky: ReadingSky) -> some View {
+        let match = SkyNames.nearest(to: sky.entry.lab)
+        let sameColour = SkyMatch.all(
+            near: target(of: sky.slot),
+            in: entries,
+            filling: sky.slot,
+            on: .now
+        ).count
+
+        return VStack(alignment: .leading, spacing: 5) {
+            Text(match.isClose ? "이 하늘의 이름" : "가장 가까운 이름")
+                .font(.caption2)
+                .foregroundStyle(.white.opacity(0.55))
+
+            HStack(alignment: .firstTextBaseline, spacing: 7) {
+                Text(match.name.name)
+                    .font(.title2.weight(.semibold))
+                Text(match.name.origin.rawValue)
+                    .font(.caption2)
+                    .padding(.horizontal, 7)
+                    .padding(.vertical, 2)
+                    .background(.white.opacity(0.16), in: Capsule())
+                Image(systemName: "chevron.right")
+                    .font(.caption2.weight(.semibold))
+                    .foregroundStyle(.white.opacity(0.4))
+            }
+            .foregroundStyle(.white)
+
+            Text(match.name.gloss)
+                .font(.callout)
+                .foregroundStyle(.white.opacity(0.82))
+                .fixedSize(horizontal: false, vertical: true)
+
+            HStack(spacing: 6) {
+                Text(sky.entry.capturedAt, format: .dateTime.month().day().hour().minute())
+                Text("·")
+                Text(sky.slot.band)
+                Text("·")
+                Text(sky.entry.hex)
+                    .monospaced()
+                if sameColour > 1 {
+                    Text("·")
+                    // The bead holds more than the one sky showing. The list is
+                    // asked for by name rather than by pressing the bead, which
+                    // now answers here.
+                    Button("이 색 \(sameColour)장") { openedSlot = sky.slot }
+                        .buttonStyle(.plain)
+                        .underline()
+                }
+            }
+            .font(.caption2)
+            .foregroundStyle(.white.opacity(0.62))
+            .padding(.top, 3)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.horizontal, 22)
+        .padding(.vertical, 20)
+        // The board runs under the bar, so words at the bottom have to stand
+        // clear of the shutter rather than trust the layout to do it.
+        .padding(.bottom, sky.captionAtTop ? 0 : 88)
+        .contentShape(Rectangle())
+        .onTapGesture { writingCard = sky.entry }
+        .accessibilityElement(children: .combine)
+        .accessibilityHint("한 줄 쓰기")
+        .transition(.opacity.combined(with: .offset(y: sky.captionAtTop ? -10 : 10)))
     }
 
     var body: some View {
@@ -177,6 +319,8 @@ struct BoardView: View {
                                 isNew: landed == slot.id,
                                 isNow: slot.id == nowSlot,
                                 isPressed: pressed?.id == slot.id,
+                                isRead: reading?.slot.id == slot.id,
+                                isDimmed: reading != nil && reading?.slot.id != slot.id,
                                 diameter: diameter
                             )
                             // The board assembles itself once, a row at a time
@@ -209,10 +353,19 @@ struct BoardView: View {
                                 // Lifting off the board chooses nothing, which is
                                 // how a press is taken back.
                                 guard let landing else { return }
-                                if filled[landing.id] == nil {
-                                    tappedEmpty = landing
+                                if let entry = filled[landing.id] {
+                                    // The same bead twice puts it away, which is
+                                    // the only way out that needs no target.
+                                    show(reading?.slot.id == landing.id
+                                        ? nil
+                                        : ReadingSky(slot: landing, entry: entry))
+                                } else if reading != nil {
+                                    // Anywhere else on the board is a way out.
+                                    // Answering an empty slot with a sheet on top
+                                    // of a photograph would be two things at once.
+                                    show(nil)
                                 } else {
-                                    openedSlot = landing
+                                    tappedEmpty = landing
                                 }
                                 opens += 1
                             }
@@ -231,6 +384,23 @@ struct BoardView: View {
                 // rebuilt then and reads the clock again on the spot rather than
                 // waiting for its next minute to come round.
                 .id(returns)
+                // Behind the beads rather than over them, and it reaches past
+                // every edge — under the status bar and under the shutter — so
+                // it reads as the page the board is drawn on rather than as a
+                // panel that opened.
+                .background {
+                    if let reading {
+                        backdrop(reading)
+                    }
+                }
+                // The words go to the opposite end of the board from the bead
+                // that was pressed, so the one thing you are looking at is never
+                // under the thing that describes it.
+                .overlay(alignment: reading?.captionAtTop == true ? .top : .bottom) {
+                    if let reading {
+                        caption(reading)
+                    }
+                }
             }
             .toolbar(.hidden, for: .navigationBar)
             .task {
@@ -246,17 +416,40 @@ struct BoardView: View {
             .onChange(of: place.latitude) { _, latitude in
                 Task { await weather.refresh(latitude: latitude, longitude: place.longitude) }
             }
-            // Full screen, not a sheet. A collected sky is the content of this
-            // app, and content does not arrive as a card over the thing you were
-            // doing.
+            // Every sky this bead's colour holds, which is a list and is asked
+            // for by name from the caption. The bead itself no longer opens it:
+            // pressing a bead answers on the board now.
             .fullScreenCover(item: $openedSlot) { slot in
                 TimelineFeedView(slot: slot, target: target(of: slot))
+            }
+            .fullScreenCover(item: $writingCard) { entry in
+                PhotoDetailView(entry: entry)
             }
             // This one stays a sheet: it is a note about a slot, not a sky.
             .sheet(item: $tappedEmpty) { slot in
                 EmptySlotSheet(slot: slot, place: place, weather: weather)
             }
         }
+    }
+}
+
+/// A sky held up: which bead was pressed, and what is behind it.
+///
+/// The slot comes along with the photo because the words under it are about the
+/// place on the board as much as the sky — what time of day this is, and how
+/// many other skies the same bead holds.
+struct ReadingSky: Identifiable, Equatable {
+    let slot: SkySlot
+    let entry: SkyEntry
+
+    var id: Int { slot.id }
+
+    /// Top half of the board, so the words go to the bottom, and the other way
+    /// round. A caption over the bead it describes is a caption in the way.
+    var captionAtTop: Bool { slot.id >= SkyBoard.slots.count / 2 }
+
+    static func == (lhs: ReadingSky, rhs: ReadingSky) -> Bool {
+        lhs.slot == rhs.slot && lhs.entry.uuid == rhs.entry.uuid
     }
 }
 
@@ -299,6 +492,14 @@ private struct Bead: View {
     let isNew: Bool
     let isNow: Bool
     let isPressed: Bool
+
+    /// This is the sky currently laid under the board.
+    let isRead: Bool
+
+    /// Some other bead is, and this one steps back so the photograph can be
+    /// seen through the board rather than around it.
+    let isDimmed: Bool
+
     let diameter: CGFloat
 
     private var ringWidth: CGFloat { max(3, diameter * 0.17) }
@@ -333,13 +534,18 @@ private struct Bead: View {
                     .transition(.opacity.animation(.easeInOut(duration: 0.4)))
             }
         }
-        .overlay { if isNew { Circle().strokeBorder(.white, lineWidth: 2.5) } }
+        .overlay { if isNew || isRead { Circle().strokeBorder(.white, lineWidth: 2.5) } }
+        // A bead whose sky is up keeps its full colour and grows a little; every
+        // other one goes quiet. The board is still there, just underneath.
+        .opacity(isDimmed ? 0.2 : 1)
+        .animation(.easeOut(duration: 0.3), value: isDimmed)
         // Grows under the finger so the thing being chosen is visible past the
         // thumb covering it.
-        .scaleEffect(isPressed ? 1.3 : (isNew ? 1.14 : 1))
-        .zIndex(isPressed ? 3 : (isNew ? 2 : (isNow ? 1 : 0)))
+        .scaleEffect(isPressed ? 1.3 : (isNew ? 1.14 : (isRead ? 1.22 : 1)))
+        .zIndex(isPressed ? 4 : (isNew ? 3 : (isRead ? 2 : (isNow ? 1 : 0))))
         .animation(.spring(response: 0.28, dampingFraction: 0.6), value: isPressed)
         .animation(.spring(response: 0.35, dampingFraction: 0.55), value: isNew)
+        .animation(.spring(response: 0.34, dampingFraction: 0.7), value: isRead)
         .contentShape(Circle())
     }
 }
@@ -388,6 +594,19 @@ private struct EmptySlotSheet: View {
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 12)
 
+                // The colour has a name whether or not anyone has photographed
+                // it yet, and an empty slot is exactly where you would want to
+                // know what you are going out to look for.
+                VStack(spacing: 3) {
+                    let match = SkyNames.nearest(to: Lab(day.colour(of: slot)))
+                    Text("\(match.name.name) · \(match.name.origin.rawValue)")
+                        .font(.subheadline.weight(.medium))
+                    Text(match.name.gloss)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.center)
+                }
+
                 HStack(spacing: 10) {
                     Circle()
                         .fill(Color(day.colour(of: slot)))
@@ -435,7 +654,8 @@ private struct EmptySlotSheet: View {
         landed: nil,
         place: Place(),
         weather: SkyWeather(),
-        revealed: .constant(true)
+        revealed: .constant(true),
+        reading: .constant(nil)
     )
         .modelContainer(for: SkyEntry.self, inMemory: true)
 }
