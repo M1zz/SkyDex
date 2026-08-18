@@ -1,7 +1,7 @@
 import SwiftData
 import SwiftUI
 
-/// Everything collected, two ways.
+/// Everything collected, three ways.
 ///
 /// The board only ever shows today: forty-eight colours today's sky is expected
 /// to run through, filled by whatever in the collection is near enough. Which
@@ -11,6 +11,8 @@ import SwiftUI
 /// So nothing is only on the board. **기록** is the calendar: every capture in the
 /// order it happened. **팔레트** is the collection itself, every colour ever
 /// collected laid out as one long day, whether today's sky wants it or not.
+/// **되풀이** is the only argument the collection can make: the same half hour
+/// stood in on many days, side by side, never once the same colour twice.
 struct ArchiveView: View {
     @Query(sort: \SkyEntry.capturedAt, order: .reverse) private var entries: [SkyEntry]
     @Environment(\.modelContext) private var context
@@ -22,6 +24,7 @@ struct ArchiveView: View {
     private enum Showing: String, CaseIterable, Identifiable {
         case list = "기록"
         case palette = "팔레트"
+        case repeats = "되풀이"
 
         var id: String { rawValue }
     }
@@ -37,6 +40,11 @@ struct ArchiveView: View {
                     )
                 } else if showing == .palette {
                     palette
+                } else if showing == .repeats {
+                    // The same collection asked a different question: not what
+                    // colours are in it, but whether any of them ever came back.
+                    RepeatView(entries: entries) { selected = $0 }
+                        .sensoryFeedback(.selection, trigger: selected?.uuid)
                 } else {
                     // Same paper as the board. A list on its own grey while the
                     // board sits on white made the two screens look like two
@@ -76,7 +84,7 @@ struct ArchiveView: View {
                         .pickerStyle(.segmented)
                         // Left to itself a segmented control in a toolbar takes
                         // the whole width it is given.
-                        .frame(width: 190)
+                        .frame(width: 250)
                     }
                 }
             }
