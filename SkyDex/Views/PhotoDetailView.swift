@@ -27,13 +27,13 @@ import SwiftUI
 /// below the card in small type. It is the least interesting thing about the day
 /// you took the photo.
 ///
-/// The one exception is the name. `#BEA3C9` is small type because it is a
-/// serial number; 담자색 is not, because it is the answer to what this sky was.
-/// So the nearest name sits directly under the card at a size you read rather
-/// than check, with where it comes from and one line saying what it means — a
-/// name you do not recognise is not yet a name. Whether it says *this* colour or
-/// merely the *closest* one is stated, not blurred: the table has sixty names and
-/// the sky has all of them in between.
+/// The one exception is what the colour is. `#BEA3C9` is small type because it is
+/// a serial number; 물에 젖은 청바지색 is not, because it is the answer to what this
+/// sky was. So the plain-Korean likeness sits directly under the card at a size
+/// you read rather than check, with one line saying where you have seen it, and
+/// the sourced name — 담자색, 우스하나이로 — follows underneath in small type for
+/// anyone who wants the real word. Whether either one says *this* colour or
+/// merely the *closest* one is stated, not blurred.
 struct PhotoDetailView: View {
     @Bindable var entry: SkyEntry
 
@@ -173,34 +173,45 @@ struct PhotoDetailView: View {
         }
     }
 
-    /// The name of this sky, or the nearest one to it.
+    /// What this sky is like, and then what it is called.
     ///
-    /// The heading is the honest part. Inside five units of CIEDE2000 the colour
-    /// and the name are the same colour to look at, so it says "이 하늘의 이름";
-    /// past that it says "가장 가까운 이름" and means it. Sixty names cannot land
-    /// on every sky, and a card that rounds the difference away would be putting
-    /// words in the sky's mouth.
+    /// The picture leads. "우스하나이로" is the more precise answer and it is the
+    /// one with a source behind it, but almost nobody can see a colour from it,
+    /// and a name you cannot see is not doing a name's job. "물에 젖은 청바지색"
+    /// puts the colour in front of you before you look back at the photograph.
+    ///
+    /// So the simile is the headline and the sourced name sits under it in small
+    /// type, where it is still there for anyone who wants the real word. Both say
+    /// how far off they are rather than rounding it away: a simile past ΔE 6 is
+    /// introduced as a stretch, and a name past ΔE 5 as the nearest one rather
+    /// than this sky's own.
     private var naming: some View {
-        let match = SkyNames.nearest(to: entry.lab)
+        let like = SkySimiles.nearest(to: entry.lab)
+        let named = SkyNames.nearest(to: entry.lab)
         return VStack(alignment: .leading, spacing: 5) {
-            Text(match.isClose ? "이 하늘의 이름" : "가장 가까운 이름")
+            Text(like.isClose ? "말로 하면" : "굳이 말하자면")
                 .font(.caption2)
                 .foregroundStyle(.tertiary)
 
-            HStack(alignment: .firstTextBaseline, spacing: 7) {
-                Text(match.name.name)
-                    .font(.title3.weight(.semibold))
-                Text(match.name.origin.rawValue)
-                    .font(.caption2)
-                    .foregroundStyle(.secondary)
-                    .padding(.horizontal, 7)
-                    .padding(.vertical, 2)
-                    .background(.fill.tertiary, in: Capsule())
-            }
+            Text(like.simile.name)
+                .font(.title3.weight(.semibold))
 
-            Text(match.name.gloss)
+            Text(like.simile.note)
                 .font(.caption)
                 .foregroundStyle(.secondary)
+
+            HStack(alignment: .firstTextBaseline, spacing: 6) {
+                Text(named.isClose ? "이름은" : "가장 가까운 이름은")
+                Text(named.name.name)
+                    .foregroundStyle(.secondary)
+                Text(named.name.origin.rawValue)
+                    .padding(.horizontal, 6)
+                    .padding(.vertical, 1)
+                    .background(.fill.tertiary, in: Capsule())
+            }
+            .font(.caption2)
+            .foregroundStyle(.tertiary)
+            .padding(.top, 3)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.horizontal, 4)

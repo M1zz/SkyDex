@@ -213,22 +213,4 @@ struct SkyDay {
         SkyBoard.slots.map { Lab(colour(of: $0)) }
     }
 
-    /// Where a colour sits on the canonical day, in minutes.
-    ///
-    /// Used to lay a collection out as a spectrum. It reads the fixed curve
-    /// rather than today's, because a palette that reorders itself every morning
-    /// is not a palette.
-    static func spectrumPosition(of lab: Lab) -> Double {
-        var best = 0.0
-        var bestDistance = Double.greatestFiniteMagnitude
-        for minute in stride(from: 0, through: 1425, by: 15) {
-            let sample = SkyDay.interpolate(SkyDay.fixedCurve, atMinute: Double(minute))
-            let distance = deltaE2000(sample, lab)
-            if distance < bestDistance {
-                bestDistance = distance
-                best = Double(minute)
-            }
-        }
-        return best
-    }
 }

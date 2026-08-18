@@ -108,20 +108,25 @@ struct ArchiveView: View {
     ///
     /// A grid of floating circles was a list of colours; a palette is a thing you
     /// hold up against something. So the colours are packed — three points apart,
-    /// barely rounded, no borders — and grouped by the part of the day they belong
-    /// to, with the count of each in small type. Structure and restraint do the
-    /// work; nothing here is decorated.
+    /// barely rounded, no borders — and grouped, with the count of each in small
+    /// type. Structure and restraint do the work; nothing here is decorated.
     ///
-    /// Grouped by the band each **colour** belongs to, not the hour it was taken
-    /// in. A midnight blue photographed at noon under a storm is a midnight blue,
-    /// and the axis of this app is colour.
+    /// Grouped by **what kind of colour it is**: 짙은 파랑, 푸른 회색, 모래빛,
+    /// 주황. It used to be grouped by where the colour sat on the day and
+    /// labelled with the hours — 여명, 늦은 오후 — which read as when the photo
+    /// was taken and was not that at all. A grey taken at breakfast landed under
+    /// 노을 because dusk is where grey lives on the curve, and the label was
+    /// believed over the photograph.
+    ///
+    /// The palette is the one screen here that is not about time. The board is
+    /// the day, 기록 is the order things happened, and this is the paint chips.
     private var palette: some View {
         ScrollView {
-            LazyVStack(alignment: .leading, spacing: 28) {
+            LazyVStack(alignment: .leading, spacing: 18) {
                 ForEach(groups) { group in
-                    VStack(alignment: .leading, spacing: 9) {
+                    VStack(alignment: .leading, spacing: 7) {
                         HStack(alignment: .firstTextBaseline) {
-                            Text(group.band)
+                            Text(group.family.rawValue)
                                 .font(.subheadline.weight(.medium))
                                 .foregroundStyle(.secondary)
                             Spacer()
@@ -132,11 +137,20 @@ struct ArchiveView: View {
                         }
                         .padding(.horizontal, 3)
 
+                        // One chip size for the whole page, not one per group.
+                        // Sharing the row out between however many colours a
+                        // family happens to hold made a family of one into a
+                        // slab the width of the screen and a family of nine into
+                        // stamps — the size of a swatch was reading as how
+                        // *important* it was. A chip card is a chip card: the
+                        // chips are all the same, and a short family simply ends
+                        // early.
                         LazyVGrid(
-                            columns: Array(
-                                repeating: GridItem(.flexible(), spacing: 3),
-                                count: ArchiveView.columns(for: group.entries.count)
-                            ),
+                            // Six across, the same as the board. A chip is the
+                            // same size on every family and on every screen, so
+                            // the page is a card of chips rather than a set of
+                            // bars whose size means something it should not.
+                            columns: Array(repeating: GridItem(.flexible(), spacing: 3), count: 6),
                             spacing: 3
                         ) {
                             ForEach(group.entries) { entry in
@@ -145,12 +159,7 @@ struct ArchiveView: View {
                                 } label: {
                                     RoundedRectangle(cornerRadius: 5, style: .continuous)
                                         .fill(Color(entry.rgb))
-                                        // One height for every band, so a band
-                                        // with two colours in it is a wide chip
-                                        // rather than a pair of tiles twice
-                                        // everything else's size. The page reads
-                                        // as a stack of swatch bars.
-                                        .frame(height: 64)
+                                        .frame(height: 52)
                                 }
                                 .buttonStyle(.plain)
                             }
@@ -159,50 +168,34 @@ struct ArchiveView: View {
                 }
             }
             .padding(.horizontal, 20)
-            .padding(.vertical, 12)
+            .padding(.top, 12)
+            // Clear of the shutter, which floats over every screen.
+            .padding(.bottom, 96)
         }
         .task { regroup() }
         .onChange(of: entries.count) { _, _ in regroup() }
         .sensoryFeedback(.selection, trigger: selected?.uuid)
     }
 
-    /// How many across a band of this size should run.
-    ///
-    /// A short band takes one row and the tiles share the width, which is what a
-    /// paint chip card looks like. A long one is split so the last row is as full
-    /// as it can be — a row of six with a single tile hanging under it reads as
-    /// unfinished rather than as a swatch.
-    private static func columns(for count: Int) -> Int {
-        guard count > 8 else { return count }
-        return (5...7).max { a, b in
-            (lastRow(count, a), a) < (lastRow(count, b), b)
-        } ?? 6
-    }
-
-    /// How full the last row would be, counting a clean fit as full.
-    private static func lastRow(_ count: Int, _ columns: Int) -> Int {
-        let remainder = count % columns
-        return remainder == 0 ? columns : remainder
-    }
-
     private struct PaletteGroup: Identifiable {
-        let band: String
+        let family: SkyFamily
         let entries: [SkyEntry]
-        var id: String { band }
+        var id: String { family.rawValue }
     }
 
-    /// Placing a colour on the day costs a scan of the curve, so it is done once
-    /// per change rather than once per draw.
+    /// Sorting every colour into its family is done once per change rather than
+    /// once per draw.
+    ///
+    /// Inside a family the run goes dark to light, which is how a paint chip
+    /// card is printed and the only ordering that does not need a caption to
+    /// explain it.
     private func regroup() {
-        let placed = entries.map { (entry: $0, position: SkyDay.spectrumPosition(of: $0.lab)) }
-        let byBand = Dictionary(grouping: placed) {
-            SkyBoard.band(forMinute: Int($0.position))
-        }
-        groups = SkyBoard.bandNames.compactMap { band in
-            guard let items = byBand[band], !items.isEmpty else { return nil }
+        let byFamily = Dictionary(grouping: entries) { SkyFamily.of($0.lab) }
+        groups = SkyFamily.allCases.compactMap { family in
+            guard let items = byFamily[family], !items.isEmpty else { return nil }
             return PaletteGroup(
-                band: band,
-                entries: items.sorted { $0.position < $1.position }.map(\.entry)
+                family: family,
+                entries: items.sorted { $0.lab.l < $1.lab.l }
             )
         }
     }
