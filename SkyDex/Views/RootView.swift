@@ -133,7 +133,7 @@ struct RootView: View {
                 .font(.system(size: 25, weight: .medium))
                 .frame(width: 64, height: 64)
         }
-        .buttonStyle(BarButton(prominent: true))
+        .buttonStyle(BarButton(prominent: true, subdued: reading != nil))
         .accessibilityLabel("하늘 찍기")
         // Points at the button it is about, and only when the forecast actually
         // has something to say.
@@ -149,7 +149,7 @@ struct RootView: View {
                     .font(.system(size: 17, weight: .medium))
                     .frame(width: 46, height: 46)
             }
-            .buttonStyle(BarButton(prominent: false))
+            .buttonStyle(BarButton(prominent: false, subdued: reading != nil))
             .accessibilityLabel(screen == .board ? "기록" : "하늘")
             // The glyph changes at the moment the screens cross over, so it
             // turns over rather than blinking.
@@ -178,7 +178,7 @@ struct RootView: View {
                 // gradient exists to avoid. It fades into the dark instead.
                 colors: reading == nil
                     ? [Color(.systemBackground).opacity(0), Color(.systemBackground)]
-                    : [.black.opacity(0), .black.opacity(0.45)],
+                    : [.black.opacity(0), .black.opacity(0.3)],
                 startPoint: .top,
                 endPoint: .bottom
             )
@@ -252,17 +252,33 @@ struct RootView: View {
 /// `.borderedProminent` draws the right thing but says nothing back to a thumb,
 /// and the shutter is the one action this app exists for. Both controls in the
 /// bar use this so they answer the same way.
+///
+/// Over a photograph they both step back. A blue disc on a sky you took is the
+/// loudest thing on the screen and it is not what you opened; while a sky is up
+/// the controls become glass — white at low strength, no accent colour — so they
+/// are still where your thumb expects them and no longer the first thing the eye
+/// lands on. They come back the moment the photograph goes away.
 private struct BarButton: ButtonStyle {
     let prominent: Bool
+    let subdued: Bool
+
+    private var foreground: AnyShapeStyle {
+        if subdued { return AnyShapeStyle(.white.opacity(prominent ? 0.8 : 0.6)) }
+        return prominent ? AnyShapeStyle(.white) : AnyShapeStyle(Color.accentColor)
+    }
+
+    private var background: AnyShapeStyle {
+        if subdued { return AnyShapeStyle(.white.opacity(prominent ? 0.2 : 0.13)) }
+        return prominent ? AnyShapeStyle(Color.accentColor) : AnyShapeStyle(.fill.tertiary)
+    }
 
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .foregroundStyle(prominent ? AnyShapeStyle(.white) : AnyShapeStyle(Color.accentColor))
-            .background {
-                Circle().fill(prominent ? AnyShapeStyle(Color.accentColor) : AnyShapeStyle(.fill.tertiary))
-            }
+            .foregroundStyle(foreground)
+            .background { Circle().fill(background) }
             .scaleEffect(configuration.isPressed ? 0.9 : 1)
             .animation(.spring(response: 0.26, dampingFraction: 0.62), value: configuration.isPressed)
+            .animation(.easeOut(duration: 0.3), value: subdued)
     }
 }
 

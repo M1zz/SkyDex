@@ -1,6 +1,7 @@
 import PhotosUI
 import SwiftData
 import SwiftUI
+import WidgetKit
 
 /// The board.
 ///
@@ -88,6 +89,11 @@ struct BoardView: View {
 
     @Environment(\.scenePhase) private var scenePhase
 
+    /// What was last left out for the widgets, so an answer that has not changed
+    /// is not written again and the home screen is not asked to redraw for
+    /// nothing.
+    @State private var published: String?
+
     /// Matching every photo against today's forty-eight is done once per day,
     /// not once per frame. The cache is state so it survives the redraws.
     @State private var cache = SkyMatchCache()
@@ -150,13 +156,15 @@ struct BoardView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .clipped()
 
-            Color.black.opacity(0.28)
+            Color.black.opacity(0.24)
 
-            // Heavier at the end the words are at.
+            // Words stand at both ends now — the line you wrote at the top, the
+            // name of the colour at the bottom — so both ends are weighted and
+            // the middle, where the board is, is left alone.
             LinearGradient(
-                colors: [.black.opacity(0.55), .clear],
-                startPoint: sky.captionAtTop ? .top : .bottom,
-                endPoint: .center
+                colors: [.black.opacity(0.5), .clear, .clear, .black.opacity(0.5)],
+                startPoint: .top,
+                endPoint: .bottom
             )
         }
         .ignoresSafeArea()
@@ -166,20 +174,49 @@ struct BoardView: View {
         .transition(.opacity)
     }
 
+    /// The line you wrote, at the top of the sky you wrote it about.
+    ///
+    /// It was on the card, behind two taps, in the same size as everything else
+    /// on it. A sentence written while standing under a sky is the one thing on
+    /// this screen that no measurement produced, so when that sky is up it is the
+    /// first thing on it and the largest — above the board, on the photograph,
+    /// in the reading size rather than the caption size.
+    ///
+    /// Nothing is drawn when nothing was written. An empty slot where a prompt
+    /// could go would turn a board you look at into a form you have not finished.
+    ///
+    /// It arrives as a speech bubble that types itself out. The line is the one
+    /// thing on this screen a person said rather than something the app worked
+    /// out, and watching it come back a character at a time is the difference
+    /// between reading a record and hearing it again — the sentence is being
+    /// said to you, under the sky it was said about.
+    @ViewBuilder
+    private func written(_ sky: ReadingSky) -> some View {
+        if !sky.entry.note.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            WrittenBubble(entry: sky.entry)
+                .padding(.horizontal, 20)
+                .padding(.top, 8)
+                .contentShape(Rectangle())
+                // Your own words are the way back to where you wrote them.
+                .onTapGesture { writingCard = sky.entry }
+                .transition(.opacity.combined(with: .offset(y: -10)))
+        }
+    }
+
     /// What this sky is called, on the board.
     ///
-    /// The name lived on the photo card, which meant it was only ever read by
-    /// someone who had gone into the archive and opened one. It belongs here: the
-    /// board is where you look at your skies, and a colour you cannot name is a
-    /// colour you cannot go looking for again. Whether it is *this* sky's name or
-    /// merely the nearest one is said out loud, exactly as it is on the card —
-    /// the table has a hundred and twenty-two names and the sky has all of them
-    /// in between.
+    /// It leads with what the colour is *like* — 물에 젖은 청바지색, 쌀뜨물색, 떡볶이
+    /// 국물색 — because that is the part a person can see without a swatch in front
+    /// of them. The sourced name follows in small type: more precise, less
+    /// visible, and worth keeping for exactly that reason. Whether either is
+    /// this sky's own or merely the nearest is said out loud rather than rounded
+    /// away, the same as on the card.
     ///
     /// It is also the way in to the card itself, since the bead no longer opens
     /// anything: the block is a button, with the chevron to say so.
     private func caption(_ sky: ReadingSky) -> some View {
-        let match = SkyNames.nearest(to: sky.entry.lab)
+        let like = SkySimiles.nearest(to: sky.entry.lab)
+        let named = SkyNames.nearest(to: sky.entry.lab)
         let sameColour = SkyMatch.all(
             near: target(of: sky.slot),
             in: entries,
@@ -188,28 +225,38 @@ struct BoardView: View {
         ).count
 
         return VStack(alignment: .leading, spacing: 5) {
-            Text(match.isClose ? "이 하늘의 이름" : "가장 가까운 이름")
+            Text(like.isClose ? "말로 하면" : "굳이 말하자면")
                 .font(.caption2)
                 .foregroundStyle(.white.opacity(0.55))
 
             HStack(alignment: .firstTextBaseline, spacing: 7) {
-                Text(match.name.name)
+                Text(like.simile.name)
                     .font(.title2.weight(.semibold))
-                Text(match.name.origin.rawValue)
-                    .font(.caption2)
-                    .padding(.horizontal, 7)
-                    .padding(.vertical, 2)
-                    .background(.white.opacity(0.16), in: Capsule())
                 Image(systemName: "chevron.right")
                     .font(.caption2.weight(.semibold))
                     .foregroundStyle(.white.opacity(0.4))
             }
             .foregroundStyle(.white)
 
-            Text(match.name.gloss)
+            Text(like.simile.note)
                 .font(.callout)
                 .foregroundStyle(.white.opacity(0.82))
                 .fixedSize(horizontal: false, vertical: true)
+
+            // The word with a source behind it, kept but demoted. The picture
+            // is what a person reads at a glance; the name is what they go
+            // looking for later.
+            HStack(spacing: 5) {
+                Text(named.isClose ? "이름은" : "가장 가까운 이름은")
+                Text(named.name.name)
+                Text(named.name.origin.rawValue)
+                    .padding(.horizontal, 5)
+                    .padding(.vertical, 1)
+                    .background(.white.opacity(0.14), in: Capsule())
+            }
+            .font(.caption2)
+            .foregroundStyle(.white.opacity(0.66))
+            .padding(.top, 2)
 
             HStack(spacing: 6) {
                 Text(sky.entry.capturedAt, format: .dateTime.month().day().hour().minute())
@@ -237,12 +284,82 @@ struct BoardView: View {
         .padding(.vertical, 20)
         // The board runs under the bar, so words at the bottom have to stand
         // clear of the shutter rather than trust the layout to do it.
-        .padding(.bottom, sky.captionAtTop ? 0 : 88)
+        .padding(.bottom, 88)
         .contentShape(Rectangle())
         .onTapGesture { writingCard = sky.entry }
         .accessibilityElement(children: .combine)
         .accessibilityHint("한 줄 쓰기")
-        .transition(.opacity.combined(with: .offset(y: sky.captionAtTop ? -10 : 10)))
+        .transition(.opacity.combined(with: .offset(y: 10)))
+    }
+
+    /// Leave today's board where the widgets can read it.
+    ///
+    /// Everything a widget would have to be trusted with — the store, the
+    /// photos, the forecast, the place — is spent here instead, while the app is
+    /// awake and allowed to. What crosses over is a list of colours and one
+    /// thumbnail.
+    ///
+    /// Only the sky taken today goes across. The board is happy to draw a photo
+    /// from March in a slot it fits, but a widget that says 오늘의 하늘 has made a
+    /// claim about today, and an old photo under that heading is a lie however
+    /// good the colour match is.
+    private func publish() {
+        let now = Date.now
+        let today = Calendar.current.startOfDay(for: now)
+        let last = entries.last { Calendar.current.isDateInToday($0.capturedAt) }
+
+        // Cheap to compute, expensive to write: this is the whole reason to
+        // check rather than publish on every redraw.
+        let signature = [
+            ISO8601DateFormatter.string(from: today, timeZone: .current, formatOptions: [.withFullDate]),
+            String(format: "%.2f,%.2f", place.latitude, place.longitude),
+            weather.forecast == nil ? "clear" : "forecast",
+            "\(entries.count)",
+            last?.uuid.uuidString ?? "none",
+            last?.note ?? ""
+        ].joined(separator: "|")
+        guard signature != published else { return }
+
+        let day = SkyDay(
+            date: now,
+            latitude: place.latitude,
+            longitude: place.longitude,
+            forecast: weather.forecast
+        )
+        let fills = SkyMatch.map(targets: day.targets, entries: entries, on: now)
+            .map { slot, entry in
+                SkySnapshot.Fill(
+                    slot: slot,
+                    hex: SkyBoard.faded(entry.rgb, freshness: entry.freshness(at: now)).hex
+                )
+            }
+            .sorted { $0.slot < $1.slot }
+
+        let latest = last.map { entry -> SkySnapshot.Latest in
+            let like = SkySimiles.nearest(to: entry.lab)
+            return SkySnapshot.Latest(
+                hex: entry.hex,
+                capturedAt: entry.capturedAt,
+                slot: SkyBoard.slot(forMinute: entry.minuteOfDay).id,
+                note: entry.note,
+                likeness: like.simile.name,
+                likenessNote: like.simile.note,
+                isCloseLikeness: like.isClose,
+                hasPhoto: entry.thumbnailData != nil
+            )
+        }
+
+        SkySnapshot.write(
+            SkySnapshot(
+                day: today,
+                targets: SkyBoard.slots.map { day.colour(of: $0).hex },
+                filled: fills,
+                latest: latest
+            ),
+            photo: last?.thumbnailData
+        )
+        published = signature
+        WidgetCenter.shared.reloadAllTimelines()
     }
 
     var body: some View {
@@ -393,10 +510,17 @@ struct BoardView: View {
                         backdrop(reading)
                     }
                 }
-                // The words go to the opposite end of the board from the bead
-                // that was pressed, so the one thing you are looking at is never
-                // under the thing that describes it.
-                .overlay(alignment: reading?.captionAtTop == true ? .top : .bottom) {
+                // What you wrote is the top of the screen and the name of the
+                // colour is the bottom of it. Both sit clear of the grid — the
+                // board is square and the screen is not, so the space above and
+                // below the beads is exactly where words can go without
+                // covering one.
+                .overlay(alignment: .top) {
+                    if let reading {
+                        written(reading)
+                    }
+                }
+                .overlay(alignment: .bottom) {
                     if let reading {
                         caption(reading)
                     }
@@ -406,15 +530,36 @@ struct BoardView: View {
             .task {
                 place.refresh()
                 if !revealed { revealed = true }
+                publish()
                 await weather.refresh(latitude: place.latitude, longitude: place.longitude)
+                publish()
             }
+            .onChange(of: entries.count) { _, _ in publish() }
             .onChange(of: scenePhase) { _, phase in
-                if phase == .active { returns += 1 }
+                if phase == .active {
+                    returns += 1
+                    // A day may have turned over while the app was away, and
+                    // the widget is the only thing that was still on screen.
+                    publish()
+                } else {
+                    // Leaving is the moment the widget starts mattering, so
+                    // whatever was just written or taken goes across now rather
+                    // than the next time the app is opened.
+                    publish()
+                }
+            }
+            // A line written on a card is part of what the widget shows, and it
+            // is written after the photo already landed.
+            .onChange(of: writingCard == nil) { _, closed in
+                if closed { publish() }
             }
             // The first fix usually lands after the board is already up, and a
             // forecast for the wrong city is worth replacing.
             .onChange(of: place.latitude) { _, latitude in
-                Task { await weather.refresh(latitude: latitude, longitude: place.longitude) }
+                Task {
+                    await weather.refresh(latitude: latitude, longitude: place.longitude)
+                    publish()
+                }
             }
             // Every sky this bead's colour holds, which is a list and is asked
             // for by name from the caption. The bead itself no longer opens it:
@@ -433,6 +578,118 @@ struct BoardView: View {
     }
 }
 
+/// One line, in a bubble, typed back out.
+///
+/// The typing is not decoration. A note is written in a moment that is already
+/// gone by the time it is read again, and a sentence that appears whole reads
+/// like a caption the app attached. Coming in a character at a time makes it a
+/// person talking, which is what it is.
+///
+/// It is paced rather than fixed: about thirty milliseconds a character, and the
+/// whole line is capped at a second and a half however long it runs. A long note
+/// typed at a comfortable speed becomes a thing you have to wait out, and waiting
+/// is exactly what a board you glance at cannot ask for. Anyone who does not want
+/// to wait can tap it — the card opens with the whole line in it.
+///
+/// Reduce Motion gets the sentence whole, immediately. The animation is the
+/// point of this view and it is still the first thing to go.
+private struct WrittenBubble: View {
+    let entry: SkyEntry
+
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    /// How many characters are out so far.
+    @State private var typed = 0
+
+    private var characters: [Character] { Array(entry.note) }
+
+    private var shown: String { String(characters.prefix(typed)) }
+
+    private var isTyping: Bool { typed < characters.count }
+
+    var body: some View {
+        HStack(alignment: .bottom, spacing: 0) {
+            bubble
+            // Never the full width. A bubble that reaches both edges is a
+            // banner, and a banner is not something anybody said.
+            Spacer(minLength: 44)
+        }
+        .task(id: entry.uuid) { await type() }
+    }
+
+    private var bubble: some View {
+        Group {
+            // The caret is part of the text rather than next to it, so it sits
+            // wherever the last character landed and wraps with the line.
+            Text(shown) + Text(isTyping ? "▏" : "").foregroundColor(.white.opacity(0.7))
+        }
+        .font(.title2.weight(.medium))
+        .lineSpacing(4)
+        .foregroundStyle(.white)
+        .lineLimit(4)
+        .fixedSize(horizontal: false, vertical: true)
+        .frame(alignment: .leading)
+        .padding(.horizontal, 18)
+        .padding(.top, 14)
+        .padding(.bottom, 12 + WrittenBubble.tail.height)
+        .background {
+            SpeechBubble()
+                .fill(.black.opacity(0.34))
+                .background {
+                    SpeechBubble()
+                        .fill(.ultraThinMaterial)
+                        .environment(\.colorScheme, .dark)
+                }
+                .overlay {
+                    SpeechBubble()
+                        .stroke(.white.opacity(0.16), lineWidth: 0.5)
+                }
+        }
+        // The bubble grows as the line fills it, which is the other half of
+        // watching something be written.
+        .animation(.easeOut(duration: 0.14), value: typed)
+    }
+
+    static let tail = CGSize(width: 15, height: 9)
+
+    private func type() async {
+        guard !characters.isEmpty else { return }
+        guard !reduceMotion else {
+            typed = characters.count
+            return
+        }
+        typed = 0
+        let step = min(30, max(8, 1_500 / characters.count))
+        for index in characters.indices {
+            try? await Task.sleep(for: .milliseconds(step))
+            guard !Task.isCancelled else { return }
+            typed = index + 1
+        }
+    }
+}
+
+/// A rounded rectangle with a tail on the bottom left.
+///
+/// The tail points down, at the board — the sentence belongs to the sky under
+/// it, not to the app that is drawing it.
+private struct SpeechBubble: Shape {
+    func path(in rect: CGRect) -> Path {
+        let tail = WrittenBubble.tail
+        let body = CGRect(x: 0, y: 0, width: rect.width, height: rect.height - tail.height)
+        var path = Path(roundedRect: body, cornerRadius: 20, style: .continuous)
+
+        let start = min(24, max(12, rect.width * 0.08))
+        var point = Path()
+        point.move(to: CGPoint(x: start, y: body.maxY - 2))
+        point.addLine(to: CGPoint(x: start + tail.width, y: body.maxY - 2))
+        point.addLine(to: CGPoint(x: start + 3, y: rect.maxY))
+        point.closeSubpath()
+        path.addPath(point)
+
+        return path
+    }
+}
+
 /// A sky held up: which bead was pressed, and what is behind it.
 ///
 /// The slot comes along with the photo because the words under it are about the
@@ -443,10 +700,6 @@ struct ReadingSky: Identifiable, Equatable {
     let entry: SkyEntry
 
     var id: Int { slot.id }
-
-    /// Top half of the board, so the words go to the bottom, and the other way
-    /// round. A caption over the bead it describes is a caption in the way.
-    var captionAtTop: Bool { slot.id >= SkyBoard.slots.count / 2 }
 
     static func == (lhs: ReadingSky, rhs: ReadingSky) -> Bool {
         lhs.slot == rhs.slot && lhs.entry.uuid == rhs.entry.uuid
@@ -496,8 +749,9 @@ private struct Bead: View {
     /// This is the sky currently laid under the board.
     let isRead: Bool
 
-    /// Some other bead is, and this one steps back so the photograph can be
-    /// seen through the board rather than around it.
+    /// Some other bead is, and this one steps back — far enough that the
+    /// photograph is what you are looking at, not so far that the board stops
+    /// being there. The day still has to be readable behind one sky in it.
     let isDimmed: Bool
 
     let diameter: CGFloat
@@ -537,7 +791,7 @@ private struct Bead: View {
         .overlay { if isNew || isRead { Circle().strokeBorder(.white, lineWidth: 2.5) } }
         // A bead whose sky is up keeps its full colour and grows a little; every
         // other one goes quiet. The board is still there, just underneath.
-        .opacity(isDimmed ? 0.2 : 1)
+        .opacity(isDimmed ? 0.45 : 1)
         .animation(.easeOut(duration: 0.3), value: isDimmed)
         // Grows under the finger so the thing being chosen is visible past the
         // thumb covering it.
@@ -598,10 +852,10 @@ private struct EmptySlotSheet: View {
                 // it yet, and an empty slot is exactly where you would want to
                 // know what you are going out to look for.
                 VStack(spacing: 3) {
-                    let match = SkyNames.nearest(to: Lab(day.colour(of: slot)))
-                    Text("\(match.name.name) · \(match.name.origin.rawValue)")
+                    let like = SkySimiles.nearest(to: Lab(day.colour(of: slot)))
+                    Text(like.simile.name)
                         .font(.subheadline.weight(.medium))
-                    Text(match.name.gloss)
+                    Text(like.simile.note)
                         .font(.caption)
                         .foregroundStyle(.secondary)
                         .multilineTextAlignment(.center)
