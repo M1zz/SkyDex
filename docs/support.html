@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>하늘색 — 지원</title>
+<meta name="description" content="iOS 앱 '하늘색'의 지원 페이지. 자주 묻는 것과 문의 방법.">
+<link rel="canonical" href="https://m1zz.github.io/SkyDex/support.html">
+<style>
+  :root {
+    --ink: #16202e;
+    --ink-soft: #5d6773;
+    --paper: #f4f5f7;
+    --card: #ffffff;
+    --line: #e2e5ea;
+    --accent: #2f7bbe;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #eef1f5;
+      --ink-soft: #a2acb8;
+      --paper: #0b111c;
+      --card: #141c28;
+      --line: #26303e;
+      --accent: #7fa4ce;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0 20px 72px;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.72 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+      "Pretendard", "Segoe UI", Roboto, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 680px; margin: 0 auto; }
+
+  /* 판을 이루는 색 그대로: 한밤에서 노을까지 한 줄로 */
+  .sky {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    padding: 44px 0 26px;
+  }
+  .sky span {
+    width: 20px; height: 20px; border-radius: 50%;
+    display: block;
+  }
+  h1 {
+    font-size: 30px; line-height: 1.3; letter-spacing: -0.02em;
+    margin: 0 0 6px; text-align: center; font-weight: 700;
+  }
+  .lede {
+    margin: 0 auto 40px; text-align: center; color: var(--ink-soft);
+    max-width: 30em;
+  }
+  h2 {
+    font-size: 20px; letter-spacing: -0.01em; margin: 44px 0 14px;
+    padding-top: 26px; border-top: 1px solid var(--line);
+  }
+  h2:first-of-type { border-top: 0; padding-top: 0; }
+  h3 { font-size: 17px; margin: 26px 0 6px; }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 1.2em; }
+  li { margin-bottom: 6px; }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  .card {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 16px; padding: 20px 22px; margin: 0 0 18px;
+  }
+  .card p:last-child { margin-bottom: 0; }
+  .mail {
+    display: inline-block; margin-top: 4px; font-weight: 600;
+    font-size: 18px;
+  }
+  .meta { color: var(--ink-soft); font-size: 15px; }
+  footer {
+    margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line);
+    color: var(--ink-soft); font-size: 15px; text-align: center;
+  }
+  footer a { margin: 0 8px; }
+</style>
+</head>
+<body>
+<main>
+
+  <div class="sky" aria-hidden="true">
+    <span style="background:#0B1120"></span>
+    <span style="background:#2B3856"></span>
+    <span style="background:#7E90B6"></span>
+    <span style="background:#5590C6"></span>
+    <span style="background:#1C6DB4"></span>
+    <span style="background:#C1A07E"></span>
+    <span style="background:#D68F55"></span>
+    <span style="background:#8E4340"></span>
+    <span style="background:#33304C"></span>
+  </div>
+
+  <h1>하늘색</h1>
+  <p class="lede">이 페이지는 <strong>하늘색</strong>의 지원 창구입니다.
+  앱이 무엇인지 먼저 보시려면 <a href="./">소개 페이지</a>로.</p>
+
+  <h2>문의</h2>
+  <div class="card">
+    <p>버그, 이상한 동작, 하고 싶은 이야기 모두 메일로 보내주세요.
+    확인하는 대로 답장드립니다.</p>
+    <a class="mail" href="mailto:mizzking75@gmail.com">mizzking75@gmail.com</a>
+    <p class="meta" style="margin-top:12px">막힌 화면이 있다면 어떤 상황이었는지와
+    iOS 버전을 함께 적어주시면 찾기가 훨씬 쉽습니다.</p>
+  </div>
+
+  <h2>자주 묻는 것</h2>
+
+  <h3>칸은 어떻게 채워지나요?</h3>
+  <p>지금 하늘을 찍으면 <strong>그 시각이 속한 칸</strong>이 찍은 색으로 채워집니다.
+  예상과 다른 색이 나와도 그대로 들어갑니다 — 실제로 그 시간의 하늘이 그랬으니까요.</p>
+  <p>그 밖에 모아둔 하늘은 색으로 들어갑니다. 오늘 그 시각의 하늘색과 충분히 가까우면
+  그 칸을 채웁니다.</p>
+
+  <h3>어제 차 있던 칸이 오늘은 비어 있어요</h3>
+  <p>판은 <strong>오늘</strong>의 하늘색이기 때문입니다. 계절과 날씨에 따라 마흔여덟 칸의
+  색이 매일 다시 정해지고, 모아둔 하늘이 그 색과 가까운지도 매일 다시 물어봅니다.
+  그래서 어떤 날은 거의 다 차고 어떤 날은 거의 비어 보입니다.</p>
+  <p>사진이 사라진 것은 아닙니다. 모은 하늘 전부는 <strong>기록</strong> 화면에,
+  색 순서로 보고 싶으면 <strong>팔레트</strong>에 그대로 있습니다.</p>
+
+  <h3>채운 칸이 점점 흐려져요</h3>
+  <p>일부러 그렇습니다. 사진은 일주일 동안 제 색으로 있다가, 그 뒤 여덟 주에 걸쳐
+  천천히 옅어집니다. 지워지는 것이 아니고 끝까지 흐려지지도 않습니다 —
+  그 시간대의 하늘을 다시 찍으면 곧바로 원래 색으로 돌아옵니다.</p>
+
+  <h3>색이 맞아야 하나요?</h3>
+  <p>아닙니다. 통과·실패 판정이 없습니다. 찍은 사진은 무조건 저장되고,
+  흐린 날의 회색도 그날의 하늘색입니다.</p>
+
+  <h3>위치는 왜 묻나요?</h3>
+  <p>이 자리의 기준 색을 <strong>실제 일출·일몰 시각</strong>에 맞추고, 오늘 예보를
+  가져오는 데만 씁니다. 정확도는 킬로미터 단위고, 좌표는 사진에 붙지 않습니다.
+  거부해도 앱은 그대로 동작합니다(서울 기준 색으로).
+  자세한 내용은 <a href="privacy.html">개인정보 처리방침</a>에 있습니다.</p>
+
+  <h3>예상 하늘색은 어디서 오나요?</h3>
+  <p>해의 위치(그 날짜, 그 위치의 일출·일몰)와 Apple Weather의 시간별 구름·비 예보를
+  섞어서 만듭니다. 예보를 못 받아오면 맑은 하늘 기준으로 그립니다.</p>
+
+  <h3>사진을 지우려면</h3>
+  <p>사진을 열고 <strong>지우기</strong>를 누르거나, 기록 화면에서 왼쪽으로 밀면 됩니다.
+  앱을 삭제하면 모아둔 하늘도 함께 사라집니다.</p>
+
+  <h3>지원 환경</h3>
+  <p>iOS 17.0 이상, iPhone. 세로 화면 전용입니다.</p>
+
+  <footer>
+    <a href="./">소개</a> ·
+    <a href="privacy.html">개인정보 처리방침</a> ·
+    <a href="https://github.com/M1zz/SkyDex">GitHub</a>
+    <p class="meta" style="margin:10px 0 0">Weather data provided by
+      <a href="https://weatherkit.apple.com/legal-attribution.html">Apple Weather</a>.</p>
+  </footer>
+
+</main>
+</body>
+</html>

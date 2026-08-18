@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>하늘색 — 지원</title>
-<meta name="description" content="iOS 앱 '하늘색'의 지원 페이지. 자주 묻는 것과 문의 방법.">
+<title>하늘색</title>
+<meta name="description" content="하루의 하늘을 색으로 모으는 iOS 앱. 마흔여덟 칸의 판을 오늘 하늘로 채웁니다.">
 <link rel="canonical" href="https://m1zz.github.io/SkyDex/">
 <style>
   :root {
@@ -36,48 +36,81 @@
     -webkit-text-size-adjust: 100%;
   }
   main { max-width: 680px; margin: 0 auto; }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
 
-  /* 판을 이루는 색 그대로: 한밤에서 노을까지 한 줄로 */
-  .sky {
+  /* 하루 곡선 그대로 이어붙인 띠 */
+  .strip {
     display: flex;
-    gap: 6px;
-    justify-content: center;
-    padding: 44px 0 26px;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 40px 0 34px;
   }
-  .sky span {
-    width: 20px; height: 20px; border-radius: 50%;
-    display: block;
-  }
+  .strip span { flex: 1 1 0; }
+
   h1 {
-    font-size: 30px; line-height: 1.3; letter-spacing: -0.02em;
-    margin: 0 0 6px; text-align: center; font-weight: 700;
+    font-size: 34px; line-height: 1.25; letter-spacing: -0.03em;
+    margin: 0 0 8px; text-align: center; font-weight: 700;
   }
   .lede {
-    margin: 0 auto 40px; text-align: center; color: var(--ink-soft);
-    max-width: 30em;
+    margin: 0 auto 8px; text-align: center; color: var(--ink-soft);
+    max-width: 26em;
   }
+  .platform {
+    text-align: center; color: var(--ink-soft); font-size: 14px;
+    margin: 0 0 36px;
+  }
+
+  /* 판 — 앱과 같은 6×8, 같은 색 */
+  .board {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    max-width: 340px;
+    margin: 0 auto 12px;
+  }
+  .bead {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    display: block;
+  }
+  .bead.on { border: 0; }
+  .caption {
+    text-align: center; color: var(--ink-soft); font-size: 14px;
+    margin: 0 0 46px;
+  }
+
   h2 {
-    font-size: 20px; letter-spacing: -0.01em; margin: 44px 0 14px;
-    padding-top: 26px; border-top: 1px solid var(--line);
+    font-size: 21px; letter-spacing: -0.01em; margin: 46px 0 12px;
+    padding-top: 28px; border-top: 1px solid var(--line);
   }
-  h2:first-of-type { border-top: 0; padding-top: 0; }
-  h3 { font-size: 17px; margin: 26px 0 6px; }
   p { margin: 0 0 14px; }
   ul { margin: 0 0 14px; padding-left: 1.2em; }
-  li { margin-bottom: 6px; }
-  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
-  .card {
+  li { margin-bottom: 8px; }
+  strong { font-weight: 600; }
+
+  /* 이름 카드 — 앱의 사진 카드 아래에 붙는 것과 같은 순서 */
+  .names { margin: 20px 0 8px; }
+  .name {
+    display: flex; align-items: center; gap: 14px;
     background: var(--card); border: 1px solid var(--line);
-    border-radius: 16px; padding: 20px 22px; margin: 0 0 18px;
+    border-radius: 16px; padding: 14px 16px; margin-bottom: 10px;
   }
-  .card p:last-child { margin-bottom: 0; }
-  .mail {
-    display: inline-block; margin-top: 4px; font-weight: 600;
-    font-size: 18px;
+  .swatch {
+    width: 46px; height: 46px; border-radius: 12px; flex: 0 0 auto;
   }
-  .meta { color: var(--ink-soft); font-size: 15px; }
+  .name .simile { font-size: 17px; font-weight: 600; }
+  .name .real { font-size: 13px; color: var(--ink-soft); }
+
+  .quiet {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 16px; padding: 18px 20px; margin: 22px 0 8px;
+  }
+  .quiet p:last-child { margin-bottom: 0; }
+
   footer {
-    margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line);
+    margin-top: 60px; padding-top: 26px; border-top: 1px solid var(--line);
     color: var(--ink-soft); font-size: 15px; text-align: center;
   }
   footer a { margin: 0 8px; }
@@ -86,76 +119,189 @@
 <body>
 <main>
 
-  <div class="sky" aria-hidden="true">
+  <div class="strip" aria-hidden="true">
+    <span style="background:#080D18"></span>
+    <span style="background:#090E1A"></span>
+    <span style="background:#0A0F1C"></span>
+    <span style="background:#0A101E"></span>
     <span style="background:#0B1120"></span>
-    <span style="background:#2B3856"></span>
-    <span style="background:#7E90B6"></span>
-    <span style="background:#5590C6"></span>
-    <span style="background:#1C6DB4"></span>
+    <span style="background:#0C1221"></span>
+    <span style="background:#131B30"></span>
+    <span style="background:#1B263E"></span>
+    <span style="background:#6879A2"></span>
+    <span style="background:#99A7C5"></span>
+    <span style="background:#96ABCB"></span>
+    <span style="background:#7FA4CE"></span>
+    <span style="background:#709CCB"></span>
+    <span style="background:#5791C6"></span>
+    <span style="background:#508DC5"></span>
+    <span style="background:#3F83C1"></span>
+    <span style="background:#307BBE"></span>
+    <span style="background:#2B77BB"></span>
+    <span style="background:#1F6FB5"></span>
+    <span style="background:#1D6EB4"></span>
+    <span style="background:#2471B6"></span>
+    <span style="background:#2975B8"></span>
+    <span style="background:#3179BA"></span>
+    <span style="background:#4988C3"></span>
+    <span style="background:#558EC5"></span>
+    <span style="background:#6D9BCA"></span>
+    <span style="background:#7EA5CD"></span>
+    <span style="background:#8FA5BF"></span>
+    <span style="background:#B2A297"></span>
     <span style="background:#C1A07E"></span>
-    <span style="background:#D68F55"></span>
-    <span style="background:#8E4340"></span>
-    <span style="background:#33304C"></span>
+    <span style="background:#CC986A"></span>
+    <span style="background:#D68F56"></span>
+    <span style="background:#CC7C49"></span>
+    <span style="background:#B95B35"></span>
+    <span style="background:#A95239"></span>
+    <span style="background:#8F4440"></span>
+    <span style="background:#543852"></span>
+    <span style="background:#3B324D"></span>
+    <span style="background:#322F4B"></span>
+    <span style="background:#2B2A44"></span>
+    <span style="background:#20233A"></span>
+    <span style="background:#181D33"></span>
+    <span style="background:#161C30"></span>
+    <span style="background:#13192B"></span>
+    <span style="background:#0F1424"></span>
+    <span style="background:#0B111F"></span>
+    <span style="background:#0A101D"></span>
+    <span style="background:#080D19"></span>
   </div>
 
   <h1>하늘색</h1>
-  <p class="lede">빈 판 마흔여덟 칸을 하루의 하늘색으로 채워나가는 iOS 앱.
-  이 페이지는 지원 창구입니다.</p>
+  <p class="lede">하루의 하늘을 색으로 모읍니다.
+  마흔여덟 칸의 판이 있고, 오늘 하늘로 채웁니다.</p>
+  <p class="platform">iPhone · iOS 17.0 이상</p>
 
-  <h2>문의</h2>
-  <div class="card">
-    <p>버그, 이상한 동작, 하고 싶은 이야기 모두 메일로 보내주세요.
-    확인하는 대로 답장드립니다.</p>
-    <a class="mail" href="mailto:mizzking75@gmail.com">mizzking75@gmail.com</a>
-    <p class="meta" style="margin-top:12px">막힌 화면이 있다면 어떤 상황이었는지와
-    iOS 버전을 함께 적어주시면 찾기가 훨씬 쉽습니다.</p>
+  <div class="board" aria-hidden="true">
+    <span class="bead" style="border-color:#55565A" title="00:00–00:50"></span>
+    <span class="bead" style="border-color:#55565B" title="00:50–01:40"></span>
+    <span class="bead" style="border-color:#55565C" title="01:40–02:30"></span>
+    <span class="bead" style="border-color:#55575D" title="02:30–03:20"></span>
+    <span class="bead" style="border-color:#55575D" title="03:20–04:10"></span>
+    <span class="bead" style="border-color:#56575E" title="04:10–05:00"></span>
+    <span class="bead" style="border-color:#595A64" title="05:00–05:30"></span>
+    <span class="bead" style="border-color:#5C5E69" title="05:30–06:00"></span>
+    <span class="bead" style="border-color:#767B8B" title="06:00–06:30"></span>
+    <span class="bead on" style="background:#99A7C5" title="06:30–07:00 · #99A7C5"></span>
+    <span class="bead" style="border-color:#848B97" title="07:00–07:30"></span>
+    <span class="bead" style="border-color:#7D8998" title="07:30–08:00"></span>
+    <span class="bead on" style="background:#709CCB" title="08:00–08:40 · #709CCB"></span>
+    <span class="bead" style="border-color:#728397" title="08:40–09:20"></span>
+    <span class="bead" style="border-color:#718196" title="09:20–10:00"></span>
+    <span class="bead" style="border-color:#6D7E96" title="10:00–10:40"></span>
+    <span class="bead" style="border-color:#6B7C95" title="10:40–11:20"></span>
+    <span class="bead" style="border-color:#6A7A95" title="11:20–12:00"></span>
+    <span class="bead on" style="background:#1F6FB5" title="12:00–12:40 · #1F6FB5"></span>
+    <span class="bead" style="border-color:#687793" title="12:40–13:20"></span>
+    <span class="bead" style="border-color:#687893" title="13:20–14:00"></span>
+    <span class="bead" style="border-color:#697A93" title="14:00–14:40"></span>
+    <span class="bead" style="border-color:#6B7B94" title="14:40–15:20"></span>
+    <span class="bead" style="border-color:#6F8096" title="15:20–16:00"></span>
+    <span class="bead" style="border-color:#728297" title="16:00–16:20"></span>
+    <span class="bead" style="border-color:#788697" title="16:20–16:40"></span>
+    <span class="bead on" style="background:#7EA5CD" title="16:40–17:00 · #7EA5CD"></span>
+    <span class="bead" style="border-color:#828993" title="17:00–17:20"></span>
+    <span class="bead" style="border-color:#8E8884" title="17:20–17:40"></span>
+    <span class="bead on" style="background:#C1A07E" title="17:40–18:00 · #C1A07E"></span>
+    <span class="bead" style="border-color:#998474" title="18:00–18:15"></span>
+    <span class="bead on" style="background:#D68F56" title="18:15–18:30 · #D68F56"></span>
+    <span class="bead" style="border-color:#9C7B68" title="18:30–18:45"></span>
+    <span class="bead on" style="background:#B95B35" title="18:45–19:00 · #B95B35"></span>
+    <span class="bead" style="border-color:#936E63" title="19:00–19:15"></span>
+    <span class="bead" style="border-color:#896A66" title="19:15–19:30"></span>
+    <span class="bead" style="border-color:#71656F" title="19:30–19:45"></span>
+    <span class="bead" style="border-color:#67636E" title="19:45–20:00"></span>
+    <span class="bead" style="border-color:#64626E" title="20:00–20:15"></span>
+    <span class="bead" style="border-color:#61606B" title="20:15–20:30"></span>
+    <span class="bead" style="border-color:#5D5D68" title="20:30–20:45"></span>
+    <span class="bead" style="border-color:#5A5B65" title="20:45–21:00"></span>
+    <span class="bead on" style="background:#161C30" title="21:00–21:30 · #161C30"></span>
+    <span class="bead" style="border-color:#585A62" title="21:30–22:00"></span>
+    <span class="bead" style="border-color:#56585F" title="22:00–22:30"></span>
+    <span class="bead" style="border-color:#55575D" title="22:30–23:00"></span>
+    <span class="bead" style="border-color:#55575C" title="23:00–23:30"></span>
+    <span class="bead" style="border-color:#55565A" title="23:30–00:00"></span>
+  </div>
+  <p class="caption">위가 한밤, 아래로 내려오며 낮이 되고 다시 어두워집니다.
+  꽉 찬 원은 찍은 하늘, 빈 고리는 아직입니다.</p>
+
+  <h2>판은 오늘입니다</h2>
+  <p>마흔여덟 칸은 <strong>오늘 하늘이 지나갈 색</strong>입니다. 그 자리의 실제
+  일출·일몰 시각과 오늘 예보(구름·비)로 매일 다시 계산됩니다. 그래서 어제 차 있던 칸이
+  오늘은 비어 있을 수 있습니다. 판이 말하는 것은 모은 개수가 아니라
+  <strong>오늘을 얼마나 보여줄 수 있는가</strong>입니다.</p>
+  <p>지금 하늘을 찍으면 <strong>그 시각의 칸</strong>이 찍은 색으로 채워집니다. 예상과
+  다른 색이 나와도 그대로 들어갑니다 — 예보는 짐작이고, 사진은 그 자리에 있었습니다.</p>
+  <p><strong>판정이 없습니다.</strong> 통과도 실패도 허용 오차도 없습니다. 흐린 날의
+  회색도 그날의 하늘색입니다.</p>
+
+  <h2>색에는 이름이 붙습니다</h2>
+  <p>찍은 하늘이 무슨 색인지 두 가지로 말해 줍니다. 먼저 <strong>눈에 보이는 비유</strong>가
+  오고, 그 밑에 <strong>출처 있는 이름</strong>이 따라옵니다. "우스하나이로"는 더 정확한
+  답이지만 그 말에서 색을 볼 수 있는 사람은 거의 없고, 볼 수 없는 이름은 이름이 하는 일을
+  하지 못하니까요.</p>
+
+  <div class="names">
+    <div class="name">
+      <span class="swatch" style="background:#7E90B6"></span>
+      <span>
+        <div class="simile">바랜 남색 커튼색</div>
+        <div class="real">우스하나이로 · 和色 薄花色</div>
+      </span>
+    </div>
+    <div class="name">
+      <span class="swatch" style="background:#D68F55"></span>
+      <span>
+        <div class="simile">식빵 가장자리색</div>
+        <div class="real">카드뮴 오렌지 · 안료</div>
+      </span>
+    </div>
+    <div class="name">
+      <span class="swatch" style="background:#1C6DB4"></span>
+      <span>
+        <div class="simile">파란 물감 푼 물색</div>
+        <div class="real">청색 · 전통색</div>
+      </span>
+    </div>
+  </div>
+  <p>이름 쪽은 한국 전통색 · 和色 · 안료 · 표준색에서 가져왔고 색값은 전부 출처에서
+  확인했습니다. 얼마나 가까운지도 숨기지 않습니다 — 충분히 가까우면 "이름은", 멀면
+  "가장 가까운 이름은"이라고 씁니다.</p>
+
+  <h2>채운 칸은 나이를 먹습니다</h2>
+  <p>사진은 일주일 동안 제 색으로 있다가, 그 뒤 여덟 주에 걸쳐 천천히 옅어집니다.
+  지워지는 것이 아니고 끝까지 흐려지지도 않습니다. 그 시각의 하늘을 다시 찍으면 그 칸은
+  곧바로 제 색으로 돌아옵니다.</p>
+  <p>벌이 아닙니다. 끊기는 숫자도, 되찾아야 하는 연속 기록도 없습니다. 하늘로 만든 판이
+  "그 하늘은 한참 전이었다"고 말하는 정직한 방법일 뿐입니다.</p>
+
+  <h2>같은 시각, 다른 하늘</h2>
+  <p>하루는 되풀이됩니다. 같은 알람, 같은 길, 같은 창. 그 위의 하늘만 두 번 같지
+  않습니다. <strong>되풀이</strong> 화면은 같은 시각에 여러 번 서 본 날들을 한 줄로 놓아
+  그것을 보여줍니다. 줄은 되풀이고, 색은 되풀이되지 않는 쪽입니다.</p>
+
+  <h2>위젯</h2>
+  <p><strong>오늘의 판</strong>은 앱의 그림 그대로 — 마흔여덟 칸, 채운 것은 원, 빈 것은
+  고리. <strong>오늘의 하늘</strong>은 오늘 찍은 사진과 그 색의 이름이고, 잠금화면에도
+  놓을 수 있습니다.</p>
+
+  <h2>기기 안에만 있습니다</h2>
+  <div class="quiet">
+    <p>계정이 없고 서버가 없습니다. 사진도 색도 기기 안의 앱 저장소에만 있고, 개발자에게
+    전송되지 않습니다. 분석 도구·광고·추적을 쓰지 않습니다.</p>
+    <p>위치는 일출·일몰과 오늘 예보에만 쓰고 킬로미터 단위로만 요청합니다. 거부해도
+    앱은 그대로 동작합니다. 자세한 것은
+    <a href="privacy.html">개인정보 처리방침</a>에 있습니다.</p>
   </div>
 
-  <h2>자주 묻는 것</h2>
-
-  <h3>칸은 어떻게 채워지나요?</h3>
-  <p>지금 하늘을 찍으면 <strong>그 시각이 속한 칸</strong>이 찍은 색으로 채워집니다.
-  예상과 다른 색이 나와도 그대로 들어갑니다 — 실제로 그 시간의 하늘이 그랬으니까요.</p>
-  <p>그 밖에 모아둔 하늘은 색으로 들어갑니다. 오늘 그 시각의 하늘색과 충분히 가까우면
-  그 칸을 채웁니다.</p>
-
-  <h3>어제 차 있던 칸이 오늘은 비어 있어요</h3>
-  <p>판은 <strong>오늘</strong>의 하늘색이기 때문입니다. 계절과 날씨에 따라 마흔여덟 칸의
-  색이 매일 다시 정해지고, 모아둔 하늘이 그 색과 가까운지도 매일 다시 물어봅니다.
-  그래서 어떤 날은 거의 다 차고 어떤 날은 거의 비어 보입니다.</p>
-  <p>사진이 사라진 것은 아닙니다. 모은 하늘 전부는 <strong>기록</strong> 화면에,
-  색 순서로 보고 싶으면 <strong>팔레트</strong>에 그대로 있습니다.</p>
-
-  <h3>채운 칸이 점점 흐려져요</h3>
-  <p>일부러 그렇습니다. 사진은 일주일 동안 제 색으로 있다가, 그 뒤 여덟 주에 걸쳐
-  천천히 옅어집니다. 지워지는 것이 아니고 끝까지 흐려지지도 않습니다 —
-  그 시간대의 하늘을 다시 찍으면 곧바로 원래 색으로 돌아옵니다.</p>
-
-  <h3>색이 맞아야 하나요?</h3>
-  <p>아닙니다. 통과·실패 판정이 없습니다. 찍은 사진은 무조건 저장되고,
-  흐린 날의 회색도 그날의 하늘색입니다.</p>
-
-  <h3>위치는 왜 묻나요?</h3>
-  <p>이 자리의 기준 색을 <strong>실제 일출·일몰 시각</strong>에 맞추고, 오늘 예보를
-  가져오는 데만 씁니다. 정확도는 킬로미터 단위고, 좌표는 사진에 붙지 않습니다.
-  거부해도 앱은 그대로 동작합니다(서울 기준 색으로).
-  자세한 내용은 <a href="privacy.html">개인정보 처리방침</a>에 있습니다.</p>
-
-  <h3>예상 하늘색은 어디서 오나요?</h3>
-  <p>해의 위치(그 날짜, 그 위치의 일출·일몰)와 Apple Weather의 시간별 구름·비 예보를
-  섞어서 만듭니다. 예보를 못 받아오면 맑은 하늘 기준으로 그립니다.</p>
-
-  <h3>사진을 지우려면</h3>
-  <p>사진을 열고 <strong>지우기</strong>를 누르거나, 기록 화면에서 왼쪽으로 밀면 됩니다.
-  앱을 삭제하면 모아둔 하늘도 함께 사라집니다.</p>
-
-  <h3>지원 환경</h3>
-  <p>iOS 17.0 이상, iPhone. 세로 화면 전용입니다.</p>
-
   <footer>
+    <a href="support.html">지원</a> ·
     <a href="privacy.html">개인정보 처리방침</a> ·
     <a href="https://github.com/M1zz/SkyDex">GitHub</a>
-    <p class="meta" style="margin:10px 0 0">Weather data provided by
+    <p style="margin:10px 0 0">Weather data provided by
       <a href="https://weatherkit.apple.com/legal-attribution.html">Apple Weather</a>.</p>
   </footer>
 

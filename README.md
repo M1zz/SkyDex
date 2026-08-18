@@ -4,12 +4,18 @@
 천천히 흐려집니다. 화면에 보이는 앱 이름은 **하늘색**이고, `SkyDex`는 저장소와 타깃의
 이름으로만 남아 있습니다.
 
-- 지원 페이지 — <https://m1zz.github.io/SkyDex/>
+- 소개 페이지 — <https://m1zz.github.io/SkyDex/>
+- 지원 페이지 — <https://m1zz.github.io/SkyDex/support.html>
 - 개인정보 처리방침 — <https://m1zz.github.io/SkyDex/privacy.html>
 
-두 페이지는 `docs/`에 있고 GitHub Pages(`main` 브랜치의 `/docs`)가 그대로 서비스합니다.
-App Store Connect의 **지원 URL**과 **개인정보 처리방침 URL**에 이 두 주소를 넣으면 됩니다.
-방침을 고칠 일이 생기면 `docs/privacy.html`을 고치고 문서 안의 시행일도 함께 갱신하세요.
+세 페이지는 `docs/`에 있고 GitHub Pages(`main` 브랜치의 `/docs`)가 그대로 서비스합니다.
+App Store Connect에는 **지원 URL**로 `support.html`을, **개인정보 처리방침 URL**로
+`privacy.html`을, **마케팅 URL**(선택)로 소개 페이지를 넣으면 됩니다. 루트가 지원에서
+소개로 바뀌었으니, 예전에 루트를 지원 URL로 등록해 두셨다면 `support.html`로 고치세요.
+
+소개 페이지의 판 그림과 색 띠는 앱의 실제 곡선에서 뽑은 마흔여덟 색입니다(춘분·서울 기준).
+색을 손보면 그림도 다시 뽑아야 맞습니다. 방침을 고칠 일이 생기면 `docs/privacy.html`을
+고치고 문서 안의 시행일도 함께 갱신하세요.
 
 Xcode 16 이상에서 `SkyDex.xcodeproj`를 열고 실행하세요. iOS 17.0+, SwiftUI + SwiftData,
 외부 의존성 없음. 실행 전 타깃 설정에서 Bundle Identifier(`com.yourname.SkyDex`)와 팀만
