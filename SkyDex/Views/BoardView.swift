@@ -285,6 +285,42 @@ struct BoardView: View {
         // The board runs under the bar, so words at the bottom have to stand
         // clear of the shutter rather than trust the layout to do it.
         .padding(.bottom, 88)
+        // Ground for the words, drawn over the beads.
+        //
+        // The grid is six across and eight down, so on a phone it fills nearly
+        // the whole screen and the "space below the board" these words were
+        // meant to sit in is not there. They landed on top of the bottom three
+        // rows instead, with rings running straight through the sentence and
+        // the pressed bead — white, the loudest thing on the screen — sitting
+        // beside the colour's name like a second control.
+        //
+        // The backdrop already fades to dark at the bottom, but that fade is
+        // *under* the beads and cannot separate anything from them. This one is
+        // over them: the rows behind the words step back into the dark, the
+        // words are on a surface, and the block reads as one thing you can
+        // press rather than several overlapping ones.
+        .background {
+            LinearGradient(
+                stops: [
+                    .init(color: .black.opacity(0), location: 0),
+                    .init(color: .black.opacity(0.45), location: 0.35),
+                    .init(color: .black.opacity(0.88), location: 0.62),
+                    .init(color: .black.opacity(0.94), location: 1)
+                ],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            // Reaching above the words, so the rows fade out before the
+            // sentence starts rather than at it. A fade that begins exactly
+            // where the text begins draws a line across the board.
+            .padding(.top, -90)
+            // And past the bottom of the screen. The photograph behind runs
+            // under the home indicator and under the bar, and this does not
+            // unless it is told to — which left a bright strip of sky below the
+            // dark, reading as a second picture cut off along the bottom edge.
+            .ignoresSafeArea(edges: .bottom)
+            .allowsHitTesting(false)
+        }
         .contentShape(Rectangle())
         .onTapGesture { writingCard = sky.entry }
         .accessibilityElement(children: .combine)
@@ -633,17 +669,7 @@ private struct WrittenBubble: View {
         .padding(.top, 14)
         .padding(.bottom, 12 + WrittenBubble.tail.height)
         .background {
-            SpeechBubble()
-                .fill(.black.opacity(0.34))
-                .background {
-                    SpeechBubble()
-                        .fill(.ultraThinMaterial)
-                        .environment(\.colorScheme, .dark)
-                }
-                .overlay {
-                    SpeechBubble()
-                        .stroke(.white.opacity(0.16), lineWidth: 0.5)
-                }
+            SpeechBubble().fill(WrittenBubble.blue)
         }
         // The bubble grows as the line fills it, which is the other half of
         // watching something be written.
@@ -651,6 +677,21 @@ private struct WrittenBubble: View {
     }
 
     static let tail = CGSize(width: 15, height: 9)
+
+    /// The blue a sent message is.
+    ///
+    /// Fixed rather than `.systemBlue`, which is two different colours depending
+    /// on the appearance the phone is in. This bubble is always on a photograph
+    /// with white text in it, so it is always in the dark whatever the phone
+    /// thinks, and a blue that shifts under it would be answering a question
+    /// nobody asked.
+    ///
+    /// Opaque, with nothing over or under it. The glass it used to be — dark
+    /// fill over a material, with a hairline to find its edge — existed to stay
+    /// legible on a photograph without becoming the loudest thing on the screen.
+    /// A blue bubble gives that up on purpose: it is the one thing on this
+    /// screen a person said, and a message is allowed to look like a message.
+    static let blue = Color(red: 0.11, green: 0.53, blue: 1)
 
     private func type() async {
         guard !characters.isEmpty else { return }
@@ -676,17 +717,26 @@ private struct SpeechBubble: Shape {
     func path(in rect: CGRect) -> Path {
         let tail = WrittenBubble.tail
         let body = CGRect(x: 0, y: 0, width: rect.width, height: rect.height - tail.height)
-        var path = Path(roundedRect: body, cornerRadius: 20, style: .continuous)
+        let rounded = Path(roundedRect: body, cornerRadius: 20, style: .continuous)
 
-        let start = min(24, max(12, rect.width * 0.08))
+        // Clear of the corner. A continuous corner of radius 20 is still curving
+        // some thirty points in from the edge, and a tail rooted inside that
+        // curve does not grow out of the bubble — its top corner hangs off the
+        // outline with daylight behind it.
+        let start = min(38, max(30, rect.width * 0.1))
         var point = Path()
-        point.move(to: CGPoint(x: start, y: body.maxY - 2))
-        point.addLine(to: CGPoint(x: start + tail.width, y: body.maxY - 2))
+        point.move(to: CGPoint(x: start, y: body.maxY - 6))
+        point.addLine(to: CGPoint(x: start + tail.width, y: body.maxY - 6))
         point.addLine(to: CGPoint(x: start + 3, y: rect.maxY))
         point.closeSubpath()
-        path.addPath(point)
 
-        return path
+        // One outline rather than two shapes stacked. Two subpaths fill as their
+        // union, so the shape looked right — but the stroke draws every subpath
+        // it is given, which put two hairlines across the mouth of the tail: the
+        // body's own bottom edge, and the tail's top edge six points under it.
+        // At half a point each on a dark bubble that reads as a seam rather than
+        // as a mistake, which is exactly why it survived this long.
+        return rounded.union(point)
     }
 }
 
@@ -861,21 +911,40 @@ private struct EmptySlotSheet: View {
                         .multilineTextAlignment(.center)
                 }
 
-                HStack(spacing: 10) {
-                    Circle()
-                        .fill(Color(day.colour(of: slot)))
-                        .frame(width: 22, height: 22)
-                    // The wording has to match what the swatch is actually
-                    // showing. With a forecast in hand this is today's sky, not
-                    // the sky in general, and saying "보통" would be a lie.
-                    Text(
-                        weather.forecast == nil
-                            ? "이 시각의 하늘은 보통 \(day.colour(of: slot).hex)"
-                            : "오늘 이 시각은 대략 \(day.colour(of: slot).hex)"
-                    )
-                    .font(.caption)
-                    .monospaced()
-                    .foregroundStyle(.secondary)
+                // Two colours, said apart. The bead is one of the forty-eight
+                // sky colours there are to collect and it is the same one every
+                // day; what today's sky is expected to do at this hour is a
+                // different fact, and the board stopped painting itself in it
+                // when it stopped repeating colours. Saying both is the honest
+                // version — one is what you are looking for, the other is what
+                // is actually out there right now.
+                VStack(spacing: 6) {
+                    HStack(spacing: 10) {
+                        Circle()
+                            .fill(Color(day.colour(of: slot)))
+                            .frame(width: 22, height: 22)
+                        Text("이 칸의 색 \(day.colour(of: slot).hex)")
+                            .font(.caption)
+                            .monospaced()
+                            .foregroundStyle(.secondary)
+                    }
+
+                    HStack(spacing: 10) {
+                        Circle()
+                            .fill(Color(day.forecastColour(of: slot)))
+                            .frame(width: 14, height: 14)
+                        // The wording has to match what the swatch is actually
+                        // showing. With a forecast in hand this is today's sky,
+                        // not the sky in general, and saying "보통" would be a lie.
+                        Text(
+                            weather.forecast == nil
+                                ? "이 시각의 하늘은 보통 \(day.forecastColour(of: slot).hex)"
+                                : "오늘 이 시각은 대략 \(day.forecastColour(of: slot).hex)"
+                        )
+                        .font(.caption2)
+                        .monospaced()
+                        .foregroundStyle(.tertiary)
+                    }
                 }
 
                 // Apple's terms for using the forecast: name the service and
@@ -913,3 +982,4 @@ private struct EmptySlotSheet: View {
     )
         .modelContainer(for: SkyEntry.self, inMemory: true)
 }
+
