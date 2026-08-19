@@ -56,6 +56,23 @@ final class SkyEntry {
         self.thumbnailData = thumbnailData
     }
 
+    /// The collection as a strip of chips: one per colour, families in the order
+    /// the palette prints them, dark to light inside each.
+    ///
+    /// Deduped by hex, because a fortnight of the same flat overcast is one grey
+    /// to borrow rather than fourteen, and a strip you have to scroll past its
+    /// own repetitions is a strip nobody reaches the end of. Both places that
+    /// offer another day's sky — the card and the viewfinder — lay it out this
+    /// way, so a colour is in the same place in both.
+    static func palette(from entries: [SkyEntry], excluding entry: SkyEntry? = nil) -> [SkyEntry] {
+        var seen: Set<String> = entry.map { [$0.hex] } ?? []
+        let distinct = entries.filter { $0.uuid != entry?.uuid && seen.insert($0.hex).inserted }
+        let byFamily = Dictionary(grouping: distinct) { SkyFamily.of($0.lab) }
+        return SkyFamily.allCases.flatMap { family in
+            (byFamily[family] ?? []).sorted { $0.lab.l < $1.lab.l }
+        }
+    }
+
     static func minuteOfDay(of date: Date) -> Int {
         let parts = Calendar.current.dateComponents([.hour, .minute], from: date)
         return (parts.hour ?? 0) * 60 + (parts.minute ?? 0)

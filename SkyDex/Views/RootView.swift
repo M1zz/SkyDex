@@ -54,6 +54,10 @@ struct RootView: View {
     /// you rather than waiting to be found on the board.
     @State private var writingCard: SkyEntry?
 
+    /// The sky the last capture was framed under, so the card it opens can put
+    /// that colour straight back on the photograph.
+    @State private var borrowedForCard: String?
+
     /// Whether the board has already done its one opening reveal. Held here
     /// rather than in `BoardView`, which is rebuilt every time you come back
     /// from the archive — a reveal that replays on every visit is a stutter.
@@ -95,7 +99,7 @@ struct RootView: View {
         .safeAreaInset(edge: .bottom) { bar }
         .fullScreenCover(isPresented: $showCamera) {
             SquareCameraView(
-                onCapture: { data, date in save(data, at: date) },
+                onCapture: { data, date, borrowed in save(data, at: date, borrowed: borrowed) },
                 onPickFromLibrary: {
                     // Presenting a picker while the full-screen cover is still
                     // animating away silently does nothing.
@@ -107,7 +111,7 @@ struct RootView: View {
             )
         }
         .fullScreenCover(item: $writingCard) { entry in
-            PhotoDetailView(entry: entry)
+            PhotoDetailView(entry: entry, borrowed: borrowedForCard)
         }
         .photosPicker(isPresented: $showLibrary, selection: $pickerItem, matching: .images)
         .onChange(of: pickerItem) { _, item in
@@ -191,14 +195,16 @@ struct RootView: View {
     private func loadFromLibrary(_ item: PhotosPickerItem) async {
         defer { pickerItem = nil }
         guard let data = try? await item.loadTransferable(type: Data.self) else { return }
-        save(data, at: .now)
+        save(data, at: .now, borrowed: nil)
     }
 
-    private func save(_ data: Data, at date: Date) {
+    private func save(_ data: Data, at date: Date, borrowed: String?) {
         let prepared = SkyImage.prepare(data: data)
         let grey = RGB(r: 0.5, g: 0.5, b: 0.5)
         let colour: (rgb: RGB, lab: Lab) = prepared
             .map { SkyColorExtractor.skyColor(from: $0.square) } ?? (grey, Lab(grey))
+
+        borrowedForCard = borrowed
 
         let entry = SkyEntry(
             capturedAt: date,

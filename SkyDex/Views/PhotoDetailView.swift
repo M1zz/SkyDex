@@ -37,12 +37,29 @@ import SwiftUI
 struct PhotoDetailView: View {
     @Bindable var entry: SkyEntry
 
+    /// The sky this was framed under in the viewfinder, if any. The card opens
+    /// with it already picked, so the picture you were looking at when you
+    /// pressed the shutter is the picture in front of you — the collection still
+    /// keeps the sky as it was.
+    var borrowed: String?
+
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var context
 
     @State private var confirmingDelete = false
     @State private var saves = 0
     @FocusState private var writing: Bool
+
+    /// Every other sky in the collection, ready to be held up against this one.
+    /// Read once rather than sorted on every keystroke in the note field.
+    @Query(sort: \SkyEntry.capturedAt, order: .reverse) private var collected: [SkyEntry]
+    @State private var lenses: [SkyEntry] = []
+
+    /// The sky currently being borrowed, and how much of it.
+    @State private var lens: SkyEntry?
+    @State private var strength: Double = 1
+    @State private var lensed: UIImage?
+    @State private var working = false
 
     private var written: Bool { !entry.note.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
 
@@ -51,6 +68,7 @@ struct PhotoDetailView: View {
             ScrollView {
                 VStack(spacing: 14) {
                     card
+                    borrowing
                     naming
                     details
                 }
@@ -60,6 +78,12 @@ struct PhotoDetailView: View {
             }
             .scrollDismissesKeyboard(.interactively)
             .navigationBarTitleDisplayMode(.inline)
+            .task(id: borrowKey) { await borrow() }
+            .task {
+                gatherLenses()
+                if let borrowed { lens = lenses.first { $0.hex == borrowed } }
+            }
+            .onChange(of: collected.count) { _, _ in gatherLenses() }
             .task {
                 guard entry.note.isEmpty else { return }
                 // A beat, so focus lands after the screen has finished arriving
@@ -164,7 +188,7 @@ struct PhotoDetailView: View {
 
     @ViewBuilder
     private var photo: some View {
-        if let image = entry.photo {
+        if let image = lensed ?? entry.photo {
             Image(uiImage: image)
                 .resizable()
                 .scaledToFill()
@@ -236,6 +260,155 @@ struct PhotoDetailView: View {
         .font(.caption)
         .foregroundStyle(.secondary)
         .padding(.horizontal, 4)
+    }
+
+    /// The strip that lends this photograph another day's sky.
+    ///
+    /// It is a strip of chips rather than a list of named filters, because the
+    /// filters here are not a set someone designed — they are the skies you
+    /// already collected, and the only honest label for one of them is its
+    /// colour. Picking one moves the sky in this photograph onto that colour and
+    /// leaves everything else in the frame where it was.
+    ///
+    /// What is stored does not change. The hex under this card, the likeness,
+    /// the bead on the board and the widget all go on saying what this sky
+    /// actually was — borrowing another day is something you do while looking,
+    /// not an edit to the record. So the strip is empty-handed when you leave:
+    /// there is nothing to save, and what you wanted to keep goes out through
+    /// the share sheet as a picture.
+    @ViewBuilder
+    private var borrowing: some View {
+        if entry.photo != nil, !lenses.isEmpty {
+            VStack(alignment: .leading, spacing: 9) {
+                HStack(alignment: .firstTextBaseline) {
+                    Text("다른 날의 하늘로")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+
+                    Spacer()
+
+                    if let lensed {
+                        ShareLink(
+                            item: Image(uiImage: lensed),
+                            preview: SharePreview("하늘색", image: Image(uiImage: lensed))
+                        ) {
+                            Image(systemName: "square.and.arrow.up")
+                                .font(.caption)
+                        }
+                        .disabled(working)
+                    }
+                }
+                .padding(.horizontal, 4)
+
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 5) {
+                        // The way back sits at the head of the strip rather than
+                        // somewhere else on the screen, so putting a sky down is
+                        // the same gesture as picking one up.
+                        if lens != nil {
+                            Button {
+                                lens = nil
+                            } label: {
+                                RoundedRectangle(cornerRadius: 8, style: .continuous)
+                                    .fill(.fill.tertiary)
+                                    .frame(width: 46, height: 46)
+                                    .overlay {
+                                        Image(systemName: "arrow.uturn.backward")
+                                            .font(.caption)
+                                            .foregroundStyle(.secondary)
+                                    }
+                            }
+                            .buttonStyle(.plain)
+                            .accessibilityLabel("원래 하늘로")
+                        }
+
+                        ForEach(lenses) { sky in
+                            Button {
+                                lens = lens?.uuid == sky.uuid ? nil : sky
+                            } label: {
+                                RoundedRectangle(cornerRadius: 8, style: .continuous)
+                                    .fill(Color(sky.rgb))
+                                    .frame(width: 46, height: 46)
+                                    .overlay {
+                                        RoundedRectangle(cornerRadius: 8, style: .continuous)
+                                            .strokeBorder(.primary, lineWidth: lens?.uuid == sky.uuid ? 2.5 : 0)
+                                    }
+                            }
+                            .buttonStyle(.plain)
+                            .accessibilityLabel(Text(sky.capturedAt, format: .dateTime.month().day().hour().minute()))
+                        }
+                    }
+                    .padding(.horizontal, 4)
+                    .padding(.vertical, 2)
+                }
+                // The strip is edge to edge; only the chrome around it is inset.
+                .padding(.horizontal, -16)
+                .safeAreaPadding(.horizontal, 16)
+
+                if let lens {
+                    HStack(spacing: 6) {
+                        Text(lens.capturedAt, format: .dateTime.month().day().hour().minute())
+                        Text("·")
+                        Text(SkySimiles.nearest(to: lens.lab).simile.name)
+                            .lineLimit(1)
+                        Spacer()
+                        if working {
+                            ProgressView().controlSize(.mini)
+                        }
+                    }
+                    .font(.caption2)
+                    .foregroundStyle(.tertiary)
+                    .padding(.horizontal, 4)
+
+                    // How far to go. All the way is the whole of that day's
+                    // colour; short of it is this sky on the way there, which is
+                    // often the truer picture — a noon blue does not become a
+                    // midnight in one step without looking painted.
+                    Slider(value: $strength, in: 0...1)
+                        .tint(Color(lens.rgb))
+                        .padding(.horizontal, 4)
+                        .accessibilityLabel("빌려 온 하늘의 세기")
+                }
+            }
+            .animation(.easeOut(duration: 0.22), value: lens?.uuid)
+        }
+    }
+
+    /// Changes when there is new work to do, and cancels the render in flight.
+    private var borrowKey: String {
+        guard let lens else { return "none" }
+        // Quantised, so a drag across the slider asks for a few dozen renders
+        // rather than one per pixel of travel.
+        return "\(lens.uuid)-\(Int((strength * 40).rounded()))"
+    }
+
+    private func borrow() async {
+        guard let lens, let original = entry.photo else {
+            lensed = nil
+            working = false
+            return
+        }
+
+        // A beat before starting, so a slider drag throws away its intermediate
+        // positions instead of rendering every one of them.
+        try? await Task.sleep(for: .milliseconds(90))
+        guard !Task.isCancelled else { return }
+
+        working = true
+        let source = entry.lab
+        let target = lens.lab
+        let amount = strength
+        let rendered = await Task.detached(priority: .userInitiated) {
+            SkyRecolor.apply(to: original, from: source, to: target, strength: amount)
+        }.value
+
+        guard !Task.isCancelled else { return }
+        lensed = rendered
+        working = false
+    }
+
+    private func gatherLenses() {
+        lenses = SkyEntry.palette(from: collected, excluding: entry)
     }
 
     private func delete() {
