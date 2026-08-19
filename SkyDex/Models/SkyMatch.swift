@@ -17,10 +17,19 @@ import Foundation
 /// than colour: a sky taken **today** fills the slot it was taken in, whatever
 /// colour it came out. See `claims(_:slot:on:calendar:)`.
 ///
-/// One colour can fill several beads, because the day's curve is smooth and
-/// neighbouring beads are often within a couple of units of each other. That is
-/// not a bug to hide: owning a blue really does cover a stretch of the
-/// afternoon.
+/// **A sky fills one bead and no more.** The day's curve is smooth, so
+/// neighbouring beads sit a couple of units apart and one photograph used to
+/// land inside four or five circles at once — and on a board that draws each
+/// filled bead in the colour it holds, that is the same colour and the same
+/// sentence printed several times across the grid. Worse where the curve doubles
+/// back: morning and evening pass through the same grey, so one overcast
+/// Tuesday turned up at both ends of the day. A board of forty-eight beads
+/// showing the same three photographs is not a picture of a day.
+///
+/// So each sky takes the bead it is nearest to, and the beads it also fitted are
+/// left for whatever else the collection has. What the board counts is how much
+/// of today you can show **with different skies**, which is the harder and more
+/// honest question of the two.
 enum SkyMatch {
 
     /// How near counts as the same colour, in CIEDE2000. Neighbouring beads sit
@@ -55,10 +64,11 @@ enum SkyMatch {
 
     /// Slot id → the collected sky standing in for it, for the board of `date`.
     ///
-    /// Two passes. First colour: nearest wins, and when two are equally near the
-    /// newer one does, because the board draws age. Then today's own captures on
-    /// top, each in the slot it was taken in — they were there, so they outrank
-    /// anything that merely looks right.
+    /// Two passes, and no sky comes out of them twice. Today's own captures go
+    /// first, each in the slot it was taken in — they were there, so they
+    /// outrank anything that merely looks right, and they are spent by the time
+    /// colour is asked about. Then colour, nearest pairing first across the
+    /// whole grid rather than best-for-this-bead one bead at a time.
     static func map(
         targets: [Lab],
         entries: [SkyEntry],
@@ -67,36 +77,51 @@ enum SkyMatch {
         calendar: Calendar = .current
     ) -> [Int: SkyEntry] {
         guard !entries.isEmpty else { return [:] }
-        let labs = entries.map(\.lab)
 
+        // The clock goes first, because its answer cannot be argued with and it
+        // decides which skies are still going spare. Shot today, so it owns its
+        // half hour; where two captures share one the newer takes it — shooting
+        // the same stretch again replaces the bead rather than being locked out
+        // by a first attempt you did not like.
         var result: [Int: SkyEntry] = [:]
-        for (id, target) in targets.enumerated() {
-            var bestIndex: Int?
-            var bestDistance = Double.greatestFiniteMagnitude
-            for index in entries.indices {
-                let distance = deltaE2000(target, labs[index])
-                guard distance <= radius else { continue }
-                if distance < bestDistance
-                    || (distance == bestDistance
-                        && entries[index].capturedAt > entries[bestIndex ?? index].capturedAt) {
-                    bestDistance = distance
-                    bestIndex = index
-                }
-            }
-            if let bestIndex { result[id] = entries[bestIndex] }
-        }
-
-        // Shot today, so it owns its half hour. Where two captures share one,
-        // the newer one takes it — shooting the same stretch again replaces the
-        // bead rather than being locked out by a first attempt you did not like.
-        var claimed: [Int: SkyEntry] = [:]
         for entry in entries
         where calendar.isDate(entry.capturedAt, inSameDayAs: date) {
             let id = SkyBoard.slot(forMinute: entry.minuteOfDay).id
-            if let sitting = claimed[id], sitting.capturedAt > entry.capturedAt { continue }
-            claimed[id] = entry
+            if let sitting = result[id], sitting.capturedAt > entry.capturedAt { continue }
+            result[id] = entry
         }
-        return result.merging(claimed) { _, claim in claim }
+        var spoken = Set(result.values.map(\.uuid))
+
+        // Then colour, nearest pairing first. Going bead by bead and taking the
+        // best photo for each would hand the same photo to every bead it fitted;
+        // going pairing by pairing means the closest call in the whole grid is
+        // settled first, and a bead that has just lost its best answer is still
+        // free to take its second.
+        var pairings: [(slot: Int, entry: Int, distance: Double)] = []
+        for (id, target) in targets.enumerated() where result[id] == nil {
+            for index in entries.indices where !spoken.contains(entries[index].uuid) {
+                let distance = deltaE2000(target, entries[index].lab)
+                if distance <= radius { pairings.append((id, index, distance)) }
+            }
+        }
+
+        // Ties go to the newer sky, because the board draws age; then to the
+        // earlier bead, so the answer does not depend on dictionary order.
+        pairings.sort { left, right in
+            if left.distance != right.distance { return left.distance < right.distance }
+            let a = entries[left.entry], b = entries[right.entry]
+            if a.capturedAt != b.capturedAt { return a.capturedAt > b.capturedAt }
+            return left.slot < right.slot
+        }
+
+        for pairing in pairings {
+            guard result[pairing.slot] == nil else { continue }
+            let entry = entries[pairing.entry]
+            guard spoken.insert(entry.uuid).inserted else { continue }
+            result[pairing.slot] = entry
+        }
+
+        return result
     }
 
     /// Everything in the collection that would fill this one bead, newest first.

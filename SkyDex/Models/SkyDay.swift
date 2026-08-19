@@ -17,6 +17,10 @@ import Foundation
 /// hold up a deep blue as what four o'clock looks like while it is raining.
 struct SkyDay {
 
+    /// The palette on its own — no sun, no forecast, no clock. The order a day
+    /// runs in *colour*, which is what the board's spectrum is laid out along.
+    static var palette: [Lab] { anchors.compactMap { RGB(hex: $0.hex).map(Lab.init) } }
+
     /// Where an anchor sits: a solar moment plus an offset in minutes. Anchors
     /// tied to `.midnight` are the only fixed ones, and they have to be — the
     /// board begins and ends there.
@@ -197,9 +201,25 @@ struct SkyDay {
     }
 
     /// What a slot's sky usually is: the colour at the middle of its stretch.
+    /// What this bead is, on today's board.
+    ///
+    /// Not the curve any more — the spectrum colour nearest to the curve at this
+    /// hour. The curve still decides everything about the arrangement; it just
+    /// no longer paints two beads the same blue because two hours of the day
+    /// happen to look alike. See `SkySpectrum`.
     func colour(of slot: SkySlot) -> RGB {
+        let spectrum = SkySpectrum.ordered
+        return spectrum[min(slot.id, spectrum.count - 1)].rgb
+    }
+
+    /// The curve itself, unrounded. What the sky is actually expected to be at
+    /// this minute, which is a different question from what the board is
+    /// collecting.
+    func forecastColour(of slot: SkySlot) -> RGB {
         colour(atMinute: Double(slot.startMinute + slot.endMinute) / 2)
     }
+
+
 
     /// What the slot is drawn in while it is empty.
     func ghost(of slot: SkySlot) -> RGB {
