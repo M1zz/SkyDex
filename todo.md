@@ -835,3 +835,41 @@
 - [ ] 기록 화면 맨 아래 한 줄이 실제로 어떻게 보이는지 **눈으로 못 봤음.** 시뮬레이터에
       사진이 없어 기록 화면이 빈 상태로만 떴음. `Section { EmptyView() } footer:`가 빈 줄을
       하나 만들지 않는지 실기기에서 볼 것.
+
+## 설정 화면 · LeeoKit (2026-08-20)
+기록 화면 오른쪽 위 톱니바퀴 → 설정 시트. 보관(iCloud 스위치) · 지원(LeeoKit) ·
+개발자(사용 통계).
+
+- [x] LeeoKit 3.2.0을 원격 SPM으로 붙임. 프로젝트가 fileSystemSynchronizedGroups라
+      소스 파일은 자동 포함이지만 패키지 참조는 pbxproj를 직접 고쳐야 했음.
+- [x] `SkyDexSpec.swift` — LeeoAppSpec 계약. 피드백·통계는 공유 허브 컨테이너
+      `iCloud.com.Ysoup.FeedbackHub`(공개 DB), 컬렉션은 `iCloud.com.leeo.SkyDex`
+      (비공개 DB). **다른 컨테이너**로 둔 것이 핵심 — 모은 하늘과 개발자에게 보낸 말이
+      섞이지 않음. 엔티틀먼트에 둘 다 넣고 실기기 서명으로 확인.
+- [x] `analytics`를 `LeeoUsageAnalytics`로 선언 = 사용 통계 켜기. 안 켠 앱에는
+      부트스트랩이 아무것도 안 보냄.
+- [x] `capabilities`는 이 저장소에서 실제로 확인한 것만 적음. 나머지는 `.unknown`으로
+      두는 게 정직한 답.
+- [x] iCloud 스위치 — `makeContainer()`가 실행 시 한 번 읽음. 켜져 있는 저장소는 동기화
+      여부를 못 바꾸므로 "다음에 앱을 열 때 적용됩니다"라고 화면이 말함.
+- [x] **개발 지역이 `en`이라 앱 전체가 영어로 돌고 있었음.** LeeoKit 행만
+      "Send Feedback"으로 나와서 발견. 시뮬레이터 언어는 ko-KR이었고 번들에 `ko.lproj`도
+      있었음 — 앱 번들이 고른 언어를 그 안의 모든 번들이 따라간다. 이 앱의 한국어는 전부
+      코드에 박힌 문자열이라 앱 자신은 멀쩡해 보여서 눈으로 보기 전엔 알 수 없었음.
+      `developmentRegion = ko`로 고침.
+- [x] 시뮬레이터에서 실제로 눌러 확인 — 톱니바퀴(기록이 비었을 때도 보임) → 설정 →
+      피드백 화면까지. 전부 한국어.
+- [x] 문서 — `docs/privacy.html`에 "4. 사용 통계와 피드백" 신설(무엇을 보내고 무엇을
+      안 보내는지), "수집하지 않는 것" 목록 정정, 영문 요약. `app-review-notes.md`에
+      외부 서비스와 **앱 개인정보 라벨에 신고할 항목** 추가. README에 설정·LeeoKit 절.
+
+- [ ] **앱 개인정보 라벨을 App Store Connect에서 실제로 고칠 것.** 이제 "수집 안 함"이
+      아님 — Usage Data(Product Interaction) · Diagnostics(Crash Data) ·
+      피드백을 보낸 경우에 한해 User Content와 Contact Info. 전부 미연결·비추적.
+      **이걸 안 고치면 심사에서 잡힌다.**
+- [ ] 허브 컨테이너 Production 스키마 확인 — `Feedback`·`UsageSnapshot`·`UsageEvent`·
+      `CrashReport`, 그리고 `appId` 필드. 다른 앱이 이미 배포해 뒀을 수 있음.
+- [ ] 개발자 모드(버전 7번 탭) → 사용 통계 화면은 **눈으로 못 봤음.** 시뮬레이터에
+      iCloud 계정이 없어 읽어올 것도 없음. 실기기에서 볼 것.
+- [ ] 피드백 화면 본문 안내 문구가 LeeoKit 기본값이라 "예) 단축어를 저장할 때 앱이
+      종료됩니다"로 나옴 — 클립키보드 문구다. 이 앱 문구로 바꿀지 정할 것.

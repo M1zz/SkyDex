@@ -18,6 +18,7 @@ struct ArchiveView: View {
     @Environment(\.modelContext) private var context
 
     @State private var selected: SkyEntry?
+    @State private var showingSettings = false
     @State private var showing: Showing = .list
     @State private var groups: [PaletteGroup] = []
 
@@ -99,6 +100,20 @@ struct ArchiveView: View {
                         .frame(width: 250)
                     }
                 }
+                // Always, including on an empty archive: the way to say
+                // something to whoever wrote this cannot depend on having
+                // collected something first.
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        showingSettings = true
+                    } label: {
+                        Image(systemName: "gearshape")
+                    }
+                    .accessibilityLabel("설정")
+                }
+            }
+            .sheet(isPresented: $showingSettings) {
+                SettingsView()
             }
             // The way back to the board is in the bar at the bottom, in the
             // same place on both screens. It used to be up here, which meant the

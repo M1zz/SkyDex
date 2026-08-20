@@ -13,6 +13,7 @@
 		A1B2C3D40000000000000042 /* SkyDex/Models/SkySlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000032 /* SkyDex/Models/SkySlot.swift */; };
 		A1B2C3D40000000000000043 /* SkyDex/Models/SkyBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000033 /* SkyDex/Models/SkyBoard.swift */; };
 		A1B2C3D40000000000000044 /* SkyDex/Support/SkySnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000034 /* SkyDex/Support/SkySnapshot.swift */; };
+		A1B2C3D40000000000000050 /* LeeoKit in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D40000000000000051 /* LeeoKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1B2C3D40000000000000050 /* LeeoKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +135,7 @@
 			);
 			name = SkyDex;
 			packageProductDependencies = (
+				A1B2C3D40000000000000051 /* LeeoKit */,
 			);
 			productName = SkyDex;
 			productReference = A1B2C3D40000000000000005 /* SkyDex.app */;
@@ -179,7 +182,7 @@
 				};
 			};
 			buildConfigurationList = A1B2C3D4000000000000000A /* Build configuration list for PBXProject "SkyDex" */;
-			developmentRegion = en;
+			developmentRegion = ko;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -188,6 +191,9 @@
 			);
 			mainGroup = A1B2C3D40000000000000002;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				A1B2C3D40000000000000052 /* XCRemoteSwiftPackageReference "LeeoKit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A1B2C3D40000000000000003 /* Products */;
 			projectDirPath = "";
@@ -332,10 +338,10 @@
 				DEVELOPMENT_TEAM = QGAQ3AY3R3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SkyDex-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "하늘색";
 				INFOPLIST_KEY_NSCameraUsageDescription = "하늘을 정사각형으로 촬영해 판에 담습니다. 사진은 이 기기와 본인의 iCloud에만 보관되어 기기를 바꿔도 남으며, 개발자를 비롯한 누구에게도 전송되지 않습니다.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "이 자리의 기준 하늘색을 실제 일출·일몰 시각에 맞추기 위해 위치를 한 번 대략적으로 씁니다. 좌표는 사진에 붙지 않고 어디로도 전송되지 않습니다.";
-				INFOPLIST_FILE = "SkyDex-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -365,10 +371,10 @@
 				DEVELOPMENT_TEAM = QGAQ3AY3R3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SkyDex-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "하늘색";
 				INFOPLIST_KEY_NSCameraUsageDescription = "하늘을 정사각형으로 촬영해 판에 담습니다. 사진은 이 기기와 본인의 iCloud에만 보관되어 기기를 바꿔도 남으며, 개발자를 비롯한 누구에게도 전송되지 않습니다.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "이 자리의 기준 하늘색을 실제 일출·일몰 시각에 맞추기 위해 위치를 한 번 대략적으로 씁니다. 좌표는 사진에 붙지 않고 어디로도 전송되지 않습니다.";
-				INFOPLIST_FILE = "SkyDex-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -469,6 +475,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A1B2C3D40000000000000052 /* XCRemoteSwiftPackageReference "LeeoKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/M1zz/LeeoKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A1B2C3D40000000000000051 /* LeeoKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1B2C3D40000000000000052 /* XCRemoteSwiftPackageReference "LeeoKit" */;
+			productName = LeeoKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A1B2C3D40000000000000001 /* Project object */;
 }

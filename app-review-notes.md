@@ -68,7 +68,10 @@ No setup, no credentials, no sample files are required.
 5. Tap a filled swatch, or open the archive from the top-right button, to see the photo,
    its extracted colour and hex value, and the time it was taken.
 6. To delete: open a photo and tap "지우기" (Delete), or swipe a row in the archive list.
-   Deletion removes the photo and its entry from the device permanently.
+   Deletion removes the photo and its entry from the device and from the user's iCloud.
+7. The gear button at the top right of the archive screen opens Settings: an iCloud storage
+   switch, **피드백 보내기** (Send Feedback), **리뷰 남기기** (Write a Review), links to the
+   privacy policy and support page, and the app version.
 
 ## 5. External services, tools, and platforms used
 
@@ -88,12 +91,22 @@ No setup, no credentials, no sample files are required.
   UserDefaults. Coordinates are never attached to photos and never leave the device.
 - **SwiftData (on-device store)** — photos and entries are stored in the app's own
   container on the device, and that store is what CloudKit syncs.
+- **LeeoKit** — the developer's own open-source Swift package
+  (https://github.com/M1zz/LeeoKit), shared across the developer's apps. It provides the
+  in-app feedback form, the review prompt, and anonymous usage counting. It bundles no
+  third-party SDK and talks only to Apple's CloudKit.
+- **Apple CloudKit (public database, container `iCloud.com.Ysoup.FeedbackHub`)** — the
+  developer's own container, used for three things: (a) feedback the user chooses to
+  submit, (b) anonymous usage counts (launch count, app version, iOS version, device
+  model, keyed by a random identifier unrelated to the device or Apple Account), and
+  (c) MetricKit crash diagnostics. **No photo, colour, note, or location is ever sent
+  here.** This is separate from the private container that syncs the user's collection.
 
-There are no third-party SDKs, no analytics, no advertising, no crash reporters, no AI or
-machine-learning services, no payment processors, no authentication providers, and no
-backend server of any kind. Apart from the optional WeatherKit request and Apple's own
-CloudKit sync of the user's data into the user's own iCloud, the app makes no network
-calls. All Apple-provided services; no third-party data processors are involved.
+There are no third-party SDKs, no advertising, no third-party analytics or crash
+reporters, no AI or machine-learning services, no payment processors, no authentication
+providers, and no backend server of any kind — every service above is Apple's, and the
+only non-Apple code is the developer's own package. No third-party data processors are
+involved.
 
 ## 6. User-generated content
 
@@ -108,7 +121,13 @@ removes it from the device and from their iCloud (see step 6 above).
 ## 7. Purchases and subscriptions
 
 None. The app is free, contains no in-app purchases, no subscriptions, and no paid or
-locked content.
+locked content. There is no StoreKit code in the target at all.
+
+## 7a. Settings and feedback
+
+A gear button on the archive screen opens a settings sheet with: a switch for iCloud
+storage, a **Send Feedback** form, a **Write a Review** row, links to the privacy policy and
+support page, and the version. No account or credential is needed to reach any of it.
 
 ## 8. Regional differences
 
@@ -142,9 +161,21 @@ required attribution displayed.
 The app does not use App Tracking Transparency, contacts, microphone, photo library, health,
 or any other sensitive data or capability.
 
-## 11. App privacy (nutrition label)
+## 11. App privacy (nutrition label) — what is declared
 
-Unchanged by iCloud sync: the developer collects no data. The photos and colours are stored
-in the user's own Apple Account via CloudKit, which Apple's own guidance treats as data the
-user stores themselves rather than data collected by the developer. No data is transmitted
-to the developer or to any third party.
+The user's photos and colours are stored in the user's own Apple Account via CloudKit, which
+Apple treats as data the user stores themselves rather than data collected by the developer.
+
+Collected by the developer, and declared accordingly:
+
+- **Usage Data → Product Interaction** — launch counts and app/OS/device version. Not
+  linked to identity, not used for tracking. Keyed by a random identifier that is unrelated
+  to the device or Apple Account and is regenerated on reinstall.
+- **Diagnostics → Crash Data** — MetricKit reports. Not linked to identity, not used for
+  tracking, and carrying no installation identifier.
+- **User Content → Other User Content**, and **Contact Info** only when the user types a
+  reply address — both only through the feedback form the user chooses to submit. Used for
+  app functionality (answering the user), not for tracking.
+
+Nothing is sold or shared with third parties, and nothing is used for tracking across apps
+or websites.

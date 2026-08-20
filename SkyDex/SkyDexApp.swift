@@ -1,3 +1,4 @@
+import LeeoKit
 import SwiftData
 import SwiftUI
 import TipKit
@@ -9,6 +10,10 @@ struct SkyDexApp: App {
     init() {
         let container = SkyDexApp.makeContainer()
         CloudSync.shared.begin(syncing: SkyDexApp.usesCloud)
+
+        // 사용량 기록 · 분석 싱크 · 크래시 진단 · 사용현황 스냅샷. 전부 실패해도
+        // 앱은 그대로 돈다 — 이 줄이 앱의 동작을 좌우해서는 안 된다.
+        LeeoKit.bootstrap(SkyDexSpec.self)
         // Before any `@Query` is live, so the repair is not racing a view that
         // is already reading the rows it rewrites.
         SkyEntry.repairLegacyRows(in: container.mainContext)
@@ -39,9 +44,11 @@ struct SkyDexApp: App {
     /// Four attempts, in order of how much they cost the collection. The store
     /// on disk is the same file every time — only what is done with it changes.
     private static func makeContainer() -> ModelContainer {
-        // 1. iCloud. Rows already on disk stay put and start uploading; a fresh
-        //    install on a new phone pulls back whatever the account holds.
-        if let synced = try? ModelContainer(for: SkyEntry.self, configurations: cloudConfiguration) {
+        // 1. iCloud, unless it was turned off in the settings. Rows already on
+        //    disk stay put and start uploading; a fresh install on a new phone
+        //    pulls back whatever the account holds.
+        if wantsCloud,
+           let synced = try? ModelContainer(for: SkyEntry.self, configurations: cloudConfiguration) {
             usesCloud = true
             return synced
         }
@@ -78,6 +85,15 @@ struct SkyDexApp: App {
 
     /// Set once, by `makeContainer`, before any view exists.
     private(set) static var usesCloud = false
+
+    /// The switch in the settings screen. Read once, at launch: a store cannot
+    /// change its mind about syncing while it is open, so the screen says the
+    /// change waits for the next launch rather than pretending otherwise.
+    static let cloudEnabledKey = "skydex.cloud.enabled"
+
+    private static var wantsCloud: Bool {
+        UserDefaults.standard.object(forKey: cloudEnabledKey) as? Bool ?? true
+    }
 
     private static func archiveStore() {
         let base = URL.applicationSupportDirectory.appending(path: "default.store").path

@@ -17,9 +17,9 @@ App Store Connect에는 **지원 URL**로 `support.html`을, **개인정보 처�
 색을 손보면 그림도 다시 뽑아야 맞습니다. 방침을 고칠 일이 생기면 `docs/privacy.html`을
 고치고 문서 안의 시행일도 함께 갱신하세요.
 
-Xcode 16 이상에서 `SkyDex.xcodeproj`를 열고 실행하세요. iOS 17.0+, SwiftUI + SwiftData,
-외부 의존성 없음. 실행 전 타깃 설정에서 Bundle Identifier(`com.yourname.SkyDex`)와 팀만
-바꾸면 됩니다.
+Xcode 16 이상에서 `SkyDex.xcodeproj`를 열고 실행하세요. iOS 17.0+, SwiftUI + SwiftData.
+의존성은 [LeeoKit](https://github.com/M1zz/LeeoKit) 하나이고 제3자 SDK는 없습니다.
+실행 전 타깃 설정에서 Bundle Identifier(`com.yourname.SkyDex`)와 팀만 바꾸면 됩니다.
 
 ## 절대 하지 말 것: 번들 ID 바꾸기
 
@@ -666,11 +666,55 @@ plutil -p "$(...)/SkyDex.app/Info.plist" | grep -A2 UIBackgroundModes
 파일 위에 그대로 병합되므로 나머지는 손대지 않아도 됩니다 — 위젯이 이미
 `SkyDexWidgets-Info.plist`로 쓰던 방식과 같습니다.
 
+## 설정 화면
+
+`Views/SettingsView.swift`, `SkyDexSpec.swift`
+
+기록 화면 오른쪽 위 톱니바퀴. 세 줄뿐이고, 그래야 합니다 — 판은 설정할 수 있는 물건이
+아니고 스위치가 늘어선 화면은 설정할 수 있다고 말합니다. 자리를 얻은 것은 셋입니다:
+**사진이 어디에 보관되는가**, **이걸 만든 사람에게 말하는 방법**, **버전**.
+
+톱니바퀴는 기록이 비어 있을 때도 나옵니다. 할 말이 생기는 쪽은 오히려 아무것도 못 모은
+사람인데, 그 사람에게만 창구가 없으면 안 됩니다.
+
+**iCloud 스위치는 다음 실행부터 적용됩니다.** 저장소는 열려 있는 동안 동기화 여부를
+바꿀 수 없습니다. 그래서 화면이 그렇게 말합니다 — 껐는데 계속 올라가는 것보다 낫습니다.
+
+### LeeoKit
+
+`LeeoSupportSection<SkyDexSpec>` 한 줄이 피드백·리뷰·정책 링크·버전(7번 탭하면 개발자
+모드)을 전부 그립니다. 계약(`LeeoAppSpec`)은 `SkyDexSpec.swift` 하나에 있고, `legal`과
+`monetization`은 기본값이 없어서 안 적으면 컴파일이 안 됩니다.
+
+피드백과 사용 통계는 **공유 허브 컨테이너**(`iCloud.com.Ysoup.FeedbackHub`, 공개 DB)로
+갑니다. 컬렉션이 사는 곳(`iCloud.com.leeo.SkyDex`, 비공개 DB)과 **다른 컨테이너**입니다 —
+모은 하늘과 개발자에게 보낸 말이 같은 통에 섞이지 않습니다. 엔티틀먼트에 둘 다 있습니다.
+
+`analytics`를 no-op에서 `LeeoUsageAnalytics`로 바꾼 것이 사용 통계를 **켜는** 스위치입니다.
+부트스트랩은 그걸 선언하지 않은 앱에는 아무것도 보내지 않습니다. 보내는 것은 실행 횟수와
+앱·iOS·기기 버전, 그리고 기기·계정과 무관한 무작위 설치 번호뿐입니다. **사진·색·위치는
+가지 않습니다.** `docs/privacy.html` 4번이 이걸 적고 있어야 합니다.
+
+### 개발 지역이 `en`이면 앱이 영어로 돕니다
+
+LeeoKit 행만 "Send Feedback"으로 나왔습니다. 시뮬레이터 언어는 ko-KR이었고 LeeoKit 번들에는
+`ko.lproj`가 들어 있었는데도 그랬습니다. 앱 번들이 고른 언어가 영어이면 그 안의 모든 번들이
+영어를 따라갑니다. 이 앱의 한국어는 전부 코드에 박힌 문자열이라 앱 자신은 멀쩡해 보이고,
+남의 번들만 영어로 나옵니다 — 그래서 눈으로 보기 전에는 알 수 없습니다.
+
+`project.pbxproj`의 `developmentRegion`을 `ko`로. 확인은 빌드된 Info.plist의
+`CFBundleDevelopmentRegion`입니다.
+
 ### 배포 전에 반드시
 
 CloudKit 스키마는 개발 환경에서 먼저 생기고, **CloudKit Dashboard에서 Production으로
 Deploy 해야** App Store 빌드에서 동작합니다. 이걸 빼먹으면 심사관과 실사용자에게만
 동기화가 안 됩니다 — 개발 기기에서는 멀쩡합니다.
+
+**컨테이너 두 개 다** 해당됩니다. `iCloud.com.leeo.SkyDex`(컬렉션)와
+`iCloud.com.Ysoup.FeedbackHub`(피드백 `Feedback` · 사용 통계 `UsageSnapshot`/`UsageEvent` ·
+크래시 `CrashReport`). 허브 쪽은 다른 앱이 이미 배포해 뒀을 수 있지만, `appId` 필드로
+앱을 구분하므로 그 필드가 Production 스키마에 있어야 합니다.
 
 ### 예전 저장소에서 올라오는 경우
 
