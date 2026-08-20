@@ -45,6 +45,7 @@
     font-size: 19px; letter-spacing: -0.01em; margin: 40px 0 12px;
     padding-top: 24px; border-top: 1px solid var(--line);
   }
+  h3 { font-size: 17px; letter-spacing: -0.01em; margin: 26px 0 10px; }
   p { margin: 0 0 14px; }
   ul { margin: 0 0 14px; padding-left: 1.2em; }
   li { margin-bottom: 8px; }
@@ -69,21 +70,40 @@
 <main>
 
   <h1>개인정보 처리방침</h1>
-  <p class="meta">iOS 앱 <strong>하늘색</strong> · 시행일 2026년 8월 17일</p>
+  <p class="meta">iOS 앱 <strong>하늘색</strong> · 시행일 2026년 8월 20일</p>
 
   <div class="card">
     <p><strong>요약.</strong> 이 앱은 서버가 없고 계정이 없습니다. 개발자는 이용자의
-    개인정보를 수집하지 않습니다. 찍은 사진과 색은 기기 안에만 저장됩니다.
+    개인정보를 수집하지 않습니다. 찍은 사진과 색은 기기와 <strong>이용자 본인의
+    iCloud</strong>에만 보관되며, 개발자는 그 어느 쪽도 열어볼 수 없습니다.
     분석 도구, 광고, 추적, 제3자 SDK를 쓰지 않습니다.</p>
   </div>
 
   <h2>1. 사진과 기록</h2>
   <p>앱에서 촬영하거나 앨범에서 고른 사진, 그 사진에서 뽑아낸 색, 촬영 시각,
-  적어 넣은 한 줄은 모두 <strong>기기 안의 앱 저장소</strong>에만 보관됩니다.
-  개발자에게 전송되지 않고, 외부 서버로 올라가지 않습니다.</p>
-  <p>기기 백업(iCloud 또는 컴퓨터 백업)을 켜두셨다면 다른 앱 데이터와 마찬가지로
-  이 저장소도 백업에 포함될 수 있습니다. 그 백업은 Apple 계정에 속하며 개발자는
-  접근할 수 없습니다.</p>
+  적어 넣은 한 줄은 <strong>기기 안의 앱 저장소</strong>에 보관됩니다.
+  개발자에게 전송되지 않고, 개발자의 서버로 올라가지 않습니다. 개발자는 서버를
+  운영하지 않습니다.</p>
+
+  <h3>iCloud 보관</h3>
+  <p>기기에 Apple 계정이 로그인되어 있으면, 이 기록은 <strong>이용자 본인의
+  iCloud</strong>(Apple의 CloudKit 비공개 데이터베이스)에도 함께 보관됩니다.
+  기기를 잃어버리거나 앱을 지웠다 다시 깔아도 모아둔 하늘이 돌아오게 하기 위한
+  것입니다.</p>
+  <ul>
+    <li>보관되는 곳은 <strong>이용자의 iCloud 계정</strong>이며, 개발자의 서버가
+      아닙니다. 개발자는 이 데이터를 열람할 수 없고 사본을 갖지 않습니다.</li>
+    <li>같은 Apple 계정으로 로그인한 이용자 본인의 기기끼리만 오갑니다.
+      다른 이용자에게 공개되지 않으며, 공유·게시 기능 자체가 없습니다.</li>
+    <li>앱 안에서 기록을 지우면 iCloud에 있는 사본도 함께 지워집니다.</li>
+    <li>차지하는 용량은 이용자의 iCloud 저장 용량에 포함됩니다.</li>
+    <li>iCloud에 로그인하지 않았거나 설정에서 이 앱의 iCloud를 꺼두면, 앱은 예전처럼
+      기기 안에만 저장하며 그대로 동작합니다.</li>
+  </ul>
+  <p>이 보관은 Apple의 처리방침을 따릅니다 —
+  <a href="https://www.apple.com/legal/privacy/">Apple 개인정보 보호 정책</a>.
+  기기 백업(iCloud 또는 컴퓨터 백업)을 켜두셨다면 이 저장소도 백업에 포함될 수
+  있으며, 그 백업 역시 Apple 계정에 속하고 개발자는 접근할 수 없습니다.</p>
 
   <h2>2. 위치</h2>
   <p>위치는 두 가지에만 쓰입니다.</p>
@@ -114,10 +134,14 @@
   </ul>
 
   <h2>5. 보관과 삭제</h2>
-  <p>기록은 이용자가 지울 때까지 기기에 남습니다. 사진을 열어 <strong>지우기</strong>를
-  누르거나 기록 화면에서 왼쪽으로 밀면 그 기록이 지워집니다. 앱을 삭제하면 모아둔
-  하늘과 저장된 좌표가 함께 사라집니다. 개발자가 가진 사본은 없으므로 별도의
-  삭제 요청 절차가 필요하지 않습니다.</p>
+  <p>기록은 이용자가 지울 때까지 남습니다. 사진을 열어 <strong>지우기</strong>를
+  누르거나 기록 화면에서 왼쪽으로 밀면 그 기록이 기기에서도 iCloud에서도 지워집니다.</p>
+  <p>앱을 삭제하면 기기 안의 저장소와 좌표는 사라지지만, <strong>iCloud에 보관된
+  사본은 남습니다</strong> — 다시 설치하면 돌아오게 하려는 것이 이 기능의 목적이기
+  때문입니다. 완전히 지우려면 앱 안에서 기록을 지우거나, iOS <em>설정 → Apple 계정 →
+  iCloud → 저장 공간 관리</em>에서 이 앱의 데이터를 삭제하시면 됩니다.</p>
+  <p>개발자가 가진 사본은 없으므로 개발자에게 하는 별도의 삭제 요청 절차는
+  필요하지 않습니다.</p>
 
   <h2>6. 아동</h2>
   <p>이 앱은 어떤 이용자로부터도 개인정보를 수집하지 않으며, 아동으로부터도
@@ -137,8 +161,18 @@
     server, no account, and no analytics, advertising, tracking or third-party
     SDK in the app.</p>
     <p>Photos you take or pick, the colour extracted from them, the capture time
-    and any note you write stay in the app's own storage on your device. They are
-    never sent to the developer.</p>
+    and any note you write are kept in the app's own storage on your device. They
+    are never sent to the developer, who runs no server.</p>
+    <p>If you are signed in to iCloud, the same records are also kept in
+    <strong>your own iCloud</strong> (Apple's CloudKit private database), so your
+    collection survives losing the phone or reinstalling the app. That data lives
+    in your Apple account, not on any server of ours: the developer cannot read
+    it and holds no copy of it. It moves only between your own devices signed in
+    to the same Apple account — there is no sharing or publishing feature in the
+    app at all. Deleting an entry in the app deletes the iCloud copy too, and the
+    storage it uses counts against your iCloud quota. If you are not signed in to
+    iCloud, or you turn this app off under iCloud in Settings, the app keeps
+    everything on the device and works exactly as before.</p>
     <p>Location is requested at kilometre accuracy and used only to (a) compute
     local sunrise and sunset so the board's reference colours land at the right
     time of day, and (b) fetch today's hourly cloud and rain forecast. The
@@ -148,8 +182,11 @@
     <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>.
     Denying location permission is fine: the app falls back to a default
     coordinate and a clear-sky reference.</p>
-    <p>Deleting an entry in the app, or deleting the app, removes the data. The
-    developer holds no copy. Contact:
+    <p>Deleting an entry in the app removes it from the device and from iCloud.
+    Deleting the app removes the on-device storage but leaves the iCloud copy, so
+    that reinstalling brings your collection back; to remove that too, delete the
+    entries in the app or remove the app's data under Settings → Apple Account →
+    iCloud → Manage Storage. The developer holds no copy. Contact:
     <a href="mailto:mizzking75@gmail.com">mizzking75@gmail.com</a>.</p>
   </section>
 

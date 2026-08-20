@@ -65,6 +65,18 @@ struct ArchiveView: View {
                                 }
                             }
                         }
+                        // Where the photos are, at the foot of the list of
+                        // photos. This is the screen where "did I lose any of
+                        // it" gets asked, so this is where it is answered — and
+                        // it answers with a fact, not a promise: what iCloud
+                        // last agreed to, and when.
+                        Section {
+                            EmptyView()
+                        } footer: {
+                            Text(CloudSync.shared.line)
+                                .font(.footnote)
+                                .foregroundStyle(.secondary)
+                        }
                     }
                     .scrollContentBackground(.hidden)
                 }

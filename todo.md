@@ -781,3 +781,57 @@
 - [ ] 라이브러리에서 고른 사진은 `PHAsset.creationDate`를 촬영 시각으로 쓰기
       (지금은 `Date()`라 어제 노을이 오늘 밤 칸에 들어감)
 - [ ] 오래된 원본 정리 옵션 (썸네일과 색만 남기기)
+
+## 앱 심사 리젝 대응 (2026-08-20) — 가이드라인 2.1 Information Needed
+기능 결함이 아니라 **제출 정보 부족**. 앱 코드는 고칠 것이 없고 App Store Connect에 채울
+것을 채우면 됨. 영문 답변 초안은 `app-review-notes.md`.
+
+- [ ] 실기기(iPhone 16, iOS 26.5.2) 화면 녹화 — 앱 실행부터 시작해서 위치 권한 → 판 →
+      카메라 권한 → 촬영 → 칸 채워짐 → 상세(색·헥스) → 기록 → 지우기까지 한 번에.
+      1~3분, 편집 없이. 계정·결제·ATT는 없으니 찍을 것도 없음.
+- [ ] App Review Information → Notes에 `app-review-notes.md` 내용 붙여넣기.
+      Sign-in required 체크 해제.
+- [ ] 스크린샷 점검 (2.3.3) — 스플래시나 빈 판 말고 **채워진 판 · 사진 상세 · 팔레트**처럼
+      실제로 쓰는 화면인지.
+- [ ] 재제출 전 실기기 한 바퀴 — 위 "원인 규명이 안 끝난 부분"의 카메라 경로 크래시가
+      심사 기기에서 터지면 다음은 2.1 Bugs 리젝임.
+
+## iCloud 보관 (2026-08-20)
+사진이 기기에만 있으면 기기와 함께 사라짐. SwiftData에 CloudKit **비공개 DB**를 붙임
+(컨테이너 `iCloud.com.leeo.SkyDex`). 계정·로그인은 여전히 없고 기기에 로그인된 Apple
+계정을 그대로 씀.
+
+- [x] 엔티틀먼트 — iCloud 컨테이너 + CloudKit 서비스 + `aps-environment`.
+      배경 모드 `remote-notification` 추가. 실기기 서명 통과 확인(프로비저닝이 컨테이너를
+      받아들임).
+- [x] `makeContainer()` 네 단계로 — iCloud → **로컬(저장소 안 건드림)** → 옆으로 치우기 →
+      메모리. 2번이 핵심: 서명 잘못된 빌드가 멀쩡한 사진을 치워버리는 걸 막음.
+- [x] `SkyEntry`는 손댈 것 없었음 — 전 속성 기본값, 유니크 제약 없음, 관계 없음.
+- [x] `Support/CloudSync.swift` — 기록 화면 맨 아래 한 줄로 상태와 **마지막 맞춘 시각**.
+- [x] 문서 정리 — 카메라 목적 문자열, `docs/privacy.html`(시행일 8/20, iCloud 절 추가,
+      영문 요약), README, `app-review-notes.md`.
+- [x] **배경 모드 `remote-notification`** — `INFOPLIST_KEY_UIBackgroundModes`는 존재하지
+      않는 빌드 설정이라 조용히 버려졌고, 앱이 실행 직후 `BUG IN CLIENT OF CLOUDKIT`으로
+      죽었음(시뮬레이터에서 실제로 재현·확인). 루트에 `SkyDex-Info.plist`를 두고
+      `INFOPLIST_FILE`로 가리키는 방식으로 고침. 위젯이 쓰던 방식과 같음.
+      확인은 빌드된 `Info.plist`를 `plutil -p`로 직접 볼 것 — 빌드 성공은 증거가 아님.
+- [x] `CloudSync`가 계정 유무를 `ubiquityIdentityToken`으로 추측하던 것을
+      `CKContainer.accountStatus()`로 바꿈. 앞의 것은 iCloud Drive에 대한 질문이라
+      이 앱과 상관없는 이유로 nil이 나옴.
+- [x] 시뮬레이터 + 실기기 clean build 무경고 통과. 시뮬레이터에서 실행해 살아 있는 것과
+      CloudKit이 계정 없음(`CKAccountStatusNoAccount`)으로 조용히 물러나 로컬로 계속
+      도는 것까지 확인.
+
+- [ ] 아카이브해서 `aps-environment`가 `production`으로 바뀌는지 확인. 엔티틀먼트 파일에는
+      `development`로 적혀 있고, 자동 서명이 배포용 내보내기에서 바꿔주는 것이 정상 동작임.
+      안 바뀌면 심사 빌드에서 푸시가 안 붙고 동기화가 늦어짐.
+- [ ] **CloudKit Dashboard에서 Production으로 Deploy.** 안 하면 개발 기기에서만 되고
+      심사관·실사용자는 동기화가 안 됨. 제출 전 필수.
+- [ ] 실기기 두 대(iPhone 16 / 16 Plus)에 같은 계정으로 깔아 실제로 오가는지 확인.
+      한 대에서 찍고 다른 대에서 뜨는지, 지우면 같이 지워지는지.
+- [ ] 앱 지웠다 다시 깔아 되돌아오는지 확인 — 이게 사용자가 실제로 원한 것.
+- [ ] 기존 로컬 저장소가 iCloud로 올라갈 때 사진 개수만큼 업로드가 생김. 34장 기준
+      용량·시간 재볼 것.
+- [ ] 기록 화면 맨 아래 한 줄이 실제로 어떻게 보이는지 **눈으로 못 봤음.** 시뮬레이터에
+      사진이 없어 기록 화면이 빈 상태로만 떴음. `Section { EmptyView() } footer:`가 빈 줄을
+      하나 만들지 않는지 실기기에서 볼 것.
