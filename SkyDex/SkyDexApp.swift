@@ -44,6 +44,8 @@ struct SkyDexApp: App {
     /// Four attempts, in order of how much they cost the collection. The store
     /// on disk is the same file every time — only what is done with it changes.
     private static func makeContainer() -> ModelContainer {
+        prepareStoreDirectory()
+
         // 1. iCloud, unless it was turned off in the settings. Rows already on
         //    disk stay put and start uploading; a fresh install on a new phone
         //    pulls back whatever the account holds.
@@ -95,8 +97,34 @@ struct SkyDexApp: App {
         UserDefaults.standard.object(forKey: cloudEnabledKey) as? Bool ?? true
     }
 
+    /// Where `default.store` actually is.
+    ///
+    /// `ModelConfiguration` picks up an app group on its own when the
+    /// entitlements name one, so the store is not in the app's own Application
+    /// Support — it is in the shared container, which is also why the widgets'
+    /// entitlement has to keep naming the same group.
+    private static var storeDirectory: URL {
+        let shared = FileManager.default
+            .containerURL(forSecurityApplicationGroupIdentifier: SkySnapshot.group)?
+            .appending(path: "Library/Application Support", directoryHint: .isDirectory)
+        return shared ?? URL.applicationSupportDirectory
+    }
+
+    /// iOS creates the group container but nothing inside it. On a fresh
+    /// install the folder the store wants does not exist yet, so the first
+    /// `addPersistentStore` fails with a page of sandbox complaints before Core
+    /// Data's own recovery makes the folder and retries. It does recover — but
+    /// a launch that prints a stack of `error:` lines and works anyway is a
+    /// launch nobody can read the real faults out of. One `mkdir` removes it.
+    private static func prepareStoreDirectory() {
+        try? FileManager.default.createDirectory(
+            at: storeDirectory,
+            withIntermediateDirectories: true
+        )
+    }
+
     private static func archiveStore() {
-        let base = URL.applicationSupportDirectory.appending(path: "default.store").path
+        let base = storeDirectory.appending(path: "default.store").path
         let stamp = Int(Date().timeIntervalSince1970)
         for suffix in ["", "-shm", "-wal"] {
             let from = URL(fileURLWithPath: base + suffix)

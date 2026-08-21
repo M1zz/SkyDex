@@ -941,6 +941,16 @@ Failed to generate jwt token for: com.apple.weatherkit.authservice
 - **심사와 직결된다.** 예보가 안 오면 `forecast == nil`이라 크레딧도 화면에 안 뜬다 —
   리젝 답장에 첨부할 녹화 자체가 불가능하고, 심사자도 마크를 못 본다. 이걸 먼저 풀어야 한다.
 
+### CoreData 첫 실행 로그 (같은 로그, 2026-08-21) — 고침
+`AppGroup/…/Library/Application Support`가 없어서 첫 `addPersistentStore`가
+`NSCocoaErrorDomain 512`로 실패하고, Core Data 자체 복구가 폴더를 만들어 재시도해서
+결국 성공하는 상태였다(로그 수백 줄, 동작은 정상).
+- [x] `SkyDexApp.prepareStoreDirectory()` — 컨테이너를 열기 전에 그 폴더를 만든다.
+- [x] `storeDirectory` 도입. 스토어는 앱 그룹 컨테이너 안에 있다(`ModelConfiguration`이
+      엔타이틀먼트의 앱 그룹을 자동으로 집는다). `archiveStore()`가 앱 자신의
+      Application Support를 보고 있었으므로 **3단계 복구가 엉뚱한 경로를 옮기고 있었다** —
+      같이 고쳤다.
+
 ### 남은 일 (사람이 해야 함)
 - [ ] **실기기에서 육안 확인.** 시뮬레이터는 WeatherKit 엔타이틀먼트가 없어 크레딧이
       영영 nil이고, 이 맥에서는 `simctl launch`가 걸려서 실행 자체를 못 했다. 마크가 실제로
