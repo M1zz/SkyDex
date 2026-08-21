@@ -20,8 +20,20 @@ struct WeatherCredit: View {
     /// environment; this is for the times the background is not the page.
     var onDark = false
 
-    /// The mark's height. Everything else about it is Apple's.
-    var height: CGFloat = 14
+    /// The mark's height at the standard text size. Everything else about it is
+    /// Apple's.
+    var height: CGFloat = 18
+
+    /// Dynamic Type, applied by hand.
+    ///
+    /// A fixed point size is the one way a mark gets smaller the more a person
+    /// needs it bigger: everything around it grows and the credit alone stays
+    /// where it was. `.font(.system(size:))` and a fixed frame both do that, so
+    /// the size is multiplied through here instead. Tied to `.caption` because
+    /// that is the weight this actually is — a source line, not body text.
+    @ScaledMetric(relativeTo: .caption) private var scale: CGFloat = 1
+
+    private var marked: CGFloat { height * scale }
 
     @Environment(\.colorScheme) private var colorScheme
 
@@ -48,14 +60,21 @@ struct WeatherCredit: View {
                     // device. So the placeholder says so, and only ever in a
                     // build that cannot ship.
                     Text(verbatim: label)
-                        .font(.system(size: height - 1, weight: .medium))
-                        .foregroundStyle(dark ? Color.white : Color.secondary)
+                        .font(.system(size: marked - 1, weight: .medium))
+                        // Not `.secondary`: the dimming below is already applied
+                        // to the whole thing, and a secondary grey underneath it
+                        // put the words at about 40% against the page — which is
+                        // not a mark being tasteful, it is a mark being hard to
+                        // read.
+                        .foregroundStyle(dark ? Color.white : Color.primary)
                 }
             }
-            .frame(height: height)
+            .frame(height: marked)
             // Legible, and not the loudest thing on a screen whose subject is a
-            // colour. Apple asks for the mark to be clear, not for it to win.
-            .opacity(dark ? 0.85 : 0.65)
+            // colour. Apple asks for the mark to be clear, not for it to win —
+            // but clear is the requirement and the one a reviewer checks, so
+            // this is as far down as it goes.
+            .opacity(dark ? 0.9 : 0.8)
             // TEMPORARY — goes with the placeholder in `SkyWeather`. Says which
             // half is invented, next to whichever form the mark took.
             .modifier(PlaceholderNote(showing: credit.isPlaceholder))
@@ -75,7 +94,7 @@ private struct PlaceholderNote: ViewModifier {
             HStack(spacing: 5) {
                 content
                 Text(verbatim: "(예보 가짜 · WeatherKit 실패)")
-                    .font(.system(size: 10))
+                    .font(.caption2)
                     .foregroundStyle(.red)
             }
         } else {
