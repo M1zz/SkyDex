@@ -27,6 +27,20 @@ final class Place: NSObject {
     /// aimed at nowhere in particular yet.
     private(set) var isKnown: Bool
 
+    /// True while a real fix might still arrive, and nothing is stored to stand
+    /// in for it.
+    ///
+    /// The forecast waits on this. Asking at the fallback coordinate and asking
+    /// again a second later at the real one is two calls where one was needed,
+    /// and the first is for a city the user is not in — which on a working
+    /// account is a wasted request against a finite budget and a forecast for
+    /// Seoul on a phone in Pohang.
+    ///
+    /// It settles either way. A refusal settles it as surely as a fix does, and
+    /// then the fallback is the honest answer rather than a placeholder being
+    /// waited on.
+    private(set) var isAwaitingFix = false
+
     private let manager = CLLocationManager()
     private let defaults = UserDefaults.standard
 
@@ -46,11 +60,13 @@ final class Place: NSObject {
     func refresh() {
         switch manager.authorizationStatus {
         case .notDetermined:
+            isAwaitingFix = !isKnown
             manager.requestWhenInUseAuthorization()
         case .authorizedWhenInUse, .authorizedAlways:
+            isAwaitingFix = !isKnown
             manager.requestLocation()
         default:
-            break
+            isAwaitingFix = false
         }
     }
 
@@ -65,11 +81,17 @@ extension Place: @preconcurrency CLLocationManagerDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         guard manager.authorizationStatus == .authorizedWhenInUse
             || manager.authorizationStatus == .authorizedAlways
-        else { return }
+        else {
+            // Refused, or not allowed to be asked. There is no fix coming and
+            // whatever is waiting on one should stop waiting.
+            isAwaitingFix = false
+            return
+        }
         manager.requestLocation()
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        isAwaitingFix = false
         guard let coordinate = locations.last?.coordinate else { return }
         latitude = coordinate.latitude
         longitude = coordinate.longitude
@@ -80,6 +102,8 @@ extension Place: @preconcurrency CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         // Nothing to do and nothing to say. The last known coordinate, or the
-        // fallback, is still a usable answer for a sunrise.
+        // fallback, is still a usable answer for a sunrise — but it is now the
+        // final one, so anything holding out for better can go ahead.
+        isAwaitingFix = false
     }
 }

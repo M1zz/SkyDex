@@ -567,8 +567,14 @@ struct BoardView: View {
                 place.refresh()
                 if !revealed { revealed = true }
                 publish()
-                await weather.refresh(latitude: place.latitude, longitude: place.longitude)
-                publish()
+                // Not while a first fix is still coming: the coordinate on hand
+                // is the fallback, and asking now spends a call on Seoul before
+                // asking again for where the phone actually is. The two
+                // `onChange` below cover both ways that wait can end.
+                if !place.isAwaitingFix {
+                    await weather.refresh(latitude: place.latitude, longitude: place.longitude)
+                    publish()
+                }
             }
             .onChange(of: entries.count) { _, _ in publish() }
             .onChange(of: scenePhase) { _, phase in
@@ -594,6 +600,18 @@ struct BoardView: View {
             .onChange(of: place.latitude) { _, latitude in
                 Task {
                     await weather.refresh(latitude: latitude, longitude: place.longitude)
+                    publish()
+                }
+            }
+            // The other way the wait ends: refused, or the fix failed. There is
+            // no coordinate change to ride on then — the fallback is what there
+            // is, and it is now the final answer rather than a placeholder.
+            // Guarded on `isKnown` so a fix that arrives does not fire this and
+            // the line above for the same one forecast.
+            .onChange(of: place.isAwaitingFix) { _, waiting in
+                guard !waiting, !place.isKnown else { return }
+                Task {
+                    await weather.refresh(latitude: place.latitude, longitude: place.longitude)
                     publish()
                 }
             }
