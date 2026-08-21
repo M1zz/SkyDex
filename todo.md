@@ -899,6 +899,13 @@ Guideline 5.2.5, Submission 837283f7-a525-4607-93b8-1138ed249bd5, 1.0 (2) 리젝
 - [x] `app-review-notes.md`에 12번 항목 추가(어디서 쓰고 어디에 표기하는지).
 - [x] 답장 초안 작성.
 
+### ⚠️ 제출 전에 반드시 지울 것
+- [ ] `SkyWeather`의 `showsPlaceholderWeather` / `installPlaceholder()` 와 `refresh`
+      안의 `#if DEBUG` 블록. 예보를 못 받았을 때 가짜 예보와 가짜 크레딧을 꽂아 넣어
+      마크와 팁의 위치를 눈으로 찾을 수 있게 한 임시 코드다. `#if DEBUG`라 Release에는
+      안 들어가지만, 남겨두면 언젠가 **애플이 하지도 않은 예보에 애플 이름을 붙이는**
+      코드가 된다. 마크 위치 확인이 끝나는 즉시 삭제.
+
 ### 남은 일 (사람이 해야 함)
 - [ ] **실기기에서 육안 확인.** 시뮬레이터는 WeatherKit 엔타이틀먼트가 없어 크레딧이
       영영 nil이고, 이 맥에서는 `simctl launch`가 걸려서 실행 자체를 못 했다. 마크가 실제로

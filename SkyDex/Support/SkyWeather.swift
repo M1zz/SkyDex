@@ -24,6 +24,10 @@ struct SkyCredit {
     let lightMark: UIImage?
     let darkMark: UIImage?
 
+    /// True only for the debug placeholder — see `SkyWeather.installPlaceholder`.
+    /// Real credits never set it, and nothing outside a `#if DEBUG` reads it.
+    var isPlaceholder = false
+
     func mark(onDark: Bool) -> UIImage? { onDark ? darkMark : lightMark }
 }
 
@@ -56,6 +60,59 @@ final class SkyWeather {
         longitude: Double,
         now: Date = .now,
         calendar: Calendar = .current
+    ) async {
+        await load(latitude: latitude, longitude: longitude, now: now, calendar: calendar)
+
+        #if DEBUG
+        // TEMPORARY — REMOVE BEFORE SUBMITTING TO THE APP STORE.
+        //
+        // Only so the credit and the tip can be found on a screen without
+        // waiting on a real forecast. It runs after the real fetch and only when
+        // that fetch came back with nothing, so a device that can reach
+        // WeatherKit still shows the real thing.
+        //
+        // `#if DEBUG` means this cannot reach a Release build and so cannot
+        // reach the App Store — but leave it in and one day it credits Apple for
+        // weather Apple never said, which is a worse thing to be caught doing
+        // than the missing mark was. Take it out once the placement is confirmed.
+        if SkyWeather.showsPlaceholderWeather, forecast == nil { installPlaceholder() }
+        #endif
+    }
+
+    #if DEBUG
+    /// TEMPORARY — see `refresh`. Set to false to see the app's real behaviour.
+    static var showsPlaceholderWeather = true
+
+    /// A flat 40%-cloud day and a credit with no artwork, which is enough for
+    /// the tip to have something to say and for the mark to appear as words.
+    private func installPlaceholder() {
+        // Keep a real credit if one was obtained — the two calls fail
+        // separately, and saying the mark is fake when only the forecast is
+        // hides which half is broken. Only the flag is forced on, because it is
+        // the forecast under it that is invented.
+        if var real = credit {
+            real.isPlaceholder = true
+            credit = real
+        } else {
+            credit = SkyCredit(
+                legalPageURL: URL(string: "https://weatherkit.apple.com/legal-attribution.html")!,
+                lightMark: nil,
+                darkMark: nil,
+                isPlaceholder: true
+            )
+        }
+        forecast = SkyForecast(
+            cloud: [Double](repeating: 0.4, count: 24),
+            rain: [Double](repeating: 0, count: 24)
+        )
+    }
+    #endif
+
+    private func load(
+        latitude: Double,
+        longitude: Double,
+        now: Date,
+        calendar: Calendar
     ) async {
         let here = CLLocation(latitude: latitude, longitude: longitude)
         if let fetchedAt, let fetchedFor, forecast != nil {
@@ -111,6 +168,9 @@ final class SkyWeather {
         } catch {
             // Nothing to say and nothing to show. The board is already drawing
             // something reasonable.
+            #if DEBUG
+            print("[WeatherKit] forecast failed: \(error)")
+            #endif
         }
     }
 
@@ -125,6 +185,16 @@ final class SkyWeather {
         do {
             attribution = try await WeatherService.shared.attribution
         } catch {
+            #if DEBUG
+            // TEMPORARY — remove with the placeholder below.
+            //
+            // This is the failure that decides everything: no credit means no
+            // forecast, so an app that cannot get here has no weather in it at
+            // all. Swallowed silently it looks identical to a device that is
+            // simply offline, which is why the usage dashboard reading zero was
+            // a surprise rather than something already known.
+            print("[WeatherKit] attribution failed: \(error)")
+            #endif
             return nil
         }
         async let light = SkyWeather.image(at: attribution.combinedMarkLightURL)

@@ -56,8 +56,33 @@ struct WeatherCredit: View {
             // Legible, and not the loudest thing on a screen whose subject is a
             // colour. Apple asks for the mark to be clear, not for it to win.
             .opacity(dark ? 0.85 : 0.65)
+            // TEMPORARY — goes with the placeholder in `SkyWeather`. Says which
+            // half is invented, next to whichever form the mark took.
+            .modifier(PlaceholderNote(showing: credit.isPlaceholder))
         }
         .accessibilityLabel("Apple Weather")
         .accessibilityHint("날씨 정보의 출처와 법적 고지를 엽니다.")
+    }
+}
+
+/// TEMPORARY — remove with `SkyWeather.installPlaceholder`.
+private struct PlaceholderNote: ViewModifier {
+    let showing: Bool
+
+    func body(content: Content) -> some View {
+        #if DEBUG
+        if showing {
+            HStack(spacing: 5) {
+                content
+                Text(verbatim: "(예보 가짜 · WeatherKit 실패)")
+                    .font(.system(size: 10))
+                    .foregroundStyle(.red)
+            }
+        } else {
+            content
+        }
+        #else
+        content
+        #endif
     }
 }
