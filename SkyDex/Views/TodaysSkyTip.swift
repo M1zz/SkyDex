@@ -19,6 +19,17 @@ struct TodaysSkyTip: Tip {
     var title: Text { Text(insight.headline) }
     var message: Text? { Text(insight.detail) }
     var image: Image? { Image(systemName: insight.symbol) }
+
+    /// No action, and specifically no credit button.
+    ///
+    /// The sentence here is Apple's forecast, so it needs Apple's mark on the
+    /// screen with it — but the mark is already there, permanently, in the strip
+    /// this popover is standing on, and it is a link. Adding the credit here as
+    /// well made it a `Tips.Action`, which TipKit draws as the most emphatic
+    /// control it has: a filled blue button, wider than the sentence, on a board
+    /// that carries no words at all. That is an attribution shouting louder than
+    /// the thing it attributes. Apple asks for the mark to be clear, not for it
+    /// to be the loudest thing on the screen.
 }
 
 extension View {

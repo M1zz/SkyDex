@@ -874,9 +874,38 @@ private struct EmptySlotSheet: View {
         )
     }
 
+    /// What today does to this half hour, in one sentence.
+    ///
+    /// Two sentences really, because the two cases are not the same claim. With
+    /// a forecast this is Apple's answer about today, and it can afford the one
+    /// number worth reading — how much cloud — because that is the thing that
+    /// decides the colour. Without a forecast it is the app's own clear-sky
+    /// curve, and dressing that up as today would be inventing weather, so it
+    /// says plainly that none arrived.
+    ///
+    /// The colour is named rather than printed. Nobody standing under a sky can
+    /// check a hex code against it, and the app already keeps a table of colours
+    /// in words for that reason. Whether the name is a fit or merely the nearest
+    /// one is said out loud, the same way the rest of the app says it.
+    private var todayLine: String {
+        let like = SkySimiles.nearest(to: Lab(day.forecastColour(of: slot)))
+        let colour = like.isClose ? like.simile.name : "굳이 말하자면 \(like.simile.name)"
+
+        guard let forecast = weather.forecast else {
+            return "오늘 예보는 받지 못했습니다. 구름 없는 날이라면 이 시각 하늘은 \(colour)입니다."
+        }
+
+        let middle = Double(slot.startMinute + slot.endMinute) / 2
+        let cloud = Int((forecast.cloud(atMinute: middle) * 100).rounded())
+        let wet = forecast.rain(atMinute: middle) > 0.15
+        let said = wet ? "구름 \(cloud)%에 비" : "구름 \(cloud)%"
+        return "오늘 이 시각은 \(said) 예보입니다. 그러면 하늘은 \(colour)이 됩니다."
+    }
+
     var body: some View {
         NavigationStack {
-            VStack(spacing: 20) {
+            ScrollView {
+                VStack(spacing: 20) {
                 // Faded, like the bead that was tapped. Its full strength is
                 // on the swatch further down, next to the hex.
                 Circle()
@@ -900,67 +929,73 @@ private struct EmptySlotSheet: View {
 
                 // The colour has a name whether or not anyone has photographed
                 // it yet, and an empty slot is exactly where you would want to
-                // know what you are going out to look for.
-                VStack(spacing: 3) {
+                // know what you are going out to look for. The swatch is here
+                // at full strength — the ring at the top of the sheet is faded
+                // like the bead that was tapped, which is the wrong thing to
+                // hold a name up against.
+                //
+                // No hex. A person standing under a sky cannot check a number
+                // against it, and this app already keeps a table of colours in
+                // words for exactly that reason. The hex belongs on a photograph
+                // that has one, not on a colour somebody is going out to find.
+                VStack(spacing: 10) {
                     let like = SkySimiles.nearest(to: Lab(day.colour(of: slot)))
-                    Text(like.simile.name)
-                        .font(.subheadline.weight(.medium))
-                    Text(like.simile.note)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                        .multilineTextAlignment(.center)
-                }
 
-                // Two colours, said apart. The bead is one of the forty-eight
-                // sky colours there are to collect and it is the same one every
-                // day; what today's sky is expected to do at this hour is a
-                // different fact, and the board stopped painting itself in it
-                // when it stopped repeating colours. Saying both is the honest
-                // version — one is what you are looking for, the other is what
-                // is actually out there right now.
-                VStack(spacing: 6) {
                     HStack(spacing: 10) {
                         Circle()
                             .fill(Color(day.colour(of: slot)))
                             .frame(width: 22, height: 22)
-                        Text("이 칸의 색 \(day.colour(of: slot).hex)")
-                            .font(.caption)
-                            .monospaced()
-                            .foregroundStyle(.secondary)
+                        Text(like.simile.name)
+                            .font(.subheadline.weight(.medium))
                     }
 
-                    HStack(spacing: 10) {
-                        Circle()
-                            .fill(Color(day.forecastColour(of: slot)))
-                            .frame(width: 14, height: 14)
-                        // The wording has to match what the swatch is actually
-                        // showing. With a forecast in hand this is today's sky,
-                        // not the sky in general, and saying "보통" would be a lie.
-                        Text(
-                            weather.forecast == nil
-                                ? "이 시각의 하늘은 보통 \(day.forecastColour(of: slot).hex)"
-                                : "오늘 이 시각은 대략 \(day.forecastColour(of: slot).hex)"
-                        )
-                        .font(.caption2)
-                        .monospaced()
-                        .foregroundStyle(.tertiary)
-                    }
+                    Text(like.simile.note)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.center)
+
+                    // Why this colour is at this hour, which is the question an
+                    // empty bead actually raises and the one the sheet used to
+                    // answer with a hex code and nothing else. The board stopped
+                    // painting itself in the forecast when it stopped repeating
+                    // colours, so a bead no longer explains itself by being
+                    // today's sky. The arrangement still has a reason, it is
+                    // short enough to say, and an empty slot is exactly where
+                    // somebody is standing when they wonder.
+                    Text("판의 마흔여덟 색은 하루가 지나가는 색의 길을 따라 놓여 있습니다. 한밤에서 시작해 여명, 낮의 파랑, 노을, 다시 밤. 이 색은 그 길에서 \(slot.band)에 해당해 여기 앉아 있습니다.")
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.center)
+                        .padding(.top, 2)
                 }
 
-                // Apple's terms for using the forecast: name the service and
-                // link its legal page wherever the data shows up. This sheet is
-                // the only place in the app with words in it, so the credit
-                // lives here rather than on the board.
-                if let legal = weather.legalPageURL {
-                    Link(destination: legal) {
-                        Text("예상 하늘색 · Apple Weather")
-                            .font(.caption2)
-                            .foregroundStyle(.tertiary)
+                Divider().padding(.horizontal, 40)
+
+                // And then today, which is a different claim and Apple's rather
+                // than the app's. Its own block, its own words, and the mark
+                // underneath it: this is the one screen in the app where a
+                // forecast is put in front of anyone, so this is where the
+                // credit belongs. It is also why the mark is not on the board —
+                // there is nothing of Apple's out there to credit.
+                VStack(spacing: 8) {
+                    Circle()
+                        .fill(Color(day.forecastColour(of: slot)))
+                        .frame(width: 18, height: 18)
+
+                    Text(todayLine)
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.center)
+
+                    if weather.forecast != nil, let credit = weather.credit {
+                        WeatherCredit(credit: credit)
+                            .padding(.top, 2)
                     }
                 }
+                }
+                .padding(28)
+                .frame(maxWidth: .infinity)
             }
-            .padding(28)
-            .frame(maxWidth: .infinity)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
@@ -968,7 +1003,9 @@ private struct EmptySlotSheet: View {
                 }
             }
         }
-        .presentationDetents([.height(380)])
+        // Taller than it was: the slot now explains itself rather than printing
+        // two hex codes, and it scrolls so a larger type size does not clip it.
+        .presentationDetents([.height(560), .large])
     }
 }
 

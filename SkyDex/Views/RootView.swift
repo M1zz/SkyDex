@@ -36,6 +36,11 @@ struct RootView: View {
     /// The slot a capture just landed in, held long enough for one pulse.
     @State private var landed: Int?
 
+    /// Whether TipKit has the day's sentence on screen right now. Read rather
+    /// than guessed: the frequency rule and the tip's own close button both live
+    /// inside TipKit, so this is the only way for the mark to keep time with it.
+    @State private var tipShowing = false
+
     /// Today's forecast, boiled down to the one sentence worth saying. Nil when
     /// there is no forecast, or when the day has nothing left to plan.
     private var insight: SkyInsight? {
@@ -90,6 +95,21 @@ struct RootView: View {
             }
         }
         .animation(.spring(response: 0.42, dampingFraction: 0.88), value: screen)
+        // Restarted whenever the sentence changes, which is how the day rolls
+        // over. `shouldDisplay` is read once up front because the stream reports
+        // changes, and the tip may already be up by the time this starts.
+        .task(id: insight?.headline) {
+            guard let insight else {
+                tipShowing = false
+                return
+            }
+            let tip = TodaysSkyTip(insight: insight)
+            tipShowing = tip.shouldDisplay
+            for await showing in tip.shouldDisplayUpdates {
+                tipShowing = showing
+            }
+        }
+        .animation(.easeOut(duration: 0.25), value: tipShowing)
         // A photograph laid under the board belongs to the board. Leaving it up
         // behind the archive, or waiting under it for the trip back, would make
         // it a mode rather than something you are looking at.
@@ -120,16 +140,71 @@ struct RootView: View {
         }
     }
 
-    /// A shutter and a switch, on the same paper as the screen behind them.
+    /// The strip along the bottom: Apple's credit, then the shutter and the
+    /// switch, on the same paper as the screen behind them.
     ///
     /// No material and no bar of its own. `.bar` was a holdover from having a tab
     /// bar underneath, and all it did once that left was draw a seam across a
     /// board that is meant to be one field of colour.
+    private var bar: some View {
+        VStack(spacing: 9) {
+            credit
+            shutter
+        }
+        // On the whole strip rather than on the shutter alone. Anchored to the
+        // button, the popover stood directly on top of the mark it had just
+        // made necessary; anchored here it sits above both, and the arrow points
+        // at the credit for the sentence underneath it, which is where it came
+        // from.
+        .popoverTip(ifPresent: insight.map(TodaysSkyTip.init))
+        .padding(.horizontal, 18)
+        .padding(.top, 12)
+        .padding(.bottom, 4)
+        .background {
+            // The page's own colour, faded upward. On the board this is
+            // invisible — it is the same paper — and on the archive it stops
+            // rows from sliding out from under the buttons as the list scrolls.
+            // A material would do the same job, at the cost of drawing a seam
+            // across a board that is meant to be one field of colour.
+            LinearGradient(
+                // With a sky laid under the board the page is a photograph, and
+                // fading it into white at the bottom would draw the seam this
+                // gradient exists to avoid. It fades into the dark instead.
+                colors: reading == nil
+                    ? [Color(.systemBackground).opacity(0), Color(.systemBackground)]
+                    : [.black.opacity(0), .black.opacity(0.3)],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .ignoresSafeArea()
+        }
+    }
+
+    /// Apple's mark, for as long as Apple's forecast is on this screen.
     ///
+    /// It used to sit here permanently, and that was wrong in both directions.
+    /// It was noise on a board that carries no words — and it was crediting
+    /// Apple for a screen with nothing of Apple's on it, because the board's
+    /// forty-eight colours are a fixed spectrum and never took the forecast.
+    /// The only weather on the board is the tip's sentence, which is there for
+    /// a few seconds a day.
+    ///
+    /// So the mark keeps exactly that company. It arrives with the tip and
+    /// leaves when the tip is dismissed, and on a day with nothing to say it
+    /// never appears at all. The other forecast in the app — the one under an
+    /// empty slot — carries its own mark in its own sheet.
+    @ViewBuilder
+    private var credit: some View {
+        if screen == .board, tipShowing, weather.forecast != nil, let credit = weather.credit {
+            WeatherCredit(credit: credit, onDark: reading != nil)
+                .transition(.opacity)
+        }
+    }
+
     /// The shutter is round and carries no label. "하늘 찍기" was explaining a
     /// camera glyph on the one screen where taking a photo is the only thing to
     /// do, and a circle is the shape this whole app is made of.
-    private var bar: some View {
+    private var shutter: some View {
         Button {
             showCamera = true
         } label: {
@@ -141,7 +216,6 @@ struct RootView: View {
         .accessibilityLabel("하늘 찍기")
         // Points at the button it is about, and only when the forecast actually
         // has something to say.
-        .popoverTip(ifPresent: insight.map(TodaysSkyTip.init))
         .frame(maxWidth: .infinity)
         // An overlay rather than a third item in a row, so the shutter stays on
         // the centre line and does not shift when the switch changes icon.
@@ -167,27 +241,6 @@ struct RootView: View {
             opening ? .impact(weight: .medium) : nil
         }
         .sensoryFeedback(.selection, trigger: screen)
-        .padding(.horizontal, 18)
-        .padding(.top, 16)
-        .padding(.bottom, 4)
-        .background {
-            // The page's own colour, faded upward. On the board this is
-            // invisible — it is the same paper — and on the archive it stops
-            // rows from sliding out from under the buttons as the list scrolls.
-            // A material would do the same job, at the cost of drawing a seam
-            // across a board that is meant to be one field of colour.
-            LinearGradient(
-                // With a sky laid under the board the page is a photograph, and
-                // fading it into white at the bottom would draw the seam this
-                // gradient exists to avoid. It fades into the dark instead.
-                colors: reading == nil
-                    ? [Color(.systemBackground).opacity(0), Color(.systemBackground)]
-                    : [.black.opacity(0), .black.opacity(0.3)],
-                startPoint: .top,
-                endPoint: .bottom
-            )
-            .ignoresSafeArea()
-        }
     }
 
     // MARK: - Saving

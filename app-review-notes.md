@@ -82,11 +82,8 @@ No setup, no credentials, no sample files are required.
   ever shared with any other user; there is no sharing feature in the app. Deleting an entry
   in the app deletes the iCloud copy. If iCloud is unavailable the app falls back to
   device-only storage and every feature keeps working.
-- **Apple WeatherKit** — optional. Used only to tell the user what colour today's sky is
-  expected to be at a given hour. If the network is unavailable or the request fails, the
-  feature silently degrades and the app draws its default clear-sky reference colours.
-  The required "Apple Weather" attribution and a link to the legal page are displayed on
-  the screen where this data appears.
+- **Apple WeatherKit** — optional. See section 12 below for exactly where it is used and
+  where the Apple Weather attribution appears.
 - **Core Location** — When In Use, kilometre accuracy, requested once, stored only in local
   UserDefaults. Coordinates are never attached to photos and never leave the device.
 - **SwiftData (on-device store)** — photos and entries are stored in the app's own
@@ -179,3 +176,51 @@ Collected by the developer, and declared accordingly:
 
 Nothing is sold or shared with third parties, and nothing is used for tracking across apps
 or websites.
+
+## 12. WeatherKit — where it is used and where the attribution appears
+
+**The app does use WeatherKit**, and it uses it in exactly two places. Both display the
+Apple Weather trademark and link Apple's legal attribution page. The attached screen
+recording, captured on a physical iPhone, shows both.
+
+**What the app asks WeatherKit for:** one hourly forecast for the current day at the user's
+approximate location (`WeatherService.weather(for:including:.hourly)`), from which it reads
+cloud cover and precipitation only. Nothing is stored, cached to disk, or sent anywhere.
+
+**Where that data is shown, and the attribution with it:**
+
+1. **The tip above the shutter button on the main board screen.** One sentence about today —
+   which hour ahead is clearest, when rain starts or stops, cloud percentage, the sunset
+   time. This is Apple's forecast put into words, so the tip carries an " Weather" button
+   that opens Apple's legal attribution page.
+
+2. **The sheet that opens when the user taps an empty slot on the board.** It shows the
+   colour today's sky is expected to be during that half hour ("오늘 이 시각은 대략 #4C8AC4").
+   The Apple Weather mark is displayed directly beneath that line and links Apple's legal
+   attribution page.
+
+In addition, **the Apple Weather mark is displayed persistently on the main board screen**,
+in the strip just above the camera button, for the whole time a forecast is in use. It
+links Apple's legal attribution page. This is the first thing visible when the app opens.
+
+**The mark is Apple's own artwork**, fetched at runtime from `WeatherAttribution`
+(`combinedMarkLightURL` / `combinedMarkDarkURL`), with the legal page taken from
+`WeatherAttribution.legalPageURL`. Light and dark variants are used according to the
+appearance and the background.
+
+**The app cannot show the forecast without the attribution.** The attribution is fetched
+before the forecast request is made, and if it cannot be obtained the forecast is never
+requested — the app falls back to its own built-in clear-sky reference colours, which are
+computed from the date, the latitude and sunrise/sunset only, with no weather data in them.
+So there is no state in which Apple's data is displayed and its mark is not.
+
+**The Home Screen widgets contain no WeatherKit data.** The forty-eight reference colours
+the widgets draw are a fixed spectrum plus the user's own photographs; no forecast value
+reaches the widget extension.
+
+**If the reviewer sees no attribution:** the forecast is unavailable in that situation and
+no Apple Weather data is being displayed. This happens when the device is offline, when the
+WeatherKit request fails, or when fewer than 12 hours of the day are returned. In that case
+the tip does not appear, the empty-slot sheet says "이 시각의 하늘은 보통 #……" (the app's own
+clear-sky curve, not a forecast), and the mark above the camera button is absent — because
+there is nothing of Apple's on screen to credit.
