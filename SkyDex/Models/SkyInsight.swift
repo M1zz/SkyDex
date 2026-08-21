@@ -30,7 +30,10 @@ struct SkyInsight {
         calendar: Calendar = .current
     ) -> SkyInsight? {
         let hour = calendar.component(.hour, from: now)
-        let ahead = Array((hour + 1)...23).filter { $0 < 24 }
+        // Half-open, because at 23:00 the closed form is `24...23` — a range
+        // whose bounds are the wrong way round, which is a crash and not an
+        // empty list. The last hour of the day is exactly when this runs.
+        let ahead = Array((hour + 1)..<24)
         // Late enough that there is nothing left to plan.
         guard ahead.count >= 2 else { return nil }
 
