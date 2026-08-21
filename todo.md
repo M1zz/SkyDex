@@ -906,6 +906,32 @@ Guideline 5.2.5, Submission 837283f7-a525-4607-93b8-1138ed249bd5, 1.0 (2) 리젝
       안 들어가지만, 남겨두면 언젠가 **애플이 하지도 않은 예보에 애플 이름을 붙이는**
       코드가 된다. 마크 위치 확인이 끝나는 즉시 삭제.
 
+### 실기기 로그 — 예보가 안 오는 진짜 이유 (2026-08-21 22:49)
+```
+Failed to generate jwt token for: com.apple.weatherkit.authservice
+  error=WeatherDaemon.WDSJWTAuthenticatorServiceListener.Errors Code=2
+[WeatherKit] forecast failed: ... Code=2
+```
+- 크레딧(`attribution`)은 **성공**했다. 실패 로그가 예보 쪽에만 있다 — 즉 네트워크도
+  프레임워크도 살아 있고, 막힌 것은 **토큰 발급 하나**다.
+- 이 맥에서 확인한 것: 서명된 바이너리와 임베드된 프로비저닝 프로파일 **양쪽 모두에**
+  `com.apple.developer.weatherkit`가 들어 있다(`codesign -d --entitlements`,
+  `security cms -D -i embedded.mobileprovision`). App ID는 `QGAQ3AY3R3.com.leeo.SkyDex`.
+  프로파일은 2026-08-21 22:42 KST 발급, 실패는 22:49 — 로컬 설정은 맞다.
+- 그러므로 남은 원인은 전부 **계정/포털 쪽**이고, 기기에서 고칠 수 있는 것이 아니다.
+  순서대로:
+  1. developer.apple.com → Identifiers → `com.leeo.SkyDex` → WeatherKit 체크 확인.
+     의심되면 껐다 저장 → 켰다 저장. **반영에 최대 30분** 걸린다.
+  2. Apple Developer Program 멤버십이 유효하고 **계약(특히 갱신된 PLA)이 모두 동의**
+     상태인지. 미동의면 토큰 발급이 팀 단위로 막히는데 iCloud·푸시는 멀쩡히 돌아서
+     증상이 이것과 똑같다. 11일째 한 번도 성공한 적이 없다는 것과 가장 잘 맞는 설명이다.
+  3. 위를 만진 뒤에는 프로파일 재발급 → **기기에서 앱 삭제 후 재설치** → 기기 재부팅.
+     `weatherd`는 앱 단위로 실패한 권한 판정을 들고 있어서, 재설치 없이는 고쳐도
+     계속 같은 에러가 난다.
+- 시뮬레이터에서는 확인 불가(엔타이틀먼트가 없어 영영 같은 에러).
+- **심사와 직결된다.** 예보가 안 오면 `forecast == nil`이라 크레딧도 화면에 안 뜬다 —
+  리젝 답장에 첨부할 녹화 자체가 불가능하고, 심사자도 마크를 못 본다. 이걸 먼저 풀어야 한다.
+
 ### 남은 일 (사람이 해야 함)
 - [ ] **실기기에서 육안 확인.** 시뮬레이터는 WeatherKit 엔타이틀먼트가 없어 크레딧이
       영영 nil이고, 이 맥에서는 `simctl launch`가 걸려서 실행 자체를 못 했다. 마크가 실제로
