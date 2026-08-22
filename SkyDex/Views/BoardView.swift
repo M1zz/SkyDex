@@ -51,9 +51,6 @@ struct BoardView: View {
     /// Only ever read to work out when the sun rises and sets here.
     let place: Place
 
-    /// Today's cloud and rain, when there is an answer.
-    let weather: SkyWeather
-
     /// Set once, by the opening reveal. Owned by the shell so coming back from
     /// the archive does not replay it.
     @Binding var revealed: Bool
@@ -107,8 +104,7 @@ struct BoardView: View {
         Lab(SkyDay(
             date: .now,
             latitude: place.latitude,
-            longitude: place.longitude,
-            forecast: weather.forecast
+            longitude: place.longitude
         ).colour(of: slot))
     }
 
@@ -331,7 +327,7 @@ struct BoardView: View {
     /// Leave today's board where the widgets can read it.
     ///
     /// Everything a widget would have to be trusted with — the store, the
-    /// photos, the forecast, the place — is spent here instead, while the app is
+    /// photos, the place — is spent here instead, while the app is
     /// awake and allowed to. What crosses over is a list of colours and one
     /// thumbnail.
     ///
@@ -349,7 +345,6 @@ struct BoardView: View {
         let signature = [
             ISO8601DateFormatter.string(from: today, timeZone: .current, formatOptions: [.withFullDate]),
             String(format: "%.2f,%.2f", place.latitude, place.longitude),
-            weather.forecast == nil ? "clear" : "forecast",
             "\(entries.count)",
             last?.uuid.uuidString ?? "none",
             last?.note ?? ""
@@ -359,8 +354,7 @@ struct BoardView: View {
         let day = SkyDay(
             date: now,
             latitude: place.latitude,
-            longitude: place.longitude,
-            forecast: weather.forecast
+            longitude: place.longitude
         )
         let fills = SkyMatch.map(targets: day.targets, entries: entries, on: now)
             .map { slot, entry in
@@ -421,8 +415,7 @@ struct BoardView: View {
                     let day = SkyDay(
                         date: clock.date,
                         latitude: place.latitude,
-                        longitude: place.longitude,
-                        forecast: weather.forecast
+                        longitude: place.longitude
                     )
                     // Which of today's colours the collection already covers,
                     // plus whatever was shot today in each stretch of the clock.
@@ -437,7 +430,6 @@ struct BoardView: View {
                                 formatOptions: [.withFullDate]
                             ),
                             String(format: "%.2f,%.2f", place.latitude, place.longitude),
-                            weather.forecast == nil ? "clear" : "forecast",
                             "\(entries.count)",
                             entries.last?.uuid.uuidString ?? "none"
                         ].joined(separator: "|")
@@ -567,14 +559,6 @@ struct BoardView: View {
                 place.refresh()
                 if !revealed { revealed = true }
                 publish()
-                // Not while a first fix is still coming: the coordinate on hand
-                // is the fallback, and asking now spends a call on Seoul before
-                // asking again for where the phone actually is. The two
-                // `onChange` below cover both ways that wait can end.
-                if !place.isAwaitingFix {
-                    await weather.refresh(latitude: place.latitude, longitude: place.longitude)
-                    publish()
-                }
             }
             .onChange(of: entries.count) { _, _ in publish() }
             .onChange(of: scenePhase) { _, phase in
@@ -595,26 +579,10 @@ struct BoardView: View {
             .onChange(of: writingCard == nil) { _, closed in
                 if closed { publish() }
             }
-            // The first fix usually lands after the board is already up, and a
-            // forecast for the wrong city is worth replacing.
-            .onChange(of: place.latitude) { _, latitude in
-                Task {
-                    await weather.refresh(latitude: latitude, longitude: place.longitude)
-                    publish()
-                }
-            }
-            // The other way the wait ends: refused, or the fix failed. There is
-            // no coordinate change to ride on then — the fallback is what there
-            // is, and it is now the final answer rather than a placeholder.
-            // Guarded on `isKnown` so a fix that arrives does not fire this and
-            // the line above for the same one forecast.
-            .onChange(of: place.isAwaitingFix) { _, waiting in
-                guard !waiting, !place.isKnown else { return }
-                Task {
-                    await weather.refresh(latitude: place.latitude, longitude: place.longitude)
-                    publish()
-                }
-            }
+            // The first fix usually lands after the board is already up, and
+            // the sun's schedule here is what the whole curve hangs on: until
+            // it arrives the board is drawing the fallback city's day.
+            .onChange(of: place.latitude) { _, _ in publish() }
             // Every sky this bead's colour holds, which is a list and is asked
             // for by name from the caption. The bead itself no longer opens it:
             // pressing a bead answers on the board now.
@@ -626,7 +594,7 @@ struct BoardView: View {
             }
             // This one stays a sheet: it is a note about a slot, not a sky.
             .sheet(item: $tappedEmpty) { slot in
-                EmptySlotSheet(slot: slot, place: place, weather: weather)
+                EmptySlotSheet(slot: slot, place: place)
             }
         }
     }
@@ -877,7 +845,6 @@ private struct Bead: View {
 private struct EmptySlotSheet: View {
     let slot: SkySlot
     let place: Place
-    let weather: SkyWeather
 
     @Environment(\.dismiss) private var dismiss
 
@@ -887,37 +854,24 @@ private struct EmptySlotSheet: View {
         SkyDay(
             date: .now,
             latitude: place.latitude,
-            longitude: place.longitude,
-            forecast: weather.forecast
+            longitude: place.longitude
         )
     }
 
-    /// What today does to this half hour, in one sentence.
+    /// What a clear sky here does to this half hour, in one sentence.
     ///
-    /// Two sentences really, because the two cases are not the same claim. With
-    /// a forecast this is Apple's answer about today, and it can afford the one
-    /// number worth reading — how much cloud — because that is the thing that
-    /// decides the colour. Without a forecast it is the app's own clear-sky
-    /// curve, and dressing that up as today would be inventing weather, so it
-    /// says plainly that none arrived.
+    /// The app has no weather in it, so this is not a claim about today. It is
+    /// this place's sun on this date and nothing else, and it says so — dressing
+    /// the curve up as a forecast would be inventing weather the app never had.
     ///
     /// The colour is named rather than printed. Nobody standing under a sky can
     /// check a hex code against it, and the app already keeps a table of colours
     /// in words for that reason. Whether the name is a fit or merely the nearest
     /// one is said out loud, the same way the rest of the app says it.
-    private var todayLine: String {
-        let like = SkySimiles.nearest(to: Lab(day.forecastColour(of: slot)))
+    private var clearSkyLine: String {
+        let like = SkySimiles.nearest(to: Lab(day.clearSkyColour(of: slot)))
         let colour = like.isClose ? like.simile.name : "굳이 말하자면 \(like.simile.name)"
-
-        guard let forecast = weather.forecast else {
-            return "오늘 예보는 받지 못했습니다. 구름 없는 날이라면 이 시각 하늘은 \(colour)입니다."
-        }
-
-        let middle = Double(slot.startMinute + slot.endMinute) / 2
-        let cloud = Int((forecast.cloud(atMinute: middle) * 100).rounded())
-        let wet = forecast.rain(atMinute: middle) > 0.15
-        let said = wet ? "구름 \(cloud)%에 비" : "구름 \(cloud)%"
-        return "오늘 이 시각은 \(said) 예보입니다. 그러면 하늘은 \(colour)이 됩니다."
+        return "구름 없는 날이라면 이 시각 하늘은 \(colour)입니다. 흐리거나 비가 오는 날은 이보다 회색에 가깝습니다."
     }
 
     var body: some View {
@@ -989,26 +943,19 @@ private struct EmptySlotSheet: View {
 
                 Divider().padding(.horizontal, 40)
 
-                // And then today, which is a different claim and Apple's rather
-                // than the app's. Its own block, its own words, and the mark
-                // underneath it: this is the one screen in the app where a
-                // forecast is put in front of anyone, so this is where the
-                // credit belongs. It is also why the mark is not on the board —
-                // there is nothing of Apple's out there to credit.
+                // And then the curve itself, unrounded — the bead above is the
+                // spectrum colour nearest this hour, and this is the hour. The
+                // two are close but not the same, and an empty slot is where
+                // the difference is worth showing.
                 VStack(spacing: 8) {
                     Circle()
-                        .fill(Color(day.forecastColour(of: slot)))
+                        .fill(Color(day.clearSkyColour(of: slot)))
                         .frame(width: 18, height: 18)
 
-                    Text(todayLine)
+                    Text(clearSkyLine)
                         .font(.footnote)
                         .foregroundStyle(.secondary)
                         .multilineTextAlignment(.center)
-
-                    if weather.forecast != nil, let credit = weather.credit {
-                        WeatherCredit(credit: credit)
-                            .padding(.top, 2)
-                    }
                 }
                 }
                 .padding(28)
@@ -1031,7 +978,6 @@ private struct EmptySlotSheet: View {
     BoardView(
         landed: nil,
         place: Place(),
-        weather: SkyWeather(),
         revealed: .constant(true),
         reading: .constant(nil)
     )

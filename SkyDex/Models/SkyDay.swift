@@ -12,12 +12,13 @@ import Foundation
 /// because a photo has to be filed by the time it was taken and that has to mean
 /// the same thing every day. It is the colours that shift underneath.
 ///
-/// Today's forecast, if there is one, shifts them again. A clear sky is a guess
-/// like any other, and on a wet afternoon it is a bad one — the board should not
-/// hold up a deep blue as what four o'clock looks like while it is raining.
+/// There is no weather in it. The curve is the sun's own schedule at this
+/// place on this date and nothing else, so a wet afternoon is drawn in the same
+/// blue a clear one is. That is the app's own claim about the hour rather than
+/// a report about today, and everything that reads the curve says so.
 struct SkyDay {
 
-    /// The palette on its own — no sun, no forecast, no clock. The order a day
+    /// The palette on its own — no sun, no clock. The order a day
     /// runs in *colour*, which is what the board's spectrum is laid out along.
     static var palette: [Lab] { anchors.compactMap { RGB(hex: $0.hex).map(Lab.init) } }
 
@@ -68,18 +69,12 @@ struct SkyDay {
 
     let sun: SunTimes
 
-    /// Nil until a forecast arrives, and nil forever if none can. Then the curve
-    /// is a clear day, which is what it always was.
-    let forecast: SkyForecast?
-
     init(
         date: Date,
         latitude: Double,
         longitude: Double,
-        forecast: SkyForecast? = nil,
         calendar: Calendar = .current
     ) {
-        self.forecast = forecast
         let sun = SunTimes(date: date, latitude: latitude, longitude: longitude, calendar: calendar)
         self.sun = sun
 
@@ -142,43 +137,12 @@ struct SkyDay {
         (1300, "#161C31"), (1380, "#0A101E"), (1440, "#080D18")
     ].map { (minute: Double($0.0), lab: Lab(RGB(hex: $0.1) ?? RGB(r: 0, g: 0, b: 0))) }
 
-    /// Minute of day → the sky at that moment, weather and all.
+    /// Minute of day → the sky at that moment.
     func colour(atMinute minute: Double) -> RGB {
-        let clear = clearSky(atMinute: minute)
-        guard let forecast else { return RGB(clear) }
-        return RGB(SkyDay.clouded(
-            clear,
-            cloud: forecast.cloud(atMinute: minute),
-            rain: forecast.rain(atMinute: minute)
-        ))
+        RGB(clearSky(atMinute: minute))
     }
 
-    /// What cloud does to a sky, in Lab.
-    ///
-    /// Chroma goes first and goes almost entirely: an overcast noon has no blue
-    /// left in it and an overcast sunset has no fire, which is why a rained-out
-    /// evening is the flattest sky of the year.
-    ///
-    /// Lightness moves toward a bright grey, but only in proportion to how much
-    /// daylight there was to flatten. Cloud over midnight is still midnight —
-    /// pulling every hour toward the same grey would light up the top of the
-    /// board on a rainy night, which is the opposite of true.
-    ///
-    /// Rain is cloud with a lid on it: darker again, and what little colour
-    /// survived the cloud does not survive this.
-    static func clouded(_ clear: Lab, cloud: Double, rain: Double) -> Lab {
-        let cloud = min(max(cloud, 0), 1)
-        let rain = min(max(rain, 0), 1)
-        let daylight = min(max(clear.l / 60, 0), 1)
-
-        var l = clear.l + (74 - clear.l) * 0.5 * cloud * daylight
-        l -= 16 * rain * daylight
-
-        let chroma = (1 - 0.85 * cloud) * (1 - 0.4 * rain)
-        return Lab(l: l, a: clear.a * chroma, b: clear.b * chroma)
-    }
-
-    /// The curve with no weather in it: this place's sun on this date.
+    /// This place's sun on this date.
     private func clearSky(atMinute minute: Double) -> Lab {
         SkyDay.interpolate(curve, atMinute: minute)
     }
@@ -212,10 +176,10 @@ struct SkyDay {
         return spectrum[min(slot.id, spectrum.count - 1)].rgb
     }
 
-    /// The curve itself, unrounded. What the sky is actually expected to be at
-    /// this minute, which is a different question from what the board is
-    /// collecting.
-    func forecastColour(of slot: SkySlot) -> RGB {
+    /// The curve itself, unrounded: what a clear sky here looks like at the
+    /// middle of this slot. A different question from what the board is
+    /// collecting, which is the rounded spectrum colour above.
+    func clearSkyColour(of slot: SkySlot) -> RGB {
         colour(atMinute: Double(slot.startMinute + slot.endMinute) / 2)
     }
 
@@ -227,8 +191,8 @@ struct SkyDay {
     }
 
     /// Today's forty-eight colours, in board order. This is what the collection
-    /// is matched against, and it changes with the date, the place and the
-    /// forecast — never within the day.
+    /// is matched against, and it changes with the date and the place — never
+    /// within the day.
     var targets: [Lab] {
         SkyBoard.slots.map { Lab(colour(of: $0)) }
     }

@@ -987,3 +987,43 @@ Failed to generate jwt token for: com.apple.weatherkit.authservice
       → 빈 칸 시트의 예보 색과 그 아래 마크. 예보가 실제로 잡힌 상태에서 찍을 것
       (오프라인이면 셋 다 안 뜨는 게 정상이라 녹화가 무의미).
 - [ ] 새 빌드 업로드 → App Review Information Notes에 녹화 첨부 → 리젝 메시지에 답장.
+
+## WeatherKit 제거 — 1.0 (3) 재리젝 대응 (2026-08-23)
+Guideline 5.2.5, 같은 Submission 837283f7. 이번 문구는 "표기가 없다"가 아니라
+**"WeatherKit을 쓰는 것 같은데 확인이 안 되니 녹화를 보내라, 안 쓰면 안 쓴다고 답하라"**였다.
+
+표기 코드는 1.0 (3)에 이미 다 들어가 있었다. 문제는 그것을 **아무도 볼 수 없었다는 것**이다:
+`Failed to generate jwt token` (Code=2)로 예보가 한 번도 오지 않았고, 표기는 예보에 붙어
+있으므로 심사자 기기에서도 마크가 뜨지 않는다. 원인은 계정/포털 쪽이라 코드로는 못 고치고
+(위 2026-08-21 항목 참조), 손댈 수 없다고 판단해 **기능을 들어냈다**.
+
+- [x] `SkyWeather` · `WeatherCredit` · `SkyForecast` · `SkyInsight` · `TodaysSkyTip` 삭제.
+      `#if DEBUG` 플레이스홀더도 이 삭제로 같이 사라졌다(따로 지울 것 없음).
+- [x] `com.apple.developer.weatherkit` 엔타이틀먼트 제거. 빌드된 바이너리에 WeatherKit이
+      링크되지 않은 것을 `otool -L`로 확인.
+- [x] `SkyDay`에서 예보 층 제거 — `forecast` 프로퍼티/파라미터, `clouded()`,
+      `forecastColour(of:)` → `clearSkyColour(of:)`로 개명. 곡선은 해의 일정만 남는다.
+- [x] 빈 칸 시트의 "오늘 예보" 문단 → 맑은 날 기준임을 명시하는 문장으로.
+      없는 예보를 오늘로 포장하지 않는다.
+- [x] `RootView`의 팁·크레딧 배선, `SkyDexApp`의 `Tips.configure`, `Place.isAwaitingFix`
+      제거. 전부 예보 하나를 위해 있던 것들이다.
+- [x] `Tools/SpectrumCheck.swift`가 `SkyForecast`를 쓰고 있어 같이 정리.
+- [x] 빌드 3 → 4. Release clean build, 경고 0.
+- [x] `app-review-notes.md` 12번을 "WeatherKit — not used"로 다시 씀. 5·8·9번의 언급도 정리.
+- [x] `app-review-reply.md` — 심사 답장 초안.
+
+### 남은 일 (사람이 해야 함)
+- [ ] Xcode → Signing & Capabilities에서 **WeatherKit capability가 남아 있으면 제거**.
+      엔타이틀먼트 파일은 정리했지만 프로비저닝 프로파일 재발급이 필요할 수 있다.
+- [ ] 실기기에서 한 번 띄워 보기 — 판, 빈 칸 시트, 위젯. 예보가 빠진 자리가 어색하지 않은지.
+- [ ] 아카이브 → 1.0 (4) 업로드.
+- [ ] App Review Information Notes를 새 12번 내용으로 교체. **녹화는 첨부하지 않는다**
+      (보여줄 WeatherKit 기능이 없다).
+- [ ] 리젝 메시지에 `app-review-reply.md` 답장 보내기.
+- [ ] developer.apple.com → Identifiers → `com.leeo.SkyDex`의 WeatherKit 체크는 그대로 두어도
+      무방하나, 나중에 혼선을 막으려면 꺼 두는 편이 낫다.
+
+### 되돌리려면
+`remove-weatherkit` 브랜치가 이 삭제고, 그 부모인 `weatherkit-attribution`에 표기까지
+완성된 WeatherKit 코드가 그대로 남아 있다. 포털/계약 문제가 풀리는 날 그 브랜치를
+다시 가져오면 된다.

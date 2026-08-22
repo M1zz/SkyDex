@@ -2,7 +2,7 @@
 //
 //   swiftc -O -o /tmp/spectrumcheck Tools/SpectrumCheck.swift \
 //       SkyDex/ColorScience/{RGB,Lab,DeltaE,SkySimile,SkySpectrum,Sun}.swift \
-//       SkyDex/Models/{SkySlot,SkyBoard,SkyForecast,SkyDay}.swift \
+//       SkyDex/Models/{SkySlot,SkyBoard,SkyDay}.swift \
 //   && /tmp/spectrumcheck
 //
 // 판은 이제 하루 곡선을 그대로 그리지 않고, 곡선에 가장 가까운 수집 가능한 색을 놓습니다.
@@ -51,21 +51,15 @@ struct SpectrumCheck {
         print(String(format: "\n이웃 칸 사이  최소 %.1f  중앙 %.1f  최대 %.1f",
                      sortedJumps.first!, sortedJumps[sortedJumps.count / 2], sortedJumps.last!))
 
-        // 예보는 이제 색을 칠하지 않지만, 그 시각의 실제 예상과 얼마나 떨어져 있는지는
-        // 알아 둘 값입니다(빈 칸 아래에 같이 적히므로).
-        for (label, forecast) in [
-            ("맑음", SkyForecast?.none),
-            ("흐림", SkyForecast(cloud: Array(repeating: 0.85, count: 24), rain: Array(repeating: 0, count: 24))),
-            ("비", SkyForecast(cloud: Array(repeating: 0.95, count: 24), rain: Array(repeating: 0.8, count: 24)))
-        ] {
-            let day = SkyDay(date: Date(timeIntervalSince1970: 1_755_000_000),
-                             latitude: 37.5, longitude: 127.0, forecast: forecast)
-            let drifts = SkyBoard.slots.enumerated().map { index, slot in
-                deltaE2000(Lab(day.forecastColour(of: slot)), Lab(ordered[index].rgb))
-            }.sorted()
-            print(String(format: "%-4@ 예보와의 거리  중앙 %.1f  최대 %.1f",
-                         label as NSString, drifts[drifts.count / 2], drifts.last!))
-        }
+        // 판에 놓인 색과 그 시각 곡선 사이의 거리. 빈 칸 시트가 둘을 나란히 보여주므로
+        // 알아 둘 값입니다.
+        let day = SkyDay(date: Date(timeIntervalSince1970: 1_755_000_000),
+                         latitude: 37.5, longitude: 127.0)
+        let drifts = SkyBoard.slots.enumerated().map { index, slot in
+            deltaE2000(Lab(day.clearSkyColour(of: slot)), Lab(ordered[index].rgb))
+        }.sorted()
+        print(String(format: "\n곡선과의 거리  중앙 %.1f  최대 %.1f",
+                     drifts[drifts.count / 2], drifts.last!))
     }
 
 }
