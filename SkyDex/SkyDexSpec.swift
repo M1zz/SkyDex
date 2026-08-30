@@ -17,7 +17,7 @@ enum SkyDexSpec: LeeoAppSpec {
 
     /// The name on the phone, not the name of the target.
     static let appName = "하늘색"
-    static let developerEmail = "mizzking75@gmail.com"
+    static let developerEmail = "leeo@kakao.com"
 
     /// Public database, shared with the other apps. `appIdentifier` is what
     /// separates this app's feedback from theirs in one inbox.
