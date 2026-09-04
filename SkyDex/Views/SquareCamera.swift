@@ -34,6 +34,11 @@ struct SquareCameraView: View {
     /// The sky the viewfinder is wearing.
     @State private var lens: SkyEntry?
 
+    /// Where the current pinch started from, held only for as long as fingers
+    /// are down. Nil between gestures, so a zoom reset by flipping the camera is
+    /// picked up rather than pinched away from a factor that no longer exists.
+    @State private var zoomAnchor: CGFloat?
+
     var body: some View {
         ZStack {
             Color.black.ignoresSafeArea()
@@ -91,6 +96,9 @@ struct SquareCameraView: View {
             }
             .aspectRatio(1, contentMode: .fit)
             .clipped()
+            .contentShape(Rectangle())
+            .gesture(pinchToZoom)
+            .overlay(alignment: .top) { zoomReadout }
             .overlay(alignment: .bottom) {
                 Text(lens == nil ? "하늘이 정사각형을 채우도록" : "그 하늘 아래에서 보는 중")
                     .font(.footnote)
@@ -128,6 +136,41 @@ struct SquareCameraView: View {
                 .tint(.white)
                 .frame(maxWidth: .infinity)
                 .aspectRatio(1, contentMode: .fit)
+        }
+    }
+
+    /// Two fingers on the glass, the way every other camera on the phone works.
+    ///
+    /// The pinch moves the *lens*, not the picture: the zoom is set on the
+    /// capture device, so the frames the preview is drawn from and the frame the
+    /// shutter writes are the same crop. Zooming the rendered preview instead
+    /// would have framed one sky and saved another.
+    ///
+    /// The scale a gesture reports starts at 1 every time it begins, so the
+    /// factor it multiplies is remembered from where the last pinch left off.
+    private var pinchToZoom: some Gesture {
+        MagnifyGesture(minimumScaleDelta: 0)
+            .onChanged { value in
+                let base = zoomAnchor ?? camera.zoom
+                zoomAnchor = base
+                camera.zoom(to: base * value.magnification)
+            }
+            .onEnded { _ in zoomAnchor = nil }
+    }
+
+    /// Only while it is saying something — at 1× the frame is the frame.
+    @ViewBuilder
+    private var zoomReadout: some View {
+        if camera.zoom > 1.05 {
+            Text(String(format: "%.1f×", camera.zoom))
+                .font(.footnote.monospacedDigit().weight(.semibold))
+                .foregroundStyle(.white)
+                .padding(.vertical, 5)
+                .padding(.horizontal, 10)
+                .background(.black.opacity(0.35), in: Capsule())
+                .padding(.top, 12)
+                .allowsHitTesting(false)
+                .transition(.opacity)
         }
     }
 
@@ -270,6 +313,13 @@ final class SkyCamera: ObservableObject {
     @Published private(set) var state: State = .idle
     @Published private(set) var isBusy = false
 
+    /// What the lens is pulled in to, and how far it is allowed to go. The
+    /// ceiling is the device's, capped: past a few times, the wide angle is
+    /// upscaling pixels it does not have, and a sky made of mush is not a sky
+    /// worth collecting.
+    @Published private(set) var zoom: CGFloat = 1
+    @Published private(set) var maxZoom: CGFloat = 1
+
     let session = AVCaptureSession()
 
     /// What the glass shows. Frames go through Core Image on their way here, so
@@ -308,10 +358,12 @@ final class SkyCamera: ObservableObject {
             return
         }
 
-        guard await configure(for: position) else {
+        guard let ceiling = await configure(for: position) else {
             state = .unavailable
             return
         }
+        maxZoom = ceiling
+        zoom = 1
 
         // Wait for the session to actually be running before the shutter is
         // enabled. Reporting `.running` while `startRunning()` is still queued
@@ -343,14 +395,37 @@ final class SkyCamera: ObservableObject {
         guard state == .running, !isBusy else { return }
         let target: AVCaptureDevice.Position = position == .back ? .front : .back
         Task {
-            if await configure(for: target) {
+            if let ceiling = await configure(for: target) {
                 position = target
+                maxZoom = ceiling
             } else {
                 // Reconfiguring removes the old input first, so a failed swap
                 // would otherwise leave the session running with no camera
                 // attached at all.
-                _ = await configure(for: position)
+                maxZoom = await configure(for: position) ?? 1
             }
+            // The other camera comes in at its own widest, and `configure` puts
+            // every camera there on the way in, so the readout has to follow.
+            zoom = 1
+        }
+    }
+
+    /// Pull the lens in. Clamped here so the gesture can multiply freely, and
+    /// clamped again on the session queue, where the device's own ceiling is the
+    /// one that counts.
+    func zoom(to factor: CGFloat) {
+        guard state == .running else { return }
+        let wanted = min(max(factor, 1), maxZoom)
+        guard wanted != zoom else { return }
+        zoom = wanted
+
+        let session = self.session
+        queue.async {
+            guard let device = (session.inputs.first as? AVCaptureDeviceInput)?.device else { return }
+            let clamped = min(max(wanted, device.minAvailableVideoZoomFactor), device.maxAvailableVideoZoomFactor)
+            guard (try? device.lockForConfiguration()) != nil else { return }
+            device.videoZoomFactor = clamped
+            device.unlockForConfiguration()
         }
     }
 
@@ -389,7 +464,10 @@ final class SkyCamera: ObservableObject {
         }
     }
 
-    private func configure(for position: AVCaptureDevice.Position) async -> Bool {
+    /// Returns how far this camera may be pinched in, or nil if there is no
+    /// camera to configure. Only a number crosses back off the session queue —
+    /// the device itself stays on the queue that owns it.
+    private func configure(for position: AVCaptureDevice.Position) async -> CGFloat? {
         // Everything the session queue touches is pulled out here, so nothing
         // main-actor isolated is read from inside the closure.
         let session = self.session
@@ -411,12 +489,20 @@ final class SkyCamera: ObservableObject {
                     position: position
                 ), let input = try? AVCaptureDeviceInput(device: device),
                     session.canAddInput(input) else {
-                    continuation.resume(returning: false)
+                    continuation.resume(returning: nil)
                     return
                 }
 
                 session.sessionPreset = .photo
                 session.addInput(input)
+
+                // Zoom is device state and outlives the session, so a camera
+                // that was left pulled in would come back pulled in with the
+                // readout saying 1×. Every camera starts wide.
+                if (try? device.lockForConfiguration()) != nil {
+                    device.videoZoomFactor = device.minAvailableVideoZoomFactor
+                    device.unlockForConfiguration()
+                }
 
                 if !session.outputs.contains(output), session.canAddOutput(output) {
                     session.addOutput(output)
@@ -460,10 +546,13 @@ final class SkyCamera: ObservableObject {
                     connection.isVideoMirrored = position == .front
                 }
 
-                continuation.resume(returning: true)
+                continuation.resume(returning: min(device.maxAvailableVideoZoomFactor, Self.zoomCeiling))
             }
         }
     }
+
+    /// Past this the wide angle is inventing pixels.
+    private nonisolated static let zoomCeiling: CGFloat = 5
 }
 
 /// Hops to the main queue before doing anything with what it was handed, so
