@@ -6,6 +6,9 @@
 <title>하늘색 — 개인정보 처리방침</title>
 <meta name="description" content="iOS 앱 '하늘색'의 개인정보 처리방침. 개발자는 어떤 개인정보도 수집하지 않습니다.">
 <link rel="canonical" href="https://m1zz.github.io/SkyDex/privacy.html">
+<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/SkyDex/privacy.html">
+<link rel="alternate" hreflang="en" href="https://m1zz.github.io/SkyDex/en/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/SkyDex/privacy.html">
 <style>
   :root {
     --ink: #16202e;
@@ -64,10 +67,17 @@
     margin-top: 48px; padding-top: 22px; border-top: 1px solid var(--line);
     color: var(--ink-soft); font-size: 15px;
   }
+  nav.langs { display: flex; justify-content: flex-end; gap: 14px; margin: 18px 0 0; font-size: 14px; }
+  nav.langs a { color: var(--ink-soft); text-decoration: none; }
+  nav.langs a[aria-current] { color: var(--ink); font-weight: 600; }
 </style>
 </head>
 <body>
 <main>
+  <nav class="langs" aria-label="Language">
+    <a href="privacy.html" hreflang="ko" lang="ko" aria-current="true">한국어</a>
+    <a href="en/privacy.html" hreflang="en" lang="en">English</a>
+  </nav>
 
   <h1>개인정보 처리방침</h1>
   <p class="meta">iOS 앱 <strong>하늘색</strong> · 시행일 2026년 8월 20일</p>
@@ -135,7 +145,7 @@
 
   <h3>익명 사용 통계</h3>
   <ul>
-    <li>보내는 것: 앱을 몇 번 열었는지, 앱 버전, iOS 버전, 기기 종류.</li>
+    <li>보내는 것: 앱을 몇 번 열었는지, 설치한 지 며칠 됐는지, 앱 버전, iOS 버전, 기기 종류, 언어 설정.</li>
     <li>설치를 구분하는 값은 <strong>기기·계정과 아무 상관이 없는 무작위 번호</strong>입니다.
       앱을 지웠다 다시 깔면 새 번호가 되고, 다른 앱이나 광고 식별자와 이어붙일 수 없습니다.</li>
     <li><strong>사진, 색, 촬영 시각, 적어 넣은 한 줄, 위치는 보내지 않습니다.</strong></li>
@@ -183,50 +193,6 @@
   <h2>9. 문의</h2>
   <p><a href="mailto:leeo@kakao.com">leeo@kakao.com</a></p>
 
-  <section class="en">
-    <h2>Summary in English</h2>
-    <p><strong>하늘색 (SkyDex)</strong> has no accounts and no server of its own.
-    Three things reach the developer, all through the developer's own CloudKit
-    public database: anonymous usage counts, feedback you choose to send, and
-    crash reports. Your photos, colours, notes and location are in none of them.
-    There is no advertising, no tracking, and no third-party analytics SDK.</p>
-    <p>The usage record is a random number unrelated to your device or Apple
-    Account, plus how many times the app was opened and which app and iOS
-    versions are running. Reinstalling makes a new number, and it cannot be
-    joined to any advertising identifier or to any other app. Feedback is sent
-    only when you tap Send Feedback; a reply name and email are recorded only if
-    you type them. Crash reports are the diagnostics iOS batches up for the
-    developer and carry no installation identifier at all. Nothing collected is
-    sold or passed to anyone else.</p>
-    <p>Photos you take or pick, the colour extracted from them, the capture time
-    and any note you write are kept in the app's own storage on your device. They
-    are never sent to the developer, who runs no server.</p>
-    <p>If you are signed in to iCloud, the same records are also kept in
-    <strong>your own iCloud</strong> (Apple's CloudKit private database), so your
-    collection survives losing the phone or reinstalling the app. That data lives
-    in your Apple account, not on any server of ours: the developer cannot read
-    it and holds no copy of it. It moves only between your own devices signed in
-    to the same Apple account — there is no sharing or publishing feature in the
-    app at all. Deleting an entry in the app deletes the iCloud copy too, and the
-    storage it uses counts against your iCloud quota. If you are not signed in to
-    iCloud, or you turn this app off under iCloud in Settings, the app keeps
-    everything on the device and works exactly as before.</p>
-    <p>Location is requested at kilometre accuracy and used only to (a) compute
-    local sunrise and sunset so the board's reference colours land at the right
-    time of day, and (b) fetch today's hourly cloud and rain forecast. The
-    coarse coordinate is stored on the device, is never attached to a photo, and
-    is never sent to the developer. It is sent to Apple's WeatherKit service to
-    retrieve the forecast, which is governed by
-    <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>.
-    Denying location permission is fine: the app falls back to a default
-    coordinate and a clear-sky reference.</p>
-    <p>Deleting an entry in the app removes it from the device and from iCloud.
-    Deleting the app removes the on-device storage but leaves the iCloud copy, so
-    that reinstalling brings your collection back; to remove that too, delete the
-    entries in the app or remove the app's data under Settings → Apple Account →
-    iCloud → Manage Storage. The developer holds no copy. Contact:
-    <a href="mailto:leeo@kakao.com">leeo@kakao.com</a>.</p>
-  </section>
 
   <footer>
     <a href="./">소개</a> ·

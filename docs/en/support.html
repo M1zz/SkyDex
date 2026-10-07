@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SkyDex — Support</title>
+<meta name="description" content="Support for the iOS app SkyDex: common questions and how to get in touch.">
+<link rel="canonical" href="https://m1zz.github.io/SkyDex/en/support.html">
+<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/SkyDex/support.html">
+<link rel="alternate" hreflang="en" href="https://m1zz.github.io/SkyDex/en/support.html">
+<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/SkyDex/support.html">
+<style>
+  :root {
+    --ink: #16202e;
+    --ink-soft: #5d6773;
+    --paper: #f4f5f7;
+    --card: #ffffff;
+    --line: #e2e5ea;
+    --accent: #2f7bbe;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #eef1f5;
+      --ink-soft: #a2acb8;
+      --paper: #0b111c;
+      --card: #141c28;
+      --line: #26303e;
+      --accent: #7fa4ce;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0 20px 72px;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.72 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+      "Pretendard", "Segoe UI", Roboto, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 680px; margin: 0 auto; }
+
+  /* 판을 이루는 색 그대로: 한밤에서 노을까지 한 줄로 */
+  .sky {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    padding: 44px 0 26px;
+  }
+  .sky span {
+    width: 20px; height: 20px; border-radius: 50%;
+    display: block;
+  }
+  h1 {
+    font-size: 30px; line-height: 1.3; letter-spacing: -0.02em;
+    margin: 0 0 6px; text-align: center; font-weight: 700;
+  }
+  .lede {
+    margin: 0 auto 40px; text-align: center; color: var(--ink-soft);
+    max-width: 30em;
+  }
+  h2 {
+    font-size: 20px; letter-spacing: -0.01em; margin: 44px 0 14px;
+    padding-top: 26px; border-top: 1px solid var(--line);
+  }
+  h2:first-of-type { border-top: 0; padding-top: 0; }
+  h3 { font-size: 17px; margin: 26px 0 6px; }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 1.2em; }
+  li { margin-bottom: 6px; }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  .card {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 16px; padding: 20px 22px; margin: 0 0 18px;
+  }
+  .card p:last-child { margin-bottom: 0; }
+  .mail {
+    display: inline-block; margin-top: 4px; font-weight: 600;
+    font-size: 18px;
+  }
+  .meta { color: var(--ink-soft); font-size: 15px; }
+  footer {
+    margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line);
+    color: var(--ink-soft); font-size: 15px; text-align: center;
+  }
+  footer a { margin: 0 8px; }
+  nav.langs { display: flex; justify-content: flex-end; gap: 14px; margin: 18px 0 0; font-size: 14px; }
+  nav.langs a { color: var(--ink-soft); text-decoration: none; }
+  nav.langs a[aria-current] { color: var(--ink); font-weight: 600; }
+</style>
+</head>
+<body>
+<main>
+  <nav class="langs" aria-label="Language">
+    <a href="../support.html" hreflang="ko" lang="ko">한국어</a>
+    <a href="../en/support.html" hreflang="en" lang="en" aria-current="true">English</a>
+  </nav>
+
+  <div class="sky" aria-hidden="true">
+    <span style="background:#0B1120"></span>
+    <span style="background:#2B3856"></span>
+    <span style="background:#7E90B6"></span>
+    <span style="background:#5590C6"></span>
+    <span style="background:#1C6DB4"></span>
+    <span style="background:#C1A07E"></span>
+    <span style="background:#D68F55"></span>
+    <span style="background:#8E4340"></span>
+    <span style="background:#33304C"></span>
+  </div>
+
+  <h1>SkyDex</h1>
+  <p class="lede">This is the support page for <strong>SkyDex</strong>.
+  To see what the app is first, head to the <a href="./">overview</a>.</p>
+
+  <h2>Contact</h2>
+  <div class="card">
+    <p>Bugs, odd behaviour, or anything you'd like to say — just send an email.
+    I'll reply as soon as I've read it.</p>
+    <a class="mail" href="mailto:leeo@kakao.com">leeo@kakao.com</a>
+    <p class="meta" style="margin-top:12px">If you got stuck on a screen, telling me what
+    you were doing and which iOS version you're on makes it much easier to track down.</p>
+  </div>
+
+  <h2>Common questions</h2>
+
+  <h3>How do cells get filled?</h3>
+  <p>Photograph the sky now and <strong>the cell for the current time</strong> fills with
+  the colour you caught. If it comes out different from what was expected, it goes in
+  anyway — that really was the sky at that hour.</p>
+  <p>The rest of your collected skies count by colour: if one is close enough to today's
+  sky colour for a given time, it fills that cell.</p>
+
+  <h3>A cell that was full yesterday is empty today</h3>
+  <p>That's because the board shows <strong>today's</strong> sky colours. The colours of
+  the forty-eight cells are set again every day for the season and the weather, and every
+  day the app asks again whether your collected skies are close to them. So some days the
+  board is nearly full and some days it looks nearly empty.</p>
+  <p>Your photos haven't gone anywhere. Every sky you've collected is still in
+  <strong>Records</strong>, and in <strong>Palette</strong> if you'd rather see them in
+  colour order.</p>
+
+  <h3>Filled cells keep fading</h3>
+  <p>That's on purpose. A photo keeps its true colour for a week, then fades slowly over
+  the next eight weeks. It isn't deleted, and it never fades away completely — photograph
+  the sky at that time of day again and it's back to full colour straight away.</p>
+
+  <h3>Does the colour have to match?</h3>
+  <p>No. There's no pass or fail. Every photo you take is saved, and the grey of an overcast
+  day is that day's sky colour too.</p>
+
+  <h3>Why does it ask for my location?</h3>
+  <p>Only to line up the reference colours with <strong>the actual sunrise and sunset</strong>
+  where you are, and to fetch today's forecast. Accuracy is kilometre-level, and the
+  coordinate is never attached to a photo. The app works fine if you say no (it uses
+  Seoul's colours instead). The details are in the <a href="privacy.html">Privacy Policy</a>.</p>
+
+  <h3>Where do the expected sky colours come from?</h3>
+  <p>They blend the position of the sun (sunrise and sunset for that date and place) with
+  Apple Weather's hourly cloud and rain forecast. If the forecast can't be fetched, the app
+  draws a clear-sky reference instead.</p>
+
+  <h3>Deleting a photo</h3>
+  <p>Open the photo and tap <strong>Delete</strong>, or swipe left on it in Records.
+  That removes it from your device and from your iCloud. If you delete the app, the copy in
+  your iCloud stays, so your skies come back when you reinstall.</p>
+
+  <h3>Requirements</h3>
+  <p>iPhone with iOS 17.0 or later. Portrait only. The app's screens are in Korean.</p>
+
+  <footer>
+    <a href="./">Overview</a> ·
+    <a href="privacy.html">Privacy Policy</a> ·
+    <a href="https://github.com/M1zz/SkyDex">GitHub</a>
+    <p class="meta" style="margin:10px 0 0">Weather data provided by
+      <a href="https://weatherkit.apple.com/legal-attribution.html">Apple Weather</a>.</p>
+  </footer>
+
+</main>
+</body>
+</html>

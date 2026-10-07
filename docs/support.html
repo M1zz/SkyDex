@@ -6,6 +6,9 @@
 <title>하늘색 — 지원</title>
 <meta name="description" content="iOS 앱 '하늘색'의 지원 페이지. 자주 묻는 것과 문의 방법.">
 <link rel="canonical" href="https://m1zz.github.io/SkyDex/support.html">
+<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/SkyDex/support.html">
+<link rel="alternate" hreflang="en" href="https://m1zz.github.io/SkyDex/en/support.html">
+<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/SkyDex/support.html">
 <style>
   :root {
     --ink: #16202e;
@@ -81,10 +84,17 @@
     color: var(--ink-soft); font-size: 15px; text-align: center;
   }
   footer a { margin: 0 8px; }
+  nav.langs { display: flex; justify-content: flex-end; gap: 14px; margin: 18px 0 0; font-size: 14px; }
+  nav.langs a { color: var(--ink-soft); text-decoration: none; }
+  nav.langs a[aria-current] { color: var(--ink); font-weight: 600; }
 </style>
 </head>
 <body>
 <main>
+  <nav class="langs" aria-label="Language">
+    <a href="support.html" hreflang="ko" lang="ko" aria-current="true">한국어</a>
+    <a href="en/support.html" hreflang="en" lang="en">English</a>
+  </nav>
 
   <div class="sky" aria-hidden="true">
     <span style="background:#0B1120"></span>
@@ -147,7 +157,8 @@
 
   <h3>사진을 지우려면</h3>
   <p>사진을 열고 <strong>지우기</strong>를 누르거나, 기록 화면에서 왼쪽으로 밀면 됩니다.
-  앱을 삭제하면 모아둔 하늘도 함께 사라집니다.</p>
+  기기와 iCloud에서 함께 지워집니다. 앱을 삭제해도 iCloud에 있는 사본은 남아,
+  다시 설치하면 모아둔 하늘이 돌아옵니다.</p>
 
   <h3>지원 환경</h3>
   <p>iOS 17.0 이상, iPhone. 세로 화면 전용입니다.</p>
