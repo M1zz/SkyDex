@@ -21,7 +21,7 @@
 
 Attach a screenshot to your questions
 Read our replies right in the app
-Support shows the app name in your language
+Support screen uses your language
 
 ## 1.0.1
 
