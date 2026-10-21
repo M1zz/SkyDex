@@ -70,3 +70,46 @@ https://m1zz.github.io/SkyDex/en/privacy.html
 ### 마케팅 URL
 
 https://m1zz.github.io/SkyDex/en/
+
+### 이름
+
+SkyDex: Daily Sky Palette
+
+### 부제
+
+A board that fills with skies
+
+### 키워드
+
+diary,colour,color,mood,moodboard,cloud,sunset,sunrise,journal,aesthetic,widget,dusk,dawn,photo
+
+### 프로모션 텍스트
+
+What colour was today's sky? Each time you photograph the sky, one of the day's forty-eight sky colours fills in and gets a name that sounds like it.
+
+### 설명
+
+Every time you photograph the sky, one of the day's forty-eight sky colours fills in.
+A small app for keeping what colour today's sky was: one photo and one line.
+
+The board runs from the blue-black of dawn through midday blue and sunset orange to the violet of night, forty-eight colours the sky passes through in a day. Each photo fills the closest cell. No judging, no rejecting: shoot, and it goes in.
+
+Every sky gets a name
+Each colour you capture gets a few words that sound like it, such as thin ice, pool tile or ripe persimmon, plus the closest name from traditional colour palettes.
+
+Leave a line
+A card opens right after you shoot. Write what you thought while looking up, and it floats back over the sky whenever you tap that cell on the board.
+
+Empty cells show the way
+Tap an empty cell to see which time of day it belongs to and what colour to look for.
+
+Log, palette, repeats
+Browse your skies in order, gather your colours into palettes such as blues, greys and sunset tones, and shoot the same hour on another day to compare the two side by side.
+
+Widgets
+See today's sky and today's board right on your Home Screen.
+
+Pick from Photos
+A sky chosen from your library instead of the camera is cropped to a square as well.
+
+No account, no sign-in. Your skies are stored in your own iCloud, so they follow you to a new device.

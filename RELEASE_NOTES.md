@@ -17,6 +17,12 @@
 보낸 문의에 온 답장을 앱 안에서 볼 수 있습니다
 지원 화면의 앱 이름이 기기 언어에 맞게 나옵니다
 
+### App Store (English)
+
+Attach a screenshot to your questions
+Read our replies right in the app
+Support shows the app name in your language
+
 ## 1.0.1
 
 ### 앱스토어 (한국어)
