@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SkyDex</title>
+<meta name="description" content="Een iOS-app die de lucht van de dag als kleur verzamelt. Vul een bord van achtenveertig vakjes met de lucht van vandaag.">
+<link rel="canonical" href="https://m1zz.github.io/SkyDex/nl/">
+<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/SkyDex/">
+<link rel="alternate" hreflang="en" href="https://m1zz.github.io/SkyDex/en/">
+<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/SkyDex/en/">
+<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/SkyDex/ja/">
+<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/SkyDex/zh-Hans/">
+<link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/SkyDex/zh-Hant/">
+<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/SkyDex/ru/">
+<link rel="alternate" hreflang="es" href="https://m1zz.github.io/SkyDex/es/">
+<link rel="alternate" hreflang="de" href="https://m1zz.github.io/SkyDex/de/">
+<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/SkyDex/fr/">
+<link rel="alternate" hreflang="it" href="https://m1zz.github.io/SkyDex/it/">
+<link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/SkyDex/pt-BR/">
+<link rel="alternate" hreflang="th" href="https://m1zz.github.io/SkyDex/th/">
+<link rel="alternate" hreflang="vi" href="https://m1zz.github.io/SkyDex/vi/">
+<link rel="alternate" hreflang="cs" href="https://m1zz.github.io/SkyDex/cs/">
+<link rel="alternate" hreflang="da" href="https://m1zz.github.io/SkyDex/da/">
+<link rel="alternate" hreflang="el" href="https://m1zz.github.io/SkyDex/el/">
+<link rel="alternate" hreflang="fi" href="https://m1zz.github.io/SkyDex/fi/">
+<link rel="alternate" hreflang="id" href="https://m1zz.github.io/SkyDex/id/">
+<link rel="alternate" hreflang="nb" href="https://m1zz.github.io/SkyDex/nb/">
+<link rel="alternate" hreflang="nl" href="https://m1zz.github.io/SkyDex/nl/">
+<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/SkyDex/">
+<style>
+  :root {
+    --ink: #16202e;
+    --ink-soft: #5d6773;
+    --paper: #f4f5f7;
+    --card: #ffffff;
+    --line: #e2e5ea;
+    --accent: #2f7bbe;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #eef1f5;
+      --ink-soft: #a2acb8;
+      --paper: #0b111c;
+      --card: #141c28;
+      --line: #26303e;
+      --accent: #7fa4ce;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0 20px 72px;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.72 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+      "Pretendard", "Segoe UI", Roboto, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 680px; margin: 0 auto; }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+
+  /* 하루 곡선 그대로 이어붙인 띠 */
+  .strip {
+    display: flex;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 40px 0 34px;
+  }
+  .strip span { flex: 1 1 0; }
+
+  h1 {
+    font-size: 34px; line-height: 1.25; letter-spacing: -0.03em;
+    margin: 0 0 8px; text-align: center; font-weight: 700;
+  }
+  .lede {
+    margin: 0 auto 8px; text-align: center; color: var(--ink-soft);
+    max-width: 26em;
+  }
+  .platform {
+    text-align: center; color: var(--ink-soft); font-size: 14px;
+    margin: 0 0 36px;
+  }
+
+  /* 판 — 앱과 같은 6×8, 같은 색 */
+  .board {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    max-width: 340px;
+    margin: 0 auto 12px;
+  }
+  .bead {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    display: block;
+  }
+  .bead.on { border: 0; }
+  .caption {
+    text-align: center; color: var(--ink-soft); font-size: 14px;
+    margin: 0 0 46px;
+  }
+
+  h2 {
+    font-size: 21px; letter-spacing: -0.01em; margin: 46px 0 12px;
+    padding-top: 28px; border-top: 1px solid var(--line);
+  }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 1.2em; }
+  li { margin-bottom: 8px; }
+  strong { font-weight: 600; }
+
+  /* 이름 카드 — 앱의 사진 카드 아래에 붙는 것과 같은 순서 */
+  .names { margin: 20px 0 8px; }
+  .name {
+    display: flex; align-items: center; gap: 14px;
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 16px; padding: 14px 16px; margin-bottom: 10px;
+  }
+  .swatch {
+    width: 46px; height: 46px; border-radius: 12px; flex: 0 0 auto;
+  }
+  .name .simile { font-size: 17px; font-weight: 600; }
+  .name .real { font-size: 13px; color: var(--ink-soft); }
+
+  .quiet {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 16px; padding: 18px 20px; margin: 22px 0 8px;
+  }
+  .quiet p:last-child { margin-bottom: 0; }
+
+  footer {
+    margin-top: 60px; padding-top: 26px; border-top: 1px solid var(--line);
+    color: var(--ink-soft); font-size: 15px; text-align: center;
+  }
+  footer a { margin: 0 8px; }
+  nav.langs { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px 14px; margin: 18px 0 0; font-size: 14px; }
+  nav.langs a { color: var(--ink-soft); text-decoration: none; }
+  nav.langs a[aria-current] { color: var(--ink); font-weight: 600; }
+</style>
+</head>
+<body>
+<main>
+  <nav class="langs" aria-label="Language">
+    <a href="../" hreflang="ko" lang="ko">한국어</a>
+    <a href="../en/" hreflang="en" lang="en">English</a>
+    <a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+    <a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+    <a href="../ru/" hreflang="ru" lang="ru">Русский</a>
+    <a href="../es/" hreflang="es" lang="es">Español</a>
+    <a href="../de/" hreflang="de" lang="de">Deutsch</a>
+    <a href="../fr/" hreflang="fr" lang="fr">Français</a>
+    <a href="../it/" hreflang="it" lang="it">Italiano</a>
+    <a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+    <a href="../th/" hreflang="th" lang="th">ไทย</a>
+    <a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+    <a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
+    <a href="../da/" hreflang="da" lang="da">Dansk</a>
+    <a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+    <a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
+    <a href="../id/" hreflang="id" lang="id">Indonesia</a>
+    <a href="../nb/" hreflang="nb" lang="nb">Norsk</a>
+    <a href="../nl/" hreflang="nl" lang="nl" aria-current="true">Nederlands</a>
+  </nav>
+
+  <div class="strip" aria-hidden="true">
+    <span style="background:#080D18"></span>
+    <span style="background:#090E1A"></span>
+    <span style="background:#0A0F1C"></span>
+    <span style="background:#0A101E"></span>
+    <span style="background:#0B1120"></span>
+    <span style="background:#0C1221"></span>
+    <span style="background:#131B30"></span>
+    <span style="background:#1B263E"></span>
+    <span style="background:#6879A2"></span>
+    <span style="background:#99A7C5"></span>
+    <span style="background:#96ABCB"></span>
+    <span style="background:#7FA4CE"></span>
+    <span style="background:#709CCB"></span>
+    <span style="background:#5791C6"></span>
+    <span style="background:#508DC5"></span>
+    <span style="background:#3F83C1"></span>
+    <span style="background:#307BBE"></span>
+    <span style="background:#2B77BB"></span>
+    <span style="background:#1F6FB5"></span>
+    <span style="background:#1D6EB4"></span>
+    <span style="background:#2471B6"></span>
+    <span style="background:#2975B8"></span>
+    <span style="background:#3179BA"></span>
+    <span style="background:#4988C3"></span>
+    <span style="background:#558EC5"></span>
+    <span style="background:#6D9BCA"></span>
+    <span style="background:#7EA5CD"></span>
+    <span style="background:#8FA5BF"></span>
+    <span style="background:#B2A297"></span>
+    <span style="background:#C1A07E"></span>
+    <span style="background:#CC986A"></span>
+    <span style="background:#D68F56"></span>
+    <span style="background:#CC7C49"></span>
+    <span style="background:#B95B35"></span>
+    <span style="background:#A95239"></span>
+    <span style="background:#8F4440"></span>
+    <span style="background:#543852"></span>
+    <span style="background:#3B324D"></span>
+    <span style="background:#322F4B"></span>
+    <span style="background:#2B2A44"></span>
+    <span style="background:#20233A"></span>
+    <span style="background:#181D33"></span>
+    <span style="background:#161C30"></span>
+    <span style="background:#13192B"></span>
+    <span style="background:#0F1424"></span>
+    <span style="background:#0B111F"></span>
+    <span style="background:#0A101D"></span>
+    <span style="background:#080D19"></span>
+  </div>
+
+  <h1>SkyDex</h1>
+  <p class="lede">Verzamel de lucht van de dag als kleur.<br>Er is een bord met achtenveertig vakjes, en jij vult het met de lucht van vandaag.</p>
+  <p class="platform">iPhone · iOS 17.0 of nieuwer</p>
+
+  <div class="board" aria-hidden="true">
+    <span class="bead" style="border-color:#55565A" title="00:00–00:50"></span>
+    <span class="bead" style="border-color:#55565B" title="00:50–01:40"></span>
+    <span class="bead" style="border-color:#55565C" title="01:40–02:30"></span>
+    <span class="bead" style="border-color:#55575D" title="02:30–03:20"></span>
+    <span class="bead" style="border-color:#55575D" title="03:20–04:10"></span>
+    <span class="bead" style="border-color:#56575E" title="04:10–05:00"></span>
+    <span class="bead" style="border-color:#595A64" title="05:00–05:30"></span>
+    <span class="bead" style="border-color:#5C5E69" title="05:30–06:00"></span>
+    <span class="bead" style="border-color:#767B8B" title="06:00–06:30"></span>
+    <span class="bead on" style="background:#99A7C5" title="06:30–07:00 · #99A7C5"></span>
+    <span class="bead" style="border-color:#848B97" title="07:00–07:30"></span>
+    <span class="bead" style="border-color:#7D8998" title="07:30–08:00"></span>
+    <span class="bead on" style="background:#709CCB" title="08:00–08:40 · #709CCB"></span>
+    <span class="bead" style="border-color:#728397" title="08:40–09:20"></span>
+    <span class="bead" style="border-color:#718196" title="09:20–10:00"></span>
+    <span class="bead" style="border-color:#6D7E96" title="10:00–10:40"></span>
+    <span class="bead" style="border-color:#6B7C95" title="10:40–11:20"></span>
+    <span class="bead" style="border-color:#6A7A95" title="11:20–12:00"></span>
+    <span class="bead on" style="background:#1F6FB5" title="12:00–12:40 · #1F6FB5"></span>
+    <span class="bead" style="border-color:#687793" title="12:40–13:20"></span>
+    <span class="bead" style="border-color:#687893" title="13:20–14:00"></span>
+    <span class="bead" style="border-color:#697A93" title="14:00–14:40"></span>
+    <span class="bead" style="border-color:#6B7B94" title="14:40–15:20"></span>
+    <span class="bead" style="border-color:#6F8096" title="15:20–16:00"></span>
+    <span class="bead" style="border-color:#728297" title="16:00–16:20"></span>
+    <span class="bead" style="border-color:#788697" title="16:20–16:40"></span>
+    <span class="bead on" style="background:#7EA5CD" title="16:40–17:00 · #7EA5CD"></span>
+    <span class="bead" style="border-color:#828993" title="17:00–17:20"></span>
+    <span class="bead" style="border-color:#8E8884" title="17:20–17:40"></span>
+    <span class="bead on" style="background:#C1A07E" title="17:40–18:00 · #C1A07E"></span>
+    <span class="bead" style="border-color:#998474" title="18:00–18:15"></span>
+    <span class="bead on" style="background:#D68F56" title="18:15–18:30 · #D68F56"></span>
+    <span class="bead" style="border-color:#9C7B68" title="18:30–18:45"></span>
+    <span class="bead on" style="background:#B95B35" title="18:45–19:00 · #B95B35"></span>
+    <span class="bead" style="border-color:#936E63" title="19:00–19:15"></span>
+    <span class="bead" style="border-color:#896A66" title="19:15–19:30"></span>
+    <span class="bead" style="border-color:#71656F" title="19:30–19:45"></span>
+    <span class="bead" style="border-color:#67636E" title="19:45–20:00"></span>
+    <span class="bead" style="border-color:#64626E" title="20:00–20:15"></span>
+    <span class="bead" style="border-color:#61606B" title="20:15–20:30"></span>
+    <span class="bead" style="border-color:#5D5D68" title="20:30–20:45"></span>
+    <span class="bead" style="border-color:#5A5B65" title="20:45–21:00"></span>
+    <span class="bead on" style="background:#161C30" title="21:00–21:30 · #161C30"></span>
+    <span class="bead" style="border-color:#585A62" title="21:30–22:00"></span>
+    <span class="bead" style="border-color:#56585F" title="22:00–22:30"></span>
+    <span class="bead" style="border-color:#55575D" title="22:30–23:00"></span>
+    <span class="bead" style="border-color:#55575C" title="23:00–23:30"></span>
+    <span class="bead" style="border-color:#55565A" title="23:30–00:00"></span>
+  </div>
+  <p class="caption">Bovenaan is het midden van de nacht; naar beneden wordt het dag en daarna weer donker. Een gevulde cirkel is een lucht die je hebt vastgelegd; een lege ring komt nog.</p>
+
+  <h2>Het bord is vandaag</h2>
+  <p>De achtenveertig vakjes zijn <strong>de kleuren waar de lucht van vandaag doorheen gaat</strong>. Ze worden elke dag opnieuw berekend uit de werkelijke zonsopgang en zonsondergang waar je bent en de verwachting van vandaag voor wolken en regen. Een vakje dat gisteren gevuld was, kan vandaag dus leeg zijn. Wat het bord je vertelt is niet hoeveel je hebt verzameld, maar <strong>hoeveel van vandaag je kunt laten zien</strong>.</p>
+  <p>Fotografeer nu de lucht en <strong>het vakje voor dat tijdstip</strong> wordt gevuld met de kleur die je hebt vastgelegd. Valt die anders uit dan verwacht, dan komt hij er toch in: de verwachting is een gok; de foto was er echt.</p>
+  <p><strong>Niets wordt beoordeeld.</strong> Geen geslaagd, geen gezakt, geen marge. Het grijs van een bewolkte dag is ook de luchtkleur van die dag.</p>
+
+  <h2>Elke kleur krijgt een naam</h2>
+  <p>De app vertelt je op twee manieren welke kleur je lucht heeft, in het Koreaans geschreven. Eerst komt <strong>een vergelijking die je je kunt voorstellen</strong>, en daaronder <strong>een naam met herkomst</strong>. ‘Usuhanairo’ is het preciezere antwoord, maar bijna niemand ziet een kleur in dat woord, en een naam die je niet ziet, doet het werk van een naam niet.</p>
+
+  <div class="names">
+    <div class="name">
+      <span class="swatch" style="background:#7E90B6"></span>
+      <span>
+        <div class="simile">Verbleekt marineblauw gordijn</div>
+        <div class="real">Usuhanairo · traditionele Japanse kleur 薄花色</div>
+      </span>
+    </div>
+    <div class="name">
+      <span class="swatch" style="background:#D68F55"></span>
+      <span>
+        <div class="simile">Korstje van geroosterd brood</div>
+        <div class="real">Cadmiumoranje · pigment</div>
+      </span>
+    </div>
+    <div class="name">
+      <span class="swatch" style="background:#1C6DB4"></span>
+      <span>
+        <div class="simile">Water waar blauwe verf in is geroerd</div>
+        <div class="real">Cheongsaek · traditionele Koreaanse kleur</div>
+      </span>
+    </div>
+  </div>
+  <p>De namen met herkomst komen uit traditionele Koreaanse en Japanse kleuren, pigmenten en standaardkleurensets, en elke waarde is aan de bron gecontroleerd. De app is ook eerlijk over hoe dichtbij ze zit: is de overeenkomst dichtbij genoeg, dan zegt ze ‘de naam is’, zo niet, dan ‘de dichtstbijzijnde naam is’.</p>
+
+  <h2>Gevulde vakjes worden ouder</h2>
+  <p>Een foto behoudt een week lang zijn ware kleur en vervaagt daarna langzaam over de volgende acht weken. Hij wordt niet verwijderd en verdwijnt nooit helemaal. Fotografeer de lucht op dat tijdstip opnieuw en het vakje heeft meteen weer volle kleur.</p>
+  <p>Het is geen straf. Er is geen reeks die kan breken en niets om terug te winnen. Het is gewoon een eerlijke manier voor een bord van lucht om te zeggen: ‘die lucht was een tijdje geleden’.</p>
+
+  <h2>Zelfde tijd, andere lucht</h2>
+  <p>Dagen herhalen zich. Dezelfde wekker, dezelfde route, hetzelfde raam. Alleen de lucht erboven is nooit twee keer hetzelfde. Het scherm <strong>Herhalingen</strong> zet de dagen op een rij waarop je op hetzelfde tijdstip buiten stond, zodat je het kunt zien. De rij is de herhaling; de kleuren zijn het deel dat zich nooit herhaalt.</p>
+
+  <h2>Widgets</h2>
+  <p><strong>Het bord van vandaag</strong> ziet er net zo uit als in de app: achtenveertig vakjes, cirkels voor gevulde en ringen voor lege. <strong>De lucht van vandaag</strong> toont de foto die je vandaag hebt gemaakt met de naam van de kleur, en werkt ook op het toegangsscherm.</p>
+
+  <h2>Het blijft van jou</h2>
+  <div class="quiet">
+    <p>Geen account en geen server van ons. Je foto's en kleuren staan in de opslag van de app op je apparaat en, als je bent ingelogd, in je eigen iCloud. Ze worden nooit naar de ontwikkelaar gestuurd. Geen advertenties, geen tracking, geen analyse van derden.</p>
+    <p>Locatie wordt alleen gebruikt voor zonsopgang, zonsondergang en de verwachting van vandaag, en wordt gevraagd met een nauwkeurigheid van kilometers. De app werkt prima als je nee zegt. De details staan in het <a href="privacy.html">Privacybeleid</a>.</p>
+  </div>
+
+  <footer>
+    <a href="support.html">Support</a> ·
+    <a href="privacy.html">Privacybeleid</a> ·
+    <a href="https://github.com/M1zz/SkyDex">GitHub</a>
+    <p style="margin:10px 0 0">Weergegevens geleverd door <a href="https://weatherkit.apple.com/legal-attribution.html">Apple Weer</a>.</p>
+  </footer>
+
+</main>
+</body>
+</html>

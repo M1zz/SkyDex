@@ -131,6 +131,12 @@ Legg ved skjermbilde i spørsmålene dine
 Les svarene våre rett i appen
 Støtteskjermen følger språket ditt
 
+### 앱스토어 (Nederlands)
+
+Voeg een schermafbeelding toe aan vragen
+Lees onze antwoorden in de app
+Supportscherm in jouw taal
+
 
 ## 1.0.1
 

@@ -88,6 +88,12 @@
             "value" : "Face ID-lås"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face ID-vergrendeling"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -211,6 +217,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lås appen med Face ID, så himlene dine forblir private."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vergrendel de app met Face ID, zodat je luchten privé blijven."
           }
         },
         "pt-BR" : {
@@ -338,6 +350,12 @@
             "value" : "Si det til Siri, så kan du ta bilde av himmelen med en gang."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zeg het tegen Siri en maak meteen een foto van de lucht."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -461,6 +479,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Siri og Snarveier"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siri en Opdrachten"
           }
         },
         "pt-BR" : {
@@ -588,6 +612,12 @@
             "value" : "Bedre VoiceOver-støtte"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Betere VoiceOver-ondersteuning"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -711,6 +741,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Når du gjør teksten større, ordner skjermene seg pent uten at noe kuttes."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als je de tekst groter maakt, schikken de schermen zich netjes opnieuw zonder dat er iets wordt afgekapt."
           }
         },
         "pt-BR" : {
@@ -838,6 +874,12 @@
             "value" : "Slett alle himlene mine på én gang"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Al mijn luchten in één keer wissen"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -961,6 +1003,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bruk appen på flere språk."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gebruik de app in meer talen."
           }
         },
         "pt-BR" : {
@@ -1088,6 +1136,12 @@
             "value" : "Flere språk"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meer talen"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1211,6 +1265,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lagre himmelbildene dine i en fil og hent dem tilbake senere."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bewaar je luchtfoto's in een bestand en haal ze later weer terug."
           }
         },
         "pt-BR" : {
@@ -1338,6 +1398,12 @@
             "value" : "Bedre farger og kontrast"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prettigere kleuren en contrast"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1461,6 +1527,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sikkerhetskopi og eksport av bilder"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Back-up en export van foto's"
           }
         },
         "pt-BR" : {
@@ -1588,6 +1660,12 @@
             "value" : "Selv om farger er vanskelige å skille, ser du hvilken himmel hver rute rommer."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ook als kleuren moeilijk te onderscheiden zijn, zie je welke lucht in welk vakje zit."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1711,6 +1789,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nyttige tips"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Handige tips"
           }
         },
         "pt-BR" : {
@@ -1838,6 +1922,12 @@
             "value" : "Du får en påminnelse når det er en god tid å fange en himmel du ennå ikke har."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Je krijgt een seintje wanneer het een goed moment is om een lucht te pakken die je nog mist."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1961,6 +2051,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Diskrete tips om nyttige funksjoner, akkurat når du trenger dem."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Subtiele hints over handige functies, precies wanneer je ze nodig hebt."
           }
         },
         "pt-BR" : {
@@ -2088,6 +2184,12 @@
             "value" : "Bruk hele appen på engelsk også."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gebruik de hele app ook in het Engels."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2211,6 +2313,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Første gang du åpner appen etter en oppdatering, ser du hva som er nytt."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De eerste keer dat je de app na een update opent, zie je wat er nieuw is."
           }
         },
         "pt-BR" : {
@@ -2338,6 +2446,12 @@
             "value" : "Nyheter"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nieuw"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2461,6 +2575,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Full støtte for engelsk"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Volledige ondersteuning voor Engels"
           }
         },
         "pt-BR" : {
@@ -2588,6 +2708,12 @@
             "value" : "Hvis du vil, kan du slette alle innsamlede himmelbilder rett i appen."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wil je dat, dan wis je alle verzamelde luchtfoto's rechtstreeks in de app."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2711,6 +2837,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rask start for nye brukere"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Een korte start voor nieuwe gebruikers"
           }
         },
         "pt-BR" : {
@@ -2838,6 +2970,12 @@
             "value" : "Første gang du åpner appen, ser du hvordan du fyller himmelbrettet."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De eerste keer dat je de app opent, zie je hoe je je luchtbord vult."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2961,6 +3099,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Oppsett for større tekst"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indelingen voor grotere tekst"
           }
         },
         "pt-BR" : {
@@ -3088,6 +3232,12 @@
             "value" : "Oppsett for sammenleggbar iPhone"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indeling voor opvouwbare iPhone"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3211,6 +3361,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bruk den brede skjermen på en sammenleggbar iPhone som to ruter side om side."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gebruik het brede scherm van een opvouwbare iPhone als twee vensters naast elkaar."
           }
         },
         "pt-BR" : {
@@ -3338,6 +3494,12 @@
             "value" : "Himmelpåminnelser"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Luchtherinneringen"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3461,6 +3623,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "VoiceOver leser opp hver knapp og hver himmelrute i riktig rekkefølge."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver leest elke knop en elk luchtvakje voor, in de juiste volgorde."
           }
         },
         "pt-BR" : {
@@ -3587,6 +3755,12 @@
             "value" : "Ingen gjentakelser ennå"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nog geen herhalingen"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3709,6 +3883,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fang himmelen på samme tidspunkt en annen dag, så står de to her side om side."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maak op een andere dag op hetzelfde tijdstip een foto van de lucht, dan staan de twee hier naast elkaar."
           }
         },
         "pt-BR" : {
@@ -3835,6 +4015,12 @@
             "value" : "Samme time, samme dag"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zelfde uur, zelfde dag"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3957,6 +4143,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "En uke eller en måned kommer tilbake i samme form. Bare himmelen på det tidspunktet har aldri vært den samme."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Een week of een maand keert in dezelfde vorm terug. Alleen de lucht op dat uur was nooit dezelfde."
           }
         },
         "pt-BR" : {
@@ -4083,6 +4275,12 @@
             "value" : "De to mest like himlene"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De twee meest gelijkende luchten"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4205,6 +4403,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "For øyet er det samme farge."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voor het oog is het dezelfde kleur."
           }
         },
         "pt-BR" : {
@@ -4331,6 +4535,12 @@
             "value" : "Likevel er det forskjellige farger."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toch zijn het verschillende kleuren."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4453,6 +4663,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ta vare på i iCloud også"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ook bewaren in iCloud"
           }
         },
         "pt-BR" : {
@@ -4579,6 +4795,12 @@
             "value" : "Lagring"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opslag"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4701,6 +4923,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Støtte"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Support"
           }
         },
         "pt-BR" : {
@@ -4827,6 +5055,12 @@
             "value" : "Utvikler"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ontwikkelaar"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4949,6 +5183,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bruksstatistikk"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gebruiksstatistieken"
           }
         },
         "pt-BR" : {
@@ -5075,6 +5315,12 @@
             "value" : "Antall installasjoner og versjonsfordeling. For å lese dem kreves lesetilgang til hub-containeren."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aantal installaties en verdeling over versies. Om ze te lezen is leestoegang tot de hubcontainer nodig."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5197,6 +5443,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Innstillinger"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instellingen"
           }
         },
         "pt-BR" : {
@@ -5323,6 +5575,12 @@
             "value" : "Ferdig"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gereed"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5445,6 +5703,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lukk"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sluit"
           }
         },
         "pt-BR" : {
@@ -5571,6 +5835,12 @@
             "value" : "Lagre"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bewaar"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5693,6 +5963,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Avbryt"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annuleer"
           }
         },
         "pt-BR" : {
@@ -5819,6 +6095,12 @@
             "value" : "Slett"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wis"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5941,6 +6223,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fang himmelen"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lucht vastleggen"
           }
         },
         "pt-BR" : {
@@ -6067,6 +6355,12 @@
             "value" : "Logg"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logboek"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6189,6 +6483,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Himmel"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lucht"
           }
         },
         "pt-BR" : {
@@ -6315,6 +6615,12 @@
             "value" : "Palett"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palet"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6437,6 +6743,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gjentakelser"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Herhalingen"
           }
         },
         "pt-BR" : {
@@ -6563,6 +6875,12 @@
             "value" : "Slette denne himmelen?"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deze lucht wissen?"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6685,6 +7003,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bildet og fargen fjernes sammen."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De foto en de kleur worden samen verwijderd."
           }
         },
         "pt-BR" : {
@@ -6811,6 +7135,12 @@
             "value" : "En tanke du fikk mens du så på denne himmelen,\net ord du vil legge igjen"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Een gedachte bij het kijken naar deze lucht,\neen woord dat je wilt achterlaten"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6935,6 +7265,12 @@
             "value" : "Gjennom en annen dags himmel"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Door de lucht van een andere dag"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7054,6 +7390,12 @@
           }
         },
         "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "SkyDex"
@@ -7183,6 +7525,12 @@
             "value" : "Tilbake til den opprinnelige himmelen"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terug naar de oorspronkelijke lucht"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7305,6 +7653,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Styrken på den lånte himmelen"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sterkte van de geleende lucht"
           }
         },
         "pt-BR" : {
@@ -7431,6 +7785,12 @@
             "value" : "Skriv en linje"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schrijf een regel"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7553,6 +7913,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Denne plassen fylles med en himmel tatt på det tidspunktet av dagen. Alle bilder kommer inn som de er; fargen trenger ikke passe."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deze plek wordt gevuld met een lucht die in dat deel van de dag is vastgelegd. Elke foto komt erin zoals hij is; de kleur hoeft niet te kloppen."
           }
         },
         "pt-BR" : {
@@ -7679,6 +8045,12 @@
             "value" : "La himmelen fylle kvadratet"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Laat de lucht het vierkant vullen"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7801,6 +8173,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ser under den himmelen"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kijkend onder die lucht"
           }
         },
         "pt-BR" : {
@@ -7927,6 +8305,12 @@
             "value" : "Kameratilgang er slått av"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cameratoegang staat uit"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8049,6 +8433,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Slå på kameraet i Innstillinger, så kan du fange himmelen med en gang."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zet de camera aan in Instellingen om meteen de lucht vast te leggen."
           }
         },
         "pt-BR" : {
@@ -8175,6 +8565,12 @@
             "value" : "Åpne Innstillinger"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Instellingen"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8297,6 +8693,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kameraet er utilgjengelig"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Camera niet beschikbaar"
           }
         },
         "pt-BR" : {
@@ -8423,6 +8825,12 @@
             "value" : "Simulatoren har ikke kamera. Et bilde du velger, beskjæres også til et kvadrat."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De simulator heeft geen camera. Een foto die je kiest wordt ook bijgesneden tot een vierkant."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8545,6 +8953,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Velg fra Bilder"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kies uit Foto's"
           }
         },
         "pt-BR" : {
@@ -8671,6 +9085,12 @@
             "value" : "Uten filter"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geen filter"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8793,6 +9213,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ingen himler samlet ennå"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nog geen luchten verzameld"
           }
         },
         "pt-BR" : {
@@ -8919,6 +9345,12 @@
             "value" : "Det begynner med et blikk opp."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Het begint met één blik omhoog."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9041,6 +9473,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ingen himmel i denne fargen ennå"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nog geen lucht in deze kleur"
           }
         },
         "pt-BR" : {
@@ -9167,6 +9605,12 @@
             "value" : "Fang en himmel nær denne fargen, så samles den her."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leg een lucht vast die dicht bij deze kleur ligt en hij verzamelt zich hier."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9289,6 +9733,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Se opp én gang ute, så fylles ruten for denne timen."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kijk buiten één keer omhoog en het vakje van dit uur wordt gevuld."
           }
         },
         "pt-BR" : {
@@ -9415,6 +9865,12 @@
             "value" : "Ingenting ennå"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nog niets"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9537,6 +9993,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dagens himmel"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lucht van vandaag"
           }
         },
         "pt-BR" : {
@@ -9663,6 +10125,12 @@
             "value" : "Dagens brett"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bord van vandaag"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9785,6 +10253,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Førtiåtte ruter om dagen. Innsamlede himler fyller dem, og en ring markerer den aktuelle timen."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achtenveertig vakjes per dag. Verzamelde luchten vullen ze en een ring markeert het huidige uur."
           }
         },
         "pt-BR" : {
@@ -9911,6 +10385,12 @@
             "value" : "Dagens himmel og hvilken farge den har."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De lucht van vandaag en welke kleur hij heeft."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10033,6 +10513,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dagens himmel · Ikke ennå"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lucht van vandaag · Nog niet"
           }
         },
         "pt-BR" : {
@@ -10159,6 +10645,12 @@
             "value" : "Dagens himmel i ord"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De lucht van vandaag in woorden"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10283,6 +10775,12 @@
             "value" : "Dagens himmel, hvis man først må si det med ord"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De lucht van vandaag, als je het dan echt in woorden moet zeggen"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10401,6 +10899,12 @@
             "value" : "%lld dager"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld dagen"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10517,6 +11021,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld i denne fargen"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld in deze kleur"
           }
         },
         "pt-BR" : {

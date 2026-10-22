@@ -1139,3 +1139,60 @@ Velg fra Bilder
 En himmel du velger fra biblioteket i stedet for kameraet, beskjæres også til et kvadrat.
 
 Ingen konto, ingen pålogging. Himlene dine lagres i din egen iCloud, så de følger deg til en ny enhet.
+
+## nl-NL
+
+### 지원 URL
+
+https://m1zz.github.io/SkyDex/nl/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/SkyDex/nl/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/SkyDex/nl/
+
+### 이름
+
+SkyDex: Kleuren van de lucht
+
+### 부제
+
+Een bord vol luchten
+
+### 키워드
+
+dagboek,kleur,palet,moodboard,wolken,zonsondergang,zonsopgang,foto,stemming,esthetiek,widget
+
+### 프로모션 텍스트
+
+Welke kleur had de lucht vandaag? Elke foto van de lucht vult een van de achtenveertig luchtkleuren van de dag en krijgt een naam die erbij past.
+
+### 설명
+
+Elke keer dat je de lucht fotografeert, wordt een van de achtenveertig kleurvakjes van de dag gevuld.
+Een kleine app om te bewaren welke kleur de lucht vandaag had: één foto en één regel.
+
+Het bord loopt van het blauwzwart van de dageraad via het middagblauw en het oranje van de zonsondergang naar het paars van de nacht: achtenveertig kleuren waar de lucht op één dag doorheen gaat. Elke foto vult het dichtstbijzijnde vakje. Geen oordeel, geen afwijzing: fotografeer, en hij zit erin.
+
+Elke lucht krijgt een naam
+Elke kleur die je vastlegt krijgt een paar woorden die erbij passen, zoals dun ijs, zwembadtegel of rijpe kaki, plus de dichtstbijzijnde naam uit traditionele kleurenpaletten.
+
+Laat een regel achter
+Meteen na de foto gaat een kaart open. Schrijf wat je dacht terwijl je omhoogkeek, en het zweeft weer over de lucht wanneer je op dat vakje op het bord tikt.
+
+Lege vakjes wijzen de weg
+Tik op een leeg vakje om te zien bij welk moment van de dag het hoort en welke kleur je moet zoeken.
+
+Logboek, palet, herhalingen
+Blader op volgorde door je luchten, verzamel je kleuren in paletten zoals blauwtinten, grijzen en zonsondergangskleuren, en fotografeer hetzelfde uur op een andere dag om de twee foto's naast elkaar te vergelijken.
+
+Widgets
+Zie de lucht en het bord van vandaag direct op je beginscherm.
+
+Kies uit Foto's
+Een lucht die je uit je bibliotheek kiest in plaats van met de camera, wordt ook bijgesneden tot een vierkant.
+
+Geen account, geen inlog. Je luchten staan in je eigen iCloud, dus ze gaan met je mee naar een nieuw apparaat.
