@@ -47,6 +47,7 @@ SEARCH = {
     "de-DE": ("Himmels-Fototagebuch", "Sammle 48<br>Himmelsfarben", "Jeder Himmel, den du knipst, füllt einen Kreis"),
     "fr-FR": ("Journal de ciels", "Collectez 48<br>nuances de ciel", "Chaque ciel photographié remplit un cercle"),
     "it": ("Diario di cieli", "Raccogli 48<br>sfumature di cielo", "Ogni cielo che scatti riempie un cerchio"),
+    "pt-BR": ("Diário de céus", "Reúna 48<br>tons de céu", "Cada céu que você capta preenche um círculo"),
 }
 
 # 헤더는 처음 온 사람에게 한 가지 약속만 한다: 하늘을 찍으면 그 색이 모인다.
@@ -62,6 +63,7 @@ HEADER = {
     "de-DE": ("Himmelsfarben", "Fotografiere den Himmel.<br>Behalte seine Farbe."),
     "fr-FR": ("Couleurs du ciel", "Photographiez le ciel.<br>Gardez sa couleur."),
     "it": ("Colori del cielo", "Fotografa il cielo.<br>Conserva il suo colore."),
+    "pt-BR": ("Cores do céu", "Fotografe o céu.<br>Guarde a cor dele."),
 }
 
 # 판에서 실제로 뽑은 색(시뮬레이터 캡처 01-board.png 의 채운 칸). 헤더 오른쪽 장식에 쓴다.

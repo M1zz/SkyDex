@@ -626,3 +626,60 @@ Scegli da Foto
 Anche un cielo scelto dalla libreria al posto della fotocamera viene ritagliato in quadrato.
 
 Nessun account, nessun accesso. I tuoi cieli sono conservati nel tuo iCloud, così ti seguono su un nuovo dispositivo.
+
+## pt-BR
+
+### 지원 URL
+
+https://m1zz.github.io/SkyDex/pt-BR/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/SkyDex/pt-BR/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/SkyDex/pt-BR/
+
+### 이름
+
+SkyDex: Cores do céu
+
+### 부제
+
+Um quadro que se enche de céus
+
+### 키워드
+
+diário,cor,paleta,moodboard,nuvens,poente,amanhecer,fotos,humor,estética,widget,entardecer,passeio
+
+### 프로모션 텍스트
+
+De que cor foi o céu de hoje? Cada vez que você fotografa o céu, um dos quarenta e oito quadrados do dia é preenchido e ganha um nome parecido com ele.
+
+### 설명
+
+Cada vez que você fotografa o céu, um dos quarenta e oito quadrados de cor do dia é preenchido.
+Um app simples para guardar de que cor foi o céu de hoje: uma foto e uma linha.
+
+O quadro vai do azul-escuro do amanhecer ao azul do meio-dia, ao laranja do pôr do sol e ao violeta da noite: quarenta e oito cores por onde o céu passa em um dia. Cada foto preenche o quadrado mais próximo. Sem julgamento, sem recusa: tirou a foto, ela entra.
+
+Cada céu ganha um nome
+Cada cor captada recebe algumas palavras que se parecem com ela, como gelo fino, azulejo de piscina ou caqui maduro, além do nome mais próximo das paletas de cores tradicionais.
+
+Deixe uma linha
+Logo depois da foto, um cartão se abre. Escreva o que você pensou ao olhar para cima e ele volta a flutuar sobre o céu sempre que você tocar naquele quadrado do quadro.
+
+Os quadrados vazios mostram o caminho
+Toque em um quadrado vazio para ver a que hora do dia ele pertence e que cor procurar.
+
+Registro, paleta e repetições
+Navegue pelos seus céus em ordem, reúna as cores em paletas como azuis, cinzas e tons de pôr do sol, e fotografe a mesma hora em outro dia para comparar as duas fotos lado a lado.
+
+Widgets
+Veja o céu de hoje e o quadro de hoje direto na tela de início.
+
+Escolha em Fotos
+Um céu escolhido da sua biblioteca no lugar da câmera também é cortado em quadrado.
+
+Sem conta e sem login. Seus céus ficam no seu próprio iCloud e acompanham você em um aparelho novo.

@@ -52,6 +52,12 @@
             "value" : "Face ID 잠금"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bloqueio com Face ID"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -121,6 +127,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Face ID로 앱을 잠가 내 하늘 기록을 지켜요."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bloqueie o app com o Face ID para manter seus céus só seus."
           }
         },
         "ru" : {
@@ -194,6 +206,12 @@
             "value" : "Siri에게 말하면 바로 하늘을 찍을 수 있어요."
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fale com a Siri e comece a fotografar o céu na hora."
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -263,6 +281,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Siri와 단축어"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siri e Atalhos"
           }
         },
         "ru" : {
@@ -336,6 +360,12 @@
             "value" : "VoiceOver로 더 편하게"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mais conforto com o VoiceOver"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -405,6 +435,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "글자 크기를 키워도 잘리지 않고 보기 좋게 다시 배치돼요."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ao aumentar o texto, as telas se reorganizam direitinho, sem cortar nada."
           }
         },
         "ru" : {
@@ -478,6 +514,12 @@
             "value" : "내 하늘 한 번에 지우기"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apagar todos os meus céus"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -547,6 +589,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "더 많은 나라 말로 앱을 쓸 수 있게 해요."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use o app em mais idiomas."
           }
         },
         "ru" : {
@@ -620,6 +668,12 @@
             "value" : "더 많은 언어"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mais idiomas"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -689,6 +743,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "모은 하늘 사진을 파일로 저장하고 다시 불러올 수 있어요."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salve suas fotos de céu em um arquivo e traga de volta depois."
           }
         },
         "ru" : {
@@ -762,6 +822,12 @@
             "value" : "보기 편한 색과 대비"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cores e contraste mais confortáveis"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -831,6 +897,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "사진 백업과 내보내기"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Backup e exportação de fotos"
           }
         },
         "ru" : {
@@ -904,6 +976,12 @@
             "value" : "색을 구별하기 어려워도 칸마다 어떤 하늘인지 알아볼 수 있어요."
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mesmo com dificuldade para distinguir cores, você reconhece o céu de cada quadrado."
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -973,6 +1051,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "쓰는 요령 알려 주기"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dicas úteis"
           }
         },
         "ru" : {
@@ -1046,6 +1130,12 @@
             "value" : "아직 못 채운 하늘을 찍기 좋은 때에 알림으로 알려 줘요."
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avisamos quando for um bom momento para captar um céu que ainda falta."
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1115,6 +1205,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "알아 두면 편한 기능을 알맞은 때에 살짝 알려 줘요."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dicas discretas sobre recursos úteis, na hora certa."
           }
         },
         "ru" : {
@@ -1188,6 +1284,12 @@
             "value" : "앱을 영어로도 쓸 수 있어요."
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use o app inteiro também em inglês."
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1257,6 +1359,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "업데이트 뒤 처음 열 때 무엇이 새로 생겼는지 알려 줘요."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na primeira vez que abrir o app depois de uma atualização, veja o que há de novo."
           }
         },
         "ru" : {
@@ -1330,6 +1438,12 @@
             "value" : "업데이트 소식"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Novidades"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1399,6 +1513,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "영어 지원"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suporte completo ao inglês"
           }
         },
         "ru" : {
@@ -1472,6 +1592,12 @@
             "value" : "원하면 앱 안에서 모은 하늘 사진을 모두 지울 수 있어요."
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se quiser, apague no app todas as fotos de céu que você reuniu."
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1541,6 +1667,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "처음 쓰는 분을 위한 안내"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Um guia rápido para quem está começando"
           }
         },
         "ru" : {
@@ -1614,6 +1746,12 @@
             "value" : "처음 열었을 때 하늘 판을 채우는 법을 짧게 보여 줘요."
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na primeira vez que abrir o app, veja como preencher seu quadro de céus."
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1683,6 +1821,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "큰 글씨에 맞춘 화면"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Telas para texto grande"
           }
         },
         "ru" : {
@@ -1756,6 +1900,12 @@
             "value" : "펼치는 아이폰 화면"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tela para iPhone dobrável"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1825,6 +1975,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "펼치는 아이폰에서 넓은 화면을 두 쪽으로 나눠 써요."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use a tela larga de um iPhone dobrável em dois painéis lado a lado."
           }
         },
         "ru" : {
@@ -1898,6 +2054,12 @@
             "value" : "하늘 알림"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lembretes de céu"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1967,6 +2129,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "화면 읽기 기능이 단추와 하늘 칸을 빠짐없이, 알맞은 순서로 읽어 줘요."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O VoiceOver lê cada botão e cada quadrado de céu, na ordem certa."
           }
         },
         "ru" : {
@@ -2039,6 +2207,12 @@
             "value" : "아직 되풀이가 없어요"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ainda não há repetições"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2107,6 +2281,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "같은 시각의 하늘을 다른 날에 한 번 더 찍으면, 그 둘이 여기에서 나란히 섭니다."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Capte o céu no mesmo horário em outro dia e os dois ficam lado a lado aqui."
           }
         },
         "ru" : {
@@ -2179,6 +2359,12 @@
             "value" : "같은 시각, 같은 하루"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mesma hora, mesmo dia"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2247,6 +2433,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "일주일도 한 달도 같은 모양으로 돌아옵니다. 그 시각의 하늘만 한 번도 같지 않았습니다."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uma semana ou um mês voltam com o mesmo formato. Só o céu daquela hora nunca foi o mesmo."
           }
         },
         "ru" : {
@@ -2319,6 +2511,12 @@
             "value" : "가장 비슷했던 두 하늘"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Os dois céus mais parecidos"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2387,6 +2585,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "눈으로는 같은 색입니다."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A olho nu, é a mesma cor."
           }
         },
         "ru" : {
@@ -2459,6 +2663,12 @@
             "value" : "그래도 다른 색입니다."
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mesmo assim, são cores diferentes."
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2527,6 +2737,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "iCloud에 함께 보관"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guardar também no iCloud"
           }
         },
         "ru" : {
@@ -2599,6 +2815,12 @@
             "value" : "보관"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Armazenamento"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2667,6 +2889,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "지원"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suporte"
           }
         },
         "ru" : {
@@ -2739,6 +2967,12 @@
             "value" : "개발자"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desenvolvedor"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2807,6 +3041,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "사용 통계"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estatísticas de uso"
           }
         },
         "ru" : {
@@ -2879,6 +3119,12 @@
             "value" : "설치 수와 버전 분포. 읽으려면 허브 컨테이너의 read 권한이 필요합니다."
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Número de instalações e distribuição de versões. Para ler, é preciso ter acesso de leitura ao contêiner do hub."
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2947,6 +3193,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "설정"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajustes"
           }
         },
         "ru" : {
@@ -3019,6 +3271,12 @@
             "value" : "완료"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3087,6 +3345,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "닫기"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fechar"
           }
         },
         "ru" : {
@@ -3159,6 +3423,12 @@
             "value" : "저장"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salvar"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3227,6 +3497,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "취소"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
           }
         },
         "ru" : {
@@ -3299,6 +3575,12 @@
             "value" : "지우기"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apagar"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3367,6 +3649,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "하늘 찍기"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Captar o céu"
           }
         },
         "ru" : {
@@ -3439,6 +3727,12 @@
             "value" : "기록"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registro"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3507,6 +3801,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "하늘"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Céu"
           }
         },
         "ru" : {
@@ -3579,6 +3879,12 @@
             "value" : "팔레트"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paleta"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3647,6 +3953,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "되풀이"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Repetições"
           }
         },
         "ru" : {
@@ -3719,6 +4031,12 @@
             "value" : "이 하늘을 지울까요?"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apagar este céu?"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3787,6 +4105,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "사진과 색이 함께 사라집니다."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A foto e a cor serão removidas juntas."
           }
         },
         "ru" : {
@@ -3859,6 +4183,12 @@
             "value" : "이 하늘을 보면서 들었던 생각,\n하고 싶은 한 마디"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Um pensamento ao olhar este céu,\numa palavra que você quer deixar"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3927,6 +4257,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "다른 날의 하늘로"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pelo céu de outro dia"
           }
         },
         "ru" : {
@@ -3999,6 +4335,12 @@
             "value" : "하늘색"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4067,6 +4409,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "원래 하늘로"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voltar ao céu original"
           }
         },
         "ru" : {
@@ -4139,6 +4487,12 @@
             "value" : "빌려 온 하늘의 세기"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intensidade do céu emprestado"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4207,6 +4561,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "한 줄 쓰기"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escrever uma linha"
           }
         },
         "ru" : {
@@ -4279,6 +4639,12 @@
             "value" : "이 자리는 그 시간대에 찍은 하늘로 채워집니다. 어떤 사진이든 그대로 들어가고, 색이 맞아야 할 필요는 없습니다."
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este lugar é preenchido com um céu captado nesse período do dia. Qualquer foto entra como está; a cor não precisa combinar."
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4347,6 +4713,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "하늘이 정사각형을 채우도록"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deixe o céu preencher o quadrado"
           }
         },
         "ru" : {
@@ -4419,6 +4791,12 @@
             "value" : "그 하늘 아래에서 보는 중"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Olhando sob aquele céu"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4487,6 +4865,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "카메라 권한이 꺼져 있어요"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O acesso à câmera está desativado"
           }
         },
         "ru" : {
@@ -4559,6 +4943,12 @@
             "value" : "설정에서 카메라를 켜면 하늘을 바로 찍을 수 있어요."
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ative a câmera em Ajustes para captar o céu na hora."
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4627,6 +5017,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "설정 열기"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir Ajustes"
           }
         },
         "ru" : {
@@ -4699,6 +5095,12 @@
             "value" : "카메라를 쓸 수 없어요"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Câmera indisponível"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4767,6 +5169,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "시뮬레이터에는 카메라가 없습니다. 사진에서 골라도 정사각형으로 잘려 들어갑니다."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O simulador não tem câmera. Uma foto escolhida também é cortada em quadrado."
           }
         },
         "ru" : {
@@ -4839,6 +5247,12 @@
             "value" : "사진에서 고르기"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escolher em Fotos"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4907,6 +5321,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "필터 없이"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem filtro"
           }
         },
         "ru" : {
@@ -4979,6 +5399,12 @@
             "value" : "아직 모은 하늘이 없어요"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nenhum céu reunido ainda"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5047,6 +5473,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "밖을 한 번 올려다보는 것으로 시작합니다."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tudo começa com um olhar para cima."
           }
         },
         "ru" : {
@@ -5119,6 +5551,12 @@
             "value" : "이 색은 아직 없어요"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ainda não há céu desta cor"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5187,6 +5625,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "이 색에 가까운 하늘을 찍으면 여기에 쌓입니다."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Capte um céu parecido com esta cor e ele se acumula aqui."
           }
         },
         "ru" : {
@@ -5259,6 +5703,12 @@
             "value" : "밖을 한 번 올려다보면 이 시각 칸이 채워집니다."
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Olhe para cima uma vez e o quadrado desta hora será preenchido."
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5327,6 +5777,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "아직 없습니다"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nada ainda"
           }
         },
         "ru" : {
@@ -5399,6 +5855,12 @@
             "value" : "오늘의 하늘"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Céu de hoje"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5467,6 +5929,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "오늘의 판"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quadro de hoje"
           }
         },
         "ru" : {
@@ -5539,6 +6007,12 @@
             "value" : "하루 마흔여덟 칸. 모은 하늘은 채워지고, 지금 시각에는 고리가 걸립니다."
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quarenta e oito quadrados por dia. Os céus reunidos os preenchem e um anel marca a hora atual."
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5607,6 +6081,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "오늘 찍은 하늘과, 그 색이 어떤 색인지."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O céu de hoje e de que cor ele é."
           }
         },
         "ru" : {
@@ -5679,6 +6159,12 @@
             "value" : "오늘의 하늘 · 아직"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Céu de hoje · Ainda não"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5747,6 +6233,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "오늘의 하늘, 말로 하면"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O céu de hoje, em palavras"
           }
         },
         "ru" : {
@@ -5819,6 +6311,12 @@
             "value" : "오늘의 하늘, 굳이 말하자면"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O céu de hoje, se for preciso dizer em palavras"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5883,6 +6381,12 @@
             "value" : "%lld日"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld dias"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5945,6 +6449,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "この色 %lld枚"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld desta cor"
           }
         },
         "ru" : {

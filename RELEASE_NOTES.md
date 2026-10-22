@@ -77,6 +77,12 @@ Allega uno screenshot alle tue domande
 Leggi le nostre risposte nell’app
 Assistenza nella lingua del tuo iPhone
 
+### 앱스토어 (Português (Brasil))
+
+Anexe uma captura de tela às dúvidas
+Leia as respostas direto no app
+Suporte no idioma do seu aparelho
+
 
 ## 1.0.1
 
