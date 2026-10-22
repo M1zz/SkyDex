@@ -1196,3 +1196,60 @@ Kies uit Foto's
 Een lucht die je uit je bibliotheek kiest in plaats van met de camera, wordt ook bijgesneden tot een vierkant.
 
 Geen account, geen inlog. Je luchten staan in je eigen iCloud, dus ze gaan met je mee naar een nieuw apparaat.
+
+## pl
+
+### 지원 URL
+
+https://m1zz.github.io/SkyDex/pl/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/SkyDex/pl/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/SkyDex/pl/
+
+### 이름
+
+SkyDex: Kolory nieba
+
+### 부제
+
+Tablica pełna nieba
+
+### 키워드
+
+dziennik,kolor,paleta,moodboard,chmury,zachód słońca,wschód słońca,zdjęcia,nastrój,estetyka,widżet
+
+### 프로모션 텍스트
+
+Jaki kolor miało dziś niebo? Każde zdjęcie nieba wypełnia jeden z czterdziestu ośmiu kolorów dnia i dostaje nazwę, która go przypomina.
+
+### 설명
+
+Za każdym razem, gdy fotografujesz niebo, wypełnia się jedno z czterdziestu ośmiu kolorowych pól dnia.
+Mała aplikacja do zachowania koloru dzisiejszego nieba: jedno zdjęcie i jedna linijka.
+
+Tablica biegnie od granatowej czerni świtu przez południowy błękit i pomarańcz zachodu aż po fiolet nocy: czterdzieści osiem kolorów, przez które niebo przechodzi w ciągu dnia. Każde zdjęcie wypełnia najbliższe pole. Żadnych ocen, żadnych odrzuceń: robisz zdjęcie i już jest w środku.
+
+Każde niebo dostaje nazwę
+Każdy złapany kolor dostaje kilka słów, które go przypominają, takich jak cienki lód, kafelek basenowy albo dojrzały kaki, oraz najbliższą nazwę z tradycyjnych palet kolorów.
+
+Zostaw linijkę
+Zaraz po zdjęciu otwiera się karta. Napisz, co przyszło ci do głowy, gdy patrzysz w górę, a to unosi się ona znowu nad niebem, ilekroć dotkniesz tego pola na tablicy.
+
+Puste pola wskazują drogę
+Dotknij pustego pola, aby zobaczyć, do jakiej pory dnia należy i jakiego koloru szukać.
+
+Dziennik, paleta, powtórzenia
+Przeglądaj swoje niebo po kolei, zbieraj kolory w palety, takie jak błękity, szarości i barwy zachodu, i sfotografuj tę samą godzinę innego dnia, by porównać oba zdjęcia obok siebie.
+
+Widżety
+Zobacz dzisiejsze niebo i dzisiejszą tablicę prosto na ekranie początkowym.
+
+Wybierz ze Zdjęć
+Niebo wybrane z biblioteki zamiast z aparatu również zostanie przycięte do kwadratu.
+
+Bez konta i bez logowania. Zebrane niebo jest przechowywane w twoim własnym iCloud, więc przenosi się razem z tobą na nowe urządzenie.

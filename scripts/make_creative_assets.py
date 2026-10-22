@@ -57,6 +57,7 @@ SEARCH = {
     "id": ("Jurnal foto langit", "Kumpulkan 48<br>nuansa langit", "Setiap langit yang kamu potret mengisi satu lingkaran"),
     "no": ("Himmeldagbok", "Samle 48<br>nyanser av himmel", "Hver himmel du fanger, fyller en sirkel"),
     "nl-NL": ("Luchtfotodagboek", "Verzamel 48<br>tinten lucht", "Elke lucht die je pakt, vult een cirkel"),
+    "pl": ("Dziennik nieba", "Zbierz 48<br>odcieni nieba", "Każde niebo, które złapiesz, wypełnia kółko"),
 }
 
 # 헤더는 처음 온 사람에게 한 가지 약속만 한다: 하늘을 찍으면 그 색이 모인다.
@@ -82,6 +83,7 @@ HEADER = {
     "id": ("Warna langit", "Potret langit.<br>Simpan warnanya."),
     "no": ("Himmelens farger", "Ta bilde av himmelen.<br>Ta vare på fargen."),
     "nl-NL": ("Luchtkleuren", "Fotografeer de lucht.<br>Bewaar zijn kleur."),
+    "pl": ("Kolory nieba", "Złap niebo.<br>Zachowaj jego kolor."),
 }
 
 # 판에서 실제로 뽑은 색(시뮬레이터 캡처 01-board.png 의 채운 칸). 헤더 오른쪽 장식에 쓴다.

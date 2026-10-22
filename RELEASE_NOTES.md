@@ -137,6 +137,12 @@ Voeg een schermafbeelding toe aan vragen
 Lees onze antwoorden in de app
 Supportscherm in jouw taal
 
+### 앱스토어 (Polski)
+
+Dołącz zrzut ekranu do pytań
+Odpowiedzi czytasz w samej aplikacji
+Ekran pomocy w języku urządzenia
+
 
 ## 1.0.1
 

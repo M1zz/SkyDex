@@ -94,6 +94,12 @@
             "value" : "Face ID-vergrendeling"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blokada Face ID"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -223,6 +229,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vergrendel de app met Face ID, zodat je luchten privé blijven."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zablokuj aplikację za pomocą Face ID, aby twoje niebo zostało tylko dla ciebie."
           }
         },
         "pt-BR" : {
@@ -356,6 +368,12 @@
             "value" : "Zeg het tegen Siri en maak meteen een foto van de lucht."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Powiedz to Siri i od razu zrób zdjęcie nieba."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -485,6 +503,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Siri en Opdrachten"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siri i Skróty"
           }
         },
         "pt-BR" : {
@@ -618,6 +642,12 @@
             "value" : "Betere VoiceOver-ondersteuning"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wygodniejszy VoiceOver"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -747,6 +777,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Als je de tekst groter maakt, schikken de schermen zich netjes opnieuw zonder dat er iets wordt afgekapt."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Po powiększeniu tekstu ekrany układają się porządnie na nowo, nic się nie ucina."
           }
         },
         "pt-BR" : {
@@ -880,6 +916,12 @@
             "value" : "Al mijn luchten in één keer wissen"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usuń całe moje niebo naraz"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1009,6 +1051,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gebruik de app in meer talen."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Korzystaj z aplikacji w większej liczbie języków."
           }
         },
         "pt-BR" : {
@@ -1142,6 +1190,12 @@
             "value" : "Meer talen"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Więcej języków"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1271,6 +1325,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bewaar je luchtfoto's in een bestand en haal ze later weer terug."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zapisz zdjęcia nieba w pliku i przywróć je później."
           }
         },
         "pt-BR" : {
@@ -1404,6 +1464,12 @@
             "value" : "Prettigere kleuren en contrast"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wygodniejsze kolory i kontrast"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1533,6 +1599,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Back-up en export van foto's"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopia zapasowa i eksport zdjęć"
           }
         },
         "pt-BR" : {
@@ -1666,6 +1738,12 @@
             "value" : "Ook als kleuren moeilijk te onderscheiden zijn, zie je welke lucht in welk vakje zit."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nawet gdy trudno odróżnić kolory, rozpoznasz, jakie niebo kryje każde pole."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1795,6 +1873,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Handige tips"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przydatne wskazówki"
           }
         },
         "pt-BR" : {
@@ -1928,6 +2012,12 @@
             "value" : "Je krijgt een seintje wanneer het een goed moment is om een lucht te pakken die je nog mist."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przypomnimy ci, gdy będzie dobry moment, by złapać niebo, którego jeszcze nie masz."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2057,6 +2147,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Subtiele hints over handige functies, precies wanneer je ze nodig hebt."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dyskretne podpowiedzi o przydatnych funkcjach, dokładnie wtedy, gdy ich potrzebujesz."
           }
         },
         "pt-BR" : {
@@ -2190,6 +2286,12 @@
             "value" : "Gebruik de hele app ook in het Engels."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Korzystaj z całej aplikacji także po angielsku."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2319,6 +2421,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "De eerste keer dat je de app na een update opent, zie je wat er nieuw is."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gdy po aktualizacji otworzysz aplikację po raz pierwszy, zobaczysz, co nowego."
           }
         },
         "pt-BR" : {
@@ -2452,6 +2560,12 @@
             "value" : "Nieuw"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nowości"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2581,6 +2695,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Volledige ondersteuning voor Engels"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pełna obsługa angielskiego"
           }
         },
         "pt-BR" : {
@@ -2714,6 +2834,12 @@
             "value" : "Wil je dat, dan wis je alle verzamelde luchtfoto's rechtstreeks in de app."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jeśli chcesz, usuń z poziomu aplikacji wszystkie zebrane zdjęcia nieba."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2843,6 +2969,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Een korte start voor nieuwe gebruikers"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Krótki start dla nowych użytkowników"
           }
         },
         "pt-BR" : {
@@ -2976,6 +3108,12 @@
             "value" : "De eerste keer dat je de app opent, zie je hoe je je luchtbord vult."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gdy otworzysz aplikację po raz pierwszy, zobaczysz, jak wypełnić tablicę nieba."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3105,6 +3243,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Indelingen voor grotere tekst"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Układy dla większego tekstu"
           }
         },
         "pt-BR" : {
@@ -3238,6 +3382,12 @@
             "value" : "Indeling voor opvouwbare iPhone"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Układ dla składanego iPhone’a"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3367,6 +3517,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gebruik het brede scherm van een opvouwbare iPhone als twee vensters naast elkaar."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wykorzystaj szeroki ekran składanego iPhone’a jako dwa panele obok siebie."
           }
         },
         "pt-BR" : {
@@ -3500,6 +3656,12 @@
             "value" : "Luchtherinneringen"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przypomnienia o niebie"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3629,6 +3791,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "VoiceOver leest elke knop en elk luchtvakje voor, in de juiste volgorde."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver czyta każdy przycisk i każde pole nieba we właściwej kolejności."
           }
         },
         "pt-BR" : {
@@ -3761,6 +3929,12 @@
             "value" : "Nog geen herhalingen"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jeszcze nie ma powtórzeń"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3889,6 +4063,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Maak op een andere dag op hetzelfde tijdstip een foto van de lucht, dan staan de twee hier naast elkaar."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zrób zdjęcie nieba o tej samej porze innego dnia, a obydwa staną tu obok siebie."
           }
         },
         "pt-BR" : {
@@ -4021,6 +4201,12 @@
             "value" : "Zelfde uur, zelfde dag"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ta sama godzina, ten sam dzień"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4149,6 +4335,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Een week of een maand keert in dezelfde vorm terug. Alleen de lucht op dat uur was nooit dezelfde."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tydzień i miesiąc wracają w tym samym kształcie. Tylko niebo o tej godzinie nigdy nie było takie samo."
           }
         },
         "pt-BR" : {
@@ -4281,6 +4473,12 @@
             "value" : "De twee meest gelijkende luchten"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dwa najbardziej podobne nieba"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4409,6 +4607,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Voor het oog is het dezelfde kleur."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dla oka to ten sam kolor."
           }
         },
         "pt-BR" : {
@@ -4541,6 +4745,12 @@
             "value" : "Toch zijn het verschillende kleuren."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A jednak to różne kolory."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4669,6 +4879,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ook bewaren in iCloud"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przechowuj też w iCloud"
           }
         },
         "pt-BR" : {
@@ -4801,6 +5017,12 @@
             "value" : "Opslag"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pamięć"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4929,6 +5151,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Support"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pomoc"
           }
         },
         "pt-BR" : {
@@ -5061,6 +5289,12 @@
             "value" : "Ontwikkelaar"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Programista"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5189,6 +5423,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gebruiksstatistieken"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Statystyki użycia"
           }
         },
         "pt-BR" : {
@@ -5321,6 +5561,12 @@
             "value" : "Aantal installaties en verdeling over versies. Om ze te lezen is leestoegang tot de hubcontainer nodig."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liczba instalacji i rozkład wersji. Odczyt wymaga uprawnienia do odczytu kontenera huba."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5449,6 +5695,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Instellingen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ustawienia"
           }
         },
         "pt-BR" : {
@@ -5581,6 +5833,12 @@
             "value" : "Gereed"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gotowe"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5709,6 +5967,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sluit"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zamknij"
           }
         },
         "pt-BR" : {
@@ -5841,6 +6105,12 @@
             "value" : "Bewaar"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zapisz"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5969,6 +6239,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Annuleer"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anuluj"
           }
         },
         "pt-BR" : {
@@ -6101,6 +6377,12 @@
             "value" : "Wis"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usuń"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6229,6 +6511,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lucht vastleggen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Złap niebo"
           }
         },
         "pt-BR" : {
@@ -6361,6 +6649,12 @@
             "value" : "Logboek"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dziennik"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6489,6 +6783,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lucht"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niebo"
           }
         },
         "pt-BR" : {
@@ -6621,6 +6921,12 @@
             "value" : "Palet"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paleta"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6749,6 +7055,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Herhalingen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Powtórzenia"
           }
         },
         "pt-BR" : {
@@ -6881,6 +7193,12 @@
             "value" : "Deze lucht wissen?"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usunąć to niebo?"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7009,6 +7327,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "De foto en de kleur worden samen verwijderd."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zdjęcie i jego kolor zostaną usunięte razem."
           }
         },
         "pt-BR" : {
@@ -7141,6 +7465,12 @@
             "value" : "Een gedachte bij het kijken naar deze lucht,\neen woord dat je wilt achterlaten"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Myśl, która przyszła przy patrzeniu na to niebo,\nsłowo, które chcesz zostawić"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7271,6 +7601,12 @@
             "value" : "Door de lucht van een andere dag"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przez niebo z innego dnia"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7396,6 +7732,12 @@
           }
         },
         "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
+        "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "SkyDex"
@@ -7531,6 +7873,12 @@
             "value" : "Terug naar de oorspronkelijke lucht"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wróć do oryginalnego nieba"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7659,6 +8007,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sterkte van de geleende lucht"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siła pożyczonego nieba"
           }
         },
         "pt-BR" : {
@@ -7791,6 +8145,12 @@
             "value" : "Schrijf een regel"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Napisz linijkę"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7919,6 +8279,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Deze plek wordt gevuld met een lucht die in dat deel van de dag is vastgelegd. Elke foto komt erin zoals hij is; de kleur hoeft niet te kloppen."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To miejsce wypełni niebo zrobione o tej porze dnia. Każde zdjęcie wchodzi takie, jakie jest; kolor nie musi pasować."
           }
         },
         "pt-BR" : {
@@ -8051,6 +8417,12 @@
             "value" : "Laat de lucht het vierkant vullen"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niech niebo wypełni kwadrat"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8179,6 +8551,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kijkend onder die lucht"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patrzę spod tego nieba"
           }
         },
         "pt-BR" : {
@@ -8311,6 +8689,12 @@
             "value" : "Cameratoegang staat uit"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dostęp do aparatu jest wyłączony"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8439,6 +8823,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zet de camera aan in Instellingen om meteen de lucht vast te leggen."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Włącz aparat w Ustawieniach, aby od razu łapać niebo."
           }
         },
         "pt-BR" : {
@@ -8571,6 +8961,12 @@
             "value" : "Open Instellingen"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otwórz Ustawienia"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8699,6 +9095,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Camera niet beschikbaar"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aparat niedostępny"
           }
         },
         "pt-BR" : {
@@ -8831,6 +9233,12 @@
             "value" : "De simulator heeft geen camera. Een foto die je kiest wordt ook bijgesneden tot een vierkant."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Symulator nie ma aparatu. Wybrane zdjęcie również zostanie przycięte do kwadratu."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8959,6 +9367,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kies uit Foto's"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybierz ze Zdjęć"
           }
         },
         "pt-BR" : {
@@ -9091,6 +9505,12 @@
             "value" : "Geen filter"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bez filtra"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9219,6 +9639,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nog geen luchten verzameld"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie zebrano jeszcze żadnego nieba"
           }
         },
         "pt-BR" : {
@@ -9351,6 +9777,12 @@
             "value" : "Het begint met één blik omhoog."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wszystko zaczyna się od spojrzenia w górę."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9479,6 +9911,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nog geen lucht in deze kleur"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie ma jeszcze nieba w tym kolorze"
           }
         },
         "pt-BR" : {
@@ -9611,6 +10049,12 @@
             "value" : "Leg een lucht vast die dicht bij deze kleur ligt en hij verzamelt zich hier."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Złap niebo zbliżone do tego koloru, a zbierze się tutaj."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9739,6 +10183,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kijk buiten één keer omhoog en het vakje van dit uur wordt gevuld."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spójrz raz w górę na zewnątrz, a pole tej godziny się wypełni."
           }
         },
         "pt-BR" : {
@@ -9871,6 +10321,12 @@
             "value" : "Nog niets"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jeszcze nic"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9999,6 +10455,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lucht van vandaag"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dzisiejsze niebo"
           }
         },
         "pt-BR" : {
@@ -10131,6 +10593,12 @@
             "value" : "Bord van vandaag"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dzisiejsza tablica"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10259,6 +10727,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Achtenveertig vakjes per dag. Verzamelde luchten vullen ze en een ring markeert het huidige uur."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Czterdzieści osiem pól dziennie. Zebrane niebo je wypełnia, a pierścień oznacza bieżącą godzinę."
           }
         },
         "pt-BR" : {
@@ -10391,6 +10865,12 @@
             "value" : "De lucht van vandaag en welke kleur hij heeft."
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dzisiejsze niebo i jaki ma kolor."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10519,6 +10999,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lucht van vandaag · Nog niet"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dzisiejsze niebo · jeszcze nie"
           }
         },
         "pt-BR" : {
@@ -10651,6 +11137,12 @@
             "value" : "De lucht van vandaag in woorden"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dzisiejsze niebo słowami"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10781,6 +11273,12 @@
             "value" : "De lucht van vandaag, als je het dan echt in woorden moet zeggen"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dzisiejsze niebo, jeśli już koniecznie słowami"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10905,6 +11403,12 @@
             "value" : "%lld dagen"
           }
         },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dni: %lld"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11027,6 +11531,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld in deze kleur"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zdjęć w tym kolorze: %lld"
           }
         },
         "pt-BR" : {
