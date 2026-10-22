@@ -203,6 +203,7 @@
 				th,
 				vi,
 				cs,
+				da,
 			);
 			mainGroup = A1B2C3D40000000000000002;
 			minimizedProjectReferenceProxies = 1;

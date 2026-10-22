@@ -101,6 +101,12 @@ K dotazům přiložte snímek obrazovky
 Odpovědi si přečtete přímo v aplikaci
 Podpora v jazyce vašeho zařízení
 
+### 앱스토어 (Dansk)
+
+Vedhæft et skærmbillede til spørgsmål
+Læs vores svar direkte i appen
+Supportskærmen følger dit sprog
+
 
 ## 1.0.1
 

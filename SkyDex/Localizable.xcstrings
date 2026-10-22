@@ -10,6 +10,12 @@
             "value" : "Zámek přes Face ID"
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face ID-lås"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -103,6 +109,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zamkněte aplikaci přes Face ID a udržte svá nebe v soukromí."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lås appen med Face ID, så dine himle forbliver private."
           }
         },
         "de" : {
@@ -200,6 +212,12 @@
             "value" : "Řekněte to Siri a hned můžete fotit nebe."
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sig det til Siri, og tag straks et billede af himlen."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -293,6 +311,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Siri a Zkratky"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siri og Genveje"
           }
         },
         "de" : {
@@ -390,6 +414,12 @@
             "value" : "Pohodlnější VoiceOver"
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bedre VoiceOver-understøttelse"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -483,6 +513,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Při zvětšení písma se obrazovky přeskládají úhledně a nic se neořízne."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Når du gør teksten større, ordner skærmene sig pænt, uden at noget bliver skåret af."
           }
         },
         "de" : {
@@ -580,6 +616,12 @@
             "value" : "Smazat všechna moje nebe najednou"
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slet alle mine himle på én gang"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -673,6 +715,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Používejte aplikaci ve víc jazycích."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brug appen på flere sprog."
           }
         },
         "de" : {
@@ -770,6 +818,12 @@
             "value" : "Další jazyky"
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flere sprog"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -863,6 +917,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Uložte fotky nebe do souboru a později je vraťte zpět."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gem dine himmelbilleder i en fil, og hent dem tilbage senere."
           }
         },
         "de" : {
@@ -960,6 +1020,12 @@
             "value" : "Příjemnější barvy a kontrast"
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lettere farver og kontrast"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1053,6 +1119,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Záloha a export fotek"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sikkerhedskopi og eksport af billeder"
           }
         },
         "de" : {
@@ -1150,6 +1222,12 @@
             "value" : "I když barvy těžko rozeznáváte, poznáte, jaké nebe je v které buňce."
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selv hvis farver er svære at skelne, kan du se, hvilken himmel hvert felt rummer."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1243,6 +1321,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Užitečné tipy"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gode tips"
           }
         },
         "de" : {
@@ -1340,6 +1424,12 @@
             "value" : "Upozorníme vás, kdy je dobrá chvíle ulovit nebe, které vám ještě chybí."
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Få en påmindelse, når det er et godt tidspunkt at fange en himmel, du endnu ikke har."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1433,6 +1523,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nenápadné tipy na užitečné funkce, přesně když se hodí."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diskrete tips om nyttige funktioner, lige når du har brug for dem."
           }
         },
         "de" : {
@@ -1530,6 +1626,12 @@
             "value" : "Používejte celou aplikaci i v angličtině."
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brug hele appen på engelsk."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1623,6 +1725,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Při prvním otevření po aktualizaci uvidíte, co je nového."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Første gang du åbner appen efter en opdatering, kan du se, hvad der er nyt."
           }
         },
         "de" : {
@@ -1720,6 +1828,12 @@
             "value" : "Co je nového"
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nyheder"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1813,6 +1927,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Plná podpora angličtiny"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fuld understøttelse af engelsk"
           }
         },
         "de" : {
@@ -1910,6 +2030,12 @@
             "value" : "Chcete-li, smažte přímo v aplikaci všechny nasbírané fotky nebe."
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hvis du vil, kan du slette alle indsamlede himmelbilleder direkte i appen."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2003,6 +2129,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rychlý úvod pro nové uživatele"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hurtig start til nye brugere"
           }
         },
         "de" : {
@@ -2100,6 +2232,12 @@
             "value" : "Při prvním otevření uvidíte, jak plnit tabuli nebe."
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Første gang du åbner appen, kan du se, hvordan du fylder dit himmelbræt."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2193,6 +2331,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rozvržení pro větší písmo"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Layout til større tekst"
           }
         },
         "de" : {
@@ -2290,6 +2434,12 @@
             "value" : "Rozvržení pro skládací iPhone"
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Layout til foldbar iPhone"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2383,6 +2533,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Využijte širokou obrazovku skládacího iPhonu jako dva panely vedle sebe."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brug den brede skærm på en foldbar iPhone som to ruder side om side."
           }
         },
         "de" : {
@@ -2480,6 +2636,12 @@
             "value" : "Připomínky nebe"
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Himmelpåmindelser"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2573,6 +2735,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "VoiceOver přečte každé tlačítko i každou buňku nebe ve správném pořadí."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver læser hver knap og hvert himmelfelt op i den rigtige rækkefølge."
           }
         },
         "de" : {
@@ -2669,6 +2837,12 @@
             "value" : "Zatím žádná opakování"
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingen gentagelser endnu"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2761,6 +2935,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vyfoťte nebe ve stejnou hodinu jiný den a obě fotky tu budou stát vedle sebe."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fang himlen på samme tidspunkt en anden dag, så står de to her side om side."
           }
         },
         "de" : {
@@ -2857,6 +3037,12 @@
             "value" : "Stejná hodina, stejný den"
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Samme time, samme dag"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2949,6 +3135,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Týden i měsíc se vracejí ve stejném tvaru. Jen nebe v tu hodinu nebylo nikdy stejné."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En uge eller en måned vender tilbage i samme form. Kun himlen på det tidspunkt har aldrig været den samme."
           }
         },
         "de" : {
@@ -3045,6 +3237,12 @@
             "value" : "Dvě nejpodobnější nebe"
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De to mest ens himle"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3137,6 +3335,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pro oko je to stejná barva."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "For øjet er det den samme farve."
           }
         },
         "de" : {
@@ -3233,6 +3437,12 @@
             "value" : "Přesto jsou to různé barvy."
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alligevel er det forskellige farver."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3325,6 +3535,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ukládat také do iCloudu"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gem også i iCloud"
           }
         },
         "de" : {
@@ -3421,6 +3637,12 @@
             "value" : "Úložiště"
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lager"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3513,6 +3735,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Podpora"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Support"
           }
         },
         "de" : {
@@ -3609,6 +3837,12 @@
             "value" : "Vývojář"
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Udvikler"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3701,6 +3935,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Statistiky používání"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brugsstatistik"
           }
         },
         "de" : {
@@ -3797,6 +4037,12 @@
             "value" : "Počty instalací a rozložení verzí. Ke čtení je potřeba oprávnění ke čtení kontejneru hubu."
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Antal installationer og versionsfordeling. For at læse dem kræves læseadgang til hub-containeren."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3889,6 +4135,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nastavení"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indstillinger"
           }
         },
         "de" : {
@@ -3985,6 +4237,12 @@
             "value" : "Hotovo"
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Udført"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4077,6 +4335,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zavřít"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Luk"
           }
         },
         "de" : {
@@ -4173,6 +4437,12 @@
             "value" : "Uložit"
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gem"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4265,6 +4535,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zrušit"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annuller"
           }
         },
         "de" : {
@@ -4361,6 +4637,12 @@
             "value" : "Smazat"
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slet"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4453,6 +4735,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vyfotit nebe"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fang himlen"
           }
         },
         "de" : {
@@ -4549,6 +4837,12 @@
             "value" : "Deník"
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Log"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4641,6 +4935,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nebe"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Himmel"
           }
         },
         "de" : {
@@ -4737,6 +5037,12 @@
             "value" : "Paleta"
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palet"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4829,6 +5135,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Opakování"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gentagelser"
           }
         },
         "de" : {
@@ -4925,6 +5237,12 @@
             "value" : "Smazat toto nebe?"
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slet denne himmel?"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5017,6 +5335,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fotka i barva se smažou společně."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Billedet og dets farve fjernes sammen."
           }
         },
         "de" : {
@@ -5113,6 +5437,12 @@
             "value" : "Myšlenka při pohledu na toto nebe,\nslovo, které chcete zanechat"
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En tanke, du fik, mens du så på denne himmel,\net ord, du gerne vil efterlade"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5207,6 +5537,12 @@
             "value" : "Přes nebe jiného dne"
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gennem en anden dags himmel"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5296,6 +5632,12 @@
     "하늘색" : {
       "localizations" : {
         "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
+        "da" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "SkyDex"
@@ -5395,6 +5737,12 @@
             "value" : "Zpět k původnímu nebi"
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tilbage til den oprindelige himmel"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5487,6 +5835,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Síla vypůjčeného nebe"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Styrken af den lånte himmel"
           }
         },
         "de" : {
@@ -5583,6 +5937,12 @@
             "value" : "Napsat řádek"
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skriv en linje"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5675,6 +6035,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Toto místo se zaplní nebem pořízeným v téhle části dne. Vejde se jakákoli fotka tak, jak je; barva se shodovat nemusí."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pladsen fyldes med en himmel taget på det tidspunkt af dagen. Ethvert billede kommer ind, som det er; farven behøver ikke passe."
           }
         },
         "de" : {
@@ -5771,6 +6137,12 @@
             "value" : "Ať nebe vyplní čtverec"
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lad himlen fylde firkanten"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5863,6 +6235,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pohled pod tím nebem"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ser under den himmel"
           }
         },
         "de" : {
@@ -5959,6 +6337,12 @@
             "value" : "Přístup k fotoaparátu je vypnutý"
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adgang til kameraet er slået fra"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6051,6 +6435,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zapněte fotoaparát v Nastavení a hned můžete fotit nebe."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slå kameraet til i Indstillinger, så kan du straks fange himlen."
           }
         },
         "de" : {
@@ -6147,6 +6537,12 @@
             "value" : "Otevřít Nastavení"
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Åbn Indstillinger"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6239,6 +6635,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fotoaparát není k dispozici"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kameraet er ikke tilgængeligt"
           }
         },
         "de" : {
@@ -6335,6 +6737,12 @@
             "value" : "Simulátor nemá fotoaparát. Vybraná fotka se také ořízne na čtverec."
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simulatoren har intet kamera. Et billede, du vælger, beskæres også til en firkant."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6427,6 +6835,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vybrat z Fotek"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vælg fra Billeder"
           }
         },
         "de" : {
@@ -6523,6 +6937,12 @@
             "value" : "Bez filtru"
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uden filter"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6615,6 +7035,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zatím žádné nasbírané nebe"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingen himle samlet endnu"
           }
         },
         "de" : {
@@ -6711,6 +7137,12 @@
             "value" : "Začíná to pohledem vzhůru."
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Det begynder med et blik op."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6803,6 +7235,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zatím žádné nebe této barvy"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingen himmel i denne farve endnu"
           }
         },
         "de" : {
@@ -6899,6 +7337,12 @@
             "value" : "Vyfoťte nebe blízké této barvě a nashromáždí se tady."
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fang en himmel tæt på denne farve, så samles den her."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6991,6 +7435,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Podívejte se jednou ven nahoru a buňka této hodiny se zaplní."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kig op én gang udenfor, så udfyldes feltet for denne time."
           }
         },
         "de" : {
@@ -7087,6 +7537,12 @@
             "value" : "Zatím nic"
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intet endnu"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7179,6 +7635,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dnešní nebe"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dagens himmel"
           }
         },
         "de" : {
@@ -7275,6 +7737,12 @@
             "value" : "Dnešní tabule"
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dagens bræt"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7367,6 +7835,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Čtyřicet osm buněk denně. Nasbíraná nebe je plní a prstenec označuje aktuální hodinu."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otteogfyrre felter om dagen. Indsamlede himle fylder dem, og en ring markerer den aktuelle time."
           }
         },
         "de" : {
@@ -7463,6 +7937,12 @@
             "value" : "Dnešní nebe a jakou má barvu."
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dagens himmel og hvilken farve den har."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7555,6 +8035,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dnešní nebe · Zatím ne"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dagens himmel · Ikke endnu"
           }
         },
         "de" : {
@@ -7651,6 +8137,12 @@
             "value" : "Dnešní nebe slovy"
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dagens himmel i ord"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7743,6 +8235,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dnešní nebe, kdybychom ho měli říct slovy"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dagens himmel, hvis man endelig skal sige det med ord"
           }
         },
         "de" : {
@@ -7839,6 +8337,12 @@
             "value" : "Dní: %lld"
           }
         },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld dage"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7925,6 +8429,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fotek této barvy: %lld"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld i denne farve"
           }
         },
         "de" : {
