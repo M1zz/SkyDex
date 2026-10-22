@@ -740,3 +740,60 @@ SkyDex: สะสมสีท้องฟ้า
 ท้องฟ้าที่เลือกจากคลังรูปภาพแทนการใช้กล้อง จะถูกครอบเป็นสี่เหลี่ยมจัตุรัสเช่นกัน
 
 ไม่ต้องมีบัญชี ไม่ต้องลงชื่อเข้าใช้ ท้องฟ้าที่สะสมไว้จะเก็บใน iCloud ของคุณเอง จึงตามคุณไปยังอุปกรณ์เครื่องใหม่ได้
+
+## vi
+
+### 지원 URL
+
+https://m1zz.github.io/SkyDex/vi/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/SkyDex/vi/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/SkyDex/vi/
+
+### 이름
+
+SkyDex: Sưu tầm màu trời
+
+### 부제
+
+Bảng màu đầy dần theo bầu trời
+
+### 키워드
+
+nhật ký,màu sắc,bảng màu,moodboard,mây,hoàng hôn,bình minh,ảnh,tâm trạng,thẩm mỹ,widget,chạng vạng
+
+### 프로모션 텍스트
+
+Hôm nay bầu trời mang màu gì? Mỗi lần chụp bầu trời, một trong bốn mươi tám màu trời của ngày sẽ được lấp đầy và có một cái tên nghe giống như chính màu ấy.
+
+### 설명
+
+Mỗi lần bạn chụp bầu trời, một trong bốn mươi tám ô màu của ngày sẽ được lấp đầy.
+Một ứng dụng nhỏ để lưu lại bầu trời hôm nay có màu gì: một bức ảnh và một dòng chữ.
+
+Bảng đi từ màu xanh đen của bình minh, qua xanh trưa và cam hoàng hôn, đến màu tím của đêm: bốn mươi tám màu mà bầu trời đi qua trong một ngày. Mỗi bức ảnh lấp vào ô gần nhất. Không phán xét, không từ chối: chụp là vào.
+
+Mỗi bầu trời đều có tên
+Mỗi màu bạn bắt được sẽ có vài từ nghe giống nó, như băng mỏng, gạch hồ bơi hay hồng chín, cùng với tên gần nhất trong các bảng màu truyền thống.
+
+Để lại một dòng
+Ngay sau khi chụp, một tấm thẻ sẽ mở ra. Hãy viết điều bạn nghĩ khi ngước nhìn lên, và nó sẽ lại nổi lên trên bầu trời mỗi khi bạn chạm vào ô đó trên bảng.
+
+Ô trống chỉ đường cho bạn
+Chạm vào một ô trống để biết nó thuộc thời điểm nào trong ngày và nên tìm màu gì.
+
+Nhật ký, bảng màu, lặp lại
+Duyệt bầu trời của bạn theo thứ tự, gom các màu thành bảng màu như xanh lam, xám và sắc hoàng hôn, và chụp lại cùng một giờ vào ngày khác để so sánh hai ảnh cạnh nhau.
+
+Widget
+Xem bầu trời hôm nay và bảng hôm nay ngay trên Màn hình chính.
+
+Chọn từ Ảnh
+Bầu trời chọn từ thư viện thay cho camera cũng được cắt thành hình vuông.
+
+Không cần tài khoản, không cần đăng nhập. Bầu trời của bạn được lưu trong iCloud riêng của bạn, nên theo bạn sang thiết bị mới.

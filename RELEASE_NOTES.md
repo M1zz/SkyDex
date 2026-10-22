@@ -89,6 +89,13 @@ Suporte no idioma do seu aparelho
 อ่านคำตอบของเราได้ในแอปเลย
 หน้าช่วยเหลือใช้ภาษาของคุณ
 
+### 앱스토어 (Tiếng Việt)
+
+Đính kèm ảnh chụp màn hình khi hỏi
+Đọc câu trả lời ngay trong ứng dụng
+Màn hình hỗ trợ theo ngôn ngữ của bạn
+
+
 ## 1.0.1
 
 ### 앱스토어 (한국어)

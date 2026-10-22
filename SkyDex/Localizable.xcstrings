@@ -70,6 +70,12 @@
             "value" : "ล็อกด้วย Face ID"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Khóa bằng Face ID"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -151,6 +157,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ล็อกแอปด้วย Face ID เพื่อให้บันทึกท้องฟ้าของคุณเป็นส่วนตัว"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Khóa ứng dụng bằng Face ID để giữ riêng tư những bầu trời của bạn."
           }
         },
         "zh-Hans" : {
@@ -236,6 +248,12 @@
             "value" : "บอก Siri แล้วถ่ายภาพท้องฟ้าได้ทันที"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chỉ cần nói với Siri là chụp được bầu trời ngay."
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -317,6 +335,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Siri และคำสั่งลัด"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siri và Phím tắt"
           }
         },
         "zh-Hans" : {
@@ -402,6 +426,12 @@
             "value" : "ใช้ VoiceOver ได้สะดวกขึ้น"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver dễ dùng hơn"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -483,6 +513,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "เมื่อขยายขนาดตัวอักษร หน้าจอจะจัดวางใหม่อย่างเรียบร้อยโดยไม่ถูกตัด"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Khi phóng to chữ, màn hình sẽ tự sắp xếp lại gọn gàng mà không bị cắt."
           }
         },
         "zh-Hans" : {
@@ -568,6 +604,12 @@
             "value" : "ลบท้องฟ้าของฉันทั้งหมดในครั้งเดียว"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xóa tất cả bầu trời của tôi"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -649,6 +691,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ใช้แอปได้ในหลายภาษามากขึ้น"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dùng ứng dụng bằng nhiều ngôn ngữ hơn."
           }
         },
         "zh-Hans" : {
@@ -734,6 +782,12 @@
             "value" : "ภาษาเพิ่มเติม"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thêm ngôn ngữ"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -815,6 +869,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "บันทึกภาพท้องฟ้าที่สะสมไว้เป็นไฟล์ แล้วนำกลับมาใช้ภายหลังได้"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lưu ảnh bầu trời vào một tệp và khôi phục lại sau."
           }
         },
         "zh-Hans" : {
@@ -900,6 +960,12 @@
             "value" : "สีและคอนทราสต์ที่ดูสบายขึ้น"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Màu sắc và độ tương phản dễ nhìn hơn"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -981,6 +1047,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "สำรองและส่งออกรูปภาพ"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sao lưu và xuất ảnh"
           }
         },
         "zh-Hans" : {
@@ -1066,6 +1138,12 @@
             "value" : "แม้แยกสีได้ยาก ก็ยังรู้ว่าแต่ละช่องเป็นท้องฟ้าแบบไหน"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dù khó phân biệt màu, bạn vẫn nhận ra mỗi ô chứa bầu trời nào."
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1147,6 +1225,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "เคล็ดลับการใช้งาน"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mẹo hữu ích"
           }
         },
         "zh-Hans" : {
@@ -1232,6 +1316,12 @@
             "value" : "แจ้งเตือนเมื่อถึงเวลาที่เหมาะจะถ่ายท้องฟ้าที่คุณยังไม่มี"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nhắc bạn khi đến lúc thích hợp để chụp một bầu trời còn thiếu."
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1313,6 +1403,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "แนะนำฟีเจอร์ที่มีประโยชน์เบา ๆ ในจังหวะที่เหมาะสม"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gợi ý nhẹ nhàng về các tính năng hữu ích, đúng lúc bạn cần."
           }
         },
         "zh-Hans" : {
@@ -1398,6 +1494,12 @@
             "value" : "ใช้แอปทั้งหมดเป็นภาษาอังกฤษได้ด้วย"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dùng toàn bộ ứng dụng bằng tiếng Anh."
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1479,6 +1581,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "เปิดแอปครั้งแรกหลังอัปเดต จะเห็นว่ามีอะไรใหม่"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lần đầu mở ứng dụng sau khi cập nhật, bạn sẽ thấy có gì mới."
           }
         },
         "zh-Hans" : {
@@ -1564,6 +1672,12 @@
             "value" : "มีอะไรใหม่"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Có gì mới"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1645,6 +1759,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "รองรับภาษาอังกฤษเต็มรูปแบบ"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hỗ trợ đầy đủ tiếng Anh"
           }
         },
         "zh-Hans" : {
@@ -1730,6 +1850,12 @@
             "value" : "หากต้องการ คุณลบภาพท้องฟ้าที่สะสมไว้ทั้งหมดได้จากในแอป"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nếu muốn, bạn có thể xóa mọi ảnh bầu trời đã sưu tầm ngay trong ứng dụng."
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1811,6 +1937,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "คู่มือเริ่มต้นสำหรับผู้ใช้ใหม่"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hướng dẫn nhanh cho người mới"
           }
         },
         "zh-Hans" : {
@@ -1896,6 +2028,12 @@
             "value" : "เปิดแอปครั้งแรกจะเห็นวิธีเติมกระดานท้องฟ้าแบบสั้น ๆ"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lần đầu mở ứng dụng, bạn sẽ thấy cách lấp đầy bảng bầu trời."
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1977,6 +2115,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "เลย์เอาต์สำหรับตัวอักษรขนาดใหญ่"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bố cục cho chữ lớn"
           }
         },
         "zh-Hans" : {
@@ -2062,6 +2206,12 @@
             "value" : "เลย์เอาต์สำหรับ iPhone แบบพับได้"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bố cục cho iPhone gập"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2143,6 +2293,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ใช้หน้าจอกว้างของ iPhone แบบพับได้เป็นสองส่วนข้างกัน"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dùng màn hình rộng của iPhone gập thành hai ngăn cạnh nhau."
           }
         },
         "zh-Hans" : {
@@ -2228,6 +2384,12 @@
             "value" : "การแจ้งเตือนท้องฟ้า"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nhắc nhở bầu trời"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2309,6 +2471,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "VoiceOver อ่านทุกปุ่มและทุกช่องท้องฟ้าตามลำดับที่ถูกต้อง"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver đọc mọi nút và mọi ô bầu trời, theo đúng thứ tự."
           }
         },
         "zh-Hans" : {
@@ -2393,6 +2561,12 @@
             "value" : "ยังไม่มีการถ่ายซ้ำ"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chưa có lần chụp lặp lại"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2473,6 +2647,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ถ่ายท้องฟ้าเวลาเดิมในอีกวัน แล้วทั้งสองภาพจะมาเรียงคู่กันที่นี่"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chụp bầu trời vào cùng giờ ở một ngày khác, hai ảnh sẽ đứng cạnh nhau ở đây."
           }
         },
         "zh-Hans" : {
@@ -2557,6 +2737,12 @@
             "value" : "เวลาเดียวกัน วันเดียวกัน"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cùng giờ, cùng ngày"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2637,6 +2823,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "หนึ่งสัปดาห์หรือหนึ่งเดือนวนกลับมาในรูปแบบเดิม มีเพียงท้องฟ้าของเวลานั้นเท่านั้นที่ไม่เคยเหมือนกันเลย"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Một tuần hay một tháng đều quay lại với cùng một dáng vẻ. Chỉ có bầu trời của giờ ấy là chưa bao giờ giống nhau."
           }
         },
         "zh-Hans" : {
@@ -2721,6 +2913,12 @@
             "value" : "สองท้องฟ้าที่คล้ายกันที่สุด"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hai bầu trời giống nhau nhất"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2801,6 +2999,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ในสายตา เป็นสีเดียวกัน"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bằng mắt thường, đó là cùng một màu."
           }
         },
         "zh-Hans" : {
@@ -2885,6 +3089,12 @@
             "value" : "แต่ก็ยังเป็นคนละสี"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vậy mà vẫn là hai màu khác nhau."
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2965,6 +3175,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "เก็บไว้ใน iCloud ด้วย"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lưu thêm trong iCloud"
           }
         },
         "zh-Hans" : {
@@ -3049,6 +3265,12 @@
             "value" : "ที่เก็บข้อมูล"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dung lượng"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3129,6 +3351,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ช่วยเหลือ"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hỗ trợ"
           }
         },
         "zh-Hans" : {
@@ -3213,6 +3441,12 @@
             "value" : "นักพัฒนา"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nhà phát triển"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3293,6 +3527,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "สถิติการใช้งาน"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thống kê sử dụng"
           }
         },
         "zh-Hans" : {
@@ -3377,6 +3617,12 @@
             "value" : "จำนวนการติดตั้งและการกระจายของเวอร์ชัน การอ่านต้องมีสิทธิ์อ่านของคอนเทนเนอร์ฮับ"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Số lượt cài đặt và phân bố phiên bản. Cần quyền đọc đối với vùng chứa hub để xem."
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3457,6 +3703,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "การตั้งค่า"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cài đặt"
           }
         },
         "zh-Hans" : {
@@ -3541,6 +3793,12 @@
             "value" : "เสร็จสิ้น"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xong"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3621,6 +3879,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ปิด"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đóng"
           }
         },
         "zh-Hans" : {
@@ -3705,6 +3969,12 @@
             "value" : "บันทึก"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lưu"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3785,6 +4055,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ยกเลิก"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hủy"
           }
         },
         "zh-Hans" : {
@@ -3869,6 +4145,12 @@
             "value" : "ลบ"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xóa"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3949,6 +4231,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ถ่ายท้องฟ้า"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chụp bầu trời"
           }
         },
         "zh-Hans" : {
@@ -4033,6 +4321,12 @@
             "value" : "บันทึก"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nhật ký"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4113,6 +4407,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ท้องฟ้า"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bầu trời"
           }
         },
         "zh-Hans" : {
@@ -4197,6 +4497,12 @@
             "value" : "จานสี"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bảng màu"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4277,6 +4583,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ถ่ายซ้ำ"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lặp lại"
           }
         },
         "zh-Hans" : {
@@ -4361,6 +4673,12 @@
             "value" : "ลบท้องฟ้านี้ไหม"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xóa bầu trời này?"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4441,6 +4759,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ภาพและสีจะถูกลบไปพร้อมกัน"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ảnh và màu sẽ bị xóa cùng nhau."
           }
         },
         "zh-Hans" : {
@@ -4525,6 +4849,12 @@
             "value" : "ความคิดตอนมองท้องฟ้านี้\nคำสั้น ๆ ที่อยากฝากไว้"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Một suy nghĩ khi ngắm bầu trời này,\nmột lời bạn muốn để lại"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4607,6 +4937,12 @@
             "value" : "ผ่านท้องฟ้าของอีกวัน"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qua bầu trời của ngày khác"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4684,6 +5020,12 @@
           }
         },
         "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
+        "vi" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "SkyDex"
@@ -4771,6 +5113,12 @@
             "value" : "กลับไปที่ท้องฟ้าเดิม"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Về bầu trời gốc"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4851,6 +5199,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ความเข้มของท้องฟ้าที่ยืมมา"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Độ đậm của bầu trời mượn"
           }
         },
         "zh-Hans" : {
@@ -4935,6 +5289,12 @@
             "value" : "เขียนสักบรรทัด"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Viết một dòng"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5015,6 +5375,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ช่องนี้จะถูกเติมด้วยท้องฟ้าที่ถ่ายในช่วงเวลานั้นของวัน รูปไหนก็ใส่ได้ตามเดิม สีไม่จำเป็นต้องตรงกัน"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chỗ này sẽ được lấp bằng bầu trời chụp trong khoảng thời gian đó của ngày. Ảnh nào cũng vào được nguyên vẹn; màu không cần phải khớp."
           }
         },
         "zh-Hans" : {
@@ -5099,6 +5465,12 @@
             "value" : "ให้ท้องฟ้าเต็มกรอบสี่เหลี่ยม"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Để bầu trời lấp đầy hình vuông"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5179,6 +5551,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "กำลังมองใต้ท้องฟ้านั้น"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đang ngắm dưới bầu trời ấy"
           }
         },
         "zh-Hans" : {
@@ -5263,6 +5641,12 @@
             "value" : "การเข้าถึงกล้องปิดอยู่"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quyền truy cập camera đang tắt"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5343,6 +5727,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "เปิดกล้องในการตั้งค่า แล้วคุณจะถ่ายท้องฟ้าได้ทันที"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bật camera trong Cài đặt để chụp bầu trời ngay."
           }
         },
         "zh-Hans" : {
@@ -5427,6 +5817,12 @@
             "value" : "เปิดการตั้งค่า"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mở Cài đặt"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5507,6 +5903,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ใช้กล้องไม่ได้"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Không dùng được camera"
           }
         },
         "zh-Hans" : {
@@ -5591,6 +5993,12 @@
             "value" : "ตัวจำลองไม่มีกล้อง รูปที่เลือกจะถูกครอบเป็นสี่เหลี่ยมจัตุรัสเช่นกัน"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trình mô phỏng không có camera. Ảnh bạn chọn cũng sẽ được cắt thành hình vuông."
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5671,6 +6079,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "เลือกจากรูปภาพ"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chọn từ Ảnh"
           }
         },
         "zh-Hans" : {
@@ -5755,6 +6169,12 @@
             "value" : "ไม่ใช้ฟิลเตอร์"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Không bộ lọc"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5835,6 +6255,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ยังไม่มีท้องฟ้าที่สะสมไว้"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chưa sưu tầm bầu trời nào"
           }
         },
         "zh-Hans" : {
@@ -5919,6 +6345,12 @@
             "value" : "เริ่มต้นได้ด้วยการเงยหน้ามองข้างนอกสักครั้ง"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mọi thứ bắt đầu bằng một cái ngước nhìn ra ngoài."
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5999,6 +6431,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ยังไม่มีท้องฟ้าสีนี้"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chưa có bầu trời màu này"
           }
         },
         "zh-Hans" : {
@@ -6083,6 +6521,12 @@
             "value" : "ถ่ายท้องฟ้าที่ใกล้เคียงสีนี้ แล้วจะมารวมกันที่นี่"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chụp một bầu trời gần với màu này, nó sẽ được gom về đây."
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6163,6 +6607,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "เงยหน้ามองข้างนอกสักครั้ง แล้วช่องของชั่วโมงนี้จะถูกเติมเต็ม"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ngước nhìn ra ngoài một lần, ô của giờ này sẽ được lấp đầy."
           }
         },
         "zh-Hans" : {
@@ -6247,6 +6697,12 @@
             "value" : "ยังไม่มี"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chưa có gì"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6327,6 +6783,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ท้องฟ้าวันนี้"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bầu trời hôm nay"
           }
         },
         "zh-Hans" : {
@@ -6411,6 +6873,12 @@
             "value" : "กระดานวันนี้"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bảng hôm nay"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6491,6 +6959,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "วันละสี่สิบแปดช่อง ท้องฟ้าที่สะสมไว้จะเติมช่อง และวงแหวนจะบอกชั่วโมงปัจจุบัน"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bốn mươi tám ô mỗi ngày. Bầu trời đã sưu tầm lấp đầy các ô, và một vòng tròn đánh dấu giờ hiện tại."
           }
         },
         "zh-Hans" : {
@@ -6575,6 +7049,12 @@
             "value" : "ท้องฟ้าที่ถ่ายวันนี้ และมันเป็นสีอะไร"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bầu trời hôm nay và nó mang màu gì."
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6655,6 +7135,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ท้องฟ้าวันนี้ · ยังไม่มี"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bầu trời hôm nay · Chưa có"
           }
         },
         "zh-Hans" : {
@@ -6739,6 +7225,12 @@
             "value" : "ท้องฟ้าวันนี้ เล่าเป็นคำพูด"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bầu trời hôm nay, bằng lời"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6821,6 +7313,12 @@
             "value" : "ท้องฟ้าวันนี้ ถ้าต้องบรรยายเป็นคำพูด"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bầu trời hôm nay, nếu buộc phải diễn tả bằng lời"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6897,6 +7395,12 @@
             "value" : "%lld วัน"
           }
         },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld ngày"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6971,6 +7475,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "สีนี้ %lld ภาพ"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld ảnh màu này"
           }
         },
         "zh-Hans" : {
