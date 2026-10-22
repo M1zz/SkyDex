@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SkyDex — Zásady ochrany soukromí</title>
+<meta name="description" content="Zásady ochrany soukromí aplikace SkyDex pro iOS. Žádné účty; vaše fotky zůstávají ve vašem zařízení a ve vašem vlastním iCloudu.">
+<link rel="canonical" href="https://m1zz.github.io/SkyDex/cs/privacy.html">
+<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/SkyDex/privacy.html">
+<link rel="alternate" hreflang="en" href="https://m1zz.github.io/SkyDex/en/privacy.html">
+<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/SkyDex/en/privacy.html">
+<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/SkyDex/ja/privacy.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/SkyDex/zh-Hans/privacy.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/SkyDex/zh-Hant/privacy.html">
+<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/SkyDex/ru/privacy.html">
+<link rel="alternate" hreflang="es" href="https://m1zz.github.io/SkyDex/es/privacy.html">
+<link rel="alternate" hreflang="de" href="https://m1zz.github.io/SkyDex/de/privacy.html">
+<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/SkyDex/fr/privacy.html">
+<link rel="alternate" hreflang="it" href="https://m1zz.github.io/SkyDex/it/privacy.html">
+<link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/SkyDex/pt-BR/privacy.html">
+<link rel="alternate" hreflang="th" href="https://m1zz.github.io/SkyDex/th/privacy.html">
+<link rel="alternate" hreflang="vi" href="https://m1zz.github.io/SkyDex/vi/privacy.html">
+<link rel="alternate" hreflang="cs" href="https://m1zz.github.io/SkyDex/cs/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/SkyDex/privacy.html">
+<style>
+  :root {
+    --ink: #16202e;
+    --ink-soft: #5d6773;
+    --paper: #f4f5f7;
+    --card: #ffffff;
+    --line: #e2e5ea;
+    --accent: #2f7bbe;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #eef1f5;
+      --ink-soft: #a2acb8;
+      --paper: #0b111c;
+      --card: #141c28;
+      --line: #26303e;
+      --accent: #7fa4ce;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0 20px 72px;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.72 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+      "Pretendard", "Segoe UI", Roboto, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 680px; margin: 0 auto; }
+  h1 {
+    font-size: 28px; line-height: 1.35; letter-spacing: -0.02em;
+    margin: 48px 0 6px; font-weight: 700;
+  }
+  .meta { color: var(--ink-soft); font-size: 15px; }
+  h2 {
+    font-size: 19px; letter-spacing: -0.01em; margin: 40px 0 12px;
+    padding-top: 24px; border-top: 1px solid var(--line);
+  }
+  h3 { font-size: 17px; letter-spacing: -0.01em; margin: 26px 0 10px; }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 1.2em; }
+  li { margin-bottom: 8px; }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  .card {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 16px; padding: 20px 22px; margin: 24px 0 8px;
+  }
+  .card p:last-child { margin-bottom: 0; }
+  .en {
+    margin-top: 44px; padding-top: 24px; border-top: 1px solid var(--line);
+    color: var(--ink-soft); font-size: 15.5px;
+  }
+  .en h2 { border-top: 0; padding-top: 0; color: var(--ink); }
+  footer {
+    margin-top: 48px; padding-top: 22px; border-top: 1px solid var(--line);
+    color: var(--ink-soft); font-size: 15px;
+  }
+  nav.langs { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px 14px; margin: 18px 0 0; font-size: 14px; }
+  nav.langs a { color: var(--ink-soft); text-decoration: none; }
+  nav.langs a[aria-current] { color: var(--ink); font-weight: 600; }
+</style>
+</head>
+<body>
+<main>
+  <nav class="langs" aria-label="Language">
+    <a href="../privacy.html" hreflang="ko" lang="ko">한국어</a>
+    <a href="../en/privacy.html" hreflang="en" lang="en">English</a>
+    <a href="../ja/privacy.html" hreflang="ja" lang="ja">日本語</a>
+    <a href="../zh-Hans/privacy.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <a href="../zh-Hant/privacy.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+    <a href="../ru/privacy.html" hreflang="ru" lang="ru">Русский</a>
+    <a href="../es/privacy.html" hreflang="es" lang="es">Español</a>
+    <a href="../de/privacy.html" hreflang="de" lang="de">Deutsch</a>
+    <a href="../fr/privacy.html" hreflang="fr" lang="fr">Français</a>
+    <a href="../it/privacy.html" hreflang="it" lang="it">Italiano</a>
+    <a href="../pt-BR/privacy.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+    <a href="../th/privacy.html" hreflang="th" lang="th">ไทย</a>
+    <a href="../vi/privacy.html" hreflang="vi" lang="vi">Tiếng Việt</a>
+    <a href="../cs/privacy.html" hreflang="cs" lang="cs" aria-current="true">Čeština</a>
+  </nav>
+
+  <h1>Zásady ochrany soukromí</h1>
+  <p class="meta">Aplikace pro iOS <strong>SkyDex</strong> · Účinné od 20. srpna 2026</p>
+
+  <div class="card">
+    <p><strong>Stručně.</strong> Aplikace nemá účty. Vaše fotky a barvy jsou uloženy jen ve vašem zařízení a ve <strong>vašem vlastním iCloudu</strong> a vývojář nemůže otevřít ani jedno.</p>
+    <p>K vývojáři se dostanou jen tři věci: <strong>anonymní statistiky používání</strong>, <strong>zpětná vazba, kterou se rozhodnete odeslat</strong>, a <strong>hlášení o pádech</strong>. Vaše fotky a barvy v žádné z nich nejsou. Žádné reklamy, žádné sledování, žádné analytické SDK třetích stran.</p>
+  </div>
+
+  <h2>1. Fotky a záznamy</h2>
+  <p>Fotky, které v aplikaci pořídíte nebo vyberete z knihovny, barva z nich získaná, čas pořízení a poznámky, které napíšete, se ukládají do <strong>úložiště aplikace ve vašem zařízení</strong>. Neodesílají se vývojáři a nenahrávají se na žádný server vývojáře. Vývojář žádný server neprovozuje.</p>
+
+  <h3>Uloženo v iCloudu</h3>
+  <p>Je-li vaše zařízení přihlášeno k účtu Apple, ukládají se tyto záznamy také do <strong>vašeho vlastního iCloudu</strong> (soukromé databáze CloudKit od Applu), aby se nasbíraná nebe vrátila, pokud ztratíte telefon nebo aplikaci smažete a znovu nainstalujete.</p>
+  <ul>
+    <li>Jsou uloženy ve <strong>vašem účtu iCloud</strong>, ne na serveru vývojáře. Vývojář tato data nemůže zobrazit a nedrží z nich žádnou kopii.</li>
+    <li>Přesouvají se jen mezi vašimi vlastními zařízeními přihlášenými ke stejnému účtu Apple. Nikdy se neukazují jiným lidem a aplikace nemá vůbec žádnou funkci sdílení ani zveřejňování.</li>
+    <li>Smazání záznamu v aplikaci smaže i kopii v iCloudu.</li>
+    <li>Místo, které zabírají, se počítá do vašeho úložiště iCloud.</li>
+    <li>Pokud nejste přihlášeni k iCloudu nebo iCloud pro tuto aplikaci vypnete v Nastavení, aplikace prostě drží vše v zařízení a funguje jako dřív.</li>
+  </ul>
+  <p>Toto úložiště se řídí zásadami Applu — <a href="https://www.apple.com/legal/privacy/">Zásady ochrany soukromí Apple</a>. Pokud zálohujete zařízení (do iCloudu nebo do počítače), může být toto úložiště součástí zálohy; i ta záloha patří k vašemu účtu Apple a vývojář k ní nemá přístup.</p>
+
+  <h2>2. Poloha</h2>
+  <p>Poloha se používá přesně pro dvě věci:</p>
+  <ul>
+    <li>Výpočet <strong>východu a západu slunce</strong> tam, kde jste, aby referenční barvy nebe na tabuli přišly ve správnou denní dobu</li>
+    <li>Stažení <strong>dnešní hodinové předpovědi</strong> (oblačnost a déšť) pro místo, kde jste</li>
+  </ul>
+  <p>Žádá se jen přesnost na kilometry. Poslední souřadnice se ukládá ve vašem zařízení; nikdy se nepřipojuje k fotce a nikdy se neposílá vývojáři.</p>
+  <p>Pro získání předpovědi se tato přibližná souřadnice <strong>odesílá do meteorologické služby Applu (WeatherKit)</strong>. Tento přenos se řídí zásadami Applu — <a href="https://www.apple.com/legal/privacy/">Zásady ochrany soukromí Apple</a>, <a href="https://weatherkit.apple.com/legal-attribution.html">Oznámení Apple Počasí</a>.</p>
+  <p>Aplikace funguje dobře, i když přístup k poloze odepřete. Pak počítá barvy pro výchozí místo (Soul) a kreslí referenci jasného nebe bez předpovědi.</p>
+
+  <h2>3. Fotoaparát a knihovna fotek</h2>
+  <p>Fotoaparát je zapnutý jen, když fotíte nebe. Z knihovny aplikace čte jen tu jednu fotku, kterou vyberete; zbytek knihovny nikdy neprochází. Aplikace také neukládá fotky do vaší knihovny.</p>
+
+  <h2>4. Statistiky používání a zpětná vazba</h2>
+  <p>Pokud autor aplikace vůbec netuší, jak se používá, nemůže opravit, co je třeba opravit. Proto se přijímají jen tři věci. Všechny tři jdou do <strong>veřejné databáze CloudKit</strong> vývojáře; samostatný server stále neexistuje.</p>
+
+  <h3>Anonymní statistiky používání</h3>
+  <ul>
+    <li>Co se odesílá: kolikrát byla aplikace otevřena, kolik dní uplynulo od instalace, verze aplikace, verze iOS, typ zařízení a nastavení jazyka.</li>
+    <li>Instalace se rozlišují <strong>náhodným číslem bez souvislosti s vaším zařízením nebo účtem</strong>. Smazáním a novou instalací aplikace vznikne nové číslo, které nelze spojit s jinými aplikacemi ani s reklamním identifikátorem.</li>
+    <li><strong>Fotky, barvy, časy pořízení, poznámky a poloha se nikdy neodesílají.</strong></li>
+    <li>Nepoužívá se to k identifikaci ani sledování nikoho a nepředává se to žádné jiné společnosti.</li>
+  </ul>
+
+  <h3>Zpětná vazba</h3>
+  <p>Odesílá se jen tehdy, když ji sami odešlete z Nastavení → Podpora → <strong>Odeslat zpětnou vazbu</strong>. To, co napíšete, odejde spolu s verzemi aplikace a zařízení. Jméno a e-mail pro odpověď se odešlou <strong>jen pokud je zadáte</strong>; necháte-li je prázdné, nezaznamenají se vůbec.</p>
+
+  <h3>Hlášení o pádech</h3>
+  <p>Pokud aplikace spadne nebo zamrzne, vývojář obdrží diagnostiku, kterou iOS později shromáždí (kde došlo k pádu, verze aplikace a iOS, typ zařízení). Není přiložen ani identifikátor instalace.</p>
+
+  <h2>5. Co se neshromažďuje</h2>
+  <ul>
+    <li>Jméno, e-mail, telefonní číslo, účet — žádné přihlášení vůbec není. (Jedinou výjimkou jsou kontaktní údaje pro odpověď, které sami zadáte ve zpětné vazbě.)</li>
+    <li>Fotky, barvy, časy pořízení, poznámky — nic z toho není v ničem, co je uvedeno v části 4</li>
+    <li>Poloha — nepřipojuje se ani ke statistikám, ani ke zpětné vazbě</li>
+    <li>Reklamní identifikátory, sledování, profilování, analytická SDK třetích stran — nepoužívají se</li>
+    <li>Prodej nebo předání čehokoli shromážděného jiné společnosti — nikdy</li>
+  </ul>
+
+  <h2>6. Uchovávání a mazání</h2>
+  <p>Záznamy zůstávají, dokud je nesmažete. Otevřete fotku a klepněte na <strong>Smazat</strong>, nebo v Deníku přejeďte doleva, a záznam se odstraní z vašeho zařízení i z iCloudu.</p>
+  <p>Smazání aplikace odstraní její úložiště v zařízení a souřadnici, ale <strong>kopie v iCloudu zůstane</strong> — vrácení sbírky po novém nainstalování je právě smyslem té funkce. Chcete-li ji odstranit úplně, smažte záznamy v aplikaci nebo smažte data této aplikace v iOS v <em>Nastavení → účet Apple → iCloud → Spravovat úložiště</em>.</p>
+  <p>Vývojář nedrží žádnou kopii, takže mu není třeba podávat žádnou zvláštní žádost o smazání.</p>
+
+  <h2>7. Děti</h2>
+  <p>Tato aplikace neshromažďuje osobní údaje od žádného uživatele, děti nevyjímaje.</p>
+
+  <h2>8. Změny</h2>
+  <p>Pokud se tyto zásady změní, tato stránka se aktualizuje spolu s datem účinnosti výše. Historie změn zůstává vidět v <a href="https://github.com/M1zz/SkyDex/commits/main/docs/privacy.html">historii commitů na GitHubu</a>.</p>
+
+  <h2>9. Kontakt</h2>
+  <p><a href="mailto:leeo@kakao.com">leeo@kakao.com</a></p>
+
+  <footer>
+    <a href="./">Přehled</a> ·
+    <a href="support.html">Podpora</a> ·
+    <a href="https://github.com/M1zz/SkyDex">GitHub</a>
+  </footer>
+
+</main>
+</body>
+</html>

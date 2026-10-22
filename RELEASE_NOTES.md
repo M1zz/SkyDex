@@ -95,6 +95,12 @@ Suporte no idioma do seu aparelho
 Đọc câu trả lời ngay trong ứng dụng
 Màn hình hỗ trợ theo ngôn ngữ của bạn
 
+### 앱스토어 (Čeština)
+
+K dotazům přiložte snímek obrazovky
+Odpovědi si přečtete přímo v aplikaci
+Podpora v jazyce vašeho zařízení
+
 
 ## 1.0.1
 

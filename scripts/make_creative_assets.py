@@ -50,6 +50,7 @@ SEARCH = {
     "pt-BR": ("Diário de céus", "Reúna 48<br>tons de céu", "Cada céu que você capta preenche um círculo"),
     "th": ("ไดอารี่ภาพท้องฟ้า", "สะสม 48<br>เฉดสีท้องฟ้า", "ทุกท้องฟ้าที่ถ่ายจะเติมวงกลมหนึ่งวง"),
     "vi": ("Nhật ký bầu trời", "Sưu tầm 48<br>sắc màu trời", "Mỗi bầu trời bạn chụp tô đầy một vòng tròn"),
+    "cs": ("Deník nebe", "Nasbírejte 48<br>odstínů nebe", "Každé nebe, které vyfotíte, vyplní jeden kroužek"),
 }
 
 # 헤더는 처음 온 사람에게 한 가지 약속만 한다: 하늘을 찍으면 그 색이 모인다.
@@ -68,6 +69,7 @@ HEADER = {
     "pt-BR": ("Cores do céu", "Fotografe o céu.<br>Guarde a cor dele."),
     "th": ("สีของท้องฟ้า", "ถ่ายท้องฟ้า<br>เก็บสีของมันไว้"),
     "vi": ("Màu của bầu trời", "Chụp bầu trời.<br>Giữ lại màu của nó."),
+    "cs": ("Barvy nebe", "Vyfoťte nebe.<br>Uchovejte jeho barvu."),
 }
 
 # 판에서 실제로 뽑은 색(시뮬레이터 캡처 01-board.png 의 채운 칸). 헤더 오른쪽 장식에 쓴다.

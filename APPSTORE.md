@@ -797,3 +797,60 @@ Chọn từ Ảnh
 Bầu trời chọn từ thư viện thay cho camera cũng được cắt thành hình vuông.
 
 Không cần tài khoản, không cần đăng nhập. Bầu trời của bạn được lưu trong iCloud riêng của bạn, nên theo bạn sang thiết bị mới.
+
+## cs
+
+### 지원 URL
+
+https://m1zz.github.io/SkyDex/cs/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/SkyDex/cs/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/SkyDex/cs/
+
+### 이름
+
+SkyDex: Barvy nebe
+
+### 부제
+
+Tabule, která se plní nebem
+
+### 키워드
+
+deník,barva,paleta,moodboard,mraky,západ slunce,svítání,foto,nálada,estetika,widget,soumrak
+
+### 프로모션 텍스트
+
+Jakou barvu mělo dnes nebe? Pokaždé, když vyfotíte nebe, zaplní se jedna ze čtyřiceti osmi barev dne a dostane jméno, které se k ní hodí.
+
+### 설명
+
+Pokaždé, když vyfotíte nebe, zaplní se jedna ze čtyřiceti osmi barevných buněk dne.
+Malá aplikace, která uchová, jakou barvu mělo dnešní nebe: jedna fotka a jeden řádek.
+
+Tabule vede od tmavomodré svítání přes polední modrou a oranžový západ slunce až k fialové noci: čtyřicet osm barev, kterými nebe za den projde. Každá fotka zaplní nejbližší buňku. Žádné posuzování, žádné odmítání: vyfotíte a je to tam.
+
+Každé nebe dostane jméno
+Každá zachycená barva dostane pár slov, která se k ní hodí, třeba tenký led, dlaždice v bazénu nebo zralé kaki, a k tomu nejbližší jméno z tradičních barevných palet.
+
+Zanechte řádek
+Hned po vyfocení se otevře karta. Napište, co jste si mysleli při pohledu vzhůru, a vždy, když na tabuli klepnete na tu buňku, vznese se znovu nad nebem.
+
+Prázdné buňky ukazují cestu
+Klepněte na prázdnou buňku a uvidíte, ke které denní době patří a jakou barvu hledat.
+
+Deník, paleta, opakování
+Procházejte svá nebe popořadě, sbírejte barvy do palet jako modré, šedé a barvy západu slunce a vyfoťte stejnou hodinu jiný den, abyste obě fotky porovnali vedle sebe.
+
+Widgety
+Dnešní nebe a dnešní tabuli uvidíte hned na ploše.
+
+Výběr z Fotek
+Nebe vybrané z knihovny místo z fotoaparátu se také ořízne na čtverec.
+
+Bez účtu a bez přihlašování. Nasbíraná nebe jsou uložena ve vašem vlastním iCloudu, takže vás doprovodí i na nové zařízení.

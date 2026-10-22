@@ -4,6 +4,12 @@
     "Face ID 잠금" : {
       "comment" : "Roadmap item: Face ID lock",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zámek přes Face ID"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -93,6 +99,12 @@
     "Face ID로 앱을 잠가 내 하늘 기록을 지켜요." : {
       "comment" : "Roadmap item detail: Face ID lock",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zamkněte aplikaci přes Face ID a udržte svá nebe v soukromí."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -182,6 +194,12 @@
     "Siri에게 말하면 바로 하늘을 찍을 수 있어요." : {
       "comment" : "Roadmap item detail: Siri and Shortcuts",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Řekněte to Siri a hned můžete fotit nebe."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -271,6 +289,12 @@
     "Siri와 단축어" : {
       "comment" : "Roadmap item: Siri and Shortcuts",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siri a Zkratky"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -360,6 +384,12 @@
     "VoiceOver로 더 편하게" : {
       "comment" : "Roadmap item: better VoiceOver support",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pohodlnější VoiceOver"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -449,6 +479,12 @@
     "글자 크기를 키워도 잘리지 않고 보기 좋게 다시 배치돼요." : {
       "comment" : "Roadmap item detail: Dynamic Type layouts",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Při zvětšení písma se obrazovky přeskládají úhledně a nic se neořízne."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -538,6 +574,12 @@
     "내 하늘 한 번에 지우기" : {
       "comment" : "Roadmap item: delete all data",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Smazat všechna moje nebe najednou"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -627,6 +669,12 @@
     "더 많은 나라 말로 앱을 쓸 수 있게 해요." : {
       "comment" : "Roadmap item detail: more languages",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Používejte aplikaci ve víc jazycích."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -716,6 +764,12 @@
     "더 많은 언어" : {
       "comment" : "Roadmap item: more languages",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Další jazyky"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -805,6 +859,12 @@
     "모은 하늘 사진을 파일로 저장하고 다시 불러올 수 있어요." : {
       "comment" : "Roadmap item detail: backup and export",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uložte fotky nebe do souboru a později je vraťte zpět."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -894,6 +954,12 @@
     "보기 편한 색과 대비" : {
       "comment" : "Roadmap item: contrast and color",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Příjemnější barvy a kontrast"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -983,6 +1049,12 @@
     "사진 백업과 내보내기" : {
       "comment" : "Roadmap item: backup and export",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Záloha a export fotek"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1072,6 +1144,12 @@
     "색을 구별하기 어려워도 칸마다 어떤 하늘인지 알아볼 수 있어요." : {
       "comment" : "Roadmap item detail: contrast and color",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I když barvy těžko rozeznáváte, poznáte, jaké nebe je v které buňce."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1161,6 +1239,12 @@
     "쓰는 요령 알려 주기" : {
       "comment" : "Roadmap item: tips",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Užitečné tipy"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1250,6 +1334,12 @@
     "아직 못 채운 하늘을 찍기 좋은 때에 알림으로 알려 줘요." : {
       "comment" : "Roadmap item detail: notifications",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upozorníme vás, kdy je dobrá chvíle ulovit nebe, které vám ještě chybí."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1339,6 +1429,12 @@
     "알아 두면 편한 기능을 알맞은 때에 살짝 알려 줘요." : {
       "comment" : "Roadmap item detail: tips",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nenápadné tipy na užitečné funkce, přesně když se hodí."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1428,6 +1524,12 @@
     "앱을 영어로도 쓸 수 있어요." : {
       "comment" : "Roadmap item detail: English",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Používejte celou aplikaci i v angličtině."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1517,6 +1619,12 @@
     "업데이트 뒤 처음 열 때 무엇이 새로 생겼는지 알려 줘요." : {
       "comment" : "Roadmap item detail: what's new",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Při prvním otevření po aktualizaci uvidíte, co je nového."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1606,6 +1714,12 @@
     "업데이트 소식" : {
       "comment" : "Roadmap item: what's new",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Co je nového"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1695,6 +1809,12 @@
     "영어 지원" : {
       "comment" : "Roadmap item: English",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plná podpora angličtiny"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1784,6 +1904,12 @@
     "원하면 앱 안에서 모은 하늘 사진을 모두 지울 수 있어요." : {
       "comment" : "Roadmap item detail: delete all data",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chcete-li, smažte přímo v aplikaci všechny nasbírané fotky nebe."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1873,6 +1999,12 @@
     "처음 쓰는 분을 위한 안내" : {
       "comment" : "Roadmap item: onboarding",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rychlý úvod pro nové uživatele"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1962,6 +2094,12 @@
     "처음 열었을 때 하늘 판을 채우는 법을 짧게 보여 줘요." : {
       "comment" : "Roadmap item detail: onboarding",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Při prvním otevření uvidíte, jak plnit tabuli nebe."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2051,6 +2189,12 @@
     "큰 글씨에 맞춘 화면" : {
       "comment" : "Roadmap item: Dynamic Type layouts",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rozvržení pro větší písmo"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2140,6 +2284,12 @@
     "펼치는 아이폰 화면" : {
       "comment" : "Roadmap item: foldable iPhone layout",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rozvržení pro skládací iPhone"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2229,6 +2379,12 @@
     "펼치는 아이폰에서 넓은 화면을 두 쪽으로 나눠 써요." : {
       "comment" : "Roadmap item detail: foldable iPhone layout",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Využijte širokou obrazovku skládacího iPhonu jako dva panely vedle sebe."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2318,6 +2474,12 @@
     "하늘 알림" : {
       "comment" : "Roadmap item: notifications",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Připomínky nebe"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2407,6 +2569,12 @@
     "화면 읽기 기능이 단추와 하늘 칸을 빠짐없이, 알맞은 순서로 읽어 줘요." : {
       "comment" : "Roadmap item detail: better VoiceOver support",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver přečte každé tlačítko i každou buňku nebe ve správném pořadí."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2495,6 +2663,12 @@
     },
     "아직 되풀이가 없어요" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zatím žádná opakování"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2583,6 +2757,12 @@
     },
     "같은 시각의 하늘을 다른 날에 한 번 더 찍으면, 그 둘이 여기에서 나란히 섭니다." : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vyfoťte nebe ve stejnou hodinu jiný den a obě fotky tu budou stát vedle sebe."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2671,6 +2851,12 @@
     },
     "같은 시각, 같은 하루" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stejná hodina, stejný den"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2759,6 +2945,12 @@
     },
     "일주일도 한 달도 같은 모양으로 돌아옵니다. 그 시각의 하늘만 한 번도 같지 않았습니다." : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Týden i měsíc se vracejí ve stejném tvaru. Jen nebe v tu hodinu nebylo nikdy stejné."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2847,6 +3039,12 @@
     },
     "가장 비슷했던 두 하늘" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dvě nejpodobnější nebe"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2935,6 +3133,12 @@
     },
     "눈으로는 같은 색입니다." : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pro oko je to stejná barva."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3023,6 +3227,12 @@
     },
     "그래도 다른 색입니다." : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Přesto jsou to různé barvy."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3111,6 +3321,12 @@
     },
     "iCloud에 함께 보관" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ukládat také do iCloudu"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3199,6 +3415,12 @@
     },
     "보관" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Úložiště"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3287,6 +3509,12 @@
     },
     "지원" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podpora"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3375,6 +3603,12 @@
     },
     "개발자" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vývojář"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3463,6 +3697,12 @@
     },
     "사용 통계" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Statistiky používání"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3551,6 +3791,12 @@
     },
     "설치 수와 버전 분포. 읽으려면 허브 컨테이너의 read 권한이 필요합니다." : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Počty instalací a rozložení verzí. Ke čtení je potřeba oprávnění ke čtení kontejneru hubu."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3639,6 +3885,12 @@
     },
     "설정" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nastavení"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3727,6 +3979,12 @@
     },
     "완료" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hotovo"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3815,6 +4073,12 @@
     },
     "닫기" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zavřít"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3903,6 +4167,12 @@
     },
     "저장" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uložit"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3991,6 +4261,12 @@
     },
     "취소" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zrušit"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4079,6 +4355,12 @@
     },
     "지우기" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Smazat"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4167,6 +4449,12 @@
     },
     "하늘 찍기" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vyfotit nebe"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4255,6 +4543,12 @@
     },
     "기록" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deník"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4343,6 +4637,12 @@
     },
     "하늘" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nebe"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4431,6 +4731,12 @@
     },
     "팔레트" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paleta"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4519,6 +4825,12 @@
     },
     "되풀이" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opakování"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4607,6 +4919,12 @@
     },
     "이 하늘을 지울까요?" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Smazat toto nebe?"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4695,6 +5013,12 @@
     },
     "사진과 색이 함께 사라집니다." : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fotka i barva se smažou společně."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4783,6 +5107,12 @@
     },
     "이 하늘을 보면서 들었던 생각,\n하고 싶은 한 마디" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Myšlenka při pohledu na toto nebe,\nslovo, které chcete zanechat"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4871,6 +5201,12 @@
     },
     "다른 날의 하늘로" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Přes nebe jiného dne"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4959,6 +5295,12 @@
     },
     "하늘색" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5047,6 +5389,12 @@
     },
     "원래 하늘로" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zpět k původnímu nebi"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5135,6 +5483,12 @@
     },
     "빌려 온 하늘의 세기" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Síla vypůjčeného nebe"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5223,6 +5577,12 @@
     },
     "한 줄 쓰기" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Napsat řádek"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5311,6 +5671,12 @@
     },
     "이 자리는 그 시간대에 찍은 하늘로 채워집니다. 어떤 사진이든 그대로 들어가고, 색이 맞아야 할 필요는 없습니다." : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toto místo se zaplní nebem pořízeným v téhle části dne. Vejde se jakákoli fotka tak, jak je; barva se shodovat nemusí."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5399,6 +5765,12 @@
     },
     "하늘이 정사각형을 채우도록" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ať nebe vyplní čtverec"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5487,6 +5859,12 @@
     },
     "그 하늘 아래에서 보는 중" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pohled pod tím nebem"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5575,6 +5953,12 @@
     },
     "카메라 권한이 꺼져 있어요" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Přístup k fotoaparátu je vypnutý"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5663,6 +6047,12 @@
     },
     "설정에서 카메라를 켜면 하늘을 바로 찍을 수 있어요." : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zapněte fotoaparát v Nastavení a hned můžete fotit nebe."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5751,6 +6141,12 @@
     },
     "설정 열기" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otevřít Nastavení"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5839,6 +6235,12 @@
     },
     "카메라를 쓸 수 없어요" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fotoaparát není k dispozici"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5927,6 +6329,12 @@
     },
     "시뮬레이터에는 카메라가 없습니다. 사진에서 골라도 정사각형으로 잘려 들어갑니다." : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simulátor nemá fotoaparát. Vybraná fotka se také ořízne na čtverec."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6015,6 +6423,12 @@
     },
     "사진에서 고르기" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vybrat z Fotek"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6103,6 +6517,12 @@
     },
     "필터 없이" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bez filtru"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6191,6 +6611,12 @@
     },
     "아직 모은 하늘이 없어요" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zatím žádné nasbírané nebe"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6279,6 +6705,12 @@
     },
     "밖을 한 번 올려다보는 것으로 시작합니다." : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Začíná to pohledem vzhůru."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6367,6 +6799,12 @@
     },
     "이 색은 아직 없어요" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zatím žádné nebe této barvy"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6455,6 +6893,12 @@
     },
     "이 색에 가까운 하늘을 찍으면 여기에 쌓입니다." : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vyfoťte nebe blízké této barvě a nashromáždí se tady."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6543,6 +6987,12 @@
     },
     "밖을 한 번 올려다보면 이 시각 칸이 채워집니다." : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podívejte se jednou ven nahoru a buňka této hodiny se zaplní."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6631,6 +7081,12 @@
     },
     "아직 없습니다" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zatím nic"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6719,6 +7175,12 @@
     },
     "오늘의 하늘" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dnešní nebe"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6807,6 +7269,12 @@
     },
     "오늘의 판" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dnešní tabule"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6895,6 +7363,12 @@
     },
     "하루 마흔여덟 칸. 모은 하늘은 채워지고, 지금 시각에는 고리가 걸립니다." : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Čtyřicet osm buněk denně. Nasbíraná nebe je plní a prstenec označuje aktuální hodinu."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6983,6 +7457,12 @@
     },
     "오늘 찍은 하늘과, 그 색이 어떤 색인지." : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dnešní nebe a jakou má barvu."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7071,6 +7551,12 @@
     },
     "오늘의 하늘 · 아직" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dnešní nebe · Zatím ne"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7159,6 +7645,12 @@
     },
     "오늘의 하늘, 말로 하면" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dnešní nebe slovy"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7247,6 +7739,12 @@
     },
     "오늘의 하늘, 굳이 말하자면" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dnešní nebe, kdybychom ho měli říct slovy"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7335,6 +7833,12 @@
     },
     "%lld일" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dní: %lld"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7417,6 +7921,12 @@
     },
     "이 색 %lld장" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fotek této barvy: %lld"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
