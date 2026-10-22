@@ -64,6 +64,12 @@
             "value" : "Блокировка Face ID"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ล็อกด้วย Face ID"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -139,6 +145,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Закройте приложение с помощью Face ID, чтобы ваши записи о небе остались личными."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ล็อกแอปด้วย Face ID เพื่อให้บันทึกท้องฟ้าของคุณเป็นส่วนตัว"
           }
         },
         "zh-Hans" : {
@@ -218,6 +230,12 @@
             "value" : "Скажите Siri — и сразу снимайте небо."
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "บอก Siri แล้วถ่ายภาพท้องฟ้าได้ทันที"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -293,6 +311,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Siri и Быстрые команды"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siri และคำสั่งลัด"
           }
         },
         "zh-Hans" : {
@@ -372,6 +396,12 @@
             "value" : "Удобнее с VoiceOver"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ใช้ VoiceOver ได้สะดวกขึ้น"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -447,6 +477,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Если увеличить текст, экраны аккуратно перестроятся, и ничего не обрежется."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เมื่อขยายขนาดตัวอักษร หน้าจอจะจัดวางใหม่อย่างเรียบร้อยโดยไม่ถูกตัด"
           }
         },
         "zh-Hans" : {
@@ -526,6 +562,12 @@
             "value" : "Стереть все мои небеса разом"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ลบท้องฟ้าของฉันทั้งหมดในครั้งเดียว"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -601,6 +643,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Приложение станет доступно на большем числе языков."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ใช้แอปได้ในหลายภาษามากขึ้น"
           }
         },
         "zh-Hans" : {
@@ -680,6 +728,12 @@
             "value" : "Больше языков"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ภาษาเพิ่มเติม"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -755,6 +809,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Сохраняйте фото неба в файл и возвращайте их позже."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "บันทึกภาพท้องฟ้าที่สะสมไว้เป็นไฟล์ แล้วนำกลับมาใช้ภายหลังได้"
           }
         },
         "zh-Hans" : {
@@ -834,6 +894,12 @@
             "value" : "Удобные цвета и контраст"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "สีและคอนทราสต์ที่ดูสบายขึ้น"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -909,6 +975,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Резервная копия и экспорт фото"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "สำรองและส่งออกรูปภาพ"
           }
         },
         "zh-Hans" : {
@@ -988,6 +1060,12 @@
             "value" : "Даже если цвета трудно различать, вы узнаете, какое небо в каждой клетке."
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "แม้แยกสีได้ยาก ก็ยังรู้ว่าแต่ละช่องเป็นท้องฟ้าแบบไหน"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1063,6 +1141,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Полезные советы"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เคล็ดลับการใช้งาน"
           }
         },
         "zh-Hans" : {
@@ -1142,6 +1226,12 @@
             "value" : "Напомним, когда удобно снять небо, которого вам ещё не хватает."
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "แจ้งเตือนเมื่อถึงเวลาที่เหมาะจะถ่ายท้องฟ้าที่คุณยังไม่มี"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1217,6 +1307,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ненавязчивые подсказки о полезных функциях — в нужный момент."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "แนะนำฟีเจอร์ที่มีประโยชน์เบา ๆ ในจังหวะที่เหมาะสม"
           }
         },
         "zh-Hans" : {
@@ -1296,6 +1392,12 @@
             "value" : "Приложение можно использовать и на английском."
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ใช้แอปทั้งหมดเป็นภาษาอังกฤษได้ด้วย"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1371,6 +1473,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "При первом запуске после обновления вы увидите, что нового."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เปิดแอปครั้งแรกหลังอัปเดต จะเห็นว่ามีอะไรใหม่"
           }
         },
         "zh-Hans" : {
@@ -1450,6 +1558,12 @@
             "value" : "Что нового"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "มีอะไรใหม่"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1525,6 +1639,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Полная поддержка английского"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "รองรับภาษาอังกฤษเต็มรูปแบบ"
           }
         },
         "zh-Hans" : {
@@ -1604,6 +1724,12 @@
             "value" : "При желании можно удалить все собранные фото неба прямо в приложении."
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "หากต้องการ คุณลบภาพท้องฟ้าที่สะสมไว้ทั้งหมดได้จากในแอป"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1679,6 +1805,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Краткое знакомство для новичков"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "คู่มือเริ่มต้นสำหรับผู้ใช้ใหม่"
           }
         },
         "zh-Hans" : {
@@ -1758,6 +1890,12 @@
             "value" : "При первом запуске коротко покажем, как заполнять доску неба."
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เปิดแอปครั้งแรกจะเห็นวิธีเติมกระดานท้องฟ้าแบบสั้น ๆ"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1833,6 +1971,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Экраны для крупного шрифта"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เลย์เอาต์สำหรับตัวอักษรขนาดใหญ่"
           }
         },
         "zh-Hans" : {
@@ -1912,6 +2056,12 @@
             "value" : "Экран для складного iPhone"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เลย์เอาต์สำหรับ iPhone แบบพับได้"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1987,6 +2137,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Широкий экран складного iPhone делится на две панели."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ใช้หน้าจอกว้างของ iPhone แบบพับได้เป็นสองส่วนข้างกัน"
           }
         },
         "zh-Hans" : {
@@ -2066,6 +2222,12 @@
             "value" : "Напоминания о небе"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "การแจ้งเตือนท้องฟ้า"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2141,6 +2303,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "VoiceOver читает все кнопки и клетки неба — по порядку и без пропусков."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver อ่านทุกปุ่มและทุกช่องท้องฟ้าตามลำดับที่ถูกต้อง"
           }
         },
         "zh-Hans" : {
@@ -2219,6 +2387,12 @@
             "value" : "Повторов пока нет"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ยังไม่มีการถ่ายซ้ำ"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2293,6 +2467,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Снимите небо в то же время в другой день — и два кадра окажутся здесь рядом."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ถ่ายท้องฟ้าเวลาเดิมในอีกวัน แล้วทั้งสองภาพจะมาเรียงคู่กันที่นี่"
           }
         },
         "zh-Hans" : {
@@ -2371,6 +2551,12 @@
             "value" : "Тот же час, тот же день"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เวลาเดียวกัน วันเดียวกัน"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2445,6 +2631,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Неделя и месяц возвращаются в прежнем виде. Только небо в этот час ни разу не было прежним."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "หนึ่งสัปดาห์หรือหนึ่งเดือนวนกลับมาในรูปแบบเดิม มีเพียงท้องฟ้าของเวลานั้นเท่านั้นที่ไม่เคยเหมือนกันเลย"
           }
         },
         "zh-Hans" : {
@@ -2523,6 +2715,12 @@
             "value" : "Два самых похожих неба"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "สองท้องฟ้าที่คล้ายกันที่สุด"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2597,6 +2795,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Для глаза это один и тот же цвет."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ในสายตา เป็นสีเดียวกัน"
           }
         },
         "zh-Hans" : {
@@ -2675,6 +2879,12 @@
             "value" : "И всё же цвета разные."
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "แต่ก็ยังเป็นคนละสี"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2749,6 +2959,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Хранить ещё и в iCloud"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เก็บไว้ใน iCloud ด้วย"
           }
         },
         "zh-Hans" : {
@@ -2827,6 +3043,12 @@
             "value" : "Хранение"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ที่เก็บข้อมูล"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2901,6 +3123,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Поддержка"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ช่วยเหลือ"
           }
         },
         "zh-Hans" : {
@@ -2979,6 +3207,12 @@
             "value" : "Разработчик"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "นักพัฒนา"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3053,6 +3287,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Статистика использования"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "สถิติการใช้งาน"
           }
         },
         "zh-Hans" : {
@@ -3131,6 +3371,12 @@
             "value" : "Число установок и распределение по версиям. Для чтения нужен доступ на чтение к контейнеру хаба."
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "จำนวนการติดตั้งและการกระจายของเวอร์ชัน การอ่านต้องมีสิทธิ์อ่านของคอนเทนเนอร์ฮับ"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3205,6 +3451,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Настройки"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "การตั้งค่า"
           }
         },
         "zh-Hans" : {
@@ -3283,6 +3535,12 @@
             "value" : "Готово"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เสร็จสิ้น"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3357,6 +3615,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Закрыть"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ปิด"
           }
         },
         "zh-Hans" : {
@@ -3435,6 +3699,12 @@
             "value" : "Сохранить"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "บันทึก"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3509,6 +3779,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Отмена"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ยกเลิก"
           }
         },
         "zh-Hans" : {
@@ -3587,6 +3863,12 @@
             "value" : "Удалить"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ลบ"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3661,6 +3943,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Снять небо"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ถ่ายท้องฟ้า"
           }
         },
         "zh-Hans" : {
@@ -3739,6 +4027,12 @@
             "value" : "Журнал"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "บันทึก"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3813,6 +4107,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Небо"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ท้องฟ้า"
           }
         },
         "zh-Hans" : {
@@ -3891,6 +4191,12 @@
             "value" : "Палитра"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "จานสี"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3965,6 +4271,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Повторы"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ถ่ายซ้ำ"
           }
         },
         "zh-Hans" : {
@@ -4043,6 +4355,12 @@
             "value" : "Удалить это небо?"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ลบท้องฟ้านี้ไหม"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4117,6 +4435,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Фото и цвет будут удалены вместе."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ภาพและสีจะถูกลบไปพร้อมกัน"
           }
         },
         "zh-Hans" : {
@@ -4195,6 +4519,12 @@
             "value" : "Мысль, которая пришла, когда вы смотрели на это небо,\nили слово, которое хочется оставить"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ความคิดตอนมองท้องฟ้านี้\nคำสั้น ๆ ที่อยากฝากไว้"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4271,6 +4601,12 @@
             "value" : "Сквозь небо другого дня"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ผ่านท้องฟ้าของอีกวัน"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4342,6 +4678,12 @@
           }
         },
         "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
+        "th" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "SkyDex"
@@ -4423,6 +4765,12 @@
             "value" : "К исходному небу"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "กลับไปที่ท้องฟ้าเดิม"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4497,6 +4845,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Насколько сильно проступает чужое небо"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ความเข้มของท้องฟ้าที่ยืมมา"
           }
         },
         "zh-Hans" : {
@@ -4575,6 +4929,12 @@
             "value" : "Написать строчку"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เขียนสักบรรทัด"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4649,6 +5009,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Это место заполнится небом, снятым в это время суток. Подойдёт любое фото как есть — цвет совпадать не обязан."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ช่องนี้จะถูกเติมด้วยท้องฟ้าที่ถ่ายในช่วงเวลานั้นของวัน รูปไหนก็ใส่ได้ตามเดิม สีไม่จำเป็นต้องตรงกัน"
           }
         },
         "zh-Hans" : {
@@ -4727,6 +5093,12 @@
             "value" : "Чтобы небо заполняло квадрат"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ให้ท้องฟ้าเต็มกรอบสี่เหลี่ยม"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4801,6 +5173,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Смотрю из-под этого неба"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "กำลังมองใต้ท้องฟ้านั้น"
           }
         },
         "zh-Hans" : {
@@ -4879,6 +5257,12 @@
             "value" : "Доступ к камере выключен"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "การเข้าถึงกล้องปิดอยู่"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4953,6 +5337,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Включите камеру в настройках — и сразу снимайте небо."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เปิดกล้องในการตั้งค่า แล้วคุณจะถ่ายท้องฟ้าได้ทันที"
           }
         },
         "zh-Hans" : {
@@ -5031,6 +5421,12 @@
             "value" : "Открыть настройки"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เปิดการตั้งค่า"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5105,6 +5501,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Камера недоступна"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ใช้กล้องไม่ได้"
           }
         },
         "zh-Hans" : {
@@ -5183,6 +5585,12 @@
             "value" : "В симуляторе нет камеры. Фото, выбранное из медиатеки, тоже обрежется до квадрата."
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ตัวจำลองไม่มีกล้อง รูปที่เลือกจะถูกครอบเป็นสี่เหลี่ยมจัตุรัสเช่นกัน"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5257,6 +5665,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Выбрать из Фото"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เลือกจากรูปภาพ"
           }
         },
         "zh-Hans" : {
@@ -5335,6 +5749,12 @@
             "value" : "Без фильтра"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ไม่ใช้ฟิลเตอร์"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5409,6 +5829,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Собранного неба пока нет"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ยังไม่มีท้องฟ้าที่สะสมไว้"
           }
         },
         "zh-Hans" : {
@@ -5487,6 +5913,12 @@
             "value" : "Всё начинается с одного взгляда вверх."
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เริ่มต้นได้ด้วยการเงยหน้ามองข้างนอกสักครั้ง"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5561,6 +5993,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Такого цвета пока нет"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ยังไม่มีท้องฟ้าสีนี้"
           }
         },
         "zh-Hans" : {
@@ -5639,6 +6077,12 @@
             "value" : "Снимите небо, близкое к этому цвету, — и оно появится здесь."
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ถ่ายท้องฟ้าที่ใกล้เคียงสีนี้ แล้วจะมารวมกันที่นี่"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5713,6 +6157,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Взгляните на небо — и клетка этого часа заполнится."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เงยหน้ามองข้างนอกสักครั้ง แล้วช่องของชั่วโมงนี้จะถูกเติมเต็ม"
           }
         },
         "zh-Hans" : {
@@ -5791,6 +6241,12 @@
             "value" : "Пока ничего"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ยังไม่มี"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5865,6 +6321,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Небо сегодня"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ท้องฟ้าวันนี้"
           }
         },
         "zh-Hans" : {
@@ -5943,6 +6405,12 @@
             "value" : "Доска сегодня"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "กระดานวันนี้"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6017,6 +6485,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Сорок восемь клеток в день. Собранное небо заполняет клетку, а текущий час отмечен кольцом."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "วันละสี่สิบแปดช่อง ท้องฟ้าที่สะสมไว้จะเติมช่อง และวงแหวนจะบอกชั่วโมงปัจจุบัน"
           }
         },
         "zh-Hans" : {
@@ -6095,6 +6569,12 @@
             "value" : "Сегодняшнее небо и его цвет."
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ท้องฟ้าที่ถ่ายวันนี้ และมันเป็นสีอะไร"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6169,6 +6649,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Небо сегодня · пока нет"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ท้องฟ้าวันนี้ · ยังไม่มี"
           }
         },
         "zh-Hans" : {
@@ -6247,6 +6733,12 @@
             "value" : "Сегодняшнее небо словами"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ท้องฟ้าวันนี้ เล่าเป็นคำพูด"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6323,6 +6815,12 @@
             "value" : "Сегодняшнее небо — если уж пытаться описать словами"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ท้องฟ้าวันนี้ ถ้าต้องบรรยายเป็นคำพูด"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6393,6 +6891,12 @@
             "value" : "Дней: %lld"
           }
         },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld วัน"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6461,6 +6965,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Снимков этого цвета: %lld"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "สีนี้ %lld ภาพ"
           }
         },
         "zh-Hans" : {

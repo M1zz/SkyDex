@@ -83,6 +83,11 @@ Anexe uma captura de tela às dúvidas
 Leia as respostas direto no app
 Suporte no idioma do seu aparelho
 
+### 앱스토어 (ไทย)
+
+แนบภาพหน้าจอไปกับคำถามได้
+อ่านคำตอบของเราได้ในแอปเลย
+หน้าช่วยเหลือใช้ภาษาของคุณ
 
 ## 1.0.1
 
