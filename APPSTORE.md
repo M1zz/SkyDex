@@ -968,3 +968,60 @@ Widgets
 Ένας ουρανός που επιλέγετε από τη βιβλιοθήκη αντί για την κάμερα κόβεται επίσης σε τετράγωνο.
 
 Χωρίς λογαριασμό, χωρίς σύνδεση. Οι ουρανοί σας φυλάσσονται στο δικό σας iCloud, ώστε να σας ακολουθούν σε μια νέα συσκευή.
+
+## fi
+
+### 지원 URL
+
+https://m1zz.github.io/SkyDex/fi/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/SkyDex/fi/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/SkyDex/fi/
+
+### 이름
+
+SkyDex: Taivaan värit
+
+### 부제
+
+Lauta, joka täyttyy taivaista
+
+### 키워드
+
+päiväkirja,väri,paletti,moodboard,pilvet,auringonlasku,auringonnousu,valokuva,tunnelma,estetiikka
+
+### 프로모션 텍스트
+
+Minkä värinen taivas oli tänään? Aina kun kuvaat taivaan, yksi päivän neljästäkymmenestäkahdeksasta taivaan väristä täyttyy ja saa nimen, joka muistuttaa sitä.
+
+### 설명
+
+Aina kun kuvaat taivaan, yksi päivän neljästäkymmenestäkahdeksasta väriruudusta täyttyy.
+Pieni appi sen muistamiseen, minkä värinen taivas oli tänään: yksi kuva ja yksi rivi.
+
+Lauta kulkee aamunkoiton sinimustasta keskipäivän siniseen, auringonlaskun oranssiin ja yön violettiin: neljäkymmentäkahdeksan väriä, joiden läpi taivas kulkee päivässä. Jokainen kuva täyttää lähimmän ruudun. Ei arvostelua, ei hylkäämistä: kuvaa, niin se menee sisään.
+
+Jokainen taivas saa nimen
+Jokaiselle tavoittamallesi värille tulee muutama sitä muistuttava sana, kuten ohut jää, uima-allaslaatta tai kypsä kaki, sekä lähin nimi perinteisistä väripaleteista.
+
+Jätä rivi
+Heti kuvan jälkeen avautuu kortti. Kirjoita, mitä ajattelit ylös katsoessasi, niin se leijuu taas taivaan päälle aina, kun napautat sitä ruutua laudalla.
+
+Tyhjät ruudut näyttävät tien
+Napauta tyhjää ruutua nähdäksesi, mihin vuorokaudenaikaan se kuuluu ja minkä väriä kannattaa etsiä.
+
+Loki, paletti, toistot
+Selaa taivaitasi järjestyksessä, kokoa värisi paleteiksi, kuten siniset, harmaat ja auringonlaskun sävyt, ja kuvaa sama tunti toisena päivänä verrataksesi kahta kuvaa vierekkäin.
+
+Widgetit
+Näe päivän taivas ja päivän lauta suoraan Koti-valikossa.
+
+Valitse Kuvista
+Kirjastosta kameran sijaan valittu taivas rajataan myös neliöksi.
+
+Ei tiliä, ei kirjautumista. Taivaasi tallentuvat omaan iCloudiisi, joten ne seuraavat sinua uudelle laitteelle.

@@ -46,6 +46,12 @@
             "value" : "Bloqueo con Face ID"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face ID -lukitus"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -151,6 +157,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bloquea la app con Face ID para mantener tus cielos en privado."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lukitse appi Face ID:llä, niin taivaasi pysyvät yksityisinä."
           }
         },
         "fr" : {
@@ -260,6 +272,12 @@
             "value" : "Dile a Siri que quieres fotografiar el cielo y empieza al instante."
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sano Siri-äänelle, ja voit kuvata taivaan saman tien."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -365,6 +383,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Siri y Atajos"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siri ja Pikakomennot"
           }
         },
         "fr" : {
@@ -474,6 +498,12 @@
             "value" : "Mejor compatibilidad con VoiceOver"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parempi VoiceOver-tuki"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -579,6 +609,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si agrandas el texto, las pantallas se reacomodan sin que nada se corte."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kun suurennat tekstiä, näytöt järjestyvät siististi uudelleen, eikä mitään leikkaudu pois."
           }
         },
         "fr" : {
@@ -688,6 +724,12 @@
             "value" : "Borrar todos mis cielos"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poista kaikki taivaani kerralla"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -793,6 +835,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Usa la app en más idiomas."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Käytä appia useammalla kielellä."
           }
         },
         "fr" : {
@@ -902,6 +950,12 @@
             "value" : "Más idiomas"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lisää kieliä"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1007,6 +1061,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Guarda tus fotos de cielo en un archivo y recupéralas más adelante."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tallenna taivaskuvasi tiedostoon ja palauta ne myöhemmin."
           }
         },
         "fr" : {
@@ -1116,6 +1176,12 @@
             "value" : "Colores y contraste más cómodos"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helpommat värit ja kontrasti"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1221,6 +1287,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Copia de seguridad y exportación de fotos"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kuvien varmuuskopiointi ja vienti"
           }
         },
         "fr" : {
@@ -1330,6 +1402,12 @@
             "value" : "Aunque cueste distinguir los colores, sabrás qué cielo guarda cada casilla."
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vaikka värejä olisi vaikea erottaa, tunnistat, mikä taivas missäkin ruudussa on."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1435,6 +1513,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Consejos útiles"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Käyttövinkit"
           }
         },
         "fr" : {
@@ -1544,6 +1628,12 @@
             "value" : "Te avisamos cuando es buen momento para captar un cielo que aún te falta."
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Muistutamme, kun on hyvä hetki napata taivas, joka sinulta vielä puuttuu."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1649,6 +1739,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pequeñas pistas sobre funciones útiles, justo cuando las necesitas."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hienovaraisia vinkkejä hyödyllisistä toiminnoista juuri silloin, kun tarvitset niitä."
           }
         },
         "fr" : {
@@ -1758,6 +1854,12 @@
             "value" : "Usa la app también en inglés."
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Käytä koko appia myös englanniksi."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1863,6 +1965,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "La primera vez que abras la app tras una actualización, verás las novedades."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kun avaat apin ensimmäisen kerran päivityksen jälkeen, näet mikä on uutta."
           }
         },
         "fr" : {
@@ -1972,6 +2080,12 @@
             "value" : "Novedades"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uutuudet"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2077,6 +2191,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Compatibilidad total con inglés"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Täysi englannin tuki"
           }
         },
         "fr" : {
@@ -2186,6 +2306,12 @@
             "value" : "Si quieres, puedes borrar desde la app todas las fotos de cielo que has reunido."
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Halutessasi voit poistaa kaikki keräämäsi taivaskuvat suoraan apista."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2291,6 +2417,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Guía rápida para nuevos usuarios"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pikaopas uusille käyttäjille"
           }
         },
         "fr" : {
@@ -2400,6 +2532,12 @@
             "value" : "La primera vez que abras la app, verás cómo llenar tu tablero de cielos."
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kun avaat apin ensimmäisen kerran, näet lyhyesti, miten taivaslauta täytetään."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2505,6 +2643,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pantallas para texto grande"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asettelut suuremmalle tekstille"
           }
         },
         "fr" : {
@@ -2614,6 +2758,12 @@
             "value" : "Pantalla para iPhone plegable"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asettelu taitettavalle iPhonelle"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2719,6 +2869,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aprovecha la pantalla ancha de un iPhone plegable en dos paneles lado a lado."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Käytä taitettavan iPhonen leveää näyttöä kahtena vierekkäisenä ruutuna."
           }
         },
         "fr" : {
@@ -2828,6 +2984,12 @@
             "value" : "Recordatorios de cielo"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taivasmuistutukset"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2933,6 +3095,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "VoiceOver lee todos los botones y casillas de cielo, en el orden correcto."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver lukee jokaisen painikkeen ja taivasruudun oikeassa järjestyksessä."
           }
         },
         "fr" : {
@@ -3041,6 +3209,12 @@
             "value" : "Aún no hay repeticiones"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ei vielä toistoja"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3145,6 +3319,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si captas el cielo a la misma hora otro día, los dos quedarán juntos aquí."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kuvaa taivas samaan aikaan toisena päivänä, niin kaksi kuvaa asettuu tähän vierekkäin."
           }
         },
         "fr" : {
@@ -3253,6 +3433,12 @@
             "value" : "La misma hora, el mismo día"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sama tunti, sama päivä"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3357,6 +3543,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Una semana o un mes vuelven con la misma forma. Solo el cielo de esa hora nunca ha sido igual."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Viikko ja kuukausi palaavat samassa muodossa. Vain taivas tuona hetkenä ei ole koskaan ollut sama."
           }
         },
         "fr" : {
@@ -3465,6 +3657,12 @@
             "value" : "Los dos cielos más parecidos"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kaksi samankaltaisinta taivasta"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3569,6 +3767,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "A simple vista, es el mismo color."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Silmälle se on sama väri."
           }
         },
         "fr" : {
@@ -3677,6 +3881,12 @@
             "value" : "Aun así, son colores distintos."
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Silti ne ovat eri värejä."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3781,6 +3991,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Guardar también en iCloud"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Säilytä myös iCloudissa"
           }
         },
         "fr" : {
@@ -3889,6 +4105,12 @@
             "value" : "Almacenamiento"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tallennustila"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3993,6 +4215,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Soporte"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tuki"
           }
         },
         "fr" : {
@@ -4101,6 +4329,12 @@
             "value" : "Desarrollador"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kehittäjä"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4205,6 +4439,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Estadísticas de uso"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Käyttötilastot"
           }
         },
         "fr" : {
@@ -4313,6 +4553,12 @@
             "value" : "Número de instalaciones y reparto por versiones. Para leerlos se necesita acceso de lectura al contenedor del hub."
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asennusmäärät ja versiojakauma. Niiden lukeminen vaatii lukuoikeuden hub-säilöön."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4417,6 +4663,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ajustes"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asetukset"
           }
         },
         "fr" : {
@@ -4525,6 +4777,12 @@
             "value" : "Listo"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valmis"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4629,6 +4887,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cerrar"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sulje"
           }
         },
         "fr" : {
@@ -4737,6 +5001,12 @@
             "value" : "Guardar"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tallenna"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4841,6 +5111,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cancelar"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peruuta"
           }
         },
         "fr" : {
@@ -4949,6 +5225,12 @@
             "value" : "Eliminar"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poista"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5053,6 +5335,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Captar el cielo"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kuvaa taivas"
           }
         },
         "fr" : {
@@ -5161,6 +5449,12 @@
             "value" : "Registro"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loki"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5265,6 +5559,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cielo"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taivas"
           }
         },
         "fr" : {
@@ -5373,6 +5673,12 @@
             "value" : "Paleta"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paletti"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5477,6 +5783,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Repeticiones"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toistot"
           }
         },
         "fr" : {
@@ -5585,6 +5897,12 @@
             "value" : "¿Eliminar este cielo?"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poistetaanko tämä taivas?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5689,6 +6007,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "La foto y su color se borrarán juntos."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kuva ja sen väri poistetaan yhdessä."
           }
         },
         "fr" : {
@@ -5797,6 +6121,12 @@
             "value" : "Un pensamiento al mirar este cielo,\nuna frase que quieras dejar"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajatus, joka tuli tätä taivasta katsoessa,\nsana, jonka haluat jättää"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5903,6 +6233,12 @@
             "value" : "Con el cielo de otro día"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toisen päivän taivaan läpi"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6004,6 +6340,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
+        "fi" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "SkyDex"
@@ -6115,6 +6457,12 @@
             "value" : "Volver al cielo original"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Takaisin alkuperäiseen taivaaseen"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6219,6 +6567,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Intensidad del cielo prestado"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lainatun taivaan voimakkuus"
           }
         },
         "fr" : {
@@ -6327,6 +6681,12 @@
             "value" : "Escribe una línea"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kirjoita rivi"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6431,6 +6791,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Este lugar se llena con un cielo captado en esa parte del día. Cualquier foto entra tal cual; el color no tiene por qué coincidir."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tämä paikka täyttyy taivaalla, joka on kuvattu tuona vuorokaudenaikana. Mikä tahansa kuva menee sellaisenaan; väriltä ei vaadita vastaavuutta."
           }
         },
         "fr" : {
@@ -6539,6 +6905,12 @@
             "value" : "Que el cielo llene el cuadrado"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anna taivaan täyttää neliö"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6643,6 +7015,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mirando bajo ese cielo"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Katsomassa tuon taivaan alla"
           }
         },
         "fr" : {
@@ -6751,6 +7129,12 @@
             "value" : "El acceso a la cámara está desactivado"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kameran käyttö on pois päältä"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6855,6 +7239,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Activa la cámara en Ajustes para captar el cielo al instante."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ota kamera käyttöön Asetuksissa, niin voit kuvata taivaan heti."
           }
         },
         "fr" : {
@@ -6963,6 +7353,12 @@
             "value" : "Abrir Ajustes"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avaa Asetukset"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7067,6 +7463,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cámara no disponible"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamera ei ole käytettävissä"
           }
         },
         "fr" : {
@@ -7175,6 +7577,12 @@
             "value" : "El simulador no tiene cámara. Una foto que elijas también se recorta en cuadrado."
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simulaattorissa ei ole kameraa. Valittu kuva rajataan myös neliöksi."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7279,6 +7687,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Elegir de Fotos"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valitse Kuvista"
           }
         },
         "fr" : {
@@ -7387,6 +7801,12 @@
             "value" : "Sin filtro"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ei suodatinta"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7491,6 +7911,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aún no has reunido ningún cielo"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ei vielä kerättyjä taivaita"
           }
         },
         "fr" : {
@@ -7599,6 +8025,12 @@
             "value" : "Todo empieza con una mirada hacia arriba."
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kaikki alkaa katseesta ylös."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7703,6 +8135,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Todavía no hay un cielo de este color"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tämänväristä taivasta ei vielä ole"
           }
         },
         "fr" : {
@@ -7811,6 +8249,12 @@
             "value" : "Capta un cielo parecido a este color y se acumulará aquí."
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kuvaa taivas tämän värin lähellä, niin se kertyy tähän."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7915,6 +8359,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mira hacia arriba una vez y la casilla de esta hora se llenará."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Katso kerran ulos ylös, niin tämän tunnin ruutu täyttyy."
           }
         },
         "fr" : {
@@ -8023,6 +8473,12 @@
             "value" : "Todavía nada"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ei vielä mitään"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8127,6 +8583,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cielo de hoy"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Päivän taivas"
           }
         },
         "fr" : {
@@ -8235,6 +8697,12 @@
             "value" : "Tablero de hoy"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Päivän lauta"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8339,6 +8807,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cuarenta y ocho casillas al día. Los cielos reunidos las llenan y un anillo marca la hora actual."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neljäkymmentäkahdeksan ruutua päivässä. Kerätyt taivaat täyttävät ne, ja rengas merkitsee nykyisen tunnin."
           }
         },
         "fr" : {
@@ -8447,6 +8921,12 @@
             "value" : "El cielo de hoy y de qué color es."
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tämän päivän taivas ja minkä väri se on."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8551,6 +9031,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cielo de hoy · Aún no"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Päivän taivas · Ei vielä"
           }
         },
         "fr" : {
@@ -8659,6 +9145,12 @@
             "value" : "El cielo de hoy, en palabras"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tämän päivän taivas sanoin"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8763,6 +9255,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "El cielo de hoy, si hubiera que ponerlo en palabras"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tämän päivän taivas, jos se pitää sanoilla sanoa"
           }
         },
         "fr" : {
@@ -8871,6 +9369,12 @@
             "value" : "%lld días"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld päivää"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8969,6 +9473,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld en este color"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld tässä värissä"
           }
         },
         "fr" : {

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SkyDex — Tietosuojakäytäntö</title>
+<meta name="description" content="iOS-apin SkyDex tietosuojakäytäntö. Ei tilejä; kuvasi pysyvät laitteellasi ja omassa iCloudissasi.">
+<link rel="canonical" href="https://m1zz.github.io/SkyDex/fi/privacy.html">
+<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/SkyDex/privacy.html">
+<link rel="alternate" hreflang="en" href="https://m1zz.github.io/SkyDex/en/privacy.html">
+<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/SkyDex/en/privacy.html">
+<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/SkyDex/ja/privacy.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/SkyDex/zh-Hans/privacy.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/SkyDex/zh-Hant/privacy.html">
+<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/SkyDex/ru/privacy.html">
+<link rel="alternate" hreflang="es" href="https://m1zz.github.io/SkyDex/es/privacy.html">
+<link rel="alternate" hreflang="de" href="https://m1zz.github.io/SkyDex/de/privacy.html">
+<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/SkyDex/fr/privacy.html">
+<link rel="alternate" hreflang="it" href="https://m1zz.github.io/SkyDex/it/privacy.html">
+<link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/SkyDex/pt-BR/privacy.html">
+<link rel="alternate" hreflang="th" href="https://m1zz.github.io/SkyDex/th/privacy.html">
+<link rel="alternate" hreflang="vi" href="https://m1zz.github.io/SkyDex/vi/privacy.html">
+<link rel="alternate" hreflang="cs" href="https://m1zz.github.io/SkyDex/cs/privacy.html">
+<link rel="alternate" hreflang="da" href="https://m1zz.github.io/SkyDex/da/privacy.html">
+<link rel="alternate" hreflang="el" href="https://m1zz.github.io/SkyDex/el/privacy.html">
+<link rel="alternate" hreflang="fi" href="https://m1zz.github.io/SkyDex/fi/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/SkyDex/privacy.html">
+<style>
+  :root {
+    --ink: #16202e;
+    --ink-soft: #5d6773;
+    --paper: #f4f5f7;
+    --card: #ffffff;
+    --line: #e2e5ea;
+    --accent: #2f7bbe;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #eef1f5;
+      --ink-soft: #a2acb8;
+      --paper: #0b111c;
+      --card: #141c28;
+      --line: #26303e;
+      --accent: #7fa4ce;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0 20px 72px;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.72 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+      "Pretendard", "Segoe UI", Roboto, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 680px; margin: 0 auto; }
+  h1 {
+    font-size: 28px; line-height: 1.35; letter-spacing: -0.02em;
+    margin: 48px 0 6px; font-weight: 700;
+  }
+  .meta { color: var(--ink-soft); font-size: 15px; }
+  h2 {
+    font-size: 19px; letter-spacing: -0.01em; margin: 40px 0 12px;
+    padding-top: 24px; border-top: 1px solid var(--line);
+  }
+  h3 { font-size: 17px; letter-spacing: -0.01em; margin: 26px 0 10px; }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 1.2em; }
+  li { margin-bottom: 8px; }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  .card {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 16px; padding: 20px 22px; margin: 24px 0 8px;
+  }
+  .card p:last-child { margin-bottom: 0; }
+  .en {
+    margin-top: 44px; padding-top: 24px; border-top: 1px solid var(--line);
+    color: var(--ink-soft); font-size: 15.5px;
+  }
+  .en h2 { border-top: 0; padding-top: 0; color: var(--ink); }
+  footer {
+    margin-top: 48px; padding-top: 22px; border-top: 1px solid var(--line);
+    color: var(--ink-soft); font-size: 15px;
+  }
+  nav.langs { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px 14px; margin: 18px 0 0; font-size: 14px; }
+  nav.langs a { color: var(--ink-soft); text-decoration: none; }
+  nav.langs a[aria-current] { color: var(--ink); font-weight: 600; }
+</style>
+</head>
+<body>
+<main>
+  <nav class="langs" aria-label="Language">
+    <a href="../privacy.html" hreflang="ko" lang="ko">한국어</a>
+    <a href="../en/privacy.html" hreflang="en" lang="en">English</a>
+    <a href="../ja/privacy.html" hreflang="ja" lang="ja">日本語</a>
+    <a href="../zh-Hans/privacy.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <a href="../zh-Hant/privacy.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+    <a href="../ru/privacy.html" hreflang="ru" lang="ru">Русский</a>
+    <a href="../es/privacy.html" hreflang="es" lang="es">Español</a>
+    <a href="../de/privacy.html" hreflang="de" lang="de">Deutsch</a>
+    <a href="../fr/privacy.html" hreflang="fr" lang="fr">Français</a>
+    <a href="../it/privacy.html" hreflang="it" lang="it">Italiano</a>
+    <a href="../pt-BR/privacy.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+    <a href="../th/privacy.html" hreflang="th" lang="th">ไทย</a>
+    <a href="../vi/privacy.html" hreflang="vi" lang="vi">Tiếng Việt</a>
+    <a href="../cs/privacy.html" hreflang="cs" lang="cs">Čeština</a>
+    <a href="../da/privacy.html" hreflang="da" lang="da">Dansk</a>
+    <a href="../el/privacy.html" hreflang="el" lang="el">Ελληνικά</a>
+    <a href="../fi/privacy.html" hreflang="fi" lang="fi" aria-current="true">Suomi</a>
+  </nav>
+
+  <h1>Tietosuojakäytäntö</h1>
+  <p class="meta">iOS-appi <strong>SkyDex</strong> · Voimassa 20. elokuuta 2026 alkaen</p>
+
+  <div class="card">
+    <p><strong>Lyhyesti.</strong> Apissa ei ole tilejä. Kuvasi ja värisi säilytetään vain laitteellasi ja <strong>omassa iCloudissasi</strong>, eikä kehittäjä voi avata kumpaakaan.</p>
+    <p>Kehittäjälle päätyy vain kolme asiaa: <strong>nimettömät käyttötilastot</strong>, <strong>palaute, jonka päätät lähettää</strong>, ja <strong>kaatumisraportit</strong>. Kuvasi ja värisi eivät ole mukana missään niistä. Ei mainoksia, ei seurantaa, ei kolmannen osapuolen analytiikka-SDK:ita.</p>
+  </div>
+
+  <h2>1. Kuvat ja tallenteet</h2>
+  <p>Apissa ottamasi tai kirjastostasi valitsemasi kuvat, niistä poimittu väri, otosaika ja kirjoittamasi muistiinpanot säilytetään <strong>apin tallennustilassa laitteellasi</strong>. Niitä ei lähetetä kehittäjälle, eikä niitä lähetetä millekään kehittäjän palvelimelle. Kehittäjä ei pidä palvelinta.</p>
+
+  <h3>Tallennettu iCloudiin</h3>
+  <p>Jos laitteesi on kirjautunut Apple-tilille, nämä tallenteet säilytetään myös <strong>omassa iCloudissasi</strong> (Applen yksityisessä CloudKit-tietokannassa), jotta keräämäsi taivaat palaavat, jos menetät puhelimesi tai poistat ja asennat apin uudelleen.</p>
+  <ul>
+    <li>Ne tallennetaan <strong>iCloud-tilillesi</strong>, ei kehittäjän palvelimelle. Kehittäjä ei näe tätä dataa eikä säilytä siitä kopiota.</li>
+    <li>Ne siirtyvät vain omien laitteidesi välillä, jotka ovat kirjautuneet samalle Apple-tilille. Niitä ei koskaan näytetä muille, eikä apissa ole lainkaan jakamis- tai julkaisutoimintoa.</li>
+    <li>Tallenteen poistaminen apissa poistaa myös kopion iCloudista.</li>
+    <li>Niiden viemä tila lasketaan iCloud-tallennustilaasi.</li>
+    <li>Jos et ole kirjautunut iCloudiin tai kytket iCloudin pois tältä apilta Asetuksissa, appi pitää kaiken laitteella ja toimii kuten ennen.</li>
+  </ul>
+  <p>Tätä tallennustilaa koskee Applen käytäntö — <a href="https://www.apple.com/legal/privacy/">Applen tietosuojakäytäntö</a>. Jos varmuuskopioit laitteesi (iCloudiin tai tietokoneelle), tämä tallennustila voi sisältyä varmuuskopioon; sekin varmuuskopio kuuluu Apple-tilillesi, eikä kehittäjällä ole siihen pääsyä.</p>
+
+  <h2>2. Sijainti</h2>
+  <p>Sijaintia käytetään täsmälleen kahteen asiaan:</p>
+  <ul>
+    <li><strong>Auringonnousun ja -laskun</strong> laskemiseen siellä, missä olet, jotta laudan viitetaivaan värit osuvat oikeaan vuorokaudenaikaan</li>
+    <li><strong>Päivän tuntikohtaisen ennusteen</strong> (pilvet ja sade) hakemiseen paikkaasi</li>
+  </ul>
+  <p>Pyydetään vain kilometrin tarkkuutta. Viimeisin koordinaatti tallennetaan laitteellesi; sitä ei koskaan liitetä kuvaan eikä lähetetä kehittäjälle.</p>
+  <p>Ennusteen saamiseksi tämä likimääräinen koordinaatti <strong>lähetetään Applen säätietopalveluun (WeatherKit)</strong>. Siirtoa koskevat Applen käytännöt — <a href="https://www.apple.com/legal/privacy/">Applen tietosuojakäytäntö</a>, <a href="https://weatherkit.apple.com/legal-attribution.html">Apple Sää -ilmoitus</a>.</p>
+  <p>Appi toimii hyvin, vaikka kieltäisit sijainnin käytön. Silloin se laskee värit oletuspaikalle (Soul) ja piirtää selkeän taivaan viitteen ilman ennustetta.</p>
+
+  <h2>3. Kamera ja kuvakirjasto</h2>
+  <p>Kamera on päällä vain, kun kuvaat taivasta. Kirjastostasi appi lukee vain sen yhden valitsemasi kuvan; se ei koskaan selaa loppua kirjastoa. Appi ei myöskään tallenna kuvia kirjastoosi.</p>
+
+  <h2>4. Käyttötilastot ja palaute</h2>
+  <p>Jos apin tekijä ei tiedä lainkaan, miten appia käytetään, hän ei voi korjata sitä, mitä pitää korjata. Siksi vastaanotetaan vain kolme asiaa. Kaikki kolme menevät kehittäjän <strong>julkiseen CloudKit-tietokantaan</strong>; erillistä palvelinta ei edelleenkään ole.</p>
+
+  <h3>Nimettömät käyttötilastot</h3>
+  <ul>
+    <li>Lähetettävä: kuinka monta kertaa appi on avattu, kuinka monta päivää asennuksesta on kulunut, apin versio, iOS-versio, laitetyyppi ja kieliasetus.</li>
+    <li>Asennukset erotetaan toisistaan <strong>satunnaisluvulla, jolla ei ole yhteyttä laitteeseesi tai tiliisi</strong>. Apin poistaminen ja uudelleenasennus antaa uuden luvun, jota ei voi yhdistää muihin appeihin tai mainostunnisteeseen.</li>
+    <li><strong>Kuvia, värejä, otosaikoja, muistiinpanoja tai sijaintia ei lähetetä koskaan.</strong></li>
+    <li>Niitä ei käytetä kenenkään tunnistamiseen tai seuraamiseen, eikä niitä luovuteta muille yrityksille.</li>
+  </ul>
+
+  <h3>Palaute</h3>
+  <p>Lähetetään vain, kun lähetät sen itse kohdasta Asetukset → Tuki → <strong>Lähetä palautetta</strong>. Kirjoittamasi lähtee apin ja laitteen versioiden mukana. Vastausta varten annettu nimi ja sähköpostiosoite lähetetään <strong>vain, jos kirjoitat ne itse</strong>; jos jätät ne tyhjiksi, niitä ei tallenneta lainkaan.</p>
+
+  <h3>Kaatumisraportit</h3>
+  <p>Jos appi kaatuu tai jumittuu, kehittäjä saa diagnostiikkatiedot, jotka iOS kerää myöhemmin (missä kaatui, apin ja iOS:n versiot, laitetyyppi). Mukana ei ole edes asennustunnistetta.</p>
+
+  <h2>5. Mitä ei kerätä</h2>
+  <ul>
+    <li>Nimi, sähköposti, puhelinnumero, tili — kirjautumista ei ole lainkaan. (Ainoa poikkeus on vastaustiedot, jotka kirjoitat itse palautteeseen.)</li>
+    <li>Kuvat, värit, otosajat, muistiinpanot — mikään niistä ei sisälly kohdassa 4 lueteltuun</li>
+    <li>Sijainti — sitä ei liitetä tilastoihin eikä palautteeseen</li>
+    <li>Mainostunnisteet, seuranta, profilointi, kolmannen osapuolen analytiikka-SDK:t — ei käytössä</li>
+    <li>Kerätyn myyminen tai luovuttaminen toiselle yritykselle — ei koskaan</li>
+  </ul>
+
+  <h2>6. Säilytys ja poistaminen</h2>
+  <p>Tallenteet säilyvät, kunnes poistat ne. Avaa kuva ja napauta <strong>Poista</strong> tai pyyhkäise vasemmalle Lokissa, niin tallenne poistetaan laitteeltasi ja iCloudista.</p>
+  <p>Apin poistaminen poistaa sen tallennustilan laitteelta ja koordinaatin, mutta <strong>iCloudissa oleva kopio säilyy</strong> — kokoelmasi palauttaminen uudelleenasennuksessa on juuri tämän toiminnon tarkoitus. Poistaaksesi sen kokonaan poista tallenteet apissa tai poista tämän apin tiedot iOS:ssä kohdasta <em>Asetukset → Apple-tili → iCloud → Hallitse tallennustilaa</em>.</p>
+  <p>Kehittäjällä ei ole kopiota, joten erillistä poistopyyntöä kehittäjälle ei tarvitse tehdä.</p>
+
+  <h2>7. Lapset</h2>
+  <p>Tämä appi ei kerää henkilötietoja keneltäkään käyttäjältä, lapset mukaan lukien.</p>
+
+  <h2>8. Muutokset</h2>
+  <p>Jos tämä käytäntö muuttuu, sivu päivitetään yllä olevan voimaantulopäivän kanssa. Muutoshistoria pysyy nähtävillä <a href="https://github.com/M1zz/SkyDex/commits/main/docs/privacy.html">GitHubin commit-lokissa</a>.</p>
+
+  <h2>9. Yhteystiedot</h2>
+  <p><a href="mailto:leeo@kakao.com">leeo@kakao.com</a></p>
+
+  <footer>
+    <a href="./">Yleiskatsaus</a> ·
+    <a href="support.html">Tuki</a> ·
+    <a href="https://github.com/M1zz/SkyDex">GitHub</a>
+  </footer>
+
+</main>
+</body>
+</html>

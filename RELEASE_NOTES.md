@@ -113,6 +113,12 @@ Supportskærmen følger dit sprog
 Διαβάστε τις απαντήσεις στην εφαρμογή
 Η υποστήριξη στη γλώσσα σας
 
+### 앱스토어 (Suomi)
+
+Liitä kuvakaappaus kysymyksiisi
+Lue vastaukset suoraan apissa
+Tukinäyttö käyttää kieltäsi
+
 
 ## 1.0.1
 
