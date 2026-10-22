@@ -124,6 +124,12 @@
             "value" : "ล็อกด้วย Face ID"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face ID kilidi"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -265,6 +271,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ล็อกแอปด้วย Face ID เพื่อให้บันทึกท้องฟ้าของคุณเป็นส่วนตัว"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gökyüzü kayıtlarını özel tutmak için uygulamayı Face ID ile kilitle."
           }
         },
         "vi" : {
@@ -410,6 +422,12 @@
             "value" : "บอก Siri แล้วถ่ายภาพท้องฟ้าได้ทันที"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siri’ye söylemen yeter, hemen gökyüzünü çekebilirsin."
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -551,6 +569,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Siri และคำสั่งลัด"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siri ve Kısayollar"
           }
         },
         "vi" : {
@@ -696,6 +720,12 @@
             "value" : "ใช้ VoiceOver ได้สะดวกขึ้น"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Daha rahat VoiceOver"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -837,6 +867,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "เมื่อขยายขนาดตัวอักษร หน้าจอจะจัดวางใหม่อย่างเรียบร้อยโดยไม่ถูกตัด"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yazıyı büyüttüğünde ekranlar hiçbir şey kesilmeden düzgünce yeniden yerleşir."
           }
         },
         "vi" : {
@@ -982,6 +1018,12 @@
             "value" : "ลบท้องฟ้าของฉันทั้งหมดในครั้งเดียว"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tüm gökyüzülerimi tek seferde sil"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1123,6 +1165,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ใช้แอปได้ในหลายภาษามากขึ้น"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uygulamayı daha fazla dilde kullan."
           }
         },
         "vi" : {
@@ -1268,6 +1316,12 @@
             "value" : "ภาษาเพิ่มเติม"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Daha fazla dil"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1409,6 +1463,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "บันทึกภาพท้องฟ้าที่สะสมไว้เป็นไฟล์ แล้วนำกลับมาใช้ภายหลังได้"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gökyüzü fotoğraflarını bir dosyaya kaydet ve sonra geri yükle."
           }
         },
         "vi" : {
@@ -1554,6 +1614,12 @@
             "value" : "สีและคอนทราสต์ที่ดูสบายขึ้น"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Daha rahat renkler ve kontrast"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1695,6 +1761,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "สำรองและส่งออกรูปภาพ"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fotoğraf yedekleme ve dışa aktarma"
           }
         },
         "vi" : {
@@ -1840,6 +1912,12 @@
             "value" : "แม้แยกสีได้ยาก ก็ยังรู้ว่าแต่ละช่องเป็นท้องฟ้าแบบไหน"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Renkleri ayırt etmek zor olsa bile her karede hangi gökyüzünün olduğunu anlarsın."
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1981,6 +2059,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "เคล็ดลับการใช้งาน"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kullanışlı ipuçları"
           }
         },
         "vi" : {
@@ -2126,6 +2210,12 @@
             "value" : "แจ้งเตือนเมื่อถึงเวลาที่เหมาะจะถ่ายท้องฟ้าที่คุณยังไม่มี"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Henüz toplamadığın bir gökyüzünü yakalamak için uygun zaman geldiğinde haber alırsın."
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2267,6 +2357,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "แนะนำฟีเจอร์ที่มีประโยชน์เบา ๆ ในจังหวะที่เหมาะสม"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faydalı özellikler hakkında tam ihtiyaç duyduğunda hafif ipuçları."
           }
         },
         "vi" : {
@@ -2412,6 +2508,12 @@
             "value" : "ใช้แอปทั้งหมดเป็นภาษาอังกฤษได้ด้วย"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uygulamanın tamamını İngilizce de kullan."
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2553,6 +2655,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "เปิดแอปครั้งแรกหลังอัปเดต จะเห็นว่ามีอะไรใหม่"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Güncellemeden sonra uygulamayı ilk açtığında nelerin yeni olduğunu gör."
           }
         },
         "vi" : {
@@ -2698,6 +2806,12 @@
             "value" : "มีอะไรใหม่"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yenilikler"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2839,6 +2953,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "รองรับภาษาอังกฤษเต็มรูปแบบ"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tam İngilizce desteği"
           }
         },
         "vi" : {
@@ -2984,6 +3104,12 @@
             "value" : "หากต้องการ คุณลบภาพท้องฟ้าที่สะสมไว้ทั้งหมดได้จากในแอป"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İstersen topladığın tüm gökyüzü fotoğraflarını uygulamadan silebilirsin."
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3125,6 +3251,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "คู่มือเริ่มต้นสำหรับผู้ใช้ใหม่"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeni kullanıcılar için kısa bir başlangıç"
           }
         },
         "vi" : {
@@ -3270,6 +3402,12 @@
             "value" : "เปิดแอปครั้งแรกจะเห็นวิธีเติมกระดานท้องฟ้าแบบสั้น ๆ"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uygulamayı ilk açtığında gökyüzü tahtasını nasıl dolduracağını gör."
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3411,6 +3549,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "เลย์เอาต์สำหรับตัวอักษรขนาดใหญ่"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Büyük yazıya uygun düzenler"
           }
         },
         "vi" : {
@@ -3556,6 +3700,12 @@
             "value" : "เลย์เอาต์สำหรับ iPhone แบบพับได้"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Katlanabilir iPhone düzeni"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3697,6 +3847,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ใช้หน้าจอกว้างของ iPhone แบบพับได้เป็นสองส่วนข้างกัน"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Katlanabilir iPhone’un geniş ekranını yan yana iki bölme olarak kullan."
           }
         },
         "vi" : {
@@ -3842,6 +3998,12 @@
             "value" : "การแจ้งเตือนท้องฟ้า"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gökyüzü hatırlatıcıları"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3983,6 +4145,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "VoiceOver อ่านทุกปุ่มและทุกช่องท้องฟ้าตามลำดับที่ถูกต้อง"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver her düğmeyi ve her gökyüzü karesini doğru sırayla okur."
           }
         },
         "vi" : {
@@ -4127,6 +4295,12 @@
             "value" : "ยังไม่มีการถ่ายซ้ำ"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Henüz tekrar yok"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4267,6 +4441,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ถ่ายท้องฟ้าเวลาเดิมในอีกวัน แล้วทั้งสองภาพจะมาเรียงคู่กันที่นี่"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gökyüzünü başka bir gün aynı saatte çek, ikisi burada yan yana durur."
           }
         },
         "vi" : {
@@ -4411,6 +4591,12 @@
             "value" : "เวลาเดียวกัน วันเดียวกัน"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aynı saat, aynı gün"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4551,6 +4737,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "หนึ่งสัปดาห์หรือหนึ่งเดือนวนกลับมาในรูปแบบเดิม มีเพียงท้องฟ้าของเวลานั้นเท่านั้นที่ไม่เคยเหมือนกันเลย"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bir hafta da bir ay da aynı biçimde geri gelir. Yalnızca o saatin gökyüzü hiçbir zaman aynı olmadı."
           }
         },
         "vi" : {
@@ -4695,6 +4887,12 @@
             "value" : "สองท้องฟ้าที่คล้ายกันที่สุด"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En çok benzeyen iki gökyüzü"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4835,6 +5033,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ในสายตา เป็นสีเดียวกัน"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Göze göre aynı renk."
           }
         },
         "vi" : {
@@ -4979,6 +5183,12 @@
             "value" : "แต่ก็ยังเป็นคนละสี"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yine de farklı renkler."
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5119,6 +5329,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "เก็บไว้ใน iCloud ด้วย"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud’da da sakla"
           }
         },
         "vi" : {
@@ -5263,6 +5479,12 @@
             "value" : "ที่เก็บข้อมูล"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Depolama"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5403,6 +5625,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ช่วยเหลือ"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Destek"
           }
         },
         "vi" : {
@@ -5547,6 +5775,12 @@
             "value" : "นักพัฒนา"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geliştirici"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5687,6 +5921,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "สถิติการใช้งาน"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kullanım istatistikleri"
           }
         },
         "vi" : {
@@ -5831,6 +6071,12 @@
             "value" : "จำนวนการติดตั้งและการกระจายของเวอร์ชัน การอ่านต้องมีสิทธิ์อ่านของคอนเทนเนอร์ฮับ"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kurulum sayıları ve sürüm dağılımı. Okumak için hub kapsayıcısında okuma izni gerekir."
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5971,6 +6217,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "การตั้งค่า"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ayarlar"
           }
         },
         "vi" : {
@@ -6115,6 +6367,12 @@
             "value" : "เสร็จสิ้น"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bitti"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6255,6 +6513,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ปิด"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kapat"
           }
         },
         "vi" : {
@@ -6399,6 +6663,12 @@
             "value" : "บันทึก"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kaydet"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6539,6 +6809,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ยกเลิก"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vazgeç"
           }
         },
         "vi" : {
@@ -6683,6 +6959,12 @@
             "value" : "ลบ"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sil"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6823,6 +7105,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ถ่ายท้องฟ้า"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gökyüzünü yakala"
           }
         },
         "vi" : {
@@ -6967,6 +7255,12 @@
             "value" : "บันทึก"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kayıt"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7107,6 +7401,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ท้องฟ้า"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gökyüzü"
           }
         },
         "vi" : {
@@ -7251,6 +7551,12 @@
             "value" : "จานสี"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palet"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7391,6 +7697,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ถ่ายซ้ำ"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tekrarlar"
           }
         },
         "vi" : {
@@ -7535,6 +7847,12 @@
             "value" : "ลบท้องฟ้านี้ไหม"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu gökyüzü silinsin mi?"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7675,6 +7993,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ภาพและสีจะถูกลบไปพร้อมกัน"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fotoğraf ve rengi birlikte kaldırılır."
           }
         },
         "vi" : {
@@ -7819,6 +8143,12 @@
             "value" : "ความคิดตอนมองท้องฟ้านี้\nคำสั้น ๆ ที่อยากฝากไว้"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu gökyüzüne bakarken aklına gelen bir düşünce,\nbırakmak istediğin bir söz"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7961,6 +8291,12 @@
             "value" : "ผ่านท้องฟ้าของอีกวัน"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Başka bir günün gökyüzünden"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8098,6 +8434,12 @@
           }
         },
         "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
+        "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "SkyDex"
@@ -8245,6 +8587,12 @@
             "value" : "กลับไปที่ท้องฟ้าเดิม"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asıl gökyüzüne dön"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8385,6 +8733,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ความเข้มของท้องฟ้าที่ยืมมา"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ödünç alınan gökyüzünün gücü"
           }
         },
         "vi" : {
@@ -8529,6 +8883,12 @@
             "value" : "เขียนสักบรรทัด"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bir satır yaz"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8669,6 +9029,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ช่องนี้จะถูกเติมด้วยท้องฟ้าที่ถ่ายในช่วงเวลานั้นของวัน รูปไหนก็ใส่ได้ตามเดิม สีไม่จำเป็นต้องตรงกัน"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu yer, günün o diliminde çekilmiş bir gökyüzüyle dolar. Her fotoğraf olduğu gibi girer; rengin uyması gerekmez."
           }
         },
         "vi" : {
@@ -8813,6 +9179,12 @@
             "value" : "ให้ท้องฟ้าเต็มกรอบสี่เหลี่ยม"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gökyüzü kareyi doldursun"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8953,6 +9325,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "กำลังมองใต้ท้องฟ้านั้น"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O gökyüzünün altından bakıyor"
           }
         },
         "vi" : {
@@ -9097,6 +9475,12 @@
             "value" : "การเข้าถึงกล้องปิดอยู่"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamera erişimi kapalı"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9237,6 +9621,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "เปิดกล้องในการตั้งค่า แล้วคุณจะถ่ายท้องฟ้าได้ทันที"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gökyüzünü hemen yakalamak için Ayarlar’dan kamerayı aç."
           }
         },
         "vi" : {
@@ -9381,6 +9771,12 @@
             "value" : "เปิดการตั้งค่า"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ayarlar’ı aç"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9521,6 +9917,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ใช้กล้องไม่ได้"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamera kullanılamıyor"
           }
         },
         "vi" : {
@@ -9665,6 +10067,12 @@
             "value" : "ตัวจำลองไม่มีกล้อง รูปที่เลือกจะถูกครอบเป็นสี่เหลี่ยมจัตุรัสเช่นกัน"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simülatörde kamera yok. Seçtiğin fotoğraf da kareye kırpılır."
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9805,6 +10213,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "เลือกจากรูปภาพ"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fotoğraflar’dan seç"
           }
         },
         "vi" : {
@@ -9949,6 +10363,12 @@
             "value" : "ไม่ใช้ฟิลเตอร์"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtresiz"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10089,6 +10509,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ยังไม่มีท้องฟ้าที่สะสมไว้"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Henüz toplanmış gökyüzü yok"
           }
         },
         "vi" : {
@@ -10233,6 +10659,12 @@
             "value" : "เริ่มต้นได้ด้วยการเงยหน้ามองข้างนอกสักครั้ง"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Her şey dışarıya bir kez bakmakla başlar."
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10373,6 +10805,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ยังไม่มีท้องฟ้าสีนี้"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu renkte henüz gökyüzü yok"
           }
         },
         "vi" : {
@@ -10517,6 +10955,12 @@
             "value" : "ถ่ายท้องฟ้าที่ใกล้เคียงสีนี้ แล้วจะมารวมกันที่นี่"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu renge yakın bir gökyüzü yakala, burada birikir."
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10657,6 +11101,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "เงยหน้ามองข้างนอกสักครั้ง แล้วช่องของชั่วโมงนี้จะถูกเติมเต็ม"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dışarıda bir kez yukarı bak, bu saatin karesi dolar."
           }
         },
         "vi" : {
@@ -10801,6 +11251,12 @@
             "value" : "ยังไม่มี"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Henüz yok"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10941,6 +11397,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ท้องฟ้าวันนี้"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bugünün Gökyüzü"
           }
         },
         "vi" : {
@@ -11085,6 +11547,12 @@
             "value" : "กระดานวันนี้"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bugünün Tahtası"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11225,6 +11693,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "วันละสี่สิบแปดช่อง ท้องฟ้าที่สะสมไว้จะเติมช่อง และวงแหวนจะบอกชั่วโมงปัจจุบัน"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Günde kırk sekiz kare. Toplanan gökyüzü kareleri doldurur, geçerli saati bir halka işaretler."
           }
         },
         "vi" : {
@@ -11369,6 +11843,12 @@
             "value" : "ท้องฟ้าที่ถ่ายวันนี้ และมันเป็นสีอะไร"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bugünün gökyüzü ve rengi ne."
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11509,6 +11989,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ท้องฟ้าวันนี้ · ยังไม่มี"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bugünün Gökyüzü · Henüz değil"
           }
         },
         "vi" : {
@@ -11653,6 +12139,12 @@
             "value" : "ท้องฟ้าวันนี้ เล่าเป็นคำพูด"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bugünün gökyüzü, sözcüklerle"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11795,6 +12287,12 @@
             "value" : "ท้องฟ้าวันนี้ ถ้าต้องบรรยายเป็นคำพูด"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bugünün gökyüzü, madem sözcüklerle anlatmak gerekiyor"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11931,6 +12429,12 @@
             "value" : "%lld วัน"
           }
         },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld gün"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12065,6 +12569,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "สีนี้ %lld ภาพ"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu renkte %lld"
           }
         },
         "vi" : {

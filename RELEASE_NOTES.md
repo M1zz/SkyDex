@@ -149,6 +149,12 @@ Bifoga en skärmdump till dina frågor
 Läs våra svar direkt i appen
 Supportskärmen följer ditt språk
 
+### 앱스토어 (Türkçe)
+
+Sorularına ekran görüntüsü ekle
+Cevaplarımızı uygulamadan oku
+Destek ekranı senin dilinde
+
 
 ## 1.0.1
 

@@ -59,6 +59,7 @@ SEARCH = {
     "nl-NL": ("Luchtfotodagboek", "Verzamel 48<br>tinten lucht", "Elke lucht die je pakt, vult een cirkel"),
     "pl": ("Dziennik nieba", "Zbierz 48<br>odcieni nieba", "Każde niebo, które złapiesz, wypełnia kółko"),
     "sv": ("Himmelsdagbok", "Samla 48<br>nyanser av himmel", "Varje himmel du fångar fyller en cirkel"),
+    "tr": ("Gökyüzü fotoğraf günlüğü", "48 gökyüzü<br>tonunu topla", "Çektiğin her gökyüzü bir daireyi doldurur"),
 }
 
 # 헤더는 처음 온 사람에게 한 가지 약속만 한다: 하늘을 찍으면 그 색이 모인다.
@@ -86,6 +87,7 @@ HEADER = {
     "nl-NL": ("Luchtkleuren", "Fotografeer de lucht.<br>Bewaar zijn kleur."),
     "pl": ("Kolory nieba", "Złap niebo.<br>Zachowaj jego kolor."),
     "sv": ("Himlens färger", "Fota himlen.<br>Behåll dess färg."),
+    "tr": ("Gökyüzü renkleri", "Gökyüzünü çek.<br>Rengini sakla."),
 }
 
 # 판에서 실제로 뽑은 색(시뮬레이터 캡처 01-board.png 의 채운 칸). 헤더 오른쪽 장식에 쓴다.

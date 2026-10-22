@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SkyDex — Gizlilik Politikası</title>
+<meta name="description" content="SkyDex iOS uygulamasının gizlilik politikası. Hesap yok; fotoğraflarının yeri cihazın ve kendi iCloud’undur.">
+<link rel="canonical" href="https://m1zz.github.io/SkyDex/tr/privacy.html">
+<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/SkyDex/privacy.html">
+<link rel="alternate" hreflang="en" href="https://m1zz.github.io/SkyDex/en/privacy.html">
+<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/SkyDex/en/privacy.html">
+<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/SkyDex/ja/privacy.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/SkyDex/zh-Hans/privacy.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/SkyDex/zh-Hant/privacy.html">
+<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/SkyDex/ru/privacy.html">
+<link rel="alternate" hreflang="es" href="https://m1zz.github.io/SkyDex/es/privacy.html">
+<link rel="alternate" hreflang="de" href="https://m1zz.github.io/SkyDex/de/privacy.html">
+<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/SkyDex/fr/privacy.html">
+<link rel="alternate" hreflang="it" href="https://m1zz.github.io/SkyDex/it/privacy.html">
+<link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/SkyDex/pt-BR/privacy.html">
+<link rel="alternate" hreflang="th" href="https://m1zz.github.io/SkyDex/th/privacy.html">
+<link rel="alternate" hreflang="vi" href="https://m1zz.github.io/SkyDex/vi/privacy.html">
+<link rel="alternate" hreflang="cs" href="https://m1zz.github.io/SkyDex/cs/privacy.html">
+<link rel="alternate" hreflang="da" href="https://m1zz.github.io/SkyDex/da/privacy.html">
+<link rel="alternate" hreflang="el" href="https://m1zz.github.io/SkyDex/el/privacy.html">
+<link rel="alternate" hreflang="fi" href="https://m1zz.github.io/SkyDex/fi/privacy.html">
+<link rel="alternate" hreflang="id" href="https://m1zz.github.io/SkyDex/id/privacy.html">
+<link rel="alternate" hreflang="nb" href="https://m1zz.github.io/SkyDex/nb/privacy.html">
+<link rel="alternate" hreflang="nl" href="https://m1zz.github.io/SkyDex/nl/privacy.html">
+<link rel="alternate" hreflang="pl" href="https://m1zz.github.io/SkyDex/pl/privacy.html">
+<link rel="alternate" hreflang="sv" href="https://m1zz.github.io/SkyDex/sv/privacy.html">
+<link rel="alternate" hreflang="tr" href="https://m1zz.github.io/SkyDex/tr/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/SkyDex/privacy.html">
+<style>
+  :root {
+    --ink: #16202e;
+    --ink-soft: #5d6773;
+    --paper: #f4f5f7;
+    --card: #ffffff;
+    --line: #e2e5ea;
+    --accent: #2f7bbe;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #eef1f5;
+      --ink-soft: #a2acb8;
+      --paper: #0b111c;
+      --card: #141c28;
+      --line: #26303e;
+      --accent: #7fa4ce;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0 20px 72px;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.72 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+      "Pretendard", "Segoe UI", Roboto, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 680px; margin: 0 auto; }
+  h1 {
+    font-size: 28px; line-height: 1.35; letter-spacing: -0.02em;
+    margin: 48px 0 6px; font-weight: 700;
+  }
+  .meta { color: var(--ink-soft); font-size: 15px; }
+  h2 {
+    font-size: 19px; letter-spacing: -0.01em; margin: 40px 0 12px;
+    padding-top: 24px; border-top: 1px solid var(--line);
+  }
+  h3 { font-size: 17px; letter-spacing: -0.01em; margin: 26px 0 10px; }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 1.2em; }
+  li { margin-bottom: 8px; }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  .card {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 16px; padding: 20px 22px; margin: 24px 0 8px;
+  }
+  .card p:last-child { margin-bottom: 0; }
+  .en {
+    margin-top: 44px; padding-top: 24px; border-top: 1px solid var(--line);
+    color: var(--ink-soft); font-size: 15.5px;
+  }
+  .en h2 { border-top: 0; padding-top: 0; color: var(--ink); }
+  footer {
+    margin-top: 48px; padding-top: 22px; border-top: 1px solid var(--line);
+    color: var(--ink-soft); font-size: 15px;
+  }
+  nav.langs { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px 14px; margin: 18px 0 0; font-size: 14px; }
+  nav.langs a { color: var(--ink-soft); text-decoration: none; }
+  nav.langs a[aria-current] { color: var(--ink); font-weight: 600; }
+</style>
+</head>
+<body>
+<main>
+  <nav class="langs" aria-label="Language">
+    <a href="../privacy.html" hreflang="ko" lang="ko">한국어</a>
+    <a href="../en/privacy.html" hreflang="en" lang="en">English</a>
+    <a href="../ja/privacy.html" hreflang="ja" lang="ja">日本語</a>
+    <a href="../zh-Hans/privacy.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <a href="../zh-Hant/privacy.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+    <a href="../ru/privacy.html" hreflang="ru" lang="ru">Русский</a>
+    <a href="../es/privacy.html" hreflang="es" lang="es">Español</a>
+    <a href="../de/privacy.html" hreflang="de" lang="de">Deutsch</a>
+    <a href="../fr/privacy.html" hreflang="fr" lang="fr">Français</a>
+    <a href="../it/privacy.html" hreflang="it" lang="it">Italiano</a>
+    <a href="../pt-BR/privacy.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+    <a href="../th/privacy.html" hreflang="th" lang="th">ไทย</a>
+    <a href="../vi/privacy.html" hreflang="vi" lang="vi">Tiếng Việt</a>
+    <a href="../cs/privacy.html" hreflang="cs" lang="cs">Čeština</a>
+    <a href="../da/privacy.html" hreflang="da" lang="da">Dansk</a>
+    <a href="../el/privacy.html" hreflang="el" lang="el">Ελληνικά</a>
+    <a href="../fi/privacy.html" hreflang="fi" lang="fi">Suomi</a>
+    <a href="../id/privacy.html" hreflang="id" lang="id">Indonesia</a>
+    <a href="../nb/privacy.html" hreflang="nb" lang="nb">Norsk</a>
+    <a href="../nl/privacy.html" hreflang="nl" lang="nl">Nederlands</a>
+    <a href="../pl/privacy.html" hreflang="pl" lang="pl">Polski</a>
+    <a href="../sv/privacy.html" hreflang="sv" lang="sv">Svenska</a>
+    <a href="../tr/privacy.html" hreflang="tr" lang="tr" aria-current="true">Türkçe</a>
+  </nav>
+
+  <h1>Gizlilik Politikası</h1>
+  <p class="meta">iOS uygulaması <strong>SkyDex</strong> · 20 Ağustos 2026 tarihinden itibaren geçerli</p>
+
+  <div class="card">
+    <p><strong>Kısaca.</strong> Uygulamada hesap yoktur. Fotoğrafların ve renklerin yalnızca cihazında ve <strong>kendi iCloud’unda</strong> tutulur; geliştirici bunların hiçbirini açamaz.</p>
+    <p>Geliştiriciye yalnızca üç şey ulaşır: <strong>anonim kullanım istatistikleri</strong>, <strong>göndermeyi seçtiğin geri bildirimler</strong> ve <strong>çökme raporları</strong>. Fotoğrafların ve renklerin bunların hiçbirinde yer almaz. Reklam yok, izleme yok, üçüncü taraf analiz SDK’sı yok.</p>
+  </div>
+
+  <h2>1. Fotoğraflar ve kayıtlar</h2>
+  <p>Uygulamada çektiğin veya kitaplığından seçtiğin fotoğraflar, bunlardan çıkarılan renk, çekim zamanı ve yazdığın notlar <strong>cihazındaki uygulama depolamasında</strong> tutulur. Geliştiriciye gönderilmez ve geliştiricinin hiçbir sunucusuna yüklenmez. Geliştirici sunucu işletmez.</p>
+
+  <h3>iCloud’da saklanır</h3>
+  <p>Cihazın bir Apple Hesabı’na giriş yaptıysa bu kayıtlar <strong>kendi iCloud’unda</strong> da tutulur (Apple’ın özel CloudKit veritabanı); böylece telefonunu kaybedersen ya da uygulamayı silip yeniden kurarsan topladığın gökyüzüleri geri gelir.</p>
+  <ul>
+    <li>Kayıtlar geliştiricinin bir sunucusunda değil, <strong>iCloud hesabında</strong> saklanır. Geliştirici bu verileri göremez ve bir kopyasını tutmaz.</li>
+    <li>Kayıtlar yalnızca aynı Apple Hesabı’na giriş yapmış kendi cihazlarının arasında dolaşır. Başkalarına asla gösterilmez ve uygulamada paylaşma veya yayınlama özelliği hiç yoktur.</li>
+    <li>Uygulamada bir kaydı silmek iCloud’daki kopyayı da siler.</li>
+    <li>Kapladıkları alan iCloud depolamana sayılır.</li>
+    <li>iCloud’a giriş yapmadıysan veya bu uygulama için Ayarlar’da iCloud’u kapattıysan uygulama her şeyi cihazda tutar ve eskisi gibi çalışır.</li>
+  </ul>
+  <p>Bu depolama Apple’ın politikasına tabidir — <a href="https://www.apple.com/legal/privacy/">Apple Gizlilik Politikası</a>. Cihazını yedeklersen (iCloud’a veya bilgisayara) bu depolama yedeğe dahil olabilir; o yedek de Apple Hesabın’a aittir ve geliştirici ona erişemez.</p>
+
+  <h2>2. Konum</h2>
+  <p>Konum tam olarak iki şey için kullanılır:</p>
+  <ul>
+    <li>Bulunduğun yerdeki <strong>gün doğumu ve gün batımını</strong> hesaplamak; böylece tahtanın referans gökyüzü renkleri günün doğru saatine denk gelir</li>
+    <li>Bulunduğun yer için <strong>bugünün saatlik tahminini</strong> (bulut ve yağmur) almak</li>
+  </ul>
+  <p>Yalnızca kilometre hassasiyeti istenir. Son koordinat cihazında tutulur; bir fotoğrafa asla eklenmez ve geliştiriciye asla gönderilmez.</p>
+  <p>Tahmini almak için bu yaklaşık koordinat <strong>Apple’ın hava durumu hizmetine (WeatherKit) gönderilir</strong>. Bu aktarım Apple’ın politikalarına tabidir — <a href="https://www.apple.com/legal/privacy/">Apple Gizlilik Politikası</a>, <a href="https://weatherkit.apple.com/legal-attribution.html">Apple Hava Durumu bildirimi</a>.</p>
+  <p>Konum erişimini reddedersen uygulama sorunsuz çalışır. O zaman varsayılan bir konum (Seul) için renkleri hesaplar ve tahmin olmadan açık gökyüzü referansı çizer.</p>
+
+  <h2>3. Kamera ve fotoğraf kitaplığı</h2>
+  <p>Kamera yalnızca gökyüzünü çekerken açıktır. Kitaplığından uygulama yalnızca seçtiğin tek fotoğrafı okur; kalanına asla göz atmaz. Uygulama kitaplığına fotoğraf da kaydetmez.</p>
+
+  <h2>4. Kullanım istatistikleri ve geri bildirim</h2>
+  <p>Uygulamayı yapan kişi nasıl kullanıldığını hiç bilmiyorsa düzeltilmesi gerekeni düzeltemez. Bu yüzden yalnızca üç şey alınır. Üçü de geliştiricinin <strong>herkese açık CloudKit veritabanına</strong> gider; hâlâ ayrı bir sunucu yoktur.</p>
+
+  <h3>Anonim kullanım istatistikleri</h3>
+  <ul>
+    <li>Gönderilenler: uygulamanın kaç kez açıldığı, kurulumdan bu yana kaç gün geçtiği, uygulama sürümü, iOS sürümü, cihaz türü ve dil ayarı.</li>
+    <li>Kurulumlar <strong>cihazınla veya hesabınla bağlantısı olmayan rastgele bir sayıyla</strong> ayırt edilir. Uygulamayı silip yeniden kurmak yeni bir sayı verir ve bu sayı başka uygulamalara veya reklam kimliğine bağlanamaz.</li>
+    <li><strong>Fotoğraflar, renkler, çekim zamanları, notlar ve konum asla gönderilmez.</strong></li>
+    <li>Kimseyi tanımlamak veya izlemek için kullanılmaz ve başka bir şirkete verilmez.</li>
+  </ul>
+
+  <h3>Geri bildirim</h3>
+  <p>Yalnızca Ayarlar → Destek → <strong>Geri Bildirim Gönder</strong> yoluyla sen gönderdiğinde iletilir. Yazdıkların uygulama ve cihaz sürümleriyle birlikte gider. Yanıt için ad ve e-posta <strong>yalnızca sen girersen</strong> gönderilir; boş bırakırsan hiç kaydedilmez.</p>
+
+  <h3>Çökme raporları</h3>
+  <p>Uygulama çökerse veya donarsa geliştirici, iOS’un sonradan topladığı tanılamayı alır (nerede çöktüğü, uygulama ve iOS sürümleri, cihaz türü). Bir kurulum tanımlayıcısı bile eklenmez.</p>
+
+  <h2>5. Toplanmayanlar</h2>
+  <ul>
+    <li>Ad, e-posta, telefon numarası, hesap — hiç giriş yok. (Tek istisna, geri bildirime kendin yazdığın yanıt bilgileridir.)</li>
+    <li>Fotoğraflar, renkler, çekim zamanları, notlar — 4. bölümde sayılanların hiçbirinde yer almaz</li>
+    <li>Konum — ne istatistiklere ne de geri bildirime eklenir</li>
+    <li>Reklam kimlikleri, izleme, profilleme, üçüncü taraf analiz SDK’ları — kullanılmaz</li>
+    <li>Toplanan herhangi bir şeyi başka bir şirkete satmak veya vermek — asla</li>
+  </ul>
+
+  <h2>6. Saklama ve silme</h2>
+  <p>Kayıtlar sen silene kadar kalır. Bir fotoğrafı aç ve <strong>Sil</strong>’e dokun ya da Kayıt’ta sola kaydır; o kayıt cihazından ve iCloud’dan kaldırılır.</p>
+  <p>Uygulamayı silmek cihazdaki depolamasını ve koordinatı kaldırır, ancak <strong>iCloud’daki kopya kalır</strong> — yeniden kurduğunda koleksiyonunun geri gelmesi bu özelliğin tüm amacıdır. Tamamen kaldırmak için kayıtları uygulamada sil ya da bu uygulamanın verilerini iOS’ta <em>Ayarlar → Apple Hesabı → iCloud → Depolamayı Yönet</em> altından sil.</p>
+  <p>Geliştiricinin elinde kopya yoktur, bu yüzden geliştiriciye ayrıca bir silme talebi göndermen gerekmez.</p>
+
+  <h2>7. Çocuklar</h2>
+  <p>Bu uygulama çocuklar dahil hiçbir kullanıcıdan kişisel bilgi toplamaz.</p>
+
+  <h2>8. Değişiklikler</h2>
+  <p>Bu politika değişirse bu sayfa yukarıdaki yürürlük tarihiyle birlikte güncellenir. Değişiklik geçmişi <a href="https://github.com/M1zz/SkyDex/commits/main/docs/privacy.html">GitHub commit günlüğünde</a> görünür kalır.</p>
+
+  <h2>9. İletişim</h2>
+  <p><a href="mailto:leeo@kakao.com">leeo@kakao.com</a></p>
+
+  <footer>
+    <a href="./">Genel bakış</a> ·
+    <a href="support.html">Destek</a> ·
+    <a href="https://github.com/M1zz/SkyDex">GitHub</a>
+  </footer>
+
+</main>
+</body>
+</html>

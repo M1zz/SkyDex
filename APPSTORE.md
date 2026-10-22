@@ -1310,3 +1310,60 @@ Välj från Bilder
 En himmel du väljer från biblioteket i stället för kameran beskärs också till en kvadrat.
 
 Inget konto, ingen inloggning. Dina himlar sparas i din egen iCloud, så de följer med dig till en ny enhet.
+
+## tr
+
+### 지원 URL
+
+https://m1zz.github.io/SkyDex/tr/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/SkyDex/tr/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/SkyDex/tr/
+
+### 이름
+
+SkyDex: Gökyüzü Renkleri
+
+### 부제
+
+Gökyüzüyle dolan bir tahta
+
+### 키워드
+
+günlük,renk,palet,moodboard,bulut,gün batımı,gün doğumu,fotoğraf,ruh hali,estetik,widget
+
+### 프로모션 텍스트
+
+Bugün gökyüzü ne renkti? Gökyüzünü her fotoğraflayışında günün kırk sekiz renginden biri dolar ve ona benzeyen bir isim alır.
+
+### 설명
+
+Gökyüzünü her fotoğraflayışında günün kırk sekiz renk karesinden biri dolar.
+Bugünün gökyüzü ne renkti, onu saklamak için küçük bir uygulama: bir fotoğraf ve bir satır.
+
+Tahta, şafağın mavimsi siyahından öğle mavisine, gün batımı turuncusuna ve gecenin morunun içinden geçer: gökyüzünün bir günde uğradığı kırk sekiz renk. Her fotoğraf en yakın kareyi doldurur. Yargı yok, ret yok: çek, içeri girer.
+
+Her gökyüzünün bir adı olur
+Yakaladığın her renk, ince buz, havuz karosu ya da olgun trabzonhurması gibi ona benzeyen birkaç sözcük ve geleneksel renk paletlerinden en yakın adı alır.
+
+Bir satır bırak
+Fotoğraftan hemen sonra bir kart açılır. Yukarı bakarken ne düşündüğünü yaz; tahtada o kareye dokunduğunda yazı yeniden gökyüzünün üstünde belirir.
+
+Boş kareler yolu gösterir
+Boş bir kareye dokun, günün hangi saatine ait olduğunu ve hangi rengi aramak gerektiğini gör.
+
+Kayıt, palet, tekrarlar
+Gökyüzülerini sırayla gez, renklerini mavi, gri ve gün batımı tonları gibi paletlerde topla; başka bir gün aynı saati çek ve iki fotoğrafı yan yana karşılaştır.
+
+Widget’lar
+Bugünün gökyüzünü ve bugünün tahtasını doğrudan Ana Ekran’da gör.
+
+Fotoğraflar’dan seç
+Kamera yerine kitaplığından seçtiğin gökyüzü de kareye kırpılır.
+
+Hesap yok, giriş yok. Gökyüzülerin kendi iCloud’unda saklanır, bu yüzden yeni bir cihaza da seninle gelir.
