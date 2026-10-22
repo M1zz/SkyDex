@@ -33,6 +33,12 @@
             "state" : "translated",
             "value" : "Face ID 锁定"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face ID 鎖定"
+          }
         }
       }
     },
@@ -67,6 +73,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "用 Face ID 锁住 App，守护你的天空记录。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用 Face ID 鎖住 App，守護你的天空紀錄。"
           }
         }
       }
@@ -103,6 +115,12 @@
             "state" : "translated",
             "value" : "对 Siri 说一声，就能马上拍下天空。"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "對 Siri 說一聲，就能立刻拍下天空。"
+          }
         }
       }
     },
@@ -137,6 +155,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Siri 与快捷指令"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siri 與捷徑"
           }
         }
       }
@@ -173,6 +197,12 @@
             "state" : "translated",
             "value" : "让旁白更好用"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "讓旁白更好用"
+          }
         }
       }
     },
@@ -208,6 +238,12 @@
             "state" : "translated",
             "value" : "放大文字后，画面也会重新排版，不会被截断。"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "放大文字後，畫面也會重新排版，不會被截斷。"
+          }
         }
       }
     },
@@ -239,6 +275,12 @@
           }
         },
         "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一次清除我的天空"
+          }
+        },
+        "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "一次清除我的天空"
@@ -278,6 +320,12 @@
             "state" : "translated",
             "value" : "让 App 支持更多语言。"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "讓 App 支援更多語言。"
+          }
         }
       }
     },
@@ -312,6 +360,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "更多语言"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更多語言"
           }
         }
       }
@@ -348,6 +402,12 @@
             "state" : "translated",
             "value" : "把收集的天空照片存成文件，之后还能再导入。"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "把收集的天空照片儲存成檔案，之後還能再匯入。"
+          }
         }
       }
     },
@@ -382,6 +442,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "更易辨认的颜色与对比度"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更好辨認的顏色與對比"
           }
         }
       }
@@ -418,6 +484,12 @@
             "state" : "translated",
             "value" : "照片备份与导出"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "照片備份與匯出"
+          }
         }
       }
     },
@@ -453,6 +525,12 @@
             "state" : "translated",
             "value" : "即使分不清颜色，也能认出每个格子是哪一片天空。"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "即使不易分辨顏色，也能認出每個格子是哪一片天空。"
+          }
         }
       }
     },
@@ -484,6 +562,12 @@
           }
         },
         "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使用小提示"
+          }
+        },
+        "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "使用小提示"
@@ -523,6 +607,12 @@
             "state" : "translated",
             "value" : "在适合拍摄的时候提醒你，去补上还没收集到的天空。"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在適合拍攝的時候提醒你，去補上還沒收集到的天空。"
+          }
         }
       }
     },
@@ -557,6 +647,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "在合适的时候，悄悄告诉你一些好用的功能。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在恰當的時機，悄悄告訴你一些好用的功能。"
           }
         }
       }
@@ -593,6 +689,12 @@
             "state" : "translated",
             "value" : "App 也可以用英语了。"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App 也可以使用英文了。"
+          }
         }
       }
     },
@@ -627,6 +729,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "更新后第一次打开时，告诉你有哪些新内容。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更新後第一次開啟時，告訴你有哪些新內容。"
           }
         }
       }
@@ -663,6 +771,12 @@
             "state" : "translated",
             "value" : "更新内容"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更新消息"
+          }
         }
       }
     },
@@ -697,6 +811,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "支持英语"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "支援英文"
           }
         }
       }
@@ -733,6 +853,12 @@
             "state" : "translated",
             "value" : "需要的话，可以在 App 里删除所有收集的天空照片。"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "需要的話，可以在 App 裡刪除所有收集的天空照片。"
+          }
         }
       }
     },
@@ -767,6 +893,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "新手引导"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新手導覽"
           }
         }
       }
@@ -803,6 +935,12 @@
             "state" : "translated",
             "value" : "第一次打开时，简单演示如何填满天空格板。"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "第一次開啟時，簡單示範如何填滿天空格板。"
+          }
         }
       }
     },
@@ -837,6 +975,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "适配大字体的界面"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "適合大字體的畫面"
           }
         }
       }
@@ -873,6 +1017,12 @@
             "state" : "translated",
             "value" : "可折叠 iPhone 的界面"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "可摺疊 iPhone 的畫面"
+          }
         }
       }
     },
@@ -908,6 +1058,12 @@
             "state" : "translated",
             "value" : "在可折叠 iPhone 的宽屏上，分成左右两栏使用。"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在可摺疊 iPhone 的寬螢幕上，分成左右兩欄使用。"
+          }
         }
       }
     },
@@ -939,6 +1095,12 @@
           }
         },
         "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "天空提醒"
+          }
+        },
+        "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "天空提醒"
@@ -978,6 +1140,12 @@
             "state" : "translated",
             "value" : "旁白会按正确的顺序，完整读出每个按钮和天空格子。"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "旁白會依正確的順序，完整讀出每個按鈕和天空格子。"
+          }
         }
       }
     },
@@ -1011,6 +1179,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "还没有重复"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "還沒有重複"
           }
         }
       }
@@ -1046,6 +1220,12 @@
             "state" : "translated",
             "value" : "在另一天的同一时刻再拍一次天空，两张就会在这里并排出现。"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在另一天的同一時刻再拍一次天空，兩張就會在這裡並排出現。"
+          }
         }
       }
     },
@@ -1079,6 +1259,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "同一时刻，同一天"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "同一時刻，同一天"
           }
         }
       }
@@ -1114,6 +1300,12 @@
             "state" : "translated",
             "value" : "一周也好，一个月也好，都会以同样的样子回来。只有那个时刻的天空，从来没有相同过。"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一週也好，一個月也好，都會以同樣的樣子回來。只有那個時刻的天空，從來沒有相同過。"
+          }
         }
       }
     },
@@ -1147,6 +1339,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "最相似的两片天空"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最相似的兩片天空"
           }
         }
       }
@@ -1182,6 +1380,12 @@
             "state" : "translated",
             "value" : "在眼里，是同一种颜色。"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在眼裡，是同一種顏色。"
+          }
         }
       }
     },
@@ -1215,6 +1419,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "可它们还是不同的颜色。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "可它們還是不同的顏色。"
           }
         }
       }
@@ -1250,6 +1460,12 @@
             "state" : "translated",
             "value" : "同时保存在 iCloud"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "同時保存在 iCloud"
+          }
         }
       }
     },
@@ -1283,6 +1499,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "存储空间"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "儲存空間"
           }
         }
       }
@@ -1318,6 +1540,12 @@
             "state" : "translated",
             "value" : "支持"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "支援"
+          }
         }
       }
     },
@@ -1351,6 +1579,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "开发者"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開發者"
           }
         }
       }
@@ -1386,6 +1620,12 @@
             "state" : "translated",
             "value" : "使用统计"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使用統計"
+          }
         }
       }
     },
@@ -1419,6 +1659,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "安装数量与版本分布。读取需要中心容器的读取权限。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "安裝數量與版本分布。讀取需要中樞容器的讀取權限。"
           }
         }
       }
@@ -1454,6 +1700,12 @@
             "state" : "translated",
             "value" : "设置"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定"
+          }
         }
       }
     },
@@ -1484,6 +1736,12 @@
           }
         },
         "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完成"
+          }
+        },
+        "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "完成"
@@ -1522,6 +1780,12 @@
             "state" : "translated",
             "value" : "关闭"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "關閉"
+          }
         }
       }
     },
@@ -1556,6 +1820,12 @@
             "state" : "translated",
             "value" : "存储"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "儲存"
+          }
         }
       }
     },
@@ -1586,6 +1856,12 @@
           }
         },
         "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取消"
+          }
+        },
+        "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "取消"
@@ -1624,6 +1900,12 @@
             "state" : "translated",
             "value" : "删除"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "刪除"
+          }
         }
       }
     },
@@ -1654,6 +1936,12 @@
           }
         },
         "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "拍天空"
+          }
+        },
+        "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "拍天空"
@@ -1692,6 +1980,12 @@
             "state" : "translated",
             "value" : "记录"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "紀錄"
+          }
         }
       }
     },
@@ -1722,6 +2016,12 @@
           }
         },
         "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "天空"
+          }
+        },
+        "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "天空"
@@ -1760,6 +2060,12 @@
             "state" : "translated",
             "value" : "调色板"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "調色盤"
+          }
         }
       }
     },
@@ -1793,6 +2099,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "重复"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重複"
           }
         }
       }
@@ -1828,6 +2140,12 @@
             "state" : "translated",
             "value" : "要删除这片天空吗？"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "要刪除這片天空嗎？"
+          }
         }
       }
     },
@@ -1861,6 +2179,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "照片和颜色会一起消失。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "照片和顏色會一起消失。"
           }
         }
       }
@@ -1896,6 +2220,12 @@
             "state" : "translated",
             "value" : "看着这片天空时的想法，\n想留下的一句话"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "看著這片天空時的想法，\n想留下的一句話"
+          }
         }
       }
     },
@@ -1926,6 +2256,12 @@
           }
         },
         "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "借另一天的天空"
+          }
+        },
+        "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "借另一天的天空"
@@ -1964,6 +2300,12 @@
             "state" : "translated",
             "value" : "SkyDex"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
         }
       }
     },
@@ -1997,6 +2339,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "回到原来的天空"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "回到原本的天空"
           }
         }
       }
@@ -2032,6 +2380,12 @@
             "state" : "translated",
             "value" : "借来的天空的浓度"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "借來的天空的濃度"
+          }
         }
       }
     },
@@ -2065,6 +2419,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "写一句话"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "寫一句話"
           }
         }
       }
@@ -2100,6 +2460,12 @@
             "state" : "translated",
             "value" : "这个位置会由那个时段拍的天空填上。任何照片都会原样放进去，颜色不必吻合。"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "這個位置會由那個時段拍的天空填上。任何照片都會原樣放進去，顏色不必吻合。"
+          }
         }
       }
     },
@@ -2133,6 +2499,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "让天空铺满方形"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "讓天空鋪滿方形"
           }
         }
       }
@@ -2168,6 +2540,12 @@
             "state" : "translated",
             "value" : "正在那片天空下观看"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在那片天空下觀看"
+          }
         }
       }
     },
@@ -2201,6 +2579,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "相机权限已关闭"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "相機權限已關閉"
           }
         }
       }
@@ -2236,6 +2620,12 @@
             "state" : "translated",
             "value" : "在“设置”中打开相机，就能马上拍天空。"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在「設定」中開啟相機，就能立刻拍天空。"
+          }
         }
       }
     },
@@ -2269,6 +2659,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "打开设置"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "打開設定"
           }
         }
       }
@@ -2304,6 +2700,12 @@
             "state" : "translated",
             "value" : "无法使用相机"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法使用相機"
+          }
         }
       }
     },
@@ -2337,6 +2739,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "模拟器没有相机。从照片中选取的图片也会裁成方形放入。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "模擬器沒有相機。從照片中選取的圖片也會裁成方形放入。"
           }
         }
       }
@@ -2372,6 +2780,12 @@
             "state" : "translated",
             "value" : "从照片中选取"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "從照片中選取"
+          }
         }
       }
     },
@@ -2405,6 +2819,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "无滤镜"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無濾鏡"
           }
         }
       }
@@ -2440,6 +2860,12 @@
             "state" : "translated",
             "value" : "还没有收集到天空"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "還沒有收集到天空"
+          }
         }
       }
     },
@@ -2473,6 +2899,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "从抬头看一眼外面开始。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "從抬頭看一眼外面開始。"
           }
         }
       }
@@ -2508,6 +2940,12 @@
             "state" : "translated",
             "value" : "还没有这种颜色的天空"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "還沒有這種顏色的天空"
+          }
         }
       }
     },
@@ -2541,6 +2979,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "拍下接近这种颜色的天空，就会收集在这里。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "拍下接近這種顏色的天空，就會收集在這裡。"
           }
         }
       }
@@ -2576,6 +3020,12 @@
             "state" : "translated",
             "value" : "到外面抬头看一眼，这个时刻的格子就会被填上。"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "到外面抬頭看一眼，這個時刻的格子就會被填上。"
+          }
         }
       }
     },
@@ -2610,6 +3060,12 @@
             "state" : "translated",
             "value" : "暂时没有"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "目前沒有"
+          }
         }
       }
     },
@@ -2640,6 +3096,12 @@
           }
         },
         "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今日天空"
+          }
+        },
+        "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "今日天空"
@@ -2678,6 +3140,12 @@
             "state" : "translated",
             "value" : "今日格板"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今日格板"
+          }
         }
       }
     },
@@ -2711,6 +3179,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "一天四十八格。收集到的天空会填上，当前时刻则标有一个圆环。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一天四十八格。收集到的天空會填上，目前時刻則標有一個圓環。"
           }
         }
       }
@@ -2746,6 +3220,12 @@
             "state" : "translated",
             "value" : "今天拍的天空，以及它是什么颜色。"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今天拍的天空，以及它是什麼顏色。"
+          }
         }
       }
     },
@@ -2779,6 +3259,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "今日天空 · 尚未拍摄"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今日天空 · 尚未拍攝"
           }
         }
       }
@@ -2814,6 +3300,12 @@
             "state" : "translated",
             "value" : "用话来说，今天的天空"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用話來說，今天的天空"
+          }
         }
       }
     },
@@ -2848,6 +3340,12 @@
             "state" : "translated",
             "value" : "今天的天空，非要说的话"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今天的天空，硬要說的話"
+          }
         }
       }
     },
@@ -2872,6 +3370,12 @@
           }
         },
         "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld 天"
+          }
+        },
+        "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld 天"
@@ -2903,6 +3407,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "这种颜色 %lld 张"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "這種顏色 %lld 張"
           }
         }
       }
