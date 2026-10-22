@@ -16,6 +16,12 @@
             "value" : "Face ID lock"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bloqueo con Face ID"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -61,6 +67,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lock the app with Face ID to keep your skies private."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bloquea la app con Face ID para mantener tus cielos en privado."
           }
         },
         "ja" : {
@@ -110,6 +122,12 @@
             "value" : "Ask Siri to start snapping the sky right away."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dile a Siri que quieres fotografiar el cielo y empieza al instante."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -155,6 +173,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Siri and Shortcuts"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siri y Atajos"
           }
         },
         "ja" : {
@@ -204,6 +228,12 @@
             "value" : "Better VoiceOver support"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mejor compatibilidad con VoiceOver"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -249,6 +279,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Screens rearrange neatly instead of getting cut off when you enlarge text."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si agrandas el texto, las pantallas se reacomodan sin que nada se corte."
           }
         },
         "ja" : {
@@ -298,6 +334,12 @@
             "value" : "Erase all my skies"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Borrar todos mis cielos"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -343,6 +385,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Use the app in more languages."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usa la app en más idiomas."
           }
         },
         "ja" : {
@@ -392,6 +440,12 @@
             "value" : "More languages"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Más idiomas"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -437,6 +491,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Save your sky photos to a file and bring them back later."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guarda tus fotos de cielo en un archivo y recupéralas más adelante."
           }
         },
         "ja" : {
@@ -486,6 +546,12 @@
             "value" : "Easier colours and contrast"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colores y contraste más cómodos"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -531,6 +597,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Photo backup and export"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copia de seguridad y exportación de fotos"
           }
         },
         "ja" : {
@@ -580,6 +652,12 @@
             "value" : "Tell which sky each square holds, even if colours are hard to tell apart."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aunque cueste distinguir los colores, sabrás qué cielo guarda cada casilla."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -625,6 +703,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Handy tips"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consejos útiles"
           }
         },
         "ja" : {
@@ -674,6 +758,12 @@
             "value" : "Get a nudge when it’s a good time to catch a sky you haven’t collected yet."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Te avisamos cuando es buen momento para captar un cielo que aún te falta."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -719,6 +809,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gentle hints about useful features, right when you need them."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pequeñas pistas sobre funciones útiles, justo cuando las necesitas."
           }
         },
         "ja" : {
@@ -768,6 +864,12 @@
             "value" : "Use the whole app in English."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usa la app también en inglés."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -813,6 +915,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "The first time you open the app after an update, see what’s new."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La primera vez que abras la app tras una actualización, verás las novedades."
           }
         },
         "ja" : {
@@ -862,6 +970,12 @@
             "value" : "What’s new"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Novedades"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -907,6 +1021,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Full English support"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compatibilidad total con inglés"
           }
         },
         "ja" : {
@@ -956,6 +1076,12 @@
             "value" : "Delete every sky photo you’ve collected, right from the app."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si quieres, puedes borrar desde la app todas las fotos de cielo que has reunido."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1001,6 +1127,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "A quick start for new users"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guía rápida para nuevos usuarios"
           }
         },
         "ja" : {
@@ -1050,6 +1182,12 @@
             "value" : "The first time you open the app, see how to fill your sky board."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La primera vez que abras la app, verás cómo llenar tu tablero de cielos."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1095,6 +1233,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Layouts for larger text"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pantallas para texto grande"
           }
         },
         "ja" : {
@@ -1144,6 +1288,12 @@
             "value" : "Foldable iPhone layout"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pantalla para iPhone plegable"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1189,6 +1339,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Use the wide screen of a foldable iPhone as two side-by-side panes."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aprovecha la pantalla ancha de un iPhone plegable en dos paneles lado a lado."
           }
         },
         "ja" : {
@@ -1238,6 +1394,12 @@
             "value" : "Sky reminders"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recordatorios de cielo"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1283,6 +1445,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "VoiceOver reads every button and sky square, in the right order."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver lee todos los botones y casillas de cielo, en el orden correcto."
           }
         },
         "ja" : {
@@ -1331,6 +1499,12 @@
             "value" : "No repeats yet"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aún no hay repeticiones"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1375,6 +1549,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Capture the sky at the same time on another day, and the two will stand side by side here."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si captas el cielo a la misma hora otro día, los dos quedarán juntos aquí."
           }
         },
         "ja" : {
@@ -1423,6 +1603,12 @@
             "value" : "Same hour, same day"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La misma hora, el mismo día"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1467,6 +1653,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "A week or a month comes round in the same shape. Only the sky at that hour has never once been the same."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Una semana o un mes vuelven con la misma forma. Solo el cielo de esa hora nunca ha sido igual."
           }
         },
         "ja" : {
@@ -1515,6 +1707,12 @@
             "value" : "The two closest skies"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Los dos cielos más parecidos"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1559,6 +1757,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "To the eye, it's the same colour."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A simple vista, es el mismo color."
           }
         },
         "ja" : {
@@ -1607,6 +1811,12 @@
             "value" : "Still, they're different colours."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aun así, son colores distintos."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1651,6 +1861,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Also keep in iCloud"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guardar también en iCloud"
           }
         },
         "ja" : {
@@ -1699,6 +1915,12 @@
             "value" : "Storage"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Almacenamiento"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1743,6 +1965,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Support"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Soporte"
           }
         },
         "ja" : {
@@ -1791,6 +2019,12 @@
             "value" : "Developer"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desarrollador"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1835,6 +2069,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Usage statistics"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estadísticas de uso"
           }
         },
         "ja" : {
@@ -1883,6 +2123,12 @@
             "value" : "Install counts and version spread. Reading them needs read access to the hub container."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Número de instalaciones y reparto por versiones. Para leerlos se necesita acceso de lectura al contenedor del hub."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1927,6 +2173,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Settings"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajustes"
           }
         },
         "ja" : {
@@ -1975,6 +2227,12 @@
             "value" : "Done"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Listo"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2019,6 +2277,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Close"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cerrar"
           }
         },
         "ja" : {
@@ -2067,6 +2331,12 @@
             "value" : "Save"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guardar"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2111,6 +2381,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cancel"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
           }
         },
         "ja" : {
@@ -2159,6 +2435,12 @@
             "value" : "Delete"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2203,6 +2485,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Capture the sky"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Captar el cielo"
           }
         },
         "ja" : {
@@ -2251,6 +2539,12 @@
             "value" : "Log"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registro"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2295,6 +2589,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sky"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cielo"
           }
         },
         "ja" : {
@@ -2343,6 +2643,12 @@
             "value" : "Palette"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paleta"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2387,6 +2693,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Repeats"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Repeticiones"
           }
         },
         "ja" : {
@@ -2435,6 +2747,12 @@
             "value" : "Delete this sky?"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Eliminar este cielo?"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2479,6 +2797,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "The photo and its colour will both be removed."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La foto y su color se borrarán juntos."
           }
         },
         "ja" : {
@@ -2527,6 +2851,12 @@
             "value" : "A thought you had looking at this sky,\na word you'd like to leave"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un pensamiento al mirar este cielo,\nuna frase que quieras dejar"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2573,6 +2903,12 @@
             "value" : "Through another day's sky"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Con el cielo de otro día"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2614,6 +2950,12 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "SkyDex"
@@ -2665,6 +3007,12 @@
             "value" : "Back to the original sky"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Volver al cielo original"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2709,6 +3057,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Strength of the borrowed sky"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intensidad del cielo prestado"
           }
         },
         "ja" : {
@@ -2757,6 +3111,12 @@
             "value" : "Write a line"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escribe una línea"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2801,6 +3161,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "This spot fills with a sky taken in that part of the day. Any photo goes in as it is; the colour doesn't have to match."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este lugar se llena con un cielo captado en esa parte del día. Cualquier foto entra tal cual; el color no tiene por qué coincidir."
           }
         },
         "ja" : {
@@ -2849,6 +3215,12 @@
             "value" : "Let the sky fill the square"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que el cielo llene el cuadrado"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2893,6 +3265,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Looking under that sky"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mirando bajo ese cielo"
           }
         },
         "ja" : {
@@ -2941,6 +3319,12 @@
             "value" : "Camera access is off"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El acceso a la cámara está desactivado"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2985,6 +3369,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Turn the camera on in Settings to capture the sky right away."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activa la cámara en Ajustes para captar el cielo al instante."
           }
         },
         "ja" : {
@@ -3033,6 +3423,12 @@
             "value" : "Open Settings"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir Ajustes"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3077,6 +3473,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Camera unavailable"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cámara no disponible"
           }
         },
         "ja" : {
@@ -3125,6 +3527,12 @@
             "value" : "The simulator has no camera. A photo you pick is cropped to a square as well."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El simulador no tiene cámara. Una foto que elijas también se recorta en cuadrado."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3169,6 +3577,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Choose from Photos"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elegir de Fotos"
           }
         },
         "ja" : {
@@ -3217,6 +3631,12 @@
             "value" : "No filter"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin filtro"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3261,6 +3681,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "No skies collected yet"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aún no has reunido ningún cielo"
           }
         },
         "ja" : {
@@ -3309,6 +3735,12 @@
             "value" : "It starts with a glance up outside."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todo empieza con una mirada hacia arriba."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3353,6 +3785,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "No sky in this colour yet"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todavía no hay un cielo de este color"
           }
         },
         "ja" : {
@@ -3401,6 +3839,12 @@
             "value" : "Capture a sky close to this colour and it will gather here."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Capta un cielo parecido a este color y se acumulará aquí."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3445,6 +3889,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Look up once outside and this hour's cell fills in."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mira hacia arriba una vez y la casilla de esta hora se llenará."
           }
         },
         "ja" : {
@@ -3493,6 +3943,12 @@
             "value" : "Nothing yet"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todavía nada"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3537,6 +3993,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Today's Sky"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cielo de hoy"
           }
         },
         "ja" : {
@@ -3585,6 +4047,12 @@
             "value" : "Today's Board"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tablero de hoy"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3629,6 +4097,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Forty-eight cells a day. Collected skies fill in, and a ring marks the current hour."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cuarenta y ocho casillas al día. Los cielos reunidos las llenan y un anillo marca la hora actual."
           }
         },
         "ja" : {
@@ -3677,6 +4151,12 @@
             "value" : "Today's sky, and what colour it is."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El cielo de hoy y de qué color es."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3721,6 +4201,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Today's Sky · Not yet"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cielo de hoy · Aún no"
           }
         },
         "ja" : {
@@ -3769,6 +4255,12 @@
             "value" : "Today's sky, in words"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El cielo de hoy, en palabras"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3813,6 +4305,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Today's sky, if you must put it in words"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El cielo de hoy, si hubiera que ponerlo en palabras"
           }
         },
         "ja" : {
@@ -3861,6 +4359,12 @@
             "value" : "%lld days"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld días"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3899,6 +4403,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld in this colour"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld en este color"
           }
         },
         "ja" : {

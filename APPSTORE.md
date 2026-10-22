@@ -398,3 +398,60 @@ SkyDex: небо каждый день
 Небо, выбранное из медиатеки вместо камеры, тоже обрезается до квадрата.
 
 Без аккаунта и без входа. Собранное небо хранится в вашем iCloud и переезжает вместе с вами на новое устройство.
+
+## es-MX
+
+### 지원 URL
+
+https://m1zz.github.io/SkyDex/es/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/SkyDex/es/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/SkyDex/es/
+
+### 이름
+
+SkyDex: Colores del cielo
+
+### 부제
+
+Un tablero lleno de cielos
+
+### 키워드
+
+diario,color,paleta,moodboard,nubes,atardecer,amanecer,fotos,ánimo,estética,widget,anochecer,paseo
+
+### 프로모션 텍스트
+
+¿De qué color fue el cielo de hoy? Cada vez que fotografías el cielo, se llena una de las cuarenta y ocho casillas del día y recibe un nombre que se le parece.
+
+### 설명
+
+Cada vez que fotografías el cielo, se llena una de las cuarenta y ocho casillas de color del día.
+Una app sencilla para guardar de qué color fue el cielo de hoy: una foto y una línea.
+
+El tablero va del azul oscuro del amanecer al azul del mediodía, el naranja del atardecer y el violeta de la noche: cuarenta y ocho colores por los que pasa el cielo en un día. Cada foto llena la casilla más cercana. Sin juicios ni rechazos: tomas la foto y entra.
+
+Cada cielo recibe un nombre
+Cada color que captas recibe unas palabras que se le parecen, como hielo fino, azulejo de alberca o caqui maduro, además del nombre más cercano de las paletas de colores tradicionales.
+
+Deja una línea
+Justo después de la foto se abre una tarjeta. Escribe lo que pensaste al mirar arriba y volverá a flotar sobre el cielo cada vez que toques esa casilla del tablero.
+
+Las casillas vacías te guían
+Toca una casilla vacía para ver a qué hora del día corresponde y qué color buscar.
+
+Registro, paleta y repeticiones
+Recorre tus cielos en orden, reúne tus colores en paletas como azules, grises y tonos de atardecer, y fotografía la misma hora otro día para comparar las dos fotos lado a lado.
+
+Widgets
+Mira el cielo de hoy y el tablero de hoy directamente en tu pantalla de inicio.
+
+Elige desde Fotos
+Un cielo elegido de tu fototeca en lugar de la cámara también se recorta en cuadrado.
+
+Sin cuenta ni inicio de sesión. Tus cielos se guardan en tu propio iCloud, así que te acompañan a un dispositivo nuevo.

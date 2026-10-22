@@ -53,6 +53,12 @@ Support screen uses your language
 Ответы на вопросы читайте в приложении
 Экран поддержки — на языке устройства
 
+### 앱스토어 (Español)
+
+Adjunta una captura a tus consultas
+Lee nuestras respuestas dentro de la app
+Soporte en el idioma de tu dispositivo
+
 
 ## 1.0.1
 
