@@ -569,3 +569,60 @@ Choisir dans Photos
 Un ciel choisi dans votre photothèque plutôt qu’avec l’appareil photo est lui aussi recadré en carré.
 
 Pas de compte, pas de connexion. Vos ciels sont conservés dans votre propre iCloud et vous suivent sur un nouvel appareil.
+
+## it
+
+### 지원 URL
+
+https://m1zz.github.io/SkyDex/it/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/SkyDex/it/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/SkyDex/it/
+
+### 이름
+
+SkyDex: Colori del cielo
+
+### 부제
+
+Un tabellone pieno di cieli
+
+### 키워드
+
+diario,colore,tavolozza,moodboard,nuvole,tramonto,alba,foto,umore,estetica,widget,crepuscolo
+
+### 프로모션 텍스트
+
+Di che colore era il cielo oggi? Ogni volta che fotografi il cielo, una delle quarantotto caselle del giorno si riempie e riceve un nome che gli somiglia.
+
+### 설명
+
+Ogni volta che fotografi il cielo, una delle quarantotto caselle di colore del giorno si riempie.
+Una piccola app per conservare di che colore era il cielo di oggi: una foto e una riga.
+
+Il tabellone va dal blu notte dell’alba al blu di mezzogiorno, all’arancione del tramonto, fino al viola della notte: quarantotto colori che il cielo attraversa in un giorno. Ogni foto riempie la casella più vicina. Niente giudizi, niente rifiuti: scatti e va dentro.
+
+Ogni cielo riceve un nome
+A ogni colore che catturi vengono date alcune parole che gli somigliano, come ghiaccio sottile, piastrella di piscina o cachi maturo, più il nome più vicino tra le palette di colori tradizionali.
+
+Lascia una riga
+Subito dopo lo scatto si apre una scheda. Scrivi cosa pensavi guardando in alto: tornerà a comparire sopra il cielo ogni volta che tocchi quella casella sul tabellone.
+
+Le caselle vuote ti indicano la strada
+Tocca una casella vuota per vedere a quale momento del giorno corrisponde e quale colore cercare.
+
+Diario, tavolozza, ripetizioni
+Sfoglia i tuoi cieli in ordine, raccogli i colori in tavolozze come azzurri, grigi e toni del tramonto, e fotografa la stessa ora in un altro giorno per confrontare le due foto affiancate.
+
+Widget
+Guarda il cielo di oggi e il tabellone di oggi direttamente dalla schermata Home.
+
+Scegli da Foto
+Anche un cielo scelto dalla libreria al posto della fotocamera viene ritagliato in quadrato.
+
+Nessun account, nessun accesso. I tuoi cieli sono conservati nel tuo iCloud, così ti seguono su un nuovo dispositivo.

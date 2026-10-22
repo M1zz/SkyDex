@@ -71,6 +71,12 @@ Joignez une capture à vos questions
 Lisez nos réponses dans l’app
 L’écran d’assistance suit votre langue
 
+### 앱스토어 (Italiano)
+
+Allega uno screenshot alle tue domande
+Leggi le nostre risposte nell’app
+Assistenza nella lingua del tuo iPhone
+
 
 ## 1.0.1
 
