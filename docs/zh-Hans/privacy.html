@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SkyDex — 隐私政策</title>
+<meta name="description" content="iOS App SkyDex 的隐私政策。没有账号，你的照片只保存在你的设备和你自己的 iCloud 中。">
+<link rel="canonical" href="https://m1zz.github.io/SkyDex/zh-Hans/privacy.html">
+<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/SkyDex/privacy.html">
+<link rel="alternate" hreflang="en" href="https://m1zz.github.io/SkyDex/en/privacy.html">
+<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/SkyDex/en/privacy.html">
+<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/SkyDex/ja/privacy.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/SkyDex/zh-Hans/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/SkyDex/privacy.html">
+<style>
+  :root {
+    --ink: #16202e;
+    --ink-soft: #5d6773;
+    --paper: #f4f5f7;
+    --card: #ffffff;
+    --line: #e2e5ea;
+    --accent: #2f7bbe;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #eef1f5;
+      --ink-soft: #a2acb8;
+      --paper: #0b111c;
+      --card: #141c28;
+      --line: #26303e;
+      --accent: #7fa4ce;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0 20px 72px;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.72 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+      "Pretendard", "Segoe UI", Roboto, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 680px; margin: 0 auto; }
+  h1 {
+    font-size: 28px; line-height: 1.35; letter-spacing: -0.02em;
+    margin: 48px 0 6px; font-weight: 700;
+  }
+  .meta { color: var(--ink-soft); font-size: 15px; }
+  h2 {
+    font-size: 19px; letter-spacing: -0.01em; margin: 40px 0 12px;
+    padding-top: 24px; border-top: 1px solid var(--line);
+  }
+  h3 { font-size: 17px; letter-spacing: -0.01em; margin: 26px 0 10px; }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 1.2em; }
+  li { margin-bottom: 8px; }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  .card {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 16px; padding: 20px 22px; margin: 24px 0 8px;
+  }
+  .card p:last-child { margin-bottom: 0; }
+  .en {
+    margin-top: 44px; padding-top: 24px; border-top: 1px solid var(--line);
+    color: var(--ink-soft); font-size: 15.5px;
+  }
+  .en h2 { border-top: 0; padding-top: 0; color: var(--ink); }
+  footer {
+    margin-top: 48px; padding-top: 22px; border-top: 1px solid var(--line);
+    color: var(--ink-soft); font-size: 15px;
+  }
+  nav.langs { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px 14px; margin: 18px 0 0; font-size: 14px; }
+  nav.langs a { color: var(--ink-soft); text-decoration: none; }
+  nav.langs a[aria-current] { color: var(--ink); font-weight: 600; }
+</style>
+</head>
+<body>
+<main>
+  <nav class="langs" aria-label="Language">
+    <a href="../privacy.html" hreflang="ko" lang="ko">한국어</a>
+    <a href="../en/privacy.html" hreflang="en" lang="en">English</a>
+    <a href="../ja/privacy.html" hreflang="ja" lang="ja">日本語</a>
+    <a href="../zh-Hans/privacy.html" hreflang="zh-Hans" lang="zh-Hans" aria-current="true">简体中文</a>
+  </nav>
+
+  <h1>隐私政策</h1>
+  <p class="meta">iOS App <strong>SkyDex</strong> · 2026 年 8 月 20 日生效</p>
+
+  <div class="card">
+    <p><strong>简而言之。</strong>本 App 没有账号。你的照片和颜色只保存在你的设备和<strong>你自己的 iCloud</strong> 中，开发者两处都无法打开。</p>
+    <p>只有三样东西会到达开发者：<strong>匿名使用统计</strong>、<strong>你主动发送的反馈</strong>和<strong>崩溃报告</strong>。你的照片和颜色不在其中。没有广告，没有追踪，没有第三方分析 SDK。</p>
+  </div>
+
+  <h2>1. 照片与记录</h2>
+  <p>你在 App 中拍摄或从照片图库选取的照片、从中提取的颜色、拍摄时间以及你写下的备注，都保存在<strong>你设备上 App 的存储空间</strong>中。它们不会发送给开发者，也不会上传到开发者的任何服务器。开发者没有运营服务器。</p>
+
+  <h3>保存在 iCloud</h3>
+  <p>如果你的设备已登录 Apple 账户，这些记录也会保存在<strong>你自己的 iCloud</strong>（Apple 的 CloudKit 私有数据库）中，这样即使丢了手机，或删除后重新安装 App，收集的天空也能找回来。</p>
+  <ul>
+    <li>它们保存在<strong>你的 iCloud 账户</strong>里，而不是开发者的服务器上。开发者无法查看这些数据，也没有任何副本。</li>
+    <li>它们只会在登录同一 Apple 账户的你自己的设备之间同步，不会向他人展示，而且本 App 根本没有分享或发布功能。</li>
+    <li>在 App 中删除一条记录，iCloud 中的副本也会一并删除。</li>
+    <li>它们占用的空间会计入你的 iCloud 储存空间。</li>
+    <li>如果你没有登录 iCloud，或在“设置”中关闭了本 App 的 iCloud，App 会把所有内容保留在设备上，照常使用。</li>
+  </ul>
+  <p>此存储受 Apple 政策约束 — <a href="https://www.apple.com/legal/privacy/">Apple 隐私政策</a>。如果你备份设备（到 iCloud 或电脑），这些存储内容可能包含在备份中；该备份同样属于你的 Apple 账户，开发者无法访问。</p>
+
+  <h2>2. 位置信息</h2>
+  <p>位置信息只用于两件事：</p>
+  <ul>
+    <li>计算你所在地的<strong>日出和日落</strong>，让色板的参考天空色在正确的时刻出现</li>
+    <li>获取你所在地<strong>今天的逐小时预报</strong>（云和降雨）</li>
+  </ul>
+  <p>只请求公里级的精度。最后一次的坐标保存在你的设备上，不会附加到照片上，也不会发送给开发者。</p>
+  <p>为了获取预报，这个大致的坐标会<strong>发送给 Apple 的天气服务（WeatherKit）</strong>。该传输受 Apple 政策约束 — <a href="https://www.apple.com/legal/privacy/">Apple 隐私政策</a>、<a href="https://weatherkit.apple.com/legal-attribution.html">Apple 天气声明</a>。</p>
+  <p>如果你拒绝位置访问，App 也能正常使用。此时会按默认地点（首尔）计算颜色，并绘制不含预报的晴天参考。</p>
+
+  <h2>3. 相机与照片图库</h2>
+  <p>相机只在你拍摄天空时开启。对于照片图库，App 只读取你选取的那一张照片，不会浏览图库的其他内容。App 也不会把照片存入你的图库。</p>
+
+  <h2>4. 使用统计与反馈</h2>
+  <p>如果做 App 的人完全不知道它是怎么被使用的，就没法修好该修的地方。所以只会收到三样东西。这三样都会发送到开发者的 <strong>CloudKit 公共数据库</strong>，依然没有单独的服务器。</p>
+
+  <h3>匿名使用统计</h3>
+  <ul>
+    <li>发送的内容：App 被打开的次数、安装后的天数、App 版本、iOS 版本、设备类型和语言设置。</li>
+    <li>不同的安装通过<strong>一个与你的设备或账户毫无关联的随机数</strong>来区分。删除并重新安装 App 会得到新的数字，并且无法与其他 App 或广告标识符关联。</li>
+    <li><strong>照片、颜色、拍摄时间、备注和位置信息绝不会被发送。</strong></li>
+    <li>它不会被用来识别或追踪任何人，也不会提供给任何其他公司。</li>
+  </ul>
+
+  <h3>反馈</h3>
+  <p>仅当你在“设置 → 支持 → <strong>发送反馈</strong>”中亲自发送时才会发送。你写的内容会连同 App 和设备版本一起发送。用于回复的姓名和邮箱<strong>仅在你填写时</strong>才会发送；留空则完全不会记录。</p>
+
+  <h3>崩溃报告</h3>
+  <p>如果 App 崩溃或卡死，开发者会收到 iOS 随后汇总的诊断信息（崩溃的位置、App 和 iOS 版本、设备类型）。其中不含任何安装标识符。</p>
+
+  <h2>5. 不会收集的内容</h2>
+  <ul>
+    <li>姓名、邮箱、电话号码、账号 — 本 App 完全没有登录。（唯一的例外是你自己在反馈中填写的回复信息。）</li>
+    <li>照片、颜色、拍摄时间、备注 — 第 4 节所列的任何内容中都不包含</li>
+    <li>位置信息 — 既不附加在统计中，也不附加在反馈中</li>
+    <li>广告标识符、追踪、用户画像、第三方分析 SDK — 一律不使用</li>
+    <li>向其他公司出售或转交所收集的任何信息 — 绝不</li>
+  </ul>
+
+  <h2>6. 保留与删除</h2>
+  <p>记录会一直保留到你删除为止。打开一张照片并点按<strong>删除</strong>，或在“记录”中向左轻扫，该记录就会从你的设备和 iCloud 中移除。</p>
+  <p>删除 App 会移除其设备上的存储空间和坐标，但<strong>iCloud 中的副本会保留</strong> — 重新安装时找回你的收藏，正是该功能的意义所在。要彻底删除，请在 App 中删除记录，或在 iOS 的<em>设置 → Apple 账户 → iCloud → 管理储存空间</em>中删除本 App 的数据。</p>
+  <p>开发者不持有任何副本，因此无需另外向开发者提出删除请求。</p>
+
+  <h2>7. 儿童</h2>
+  <p>本 App 不会向任何用户（包括儿童）收集个人信息。</p>
+
+  <h2>8. 变更</h2>
+  <p>如果本政策有变更，本页面会连同上方的生效日期一起更新。变更历史可在 <a href="https://github.com/M1zz/SkyDex/commits/main/docs/privacy.html">GitHub 提交记录</a>中查看。</p>
+
+  <h2>9. 联系方式</h2>
+  <p><a href="mailto:leeo@kakao.com">leeo@kakao.com</a></p>
+
+  <footer>
+    <a href="./">简介</a> ·
+    <a href="support.html">支持</a> ·
+    <a href="https://github.com/M1zz/SkyDex">GitHub</a>
+  </footer>
+
+</main>
+</body>
+</html>

@@ -27,6 +27,12 @@
             "state" : "translated",
             "value" : "Face ID 잠금"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face ID 锁定"
+          }
         }
       }
     },
@@ -55,6 +61,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Face ID로 앱을 잠가 내 하늘 기록을 지켜요."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用 Face ID 锁住 App，守护你的天空记录。"
           }
         }
       }
@@ -85,6 +97,12 @@
             "state" : "translated",
             "value" : "Siri에게 말하면 바로 하늘을 찍을 수 있어요."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "对 Siri 说一声，就能马上拍下天空。"
+          }
         }
       }
     },
@@ -113,6 +131,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Siri와 단축어"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siri 与快捷指令"
           }
         }
       }
@@ -143,6 +167,12 @@
             "state" : "translated",
             "value" : "VoiceOver로 더 편하게"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "让旁白更好用"
+          }
         }
       }
     },
@@ -171,6 +201,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "글자 크기를 키워도 잘리지 않고 보기 좋게 다시 배치돼요."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "放大文字后，画面也会重新排版，不会被截断。"
           }
         }
       }
@@ -201,6 +237,12 @@
             "state" : "translated",
             "value" : "내 하늘 한 번에 지우기"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一次清除我的天空"
+          }
         }
       }
     },
@@ -229,6 +271,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "더 많은 나라 말로 앱을 쓸 수 있게 해요."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "让 App 支持更多语言。"
           }
         }
       }
@@ -259,6 +307,12 @@
             "state" : "translated",
             "value" : "더 많은 언어"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更多语言"
+          }
         }
       }
     },
@@ -287,6 +341,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "모은 하늘 사진을 파일로 저장하고 다시 불러올 수 있어요."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "把收集的天空照片存成文件，之后还能再导入。"
           }
         }
       }
@@ -317,6 +377,12 @@
             "state" : "translated",
             "value" : "보기 편한 색과 대비"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更易辨认的颜色与对比度"
+          }
         }
       }
     },
@@ -345,6 +411,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "사진 백업과 내보내기"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "照片备份与导出"
           }
         }
       }
@@ -375,6 +447,12 @@
             "state" : "translated",
             "value" : "색을 구별하기 어려워도 칸마다 어떤 하늘인지 알아볼 수 있어요."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "即使分不清颜色，也能认出每个格子是哪一片天空。"
+          }
         }
       }
     },
@@ -403,6 +481,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "쓰는 요령 알려 주기"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使用小提示"
           }
         }
       }
@@ -433,6 +517,12 @@
             "state" : "translated",
             "value" : "아직 못 채운 하늘을 찍기 좋은 때에 알림으로 알려 줘요."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在适合拍摄的时候提醒你，去补上还没收集到的天空。"
+          }
         }
       }
     },
@@ -461,6 +551,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "알아 두면 편한 기능을 알맞은 때에 살짝 알려 줘요."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在合适的时候，悄悄告诉你一些好用的功能。"
           }
         }
       }
@@ -491,6 +587,12 @@
             "state" : "translated",
             "value" : "앱을 영어로도 쓸 수 있어요."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App 也可以用英语了。"
+          }
         }
       }
     },
@@ -519,6 +621,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "업데이트 뒤 처음 열 때 무엇이 새로 생겼는지 알려 줘요."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更新后第一次打开时，告诉你有哪些新内容。"
           }
         }
       }
@@ -549,6 +657,12 @@
             "state" : "translated",
             "value" : "업데이트 소식"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更新内容"
+          }
         }
       }
     },
@@ -577,6 +691,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "영어 지원"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "支持英语"
           }
         }
       }
@@ -607,6 +727,12 @@
             "state" : "translated",
             "value" : "원하면 앱 안에서 모은 하늘 사진을 모두 지울 수 있어요."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "需要的话，可以在 App 里删除所有收集的天空照片。"
+          }
         }
       }
     },
@@ -635,6 +761,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "처음 쓰는 분을 위한 안내"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新手引导"
           }
         }
       }
@@ -665,6 +797,12 @@
             "state" : "translated",
             "value" : "처음 열었을 때 하늘 판을 채우는 법을 짧게 보여 줘요."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "第一次打开时，简单演示如何填满天空格板。"
+          }
         }
       }
     },
@@ -693,6 +831,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "큰 글씨에 맞춘 화면"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "适配大字体的界面"
           }
         }
       }
@@ -723,6 +867,12 @@
             "state" : "translated",
             "value" : "펼치는 아이폰 화면"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "可折叠 iPhone 的界面"
+          }
         }
       }
     },
@@ -751,6 +901,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "펼치는 아이폰에서 넓은 화면을 두 쪽으로 나눠 써요."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在可折叠 iPhone 的宽屏上，分成左右两栏使用。"
           }
         }
       }
@@ -781,6 +937,12 @@
             "state" : "translated",
             "value" : "하늘 알림"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "天空提醒"
+          }
         }
       }
     },
@@ -810,6 +972,12 @@
             "state" : "translated",
             "value" : "화면 읽기 기능이 단추와 하늘 칸을 빠짐없이, 알맞은 순서로 읽어 줘요."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "旁白会按正确的顺序，完整读出每个按钮和天空格子。"
+          }
         }
       }
     },
@@ -837,6 +1005,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "아직 되풀이가 없어요"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "还没有重复"
           }
         }
       }
@@ -866,6 +1040,12 @@
             "state" : "translated",
             "value" : "같은 시각의 하늘을 다른 날에 한 번 더 찍으면, 그 둘이 여기에서 나란히 섭니다."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在另一天的同一时刻再拍一次天空，两张就会在这里并排出现。"
+          }
         }
       }
     },
@@ -893,6 +1073,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "같은 시각, 같은 하루"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "同一时刻，同一天"
           }
         }
       }
@@ -922,6 +1108,12 @@
             "state" : "translated",
             "value" : "일주일도 한 달도 같은 모양으로 돌아옵니다. 그 시각의 하늘만 한 번도 같지 않았습니다."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一周也好，一个月也好，都会以同样的样子回来。只有那个时刻的天空，从来没有相同过。"
+          }
         }
       }
     },
@@ -949,6 +1141,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "가장 비슷했던 두 하늘"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最相似的两片天空"
           }
         }
       }
@@ -978,6 +1176,12 @@
             "state" : "translated",
             "value" : "눈으로는 같은 색입니다."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在眼里，是同一种颜色。"
+          }
         }
       }
     },
@@ -1005,6 +1209,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "그래도 다른 색입니다."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "可它们还是不同的颜色。"
           }
         }
       }
@@ -1034,6 +1244,12 @@
             "state" : "translated",
             "value" : "iCloud에 함께 보관"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "同时保存在 iCloud"
+          }
         }
       }
     },
@@ -1061,6 +1277,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "보관"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "存储空间"
           }
         }
       }
@@ -1090,6 +1312,12 @@
             "state" : "translated",
             "value" : "지원"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "支持"
+          }
         }
       }
     },
@@ -1117,6 +1345,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "개발자"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "开发者"
           }
         }
       }
@@ -1146,6 +1380,12 @@
             "state" : "translated",
             "value" : "사용 통계"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使用统计"
+          }
         }
       }
     },
@@ -1173,6 +1413,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "설치 수와 버전 분포. 읽으려면 허브 컨테이너의 read 권한이 필요합니다."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "安装数量与版本分布。读取需要中心容器的读取权限。"
           }
         }
       }
@@ -1202,6 +1448,12 @@
             "state" : "translated",
             "value" : "설정"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "设置"
+          }
         }
       }
     },
@@ -1229,6 +1481,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "완료"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完成"
           }
         }
       }
@@ -1258,6 +1516,12 @@
             "state" : "translated",
             "value" : "닫기"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "关闭"
+          }
         }
       }
     },
@@ -1285,6 +1549,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "저장"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "存储"
           }
         }
       }
@@ -1314,6 +1584,12 @@
             "state" : "translated",
             "value" : "취소"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取消"
+          }
         }
       }
     },
@@ -1341,6 +1617,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "지우기"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "删除"
           }
         }
       }
@@ -1370,6 +1652,12 @@
             "state" : "translated",
             "value" : "하늘 찍기"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "拍天空"
+          }
         }
       }
     },
@@ -1397,6 +1685,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "기록"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "记录"
           }
         }
       }
@@ -1426,6 +1720,12 @@
             "state" : "translated",
             "value" : "하늘"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "天空"
+          }
         }
       }
     },
@@ -1453,6 +1753,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "팔레트"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "调色板"
           }
         }
       }
@@ -1482,6 +1788,12 @@
             "state" : "translated",
             "value" : "되풀이"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重复"
+          }
         }
       }
     },
@@ -1509,6 +1821,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "이 하늘을 지울까요?"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "要删除这片天空吗？"
           }
         }
       }
@@ -1538,6 +1856,12 @@
             "state" : "translated",
             "value" : "사진과 색이 함께 사라집니다."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "照片和颜色会一起消失。"
+          }
         }
       }
     },
@@ -1565,6 +1889,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "이 하늘을 보면서 들었던 생각,\n하고 싶은 한 마디"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "看着这片天空时的想法，\n想留下的一句话"
           }
         }
       }
@@ -1594,6 +1924,12 @@
             "state" : "translated",
             "value" : "다른 날의 하늘로"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "借另一天的天空"
+          }
         }
       }
     },
@@ -1621,6 +1957,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "하늘색"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
           }
         }
       }
@@ -1650,6 +1992,12 @@
             "state" : "translated",
             "value" : "원래 하늘로"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "回到原来的天空"
+          }
         }
       }
     },
@@ -1677,6 +2025,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "빌려 온 하늘의 세기"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "借来的天空的浓度"
           }
         }
       }
@@ -1706,6 +2060,12 @@
             "state" : "translated",
             "value" : "한 줄 쓰기"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "写一句话"
+          }
         }
       }
     },
@@ -1733,6 +2093,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "이 자리는 그 시간대에 찍은 하늘로 채워집니다. 어떤 사진이든 그대로 들어가고, 색이 맞아야 할 필요는 없습니다."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "这个位置会由那个时段拍的天空填上。任何照片都会原样放进去，颜色不必吻合。"
           }
         }
       }
@@ -1762,6 +2128,12 @@
             "state" : "translated",
             "value" : "하늘이 정사각형을 채우도록"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "让天空铺满方形"
+          }
         }
       }
     },
@@ -1789,6 +2161,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "그 하늘 아래에서 보는 중"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在那片天空下观看"
           }
         }
       }
@@ -1818,6 +2196,12 @@
             "state" : "translated",
             "value" : "카메라 권한이 꺼져 있어요"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "相机权限已关闭"
+          }
         }
       }
     },
@@ -1845,6 +2229,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "설정에서 카메라를 켜면 하늘을 바로 찍을 수 있어요."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在“设置”中打开相机，就能马上拍天空。"
           }
         }
       }
@@ -1874,6 +2264,12 @@
             "state" : "translated",
             "value" : "설정 열기"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "打开设置"
+          }
         }
       }
     },
@@ -1901,6 +2297,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "카메라를 쓸 수 없어요"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法使用相机"
           }
         }
       }
@@ -1930,6 +2332,12 @@
             "state" : "translated",
             "value" : "시뮬레이터에는 카메라가 없습니다. 사진에서 골라도 정사각형으로 잘려 들어갑니다."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "模拟器没有相机。从照片中选取的图片也会裁成方形放入。"
+          }
         }
       }
     },
@@ -1957,6 +2365,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "사진에서 고르기"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "从照片中选取"
           }
         }
       }
@@ -1986,6 +2400,12 @@
             "state" : "translated",
             "value" : "필터 없이"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无滤镜"
+          }
         }
       }
     },
@@ -2013,6 +2433,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "아직 모은 하늘이 없어요"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "还没有收集到天空"
           }
         }
       }
@@ -2042,6 +2468,12 @@
             "state" : "translated",
             "value" : "밖을 한 번 올려다보는 것으로 시작합니다."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "从抬头看一眼外面开始。"
+          }
         }
       }
     },
@@ -2069,6 +2501,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "이 색은 아직 없어요"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "还没有这种颜色的天空"
           }
         }
       }
@@ -2098,6 +2536,12 @@
             "state" : "translated",
             "value" : "이 색에 가까운 하늘을 찍으면 여기에 쌓입니다."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "拍下接近这种颜色的天空，就会收集在这里。"
+          }
         }
       }
     },
@@ -2125,6 +2569,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "밖을 한 번 올려다보면 이 시각 칸이 채워집니다."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "到外面抬头看一眼，这个时刻的格子就会被填上。"
           }
         }
       }
@@ -2154,6 +2604,12 @@
             "state" : "translated",
             "value" : "아직 없습니다"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "暂时没有"
+          }
         }
       }
     },
@@ -2181,6 +2637,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "오늘의 하늘"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今日天空"
           }
         }
       }
@@ -2210,6 +2672,12 @@
             "state" : "translated",
             "value" : "오늘의 판"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今日格板"
+          }
         }
       }
     },
@@ -2237,6 +2705,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "하루 마흔여덟 칸. 모은 하늘은 채워지고, 지금 시각에는 고리가 걸립니다."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一天四十八格。收集到的天空会填上，当前时刻则标有一个圆环。"
           }
         }
       }
@@ -2266,6 +2740,12 @@
             "state" : "translated",
             "value" : "오늘 찍은 하늘과, 그 색이 어떤 색인지."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今天拍的天空，以及它是什么颜色。"
+          }
         }
       }
     },
@@ -2293,6 +2773,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "오늘의 하늘 · 아직"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今日天空 · 尚未拍摄"
           }
         }
       }
@@ -2322,6 +2808,12 @@
             "state" : "translated",
             "value" : "오늘의 하늘, 말로 하면"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用话来说，今天的天空"
+          }
         }
       }
     },
@@ -2350,6 +2842,12 @@
             "state" : "translated",
             "value" : "오늘의 하늘, 굳이 말하자면"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今天的天空，非要说的话"
+          }
         }
       }
     },
@@ -2372,6 +2870,12 @@
             "state" : "translated",
             "value" : "%lld日"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld 天"
+          }
         }
       }
     },
@@ -2393,6 +2897,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "この色 %lld枚"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "这种颜色 %lld 张"
           }
         }
       }
