@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SkyDex — Integritetspolicy</title>
+<meta name="description" content="Integritetspolicy för iOS-appen SkyDex. Inga konton; dina bilder stannar på din enhet och i din egen iCloud.">
+<link rel="canonical" href="https://m1zz.github.io/SkyDex/sv/privacy.html">
+<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/SkyDex/privacy.html">
+<link rel="alternate" hreflang="en" href="https://m1zz.github.io/SkyDex/en/privacy.html">
+<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/SkyDex/en/privacy.html">
+<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/SkyDex/ja/privacy.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/SkyDex/zh-Hans/privacy.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/SkyDex/zh-Hant/privacy.html">
+<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/SkyDex/ru/privacy.html">
+<link rel="alternate" hreflang="es" href="https://m1zz.github.io/SkyDex/es/privacy.html">
+<link rel="alternate" hreflang="de" href="https://m1zz.github.io/SkyDex/de/privacy.html">
+<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/SkyDex/fr/privacy.html">
+<link rel="alternate" hreflang="it" href="https://m1zz.github.io/SkyDex/it/privacy.html">
+<link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/SkyDex/pt-BR/privacy.html">
+<link rel="alternate" hreflang="th" href="https://m1zz.github.io/SkyDex/th/privacy.html">
+<link rel="alternate" hreflang="vi" href="https://m1zz.github.io/SkyDex/vi/privacy.html">
+<link rel="alternate" hreflang="cs" href="https://m1zz.github.io/SkyDex/cs/privacy.html">
+<link rel="alternate" hreflang="da" href="https://m1zz.github.io/SkyDex/da/privacy.html">
+<link rel="alternate" hreflang="el" href="https://m1zz.github.io/SkyDex/el/privacy.html">
+<link rel="alternate" hreflang="fi" href="https://m1zz.github.io/SkyDex/fi/privacy.html">
+<link rel="alternate" hreflang="id" href="https://m1zz.github.io/SkyDex/id/privacy.html">
+<link rel="alternate" hreflang="nb" href="https://m1zz.github.io/SkyDex/nb/privacy.html">
+<link rel="alternate" hreflang="nl" href="https://m1zz.github.io/SkyDex/nl/privacy.html">
+<link rel="alternate" hreflang="pl" href="https://m1zz.github.io/SkyDex/pl/privacy.html">
+<link rel="alternate" hreflang="sv" href="https://m1zz.github.io/SkyDex/sv/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/SkyDex/privacy.html">
+<style>
+  :root {
+    --ink: #16202e;
+    --ink-soft: #5d6773;
+    --paper: #f4f5f7;
+    --card: #ffffff;
+    --line: #e2e5ea;
+    --accent: #2f7bbe;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #eef1f5;
+      --ink-soft: #a2acb8;
+      --paper: #0b111c;
+      --card: #141c28;
+      --line: #26303e;
+      --accent: #7fa4ce;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0 20px 72px;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.72 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+      "Pretendard", "Segoe UI", Roboto, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 680px; margin: 0 auto; }
+  h1 {
+    font-size: 28px; line-height: 1.35; letter-spacing: -0.02em;
+    margin: 48px 0 6px; font-weight: 700;
+  }
+  .meta { color: var(--ink-soft); font-size: 15px; }
+  h2 {
+    font-size: 19px; letter-spacing: -0.01em; margin: 40px 0 12px;
+    padding-top: 24px; border-top: 1px solid var(--line);
+  }
+  h3 { font-size: 17px; letter-spacing: -0.01em; margin: 26px 0 10px; }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 1.2em; }
+  li { margin-bottom: 8px; }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  .card {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 16px; padding: 20px 22px; margin: 24px 0 8px;
+  }
+  .card p:last-child { margin-bottom: 0; }
+  .en {
+    margin-top: 44px; padding-top: 24px; border-top: 1px solid var(--line);
+    color: var(--ink-soft); font-size: 15.5px;
+  }
+  .en h2 { border-top: 0; padding-top: 0; color: var(--ink); }
+  footer {
+    margin-top: 48px; padding-top: 22px; border-top: 1px solid var(--line);
+    color: var(--ink-soft); font-size: 15px;
+  }
+  nav.langs { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px 14px; margin: 18px 0 0; font-size: 14px; }
+  nav.langs a { color: var(--ink-soft); text-decoration: none; }
+  nav.langs a[aria-current] { color: var(--ink); font-weight: 600; }
+</style>
+</head>
+<body>
+<main>
+  <nav class="langs" aria-label="Language">
+    <a href="../privacy.html" hreflang="ko" lang="ko">한국어</a>
+    <a href="../en/privacy.html" hreflang="en" lang="en">English</a>
+    <a href="../ja/privacy.html" hreflang="ja" lang="ja">日本語</a>
+    <a href="../zh-Hans/privacy.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <a href="../zh-Hant/privacy.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+    <a href="../ru/privacy.html" hreflang="ru" lang="ru">Русский</a>
+    <a href="../es/privacy.html" hreflang="es" lang="es">Español</a>
+    <a href="../de/privacy.html" hreflang="de" lang="de">Deutsch</a>
+    <a href="../fr/privacy.html" hreflang="fr" lang="fr">Français</a>
+    <a href="../it/privacy.html" hreflang="it" lang="it">Italiano</a>
+    <a href="../pt-BR/privacy.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+    <a href="../th/privacy.html" hreflang="th" lang="th">ไทย</a>
+    <a href="../vi/privacy.html" hreflang="vi" lang="vi">Tiếng Việt</a>
+    <a href="../cs/privacy.html" hreflang="cs" lang="cs">Čeština</a>
+    <a href="../da/privacy.html" hreflang="da" lang="da">Dansk</a>
+    <a href="../el/privacy.html" hreflang="el" lang="el">Ελληνικά</a>
+    <a href="../fi/privacy.html" hreflang="fi" lang="fi">Suomi</a>
+    <a href="../id/privacy.html" hreflang="id" lang="id">Indonesia</a>
+    <a href="../nb/privacy.html" hreflang="nb" lang="nb">Norsk</a>
+    <a href="../nl/privacy.html" hreflang="nl" lang="nl">Nederlands</a>
+    <a href="../pl/privacy.html" hreflang="pl" lang="pl">Polski</a>
+    <a href="../sv/privacy.html" hreflang="sv" lang="sv" aria-current="true">Svenska</a>
+  </nav>
+
+  <h1>Integritetspolicy</h1>
+  <p class="meta">iOS-appen <strong>SkyDex</strong> · Gäller från 20 augusti 2026</p>
+
+  <div class="card">
+    <p><strong>Kort sagt.</strong> Appen har inga konton. Dina bilder och färger sparas bara på din enhet och i <strong>din egen iCloud</strong>, och utvecklaren kan inte öppna någotdera.</p>
+    <p>Bara tre saker når utvecklaren: <strong>anonym användningsstatistik</strong>, <strong>återkoppling du väljer att skicka</strong> och <strong>kraschrapporter</strong>. Dina bilder och färger finns inte i någon av dem. Ingen reklam, ingen spårning, inga analys-SDK:er från tredje part.</p>
+  </div>
+
+  <h2>1. Bilder och poster</h2>
+  <p>Bilder du tar i appen eller väljer från ditt bibliotek, färgen som tas ut ur dem, tidpunkten då de togs och eventuella anteckningar du skriver sparas i <strong>appens lagring på din enhet</strong>. De skickas inte till utvecklaren och laddas inte upp till någon av utvecklarens servrar. Utvecklaren driver ingen server.</p>
+
+  <h3>Sparat i iCloud</h3>
+  <p>Om din enhet är inloggad med ett Apple-konto sparas dessa poster även i <strong>din egen iCloud</strong> (Apples privata CloudKit-databas), så att dina insamlade himlar kommer tillbaka om du förlorar telefonen eller raderar och installerar om appen.</p>
+  <ul>
+    <li>De sparas i <strong>ditt iCloud-konto</strong>, inte på en server hos utvecklaren. Utvecklaren kan inte se dessa data och har ingen kopia av dem.</li>
+    <li>De flyttas bara mellan dina egna enheter som är inloggade med samma Apple-konto. De visas aldrig för andra, och appen har ingen delnings- eller publiceringsfunktion alls.</li>
+    <li>Att radera en post i appen raderar även kopian i iCloud.</li>
+    <li>Utrymmet de tar räknas in i din iCloud-lagring.</li>
+    <li>Om du inte är inloggad i iCloud, eller stänger av iCloud för den här appen i Inställningar, behåller appen helt enkelt allt på enheten och fungerar som förut.</li>
+  </ul>
+  <p>Den här lagringen styrs av Apples policy — <a href="https://www.apple.com/legal/privacy/">Apples integritetspolicy</a>. Om du säkerhetskopierar din enhet (till iCloud eller en dator) kan den här lagringen ingå i säkerhetskopian; den säkerhetskopian tillhör också ditt Apple-konto, och utvecklaren kan inte komma åt den.</p>
+
+  <h2>2. Plats</h2>
+  <p>Plats används till exakt två saker:</p>
+  <ul>
+    <li>Att räkna ut <strong>soluppgång och solnedgång</strong> där du är, så att brädets referensfärger för himlen kommer vid rätt tid på dygnet</li>
+    <li>Att hämta <strong>dagens timprognos</strong> (moln och regn) för platsen där du är</li>
+  </ul>
+  <p>Bara kilometers noggrannhet efterfrågas. Den senaste koordinaten sparas på din enhet; den kopplas aldrig till en bild och skickas aldrig till utvecklaren.</p>
+  <p>För att få prognosen <strong>skickas den här ungefärliga koordinaten till Apples vädertjänst (WeatherKit)</strong>. Överföringen styrs av Apples policyer — <a href="https://www.apple.com/legal/privacy/">Apples integritetspolicy</a>, <a href="https://weatherkit.apple.com/legal-attribution.html">Meddelande om Apple Väder</a>.</p>
+  <p>Appen fungerar bra om du nekar åtkomst till plats. Den räknar då ut färger för en standardplats (Seoul) och ritar en referens med klar himmel utan prognos.</p>
+
+  <h2>3. Kamera och bildbibliotek</h2>
+  <p>Kameran är bara på medan du fotar himlen. Från ditt bibliotek läser appen bara den enda bild du väljer; den bläddrar aldrig i resten. Appen sparar inte heller bilder i ditt bibliotek.</p>
+
+  <h2>4. Användningsstatistik och återkoppling</h2>
+  <p>Om den som gör en app inte har en aning om hur den används kan hen inte rätta det som behöver rättas. Därför tas bara tre saker emot. Alla tre går till utvecklarens <strong>publika CloudKit-databas</strong>; det finns fortfarande ingen separat server.</p>
+
+  <h3>Anonym användningsstatistik</h3>
+  <ul>
+    <li>Det som skickas: hur många gånger appen har öppnats, hur många dagar som gått sedan installationen, appversionen, iOS-versionen, enhetstypen och språkinställningen.</li>
+    <li>Installationer skiljs åt med <strong>ett slumptal utan koppling till din enhet eller ditt konto</strong>. Om du raderar och installerar om appen får du ett nytt tal, och det kan inte kopplas till andra appar eller ett reklam-ID.</li>
+    <li><strong>Bilder, färger, tidpunkter, anteckningar och plats skickas aldrig.</strong></li>
+    <li>Det används inte för att identifiera eller spåra någon och lämnas inte vidare till andra företag.</li>
+  </ul>
+
+  <h3>Återkoppling</h3>
+  <p>Skickas bara när du själv skickar den från Inställningar → Support → <strong>Skicka feedback</strong>. Det du skriver följer med app- och enhetsversionerna. Ett namn och en e-postadress för svar skickas <strong>bara om du skriver in dem</strong>; lämnar du dem tomma registreras de inte alls.</p>
+
+  <h3>Kraschrapporter</h3>
+  <p>Om appen kraschar eller hänger sig får utvecklaren den diagnostik som iOS samlar ihop senare (var den kraschade, app- och iOS-version, enhetstyp). Inte ens ett installations-ID bifogas.</p>
+
+  <h2>5. Vad som inte samlas in</h2>
+  <ul>
+    <li>Namn, e-post, telefonnummer, konto — det finns ingen inloggning alls. (Det enda undantaget är svarsuppgifter du själv skriver in i feedback.)</li>
+    <li>Bilder, färger, tidpunkter, anteckningar — inget av detta ingår i det som anges i avsnitt 4</li>
+    <li>Plats — den kopplas varken till statistik eller feedback</li>
+    <li>Reklam-ID:n, spårning, profilering, analys-SDK:er från tredje part — används inte</li>
+    <li>Försäljning eller utlämnande av något insamlat till ett annat företag — aldrig</li>
+  </ul>
+
+  <h2>6. Lagring och radering</h2>
+  <p>Poster finns kvar tills du raderar dem. Öppna en bild och tryck på <strong>Radera</strong>, eller svep åt vänster i Loggen, så tas posten bort från din enhet och från iCloud.</p>
+  <p>Om du raderar appen tas dess lagring på enheten och koordinaten bort, men <strong>kopian i iCloud finns kvar</strong> — att få tillbaka din samling vid ominstallation är hela poängen med den funktionen. För att ta bort den helt kan du radera posterna i appen eller radera den här appens data i iOS under <em>Inställningar → Apple-konto → iCloud → Hantera lagring</em>.</p>
+  <p>Utvecklaren har ingen kopia, så det finns ingen separat raderingsbegäran att skicka till utvecklaren.</p>
+
+  <h2>7. Barn</h2>
+  <p>Den här appen samlar inte in personuppgifter från någon användare, barn inkluderade.</p>
+
+  <h2>8. Ändringar</h2>
+  <p>Om den här policyn ändras uppdateras den här sidan tillsammans med ikraftträdandedatumet ovan. Ändringshistoriken finns kvar att se i <a href="https://github.com/M1zz/SkyDex/commits/main/docs/privacy.html">GitHubs commit-logg</a>.</p>
+
+  <h2>9. Kontakt</h2>
+  <p><a href="mailto:leeo@kakao.com">leeo@kakao.com</a></p>
+
+  <footer>
+    <a href="./">Översikt</a> ·
+    <a href="support.html">Support</a> ·
+    <a href="https://github.com/M1zz/SkyDex">GitHub</a>
+  </footer>
+
+</main>
+</body>
+</html>

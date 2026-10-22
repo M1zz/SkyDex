@@ -112,6 +112,12 @@
             "value" : "Блокировка Face ID"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face ID-lås"
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -247,6 +253,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Закройте приложение с помощью Face ID, чтобы ваши записи о небе остались личными."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lås appen med Face ID så att dina himlar förblir privata."
           }
         },
         "th" : {
@@ -386,6 +398,12 @@
             "value" : "Скажите Siri — и сразу снимайте небо."
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Säg det till Siri så kan du fota himlen direkt."
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -521,6 +539,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Siri и Быстрые команды"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siri och Genvägar"
           }
         },
         "th" : {
@@ -660,6 +684,12 @@
             "value" : "Удобнее с VoiceOver"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bättre stöd för VoiceOver"
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -795,6 +825,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Если увеличить текст, экраны аккуратно перестроятся, и ничего не обрежется."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "När du förstorar texten ordnar sig skärmarna snyggt utan att något klipps av."
           }
         },
         "th" : {
@@ -934,6 +970,12 @@
             "value" : "Стереть все мои небеса разом"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radera alla mina himlar på en gång"
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1069,6 +1111,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Приложение станет доступно на большем числе языков."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Använd appen på fler språk."
           }
         },
         "th" : {
@@ -1208,6 +1256,12 @@
             "value" : "Больше языков"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fler språk"
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1343,6 +1397,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Сохраняйте фото неба в файл и возвращайте их позже."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spara dina himmelsbilder i en fil och hämta tillbaka dem senare."
           }
         },
         "th" : {
@@ -1482,6 +1542,12 @@
             "value" : "Удобные цвета и контраст"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bekvämare färger och kontrast"
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1617,6 +1683,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Резервная копия и экспорт фото"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Säkerhetskopiering och export av bilder"
           }
         },
         "th" : {
@@ -1756,6 +1828,12 @@
             "value" : "Даже если цвета трудно различать, вы узнаете, какое небо в каждой клетке."
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Även om färger är svåra att skilja åt ser du vilken himmel varje ruta rymmer."
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1891,6 +1969,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Полезные советы"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Praktiska tips"
           }
         },
         "th" : {
@@ -2030,6 +2114,12 @@
             "value" : "Напомним, когда удобно снять небо, которого вам ещё не хватает."
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Du får en påminnelse när det är ett bra tillfälle att fånga en himmel du ännu inte har."
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2165,6 +2255,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ненавязчивые подсказки о полезных функциях — в нужный момент."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diskreta tips om användbara funktioner, precis när du behöver dem."
           }
         },
         "th" : {
@@ -2304,6 +2400,12 @@
             "value" : "Приложение можно использовать и на английском."
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Använd hela appen på engelska också."
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2439,6 +2541,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "При первом запуске после обновления вы увидите, что нового."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Första gången du öppnar appen efter en uppdatering ser du vad som är nytt."
           }
         },
         "th" : {
@@ -2578,6 +2686,12 @@
             "value" : "Что нового"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nyheter"
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2713,6 +2827,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Полная поддержка английского"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fullt stöd för engelska"
           }
         },
         "th" : {
@@ -2852,6 +2972,12 @@
             "value" : "При желании можно удалить все собранные фото неба прямо в приложении."
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Om du vill kan du radera alla insamlade himmelsbilder direkt i appen."
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2987,6 +3113,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Краткое знакомство для новичков"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Snabbstart för nya användare"
           }
         },
         "th" : {
@@ -3126,6 +3258,12 @@
             "value" : "При первом запуске коротко покажем, как заполнять доску неба."
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Första gången du öppnar appen ser du hur du fyller himmelsbrädet."
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3261,6 +3399,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Экраны для крупного шрифта"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Layouter för större text"
           }
         },
         "th" : {
@@ -3400,6 +3544,12 @@
             "value" : "Экран для складного iPhone"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Layout för vikbar iPhone"
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3535,6 +3685,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Широкий экран складного iPhone делится на две панели."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Använd den breda skärmen på en vikbar iPhone som två rutor sida vid sida."
           }
         },
         "th" : {
@@ -3674,6 +3830,12 @@
             "value" : "Напоминания о небе"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Himmelspåminnelser"
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3809,6 +3971,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "VoiceOver читает все кнопки и клетки неба — по порядку и без пропусков."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver läser upp varje knapp och varje himmelsruta i rätt ordning."
           }
         },
         "th" : {
@@ -3947,6 +4115,12 @@
             "value" : "Повторов пока нет"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inga upprepningar än"
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4081,6 +4255,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Снимите небо в то же время в другой день — и два кадра окажутся здесь рядом."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fånga himlen vid samma tid en annan dag så hamnar de två här bredvid varandra."
           }
         },
         "th" : {
@@ -4219,6 +4399,12 @@
             "value" : "Тот же час, тот же день"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Samma timme, samma dag"
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4353,6 +4539,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Неделя и месяц возвращаются в прежнем виде. Только небо в этот час ни разу не было прежним."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En vecka eller en månad återkommer i samma form. Bara himlen vid den tidpunkten har aldrig varit densamma."
           }
         },
         "th" : {
@@ -4491,6 +4683,12 @@
             "value" : "Два самых похожих неба"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De två mest lika himlarna"
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4625,6 +4823,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Для глаза это один и тот же цвет."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "För ögat är det samma färg."
           }
         },
         "th" : {
@@ -4763,6 +4967,12 @@
             "value" : "И всё же цвета разные."
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ändå är det olika färger."
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4897,6 +5107,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Хранить ещё и в iCloud"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spara även i iCloud"
           }
         },
         "th" : {
@@ -5035,6 +5251,12 @@
             "value" : "Хранение"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lagring"
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5169,6 +5391,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Поддержка"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Support"
           }
         },
         "th" : {
@@ -5307,6 +5535,12 @@
             "value" : "Разработчик"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utvecklare"
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5441,6 +5675,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Статистика использования"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Användningsstatistik"
           }
         },
         "th" : {
@@ -5579,6 +5819,12 @@
             "value" : "Число установок и распределение по версиям. Для чтения нужен доступ на чтение к контейнеру хаба."
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Antal installationer och versionsfördelning. För att läsa dem krävs läsbehörighet till hubbens container."
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5713,6 +5959,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Настройки"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inställningar"
           }
         },
         "th" : {
@@ -5851,6 +6103,12 @@
             "value" : "Готово"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klar"
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5985,6 +6243,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Закрыть"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stäng"
           }
         },
         "th" : {
@@ -6123,6 +6387,12 @@
             "value" : "Сохранить"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spara"
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6257,6 +6527,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Отмена"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avbryt"
           }
         },
         "th" : {
@@ -6395,6 +6671,12 @@
             "value" : "Удалить"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radera"
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6529,6 +6811,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Снять небо"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fånga himlen"
           }
         },
         "th" : {
@@ -6667,6 +6955,12 @@
             "value" : "Журнал"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logg"
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6801,6 +7095,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Небо"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Himmel"
           }
         },
         "th" : {
@@ -6939,6 +7239,12 @@
             "value" : "Палитра"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palett"
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7073,6 +7379,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Повторы"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upprepningar"
           }
         },
         "th" : {
@@ -7211,6 +7523,12 @@
             "value" : "Удалить это небо?"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radera den här himlen?"
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7345,6 +7663,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Фото и цвет будут удалены вместе."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bilden och färgen tas bort tillsammans."
           }
         },
         "th" : {
@@ -7483,6 +7807,12 @@
             "value" : "Мысль, которая пришла, когда вы смотрели на это небо,\nили слово, которое хочется оставить"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En tanke du fick när du tittade på den här himlen,\nett ord du vill lämna kvar"
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7619,6 +7949,12 @@
             "value" : "Сквозь небо другого дня"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Genom en annan dags himmel"
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7750,6 +8086,12 @@
           }
         },
         "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "SkyDex"
@@ -7891,6 +8233,12 @@
             "value" : "К исходному небу"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tillbaka till den ursprungliga himlen"
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8025,6 +8373,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Насколько сильно проступает чужое небо"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Styrkan hos den lånade himlen"
           }
         },
         "th" : {
@@ -8163,6 +8517,12 @@
             "value" : "Написать строчку"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skriv en rad"
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8297,6 +8657,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Это место заполнится небом, снятым в это время суток. Подойдёт любое фото как есть — цвет совпадать не обязан."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Den här platsen fylls av en himmel tagen vid den tiden på dagen. Vilken bild som helst kommer in som den är; färgen behöver inte matcha."
           }
         },
         "th" : {
@@ -8435,6 +8801,12 @@
             "value" : "Чтобы небо заполняло квадрат"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Låt himlen fylla kvadraten"
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8569,6 +8941,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Смотрю из-под этого неба"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tittar under den himlen"
           }
         },
         "th" : {
@@ -8707,6 +9085,12 @@
             "value" : "Доступ к камере выключен"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kameraåtkomst är avstängd"
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8841,6 +9225,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Включите камеру в настройках — и сразу снимайте небо."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slå på kameran i Inställningar så kan du fånga himlen direkt."
           }
         },
         "th" : {
@@ -8979,6 +9369,12 @@
             "value" : "Открыть настройки"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Öppna Inställningar"
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9113,6 +9509,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Камера недоступна"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kameran är inte tillgänglig"
           }
         },
         "th" : {
@@ -9251,6 +9653,12 @@
             "value" : "В симуляторе нет камеры. Фото, выбранное из медиатеки, тоже обрежется до квадрата."
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simulatorn har ingen kamera. En bild du väljer beskärs också till en kvadrat."
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9385,6 +9793,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Выбрать из Фото"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Välj från Bilder"
           }
         },
         "th" : {
@@ -9523,6 +9937,12 @@
             "value" : "Без фильтра"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inget filter"
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9657,6 +10077,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Собранного неба пока нет"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inga himlar insamlade än"
           }
         },
         "th" : {
@@ -9795,6 +10221,12 @@
             "value" : "Всё начинается с одного взгляда вверх."
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Det börjar med en blick uppåt."
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9929,6 +10361,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Такого цвета пока нет"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingen himmel i den här färgen än"
           }
         },
         "th" : {
@@ -10067,6 +10505,12 @@
             "value" : "Снимите небо, близкое к этому цвету, — и оно появится здесь."
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fånga en himmel nära den här färgen så samlas den här."
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10201,6 +10645,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Взгляните на небо — и клетка этого часа заполнится."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Titta upp en gång utomhus så fylls rutan för den här timmen."
           }
         },
         "th" : {
@@ -10339,6 +10789,12 @@
             "value" : "Пока ничего"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inget än"
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10473,6 +10929,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Небо сегодня"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dagens himmel"
           }
         },
         "th" : {
@@ -10611,6 +11073,12 @@
             "value" : "Доска сегодня"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dagens bräde"
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10745,6 +11213,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Сорок восемь клеток в день. Собранное небо заполняет клетку, а текущий час отмечен кольцом."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fyrtioåtta rutor per dag. Insamlade himlar fyller dem och en ring markerar den aktuella timmen."
           }
         },
         "th" : {
@@ -10883,6 +11357,12 @@
             "value" : "Сегодняшнее небо и его цвет."
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dagens himmel och vilken färg den har."
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11017,6 +11497,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Небо сегодня · пока нет"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dagens himmel · Inte än"
           }
         },
         "th" : {
@@ -11155,6 +11641,12 @@
             "value" : "Сегодняшнее небо словами"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dagens himmel i ord"
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11291,6 +11783,12 @@
             "value" : "Сегодняшнее небо — если уж пытаться описать словами"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dagens himmel, om man nu måste säga det med ord"
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11421,6 +11919,12 @@
             "value" : "Дней: %lld"
           }
         },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld dagar"
+          }
+        },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11549,6 +12053,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Снимков этого цвета: %lld"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld i den här färgen"
           }
         },
         "th" : {

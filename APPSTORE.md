@@ -1253,3 +1253,60 @@ Wybierz ze Zdjęć
 Niebo wybrane z biblioteki zamiast z aparatu również zostanie przycięte do kwadratu.
 
 Bez konta i bez logowania. Zebrane niebo jest przechowywane w twoim własnym iCloud, więc przenosi się razem z tobą na nowe urządzenie.
+
+## sv
+
+### 지원 URL
+
+https://m1zz.github.io/SkyDex/sv/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/SkyDex/sv/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/SkyDex/sv/
+
+### 이름
+
+SkyDex: Himlens färger
+
+### 부제
+
+Ett bräde som fylls av himlar
+
+### 키워드
+
+dagbok,färg,palett,moodboard,moln,solnedgång,soluppgång,foto,stämning,estetik,widget,skymning
+
+### 프로모션 텍스트
+
+Vilken färg hade himlen idag? Varje gång du fotar himlen fylls en av dagens fyrtioåtta himmelsfärger och får ett namn som låter som den.
+
+### 설명
+
+Varje gång du fotar himlen fylls en av dagens fyrtioåtta färgrutor.
+En liten app för att spara vilken färg himlen hade idag: en bild och en rad.
+
+Brädet går från gryningens blåsvarta via middagsblått och solnedgångens orange till nattens violett: fyrtioåtta färger som himlen passerar under en dag. Varje bild fyller den närmaste rutan. Ingen bedömning, inget avvisande: fota, så är den inne.
+
+Varje himmel får ett namn
+Varje färg du fångar får några ord som låter som den, till exempel tunn is, poolkakel eller mogen kaki, plus det närmaste namnet från traditionella färgpaletter.
+
+Lämna en rad
+Direkt efter bilden öppnas ett kort. Skriv vad du tänkte medan du tittade upp, så svävar det upp över himlen igen varje gång du trycker på den rutan på brädet.
+
+Tomma rutor visar vägen
+Tryck på en tom ruta för att se vilken tid på dagen den hör till och vilken färg du ska leta efter.
+
+Logg, palett, upprepningar
+Bläddra bland dina himlar i ordning, samla dina färger i paletter som blått, grått och solnedgångstoner, och fota samma timme en annan dag för att jämföra de två bilderna sida vid sida.
+
+Widgets
+Se dagens himmel och dagens bräde direkt på hemskärmen.
+
+Välj från Bilder
+En himmel du väljer från biblioteket i stället för kameran beskärs också till en kvadrat.
+
+Inget konto, ingen inloggning. Dina himlar sparas i din egen iCloud, så de följer med dig till en ny enhet.

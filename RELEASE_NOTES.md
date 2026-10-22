@@ -143,6 +143,12 @@ Dołącz zrzut ekranu do pytań
 Odpowiedzi czytasz w samej aplikacji
 Ekran pomocy w języku urządzenia
 
+### 앱스토어 (Svenska)
+
+Bifoga en skärmdump till dina frågor
+Läs våra svar direkt i appen
+Supportskärmen följer ditt språk
+
 
 ## 1.0.1
 
