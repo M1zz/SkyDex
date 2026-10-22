@@ -107,6 +107,12 @@ Vedhæft et skærmbillede til spørgsmål
 Læs vores svar direkte i appen
 Supportskærmen følger dit sprog
 
+### 앱스토어 (Ελληνικά)
+
+Επισυνάψτε στιγμιότυπο στις ερωτήσεις
+Διαβάστε τις απαντήσεις στην εφαρμογή
+Η υποστήριξη στη γλώσσα σας
+
 
 ## 1.0.1
 

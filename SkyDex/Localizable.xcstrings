@@ -22,6 +22,12 @@
             "value" : "Face-ID-Sperre"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Κλείδωμα με Face ID"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -121,6 +127,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sperre die App mit Face ID, damit deine Himmel privat bleiben."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Κλειδώστε την εφαρμογή με Face ID για να μένουν ιδιωτικοί οι ουρανοί σας."
           }
         },
         "en" : {
@@ -224,6 +236,12 @@
             "value" : "Sag es Siri, und du kannst sofort den Himmel fotografieren."
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Πείτε το στη Siri και φωτογραφίστε τον ουρανό αμέσως."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -323,6 +341,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Siri und Kurzbefehle"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siri και Συντομεύσεις"
           }
         },
         "en" : {
@@ -426,6 +450,12 @@
             "value" : "Besser mit VoiceOver"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Πιο άνετο VoiceOver"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -525,6 +555,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bei größerer Schrift ordnen sich die Bildschirme sauber neu an, ohne dass etwas abgeschnitten wird."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Όταν μεγεθύνετε το κείμενο, οι οθόνες αναδιατάσσονται σωστά χωρίς να κόβεται τίποτα."
           }
         },
         "en" : {
@@ -628,6 +664,12 @@
             "value" : "Alle meine Himmel auf einmal löschen"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Διαγραφή όλων των ουρανών μου με μία κίνηση"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -727,6 +769,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nutze die App in noch mehr Sprachen."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Χρησιμοποιήστε την εφαρμογή σε περισσότερες γλώσσες."
           }
         },
         "en" : {
@@ -830,6 +878,12 @@
             "value" : "Mehr Sprachen"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Περισσότερες γλώσσες"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -929,6 +983,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Speichere deine Himmelsfotos in einer Datei und hol sie später zurück."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αποθηκεύστε τις φωτογραφίες ουρανού σε αρχείο και επαναφέρετέ τες αργότερα."
           }
         },
         "en" : {
@@ -1032,6 +1092,12 @@
             "value" : "Angenehmere Farben und Kontraste"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Πιο άνετα χρώματα και αντίθεση"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1131,6 +1197,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Foto-Backup und Export"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αντίγραφο ασφαλείας και εξαγωγή φωτογραφιών"
           }
         },
         "en" : {
@@ -1234,6 +1306,12 @@
             "value" : "Auch wenn Farben schwer zu unterscheiden sind, erkennst du, welcher Himmel in welchem Feld steckt."
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ακόμη κι αν τα χρώματα ξεχωρίζουν δύσκολα, καταλαβαίνετε ποιος ουρανός κρύβεται σε κάθε τετράγωνο."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1333,6 +1411,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Praktische Tipps"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Χρήσιμες συμβουλές"
           }
         },
         "en" : {
@@ -1436,6 +1520,12 @@
             "value" : "Du bekommst einen Hinweis, wenn sich ein Himmel lohnt, der dir noch fehlt."
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Σας ειδοποιούμε όταν είναι καλή ώρα να πιάσετε έναν ουρανό που δεν έχετε ακόμη."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1535,6 +1625,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dezente Hinweise auf nützliche Funktionen, genau dann, wenn du sie brauchst."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Διακριτικές υποδείξεις για χρήσιμες λειτουργίες, ακριβώς όταν τις χρειάζεστε."
           }
         },
         "en" : {
@@ -1638,6 +1734,12 @@
             "value" : "Nutze die ganze App auch auf Englisch."
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Χρησιμοποιήστε ολόκληρη την εφαρμογή και στα αγγλικά."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1737,6 +1839,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Beim ersten Öffnen nach einem Update siehst du, was neu ist."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Την πρώτη φορά που ανοίγετε την εφαρμογή μετά από μια ενημέρωση, δείτε τι νέο υπάρχει."
           }
         },
         "en" : {
@@ -1840,6 +1948,12 @@
             "value" : "Neuigkeiten"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Τι νέο υπάρχει"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1939,6 +2053,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Volle Unterstützung für Englisch"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Πλήρης υποστήριξη αγγλικών"
           }
         },
         "en" : {
@@ -2042,6 +2162,12 @@
             "value" : "Auf Wunsch löschst du alle gesammelten Himmelsfotos direkt in der App."
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αν θέλετε, διαγράψτε από την εφαρμογή όλες τις φωτογραφίες ουρανού που έχετε συλλέξει."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2141,6 +2267,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kurze Einführung für Neue"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Γρήγορη εισαγωγή για νέους χρήστες"
           }
         },
         "en" : {
@@ -2244,6 +2376,12 @@
             "value" : "Beim ersten Öffnen siehst du kurz, wie du dein Himmelsbrett füllst."
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Την πρώτη φορά που ανοίγετε την εφαρμογή, δείτε πώς γεμίζει ο πίνακας των ουρανών."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2343,6 +2481,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Layouts für größere Schrift"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Διατάξεις για μεγαλύτερο κείμενο"
           }
         },
         "en" : {
@@ -2446,6 +2590,12 @@
             "value" : "Layout für faltbares iPhone"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Διάταξη για αναδιπλούμενο iPhone"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2545,6 +2695,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nutze den breiten Bildschirm eines faltbaren iPhones in zwei Bereichen nebeneinander."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αξιοποιήστε την πλατιά οθόνη ενός αναδιπλούμενου iPhone σε δύο παράθυρα δίπλα-δίπλα."
           }
         },
         "en" : {
@@ -2648,6 +2804,12 @@
             "value" : "Himmelserinnerungen"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Υπενθυμίσεις ουρανού"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2747,6 +2909,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "VoiceOver liest jede Taste und jedes Himmelsfeld vor, in der richtigen Reihenfolge."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Το VoiceOver διαβάζει κάθε κουμπί και κάθε τετράγωνο ουρανού, με τη σωστή σειρά."
           }
         },
         "en" : {
@@ -2849,6 +3017,12 @@
             "value" : "Noch keine Wiederholungen"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Δεν υπάρχουν ακόμη επαναλήψεις"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2947,6 +3121,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fotografiere den Himmel zur gleichen Uhrzeit an einem anderen Tag, dann stehen die beiden hier nebeneinander."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Φωτογραφίστε τον ουρανό την ίδια ώρα μια άλλη μέρα και οι δύο θα εμφανιστούν εδώ δίπλα-δίπλα."
           }
         },
         "en" : {
@@ -3049,6 +3229,12 @@
             "value" : "Gleiche Stunde, gleicher Tag"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ίδια ώρα, ίδια μέρα"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3147,6 +3333,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Eine Woche oder ein Monat kehrt in derselben Form wieder. Nur der Himmel zu dieser Stunde war nie derselbe."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Μια εβδομάδα ή ένας μήνας επιστρέφει με το ίδιο σχήμα. Μόνο ο ουρανός εκείνης της ώρας δεν ήταν ποτέ ο ίδιος."
           }
         },
         "en" : {
@@ -3249,6 +3441,12 @@
             "value" : "Die zwei ähnlichsten Himmel"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Οι δύο πιο κοντινοί ουρανοί"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3347,6 +3545,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fürs Auge ist es dieselbe Farbe."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Στο μάτι, είναι το ίδιο χρώμα."
           }
         },
         "en" : {
@@ -3449,6 +3653,12 @@
             "value" : "Trotzdem sind es verschiedene Farben."
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Κι όμως, είναι διαφορετικά χρώματα."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3547,6 +3757,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Auch in iCloud sichern"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Φύλαξη και στο iCloud"
           }
         },
         "en" : {
@@ -3649,6 +3865,12 @@
             "value" : "Speicher"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αποθήκευση"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3747,6 +3969,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Support"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Υποστήριξη"
           }
         },
         "en" : {
@@ -3849,6 +4077,12 @@
             "value" : "Entwickler"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Προγραμματιστής"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3947,6 +4181,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nutzungsstatistik"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Στατιστικά χρήσης"
           }
         },
         "en" : {
@@ -4049,6 +4289,12 @@
             "value" : "Installationszahlen und Versionsverteilung. Zum Lesen wird Lesezugriff auf den Hub-Container benötigt."
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αριθμός εγκαταστάσεων και κατανομή εκδόσεων. Για την ανάγνωση χρειάζεται δικαίωμα ανάγνωσης στο κοντέινερ του hub."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4147,6 +4393,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Einstellungen"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ρυθμίσεις"
           }
         },
         "en" : {
@@ -4249,6 +4501,12 @@
             "value" : "Fertig"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Τέλος"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4347,6 +4605,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Schließen"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Κλείσιμο"
           }
         },
         "en" : {
@@ -4449,6 +4713,12 @@
             "value" : "Sichern"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αποθήκευση"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4547,6 +4817,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Abbrechen"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ακύρωση"
           }
         },
         "en" : {
@@ -4649,6 +4925,12 @@
             "value" : "Löschen"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Διαγραφή"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4747,6 +5029,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Himmel aufnehmen"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Φωτογράφιση ουρανού"
           }
         },
         "en" : {
@@ -4849,6 +5137,12 @@
             "value" : "Verlauf"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ιστορικό"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4947,6 +5241,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Himmel"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ουρανός"
           }
         },
         "en" : {
@@ -5049,6 +5349,12 @@
             "value" : "Palette"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Παλέτα"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5147,6 +5453,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wiederholungen"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Επαναλήψεις"
           }
         },
         "en" : {
@@ -5249,6 +5561,12 @@
             "value" : "Diesen Himmel löschen?"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Διαγραφή αυτού του ουρανού;"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5347,6 +5665,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Foto und Farbe werden zusammen entfernt."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Η φωτογραφία και το χρώμα της θα αφαιρεθούν μαζί."
           }
         },
         "en" : {
@@ -5449,6 +5773,12 @@
             "value" : "Ein Gedanke beim Blick in diesen Himmel,\nein Wort, das du hinterlassen möchtest"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Μια σκέψη καθώς κοιτούσατε αυτόν τον ουρανό,\nμια λέξη που θέλετε να αφήσετε"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5549,6 +5879,12 @@
             "value" : "Durch den Himmel eines anderen Tages"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Μέσα από τον ουρανό μιας άλλης μέρας"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5644,6 +5980,12 @@
           }
         },
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
+        "el" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "SkyDex"
@@ -5749,6 +6091,12 @@
             "value" : "Zurück zum ursprünglichen Himmel"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Επιστροφή στον αρχικό ουρανό"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5847,6 +6195,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Stärke des geliehenen Himmels"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ένταση του δανεικού ουρανού"
           }
         },
         "en" : {
@@ -5949,6 +6303,12 @@
             "value" : "Eine Zeile schreiben"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Γράψτε μια γραμμή"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6047,6 +6407,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dieser Platz füllt sich mit einem Himmel aus dieser Tageszeit. Jedes Foto wird unverändert übernommen; die Farbe muss nicht passen."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αυτή η θέση γεμίζει με έναν ουρανό που τραβήχτηκε εκείνο το μέρος της ημέρας. Κάθε φωτογραφία μπαίνει όπως είναι· το χρώμα δεν χρειάζεται να ταιριάζει."
           }
         },
         "en" : {
@@ -6149,6 +6515,12 @@
             "value" : "Der Himmel soll das Quadrat füllen"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Να γεμίζει ο ουρανός το τετράγωνο"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6247,6 +6619,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Blick unter diesem Himmel"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Κοιτάζοντας κάτω από εκείνον τον ουρανό"
           }
         },
         "en" : {
@@ -6349,6 +6727,12 @@
             "value" : "Kamerazugriff ist aus"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Η πρόσβαση στην κάμερα είναι απενεργοποιημένη"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6447,6 +6831,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Schalte die Kamera in den Einstellungen ein, dann kannst du den Himmel sofort aufnehmen."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ενεργοποιήστε την κάμερα στις Ρυθμίσεις για να φωτογραφίσετε τον ουρανό αμέσως."
           }
         },
         "en" : {
@@ -6549,6 +6939,12 @@
             "value" : "Einstellungen öffnen"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Άνοιγμα Ρυθμίσεων"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6647,6 +7043,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kamera nicht verfügbar"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Η κάμερα δεν είναι διαθέσιμη"
           }
         },
         "en" : {
@@ -6749,6 +7151,12 @@
             "value" : "Der Simulator hat keine Kamera. Ein ausgewähltes Foto wird ebenfalls quadratisch zugeschnitten."
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ο προσομοιωτής δεν έχει κάμερα. Μια φωτογραφία που επιλέγετε κόβεται επίσης σε τετράγωνο."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6847,6 +7255,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aus Fotos auswählen"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Επιλογή από τις Φωτογραφίες"
           }
         },
         "en" : {
@@ -6949,6 +7363,12 @@
             "value" : "Ohne Filter"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Χωρίς φίλτρο"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7047,6 +7467,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Noch keine Himmel gesammelt"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Δεν έχει συλλεχθεί ακόμη κανένας ουρανός"
           }
         },
         "en" : {
@@ -7149,6 +7575,12 @@
             "value" : "Es beginnt mit einem Blick nach oben."
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Όλα ξεκινούν με μια ματιά προς τα πάνω."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7247,6 +7679,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Noch kein Himmel in dieser Farbe"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Δεν υπάρχει ακόμη ουρανός σε αυτό το χρώμα"
           }
         },
         "en" : {
@@ -7349,6 +7787,12 @@
             "value" : "Nimm einen Himmel in dieser Farbe auf, dann sammelt er sich hier."
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Φωτογραφίστε έναν ουρανό κοντά σε αυτό το χρώμα και θα συγκεντρωθεί εδώ."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7447,6 +7891,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Schau einmal nach oben, dann füllt sich das Feld dieser Stunde."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Κοιτάξτε προς τα πάνω μία φορά έξω και το τετράγωνο αυτής της ώρας θα γεμίσει."
           }
         },
         "en" : {
@@ -7549,6 +7999,12 @@
             "value" : "Noch nichts"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Τίποτα ακόμη"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7647,6 +8103,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Himmel heute"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ο ουρανός σήμερα"
           }
         },
         "en" : {
@@ -7749,6 +8211,12 @@
             "value" : "Brett heute"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ο πίνακας σήμερα"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7847,6 +8315,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Achtundvierzig Felder am Tag. Gesammelte Himmel füllen sie, ein Ring markiert die aktuelle Stunde."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Σαράντα οκτώ τετράγωνα την ημέρα. Οι ουρανοί που συλλέγετε τα γεμίζουν και ένας δακτύλιος σημειώνει την τρέχουσα ώρα."
           }
         },
         "en" : {
@@ -7949,6 +8423,12 @@
             "value" : "Der Himmel von heute und welche Farbe er hat."
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ο ουρανός σήμερα και τι χρώμα έχει."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8047,6 +8527,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Himmel heute · Noch nicht"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ο ουρανός σήμερα · Όχι ακόμη"
           }
         },
         "en" : {
@@ -8149,6 +8635,12 @@
             "value" : "Der Himmel von heute in Worten"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ο ουρανός σήμερα, με λόγια"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8247,6 +8739,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Der Himmel von heute, wenn man es denn in Worte fassen muss"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ο ουρανός σήμερα, αν πρέπει οπωσδήποτε να τον πούμε με λόγια"
           }
         },
         "en" : {
@@ -8349,6 +8847,12 @@
             "value" : "%lld Tage"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ημέρες: %lld"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8441,6 +8945,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld in dieser Farbe"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Σε αυτό το χρώμα: %lld"
           }
         },
         "en" : {
