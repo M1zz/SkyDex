@@ -23,6 +23,12 @@ Attach a screenshot to your questions
 Read our replies right in the app
 Support screen uses your language
 
+### 앱스토어 (English UK)
+
+Attach a screenshot to your questions
+Read our replies right in the app
+Support screen uses your language
+
 ## 1.0.1
 
 ### 앱스토어 (한국어)

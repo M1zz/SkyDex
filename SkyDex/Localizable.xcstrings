@@ -10,6 +10,12 @@
             "value" : "Face ID lock"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face ID lock"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -22,6 +28,12 @@
       "comment" : "Roadmap item detail: Face ID lock",
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lock the app with Face ID to keep your skies private."
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lock the app with Face ID to keep your skies private."
@@ -44,6 +56,12 @@
             "value" : "Ask Siri to start snapping the sky right away."
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ask Siri to start snapping the sky right away."
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -56,6 +74,12 @@
       "comment" : "Roadmap item: Siri and Shortcuts",
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siri and Shortcuts"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Siri and Shortcuts"
@@ -78,6 +102,12 @@
             "value" : "Better VoiceOver support"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Better VoiceOver support"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -90,6 +120,12 @@
       "comment" : "Roadmap item detail: Dynamic Type layouts",
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Screens rearrange neatly instead of getting cut off when you enlarge text."
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Screens rearrange neatly instead of getting cut off when you enlarge text."
@@ -112,6 +148,12 @@
             "value" : "Erase all my skies"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erase all my skies"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -124,6 +166,12 @@
       "comment" : "Roadmap item detail: more languages",
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use the app in more languages."
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Use the app in more languages."
@@ -146,6 +194,12 @@
             "value" : "More languages"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "More languages"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -158,6 +212,12 @@
       "comment" : "Roadmap item detail: backup and export",
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save your sky photos to a file and bring them back later."
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Save your sky photos to a file and bring them back later."
@@ -180,6 +240,12 @@
             "value" : "Easier colors and contrast"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Easier colours and contrast"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -192,6 +258,12 @@
       "comment" : "Roadmap item: backup and export",
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Photo backup and export"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Photo backup and export"
@@ -214,6 +286,12 @@
             "value" : "Tell which sky each square holds, even if colors are hard to tell apart."
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tell which sky each square holds, even if colours are hard to tell apart."
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -226,6 +304,12 @@
       "comment" : "Roadmap item: tips",
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Handy tips"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Handy tips"
@@ -248,6 +332,12 @@
             "value" : "Get a nudge when it’s a good time to catch a sky you haven’t collected yet."
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Get a nudge when it’s a good time to catch a sky you haven’t collected yet."
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -260,6 +350,12 @@
       "comment" : "Roadmap item detail: tips",
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gentle hints about useful features, right when you need them."
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gentle hints about useful features, right when you need them."
@@ -282,6 +378,12 @@
             "value" : "Use the whole app in English."
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use the whole app in English."
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -294,6 +396,12 @@
       "comment" : "Roadmap item detail: what's new",
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The first time you open the app after an update, see what’s new."
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "The first time you open the app after an update, see what’s new."
@@ -316,6 +424,12 @@
             "value" : "What’s new"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What’s new"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -328,6 +442,12 @@
       "comment" : "Roadmap item: English",
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Full English support"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Full English support"
@@ -350,6 +470,12 @@
             "value" : "Delete every sky photo you’ve collected, right from the app."
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete every sky photo you’ve collected, right from the app."
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -362,6 +488,12 @@
       "comment" : "Roadmap item: onboarding",
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A quick start for new users"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "A quick start for new users"
@@ -384,6 +516,12 @@
             "value" : "The first time you open the app, see how to fill your sky board."
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The first time you open the app, see how to fill your sky board."
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -396,6 +534,12 @@
       "comment" : "Roadmap item: Dynamic Type layouts",
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Layouts for larger text"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Layouts for larger text"
@@ -418,6 +562,12 @@
             "value" : "Foldable iPhone layout"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foldable iPhone layout"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -430,6 +580,12 @@
       "comment" : "Roadmap item detail: foldable iPhone layout",
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use the wide screen of a foldable iPhone as two side-by-side panes."
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Use the wide screen of a foldable iPhone as two side-by-side panes."
@@ -452,6 +608,12 @@
             "value" : "Sky reminders"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sky reminders"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -464,6 +626,12 @@
       "comment" : "Roadmap item detail: better VoiceOver support",
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver reads every button and sky square, in the right order."
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "VoiceOver reads every button and sky square, in the right order."
@@ -485,6 +653,12 @@
             "value" : "No repeats yet"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No repeats yet"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -496,6 +670,12 @@
     "같은 시각의 하늘을 다른 날에 한 번 더 찍으면, 그 둘이 여기에서 나란히 섭니다." : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Capture the sky at the same time on another day, and the two will stand side by side here."
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Capture the sky at the same time on another day, and the two will stand side by side here."
@@ -517,6 +697,12 @@
             "value" : "Same hour, same day"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Same hour, same day"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -528,6 +714,12 @@
     "일주일도 한 달도 같은 모양으로 돌아옵니다. 그 시각의 하늘만 한 번도 같지 않았습니다." : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A week or a month comes round in the same shape. Only the sky at that hour has never once been the same."
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "A week or a month comes round in the same shape. Only the sky at that hour has never once been the same."
@@ -549,6 +741,12 @@
             "value" : "The two closest skies"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The two closest skies"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -560,6 +758,12 @@
     "눈으로는 같은 색입니다." : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To the eye, it's the same colour."
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "To the eye, it's the same colour."
@@ -581,6 +785,12 @@
             "value" : "Still, they're different colours."
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Still, they're different colours."
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -592,6 +802,12 @@
     "iCloud에 함께 보관" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Also keep in iCloud"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Also keep in iCloud"
@@ -613,6 +829,12 @@
             "value" : "Storage"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Storage"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -624,6 +846,12 @@
     "지원" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Support"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Support"
@@ -645,6 +873,12 @@
             "value" : "Developer"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Developer"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -656,6 +890,12 @@
     "사용 통계" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usage statistics"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Usage statistics"
@@ -677,6 +917,12 @@
             "value" : "Install counts and version spread. Reading them needs read access to the hub container."
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Install counts and version spread. Reading them needs read access to the hub container."
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -688,6 +934,12 @@
     "설정" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Settings"
@@ -709,6 +961,12 @@
             "value" : "Done"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Done"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -720,6 +978,12 @@
     "닫기" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Close"
@@ -741,6 +1005,12 @@
             "value" : "Save"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -752,6 +1022,12 @@
     "취소" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cancel"
@@ -773,6 +1049,12 @@
             "value" : "Delete"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -784,6 +1066,12 @@
     "하늘 찍기" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Capture the sky"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Capture the sky"
@@ -805,6 +1093,12 @@
             "value" : "Log"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Log"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -816,6 +1110,12 @@
     "하늘" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sky"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sky"
@@ -837,6 +1137,12 @@
             "value" : "Palette"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palette"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -848,6 +1154,12 @@
     "되풀이" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Repeats"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Repeats"
@@ -869,6 +1181,12 @@
             "value" : "Delete this sky?"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete this sky?"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -880,6 +1198,12 @@
     "사진과 색이 함께 사라집니다." : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The photo and its colour will both be removed."
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "The photo and its colour will both be removed."
@@ -901,6 +1225,12 @@
             "value" : "A thought you had looking at this sky,\na word you'd like to leave"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A thought you had looking at this sky,\na word you'd like to leave"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -912,6 +1242,12 @@
     "다른 날의 하늘로" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Through another day's sky"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Through another day's sky"
@@ -933,6 +1269,12 @@
             "value" : "SkyDex"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -944,6 +1286,12 @@
     "원래 하늘로" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Back to the original sky"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Back to the original sky"
@@ -965,6 +1313,12 @@
             "value" : "Strength of the borrowed sky"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Strength of the borrowed sky"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -976,6 +1330,12 @@
     "한 줄 쓰기" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Write a line"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Write a line"
@@ -997,6 +1357,12 @@
             "value" : "This spot fills with a sky taken in that part of the day. Any photo goes in as it is; the colour doesn't have to match."
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This spot fills with a sky taken in that part of the day. Any photo goes in as it is; the colour doesn't have to match."
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1008,6 +1374,12 @@
     "하늘이 정사각형을 채우도록" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Let the sky fill the square"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Let the sky fill the square"
@@ -1029,6 +1401,12 @@
             "value" : "Looking under that sky"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Looking under that sky"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1040,6 +1418,12 @@
     "카메라 권한이 꺼져 있어요" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Camera access is off"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Camera access is off"
@@ -1061,6 +1445,12 @@
             "value" : "Turn the camera on in Settings to capture the sky right away."
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turn the camera on in Settings to capture the sky right away."
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1072,6 +1462,12 @@
     "설정 열기" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Settings"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Open Settings"
@@ -1093,6 +1489,12 @@
             "value" : "Camera unavailable"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Camera unavailable"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1104,6 +1506,12 @@
     "시뮬레이터에는 카메라가 없습니다. 사진에서 골라도 정사각형으로 잘려 들어갑니다." : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The simulator has no camera. A photo you pick is cropped to a square as well."
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "The simulator has no camera. A photo you pick is cropped to a square as well."
@@ -1125,6 +1533,12 @@
             "value" : "Choose from Photos"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose from Photos"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1136,6 +1550,12 @@
     "필터 없이" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No filter"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "No filter"
@@ -1157,6 +1577,12 @@
             "value" : "No skies collected yet"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No skies collected yet"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1168,6 +1594,12 @@
     "밖을 한 번 올려다보는 것으로 시작합니다." : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "It starts with a glance up outside."
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "It starts with a glance up outside."
@@ -1189,6 +1621,12 @@
             "value" : "No sky in this colour yet"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No sky in this colour yet"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1200,6 +1638,12 @@
     "이 색에 가까운 하늘을 찍으면 여기에 쌓입니다." : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Capture a sky close to this colour and it will gather here."
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Capture a sky close to this colour and it will gather here."
@@ -1221,6 +1665,12 @@
             "value" : "Look up once outside and this hour's cell fills in."
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Look up once outside and this hour's cell fills in."
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1232,6 +1682,12 @@
     "아직 없습니다" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nothing yet"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nothing yet"
@@ -1253,6 +1709,12 @@
             "value" : "Today's Sky"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Today's Sky"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1264,6 +1726,12 @@
     "오늘의 판" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Today's Board"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Today's Board"
@@ -1285,6 +1753,12 @@
             "value" : "Forty-eight cells a day. Collected skies fill in, and a ring marks the current hour."
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forty-eight cells a day. Collected skies fill in, and a ring marks the current hour."
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1296,6 +1770,12 @@
     "오늘 찍은 하늘과, 그 색이 어떤 색인지." : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Today's sky, and what colour it is."
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Today's sky, and what colour it is."
@@ -1317,6 +1797,12 @@
             "value" : "Today's Sky · Not yet"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Today's Sky · Not yet"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1328,6 +1814,12 @@
     "오늘의 하늘, 말로 하면" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Today's sky, in words"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Today's sky, in words"
@@ -1349,6 +1841,12 @@
             "value" : "Today's sky, if you must put it in words"
           }
         },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Today's sky, if you must put it in words"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1364,12 +1862,24 @@
             "state" : "translated",
             "value" : "%lld days"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld days"
+          }
         }
       }
     },
     "이 색 %lld장" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld in this colour"
+          }
+        },
+        "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld in this colour"
