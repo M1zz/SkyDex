@@ -4,6 +4,12 @@
     "Face ID 잠금" : {
       "comment" : "Roadmap item: Face ID lock",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face-ID-Sperre"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -57,6 +63,12 @@
     "Face ID로 앱을 잠가 내 하늘 기록을 지켜요." : {
       "comment" : "Roadmap item detail: Face ID lock",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sperre die App mit Face ID, damit deine Himmel privat bleiben."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -110,6 +122,12 @@
     "Siri에게 말하면 바로 하늘을 찍을 수 있어요." : {
       "comment" : "Roadmap item detail: Siri and Shortcuts",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sag es Siri, und du kannst sofort den Himmel fotografieren."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -163,6 +181,12 @@
     "Siri와 단축어" : {
       "comment" : "Roadmap item: Siri and Shortcuts",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siri und Kurzbefehle"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -216,6 +240,12 @@
     "VoiceOver로 더 편하게" : {
       "comment" : "Roadmap item: better VoiceOver support",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Besser mit VoiceOver"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -269,6 +299,12 @@
     "글자 크기를 키워도 잘리지 않고 보기 좋게 다시 배치돼요." : {
       "comment" : "Roadmap item detail: Dynamic Type layouts",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bei größerer Schrift ordnen sich die Bildschirme sauber neu an, ohne dass etwas abgeschnitten wird."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -322,6 +358,12 @@
     "내 하늘 한 번에 지우기" : {
       "comment" : "Roadmap item: delete all data",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle meine Himmel auf einmal löschen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -375,6 +417,12 @@
     "더 많은 나라 말로 앱을 쓸 수 있게 해요." : {
       "comment" : "Roadmap item detail: more languages",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nutze die App in noch mehr Sprachen."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -428,6 +476,12 @@
     "더 많은 언어" : {
       "comment" : "Roadmap item: more languages",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mehr Sprachen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -481,6 +535,12 @@
     "모은 하늘 사진을 파일로 저장하고 다시 불러올 수 있어요." : {
       "comment" : "Roadmap item detail: backup and export",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Speichere deine Himmelsfotos in einer Datei und hol sie später zurück."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -534,6 +594,12 @@
     "보기 편한 색과 대비" : {
       "comment" : "Roadmap item: contrast and color",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Angenehmere Farben und Kontraste"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -587,6 +653,12 @@
     "사진 백업과 내보내기" : {
       "comment" : "Roadmap item: backup and export",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foto-Backup und Export"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -640,6 +712,12 @@
     "색을 구별하기 어려워도 칸마다 어떤 하늘인지 알아볼 수 있어요." : {
       "comment" : "Roadmap item detail: contrast and color",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auch wenn Farben schwer zu unterscheiden sind, erkennst du, welcher Himmel in welchem Feld steckt."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -693,6 +771,12 @@
     "쓰는 요령 알려 주기" : {
       "comment" : "Roadmap item: tips",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Praktische Tipps"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -746,6 +830,12 @@
     "아직 못 채운 하늘을 찍기 좋은 때에 알림으로 알려 줘요." : {
       "comment" : "Roadmap item detail: notifications",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Du bekommst einen Hinweis, wenn sich ein Himmel lohnt, der dir noch fehlt."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -799,6 +889,12 @@
     "알아 두면 편한 기능을 알맞은 때에 살짝 알려 줘요." : {
       "comment" : "Roadmap item detail: tips",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dezente Hinweise auf nützliche Funktionen, genau dann, wenn du sie brauchst."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -852,6 +948,12 @@
     "앱을 영어로도 쓸 수 있어요." : {
       "comment" : "Roadmap item detail: English",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nutze die ganze App auch auf Englisch."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -905,6 +1007,12 @@
     "업데이트 뒤 처음 열 때 무엇이 새로 생겼는지 알려 줘요." : {
       "comment" : "Roadmap item detail: what's new",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beim ersten Öffnen nach einem Update siehst du, was neu ist."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -958,6 +1066,12 @@
     "업데이트 소식" : {
       "comment" : "Roadmap item: what's new",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neuigkeiten"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1011,6 +1125,12 @@
     "영어 지원" : {
       "comment" : "Roadmap item: English",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Volle Unterstützung für Englisch"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1064,6 +1184,12 @@
     "원하면 앱 안에서 모은 하늘 사진을 모두 지울 수 있어요." : {
       "comment" : "Roadmap item detail: delete all data",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auf Wunsch löschst du alle gesammelten Himmelsfotos direkt in der App."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1117,6 +1243,12 @@
     "처음 쓰는 분을 위한 안내" : {
       "comment" : "Roadmap item: onboarding",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kurze Einführung für Neue"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1170,6 +1302,12 @@
     "처음 열었을 때 하늘 판을 채우는 법을 짧게 보여 줘요." : {
       "comment" : "Roadmap item detail: onboarding",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beim ersten Öffnen siehst du kurz, wie du dein Himmelsbrett füllst."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1223,6 +1361,12 @@
     "큰 글씨에 맞춘 화면" : {
       "comment" : "Roadmap item: Dynamic Type layouts",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Layouts für größere Schrift"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1276,6 +1420,12 @@
     "펼치는 아이폰 화면" : {
       "comment" : "Roadmap item: foldable iPhone layout",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Layout für faltbares iPhone"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1329,6 +1479,12 @@
     "펼치는 아이폰에서 넓은 화면을 두 쪽으로 나눠 써요." : {
       "comment" : "Roadmap item detail: foldable iPhone layout",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nutze den breiten Bildschirm eines faltbaren iPhones in zwei Bereichen nebeneinander."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1382,6 +1538,12 @@
     "하늘 알림" : {
       "comment" : "Roadmap item: notifications",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Himmelserinnerungen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1435,6 +1597,12 @@
     "화면 읽기 기능이 단추와 하늘 칸을 빠짐없이, 알맞은 순서로 읽어 줘요." : {
       "comment" : "Roadmap item detail: better VoiceOver support",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver liest jede Taste und jedes Himmelsfeld vor, in der richtigen Reihenfolge."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1487,6 +1655,12 @@
     },
     "아직 되풀이가 없어요" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Noch keine Wiederholungen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1539,6 +1713,12 @@
     },
     "같은 시각의 하늘을 다른 날에 한 번 더 찍으면, 그 둘이 여기에서 나란히 섭니다." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fotografiere den Himmel zur gleichen Uhrzeit an einem anderen Tag, dann stehen die beiden hier nebeneinander."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1591,6 +1771,12 @@
     },
     "같은 시각, 같은 하루" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gleiche Stunde, gleicher Tag"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1643,6 +1829,12 @@
     },
     "일주일도 한 달도 같은 모양으로 돌아옵니다. 그 시각의 하늘만 한 번도 같지 않았습니다." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eine Woche oder ein Monat kehrt in derselben Form wieder. Nur der Himmel zu dieser Stunde war nie derselbe."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1695,6 +1887,12 @@
     },
     "가장 비슷했던 두 하늘" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die zwei ähnlichsten Himmel"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1747,6 +1945,12 @@
     },
     "눈으로는 같은 색입니다." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fürs Auge ist es dieselbe Farbe."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1799,6 +2003,12 @@
     },
     "그래도 다른 색입니다." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trotzdem sind es verschiedene Farben."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1851,6 +2061,12 @@
     },
     "iCloud에 함께 보관" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auch in iCloud sichern"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1903,6 +2119,12 @@
     },
     "보관" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Speicher"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1955,6 +2177,12 @@
     },
     "지원" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Support"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2007,6 +2235,12 @@
     },
     "개발자" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entwickler"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2059,6 +2293,12 @@
     },
     "사용 통계" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nutzungsstatistik"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2111,6 +2351,12 @@
     },
     "설치 수와 버전 분포. 읽으려면 허브 컨테이너의 read 권한이 필요합니다." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Installationszahlen und Versionsverteilung. Zum Lesen wird Lesezugriff auf den Hub-Container benötigt."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2163,6 +2409,12 @@
     },
     "설정" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einstellungen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2215,6 +2467,12 @@
     },
     "완료" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fertig"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2267,6 +2525,12 @@
     },
     "닫기" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schließen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2319,6 +2583,12 @@
     },
     "저장" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sichern"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2371,6 +2641,12 @@
     },
     "취소" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abbrechen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2423,6 +2699,12 @@
     },
     "지우기" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Löschen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2475,6 +2757,12 @@
     },
     "하늘 찍기" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Himmel aufnehmen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2527,6 +2815,12 @@
     },
     "기록" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verlauf"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2579,6 +2873,12 @@
     },
     "하늘" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Himmel"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2631,6 +2931,12 @@
     },
     "팔레트" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palette"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2683,6 +2989,12 @@
     },
     "되풀이" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wiederholungen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2735,6 +3047,12 @@
     },
     "이 하늘을 지울까요?" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diesen Himmel löschen?"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2787,6 +3105,12 @@
     },
     "사진과 색이 함께 사라집니다." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foto und Farbe werden zusammen entfernt."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2839,6 +3163,12 @@
     },
     "이 하늘을 보면서 들었던 생각,\n하고 싶은 한 마디" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ein Gedanke beim Blick in diesen Himmel,\nein Wort, das du hinterlassen möchtest"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2891,6 +3221,12 @@
     },
     "다른 날의 하늘로" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Durch den Himmel eines anderen Tages"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2943,6 +3279,12 @@
     },
     "하늘색" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2995,6 +3337,12 @@
     },
     "원래 하늘로" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zurück zum ursprünglichen Himmel"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3047,6 +3395,12 @@
     },
     "빌려 온 하늘의 세기" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stärke des geliehenen Himmels"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3099,6 +3453,12 @@
     },
     "한 줄 쓰기" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eine Zeile schreiben"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3151,6 +3511,12 @@
     },
     "이 자리는 그 시간대에 찍은 하늘로 채워집니다. 어떤 사진이든 그대로 들어가고, 색이 맞아야 할 필요는 없습니다." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dieser Platz füllt sich mit einem Himmel aus dieser Tageszeit. Jedes Foto wird unverändert übernommen; die Farbe muss nicht passen."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3203,6 +3569,12 @@
     },
     "하늘이 정사각형을 채우도록" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der Himmel soll das Quadrat füllen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3255,6 +3627,12 @@
     },
     "그 하늘 아래에서 보는 중" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blick unter diesem Himmel"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3307,6 +3685,12 @@
     },
     "카메라 권한이 꺼져 있어요" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamerazugriff ist aus"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3359,6 +3743,12 @@
     },
     "설정에서 카메라를 켜면 하늘을 바로 찍을 수 있어요." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schalte die Kamera in den Einstellungen ein, dann kannst du den Himmel sofort aufnehmen."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3411,6 +3801,12 @@
     },
     "설정 열기" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einstellungen öffnen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3463,6 +3859,12 @@
     },
     "카메라를 쓸 수 없어요" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamera nicht verfügbar"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3515,6 +3917,12 @@
     },
     "시뮬레이터에는 카메라가 없습니다. 사진에서 골라도 정사각형으로 잘려 들어갑니다." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der Simulator hat keine Kamera. Ein ausgewähltes Foto wird ebenfalls quadratisch zugeschnitten."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3567,6 +3975,12 @@
     },
     "사진에서 고르기" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aus Fotos auswählen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3619,6 +4033,12 @@
     },
     "필터 없이" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ohne Filter"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3671,6 +4091,12 @@
     },
     "아직 모은 하늘이 없어요" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Noch keine Himmel gesammelt"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3723,6 +4149,12 @@
     },
     "밖을 한 번 올려다보는 것으로 시작합니다." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Es beginnt mit einem Blick nach oben."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3775,6 +4207,12 @@
     },
     "이 색은 아직 없어요" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Noch kein Himmel in dieser Farbe"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3827,6 +4265,12 @@
     },
     "이 색에 가까운 하늘을 찍으면 여기에 쌓입니다." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nimm einen Himmel in dieser Farbe auf, dann sammelt er sich hier."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3879,6 +4323,12 @@
     },
     "밖을 한 번 올려다보면 이 시각 칸이 채워집니다." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schau einmal nach oben, dann füllt sich das Feld dieser Stunde."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3931,6 +4381,12 @@
     },
     "아직 없습니다" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Noch nichts"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3983,6 +4439,12 @@
     },
     "오늘의 하늘" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Himmel heute"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4035,6 +4497,12 @@
     },
     "오늘의 판" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brett heute"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4087,6 +4555,12 @@
     },
     "하루 마흔여덟 칸. 모은 하늘은 채워지고, 지금 시각에는 고리가 걸립니다." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achtundvierzig Felder am Tag. Gesammelte Himmel füllen sie, ein Ring markiert die aktuelle Stunde."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4139,6 +4613,12 @@
     },
     "오늘 찍은 하늘과, 그 색이 어떤 색인지." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der Himmel von heute und welche Farbe er hat."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4191,6 +4671,12 @@
     },
     "오늘의 하늘 · 아직" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Himmel heute · Noch nicht"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4243,6 +4729,12 @@
     },
     "오늘의 하늘, 말로 하면" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der Himmel von heute in Worten"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4295,6 +4787,12 @@
     },
     "오늘의 하늘, 굳이 말하자면" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der Himmel von heute, wenn man es denn in Worte fassen muss"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4347,6 +4845,12 @@
     },
     "%lld일" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Tage"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4393,6 +4897,12 @@
     },
     "이 색 %lld장" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld in dieser Farbe"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",

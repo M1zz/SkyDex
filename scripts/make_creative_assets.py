@@ -44,6 +44,7 @@ SEARCH = {
     "zh-Hant": ("天空照片日記", "收集 48 種<br>天空的顏色", "每拍一片天空，就填滿一個圓點"),
     "ru": ("Дневник неба", "Соберите 48<br>оттенков неба", "Каждый снимок неба закрашивает один кружок"),
     "es-MX": ("Diario de cielos", "Reúne 48<br>tonos de cielo", "Cada cielo que captas llena un círculo"),
+    "de-DE": ("Himmels-Fototagebuch", "Sammle 48<br>Himmelsfarben", "Jeder Himmel, den du knipst, füllt einen Kreis"),
 }
 
 # 헤더는 처음 온 사람에게 한 가지 약속만 한다: 하늘을 찍으면 그 색이 모인다.
@@ -56,6 +57,7 @@ HEADER = {
     "zh-Hant": ("天空的顏色", "拍下天空，<br>留住它的顏色。"),
     "ru": ("Цвета неба", "Снимайте небо.<br>Сохраняйте его цвет."),
     "es-MX": ("Colores del cielo", "Capta el cielo.<br>Guarda su color."),
+    "de-DE": ("Himmelsfarben", "Fotografiere den Himmel.<br>Behalte seine Farbe."),
 }
 
 # 판에서 실제로 뽑은 색(시뮬레이터 캡처 01-board.png 의 채운 칸). 헤더 오른쪽 장식에 쓴다.

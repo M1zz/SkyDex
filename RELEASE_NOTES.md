@@ -59,6 +59,12 @@ Adjunta una captura a tus consultas
 Lee nuestras respuestas dentro de la app
 Soporte en el idioma de tu dispositivo
 
+### 앱스토어 (Deutsch)
+
+Hänge Screenshots an deine Fragen an
+Lies unsere Antworten direkt in der App
+Support-Seite in deiner Sprache
+
 
 ## 1.0.1
 

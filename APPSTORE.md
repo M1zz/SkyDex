@@ -455,3 +455,60 @@ Elige desde Fotos
 Un cielo elegido de tu fototeca en lugar de la cámara también se recorta en cuadrado.
 
 Sin cuenta ni inicio de sesión. Tus cielos se guardan en tu propio iCloud, así que te acompañan a un dispositivo nuevo.
+
+## de-DE
+
+### 지원 URL
+
+https://m1zz.github.io/SkyDex/de/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/SkyDex/de/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/SkyDex/de/
+
+### 이름
+
+SkyDex: Himmelsfarben sammeln
+
+### 부제
+
+Ein Brett voller Himmel
+
+### 키워드
+
+Tagebuch,Farbe,Palette,Moodboard,Wolken,Sonnenuntergang,Sonnenaufgang,Journal,Ästhetik,Widget
+
+### 프로모션 텍스트
+
+Welche Farbe hatte der Himmel heute? Mit jedem Foto füllt sich eines von achtundvierzig Himmelsfeldern des Tages und bekommt einen Namen, der zu ihm passt.
+
+### 설명
+
+Mit jedem Foto vom Himmel füllt sich eines der achtundvierzig Farbfelder deines Tages.
+Eine kleine App, die festhält, welche Farbe der Himmel heute hatte: ein Foto und eine Zeile.
+
+Das Brett reicht vom Blauschwarz der Morgendämmerung über das Mittagsblau und das Orange des Sonnenuntergangs bis zum Violett der Nacht: achtundvierzig Farben, durch die der Himmel an einem Tag wandert. Jedes Foto füllt das nächstliegende Feld. Keine Bewertung, keine Ablehnung: Foto machen, und es ist drin.
+
+Jeder Himmel bekommt einen Namen
+Jede eingefangene Farbe erhält ein paar Worte, die zu ihr passen, etwa Dünnes Eis, Poolfliese oder Reife Kaki, dazu den nächstliegenden Namen aus traditionellen Farbpaletten.
+
+Hinterlasse eine Zeile
+Gleich nach dem Foto öffnet sich eine Karte. Schreib auf, was du beim Blick nach oben gedacht hast. Sie schwebt wieder über dem Himmel, sobald du das Feld auf dem Brett antippst.
+
+Leere Felder zeigen den Weg
+Tippe ein leeres Feld an und sieh, zu welcher Tageszeit es gehört und welche Farbe du suchen musst.
+
+Verlauf, Palette, Wiederholungen
+Blättere der Reihe nach durch deine Himmel, sammle deine Farben in Paletten wie Blautöne, Grautöne und Abendrot und fotografiere dieselbe Stunde an einem anderen Tag, um beide nebeneinander zu vergleichen.
+
+Widgets
+Sieh den Himmel von heute und das Brett von heute direkt auf dem Home-Bildschirm.
+
+Aus Fotos auswählen
+Ein Himmel aus deiner Mediathek statt von der Kamera wird ebenfalls quadratisch zugeschnitten.
+
+Kein Konto, keine Anmeldung. Deine Himmel liegen in deiner eigenen iCloud und ziehen mit auf ein neues Gerät.
