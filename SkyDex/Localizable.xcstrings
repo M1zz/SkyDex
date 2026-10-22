@@ -58,6 +58,12 @@
             "value" : "Verrouillage Face ID"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kunci Face ID"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -169,6 +175,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Verrouillez l’app avec Face ID pour garder vos ciels pour vous."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kunci aplikasi dengan Face ID agar langit koleksimu tetap pribadi."
           }
         },
         "it" : {
@@ -284,6 +296,12 @@
             "value" : "Dites-le à Siri et photographiez le ciel tout de suite."
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bilang saja ke Siri, dan kamu langsung bisa memotret langit."
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -395,6 +413,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Siri et Raccourcis"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siri dan Pintasan"
           }
         },
         "it" : {
@@ -510,6 +534,12 @@
             "value" : "Un meilleur support de VoiceOver"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver yang lebih nyaman"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -621,6 +651,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quand vous agrandissez le texte, les écrans se réorganisent proprement, sans rien couper."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saat teks diperbesar, tampilan tersusun ulang dengan rapi tanpa ada yang terpotong."
           }
         },
         "it" : {
@@ -736,6 +772,12 @@
             "value" : "Effacer tous mes ciels d’un coup"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hapus semua langitku sekaligus"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -847,6 +889,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Utilisez l’app dans davantage de langues."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gunakan aplikasi dalam lebih banyak bahasa."
           }
         },
         "it" : {
@@ -962,6 +1010,12 @@
             "value" : "Plus de langues"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lebih banyak bahasa"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1073,6 +1127,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Enregistrez vos photos de ciel dans un fichier et retrouvez-les plus tard."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simpan foto langit ke dalam file dan pulihkan lagi nanti."
           }
         },
         "it" : {
@@ -1188,6 +1248,12 @@
             "value" : "Couleurs et contrastes plus confortables"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Warna dan kontras yang lebih nyaman"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1299,6 +1365,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sauvegarde et export des photos"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pencadangan dan ekspor foto"
           }
         },
         "it" : {
@@ -1414,6 +1486,12 @@
             "value" : "Même si les couleurs sont difficiles à distinguer, vous reconnaissez le ciel de chaque case."
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meski sulit membedakan warna, kamu tetap tahu langit apa yang ada di tiap kotak."
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1525,6 +1603,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Petits conseils"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tips berguna"
           }
         },
         "it" : {
@@ -1640,6 +1724,12 @@
             "value" : "Une alerte quand c’est le bon moment pour capter un ciel qui vous manque encore."
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dapatkan pengingat saat waktunya tepat untuk memotret langit yang belum kamu punya."
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1751,6 +1841,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "De discrets conseils sur les fonctions utiles, juste quand vous en avez besoin."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Petunjuk halus tentang fitur berguna, tepat saat kamu membutuhkannya."
           }
         },
         "it" : {
@@ -1866,6 +1962,12 @@
             "value" : "Utilisez toute l’app aussi en anglais."
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gunakan seluruh aplikasi dalam bahasa Inggris juga."
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1977,6 +2079,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "À la première ouverture après une mise à jour, découvrez les nouveautés."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saat pertama membuka aplikasi setelah pembaruan, lihat apa yang baru."
           }
         },
         "it" : {
@@ -2092,6 +2200,12 @@
             "value" : "Nouveautés"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yang baru"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2203,6 +2317,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Prise en charge complète de l’anglais"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dukungan penuh bahasa Inggris"
           }
         },
         "it" : {
@@ -2318,6 +2438,12 @@
             "value" : "Si vous le souhaitez, supprimez depuis l’app toutes les photos de ciel collectées."
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jika mau, hapus semua foto langit koleksimu langsung dari aplikasi."
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2429,6 +2555,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Un guide pour bien démarrer"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Panduan singkat untuk pengguna baru"
           }
         },
         "it" : {
@@ -2544,6 +2676,12 @@
             "value" : "À la première ouverture, découvrez en quelques mots comment remplir votre planche de ciels."
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saat pertama membuka aplikasi, lihat cara mengisi papan langit."
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2655,6 +2793,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mises en page pour grands textes"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tata letak untuk teks besar"
           }
         },
         "it" : {
@@ -2770,6 +2914,12 @@
             "value" : "Affichage pour iPhone pliable"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tata letak untuk iPhone lipat"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2881,6 +3031,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Profitez du grand écran d’un iPhone pliable en deux volets côte à côte."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manfaatkan layar lebar iPhone lipat sebagai dua panel berdampingan."
           }
         },
         "it" : {
@@ -2996,6 +3152,12 @@
             "value" : "Rappels de ciel"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pengingat langit"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3107,6 +3269,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "VoiceOver lit chaque bouton et chaque case de ciel, dans le bon ordre."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver membacakan setiap tombol dan kotak langit dengan urutan yang benar."
           }
         },
         "it" : {
@@ -3221,6 +3389,12 @@
             "value" : "Aucune répétition pour l’instant"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Belum ada pengulangan"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3331,6 +3505,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Photographiez le ciel à la même heure un autre jour, et les deux apparaîtront côte à côte ici."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Potret langit pada jam yang sama di hari lain, lalu keduanya akan berdampingan di sini."
           }
         },
         "it" : {
@@ -3445,6 +3625,12 @@
             "value" : "Même heure, même jour"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jam yang sama, hari yang sama"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3555,6 +3741,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Une semaine ou un mois reviennent sous la même forme. Seul le ciel de cette heure n’a jamais été le même."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seminggu atau sebulan kembali dengan bentuk yang sama. Hanya langit pada jam itu yang tak pernah sama."
           }
         },
         "it" : {
@@ -3669,6 +3861,12 @@
             "value" : "Les deux ciels les plus proches"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dua langit yang paling mirip"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3779,6 +3977,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "À l’œil, c’est la même couleur."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Di mata, warnanya sama."
           }
         },
         "it" : {
@@ -3893,6 +4097,12 @@
             "value" : "Pourtant, ce sont deux couleurs différentes."
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tapi tetap saja warnanya berbeda."
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4003,6 +4213,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Conserver aussi dans iCloud"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simpan juga di iCloud"
           }
         },
         "it" : {
@@ -4117,6 +4333,12 @@
             "value" : "Stockage"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penyimpanan"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4227,6 +4449,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Assistance"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dukungan"
           }
         },
         "it" : {
@@ -4341,6 +4569,12 @@
             "value" : "Développeur"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pengembang"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4451,6 +4685,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Statistiques d’utilisation"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Statistik penggunaan"
           }
         },
         "it" : {
@@ -4565,6 +4805,12 @@
             "value" : "Nombre d’installations et répartition des versions. Leur lecture nécessite un accès en lecture au conteneur du hub."
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jumlah instalasi dan sebaran versi. Untuk membacanya diperlukan izin baca ke kontainer hub."
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4675,6 +4921,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Réglages"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pengaturan"
           }
         },
         "it" : {
@@ -4789,6 +5041,12 @@
             "value" : "OK"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selesai"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4899,6 +5157,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fermer"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tutup"
           }
         },
         "it" : {
@@ -5013,6 +5277,12 @@
             "value" : "Enregistrer"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simpan"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5123,6 +5393,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Annuler"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Batal"
           }
         },
         "it" : {
@@ -5237,6 +5513,12 @@
             "value" : "Supprimer"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hapus"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5347,6 +5629,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Capter le ciel"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Potret langit"
           }
         },
         "it" : {
@@ -5461,6 +5749,12 @@
             "value" : "Journal"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Log"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5571,6 +5865,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ciel"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Langit"
           }
         },
         "it" : {
@@ -5685,6 +5985,12 @@
             "value" : "Palette"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palet"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5795,6 +6101,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Répétitions"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pengulangan"
           }
         },
         "it" : {
@@ -5909,6 +6221,12 @@
             "value" : "Supprimer ce ciel ?"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hapus langit ini?"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6019,6 +6337,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "La photo et sa couleur seront supprimées ensemble."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foto dan warnanya akan dihapus bersamaan."
           }
         },
         "it" : {
@@ -6133,6 +6457,12 @@
             "value" : "Une pensée en regardant ce ciel,\nun mot à laisser"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pikiran yang muncul saat memandang langit ini,\nsatu kata yang ingin kamu tinggalkan"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6245,6 +6575,12 @@
             "value" : "À travers le ciel d’un autre jour"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lewat langit hari lain"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6352,6 +6688,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "SkyDex"
@@ -6469,6 +6811,12 @@
             "value" : "Revenir au ciel d’origine"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kembali ke langit asli"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6579,6 +6927,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Intensité du ciel emprunté"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kekuatan langit pinjaman"
           }
         },
         "it" : {
@@ -6693,6 +7047,12 @@
             "value" : "Écrire une ligne"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tulis satu baris"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6803,6 +7163,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cette place se remplit avec un ciel pris à ce moment de la journée. Toute photo y entre telle quelle ; la couleur n’a pas besoin de correspondre."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tempat ini terisi langit yang dipotret pada waktu itu. Foto apa pun masuk apa adanya; warnanya tak harus cocok."
           }
         },
         "it" : {
@@ -6917,6 +7283,12 @@
             "value" : "Que le ciel remplisse le carré"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Biarkan langit memenuhi persegi"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7027,6 +7399,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sous ce ciel"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memandang di bawah langit itu"
           }
         },
         "it" : {
@@ -7141,6 +7519,12 @@
             "value" : "L’accès à l’appareil photo est désactivé"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Akses kamera mati"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7251,6 +7635,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Activez l’appareil photo dans Réglages pour capter le ciel tout de suite."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nyalakan kamera di Pengaturan agar bisa langsung memotret langit."
           }
         },
         "it" : {
@@ -7365,6 +7755,12 @@
             "value" : "Ouvrir les Réglages"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buka Pengaturan"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7475,6 +7871,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Appareil photo indisponible"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamera tidak tersedia"
           }
         },
         "it" : {
@@ -7589,6 +7991,12 @@
             "value" : "Le simulateur n’a pas d’appareil photo. Une photo choisie est également recadrée en carré."
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simulator tidak punya kamera. Foto yang kamu pilih juga dipotong menjadi persegi."
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7699,6 +8107,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Choisir dans Photos"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pilih dari Foto"
           }
         },
         "it" : {
@@ -7813,6 +8227,12 @@
             "value" : "Sans filtre"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tanpa filter"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7923,6 +8343,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aucun ciel collecté pour l’instant"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Belum ada langit yang terkumpul"
           }
         },
         "it" : {
@@ -8037,6 +8463,12 @@
             "value" : "Tout commence par un regard vers le haut."
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Semuanya dimulai dari sekali menengok ke atas."
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8147,6 +8579,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pas encore de ciel de cette couleur"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Belum ada langit dengan warna ini"
           }
         },
         "it" : {
@@ -8261,6 +8699,12 @@
             "value" : "Captez un ciel proche de cette couleur et il viendra s’ajouter ici."
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Potret langit yang dekat dengan warna ini, dan langit itu akan terkumpul di sini."
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8371,6 +8815,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Levez les yeux une fois dehors et la case de cette heure se remplira."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tengok ke atas sekali di luar, dan kotak jam ini akan terisi."
           }
         },
         "it" : {
@@ -8485,6 +8935,12 @@
             "value" : "Rien pour l’instant"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Belum ada"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8595,6 +9051,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ciel du jour"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Langit Hari Ini"
           }
         },
         "it" : {
@@ -8709,6 +9171,12 @@
             "value" : "Planche du jour"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Papan Hari Ini"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8819,6 +9287,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quarante-huit cases par jour. Les ciels collectés les remplissent, et un anneau marque l’heure actuelle."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Empat puluh delapan kotak sehari. Langit yang terkumpul mengisinya, dan sebuah cincin menandai jam saat ini."
           }
         },
         "it" : {
@@ -8933,6 +9407,12 @@
             "value" : "Le ciel d’aujourd’hui et sa couleur."
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Langit hari ini, dan warnanya apa."
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9043,6 +9523,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ciel du jour · Pas encore"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Langit Hari Ini · Belum"
           }
         },
         "it" : {
@@ -9157,6 +9643,12 @@
             "value" : "Le ciel d’aujourd’hui, en mots"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Langit hari ini, dalam kata-kata"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9267,6 +9759,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Le ciel d’aujourd’hui, s’il fallait le dire en mots"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Langit hari ini, kalau harus dikatakan dengan kata-kata"
           }
         },
         "it" : {
@@ -9381,6 +9879,12 @@
             "value" : "%lld jours"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld hari"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9485,6 +9989,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld de cette couleur"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld berwarna ini"
           }
         },
         "it" : {

@@ -119,6 +119,12 @@ Liitä kuvakaappaus kysymyksiisi
 Lue vastaukset suoraan apissa
 Tukinäyttö käyttää kieltäsi
 
+### 앱스토어 (Indonesia)
+
+Lampirkan tangkapan layar di pesan
+Baca balasan kami langsung di aplikasi
+Layar dukungan memakai bahasamu
+
 
 ## 1.0.1
 

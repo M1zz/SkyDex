@@ -1025,3 +1025,60 @@ Valitse Kuvista
 Kirjastosta kameran sijaan valittu taivas rajataan myös neliöksi.
 
 Ei tiliä, ei kirjautumista. Taivaasi tallentuvat omaan iCloudiisi, joten ne seuraavat sinua uudelle laitteelle.
+
+## id
+
+### 지원 URL
+
+https://m1zz.github.io/SkyDex/id/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/SkyDex/id/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/SkyDex/id/
+
+### 이름
+
+SkyDex: Warna Langit Harian
+
+### 부제
+
+Papan yang terisi langit
+
+### 키워드
+
+jurnal,warna,palet,moodboard,awan,senja,matahari terbit,foto,suasana,estetik,widget,fajar
+
+### 프로모션 텍스트
+
+Warna apa langit hari ini? Setiap kali kamu memotret langit, satu dari empat puluh delapan warna langit hari itu terisi dan mendapat nama yang terdengar mirip dengannya.
+
+### 설명
+
+Setiap kali kamu memotret langit, satu dari empat puluh delapan kotak warna hari itu terisi.
+Aplikasi kecil untuk menyimpan warna langit hari ini: satu foto dan satu baris.
+
+Papan ini bergerak dari biru kehitaman fajar, biru siang, jingga senja, hingga ungu malam: empat puluh delapan warna yang dilewati langit dalam sehari. Setiap foto mengisi kotak yang paling dekat. Tanpa penilaian, tanpa penolakan: potret saja, dan foto itu masuk.
+
+Setiap langit punya nama
+Setiap warna yang kamu tangkap mendapat beberapa kata yang terdengar mirip, seperti es tipis, ubin kolam renang, atau kesemek matang, ditambah nama terdekat dari palet warna tradisional.
+
+Tinggalkan satu baris
+Sesaat setelah memotret, sebuah kartu terbuka. Tulis apa yang kamu pikirkan saat menengadah, dan tulisan itu akan melayang lagi di atas langit setiap kali kamu mengetuk kotak itu di papan.
+
+Kotak kosong menunjukkan jalan
+Ketuk kotak kosong untuk melihat jam berapa kotak itu dan warna apa yang harus dicari.
+
+Log, palet, pengulangan
+Telusuri langitmu secara berurutan, kumpulkan warnamu ke dalam palet seperti biru, abu-abu, dan nuansa senja, lalu potret jam yang sama di hari lain untuk membandingkan kedua foto berdampingan.
+
+Widget
+Lihat langit hari ini dan papan hari ini langsung di Layar Utama.
+
+Pilih dari Foto
+Langit yang dipilih dari pustaka, bukan dari kamera, juga dipotong menjadi persegi.
+
+Tanpa akun, tanpa login. Langitmu tersimpan di iCloud milikmu sendiri, jadi ikut berpindah ke perangkat baru.

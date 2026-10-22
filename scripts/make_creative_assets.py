@@ -54,6 +54,7 @@ SEARCH = {
     "da": ("Himmeldagbog", "Saml 48<br>nuancer af himmel", "Hver himmel, du fanger, fylder en cirkel"),
     "el": ("Ημερολόγιο ουρανού", "Συλλέξτε 48<br>αποχρώσεις ουρανού", "Κάθε ουρανός που φωτογραφίζετε γεμίζει έναν κύκλο"),
     "fi": ("Taivaspäiväkirja", "Kerää 48<br>taivaan sävyä", "Jokainen kuvaamasi taivas täyttää ympyrän"),
+    "id": ("Jurnal foto langit", "Kumpulkan 48<br>nuansa langit", "Setiap langit yang kamu potret mengisi satu lingkaran"),
 }
 
 # 헤더는 처음 온 사람에게 한 가지 약속만 한다: 하늘을 찍으면 그 색이 모인다.
@@ -76,6 +77,7 @@ HEADER = {
     "da": ("Himlens farver", "Tag billede af himlen.<br>Behold dens farve."),
     "el": ("Τα χρώματα του ουρανού", "Φωτογραφίστε τον ουρανό.<br>Κρατήστε το χρώμα του."),
     "fi": ("Taivaan värit", "Kuvaa taivas.<br>Säilytä sen väri."),
+    "id": ("Warna langit", "Potret langit.<br>Simpan warnanya."),
 }
 
 # 판에서 실제로 뽑은 색(시뮬레이터 캡처 01-board.png 의 채운 칸). 헤더 오른쪽 장식에 쓴다.
