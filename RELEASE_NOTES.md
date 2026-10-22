@@ -65,6 +65,12 @@ Hänge Screenshots an deine Fragen an
 Lies unsere Antworten direkt in der App
 Support-Seite in deiner Sprache
 
+### 앱스토어 (Français)
+
+Joignez une capture à vos questions
+Lisez nos réponses dans l’app
+L’écran d’assistance suit votre langue
+
 
 ## 1.0.1
 

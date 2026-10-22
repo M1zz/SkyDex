@@ -512,3 +512,60 @@ Aus Fotos auswählen
 Ein Himmel aus deiner Mediathek statt von der Kamera wird ebenfalls quadratisch zugeschnitten.
 
 Kein Konto, keine Anmeldung. Deine Himmel liegen in deiner eigenen iCloud und ziehen mit auf ein neues Gerät.
+
+## fr-FR
+
+### 지원 URL
+
+https://m1zz.github.io/SkyDex/fr/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/SkyDex/fr/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/SkyDex/fr/
+
+### 이름
+
+SkyDex : Palette du ciel
+
+### 부제
+
+Une planche pleine de ciels
+
+### 키워드
+
+journal,couleur,moodboard,nuage,couchant,aube,ciel,photo,humeur,esthétique,widget,crépuscule,balade
+
+### 프로모션 텍스트
+
+De quelle couleur était le ciel aujourd’hui ? À chaque photo du ciel, l’une des quarante-huit couleurs de la journée se remplit et reçoit un nom qui lui ressemble.
+
+### 설명
+
+À chaque photo du ciel, l’une des quarante-huit couleurs de la journée se remplit.
+Une petite app pour garder la couleur du ciel d’aujourd’hui : une photo et une ligne.
+
+La planche va du bleu nuit de l’aube au bleu de midi, à l’orange du couchant et au violet de la nuit : quarante-huit couleurs que le ciel traverse en une journée. Chaque photo remplit la case la plus proche. Aucun jugement, aucun refus : vous photographiez, et c’est dedans.
+
+Chaque ciel reçoit un nom
+Chaque couleur captée reçoit quelques mots qui lui ressemblent, comme glace fine, carrelage de piscine ou kaki mûr, ainsi que le nom le plus proche dans les palettes de couleurs traditionnelles.
+
+Laissez une ligne
+Une carte s’ouvre juste après la prise de vue. Écrivez ce que vous pensiez en levant les yeux : elle flottera de nouveau sur le ciel chaque fois que vous toucherez cette case sur la planche.
+
+Les cases vides vous guident
+Touchez une case vide pour voir à quel moment de la journée elle correspond et quelle couleur chercher.
+
+Journal, palette, répétitions
+Parcourez vos ciels dans l’ordre, regroupez vos couleurs en palettes comme les bleus, les gris et les teintes du couchant, et photographiez la même heure un autre jour pour comparer les deux côte à côte.
+
+Widgets
+Retrouvez le ciel du jour et la planche du jour directement sur votre écran d’accueil.
+
+Choisir dans Photos
+Un ciel choisi dans votre photothèque plutôt qu’avec l’appareil photo est lui aussi recadré en carré.
+
+Pas de compte, pas de connexion. Vos ciels sont conservés dans votre propre iCloud et vous suivent sur un nouvel appareil.
