@@ -82,6 +82,12 @@
             "value" : "Face ID 잠금"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face ID-lås"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -199,6 +205,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Face ID로 앱을 잠가 내 하늘 기록을 지켜요."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lås appen med Face ID, så himlene dine forblir private."
           }
         },
         "pt-BR" : {
@@ -320,6 +332,12 @@
             "value" : "Siri에게 말하면 바로 하늘을 찍을 수 있어요."
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si det til Siri, så kan du ta bilde av himmelen med en gang."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -437,6 +455,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Siri와 단축어"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siri og Snarveier"
           }
         },
         "pt-BR" : {
@@ -558,6 +582,12 @@
             "value" : "VoiceOver로 더 편하게"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bedre VoiceOver-støtte"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -675,6 +705,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "글자 크기를 키워도 잘리지 않고 보기 좋게 다시 배치돼요."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Når du gjør teksten større, ordner skjermene seg pent uten at noe kuttes."
           }
         },
         "pt-BR" : {
@@ -796,6 +832,12 @@
             "value" : "내 하늘 한 번에 지우기"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slett alle himlene mine på én gang"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -913,6 +955,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "더 많은 나라 말로 앱을 쓸 수 있게 해요."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bruk appen på flere språk."
           }
         },
         "pt-BR" : {
@@ -1034,6 +1082,12 @@
             "value" : "더 많은 언어"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flere språk"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1151,6 +1205,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "모은 하늘 사진을 파일로 저장하고 다시 불러올 수 있어요."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lagre himmelbildene dine i en fil og hent dem tilbake senere."
           }
         },
         "pt-BR" : {
@@ -1272,6 +1332,12 @@
             "value" : "보기 편한 색과 대비"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bedre farger og kontrast"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1389,6 +1455,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "사진 백업과 내보내기"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sikkerhetskopi og eksport av bilder"
           }
         },
         "pt-BR" : {
@@ -1510,6 +1582,12 @@
             "value" : "색을 구별하기 어려워도 칸마다 어떤 하늘인지 알아볼 수 있어요."
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selv om farger er vanskelige å skille, ser du hvilken himmel hver rute rommer."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1627,6 +1705,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "쓰는 요령 알려 주기"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nyttige tips"
           }
         },
         "pt-BR" : {
@@ -1748,6 +1832,12 @@
             "value" : "아직 못 채운 하늘을 찍기 좋은 때에 알림으로 알려 줘요."
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Du får en påminnelse når det er en god tid å fange en himmel du ennå ikke har."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1865,6 +1955,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "알아 두면 편한 기능을 알맞은 때에 살짝 알려 줘요."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diskrete tips om nyttige funksjoner, akkurat når du trenger dem."
           }
         },
         "pt-BR" : {
@@ -1986,6 +2082,12 @@
             "value" : "앱을 영어로도 쓸 수 있어요."
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bruk hele appen på engelsk også."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2103,6 +2205,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "업데이트 뒤 처음 열 때 무엇이 새로 생겼는지 알려 줘요."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Første gang du åpner appen etter en oppdatering, ser du hva som er nytt."
           }
         },
         "pt-BR" : {
@@ -2224,6 +2332,12 @@
             "value" : "업데이트 소식"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nyheter"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2341,6 +2455,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "영어 지원"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Full støtte for engelsk"
           }
         },
         "pt-BR" : {
@@ -2462,6 +2582,12 @@
             "value" : "원하면 앱 안에서 모은 하늘 사진을 모두 지울 수 있어요."
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hvis du vil, kan du slette alle innsamlede himmelbilder rett i appen."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2579,6 +2705,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "처음 쓰는 분을 위한 안내"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rask start for nye brukere"
           }
         },
         "pt-BR" : {
@@ -2700,6 +2832,12 @@
             "value" : "처음 열었을 때 하늘 판을 채우는 법을 짧게 보여 줘요."
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Første gang du åpner appen, ser du hvordan du fyller himmelbrettet."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2817,6 +2955,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "큰 글씨에 맞춘 화면"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oppsett for større tekst"
           }
         },
         "pt-BR" : {
@@ -2938,6 +3082,12 @@
             "value" : "펼치는 아이폰 화면"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oppsett for sammenleggbar iPhone"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3055,6 +3205,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "펼치는 아이폰에서 넓은 화면을 두 쪽으로 나눠 써요."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bruk den brede skjermen på en sammenleggbar iPhone som to ruter side om side."
           }
         },
         "pt-BR" : {
@@ -3176,6 +3332,12 @@
             "value" : "하늘 알림"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Himmelpåminnelser"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3293,6 +3455,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "화면 읽기 기능이 단추와 하늘 칸을 빠짐없이, 알맞은 순서로 읽어 줘요."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver leser opp hver knapp og hver himmelrute i riktig rekkefølge."
           }
         },
         "pt-BR" : {
@@ -3413,6 +3581,12 @@
             "value" : "아직 되풀이가 없어요"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingen gjentakelser ennå"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3529,6 +3703,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "같은 시각의 하늘을 다른 날에 한 번 더 찍으면, 그 둘이 여기에서 나란히 섭니다."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fang himmelen på samme tidspunkt en annen dag, så står de to her side om side."
           }
         },
         "pt-BR" : {
@@ -3649,6 +3829,12 @@
             "value" : "같은 시각, 같은 하루"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Samme time, samme dag"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3765,6 +3951,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "일주일도 한 달도 같은 모양으로 돌아옵니다. 그 시각의 하늘만 한 번도 같지 않았습니다."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En uke eller en måned kommer tilbake i samme form. Bare himmelen på det tidspunktet har aldri vært den samme."
           }
         },
         "pt-BR" : {
@@ -3885,6 +4077,12 @@
             "value" : "가장 비슷했던 두 하늘"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De to mest like himlene"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4001,6 +4199,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "눈으로는 같은 색입니다."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "For øyet er det samme farge."
           }
         },
         "pt-BR" : {
@@ -4121,6 +4325,12 @@
             "value" : "그래도 다른 색입니다."
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Likevel er det forskjellige farger."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4237,6 +4447,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "iCloud에 함께 보관"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ta vare på i iCloud også"
           }
         },
         "pt-BR" : {
@@ -4357,6 +4573,12 @@
             "value" : "보관"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lagring"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4473,6 +4695,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "지원"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Støtte"
           }
         },
         "pt-BR" : {
@@ -4593,6 +4821,12 @@
             "value" : "개발자"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utvikler"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4709,6 +4943,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "사용 통계"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bruksstatistikk"
           }
         },
         "pt-BR" : {
@@ -4829,6 +5069,12 @@
             "value" : "설치 수와 버전 분포. 읽으려면 허브 컨테이너의 read 권한이 필요합니다."
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Antall installasjoner og versjonsfordeling. For å lese dem kreves lesetilgang til hub-containeren."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4945,6 +5191,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "설정"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Innstillinger"
           }
         },
         "pt-BR" : {
@@ -5065,6 +5317,12 @@
             "value" : "완료"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ferdig"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5181,6 +5439,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "닫기"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lukk"
           }
         },
         "pt-BR" : {
@@ -5301,6 +5565,12 @@
             "value" : "저장"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lagre"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5417,6 +5687,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "취소"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avbryt"
           }
         },
         "pt-BR" : {
@@ -5537,6 +5813,12 @@
             "value" : "지우기"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slett"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5653,6 +5935,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "하늘 찍기"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fang himmelen"
           }
         },
         "pt-BR" : {
@@ -5773,6 +6061,12 @@
             "value" : "기록"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logg"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5889,6 +6183,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "하늘"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Himmel"
           }
         },
         "pt-BR" : {
@@ -6009,6 +6309,12 @@
             "value" : "팔레트"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palett"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6125,6 +6431,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "되풀이"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gjentakelser"
           }
         },
         "pt-BR" : {
@@ -6245,6 +6557,12 @@
             "value" : "이 하늘을 지울까요?"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slette denne himmelen?"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6361,6 +6679,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "사진과 색이 함께 사라집니다."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bildet og fargen fjernes sammen."
           }
         },
         "pt-BR" : {
@@ -6481,6 +6805,12 @@
             "value" : "이 하늘을 보면서 들었던 생각,\n하고 싶은 한 마디"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En tanke du fikk mens du så på denne himmelen,\net ord du vil legge igjen"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6597,6 +6927,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "다른 날의 하늘로"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gjennom en annen dags himmel"
           }
         },
         "pt-BR" : {
@@ -6717,6 +7053,12 @@
             "value" : "하늘색"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6833,6 +7175,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "원래 하늘로"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tilbake til den opprinnelige himmelen"
           }
         },
         "pt-BR" : {
@@ -6953,6 +7301,12 @@
             "value" : "빌려 온 하늘의 세기"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Styrken på den lånte himmelen"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7069,6 +7423,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "한 줄 쓰기"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skriv en linje"
           }
         },
         "pt-BR" : {
@@ -7189,6 +7549,12 @@
             "value" : "이 자리는 그 시간대에 찍은 하늘로 채워집니다. 어떤 사진이든 그대로 들어가고, 색이 맞아야 할 필요는 없습니다."
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denne plassen fylles med en himmel tatt på det tidspunktet av dagen. Alle bilder kommer inn som de er; fargen trenger ikke passe."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7305,6 +7671,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "하늘이 정사각형을 채우도록"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La himmelen fylle kvadratet"
           }
         },
         "pt-BR" : {
@@ -7425,6 +7797,12 @@
             "value" : "그 하늘 아래에서 보는 중"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ser under den himmelen"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7541,6 +7919,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "카메라 권한이 꺼져 있어요"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kameratilgang er slått av"
           }
         },
         "pt-BR" : {
@@ -7661,6 +8045,12 @@
             "value" : "설정에서 카메라를 켜면 하늘을 바로 찍을 수 있어요."
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slå på kameraet i Innstillinger, så kan du fange himmelen med en gang."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7777,6 +8167,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "설정 열기"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Åpne Innstillinger"
           }
         },
         "pt-BR" : {
@@ -7897,6 +8293,12 @@
             "value" : "카메라를 쓸 수 없어요"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kameraet er utilgjengelig"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8013,6 +8415,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "시뮬레이터에는 카메라가 없습니다. 사진에서 골라도 정사각형으로 잘려 들어갑니다."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simulatoren har ikke kamera. Et bilde du velger, beskjæres også til et kvadrat."
           }
         },
         "pt-BR" : {
@@ -8133,6 +8541,12 @@
             "value" : "사진에서 고르기"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Velg fra Bilder"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8249,6 +8663,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "필터 없이"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uten filter"
           }
         },
         "pt-BR" : {
@@ -8369,6 +8789,12 @@
             "value" : "아직 모은 하늘이 없어요"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingen himler samlet ennå"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8485,6 +8911,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "밖을 한 번 올려다보는 것으로 시작합니다."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Det begynner med et blikk opp."
           }
         },
         "pt-BR" : {
@@ -8605,6 +9037,12 @@
             "value" : "이 색은 아직 없어요"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingen himmel i denne fargen ennå"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8721,6 +9159,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "이 색에 가까운 하늘을 찍으면 여기에 쌓입니다."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fang en himmel nær denne fargen, så samles den her."
           }
         },
         "pt-BR" : {
@@ -8841,6 +9285,12 @@
             "value" : "밖을 한 번 올려다보면 이 시각 칸이 채워집니다."
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se opp én gang ute, så fylles ruten for denne timen."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8957,6 +9407,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "아직 없습니다"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingenting ennå"
           }
         },
         "pt-BR" : {
@@ -9077,6 +9533,12 @@
             "value" : "오늘의 하늘"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dagens himmel"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9193,6 +9655,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "오늘의 판"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dagens brett"
           }
         },
         "pt-BR" : {
@@ -9313,6 +9781,12 @@
             "value" : "하루 마흔여덟 칸. 모은 하늘은 채워지고, 지금 시각에는 고리가 걸립니다."
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Førtiåtte ruter om dagen. Innsamlede himler fyller dem, og en ring markerer den aktuelle timen."
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9429,6 +9903,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "오늘 찍은 하늘과, 그 색이 어떤 색인지."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dagens himmel og hvilken farge den har."
           }
         },
         "pt-BR" : {
@@ -9549,6 +10029,12 @@
             "value" : "오늘의 하늘 · 아직"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dagens himmel · Ikke ennå"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9665,6 +10151,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "오늘의 하늘, 말로 하면"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dagens himmel i ord"
           }
         },
         "pt-BR" : {
@@ -9785,6 +10277,12 @@
             "value" : "오늘의 하늘, 굳이 말하자면"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dagens himmel, hvis man først må si det med ord"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9897,6 +10395,12 @@
             "value" : "%lld日"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld dager"
+          }
+        },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10007,6 +10511,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "この色 %lld枚"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld i denne fargen"
           }
         },
         "pt-BR" : {

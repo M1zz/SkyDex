@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SkyDex — Støtte</title>
+<meta name="description" content="Støtte for iOS-appen SkyDex: vanlige spørsmål og hvordan du kommer i kontakt.">
+<link rel="canonical" href="https://m1zz.github.io/SkyDex/nb/support.html">
+<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/SkyDex/support.html">
+<link rel="alternate" hreflang="en" href="https://m1zz.github.io/SkyDex/en/support.html">
+<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/SkyDex/en/support.html">
+<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/SkyDex/ja/support.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/SkyDex/zh-Hans/support.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/SkyDex/zh-Hant/support.html">
+<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/SkyDex/ru/support.html">
+<link rel="alternate" hreflang="es" href="https://m1zz.github.io/SkyDex/es/support.html">
+<link rel="alternate" hreflang="de" href="https://m1zz.github.io/SkyDex/de/support.html">
+<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/SkyDex/fr/support.html">
+<link rel="alternate" hreflang="it" href="https://m1zz.github.io/SkyDex/it/support.html">
+<link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/SkyDex/pt-BR/support.html">
+<link rel="alternate" hreflang="th" href="https://m1zz.github.io/SkyDex/th/support.html">
+<link rel="alternate" hreflang="vi" href="https://m1zz.github.io/SkyDex/vi/support.html">
+<link rel="alternate" hreflang="cs" href="https://m1zz.github.io/SkyDex/cs/support.html">
+<link rel="alternate" hreflang="da" href="https://m1zz.github.io/SkyDex/da/support.html">
+<link rel="alternate" hreflang="el" href="https://m1zz.github.io/SkyDex/el/support.html">
+<link rel="alternate" hreflang="fi" href="https://m1zz.github.io/SkyDex/fi/support.html">
+<link rel="alternate" hreflang="id" href="https://m1zz.github.io/SkyDex/id/support.html">
+<link rel="alternate" hreflang="nb" href="https://m1zz.github.io/SkyDex/nb/support.html">
+<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/SkyDex/support.html">
+<style>
+  :root {
+    --ink: #16202e;
+    --ink-soft: #5d6773;
+    --paper: #f4f5f7;
+    --card: #ffffff;
+    --line: #e2e5ea;
+    --accent: #2f7bbe;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #eef1f5;
+      --ink-soft: #a2acb8;
+      --paper: #0b111c;
+      --card: #141c28;
+      --line: #26303e;
+      --accent: #7fa4ce;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0 20px 72px;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.72 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+      "Pretendard", "Segoe UI", Roboto, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 680px; margin: 0 auto; }
+
+  /* 판을 이루는 색 그대로: 한밤에서 노을까지 한 줄로 */
+  .sky {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    padding: 44px 0 26px;
+  }
+  .sky span {
+    width: 20px; height: 20px; border-radius: 50%;
+    display: block;
+  }
+  h1 {
+    font-size: 30px; line-height: 1.3; letter-spacing: -0.02em;
+    margin: 0 0 6px; text-align: center; font-weight: 700;
+  }
+  .lede {
+    margin: 0 auto 40px; text-align: center; color: var(--ink-soft);
+    max-width: 30em;
+  }
+  h2 {
+    font-size: 20px; letter-spacing: -0.01em; margin: 44px 0 14px;
+    padding-top: 26px; border-top: 1px solid var(--line);
+  }
+  h2:first-of-type { border-top: 0; padding-top: 0; }
+  h3 { font-size: 17px; margin: 26px 0 6px; }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 1.2em; }
+  li { margin-bottom: 6px; }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  .card {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 16px; padding: 20px 22px; margin: 0 0 18px;
+  }
+  .card p:last-child { margin-bottom: 0; }
+  .mail {
+    display: inline-block; margin-top: 4px; font-weight: 600;
+    font-size: 18px;
+  }
+  .meta { color: var(--ink-soft); font-size: 15px; }
+  footer {
+    margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line);
+    color: var(--ink-soft); font-size: 15px; text-align: center;
+  }
+  footer a { margin: 0 8px; }
+  nav.langs { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px 14px; margin: 18px 0 0; font-size: 14px; }
+  nav.langs a { color: var(--ink-soft); text-decoration: none; }
+  nav.langs a[aria-current] { color: var(--ink); font-weight: 600; }
+</style>
+</head>
+<body>
+<main>
+  <nav class="langs" aria-label="Language">
+    <a href="../support.html" hreflang="ko" lang="ko">한국어</a>
+    <a href="../en/support.html" hreflang="en" lang="en">English</a>
+    <a href="../ja/support.html" hreflang="ja" lang="ja">日本語</a>
+    <a href="../zh-Hans/support.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <a href="../zh-Hant/support.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+    <a href="../ru/support.html" hreflang="ru" lang="ru">Русский</a>
+    <a href="../es/support.html" hreflang="es" lang="es">Español</a>
+    <a href="../de/support.html" hreflang="de" lang="de">Deutsch</a>
+    <a href="../fr/support.html" hreflang="fr" lang="fr">Français</a>
+    <a href="../it/support.html" hreflang="it" lang="it">Italiano</a>
+    <a href="../pt-BR/support.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+    <a href="../th/support.html" hreflang="th" lang="th">ไทย</a>
+    <a href="../vi/support.html" hreflang="vi" lang="vi">Tiếng Việt</a>
+    <a href="../cs/support.html" hreflang="cs" lang="cs">Čeština</a>
+    <a href="../da/support.html" hreflang="da" lang="da">Dansk</a>
+    <a href="../el/support.html" hreflang="el" lang="el">Ελληνικά</a>
+    <a href="../fi/support.html" hreflang="fi" lang="fi">Suomi</a>
+    <a href="../id/support.html" hreflang="id" lang="id">Indonesia</a>
+    <a href="../nb/support.html" hreflang="nb" lang="nb" aria-current="true">Norsk</a>
+  </nav>
+
+  <div class="sky" aria-hidden="true">
+    <span style="background:#0B1120"></span>
+    <span style="background:#2B3856"></span>
+    <span style="background:#7E90B6"></span>
+    <span style="background:#5590C6"></span>
+    <span style="background:#1C6DB4"></span>
+    <span style="background:#C1A07E"></span>
+    <span style="background:#D68F55"></span>
+    <span style="background:#8E4340"></span>
+    <span style="background:#33304C"></span>
+  </div>
+
+  <h1>SkyDex</h1>
+  <p class="lede">Dette er støttesiden for <strong>SkyDex</strong>. For først å se hva appen er, kan du gå til <a href="./">oversikten</a>.</p>
+
+  <h2>Kontakt</h2>
+  <div class="card">
+    <p>Feil, rar oppførsel eller noe du vil si — bare send en e-post. Jeg svarer så snart jeg har lest den.</p>
+    <a class="mail" href="mailto:leeo@kakao.com">leeo@kakao.com</a>
+    <p class="meta" style="margin-top:12px">Hvis du satt fast på en skjerm, gjør det det mye lettere å finne årsaken om du forteller hva du holdt på med og hvilken iOS-versjon du har.</p>
+  </div>
+
+  <h2>Vanlige spørsmål</h2>
+
+  <h3>Hvordan fylles rutene?</h3>
+  <p>Ta bilde av himmelen nå, så fylles <strong>ruten for det aktuelle tidspunktet</strong> med fargen du fanget. Hvis den blir annerledes enn forventet, kommer den likevel inn — det var faktisk himmelen den timen.</p>
+  <p>Resten av himlene du har samlet, telles etter farge: hvis en er nær nok dagens himmelfarge for et gitt tidspunkt, fyller den den ruten.</p>
+
+  <h3>En rute som var full i går, er tom i dag</h3>
+  <p>Det er fordi brettet viser <strong>dagens</strong> himmelfarger. Fargene på de førtiåtte rutene settes på nytt hver dag etter årstid og vær, og hver dag spør appen igjen om himlene du har samlet, er nær dem. Derfor er brettet noen dager nesten fullt, og andre dager ser det nesten tomt ut.</p>
+  <p>Bildene dine er ikke borte. Hver himmel du har samlet, er fortsatt i <strong>Loggen</strong>, og i <strong>Paletten</strong> hvis du heller vil se dem i fargerekkefølge.</p>
+
+  <h3>Fylte ruter fortsetter å falme</h3>
+  <p>Det er med vilje. Et bilde beholder sin sanne farge i en uke og falmer deretter sakte over de neste åtte ukene. Det slettes ikke, og det forsvinner aldri helt — ta bilde av himmelen på det tidspunktet av dagen igjen, så er det umiddelbart tilbake i full farge.</p>
+
+  <h3>Må fargen passe?</h3>
+  <p>Nei. Det finnes ikke bestått eller ikke bestått. Hvert bilde du tar, lagres, og grått på en overskyet dag er også den dagens himmelfarge.</p>
+
+  <h3>Hvorfor spør den om posisjonen min?</h3>
+  <p>Bare for å justere referansefargene etter <strong>den faktiske soloppgangen og solnedgangen</strong> der du er, og for å hente dagens prognose. Nøyaktigheten er kilometer, og koordinaten knyttes aldri til et bilde. Appen fungerer fint hvis du sier nei (den bruker da fargene fra Seoul). Detaljene står i <a href="privacy.html">Personvernerklæringen</a>.</p>
+
+  <h3>Hvor kommer de forventede himmelfargene fra?</h3>
+  <p>De blander solens posisjon (soloppgang og solnedgang for den datoen og det stedet) med Apple Værs timesprognose for skyer og regn. Hvis prognosen ikke kan hentes, tegner appen i stedet en referanse med klar himmel.</p>
+
+  <h3>Slette et bilde</h3>
+  <p>Åpne bildet og trykk på <strong>Slett</strong>, eller sveip til venstre på det i Loggen. Da fjernes det fra enheten din og fra iCloud. Hvis du sletter appen, blir kopien i iCloud værende, så himlene dine kommer tilbake når du installerer på nytt.</p>
+
+  <h3>Krav</h3>
+  <p>iPhone med iOS 17.0 eller nyere. Bare stående.</p>
+
+  <footer>
+    <a href="./">Oversikt</a> ·
+    <a href="privacy.html">Personvernerklæring</a> ·
+    <a href="https://github.com/M1zz/SkyDex">GitHub</a>
+    <p class="meta" style="margin:10px 0 0">Værdata levert av <a href="https://weatherkit.apple.com/legal-attribution.html">Apple Vær</a>.</p>
+  </footer>
+
+</main>
+</body>
+</html>

@@ -1082,3 +1082,60 @@ Pilih dari Foto
 Langit yang dipilih dari pustaka, bukan dari kamera, juga dipotong menjadi persegi.
 
 Tanpa akun, tanpa login. Langitmu tersimpan di iCloud milikmu sendiri, jadi ikut berpindah ke perangkat baru.
+
+## no
+
+### 지원 URL
+
+https://m1zz.github.io/SkyDex/nb/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/SkyDex/nb/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/SkyDex/nb/
+
+### 이름
+
+SkyDex: Himmelens farger
+
+### 부제
+
+Et brett som fylles med himler
+
+### 키워드
+
+dagbok,farge,palett,moodboard,skyer,solnedgang,soloppgang,foto,stemning,estetikk,widget,skumring,tur
+
+### 프로모션 텍스트
+
+Hvilken farge hadde himmelen i dag? Hver gang du tar bilde av himmelen, fylles én av dagens førtiåtte himmelfarger og får et navn som høres ut som den.
+
+### 설명
+
+Hver gang du tar bilde av himmelen, fylles én av dagens førtiåtte fargeruter.
+En liten app for å ta vare på hvilken farge himmelen hadde i dag: ett bilde og én linje.
+
+Brettet går fra morgengryets blåsvarte via middagsblått og solnedgangens oransje til nattens fiolett: førtiåtte farger som himmelen passerer i løpet av en dag. Hvert bilde fyller den nærmeste ruten. Ingen dom, ingen avvisning: ta bildet, så er det inne.
+
+Hver himmel får et navn
+Hver farge du fanger får noen ord som høres ut som den, som tynn is, bassengfliser eller moden kaki, pluss det nærmeste navnet fra tradisjonelle fargepaletter.
+
+Legg igjen en linje
+Rett etter bildet åpner et kort seg. Skriv hva du tenkte mens du så opp, så svever det opp over himmelen igjen hver gang du trykker på den ruten på brettet.
+
+Tomme ruter viser vei
+Trykk på en tom rute for å se hvilket tidspunkt på dagen den hører til og hvilken farge du skal lete etter.
+
+Logg, palett, gjentakelser
+Bla gjennom himlene dine i rekkefølge, samle fargene dine i paletter som blått, grått og solnedgangstoner, og ta samme time en annen dag for å sammenligne de to bildene side om side.
+
+Widgets
+Se dagens himmel og dagens brett rett på Hjem-skjermen.
+
+Velg fra Bilder
+En himmel du velger fra biblioteket i stedet for kameraet, beskjæres også til et kvadrat.
+
+Ingen konto, ingen pålogging. Himlene dine lagres i din egen iCloud, så de følger deg til en ny enhet.

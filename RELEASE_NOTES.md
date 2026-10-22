@@ -125,6 +125,12 @@ Lampirkan tangkapan layar di pesan
 Baca balasan kami langsung di aplikasi
 Layar dukungan memakai bahasamu
 
+### 앱스토어 (Norsk)
+
+Legg ved skjermbilde i spørsmålene dine
+Les svarene våre rett i appen
+Støtteskjermen følger språket ditt
+
 
 ## 1.0.1
 
