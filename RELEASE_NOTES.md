@@ -29,6 +29,13 @@ Attach a screenshot to your questions
 Read our replies right in the app
 Support screen uses your language
 
+### 앱스토어 (日本語)
+
+問い合わせに画面の写真を添付できます
+送った問い合わせへの返信をアプリ内で読めます
+サポート画面のアプリ名が端末の言語で表示されます
+
+
 ## 1.0.1
 
 ### 앱스토어 (한국어)

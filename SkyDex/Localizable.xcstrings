@@ -16,6 +16,12 @@
             "value" : "Face ID lock"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face ID ロック"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -37,6 +43,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lock the app with Face ID to keep your skies private."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face ID でアプリをロックして、空の記録を自分だけのものに。"
           }
         },
         "ko" : {
@@ -62,6 +74,12 @@
             "value" : "Ask Siri to start snapping the sky right away."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siri に話しかけるだけで、すぐに空を撮れます。"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -83,6 +101,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Siri and Shortcuts"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siri とショートカット"
           }
         },
         "ko" : {
@@ -108,6 +132,12 @@
             "value" : "Better VoiceOver support"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver をもっと使いやすく"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -129,6 +159,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Screens rearrange neatly instead of getting cut off when you enlarge text."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "文字を大きくしても切れずに、きれいに並び直します。"
           }
         },
         "ko" : {
@@ -154,6 +190,12 @@
             "value" : "Erase all my skies"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "集めた空をまとめて消去"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -175,6 +217,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Use the app in more languages."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "もっと多くの言語でアプリを使えるようにします。"
           }
         },
         "ko" : {
@@ -200,6 +248,12 @@
             "value" : "More languages"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "対応言語の追加"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -221,6 +275,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Save your sky photos to a file and bring them back later."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "集めた空の写真をファイルに保存して、あとで読み込めます。"
           }
         },
         "ko" : {
@@ -246,6 +306,12 @@
             "value" : "Easier colours and contrast"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "見やすい色とコントラスト"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -267,6 +333,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Photo backup and export"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "写真のバックアップと書き出し"
           }
         },
         "ko" : {
@@ -292,6 +364,12 @@
             "value" : "Tell which sky each square holds, even if colours are hard to tell apart."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "色の見分けがつきにくくても、どのマスがどんな空か分かります。"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -313,6 +391,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Handy tips"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使い方のヒント"
           }
         },
         "ko" : {
@@ -338,6 +422,12 @@
             "value" : "Get a nudge when it’s a good time to catch a sky you haven’t collected yet."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "まだ集めていない空を撮りやすい時間に、通知でお知らせします。"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -359,6 +449,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gentle hints about useful features, right when you need them."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "知っておくと便利な機能を、ちょうどよいタイミングでそっとお知らせします。"
           }
         },
         "ko" : {
@@ -384,6 +480,12 @@
             "value" : "Use the whole app in English."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アプリを英語でも使えます。"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -405,6 +507,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "The first time you open the app after an update, see what’s new."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アップデート後の初回起動時に、新しくなった点をお知らせします。"
           }
         },
         "ko" : {
@@ -430,6 +538,12 @@
             "value" : "What’s new"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アップデート情報"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -451,6 +565,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Full English support"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英語に対応"
           }
         },
         "ko" : {
@@ -476,6 +596,12 @@
             "value" : "Delete every sky photo you’ve collected, right from the app."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "お望みなら、集めた空の写真をアプリ内ですべて消せます。"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -497,6 +623,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "A quick start for new users"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "はじめての方へのご案内"
           }
         },
         "ko" : {
@@ -522,6 +654,12 @@
             "value" : "The first time you open the app, see how to fill your sky board."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "初回起動時に、空のボードの埋め方を短くご紹介します。"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -543,6 +681,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Layouts for larger text"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "大きな文字に合わせた画面"
           }
         },
         "ko" : {
@@ -568,6 +712,12 @@
             "value" : "Foldable iPhone layout"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "折りたたみ iPhone 向けの画面"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -589,6 +739,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Use the wide screen of a foldable iPhone as two side-by-side panes."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "折りたたみ iPhone の広い画面を、左右2つのエリアに分けて使えます。"
           }
         },
         "ko" : {
@@ -614,6 +770,12 @@
             "value" : "Sky reminders"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "空のリマインダー"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -635,6 +797,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "VoiceOver reads every button and sky square, in the right order."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "画面読み上げが、ボタンも空のマスも、順番どおりもれなく読み上げます。"
           }
         },
         "ko" : {
@@ -659,6 +827,12 @@
             "value" : "No repeats yet"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "まだ繰り返しがありません"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -679,6 +853,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Capture the sky at the same time on another day, and the two will stand side by side here."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "別の日の同じ時刻にもう一度空を撮ると、ふたつがここに並びます。"
           }
         },
         "ko" : {
@@ -703,6 +883,12 @@
             "value" : "Same hour, same day"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "同じ時刻、同じ一日"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -723,6 +909,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "A week or a month comes round in the same shape. Only the sky at that hour has never once been the same."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一週間も一か月も、同じ形でめぐってきます。けれど、その時刻の空は一度も同じではありませんでした。"
           }
         },
         "ko" : {
@@ -747,6 +939,12 @@
             "value" : "The two closest skies"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "いちばん似ていたふたつの空"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -767,6 +965,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "To the eye, it's the same colour."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "目には、同じ色です。"
           }
         },
         "ko" : {
@@ -791,6 +995,12 @@
             "value" : "Still, they're different colours."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "それでも、違う色です。"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -811,6 +1021,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Also keep in iCloud"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud にも保管"
           }
         },
         "ko" : {
@@ -835,6 +1051,12 @@
             "value" : "Storage"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保管"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -855,6 +1077,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Support"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "サポート"
           }
         },
         "ko" : {
@@ -879,6 +1107,12 @@
             "value" : "Developer"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開発者"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -899,6 +1133,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Usage statistics"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "利用状況"
           }
         },
         "ko" : {
@@ -923,6 +1163,12 @@
             "value" : "Install counts and version spread. Reading them needs read access to the hub container."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "インストール数とバージョンの内訳です。読み取るにはハブコンテナの読み取り権限が必要です。"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -943,6 +1189,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Settings"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定"
           }
         },
         "ko" : {
@@ -967,6 +1219,12 @@
             "value" : "Done"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完了"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -987,6 +1245,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Close"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "閉じる"
           }
         },
         "ko" : {
@@ -1011,6 +1275,12 @@
             "value" : "Save"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1031,6 +1301,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cancel"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "キャンセル"
           }
         },
         "ko" : {
@@ -1055,6 +1331,12 @@
             "value" : "Delete"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "削除"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1075,6 +1357,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Capture the sky"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "空を撮る"
           }
         },
         "ko" : {
@@ -1099,6 +1387,12 @@
             "value" : "Log"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "記録"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1119,6 +1413,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sky"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "空"
           }
         },
         "ko" : {
@@ -1143,6 +1443,12 @@
             "value" : "Palette"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "パレット"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1163,6 +1469,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Repeats"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "繰り返し"
           }
         },
         "ko" : {
@@ -1187,6 +1499,12 @@
             "value" : "Delete this sky?"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "この空を削除しますか？"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1207,6 +1525,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "The photo and its colour will both be removed."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "写真と色がいっしょに消えます。"
           }
         },
         "ko" : {
@@ -1231,6 +1555,12 @@
             "value" : "A thought you had looking at this sky,\na word you'd like to leave"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "この空を見ながら思ったこと、\n残しておきたい ひとこと"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1253,6 +1583,12 @@
             "value" : "Through another day's sky"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "別の日の空で"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1270,6 +1606,12 @@
           }
         },
         "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
+        "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "SkyDex"
@@ -1297,6 +1639,12 @@
             "value" : "Back to the original sky"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "もとの空に戻す"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1317,6 +1665,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Strength of the borrowed sky"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "借りた空の強さ"
           }
         },
         "ko" : {
@@ -1341,6 +1695,12 @@
             "value" : "Write a line"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ひとこと書く"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1361,6 +1721,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "This spot fills with a sky taken in that part of the day. Any photo goes in as it is; the colour doesn't have to match."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ここには、その時間帯に撮った空が入ります。どんな写真でもそのまま入り、色が合っている必要はありません。"
           }
         },
         "ko" : {
@@ -1385,6 +1751,12 @@
             "value" : "Let the sky fill the square"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "空が正方形いっぱいになるように"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1405,6 +1777,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Looking under that sky"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "その空の下で見ています"
           }
         },
         "ko" : {
@@ -1429,6 +1807,12 @@
             "value" : "Camera access is off"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カメラへのアクセスがオフです"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1449,6 +1833,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Turn the camera on in Settings to capture the sky right away."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定でカメラをオンにすると、すぐに空を撮れます。"
           }
         },
         "ko" : {
@@ -1473,6 +1863,12 @@
             "value" : "Open Settings"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定を開く"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1493,6 +1889,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Camera unavailable"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カメラを使えません"
           }
         },
         "ko" : {
@@ -1517,6 +1919,12 @@
             "value" : "The simulator has no camera. A photo you pick is cropped to a square as well."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "シミュレータにはカメラがありません。写真から選んでも、正方形に切り抜かれて入ります。"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1537,6 +1945,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Choose from Photos"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "写真から選ぶ"
           }
         },
         "ko" : {
@@ -1561,6 +1975,12 @@
             "value" : "No filter"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "フィルタなし"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1581,6 +2001,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "No skies collected yet"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "集めた空がまだありません"
           }
         },
         "ko" : {
@@ -1605,6 +2031,12 @@
             "value" : "It starts with a glance up outside."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "まずは、外で一度空を見上げるところから。"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1625,6 +2057,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "No sky in this colour yet"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "この色の空はまだありません"
           }
         },
         "ko" : {
@@ -1649,6 +2087,12 @@
             "value" : "Capture a sky close to this colour and it will gather here."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "この色に近い空を撮ると、ここにたまっていきます。"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1669,6 +2113,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Look up once outside and this hour's cell fills in."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "外で一度空を見上げると、この時刻のマスが埋まります。"
           }
         },
         "ko" : {
@@ -1693,6 +2143,12 @@
             "value" : "Nothing yet"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "まだありません"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1713,6 +2169,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Today's Sky"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今日の空"
           }
         },
         "ko" : {
@@ -1737,6 +2199,12 @@
             "value" : "Today's Board"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今日のボード"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1757,6 +2225,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Forty-eight cells a day. Collected skies fill in, and a ring marks the current hour."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一日48マス。集めた空は埋まり、今の時刻にはリングがつきます。"
           }
         },
         "ko" : {
@@ -1781,6 +2255,12 @@
             "value" : "Today's sky, and what colour it is."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今日撮った空と、その色がどんな色か。"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1801,6 +2281,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Today's Sky · Not yet"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今日の空・まだ"
           }
         },
         "ko" : {
@@ -1825,6 +2311,12 @@
             "value" : "Today's sky, in words"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今日の空を、言葉にすると"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1845,6 +2337,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Today's sky, if you must put it in words"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今日の空を、あえて言葉にするなら"
           }
         },
         "ko" : {
@@ -1868,6 +2366,12 @@
             "state" : "translated",
             "value" : "%lld days"
           }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld日"
+          }
         }
       }
     },
@@ -1883,6 +2387,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld in this colour"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "この色 %lld枚"
           }
         }
       }

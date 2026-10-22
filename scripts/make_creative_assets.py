@@ -39,6 +39,7 @@ SEARCH = {
     "ko": ("하늘 사진 일기", "마흔여덟 가지<br>하늘색 모으기", "찍은 하늘의 색으로<br>빈 칸이 하나씩 채워져요"),
     "en": ("Sky photo journal", "Collect 48<br>shades of sky", "Every sky you snap fills a circle with its color"),
     "en-GB": ("Sky photo journal", "Collect 48<br>shades of sky", "Every sky you snap fills a circle with its colour"),
+    "ja": ("空の写真日記", "48色の空を<br>集めよう", "撮った空の色で、丸がひとつずつ埋まります"),
 }
 
 # 헤더는 처음 온 사람에게 한 가지 약속만 한다: 하늘을 찍으면 그 색이 모인다.
@@ -46,6 +47,7 @@ HEADER = {
     "ko": ("오늘의 하늘색", "하늘을 찍으면<br>그 색이 모여요"),
     "en": ("Sky colors", "Snap the sky.<br>Keep its color."),
     "en-GB": ("Sky colours", "Snap the sky.<br>Keep its colour."),
+    "ja": ("空の色", "空を撮ろう。<br>その色を残そう。"),
 }
 
 # 판에서 실제로 뽑은 색(시뮬레이터 캡처 01-board.png 의 채운 칸). 헤더 오른쪽 장식에 쓴다.
