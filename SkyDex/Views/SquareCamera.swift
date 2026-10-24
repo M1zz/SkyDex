@@ -278,9 +278,9 @@ struct SquareCameraView: View {
 
     private func message(
         icon: String,
-        title: String,
-        detail: String,
-        actionTitle: String,
+        title: LocalizedStringKey,
+        detail: LocalizedStringKey,
+        actionTitle: LocalizedStringKey,
         action: @escaping () -> Void
     ) -> some View {
         VStack(spacing: 12) {

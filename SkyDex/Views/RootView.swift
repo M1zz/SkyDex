@@ -98,6 +98,11 @@ struct RootView: View {
             PhotoDetailView(entry: entry, borrowed: borrowedForCard)
         }
         .photosPicker(isPresented: $showLibrary, selection: $pickerItem, matching: .images)
+        #if DEBUG
+        .task {
+            if ScreenshotDemo.screen == "palette" { screen = .archive }
+        }
+        #endif
         .onChange(of: pickerItem) { _, item in
             guard let item else { return }
             Task { await loadFromLibrary(item) }

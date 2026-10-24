@@ -70,6 +70,6 @@ struct SettingsView: View {
     private var storageFooter: String {
         let now = CloudSync.shared.line
         guard wantsCloud != SkyDexApp.usesCloud else { return now }
-        return "\(now)\n바꾼 것은 앱을 다시 열 때 적용됩니다."
+        return now + "\n" + String(localized: "바꾼 것은 앱을 다시 열 때 적용됩니다.")
     }
 }

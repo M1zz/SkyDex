@@ -36,6 +36,9 @@ struct SkyDexApp: App {
     /// Four attempts, in order of how much they cost the collection. The store
     /// on disk is the same file every time — only what is done with it changes.
     private static func makeContainer() -> ModelContainer {
+        #if DEBUG
+        if ScreenshotDemo.isOn { return ScreenshotDemo.makeContainer() }
+        #endif
         prepareStoreDirectory()
 
         // 1. iCloud, unless it was turned off in the settings. Rows already on

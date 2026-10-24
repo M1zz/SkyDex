@@ -19,7 +19,11 @@ struct ArchiveView: View {
 
     @State private var selected: SkyEntry?
     @State private var showingSettings = false
+    #if DEBUG
+    @State private var showing: Showing = ScreenshotDemo.screen == "palette" ? .palette : .list
+    #else
     @State private var showing: Showing = .list
+    #endif
     @State private var groups: [PaletteGroup] = []
 
     private enum Showing: String, CaseIterable, Identifiable {
@@ -92,12 +96,14 @@ struct ArchiveView: View {
                 if !entries.isEmpty {
                     ToolbarItem(placement: .principal) {
                         Picker("", selection: $showing) {
-                            ForEach(Showing.allCases) { Text($0.rawValue).tag($0) }
+                            ForEach(Showing.allCases) { Text(LocalizedStringKey($0.rawValue)).tag($0) }
                         }
                         .pickerStyle(.segmented)
                         // Left to itself a segmented control in a toolbar takes
-                        // the whole width it is given.
-                        .frame(width: 250)
+                        // the whole width it is given. 250 was enough for 기록 · 팔레트 ·
+                        // 되풀이 but cut "Wiederholungen" and "Repetições" short, so it
+                        // may grow to 320 and still gives way on a narrow phone.
+                        .frame(minWidth: 250, maxWidth: 320)
                     }
                 }
                 // Always, including on an empty archive: the way to say
@@ -153,7 +159,7 @@ struct ArchiveView: View {
                 ForEach(groups) { group in
                     VStack(alignment: .leading, spacing: 7) {
                         HStack(alignment: .firstTextBaseline) {
-                            Text(group.family.rawValue)
+                            Text(group.family.title)
                                 .font(.subheadline.weight(.medium))
                                 .foregroundStyle(.secondary)
                             Spacer()

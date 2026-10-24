@@ -228,7 +228,7 @@ struct PhotoDetailView: View {
                 Text(named.isClose ? "이름은" : "가장 가까운 이름은")
                 Text(named.name.name)
                     .foregroundStyle(.secondary)
-                Text(named.name.origin.rawValue)
+                Text(named.name.origin.title)
                     .padding(.horizontal, 6)
                     .padding(.vertical, 1)
                     .background(.fill.tertiary, in: Capsule())

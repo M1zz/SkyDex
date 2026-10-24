@@ -153,7 +153,7 @@ struct RepeatView: View {
                 }
             }
 
-            Text("\(pair.slot.timeLabel) · \(RepeatView.day(pair.a.capturedAt))과 \(RepeatView.day(pair.b.capturedAt))")
+            Text("\(pair.slot.timeLabel) · \(RepeatView.day(pair.a.capturedAt))과 \(RepeatView.day(pair.b.capturedAt))", comment: "Time slot, then the two dates whose skies are compared.")
                 .font(.caption2)
                 .foregroundStyle(.tertiary)
         }

@@ -137,24 +137,24 @@ final class CloudSync {
     var line: String {
         switch state {
         case .local:
-            return "사진은 이 기기에 저장됩니다."
+            return String(localized: "사진은 이 기기에 저장됩니다.")
         case .noAccount:
-            return "사진은 이 기기에 저장됩니다. iCloud에 로그인하면 기기를 바꿔도 남습니다."
+            return String(localized: "사진은 이 기기에 저장됩니다. iCloud에 로그인하면 기기를 바꿔도 남습니다.")
         case .idle:
-            return "iCloud에 함께 보관됩니다."
+            return String(localized: "iCloud에 함께 보관됩니다.")
         case .working:
-            return "iCloud와 맞추는 중입니다."
+            return String(localized: "iCloud와 맞추는 중입니다.")
         case .agreed(let when):
-            return "iCloud에 보관됨 · \(Self.stamp.string(from: when)) 맞춤"
+            let stamp = Self.stamp.string(from: when)
+            return String(localized: "iCloud에 보관됨 · \(stamp) 맞춤")
         case .failed:
-            return "iCloud와 맞추지 못했습니다. 사진은 이 기기에 그대로 있습니다."
+            return String(localized: "iCloud와 맞추지 못했습니다. 사진은 이 기기에 그대로 있습니다.")
         }
     }
 
     private static let stamp: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "ko_KR")
-        formatter.setLocalizedDateFormatFromTemplate("M월 d일 HH:mm")
+        formatter.setLocalizedDateFormatFromTemplate("MMMd HH:mm")
         return formatter
     }()
 }

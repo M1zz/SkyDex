@@ -7,10 +7,10 @@ enum Season: String, CaseIterable {
 
     var korean: String {
         switch self {
-        case .spring: return "봄"
-        case .summer: return "여름"
-        case .autumn: return "가을"
-        case .winter: return "겨울"
+        case .spring: return String(localized: "봄")
+        case .summer: return String(localized: "여름")
+        case .autumn: return String(localized: "가을")
+        case .winter: return String(localized: "겨울")
         }
     }
 
@@ -39,6 +39,8 @@ enum Season: String, CaseIterable {
         let parts = key.split(separator: "-")
         guard parts.count == 2,
               let season = Season(rawValue: String(parts[1])) else { return key }
-        return "\(parts[0])년 \(season.korean)"
+        let year = String(parts[0])
+        let name = season.korean
+        return String(localized: "\(year)년 \(name)")
     }
 }

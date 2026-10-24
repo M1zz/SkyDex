@@ -17,15 +17,22 @@
 
 ⚠️ 가격 · 할인 · 주소(URL) · 수상 · 다른 플랫폼 이름은 넣지 않는다(Apple 가이드).
 """
-import subprocess, sys, pathlib, tempfile
+import subprocess, sys, pathlib, tempfile, time
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 RAW = ROOT / "docs" / "screenshots" / "raw" / "creative"
 OUT = ROOT / "docs" / "screenshots" / "creative"
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
-# 앱 언어 코드 → App Store Connect 로케일 (deploy.env LOCALES=ko,en-US)
-STORE = {"en": "en-US"}
+# 문구 표의 언어 코드 → App Store Connect 로케일 (deploy.env LOCALES)
+STORE = {"en": "en-US", "no": "nb"}
+
+
+def board_image(lang):
+    """판 그림. creative 전용 원본이 있으면 그것, 없으면 그 언어 스크린샷 원본의 판."""
+    store = STORE.get(lang, lang)
+    own = RAW / store / "01-board.png"
+    return (own if own.exists() else RAW.parent / store / "01-board.png").as_uri()
 
 # (가로, 세로, 안전 영역 left, top, right, bottom)
 SPEC = {
@@ -52,7 +59,7 @@ SEARCH = {
     "vi": ("Nhật ký bầu trời", "Sưu tầm 48<br>sắc màu trời", "Mỗi bầu trời bạn chụp tô đầy một vòng tròn"),
     "cs": ("Deník nebe", "Nasbírejte 48<br>odstínů nebe", "Každé nebe, které vyfotíte, vyplní jeden kroužek"),
     "da": ("Himmeldagbog", "Saml 48<br>nuancer af himmel", "Hver himmel, du fanger, fylder en cirkel"),
-    "el": ("Ημερολόγιο ουρανού", "Συλλέξτε 48<br>αποχρώσεις ουρανού", "Κάθε ουρανός που φωτογραφίζετε γεμίζει έναν κύκλο"),
+    "el": ("Ημερολόγιο ουρανού", "Συλλέξτε 48<br>χρώματα ουρανού", "Κάθε φωτογραφία ουρανού γεμίζει έναν κύκλο"),
     "fi": ("Taivaspäiväkirja", "Kerää 48<br>taivaan sävyä", "Jokainen kuvaamasi taivas täyttää ympyrän"),
     "id": ("Jurnal foto langit", "Kumpulkan 48<br>nuansa langit", "Setiap langit yang kamu potret mengisi satu lingkaran"),
     "no": ("Himmeldagbok", "Samle 48<br>nyanser av himmel", "Hver himmel du fanger, fyller en sirkel"),
@@ -100,7 +107,9 @@ BASE_CSS = """
 * { margin:0; padding:0; box-sizing:border-box; }
 html,body { width:%(W)dpx; height:%(H)dpx; overflow:hidden; }
 body { background:linear-gradient(170deg, #f7fafc 0%%, #edf3f8 55%%, #e3edf6 100%%); position:relative;
-  font-family:-apple-system, "SF Pro Display", "Apple SD Gothic Neo", sans-serif; }
+  font-family:system-ui, -apple-system, "SF Pro Display", sans-serif; }
+/* 한글 글꼴은 한국어에만. 다른 언어에 끼면 그리스어·베트남어의 악센트가 따로 놀아 글자가 깨진다. */
+:lang(ko) body { font-family:-apple-system, "SF Pro Display", "Apple SD Gothic Neo", sans-serif; }
 .glow { position:absolute; border-radius:50%%; filter:blur(160px); pointer-events:none; }
 .text { position:absolute; display:flex; flex-direction:column; justify-content:center; }
 .eyebrow { font-weight:700; color:#0a7be0; letter-spacing:-0.01em; line-height:1.15; }
@@ -169,7 +178,7 @@ def search_html(lang):
     # 기기는 안전 영역 오른쪽 몫에 서서, 위아래로 넘쳐 화면 밖까지 이어진다(기기 그림은 잘려도 된다).
     ph_w = 1040
     ph_left = l + col + int(sw * 0.04)
-    img = (RAW / STORE.get(lang, lang) / "01-board.png").as_uri()
+    img = board_image(lang)
     return f"""
 <div class="glow" style="left:{ph_left - 300}px;top:400px;width:1700px;height:1700px;background:rgba(10,132,255,.14)"></div>
 <div class="glow" style="left:{l - 700}px;top:{t - 500}px;width:1400px;height:1000px;background:rgba(240,182,75,.12)"></div>
@@ -185,7 +194,7 @@ def header_html(lang):
     W, H, (l, t, r, b) = SPEC["header"]
     eyebrow, headline = HEADER[lang]
     sw, sh = r - l, b - t
-    img = (RAW / STORE.get(lang, lang) / "01-board.png").as_uri()
+    img = board_image(lang)
     return f"""
 <div class="glow" style="left:{l - 200}px;top:{t - 400}px;width:{sw + 400}px;height:{sh + 800}px;background:rgba(10,132,255,.10)"></div>
 {phone(img, 300, 360, 640, -9)}
@@ -229,6 +238,7 @@ def render(lang, kind):
     else:
         raise SystemExit(f"Chrome 이 그리지 못했다: {out_png}")
     print(f"rendered {out_png}")
+    time.sleep(2)  # 맥을 같이 쓰므로 한 장씩 천천히
 
 
 if __name__ == "__main__":

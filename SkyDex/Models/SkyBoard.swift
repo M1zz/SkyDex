@@ -19,12 +19,12 @@ enum SkyBoard {
     /// midnight get six slots and the three hours of sunset and afterglow get
     /// twelve.
     private static let bands: [(name: String, start: Int, end: Int, slots: Int)] = [
-        ("한밤", 0, 300, 6),
-        ("여명", 300, 480, 6),
-        ("낮", 480, 960, 12),
-        ("늦은 오후", 960, 1080, 6),
-        ("노을", 1080, 1260, 12),
-        ("밤", 1260, 1440, 6)
+        (String(localized: "한밤"), 0, 300, 6),
+        (String(localized: "여명"), 300, 480, 6),
+        (String(localized: "낮"), 480, 960, 12),
+        (String(localized: "늦은 오후"), 960, 1080, 6),
+        (String(localized: "노을"), 1080, 1260, 12),
+        (String(localized: "밤"), 1260, 1440, 6)
     ]
 
     static let slots: [SkySlot] = build()

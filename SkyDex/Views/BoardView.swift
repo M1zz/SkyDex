@@ -245,7 +245,7 @@ struct BoardView: View {
             HStack(spacing: 5) {
                 Text(named.isClose ? "이름은" : "가장 가까운 이름은")
                 Text(named.name.name)
-                Text(named.name.origin.rawValue)
+                Text(named.name.origin.title)
                     .padding(.horizontal, 5)
                     .padding(.vertical, 1)
                     .background(.white.opacity(0.14), in: Capsule())
@@ -391,6 +391,27 @@ struct BoardView: View {
         published = signature
         WidgetCenter.shared.reloadAllTimelines()
     }
+
+    #if DEBUG
+    /// `-SkyDexDemoScreen`: put the screenshot's sky up, open its card, or open
+    /// an empty slot, once the board has its rows.
+    private func openDemoScreen() {
+        guard ScreenshotDemo.isOn, let screen = ScreenshotDemo.screen else { return }
+        let noted = ScreenshotDemo.notedEntry(in: entries)
+        switch screen {
+        case "reading":
+            if let noted {
+                show(ReadingSky(slot: SkyBoard.slots[ScreenshotDemo.notedSlot], entry: noted))
+            }
+        case "card":
+            writingCard = noted
+        case "empty":
+            tappedEmpty = SkyBoard.slots[ScreenshotDemo.emptySlot]
+        default:
+            break
+        }
+    }
+    #endif
 
     var body: some View {
         NavigationStack {
@@ -559,6 +580,9 @@ struct BoardView: View {
                 place.refresh()
                 if !revealed { revealed = true }
                 publish()
+                #if DEBUG
+                openDemoScreen()
+                #endif
             }
             .onChange(of: entries.count) { _, _ in publish() }
             .onChange(of: scenePhase) { _, phase in
@@ -870,8 +894,9 @@ private struct EmptySlotSheet: View {
     /// one is said out loud, the same way the rest of the app says it.
     private var clearSkyLine: String {
         let like = SkySimiles.nearest(to: Lab(day.clearSkyColour(of: slot)))
-        let colour = like.isClose ? like.simile.name : "굳이 말하자면 \(like.simile.name)"
-        return "구름 없는 날이라면 이 시각 하늘은 \(colour)입니다. 흐리거나 비가 오는 날은 이보다 회색에 가깝습니다."
+        let name = like.simile.name
+        let colour = like.isClose ? name : String(localized: "굳이 말하자면 \(name)")
+        return String(localized: "구름 없는 날이라면 이 시각 하늘은 \(colour)입니다. 흐리거나 비가 오는 날은 이보다 회색에 가깝습니다.")
     }
 
     var body: some View {

@@ -1,0 +1,453 @@
+{
+  "sourceLanguage" : "ko",
+  "strings" : {
+    "CFBundleDisplayName" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "하늘색"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
+        }
+      }
+    },
+    "NSCameraUsageDescription" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "하늘을 정사각형으로 촬영해 판에 담습니다. 사진은 이 기기와 본인의 iCloud에만 보관되어 기기를 바꿔도 남으며, 개발자를 비롯한 누구에게도 전송되지 않습니다."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Photograph the sky as a square to add it to your board. Photos are kept only on this device and in your own iCloud, so they stay with you when you change devices. They are never sent to anyone, including the developer."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Photograph the sky as a square to add it to your board. Photos are kept only on this device and in your own iCloud, so they stay with you when you change devices. They are never sent to anyone, including the developer."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "空を正方形で撮影してボードに収めます。写真はこのデバイスとご自身のiCloudにだけ保管されるので機種を変えても残り、開発者を含め誰にも送信されません。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "将天空拍成正方形照片放进板中。照片只保存在这台设备和你自己的 iCloud 中，换了设备也会保留，不会发送给包括开发者在内的任何人。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "將天空拍成正方形照片放進板中。照片只會保存在這部裝置和你自己的 iCloud 中，換了裝置也會保留，不會傳送給包括開發者在內的任何人。"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Небо снимается в квадратном кадре и попадает на доску. Фото хранятся только на этом устройстве и в вашем iCloud, сохраняются при смене устройства и никому не передаются, в том числе разработчику."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fotografía el cielo en formato cuadrado para ponerlo en el tablero. Las fotos se guardan solo en este dispositivo y en tu iCloud, así que se conservan aunque cambies de dispositivo, y no se envían a nadie, ni siquiera al desarrollador."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Du fotografierst den Himmel im Quadrat und legst ihn auf deiner Tafel ab. Fotos werden nur auf diesem Gerät und in deiner eigenen iCloud aufbewahrt, bleiben bei einem Gerätewechsel erhalten und werden an niemanden gesendet, auch nicht an den Entwickler."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prenez le ciel en photo au format carré pour l'ajouter au tableau. Vos photos sont conservées uniquement sur cet appareil et dans votre iCloud, restent même si vous changez d'appareil, et ne sont envoyées à personne, pas même au développeur."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fotografa il cielo in formato quadrato per metterlo sulla tavola. Le foto restano solo su questo dispositivo e nel tuo iCloud, quindi non le perdi se cambi dispositivo, e non vengono inviate a nessuno, nemmeno allo sviluppatore."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fotografe o céu em formato quadrado para colocá-lo no quadro. As fotos ficam guardadas só neste aparelho e no seu iCloud, então continuam com você mesmo se trocar de aparelho, e não são enviadas a ninguém, nem mesmo ao desenvolvedor."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ถ่ายท้องฟ้าเป็นภาพสี่เหลี่ยมจัตุรัสเพื่อเก็บไว้บนกระดาน รูปภาพจะเก็บไว้เฉพาะในอุปกรณ์นี้และ iCloud ของคุณเท่านั้น จึงยังอยู่แม้เปลี่ยนเครื่อง และจะไม่ถูกส่งไปให้ใครเลย รวมถึงผู้พัฒนา"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ứng dụng chụp bầu trời thành ảnh vuông để đặt lên bảng. Ảnh chỉ được lưu trên thiết bị này và iCloud của bạn, vẫn còn khi bạn đổi máy, và không được gửi cho bất kỳ ai, kể cả nhà phát triển."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obloha se fotí ve čtvercovém formátu a ukládá na desku. Fotky se uchovávají jen v tomto zařízení a ve vašem iCloudu, takže vám zůstanou i po výměně zařízení, a nikomu se neposílají, ani vývojáři."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Du fotograferer himlen i et kvadrat og lægger den på din tavle. Billederne gemmes kun på denne enhed og i din egen iCloud, så de bliver, når du skifter enhed, og de sendes ikke til nogen, heller ikke til udvikleren."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Φωτογραφίστε τον ουρανό σε τετράγωνο κάδρο για να τον προσθέσετε στον πίνακα. Οι φωτογραφίες φυλάσσονται μόνο σε αυτή τη συσκευή και στο δικό σας iCloud, μένουν ακόμη κι αν αλλάξετε συσκευή και δεν αποστέλλονται σε κανέναν, ούτε στον προγραμματιστή."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kuvaa taivas neliön muotoon ja lisää se tauluun. Kuvat säilytetään vain tässä laitteessa ja omassa iCloudissasi, joten ne säilyvät, vaikka vaihtaisit laitetta. Niitä ei lähetetä kenellekään, ei myöskään kehittäjälle."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ambil foto langit berbentuk persegi untuk dimasukkan ke papan. Foto hanya disimpan di perangkat ini dan iCloud milikmu, tetap ada meski kamu ganti perangkat, dan tidak dikirim ke siapa pun, termasuk pengembang."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Du fotograferer himmelen i et kvadrat og legger den på tavla di. Bildene lagres bare på denne enheten og i din egen iCloud, så de blir værende når du bytter enhet, og de sendes ikke til noen, heller ikke til utvikleren."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fotografeer de lucht als vierkant om hem aan je bord toe te voegen. Foto's worden alleen op dit apparaat en in je eigen iCloud bewaard, zodat je ze houdt als je van apparaat wisselt. Ze worden naar niemand verstuurd, ook niet naar de ontwikkelaar."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aparat fotografuje niebo w kwadratowym kadrze i umieszcza je na planszy. Zdjęcia są przechowywane wyłącznie na tym urządzeniu i w twoim iCloud, więc zostają po zmianie urządzenia, i nie są nikomu przesyłane, także twórcy aplikacji."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fotografera himlen i kvadratformat och lägg den på tavlan. Bilderna sparas bara på den här enheten och i ditt eget iCloud, så de finns kvar om du byter enhet. De skickas aldrig till någon, inte heller till utvecklaren."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gökyüzünü kare biçimde çekip panele eklemek için kamera kullanılır. Fotoğraflar yalnızca bu cihazda ve kendi iCloud hesabınızda saklanır, cihaz değiştirseniz de kalır ve geliştirici dahil hiç kimseye gönderilmez."
+          }
+        }
+      }
+    },
+    "NSLocationWhenInUseUsageDescription" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이 자리의 기준 하늘색을 실제 일출·일몰 시각에 맞추기 위해 위치를 한 번 대략적으로 씁니다. 좌표는 사진에 붙지 않고 어디로도 전송되지 않습니다."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your approximate location is used once to match this spot's reference sky colors to the actual sunrise and sunset times. The coordinates are never attached to photos or sent anywhere."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your approximate location is used once to match this spot's reference sky colours to the actual sunrise and sunset times. The coordinates are never attached to photos or sent anywhere."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "この場所の基準となる空の色を実際の日の出・日の入りの時刻に合わせるため、おおまかな位置情報を一度だけ使用します。座標は写真に付かず、どこにも送信されません。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "为了让此地的基准天色与实际日出、日落时间相符，会大致使用一次你的位置。坐标不会附加到照片上，也不会发送到任何地方。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "為了讓此地的基準天色符合實際日出、日落時間，會大略使用一次你的位置。座標不會附加到照片上，也不會傳送到任何地方。"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Чтобы подстроить эталонный цвет неба под реальное время восхода и заката в этом месте, приложение один раз определяет ваше примерное местоположение. Координаты не прикрепляются к фото и никуда не передаются."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se usa tu ubicación aproximada una sola vez para ajustar el color de cielo de referencia de este lugar a las horas reales de salida y puesta del sol. Las coordenadas no se agregan a las fotos ni se envían a ningún lado."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Um die Referenzfarben des Himmels an die tatsächlichen Zeiten von Sonnenaufgang und Sonnenuntergang an deinem Ort anzupassen, wird dein Standort einmal grob ermittelt. Die Koordinaten werden nicht an Fotos angehängt und nirgendwohin gesendet."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Votre position approximative est utilisée une fois, pour caler la couleur de ciel de référence sur les heures réelles de lever et de coucher du soleil. Les coordonnées ne sont jamais jointes aux photos ni envoyées nulle part."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La tua posizione approssimativa viene usata una sola volta per allineare il colore di riferimento del cielo di questo luogo agli orari reali di alba e tramonto. Le coordinate non vengono aggiunte alle foto né inviate da nessuna parte."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sua localização aproximada é usada uma única vez para ajustar a cor de céu de referência deste lugar aos horários reais do nascer e do pôr do sol. As coordenadas não são anexadas às fotos nem enviadas a lugar nenhum."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ใช้ตำแหน่งโดยประมาณหนึ่งครั้งเพื่อปรับสีฟ้าอ้างอิงของที่นี่ให้ตรงกับเวลาพระอาทิตย์ขึ้นและตกจริง พิกัดจะไม่ถูกแนบไปกับรูปภาพและไม่ถูกส่งไปที่ใดเลย"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ứng dụng dùng vị trí gần đúng của bạn một lần để khớp màu trời tham chiếu nơi bạn ở với giờ mặt trời mọc và lặn thực tế. Tọa độ không gắn vào ảnh và không được gửi đi đâu cả."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aby referenční barva oblohy odpovídala skutečnému času východu a západu slunce na tomto místě, aplikace jednou zjistí vaši přibližnou polohu. Souřadnice se k fotkám nepřipojují a nikam se neposílají."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "For at tilpasse referencefarverne for himlen til de faktiske tider for solopgang og solnedgang, hvor du er, bruges din placering én gang, omtrentligt. Koordinaterne knyttes ikke til billederne og sendes ingen steder hen."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Η κατά προσέγγιση τοποθεσία σας χρησιμοποιείται μία φορά, ώστε το χρώμα αναφοράς του ουρανού να ταιριάζει με τις πραγματικές ώρες ανατολής και δύσης του ηλίου. Οι συντεταγμένες δεν επισυνάπτονται στις φωτογραφίες και δεν αποστέλλονται πουθενά."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sijaintiasi käytetään kerran likimääräisesti, jotta tämän paikan vertailutaivas osuu todellisiin auringonnousun ja -laskun aikoihin. Koordinaatteja ei liitetä kuviin eikä lähetetä minnekään."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lokasimu digunakan sekali secara kasar untuk mencocokkan warna langit acuan di tempat ini dengan jam terbit dan terbenam matahari yang sebenarnya. Koordinat tidak ditempelkan ke foto dan tidak dikirim ke mana pun."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "For å tilpasse referansefargene for himmelen til de faktiske tidspunktene for soloppgang og solnedgang der du er, brukes posisjonen din én gang, omtrentlig. Koordinatene knyttes ikke til bildene og sendes ingen steder."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Je locatie wordt één keer bij benadering gebruikt om de referentiekleuren van de lucht hier af te stemmen op de echte tijden van zonsopgang en zonsondergang. De coördinaten worden niet aan foto's gekoppeld en nergens naartoe verstuurd."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aby dopasować wzorcowy kolor nieba do rzeczywistych godzin wschodu i zachodu słońca w tym miejscu, aplikacja raz sprawdza twoją przybliżoną lokalizację. Współrzędne nie są dołączane do zdjęć i nigdzie nie są wysyłane."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Din ungefärliga position används en gång för att anpassa platsens referenshimmel till de faktiska tiderna för soluppgång och solnedgång. Koordinaterna fästs inte vid bilderna och skickas ingenstans."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu konumun referans gök rengini gerçek gün doğumu ve gün batımı saatlerine göre ayarlamak için konumunuz bir kez yaklaşık olarak kullanılır. Koordinatlar fotoğraflara eklenmez ve hiçbir yere gönderilmez."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

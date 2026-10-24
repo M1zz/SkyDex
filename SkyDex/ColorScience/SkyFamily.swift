@@ -49,6 +49,33 @@ enum SkyFamily: String, CaseIterable, Identifiable {
 
     var id: String { rawValue }
 
+    /// The heading the palette prints, in the reader's language. The raw value
+    /// stays Korean because it is the identity, not the label.
+    var title: String {
+        switch self {
+        case .nearBlack: String(localized: "검정에 가까운")
+        case .deepBlue: String(localized: "짙은 파랑")
+        case .blue: String(localized: "파랑")
+        case .paleBlue: String(localized: "옅은 파랑")
+        case .blueGrey: String(localized: "푸른 회색")
+        case .green: String(localized: "초록빛")
+        case .darkGrey: String(localized: "어두운 회색")
+        case .grey: String(localized: "family.grey", defaultValue: "회색", comment: "Palette heading for greys. Not the traditional colour 회색, which has its own entry.")
+        case .lightGrey: String(localized: "밝은 회색")
+        case .white: String(localized: "흰빛")
+        case .warmGrey: String(localized: "누런 회색")
+        case .sand: String(localized: "모래빛")
+        case .yellow: String(localized: "노랑")
+        case .apricot: String(localized: "살구빛")
+        case .orange: String(localized: "주황")
+        case .brick: String(localized: "탁한 붉은빛")
+        case .red: String(localized: "붉은빛")
+        case .pink: String(localized: "분홍")
+        case .mauveGrey: String(localized: "회보라")
+        case .violet: String(localized: "보랏빛")
+        }
+    }
+
     /// Which family a colour belongs to.
     ///
     /// The thresholds are the ones the rest of the app already lives by: a sky

@@ -537,7 +537,7 @@ Une planche pleine de ciels
 
 ### 키워드
 
-journal,couleur,moodboard,nuage,couchant,aube,ciel,photo,humeur,esthétique,widget,crépuscule,balade
+journal,couleur,moodboard,nuage,couchant,aube,bleu,photo,humeur,esthétique,widget,crépuscule,balade
 
 ### 프로모션 텍스트
 
@@ -708,7 +708,7 @@ SkyDex: สะสมสีท้องฟ้า
 
 ### 키워드
 
-ไดอารี่,ท้องฟ้า,สี,พาเลท,มู้ดบอร์ด,เมฆ,พระอาทิตย์ตก,พระอาทิตย์ขึ้น,ถ่ายรูป,อารมณ์,วิดเจ็ต,ธรรมชาติ
+ไดอารี่,บันทึก,พาเลท,มู้ดบอร์ด,เมฆ,พระอาทิตย์ตก,พระอาทิตย์ขึ้น,ถ่ายรูป,อารมณ์,วิดเจ็ต,ธรรมชาติ
 
 ### 프로모션 텍스트
 
@@ -765,7 +765,7 @@ Bảng màu đầy dần theo bầu trời
 
 ### 키워드
 
-nhật ký,màu sắc,bảng màu,moodboard,mây,hoàng hôn,bình minh,ảnh,tâm trạng,thẩm mỹ,widget,chạng vạng
+nhật ký,nhiếp ảnh,ghi chép,moodboard,mây,hoàng hôn,bình minh,ảnh,tâm trạng,thẩm mỹ,widget,chạng vạng
 
 ### 프로모션 텍스트
 
@@ -1050,7 +1050,7 @@ Papan yang terisi langit
 
 ### 키워드
 
-jurnal,warna,palet,moodboard,awan,senja,matahari terbit,foto,suasana,estetik,widget,fajar
+jurnal,diary,kamera,palet,moodboard,awan,senja,matahari terbit,foto,suasana,estetik,widget,fajar
 
 ### 프로모션 텍스트
 
@@ -1083,7 +1083,7 @@ Langit yang dipilih dari pustaka, bukan dari kamera, juga dipotong menjadi perse
 
 Tanpa akun, tanpa login. Langitmu tersimpan di iCloud milikmu sendiri, jadi ikut berpindah ke perangkat baru.
 
-## no
+## nb
 
 ### 지원 URL
 
