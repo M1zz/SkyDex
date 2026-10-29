@@ -9,6 +9,200 @@
 영어는 한국어를 옮긴 문장이 아니라 그 언어로 다시 쓴 문장이되,
 항목 수와 순서는 한국어와 맞춘다.
 
+## 1.0.3
+
+### 앱스토어 (한국어)
+
+고마울 때 개발자에게 작은 팁을 보낼 수 있습니다
+설정에서 친구에게 앱을 소개할 수 있습니다
+VoiceOver가 칸마다 시간과 하늘 색을 읽어 줍니다
+색마다 이름이 붙어 색 없이도 구별할 수 있습니다
+동작 줄이기를 켜면 화면이 잔잔하게 바뀝니다
+
+### App Store (en-US)
+
+Say thanks to the developer with a tip
+Tell friends about the app in Settings
+VoiceOver reads out every square
+Color names help you tell skies apart
+Calmer transitions with Reduce Motion
+
+### App Store (en-GB)
+
+Say thanks to the developer with a tip
+Tell friends about the app in Settings
+VoiceOver reads out every square
+Colour names help you tell skies apart
+Calmer transitions with Reduce Motion
+
+### 앱스토어 (日本語)
+
+感謝の気持ちを小さなチップで開発者に送れます
+設定から友だちにアプリを紹介できます
+VoiceOverがマスごとの時間と空の色を読み上げます
+色の名前が添えられ、色が見分けにくくても安心です
+「視差効果を減らす」で動きが穏やかになります
+
+### 앱스토어 (简体中文)
+
+可以给开发者送一点小费表达感谢
+可在设置中把应用推荐给朋友
+VoiceOver 会朗读每一格的时间和天空颜色
+每种颜色都附上名字，不靠颜色也能分辨
+开启“减弱动态效果”后画面更柔和
+
+### 앱스토어 (繁體中文)
+
+可以送開發者一點小費表達感謝
+可在設定中把 App 推薦給朋友
+VoiceOver 會朗讀每一格的時間與天空顏色
+每種顏色都附上名稱，不靠顏色也能分辨
+開啟「減少動態效果」後畫面更柔和
+
+### 앱스토어 (Русский)
+
+Можно оставить разработчику чаевые
+Поделитесь приложением из настроек
+VoiceOver озвучивает каждую клетку
+Названия цветов помогают их различать
+С «Уменьшением движения» экран спокойнее
+
+### 앱스토어 (Español)
+
+Deja una propina al desarrollador
+Recomienda la app desde Ajustes
+VoiceOver lee cada casilla en voz alta
+Cada color muestra su nombre
+Menos animación con Reducir movimiento
+
+### 앱스토어 (Deutsch)
+
+Sag Danke mit einem kleinen Trinkgeld
+Empfiehl die App in den Einstellungen
+VoiceOver liest jedes Feld vor
+Farbnamen helfen beim Unterscheiden
+Sanfter mit „Bewegung reduzieren“
+
+### 앱스토어 (Français)
+
+Laissez un pourboire au développeur
+Recommandez l’app depuis les Réglages
+VoiceOver lit chaque case à voix haute
+Chaque couleur affiche son nom
+Plus calme avec Réduire les animations
+
+### 앱스토어 (Italiano)
+
+Lascia una mancia allo sviluppatore
+Consiglia l’app dalle Impostazioni
+VoiceOver legge ogni casella
+Ogni colore mostra il suo nome
+Più calma con Riduci movimento
+
+### 앱스토어 (Português (Brasil))
+
+Deixe uma gorjeta para o desenvolvedor
+Indique o app aos amigos nos Ajustes
+O VoiceOver lê cada quadrado em voz alta
+Cada cor mostra o próprio nome
+Mais suave com Reduzir Movimento
+
+### 앱스토어 (ไทย)
+
+ส่งทิปเล็กๆ ให้นักพัฒนาเพื่อขอบคุณได้
+แนะนำแอปให้เพื่อนได้จากการตั้งค่า
+VoiceOver อ่านเวลาและสีของทุกช่อง
+มีชื่อสีกำกับ แยกแยะได้แม้ไม่เห็นสี
+เปิดลดการเคลื่อนไหว หน้าจอจะนุ่มนวลขึ้น
+
+### 앱스토어 (Tiếng Việt)
+
+Gửi nhà phát triển chút tiền tip cảm ơn
+Giới thiệu app cho bạn bè từ Cài đặt
+VoiceOver đọc giờ và màu trời của từng ô
+Mỗi màu có tên riêng để dễ phân biệt
+Chuyển cảnh êm hơn với Giảm chuyển động
+
+### 앱스토어 (Čeština)
+
+Poděkujte vývojáři malým spropitným
+Doporučte aplikaci přátelům v Nastavení
+VoiceOver přečte každé pole nahlas
+Každá barva má i svůj název
+Klidnější přechody s Omezením pohybu
+
+### 앱스토어 (Dansk)
+
+Giv udvikleren lidt drikkepenge som tak
+Del appen med venner fra Indstillinger
+VoiceOver læser hvert felt op
+Hver farve viser sit navn
+Roligere skift med Reducer bevægelse
+
+### 앱스토어 (Ελληνικά)
+
+Στείλτε ένα φιλοδώρημα στον δημιουργό
+Προτείνετε την εφαρμογή σε φίλους
+Το VoiceOver διαβάζει κάθε τετράγωνο
+Κάθε χρώμα δείχνει το όνομά του
+Πιο ήρεμη οθόνη με Μείωση κίνησης
+
+### 앱스토어 (Suomi)
+
+Kiitä kehittäjää pienellä tipillä
+Jaa sovellus ystäville asetuksista
+VoiceOver lukee jokaisen ruudun ääneen
+Jokaisella värillä näkyy nimi
+Vähennä liikettä rauhoittaa siirtymät
+
+### 앱스토어 (Indonesia)
+
+Beri tip kecil untuk pengembang
+Rekomendasikan app dari Pengaturan
+VoiceOver membacakan setiap kotak
+Setiap warna kini punya nama
+Lebih tenang dengan Kurangi Gerakan
+
+### 앱스토어 (Norsk bokmål) (nb)
+
+Gi utvikleren litt tips som takk
+Del appen med venner fra Innstillinger
+VoiceOver leser opp hver rute
+Hver farge viser navnet sitt
+Roligere med Reduser bevegelse
+
+### 앱스토어 (Nederlands)
+
+Bedank de maker met een kleine fooi
+Raad de app aan vanuit Instellingen
+VoiceOver leest elk vakje voor
+Elke kleur toont nu zijn naam
+Rustiger met Verminder beweging
+
+### 앱스토어 (Polski)
+
+Podziękuj twórcy drobnym napiwkiem
+Poleć aplikację znajomym w Ustawieniach
+VoiceOver odczytuje każde pole
+Każdy kolor ma teraz swoją nazwę
+Spokojniej z opcją Ogranicz ruch
+
+### 앱스토어 (Svenska)
+
+Tacka utvecklaren med lite dricks
+Tipsa vänner om appen i Inställningar
+VoiceOver läser upp varje ruta
+Varje färg visar sitt namn
+Lugnare övergångar med Minska rörelse
+
+### 앱스토어 (Türkçe)
+
+Geliştiriciye küçük bir bahşiş bırakın
+Ayarlar’dan uygulamayı paylaşın
+VoiceOver her kareyi sesli okur
+Her renk adıyla birlikte görünür
+Hareketi Azalt ile daha sakin geçişler
+
 ## 1.0.2
 
 ### 앱스토어 (한국어)
