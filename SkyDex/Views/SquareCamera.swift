@@ -72,6 +72,7 @@ struct SquareCameraView: View {
                     .foregroundStyle(.white)
                     .frame(width: 44, height: 44)
             }
+            .accessibilityLabel("닫기")
             Spacer()
             Button {
                 camera.flip()
@@ -81,6 +82,7 @@ struct SquareCameraView: View {
                     .foregroundStyle(.white)
                     .frame(width: 44, height: 44)
             }
+            .accessibilityLabel("카메라 전환")
             .opacity(camera.state == .running ? 1 : 0)
         }
         .padding(.horizontal, 8)

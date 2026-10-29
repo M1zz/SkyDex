@@ -102,6 +102,7 @@ struct PhotoDetailView: View {
                     } label: {
                         Image(systemName: "trash")
                     }
+                    .accessibilityLabel("삭제")
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     // Once there is a line on the card, the way out stops being
@@ -295,6 +296,7 @@ struct PhotoDetailView: View {
                             Image(systemName: "square.and.arrow.up")
                                 .font(.caption)
                         }
+                        .accessibilityLabel("공유")
                         .disabled(working)
                     }
                 }

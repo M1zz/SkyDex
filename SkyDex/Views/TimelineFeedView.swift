@@ -47,6 +47,9 @@ struct TimelineFeedView: View {
                     ForEach(entries) { entry in
                         card(entry)
                             .onTapGesture { opened = entry }
+                            .accessibilityElement(children: .combine)
+                            .accessibilityValue(SkySimiles.nearest(to: entry.lab).simile.name)
+                            .accessibilityAddTraits(.isButton)
                     }
                 }
                 .padding(.vertical, 8)
@@ -61,6 +64,7 @@ struct TimelineFeedView: View {
                         Circle()
                             .fill(Color(RGB(target)))
                             .frame(width: 11, height: 11)
+                            .accessibilityHidden(true)
                         Text("\(slot.band) · \(slot.timeLabel)")
                             .font(.subheadline)
                             .monospacedDigit()
@@ -98,6 +102,7 @@ struct TimelineFeedView: View {
             }
             .aspectRatio(1, contentMode: .fill)
             .frame(maxWidth: .infinity)
+            .accessibilityHidden(true)   // 사진 대신 아래 글(한 마디·시간·색)을 읽는다
             // Inset and rounded, like everything else the app draws. Bleeding
             // to the edges would make each sky a wall rather than one of many.
             .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))

@@ -85,6 +85,7 @@ struct BoardView: View {
     @State private var returns = 0
 
     @Environment(\.scenePhase) private var scenePhase
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     /// What was last left out for the widgets, so an answer that has not changed
     /// is not written again and the home screen is not asked to redraw for
@@ -413,6 +414,32 @@ struct BoardView: View {
     }
     #endif
 
+    /// What pressing a bead does — by finger or by VoiceOver.
+    private func choose(_ landing: SkySlot, filled: [Int: SkyEntry]) {
+        if let entry = filled[landing.id] {
+            // The same bead twice puts it away, which is
+            // the only way out that needs no target.
+            show(reading?.slot.id == landing.id
+                ? nil
+                : ReadingSky(slot: landing, entry: entry))
+        } else if reading != nil {
+            // Anywhere else on the board is a way out.
+            // Answering an empty slot with a sheet on top
+            // of a photograph would be two things at once.
+            show(nil)
+        } else {
+            tappedEmpty = landing
+        }
+        opens += 1
+    }
+
+    /// 구슬의 색을 색 없이도 알 수 있게: 담긴 하늘이면 그 색을 말로 한 이름.
+    private func beadValue(entry: SkyEntry?, isNow: Bool) -> String {
+        var parts = [entry.map { SkySimiles.nearest(to: $0.lab).simile.name } ?? String(localized: "비어 있음")]
+        if isNow { parts.append(String(localized: "지금")) }
+        return parts.joined(separator: ", ")
+    }
+
     var body: some View {
         NavigationStack {
             GeometryReader { area in
@@ -494,7 +521,16 @@ struct BoardView: View {
                             // beads arriving together is a flash and forty-eight
                             // arriving in sequence is a board being laid out.
                             .opacity(revealed ? 1 : 0)
-                            .scaleEffect(revealed ? 1 : 0.72)
+                            // 동작 줄이기면 커지며 펼쳐지지 않고 나타나기만 한다
+                            .scaleEffect(revealed || reduceMotion ? 1 : 0.72)
+                            // VoiceOver·음성 명령: 구슬 하나가 한 요소. 시간대와
+                            // 담긴 하늘의 색 이름(없으면 '비어 있음')을 읽고, 누르면
+                            // 손가락으로 누른 것과 똑같이 연다.
+                            .accessibilityElement()
+                            .accessibilityLabel("\(slot.timeLabel), \(slot.band)")
+                            .accessibilityValue(beadValue(entry: entry, isNow: slot.id == nowSlot))
+                            .accessibilityAddTraits(reading?.slot.id == slot.id ? [.isButton, .isSelected] : .isButton)
+                            .accessibilityAction { choose(slot, filled: filled) }
                             .animation(
                                 .spring(response: 0.45, dampingFraction: 0.72)
                                     .delay(Double(slot.id) * 0.008),
@@ -519,21 +555,7 @@ struct BoardView: View {
                                 // Lifting off the board chooses nothing, which is
                                 // how a press is taken back.
                                 guard let landing else { return }
-                                if let entry = filled[landing.id] {
-                                    // The same bead twice puts it away, which is
-                                    // the only way out that needs no target.
-                                    show(reading?.slot.id == landing.id
-                                        ? nil
-                                        : ReadingSky(slot: landing, entry: entry))
-                                } else if reading != nil {
-                                    // Anywhere else on the board is a way out.
-                                    // Answering an empty slot with a sheet on top
-                                    // of a photograph would be two things at once.
-                                    show(nil)
-                                } else {
-                                    tappedEmpty = landing
-                                }
-                                opens += 1
+                                choose(landing, filled: filled)
                             }
                     )
                     // A tick as each bead is passed, the way a picker tells you

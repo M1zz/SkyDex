@@ -115,10 +115,13 @@ struct RepeatView: View {
                             Text(entry.capturedAt, format: .dateTime.month(.defaultDigits).day())
                                 .font(.caption2)
                                 .monospacedDigit()
-                                .foregroundStyle(.tertiary)
+                                .foregroundStyle(.secondary)
                         }
                     }
                     .buttonStyle(.plain)
+                    // 색 조각을 색 없이도: 찍은 날 + 말로 한 색 이름
+                    .accessibilityLabel(Text(entry.capturedAt, format: .dateTime.month().day()))
+                    .accessibilityValue(SkySimiles.nearest(to: entry.lab).simile.name)
                 }
             }
         }
@@ -169,6 +172,8 @@ struct RepeatView: View {
                 .frame(width: 46, height: 46)
         }
         .buttonStyle(.plain)
+        .accessibilityLabel(Text(entry.capturedAt, format: .dateTime.month().day().hour().minute()))
+        .accessibilityValue(SkySimiles.nearest(to: entry.lab).simile.name)
     }
 
     private static func day(_ date: Date) -> String {

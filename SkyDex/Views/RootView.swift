@@ -24,6 +24,7 @@ enum Screen {
 /// board, which is the only place a slot exists.
 struct RootView: View {
     @Environment(\.modelContext) private var context
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     @State private var screen: Screen = .board
     @State private var place = Place()
@@ -67,10 +68,10 @@ struct RootView: View {
                     revealed: $boardRevealed,
                     reading: $reading
                 )
-                    .transition(.move(edge: .leading).combined(with: .opacity))
+                    .transition(reduceMotion ? .opacity : .move(edge: .leading).combined(with: .opacity))
             case .archive:
                 ArchiveView()
-                    .transition(.move(edge: .trailing).combined(with: .opacity))
+                    .transition(reduceMotion ? .opacity : .move(edge: .trailing).combined(with: .opacity))
             }
         }
         .animation(.spring(response: 0.42, dampingFraction: 0.88), value: screen)

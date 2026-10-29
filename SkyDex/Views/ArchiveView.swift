@@ -172,7 +172,7 @@ struct ArchiveView: View {
                             Text("\(group.entries.count)")
                                 .font(.caption2)
                                 .monospacedDigit()
-                                .foregroundStyle(.tertiary)
+                                .foregroundStyle(.secondary)
                         }
                         .padding(.horizontal, 3)
 
@@ -201,6 +201,9 @@ struct ArchiveView: View {
                                         .frame(height: 52)
                                 }
                                 .buttonStyle(.plain)
+                                // 색 조각을 색 없이도: 말로 한 색 이름과 찍은 때
+                                .accessibilityLabel(SkySimiles.nearest(to: entry.lab).simile.name)
+                                .accessibilityValue(Text(entry.capturedAt, format: .dateTime.month().day().hour().minute()))
                             }
                         }
                     }
@@ -252,6 +255,7 @@ struct ArchiveView: View {
             }
             .frame(width: 44, height: 44)
             .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
+            .accessibilityHidden(true)
 
             VStack(alignment: .leading, spacing: 2) {
                 Text(entry.capturedAt, format: .dateTime.month().day().hour().minute())
