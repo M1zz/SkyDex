@@ -1,340 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nb">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SkyDex</title>
-<meta name="description" content="En iOS-app som samler dagens himmel som farge. Fyll et brett med førtiåtte ruter med dagens himmel.">
-<link rel="canonical" href="https://m1zz.github.io/SkyDex/nb/">
-<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/SkyDex/">
-<link rel="alternate" hreflang="en" href="https://m1zz.github.io/SkyDex/en/">
-<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/SkyDex/en/">
-<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/SkyDex/ja/">
-<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/SkyDex/zh-Hans/">
-<link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/SkyDex/zh-Hant/">
-<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/SkyDex/ru/">
-<link rel="alternate" hreflang="es" href="https://m1zz.github.io/SkyDex/es/">
-<link rel="alternate" hreflang="de" href="https://m1zz.github.io/SkyDex/de/">
-<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/SkyDex/fr/">
-<link rel="alternate" hreflang="it" href="https://m1zz.github.io/SkyDex/it/">
-<link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/SkyDex/pt-BR/">
-<link rel="alternate" hreflang="th" href="https://m1zz.github.io/SkyDex/th/">
-<link rel="alternate" hreflang="vi" href="https://m1zz.github.io/SkyDex/vi/">
-<link rel="alternate" hreflang="cs" href="https://m1zz.github.io/SkyDex/cs/">
-<link rel="alternate" hreflang="da" href="https://m1zz.github.io/SkyDex/da/">
-<link rel="alternate" hreflang="el" href="https://m1zz.github.io/SkyDex/el/">
-<link rel="alternate" hreflang="fi" href="https://m1zz.github.io/SkyDex/fi/">
-<link rel="alternate" hreflang="id" href="https://m1zz.github.io/SkyDex/id/">
-<link rel="alternate" hreflang="nb" href="https://m1zz.github.io/SkyDex/nb/">
-<link rel="alternate" hreflang="nl" href="https://m1zz.github.io/SkyDex/nl/">
-<link rel="alternate" hreflang="pl" href="https://m1zz.github.io/SkyDex/pl/">
-<link rel="alternate" hreflang="sv" href="https://m1zz.github.io/SkyDex/sv/">
-<link rel="alternate" hreflang="tr" href="https://m1zz.github.io/SkyDex/tr/">
-<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/SkyDex/">
-<style>
-  :root {
-    --ink: #16202e;
-    --ink-soft: #5d6773;
-    --paper: #f4f5f7;
-    --card: #ffffff;
-    --line: #e2e5ea;
-    --accent: #2f7bbe;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ink: #eef1f5;
-      --ink-soft: #a2acb8;
-      --paper: #0b111c;
-      --card: #141c28;
-      --line: #26303e;
-      --accent: #7fa4ce;
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    padding: 0 20px 72px;
-    background: var(--paper);
-    color: var(--ink);
-    font: 17px/1.72 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
-      "Pretendard", "Segoe UI", Roboto, sans-serif;
-    -webkit-text-size-adjust: 100%;
-  }
-  main { max-width: 680px; margin: 0 auto; }
-  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
-
-  /* 하루 곡선 그대로 이어붙인 띠 */
-  .strip {
-    display: flex;
-    height: 8px;
-    border-radius: 4px;
-    overflow: hidden;
-    margin: 40px 0 34px;
-  }
-  .strip span { flex: 1 1 0; }
-
-  h1 {
-    font-size: 34px; line-height: 1.25; letter-spacing: -0.03em;
-    margin: 0 0 8px; text-align: center; font-weight: 700;
-  }
-  .lede {
-    margin: 0 auto 8px; text-align: center; color: var(--ink-soft);
-    max-width: 26em;
-  }
-  .platform {
-    text-align: center; color: var(--ink-soft); font-size: 14px;
-    margin: 0 0 36px;
-  }
-
-  /* 판 — 앱과 같은 6×8, 같은 색 */
-  .board {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
-    max-width: 340px;
-    margin: 0 auto 12px;
-  }
-  .bead {
-    aspect-ratio: 1;
-    border-radius: 50%;
-    border: 4px solid transparent;
-    display: block;
-  }
-  .bead.on { border: 0; }
-  .caption {
-    text-align: center; color: var(--ink-soft); font-size: 14px;
-    margin: 0 0 46px;
-  }
-
-  h2 {
-    font-size: 21px; letter-spacing: -0.01em; margin: 46px 0 12px;
-    padding-top: 28px; border-top: 1px solid var(--line);
-  }
-  p { margin: 0 0 14px; }
-  ul { margin: 0 0 14px; padding-left: 1.2em; }
-  li { margin-bottom: 8px; }
-  strong { font-weight: 600; }
-
-  /* 이름 카드 — 앱의 사진 카드 아래에 붙는 것과 같은 순서 */
-  .names { margin: 20px 0 8px; }
-  .name {
-    display: flex; align-items: center; gap: 14px;
-    background: var(--card); border: 1px solid var(--line);
-    border-radius: 16px; padding: 14px 16px; margin-bottom: 10px;
-  }
-  .swatch {
-    width: 46px; height: 46px; border-radius: 12px; flex: 0 0 auto;
-  }
-  .name .simile { font-size: 17px; font-weight: 600; }
-  .name .real { font-size: 13px; color: var(--ink-soft); }
-
-  .quiet {
-    background: var(--card); border: 1px solid var(--line);
-    border-radius: 16px; padding: 18px 20px; margin: 22px 0 8px;
-  }
-  .quiet p:last-child { margin-bottom: 0; }
-
-  footer {
-    margin-top: 60px; padding-top: 26px; border-top: 1px solid var(--line);
-    color: var(--ink-soft); font-size: 15px; text-align: center;
-  }
-  footer a { margin: 0 8px; }
-  nav.langs { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px 14px; margin: 18px 0 0; font-size: 14px; }
-  nav.langs a { color: var(--ink-soft); text-decoration: none; }
-  nav.langs a[aria-current] { color: var(--ink); font-weight: 600; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkyDex: et brett med dagens himmelfarger, fylt ett bilde om gangen</title>
+  <meta name="description" content="Hvert bilde av himmelen fyller én av dagens førtiåtte himmelfarger og får et navn som ligner den. Gratis og uten konto.">
+  <meta name="theme-color" content="#2A74B6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b111c" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6802295390">
+  <link rel="canonical" href="https://m1zz.github.io/SkyDex/nb/">
+  <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/SkyDex/">
+  <link rel="alternate" hreflang="en" href="https://m1zz.github.io/SkyDex/en/">
+  <link rel="alternate" hreflang="ja" href="https://m1zz.github.io/SkyDex/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/SkyDex/zh-Hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/SkyDex/zh-Hant/">
+  <link rel="alternate" hreflang="ru" href="https://m1zz.github.io/SkyDex/ru/">
+  <link rel="alternate" hreflang="es" href="https://m1zz.github.io/SkyDex/es/">
+  <link rel="alternate" hreflang="de" href="https://m1zz.github.io/SkyDex/de/">
+  <link rel="alternate" hreflang="fr" href="https://m1zz.github.io/SkyDex/fr/">
+  <link rel="alternate" hreflang="it" href="https://m1zz.github.io/SkyDex/it/">
+  <link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/SkyDex/pt-BR/">
+  <link rel="alternate" hreflang="th" href="https://m1zz.github.io/SkyDex/th/">
+  <link rel="alternate" hreflang="vi" href="https://m1zz.github.io/SkyDex/vi/">
+  <link rel="alternate" hreflang="cs" href="https://m1zz.github.io/SkyDex/cs/">
+  <link rel="alternate" hreflang="da" href="https://m1zz.github.io/SkyDex/da/">
+  <link rel="alternate" hreflang="el" href="https://m1zz.github.io/SkyDex/el/">
+  <link rel="alternate" hreflang="fi" href="https://m1zz.github.io/SkyDex/fi/">
+  <link rel="alternate" hreflang="id" href="https://m1zz.github.io/SkyDex/id/">
+  <link rel="alternate" hreflang="nb" href="https://m1zz.github.io/SkyDex/nb/">
+  <link rel="alternate" hreflang="nl" href="https://m1zz.github.io/SkyDex/nl/">
+  <link rel="alternate" hreflang="pl" href="https://m1zz.github.io/SkyDex/pl/">
+  <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/SkyDex/sv/">
+  <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/SkyDex/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/SkyDex/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SkyDex: et brett med dagens himmelfarger, fylt ett bilde om gangen">
+  <meta property="og:description" content="Hvert bilde av himmelen fyller én av dagens førtiåtte himmelfarger og får et navn som ligner den. Gratis og uten konto.">
+  <meta property="og:url" content="https://m1zz.github.io/SkyDex/nb/">
+  <meta property="og:image" content="https://m1zz.github.io/SkyDex/img/nb/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../sitegen.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#2A74B6}@media (prefers-color-scheme:dark){:root{--accent:#7FA4CE}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-<main>
-  <nav class="langs" aria-label="Language">
-    <a href="../" hreflang="ko" lang="ko">한국어</a>
-    <a href="../en/" hreflang="en" lang="en">English</a>
-    <a href="../ja/" hreflang="ja" lang="ja">日本語</a>
-    <a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
-    <a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
-    <a href="../ru/" hreflang="ru" lang="ru">Русский</a>
-    <a href="../es/" hreflang="es" lang="es">Español</a>
-    <a href="../de/" hreflang="de" lang="de">Deutsch</a>
-    <a href="../fr/" hreflang="fr" lang="fr">Français</a>
-    <a href="../it/" hreflang="it" lang="it">Italiano</a>
-    <a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
-    <a href="../th/" hreflang="th" lang="th">ไทย</a>
-    <a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
-    <a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
-    <a href="../da/" hreflang="da" lang="da">Dansk</a>
-    <a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
-    <a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
-    <a href="../id/" hreflang="id" lang="id">Indonesia</a>
-    <a href="../nb/" hreflang="nb" lang="nb" aria-current="true">Norsk</a>
-    <a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
-    <a href="../pl/" hreflang="pl" lang="pl">Polski</a>
-    <a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
-    <a href="../tr/" hreflang="tr" lang="tr">Türkçe</a>
-  </nav>
+  <a class="skip" href="#main">Hopp til innholdet</a>
+  <header class="bar">
+    <a class="brand" href="../nb/"><img src="../icon.png" alt="" width="32" height="32">SkyDex</a>
+    <a class="lang-link" href="#languages">Språk</a>
+  </header>
 
-  <div class="strip" aria-hidden="true">
-    <span style="background:#080D18"></span>
-    <span style="background:#090E1A"></span>
-    <span style="background:#0A0F1C"></span>
-    <span style="background:#0A101E"></span>
-    <span style="background:#0B1120"></span>
-    <span style="background:#0C1221"></span>
-    <span style="background:#131B30"></span>
-    <span style="background:#1B263E"></span>
-    <span style="background:#6879A2"></span>
-    <span style="background:#99A7C5"></span>
-    <span style="background:#96ABCB"></span>
-    <span style="background:#7FA4CE"></span>
-    <span style="background:#709CCB"></span>
-    <span style="background:#5791C6"></span>
-    <span style="background:#508DC5"></span>
-    <span style="background:#3F83C1"></span>
-    <span style="background:#307BBE"></span>
-    <span style="background:#2B77BB"></span>
-    <span style="background:#1F6FB5"></span>
-    <span style="background:#1D6EB4"></span>
-    <span style="background:#2471B6"></span>
-    <span style="background:#2975B8"></span>
-    <span style="background:#3179BA"></span>
-    <span style="background:#4988C3"></span>
-    <span style="background:#558EC5"></span>
-    <span style="background:#6D9BCA"></span>
-    <span style="background:#7EA5CD"></span>
-    <span style="background:#8FA5BF"></span>
-    <span style="background:#B2A297"></span>
-    <span style="background:#C1A07E"></span>
-    <span style="background:#CC986A"></span>
-    <span style="background:#D68F56"></span>
-    <span style="background:#CC7C49"></span>
-    <span style="background:#B95B35"></span>
-    <span style="background:#A95239"></span>
-    <span style="background:#8F4440"></span>
-    <span style="background:#543852"></span>
-    <span style="background:#3B324D"></span>
-    <span style="background:#322F4B"></span>
-    <span style="background:#2B2A44"></span>
-    <span style="background:#20233A"></span>
-    <span style="background:#181D33"></span>
-    <span style="background:#161C30"></span>
-    <span style="background:#13192B"></span>
-    <span style="background:#0F1424"></span>
-    <span style="background:#0B111F"></span>
-    <span style="background:#0A101D"></span>
-    <span style="background:#080D19"></span>
-  </div>
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>Hvilken farge hadde<br>himmelen i dag?</h1>
+        <p class="lead">Ta et bilde av himmelen, så fylles ruten for det tidspunktet med fargen du fanget, på et brett med førtiåtte ruter. Fargen får også et navn du kan se for deg, som tynn is, bassengflis eller moden kaki.</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6802295390">Hent gratis i App Store</a><a class="try" href="#try">Prøv brettet ↓</a></div>
+        <p class="muted small">Gratis. Ingen konto, ingen pålogging.</p>
+      </div>
+      <div class="phone"><img src="../img/nb/01-board.jpg" alt="Hvilken farge hadde himmelen i dag?" width="600" height="1303" decoding="async"></div>
+    </section>
 
-  <h1>SkyDex</h1>
-  <p class="lede">Samle dagens himmel som farge.<br>Det finnes et brett med førtiåtte ruter, og du fyller det med dagens himmel.</p>
-  <p class="platform">iPhone · iOS 17.0 eller nyere</p>
 
-  <div class="board" aria-hidden="true">
-    <span class="bead" style="border-color:#55565A" title="00:00–00:50"></span>
-    <span class="bead" style="border-color:#55565B" title="00:50–01:40"></span>
-    <span class="bead" style="border-color:#55565C" title="01:40–02:30"></span>
-    <span class="bead" style="border-color:#55575D" title="02:30–03:20"></span>
-    <span class="bead" style="border-color:#55575D" title="03:20–04:10"></span>
-    <span class="bead" style="border-color:#56575E" title="04:10–05:00"></span>
-    <span class="bead" style="border-color:#595A64" title="05:00–05:30"></span>
-    <span class="bead" style="border-color:#5C5E69" title="05:30–06:00"></span>
-    <span class="bead" style="border-color:#767B8B" title="06:00–06:30"></span>
-    <span class="bead on" style="background:#99A7C5" title="06:30–07:00 · #99A7C5"></span>
-    <span class="bead" style="border-color:#848B97" title="07:00–07:30"></span>
-    <span class="bead" style="border-color:#7D8998" title="07:30–08:00"></span>
-    <span class="bead on" style="background:#709CCB" title="08:00–08:40 · #709CCB"></span>
-    <span class="bead" style="border-color:#728397" title="08:40–09:20"></span>
-    <span class="bead" style="border-color:#718196" title="09:20–10:00"></span>
-    <span class="bead" style="border-color:#6D7E96" title="10:00–10:40"></span>
-    <span class="bead" style="border-color:#6B7C95" title="10:40–11:20"></span>
-    <span class="bead" style="border-color:#6A7A95" title="11:20–12:00"></span>
-    <span class="bead on" style="background:#1F6FB5" title="12:00–12:40 · #1F6FB5"></span>
-    <span class="bead" style="border-color:#687793" title="12:40–13:20"></span>
-    <span class="bead" style="border-color:#687893" title="13:20–14:00"></span>
-    <span class="bead" style="border-color:#697A93" title="14:00–14:40"></span>
-    <span class="bead" style="border-color:#6B7B94" title="14:40–15:20"></span>
-    <span class="bead" style="border-color:#6F8096" title="15:20–16:00"></span>
-    <span class="bead" style="border-color:#728297" title="16:00–16:20"></span>
-    <span class="bead" style="border-color:#788697" title="16:20–16:40"></span>
-    <span class="bead on" style="background:#7EA5CD" title="16:40–17:00 · #7EA5CD"></span>
-    <span class="bead" style="border-color:#828993" title="17:00–17:20"></span>
-    <span class="bead" style="border-color:#8E8884" title="17:20–17:40"></span>
-    <span class="bead on" style="background:#C1A07E" title="17:40–18:00 · #C1A07E"></span>
-    <span class="bead" style="border-color:#998474" title="18:00–18:15"></span>
-    <span class="bead on" style="background:#D68F56" title="18:15–18:30 · #D68F56"></span>
-    <span class="bead" style="border-color:#9C7B68" title="18:30–18:45"></span>
-    <span class="bead on" style="background:#B95B35" title="18:45–19:00 · #B95B35"></span>
-    <span class="bead" style="border-color:#936E63" title="19:00–19:15"></span>
-    <span class="bead" style="border-color:#896A66" title="19:15–19:30"></span>
-    <span class="bead" style="border-color:#71656F" title="19:30–19:45"></span>
-    <span class="bead" style="border-color:#67636E" title="19:45–20:00"></span>
-    <span class="bead" style="border-color:#64626E" title="20:00–20:15"></span>
-    <span class="bead" style="border-color:#61606B" title="20:15–20:30"></span>
-    <span class="bead" style="border-color:#5D5D68" title="20:30–20:45"></span>
-    <span class="bead" style="border-color:#5A5B65" title="20:45–21:00"></span>
-    <span class="bead on" style="background:#161C30" title="21:00–21:30 · #161C30"></span>
-    <span class="bead" style="border-color:#585A62" title="21:30–22:00"></span>
-    <span class="bead" style="border-color:#56585F" title="22:00–22:30"></span>
-    <span class="bead" style="border-color:#55575D" title="22:30–23:00"></span>
-    <span class="bead" style="border-color:#55575C" title="23:00–23:30"></span>
-    <span class="bead" style="border-color:#55565A" title="23:30–00:00"></span>
-  </div>
-  <p class="caption">Øverst er det midt på natten; når du beveger deg nedover, blir det dag og så mørkt igjen. En fylt sirkel er en himmel du har fanget; en tom ring kommer ennå.</p>
+    <section class="reveal" id="try">
+      <h2>Prøv brettet</h2>
+      <p class="muted">Trykk på en rute for å se hvilken del av dagen den hører til. Legg til et bilde av himmelen for å fylle ruten for akkurat nå, spol så dagene fremover og se brettet endre seg.</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;Prøv brettet&quot;, &quot;lead&quot;: &quot;Trykk på en rute for å se hvilken del av dagen den hører til. Legg til et bilde av himmelen for å fylle ruten for akkurat nå, spol så dagene fremover og se brettet endre seg.&quot;, &quot;photo&quot;: &quot;Legg til et himmelbilde&quot;, &quot;age&quot;: &quot;Siden bildene ble tatt&quot;, &quot;ageToday&quot;: &quot;I dag&quot;, &quot;ageDay&quot;: &quot;{n} dag senere&quot;, &quot;ageDays&quot;: &quot;{n} dager senere&quot;, &quot;note&quot;: &quot;Brettet starter med de samme eksempelhimlene som appens skjermbilder. Bildet ditt leses bare her i nettleseren og sendes ingen steder. Hvordan fargen velges, hvilken rute den fyller og hvor fort den blekner, fungerer akkurat som i appen.&quot;, &quot;now&quot;: &quot;Nå&quot;, &quot;bands&quot;: [&quot;Midnatt&quot;, &quot;Daggry&quot;, &quot;Dag&quot;, &quot;Sen ettermiddag&quot;, &quot;Solnedgang&quot;, &quot;Natt&quot;], &quot;emptyTag&quot;: &quot;%@ · fortsatt tom&quot;, &quot;spot&quot;: &quot;Denne plassen fylles med en himmel tatt på det tidspunktet av dagen. Alle bilder kommer inn som de er; fargen trenger ikke passe.&quot;, &quot;sims&quot;: [[&quot;Tusj&quot;, &quot;Tusj revet på steinen. Den dypeste natten.&quot;], [&quot;Havet om natten&quot;, &quot;Vann sett ovenfra, uten lys. Svart med et lag blått.&quot;], [&quot;Brent kjelebunn&quot;, &quot;Sporet etter noe som brant seg fast. Svart uten blått.&quot;], [&quot;Inntørket blekk&quot;, &quot;Spor av en fyllepenn som ble lagt fra seg. Svart med en rest av blått.&quot;], [&quot;Dypt vann&quot;, &quot;Fargen der føttene ikke når bunnen. Mørk, kjølig marineblå.&quot;], [&quot;Nye jeans&quot;, &quot;Denim som aldri har vært vasket. Mettet marineblå.&quot;], [&quot;Nattogvindu&quot;, &quot;Glasset når lysene har passert. Grå, nesten marineblå.&quot;], [&quot;Vindu ved midnatt&quot;, &quot;Utenfor når du trekker fra gardinen. Litt blåere enn svart.&quot;], [&quot;Utvasket blekk&quot;, &quot;Vannet du skylte blekk av hendene i. Blek marineblå.&quot;], [&quot;Skoleuniformblå&quot;, &quot;Marineblått fra en jakke brukt i årevis. Verken svart eller blå.&quot;], [&quot;Våte jeans&quot;, &quot;Klesvask som nettopp er hengt opp. Mørk, matt blå.&quot;], [&quot;Makrellrygg&quot;, &quot;Blågrå med sølvskjær. Himmelen før regn.&quot;], [&quot;Slitt arbeidsjakke&quot;, &quot;En blå som har falmet etter mange års bruk.&quot;], [&quot;Falmet gardin&quot;, &quot;En gardin som lenge har hengt i sola. Trøtt marineblå.&quot;], [&quot;Dugget vindu&quot;, &quot;Innenfra ser alt ute melkeaktig ut. Blålig grå.&quot;], [&quot;Morgentåke&quot;, &quot;En morgen der toppen av husene forsvinner. Lys, blålig grå.&quot;], [&quot;Våt hettegenser&quot;, &quot;Grå som har blitt mørkere av regn. En grå, tidlig morgen.&quot;], [&quot;Falmet lilla genser&quot;, &quot;En lilla som er vasket matt. Vesthimmelen like før soloppgang.&quot;], [&quot;Ferskenskall&quot;, &quot;Siden med dun. Mellom rosa og oransje.&quot;], [&quot;Aprikosmelk&quot;, &quot;Melk med most aprikos. Svært lys oransje.&quot;], [&quot;Hvit vegg i sollys&quot;, &quot;Om morgenen får veggen et øyeblikk denne fargen.&quot;], [&quot;Laksekjøtt&quot;, &quot;Den rosa fargen som forsvinner i panna.&quot;], [&quot;Jordbærmelk&quot;, &quot;Den rosa fargen når den er ristet.&quot;], [&quot;Umoden aprikos&quot;, &quot;En oransje der det gule fortsatt vinner.&quot;], [&quot;Vannglass&quot;, &quot;En lys blå som lyset går gjennom.&quot;], [&quot;Kaldt vann fra springen&quot;, &quot;En farge som får hendene til å fryse. Lys, kjølig blå.&quot;], [&quot;Tynn is&quot;, &quot;Vann som har frosset lett om våren. Svært lys blå.&quot;], [&quot;Porselensskål&quot;, &quot;Det blå skjæret i en hvit skål.&quot;], [&quot;Strøket hvit skjorte&quot;, &quot;Nesten hvit med et lag blått. Helt klar himmel midt på dagen.&quot;], [&quot;Oppvaskskum&quot;, &quot;Hvitt skum over oppvasken.&quot;], [&quot;Falmede jeans&quot;, &quot;Denim med hvite knær. Blått en overskyet dag.&quot;], [&quot;Blått fargekritt&quot;, &quot;Det blå som kommer når du trykker hardt på tegnepapiret.&quot;], [&quot;Bassengflis&quot;, &quot;Blått sett gjennom vann. Midt på dagen en klar dag.&quot;], [&quot;Blå kulepenn&quot;, &quot;Det blå i en strek på papir.&quot;], [&quot;Dypt basseng&quot;, &quot;Vannet der du ikke når bunnen. Himmelens topp midt på dagen om høysommeren.&quot;], [&quot;Penselvann&quot;, &quot;Glasset der du skylte penselen. Blått en klar ettermiddag.&quot;], [&quot;Fyllepennblekk&quot;, &quot;I flasken en blå som nesten er svart.&quot;], [&quot;Brusflaske&quot;, &quot;Lys blå med litt grønt i.&quot;], [&quot;Dugget speil&quot;, &quot;Speilet etter dusjen. Lys, blålig grå.&quot;], [&quot;Tåkete glass&quot;, &quot;Melkeaktig grå som visker ut det på den andre siden.&quot;], [&quot;Viskelærsmuler&quot;, &quot;Hvite smuler på pulten. Svært lys grå.&quot;], [&quot;Krittstøv&quot;, &quot;Det hvite som henger i lufta når tavla er visket ut.&quot;], [&quot;Tørr sement&quot;, &quot;Et gulv som herdet for lenge siden. Jevn lys grå.&quot;], [&quot;Kald aske&quot;, &quot;Det som er igjen når alt har brent. Den vanlige gråfargen en gråværsdag.&quot;], [&quot;Grumsete vindu&quot;, &quot;En farge som blir sittende selv når du pusser. Mellomgrå med blått skjær.&quot;], [&quot;Våt papp&quot;, &quot;En eske i regnet. Grå med et varmt skjær.&quot;], [&quot;Avslått skjerm&quot;, &quot;Svartgrå, like etter at strømmen er slått av.&quot;], [&quot;Brent fyrstikk&quot;, &quot;En pinne med svart hode. Mørk gråfiolett.&quot;], [&quot;Oppvaskvann&quot;, &quot;Lunkent vann med fettøyne. Grumsete grå.&quot;], [&quot;Kokevaskvann&quot;, &quot;Hvitt vann som damper. Lys grå.&quot;], [&quot;Knivblad&quot;, &quot;Stål i lyset. Grå med blått skjær.&quot;], [&quot;Gammelt blikktak&quot;, &quot;Taket på et gammelt skur. Gråblå like før regn.&quot;], [&quot;Hav i gråvær&quot;, &quot;Vann som tar himmelens farge. Mørk blågrå.&quot;], [&quot;Våt sement&quot;, &quot;Et gulv i regn. Mørk, fuktig grå.&quot;], [&quot;Blyantstift&quot;, &quot;Mørkegrå, tegnet med stiften på skrå. En regnfull ettermiddag.&quot;], [&quot;Våt asfalt&quot;, &quot;En vei etter regn om natten. Grå, nesten svart.&quot;], [&quot;Mosegrodd mur&quot;, &quot;Grå med et grønt anstrøk. Av og til like før uværet.&quot;], [&quot;Gammel mynt&quot;, &quot;Metall slitt av hender. Grå med et gulaktig skjær.&quot;], [&quot;Risvann&quot;, &quot;Det første vannet når ris skylles. Varm hvit.&quot;], [&quot;Eggeskall&quot;, &quot;En hvit som ikke er helt hvit.&quot;], [&quot;Gammelt papir&quot;, &quot;Sidene i en gammel bok. Gulnet hvit.&quot;], [&quot;Gammel avis&quot;, &quot;Papir bleket av sola. Mellom grå og gul.&quot;], [&quot;Støvete vindu&quot;, &quot;Grumsete gul av ørkenstøv. Du får lyst til å tørke det av.&quot;], [&quot;Kornpulverdrikk&quot;, &quot;Grumsete beige før pulveret synker til bunns.&quot;], [&quot;Gulnet linoleum&quot;, &quot;Et gulv som er tråkket på i årevis. Matt gul.&quot;], [&quot;Kokt kastanje&quot;, &quot;Den gule kjernen i en skrelt kastanje.&quot;], [&quot;Melk i kaffe&quot;, &quot;Akkurat helt i, ennå ikke rørt rundt.&quot;], [&quot;Støvete bokhylle&quot;, &quot;Lys gråbrun der fingeren din etterlater et spor.&quot;], [&quot;Tørr leire&quot;, &quot;Jord som begynner å sprekke. Lys brun.&quot;], [&quot;Kald melkete&quot;, &quot;En halvdrukket kopp som ble stående. Matt rosabrun.&quot;], [&quot;Våt kartong&quot;, &quot;Papir som har svulmet opp i regnet. Fargen på en grå solnedgang.&quot;], [&quot;Våt treterrasse&quot;, &quot;Tre som har trukket til seg vann og blitt mørkt.&quot;], [&quot;Sotet murstein&quot;, &quot;Stedet nær ilden. Mørk rødlig grå.&quot;], [&quot;Kaffeflekk&quot;, &quot;Den runde flekken når du løfter koppen.&quot;], [&quot;Kokte røde bønner&quot;, &quot;Bønner som har ligget lenge i bløt. Mørk purpurgrå.&quot;], [&quot;Ristet soyamel&quot;, &quot;Overflaten drysset med soyamel. Myk brunlig beige.&quot;], [&quot;Eggeplomme&quot;, &quot;Like før den sprekker. Kraftig gul.&quot;], [&quot;Brødskorpe&quot;, &quot;Der gult går over i brunt.&quot;], [&quot;Mandarinskall&quot;, &quot;Det oransje før du skreller den.&quot;], [&quot;Stekt laks&quot;, &quot;Rosa oransje, stekt på overflaten.&quot;], [&quot;Tørket kaki&quot;, &quot;Kaki med hvitt pudder. Matt oransje.&quot;], [&quot;Glør i veden&quot;, &quot;Ikke flammer, men rødglødende kull.&quot;], [&quot;Moden kaki&quot;, &quot;Rødoransje, like før den blir for myk.&quot;], [&quot;Tteokbokki-rød&quot;, &quot;Rødt når sausen har kokt inn. Den dypeste solnedgangen.&quot;], [&quot;Vannmelon&quot;, &quot;Det søteste stedet i midten. Rødlig rosa.&quot;], [&quot;Rosesyltetøy&quot;, &quot;Kronblader lagt i sukker. Matt rosarød.&quot;], [&quot;Rød murstein&quot;, &quot;En mur etter mange års regn.&quot;], [&quot;Avkjølte glør&quot;, &quot;Ild under aske. Mørk rødbrun.&quot;], [&quot;Plommeskall&quot;, &quot;Rødlig lilla med hvit dogg.&quot;], [&quot;Rødbønnegrøt&quot;, &quot;Tykk rødbrun før riskulene kommer i.&quot;], [&quot;Vinrest&quot;, &quot;Mørkerød lilla i bunnen av glasset.&quot;], [&quot;Avblomstret syrin&quot;, &quot;Den bleke lillafargen i en visnende blomst.&quot;], [&quot;Blåbærmelk&quot;, &quot;Halvt omrørt lyslilla.&quot;], [&quot;Druehud&quot;, &quot;Nyvasket, fuktig mørk lilla.&quot;], [&quot;Auberginehud&quot;, &quot;Svartlilla som sluker lyset. Dagens siste farge.&quot;]]}"></div>
+    </section>
 
-  <h2>Brettet er i dag</h2>
-  <p>De førtiåtte rutene er <strong>fargene dagens himmel kommer til å passere</strong>. De regnes ut på nytt hver dag ut fra den faktiske soloppgangen og solnedgangen der du er, og dagens prognose for skyer og regn. En rute som var fylt i går, kan derfor være tom i dag. Det brettet forteller deg, er ikke hvor mange du har samlet, men <strong>hvor mye av i dag du kan vise</strong>.</p>
-  <p>Ta bilde av himmelen nå, så fylles <strong>ruten for det tidspunktet</strong> med fargen du fanget. Hvis den blir annerledes enn forventet, kommer den likevel inn: prognosen er et gjett; bildet var faktisk der.</p>
-  <p><strong>Ingenting blir bedømt.</strong> Ingen bestått, ingen ikke bestått, ingen toleranse. Grått på en overskyet dag er også den dagens himmelfarge.</p>
+    <section class="problem reveal">
+      <h2>Du ser på himmelen hver dag, men husker ikke én eneste farge</h2>
+      <p>Himmelen på vei til jobb, himmelen da du gikk ut etter lunsj: om kvelden er fargene borte. De himmelbildene du faktisk tok, drukner blant alt det andre i bildebiblioteket. SkyDex samler dem som farger og viser på ett brett hvilken vei dagens himmel gikk.</p>
+    </section>
 
-  <h2>Hver farge får et navn</h2>
-  <p>Appen forteller deg på to måter hvilken farge himmelen din har, skrevet på koreansk. Først kommer <strong>en sammenligning du kan forestille deg</strong>, og under den <strong>et navn med kilde</strong>. «Usuhanairo» er det mer presise svaret, men nesten ingen ser en farge i det ordet, og et navn man ikke kan se, gjør ikke et navns jobb.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Hver himmel får et navn</h2>
+        <p>Hver farge får først et navn du kan se for deg, som tynn is, bassengflis eller moden kaki. Under det kommer et navn med opphav: koreansk farge, japansk farge, pigment eller webfarge.<br>Når treffet er nært, står det Navn. Når det ikke er det, står det ærlig Nærmeste navn.</p>
+      </div>
+      <div class="phone"><img src="../img/nb/02-name.jpg" alt="Hver himmel får et navn" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <div class="names">
-    <div class="name">
-      <span class="swatch" style="background:#7E90B6"></span>
-      <span>
-        <div class="simile">Falmet marineblå gardin</div>
-        <div class="real">Usuhanairo · tradisjonell japansk farge 薄花色</div>
-      </span>
-    </div>
-    <div class="name">
-      <span class="swatch" style="background:#D68F55"></span>
-      <span>
-        <div class="simile">Skorpe på ristet brød</div>
-        <div class="real">Kadmiumoransje · pigment</div>
-      </span>
-    </div>
-    <div class="name">
-      <span class="swatch" style="background:#1C6DB4"></span>
-      <span>
-        <div class="simile">Vann med blå maling rørt inn</div>
-        <div class="real">Cheongsaek · tradisjonell koreansk farge</div>
-      </span>
-    </div>
-  </div>
-  <p>Navnene med kilde stammer fra tradisjonelle koreanske og japanske farger, pigmenter og standard fargesett, og hver verdi er kontrollert mot kilden. Appen er også ærlig om hvor nær den er: når treffet er nært nok, sier den «navnet er», og når det ikke er det, «det nærmeste navnet er».</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Legg igjen en linje</h2>
+        <p>Et kort åpner seg med en gang du har tatt bildet. Skriv hva du tenkte mens du så opp, så dukker det fram over himmelen igjen hver gang du trykker på ruten på brettet.<br>Du kan også legge fargen fra en annen dags himmel over bildet og dele resultatet som et bilde.</p>
+      </div>
+      <div class="phone"><img src="../img/nb/03-card.jpg" alt="Legg igjen en linje" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>Fylte ruter blir eldre</h2>
-  <p>Et bilde beholder sin sanne farge i en uke og falmer deretter sakte over de neste åtte ukene. Det slettes ikke, og det forsvinner aldri helt. Ta bilde av himmelen på det tidspunktet igjen, så er ruten umiddelbart tilbake i full farge.</p>
-  <p>Det er ikke en straff. Det finnes ingen rekke som kan brytes og ingenting å vinne tilbake. Det er bare en ærlig måte for et brett laget av himmel å si «den himmelen var en stund siden».</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Tomme ruter viser vei</h2>
+        <p>Trykk på en tom rute for å se hvilken del av dagen den hører til, og hvilken farge du skal se etter. Den forteller også hvordan himmelen ser ut på det tidspunktet en skyfri dag, tilpasset soloppgang og solnedgang der du er.<br>Fargen trenger ikke å stemme. Det grå på en overskyet dag er også den dagens himmelfarge.</p>
+      </div>
+      <div class="phone"><img src="../img/nb/05-empty.jpg" alt="Tomme ruter viser vei" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>Samme tid, annen himmel</h2>
-  <p>Dager gjentar seg. Samme vekkerklokke, samme rute, samme vindu. Bare himmelen over er aldri den samme to ganger. Skjermen <strong>Gjentakelser</strong> setter opp dagene da du var der på samme tidspunkt, så du kan se det. Raden er gjentakelsen; fargene er det som aldri gjentas.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Logg, palett, gjentakelse</h2>
+        <p>Bla gjennom himlene dine i rekkefølge, og samle fargene i paletter som blå, grå og sandfarget. Ta samme time en annen dag, så står de to side om side.<br>Widgets på Hjem-skjermen viser dagens brett og dagens himmel med ett blikk.</p>
+      </div>
+      <div class="phone"><img src="../img/nb/04-palette.jpg" alt="Logg, palett, gjentakelse" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>Widgets</h2>
-  <p><strong>Dagens brett</strong> ser ut akkurat som i appen: førtiåtte ruter, sirkler for de fylte og ringer for de tomme. <strong>Dagens himmel</strong> viser bildet du tok i dag med navnet på fargen, og fungerer også på låseskjermen.</p>
+    <section class="reveal">
+      <h2>Tre steg, så er du i gang</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>Se opp</h3><p>Trykk på kameraknappen under brettet, og la himmelen fylle kvadratet.</p></li>
+<li class="card"><span class="n">2</span><h3>En rute fylles</h3><p>Ruten for akkurat nå får fargen du fanget, og et navn.</p></li>
+<li class="card"><span class="n">3</span><h3>Legg igjen en linje</h3><p>Skriv på kortet som åpner seg, hva du tenkte.</p></li></ol>
+    </section>
 
-  <h2>Det forblir ditt</h2>
-  <div class="quiet">
-    <p>Ingen konto og ingen server fra oss. Bildene og fargene dine ligger i appens lagring på enheten din og, hvis du er pålogget, i din egen iCloud. De sendes aldri til utvikleren. Ingen reklame, ingen sporing, ingen tredjepartsanalyse.</p>
-    <p>Posisjon brukes bare til soloppgang, solnedgang og dagens prognose, og forespørres med kilometers nøyaktighet. Appen fungerer fint hvis du sier nei. Detaljene står i <a href="privacy.html">Personvernerklæringen</a>.</p>
-  </div>
+    <section class="reveal" id="commands">
+      <h2>Slik deler brettet dagen</h2>
+      <div class="card table">
+        <dl><div><dt>Midnatt · 00.00–05.00</dt><dd>seks ruter</dd></div><div><dt>Daggry · 05.00–08.00</dt><dd>seks ruter</dd></div><div><dt>Dag · 08.00–16.00</dt><dd>tolv ruter</dd></div><div><dt>Sen ettermiddag · 16.00–18.00</dt><dd>seks ruter</dd></div><div><dt>Solnedgang · 18.00–21.00</dt><dd>tolv ruter, én hvert kvarter</dd></div><div><dt>Natt · 21.00–24.00</dt><dd>seks ruter</dd></div></dl>
+      </div>
+      <p class="muted">Rundt solnedgang, når himmelen skifter fort, sitter rutene tett, og midt på natten, når den nesten står stille, er de brede. Øverst er midnatt, og dagen renner nedover.</p>
+    </section>
+
+
+
+    <section class="reveal" id="faq">
+      <h2>Spørsmål</h2>
+      <div class="faq"><details><summary>Hvordan fylles en rute?</summary><p>En himmel du tar i dag, fyller ruten for tidspunktet du tok den, også om fargen ikke ble som du ventet. Slik så himmelen faktisk ut da. Himler fra tidligere dager kommer inn etter farge: ligger en nær nok fargen til en rute, fyller den ruten, og hver himmel fyller bare én rute.</p></details>
+<details><summary>En rute som var full i går, er tom i dag.</summary><p>Brettet er alltid i dag. En rute som gårsdagens himmel fylte etter tidspunkt, matches på nytt bare etter farge når døgnet skifter. Derfor er brettet noen dager nesten fullt og andre dager ganske tomt. Bildene dine er ikke borte: alle himlene ligger i Logg, og i fargerekkefølge i Palett.</p></details>
+<details><summary>De fylte rutene mine blekner.</summary><p>Det er med vilje. Et bilde beholder sin ekte farge i en uke og blekner så sakte over de neste åtte ukene. Det slettes ikke, og det blekner aldri helt bort. Ta himmelen på det tidspunktet igjen, så får ruten straks full farge tilbake. Ingen rekke å bryte, ingen poeng å vinne tilbake.</p></details>
+<details><summary>Må fargen stemme?</summary><p>Nei. Her finnes verken godkjent eller underkjent. Alle bilder lagres, og det grå på en overskyet dag er også den dagens himmelfarge.</p></details>
+<details><summary>Hvorfor spør appen om posisjonen min?</summary><p>Bare for å kunne fortelle deg, når du trykker på en tom rute, hvordan en skyfri himmel ser ut på det tidspunktet, tilpasset soloppgang og solnedgang der du er. Den bruker en omtrentlig posisjon på kilometernivå, og koordinater festes aldri til bildene dine. Sier du nei, virker alt likevel, og Seoul brukes som utgangspunkt.</p></details>
+<details><summary>Kan jeg legge til en himmel fra bildebiblioteket?</summary><p>Ja. En himmel du velger i Bilder i stedet for med kameraet, beskjæres også til et kvadrat og fyller ruten for akkurat nå, på samme måte som en du tar.</p></details>
+<details><summary>Hvordan sletter jeg et bilde?</summary><p>Åpne bildet og trykk på Slett, eller sveip mot venstre på det i Logg. Det fjernes fra både enheten og iCloud. Sletter du appen, blir kopien i iCloud liggende, så himlene dine kommer tilbake hvis du installerer den på nytt.</p></details>
+<details><summary>Hva skjer når jeg bytter telefon?</summary><p>Himlene dine lagres i din egen iCloud, så de følger med til en ny enhet som er logget på med den samme Apple-kontoen. Ingen konto og ingen server, og bildene og fargene dine sendes aldri til utvikleren. Ingen reklame, ingen sporing.</p></details>
+<details><summary>Er den virkelig gratis?</summary><p>Ja, alle funksjoner er gratis. Liker du appen, kan du gi utvikleren tips i appen, men tips låser ikke opp noe.</p></details>
+<details><summary>Hvilke enheter fungerer den på?</summary><p>iPhone med iOS 17.0 eller nyere, bare stående.</p></details></div>
+      <p class="contact">Feil, rar oppførsel eller noe du vil si: skriv til <a href="mailto:leeo@kakao.com">leeo@kakao.com</a>. Fortell gjerne hva du holdt på med og hvilken iOS-versjon du har, så blir det mye lettere å finne årsaken.</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>I morgen tidlig,<br>se opp bare én gang</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6802295390">Hent gratis i App Store</a>
+    </section>
+  </main>
 
   <footer>
-    <a href="support.html">Støtte</a> ·
-    <a href="privacy.html">Personvernerklæring</a> ·
-    <a href="https://github.com/M1zz/SkyDex">GitHub</a>
-    <p style="margin:10px 0 0">Værdata levert av <a href="https://weatherkit.apple.com/legal-attribution.html">Apple Vær</a>.</p>
+    <nav id="languages" class="langs" aria-label="Språk"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="../es/" hreflang="es" lang="es">Español</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../th/" hreflang="th" lang="th">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="../id/" hreflang="id" lang="id">Indonesia</a>
+<a href="../nb/" hreflang="nb" lang="nb" aria-current="page">Norsk</a>
+<a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">Personvernerklæring</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 SkyDex</p>
   </footer>
 
-</main>
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>

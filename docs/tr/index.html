@@ -1,340 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SkyDex</title>
-<meta name="description" content="Günün gökyüzünü renk olarak toplayan bir iOS uygulaması. Kırk sekiz karelik tahtayı bugünün gökyüzüyle doldur.">
-<link rel="canonical" href="https://m1zz.github.io/SkyDex/tr/">
-<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/SkyDex/">
-<link rel="alternate" hreflang="en" href="https://m1zz.github.io/SkyDex/en/">
-<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/SkyDex/en/">
-<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/SkyDex/ja/">
-<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/SkyDex/zh-Hans/">
-<link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/SkyDex/zh-Hant/">
-<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/SkyDex/ru/">
-<link rel="alternate" hreflang="es" href="https://m1zz.github.io/SkyDex/es/">
-<link rel="alternate" hreflang="de" href="https://m1zz.github.io/SkyDex/de/">
-<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/SkyDex/fr/">
-<link rel="alternate" hreflang="it" href="https://m1zz.github.io/SkyDex/it/">
-<link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/SkyDex/pt-BR/">
-<link rel="alternate" hreflang="th" href="https://m1zz.github.io/SkyDex/th/">
-<link rel="alternate" hreflang="vi" href="https://m1zz.github.io/SkyDex/vi/">
-<link rel="alternate" hreflang="cs" href="https://m1zz.github.io/SkyDex/cs/">
-<link rel="alternate" hreflang="da" href="https://m1zz.github.io/SkyDex/da/">
-<link rel="alternate" hreflang="el" href="https://m1zz.github.io/SkyDex/el/">
-<link rel="alternate" hreflang="fi" href="https://m1zz.github.io/SkyDex/fi/">
-<link rel="alternate" hreflang="id" href="https://m1zz.github.io/SkyDex/id/">
-<link rel="alternate" hreflang="nb" href="https://m1zz.github.io/SkyDex/nb/">
-<link rel="alternate" hreflang="nl" href="https://m1zz.github.io/SkyDex/nl/">
-<link rel="alternate" hreflang="pl" href="https://m1zz.github.io/SkyDex/pl/">
-<link rel="alternate" hreflang="sv" href="https://m1zz.github.io/SkyDex/sv/">
-<link rel="alternate" hreflang="tr" href="https://m1zz.github.io/SkyDex/tr/">
-<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/SkyDex/">
-<style>
-  :root {
-    --ink: #16202e;
-    --ink-soft: #5d6773;
-    --paper: #f4f5f7;
-    --card: #ffffff;
-    --line: #e2e5ea;
-    --accent: #2f7bbe;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ink: #eef1f5;
-      --ink-soft: #a2acb8;
-      --paper: #0b111c;
-      --card: #141c28;
-      --line: #26303e;
-      --accent: #7fa4ce;
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    padding: 0 20px 72px;
-    background: var(--paper);
-    color: var(--ink);
-    font: 17px/1.72 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
-      "Pretendard", "Segoe UI", Roboto, sans-serif;
-    -webkit-text-size-adjust: 100%;
-  }
-  main { max-width: 680px; margin: 0 auto; }
-  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
-
-  /* 하루 곡선 그대로 이어붙인 띠 */
-  .strip {
-    display: flex;
-    height: 8px;
-    border-radius: 4px;
-    overflow: hidden;
-    margin: 40px 0 34px;
-  }
-  .strip span { flex: 1 1 0; }
-
-  h1 {
-    font-size: 34px; line-height: 1.25; letter-spacing: -0.03em;
-    margin: 0 0 8px; text-align: center; font-weight: 700;
-  }
-  .lede {
-    margin: 0 auto 8px; text-align: center; color: var(--ink-soft);
-    max-width: 26em;
-  }
-  .platform {
-    text-align: center; color: var(--ink-soft); font-size: 14px;
-    margin: 0 0 36px;
-  }
-
-  /* 판 — 앱과 같은 6×8, 같은 색 */
-  .board {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
-    max-width: 340px;
-    margin: 0 auto 12px;
-  }
-  .bead {
-    aspect-ratio: 1;
-    border-radius: 50%;
-    border: 4px solid transparent;
-    display: block;
-  }
-  .bead.on { border: 0; }
-  .caption {
-    text-align: center; color: var(--ink-soft); font-size: 14px;
-    margin: 0 0 46px;
-  }
-
-  h2 {
-    font-size: 21px; letter-spacing: -0.01em; margin: 46px 0 12px;
-    padding-top: 28px; border-top: 1px solid var(--line);
-  }
-  p { margin: 0 0 14px; }
-  ul { margin: 0 0 14px; padding-left: 1.2em; }
-  li { margin-bottom: 8px; }
-  strong { font-weight: 600; }
-
-  /* 이름 카드 — 앱의 사진 카드 아래에 붙는 것과 같은 순서 */
-  .names { margin: 20px 0 8px; }
-  .name {
-    display: flex; align-items: center; gap: 14px;
-    background: var(--card); border: 1px solid var(--line);
-    border-radius: 16px; padding: 14px 16px; margin-bottom: 10px;
-  }
-  .swatch {
-    width: 46px; height: 46px; border-radius: 12px; flex: 0 0 auto;
-  }
-  .name .simile { font-size: 17px; font-weight: 600; }
-  .name .real { font-size: 13px; color: var(--ink-soft); }
-
-  .quiet {
-    background: var(--card); border: 1px solid var(--line);
-    border-radius: 16px; padding: 18px 20px; margin: 22px 0 8px;
-  }
-  .quiet p:last-child { margin-bottom: 0; }
-
-  footer {
-    margin-top: 60px; padding-top: 26px; border-top: 1px solid var(--line);
-    color: var(--ink-soft); font-size: 15px; text-align: center;
-  }
-  footer a { margin: 0 8px; }
-  nav.langs { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px 14px; margin: 18px 0 0; font-size: 14px; }
-  nav.langs a { color: var(--ink-soft); text-decoration: none; }
-  nav.langs a[aria-current] { color: var(--ink); font-weight: 600; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkyDex: fotoğraf fotoğraf dolan günün gökyüzü renkleri tahtası</title>
+  <meta name="description" content="Gökyüzünün her fotoğrafı, günün kırk sekiz gökyüzü renginden birini doldurur ve ona benzeyen bir ad alır. Ücretsiz, hesap gerekmez.">
+  <meta name="theme-color" content="#2A74B6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b111c" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6802295390">
+  <link rel="canonical" href="https://m1zz.github.io/SkyDex/tr/">
+  <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/SkyDex/">
+  <link rel="alternate" hreflang="en" href="https://m1zz.github.io/SkyDex/en/">
+  <link rel="alternate" hreflang="ja" href="https://m1zz.github.io/SkyDex/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/SkyDex/zh-Hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/SkyDex/zh-Hant/">
+  <link rel="alternate" hreflang="ru" href="https://m1zz.github.io/SkyDex/ru/">
+  <link rel="alternate" hreflang="es" href="https://m1zz.github.io/SkyDex/es/">
+  <link rel="alternate" hreflang="de" href="https://m1zz.github.io/SkyDex/de/">
+  <link rel="alternate" hreflang="fr" href="https://m1zz.github.io/SkyDex/fr/">
+  <link rel="alternate" hreflang="it" href="https://m1zz.github.io/SkyDex/it/">
+  <link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/SkyDex/pt-BR/">
+  <link rel="alternate" hreflang="th" href="https://m1zz.github.io/SkyDex/th/">
+  <link rel="alternate" hreflang="vi" href="https://m1zz.github.io/SkyDex/vi/">
+  <link rel="alternate" hreflang="cs" href="https://m1zz.github.io/SkyDex/cs/">
+  <link rel="alternate" hreflang="da" href="https://m1zz.github.io/SkyDex/da/">
+  <link rel="alternate" hreflang="el" href="https://m1zz.github.io/SkyDex/el/">
+  <link rel="alternate" hreflang="fi" href="https://m1zz.github.io/SkyDex/fi/">
+  <link rel="alternate" hreflang="id" href="https://m1zz.github.io/SkyDex/id/">
+  <link rel="alternate" hreflang="nb" href="https://m1zz.github.io/SkyDex/nb/">
+  <link rel="alternate" hreflang="nl" href="https://m1zz.github.io/SkyDex/nl/">
+  <link rel="alternate" hreflang="pl" href="https://m1zz.github.io/SkyDex/pl/">
+  <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/SkyDex/sv/">
+  <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/SkyDex/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/SkyDex/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SkyDex: fotoğraf fotoğraf dolan günün gökyüzü renkleri tahtası">
+  <meta property="og:description" content="Gökyüzünün her fotoğrafı, günün kırk sekiz gökyüzü renginden birini doldurur ve ona benzeyen bir ad alır. Ücretsiz, hesap gerekmez.">
+  <meta property="og:url" content="https://m1zz.github.io/SkyDex/tr/">
+  <meta property="og:image" content="https://m1zz.github.io/SkyDex/img/tr/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../sitegen.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#2A74B6}@media (prefers-color-scheme:dark){:root{--accent:#7FA4CE}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-<main>
-  <nav class="langs" aria-label="Language">
-    <a href="../" hreflang="ko" lang="ko">한국어</a>
-    <a href="../en/" hreflang="en" lang="en">English</a>
-    <a href="../ja/" hreflang="ja" lang="ja">日本語</a>
-    <a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
-    <a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
-    <a href="../ru/" hreflang="ru" lang="ru">Русский</a>
-    <a href="../es/" hreflang="es" lang="es">Español</a>
-    <a href="../de/" hreflang="de" lang="de">Deutsch</a>
-    <a href="../fr/" hreflang="fr" lang="fr">Français</a>
-    <a href="../it/" hreflang="it" lang="it">Italiano</a>
-    <a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
-    <a href="../th/" hreflang="th" lang="th">ไทย</a>
-    <a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
-    <a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
-    <a href="../da/" hreflang="da" lang="da">Dansk</a>
-    <a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
-    <a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
-    <a href="../id/" hreflang="id" lang="id">Indonesia</a>
-    <a href="../nb/" hreflang="nb" lang="nb">Norsk</a>
-    <a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
-    <a href="../pl/" hreflang="pl" lang="pl">Polski</a>
-    <a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
-    <a href="../tr/" hreflang="tr" lang="tr" aria-current="true">Türkçe</a>
-  </nav>
+  <a class="skip" href="#main">İçeriğe geç</a>
+  <header class="bar">
+    <a class="brand" href="../tr/"><img src="../icon.png" alt="" width="32" height="32">SkyDex</a>
+    <a class="lang-link" href="#languages">Dil</a>
+  </header>
 
-  <div class="strip" aria-hidden="true">
-    <span style="background:#080D18"></span>
-    <span style="background:#090E1A"></span>
-    <span style="background:#0A0F1C"></span>
-    <span style="background:#0A101E"></span>
-    <span style="background:#0B1120"></span>
-    <span style="background:#0C1221"></span>
-    <span style="background:#131B30"></span>
-    <span style="background:#1B263E"></span>
-    <span style="background:#6879A2"></span>
-    <span style="background:#99A7C5"></span>
-    <span style="background:#96ABCB"></span>
-    <span style="background:#7FA4CE"></span>
-    <span style="background:#709CCB"></span>
-    <span style="background:#5791C6"></span>
-    <span style="background:#508DC5"></span>
-    <span style="background:#3F83C1"></span>
-    <span style="background:#307BBE"></span>
-    <span style="background:#2B77BB"></span>
-    <span style="background:#1F6FB5"></span>
-    <span style="background:#1D6EB4"></span>
-    <span style="background:#2471B6"></span>
-    <span style="background:#2975B8"></span>
-    <span style="background:#3179BA"></span>
-    <span style="background:#4988C3"></span>
-    <span style="background:#558EC5"></span>
-    <span style="background:#6D9BCA"></span>
-    <span style="background:#7EA5CD"></span>
-    <span style="background:#8FA5BF"></span>
-    <span style="background:#B2A297"></span>
-    <span style="background:#C1A07E"></span>
-    <span style="background:#CC986A"></span>
-    <span style="background:#D68F56"></span>
-    <span style="background:#CC7C49"></span>
-    <span style="background:#B95B35"></span>
-    <span style="background:#A95239"></span>
-    <span style="background:#8F4440"></span>
-    <span style="background:#543852"></span>
-    <span style="background:#3B324D"></span>
-    <span style="background:#322F4B"></span>
-    <span style="background:#2B2A44"></span>
-    <span style="background:#20233A"></span>
-    <span style="background:#181D33"></span>
-    <span style="background:#161C30"></span>
-    <span style="background:#13192B"></span>
-    <span style="background:#0F1424"></span>
-    <span style="background:#0B111F"></span>
-    <span style="background:#0A101D"></span>
-    <span style="background:#080D19"></span>
-  </div>
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>Bugün gökyüzü<br>ne renkti?</h1>
+        <p class="lead">Gökyüzünü fotoğrafla, kırk sekiz karelik tahtada o saatin karesi yakaladığın renkle dolsun. Renk, gözünün önüne getirebileceğin bir ad da alır: ince buz, havuz fayansı, olgun hurma gibi.</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6802295390">App Store’dan ücretsiz al</a><a class="try" href="#try">Tahtayı dene ↓</a></div>
+        <p class="muted small">Ücretsiz. Hesap yok, giriş yok.</p>
+      </div>
+      <div class="phone"><img src="../img/tr/01-board.jpg" alt="Bugün gökyüzü ne renkti?" width="600" height="1303" decoding="async"></div>
+    </section>
 
-  <h1>SkyDex</h1>
-  <p class="lede">Günün gökyüzünü renk olarak topla.<br>Kırk sekiz karelik bir tahta var ve onu bugünün gökyüzüyle dolduruyorsun.</p>
-  <p class="platform">iPhone · iOS 17.0 veya üzeri</p>
 
-  <div class="board" aria-hidden="true">
-    <span class="bead" style="border-color:#55565A" title="00:00–00:50"></span>
-    <span class="bead" style="border-color:#55565B" title="00:50–01:40"></span>
-    <span class="bead" style="border-color:#55565C" title="01:40–02:30"></span>
-    <span class="bead" style="border-color:#55575D" title="02:30–03:20"></span>
-    <span class="bead" style="border-color:#55575D" title="03:20–04:10"></span>
-    <span class="bead" style="border-color:#56575E" title="04:10–05:00"></span>
-    <span class="bead" style="border-color:#595A64" title="05:00–05:30"></span>
-    <span class="bead" style="border-color:#5C5E69" title="05:30–06:00"></span>
-    <span class="bead" style="border-color:#767B8B" title="06:00–06:30"></span>
-    <span class="bead on" style="background:#99A7C5" title="06:30–07:00 · #99A7C5"></span>
-    <span class="bead" style="border-color:#848B97" title="07:00–07:30"></span>
-    <span class="bead" style="border-color:#7D8998" title="07:30–08:00"></span>
-    <span class="bead on" style="background:#709CCB" title="08:00–08:40 · #709CCB"></span>
-    <span class="bead" style="border-color:#728397" title="08:40–09:20"></span>
-    <span class="bead" style="border-color:#718196" title="09:20–10:00"></span>
-    <span class="bead" style="border-color:#6D7E96" title="10:00–10:40"></span>
-    <span class="bead" style="border-color:#6B7C95" title="10:40–11:20"></span>
-    <span class="bead" style="border-color:#6A7A95" title="11:20–12:00"></span>
-    <span class="bead on" style="background:#1F6FB5" title="12:00–12:40 · #1F6FB5"></span>
-    <span class="bead" style="border-color:#687793" title="12:40–13:20"></span>
-    <span class="bead" style="border-color:#687893" title="13:20–14:00"></span>
-    <span class="bead" style="border-color:#697A93" title="14:00–14:40"></span>
-    <span class="bead" style="border-color:#6B7B94" title="14:40–15:20"></span>
-    <span class="bead" style="border-color:#6F8096" title="15:20–16:00"></span>
-    <span class="bead" style="border-color:#728297" title="16:00–16:20"></span>
-    <span class="bead" style="border-color:#788697" title="16:20–16:40"></span>
-    <span class="bead on" style="background:#7EA5CD" title="16:40–17:00 · #7EA5CD"></span>
-    <span class="bead" style="border-color:#828993" title="17:00–17:20"></span>
-    <span class="bead" style="border-color:#8E8884" title="17:20–17:40"></span>
-    <span class="bead on" style="background:#C1A07E" title="17:40–18:00 · #C1A07E"></span>
-    <span class="bead" style="border-color:#998474" title="18:00–18:15"></span>
-    <span class="bead on" style="background:#D68F56" title="18:15–18:30 · #D68F56"></span>
-    <span class="bead" style="border-color:#9C7B68" title="18:30–18:45"></span>
-    <span class="bead on" style="background:#B95B35" title="18:45–19:00 · #B95B35"></span>
-    <span class="bead" style="border-color:#936E63" title="19:00–19:15"></span>
-    <span class="bead" style="border-color:#896A66" title="19:15–19:30"></span>
-    <span class="bead" style="border-color:#71656F" title="19:30–19:45"></span>
-    <span class="bead" style="border-color:#67636E" title="19:45–20:00"></span>
-    <span class="bead" style="border-color:#64626E" title="20:00–20:15"></span>
-    <span class="bead" style="border-color:#61606B" title="20:15–20:30"></span>
-    <span class="bead" style="border-color:#5D5D68" title="20:30–20:45"></span>
-    <span class="bead" style="border-color:#5A5B65" title="20:45–21:00"></span>
-    <span class="bead on" style="background:#161C30" title="21:00–21:30 · #161C30"></span>
-    <span class="bead" style="border-color:#585A62" title="21:30–22:00"></span>
-    <span class="bead" style="border-color:#56585F" title="22:00–22:30"></span>
-    <span class="bead" style="border-color:#55575D" title="22:30–23:00"></span>
-    <span class="bead" style="border-color:#55575C" title="23:00–23:30"></span>
-    <span class="bead" style="border-color:#55565A" title="23:30–00:00"></span>
-  </div>
-  <p class="caption">En üstte gece yarısı var; aşağı indikçe gün olur, sonra yeniden kararır. Dolu daire yakaladığın bir gökyüzü; boş halka ise henüz gelmemiş olan.</p>
+    <section class="reveal" id="try">
+      <h2>Tahtayı dene</h2>
+      <p class="muted">Bir kareye dokun, günün hangi saatine ait olduğunu gör. Bir gökyüzü fotoğrafı ekle, şu anın karesi dolsun. Sonra günleri ileri sar ve tahtanın nasıl değiştiğini izle.</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;Tahtayı dene&quot;, &quot;lead&quot;: &quot;Bir kareye dokun, günün hangi saatine ait olduğunu gör. Bir gökyüzü fotoğrafı ekle, şu anın karesi dolsun. Sonra günleri ileri sar ve tahtanın nasıl değiştiğini izle.&quot;, &quot;photo&quot;: &quot;Gökyüzü fotoğrafı ekle&quot;, &quot;age&quot;: &quot;Çekildikten sonra&quot;, &quot;ageToday&quot;: &quot;Bugün&quot;, &quot;ageDay&quot;: &quot;{n} gün sonra&quot;, &quot;ageDays&quot;: &quot;{n} gün sonra&quot;, &quot;note&quot;: &quot;Tahta, uygulamanın ekran görüntülerindeki örnek gökyüzü fotoğraflarıyla başlar. Fotoğrafın yalnızca bu tarayıcıda okunur, hiçbir yere gönderilmez. Rengin nasıl seçildiği, hangi kareyi doldurduğu ve ne hızla solduğu uygulamadakiyle birebir aynıdır.&quot;, &quot;now&quot;: &quot;Şimdi&quot;, &quot;bands&quot;: [&quot;Gece yarısı&quot;, &quot;Şafak&quot;, &quot;Gündüz&quot;, &quot;İkindi&quot;, &quot;Gün batımı&quot;, &quot;Gece&quot;], &quot;emptyTag&quot;: &quot;%@ · henüz boş&quot;, &quot;spot&quot;: &quot;Bu yer, günün o diliminde çekilmiş bir gökyüzüyle dolar. Her fotoğraf olduğu gibi girer; rengin uyması gerekmez.&quot;, &quot;sims&quot;: [[&quot;Çini mürekkebi&quot;, &quot;Taşta ezilmiş mürekkep. Gecenin en derini.&quot;], [&quot;Gece denizi&quot;, &quot;Işıksız bir yerden aşağı bakılan su. Siyahın üstünde ince bir mavi.&quot;], [&quot;Yanık tencere dibi&quot;, &quot;Ateşin bıraktığı iz. Mavisi olmayan bir siyah.&quot;], [&quot;Kurumuş mürekkep&quot;, &quot;Yarım kalmış bir dolma kalem izi. Mavisi kalmış bir siyah.&quot;], [&quot;Derin su&quot;, &quot;Ayağın yere değmediği yerin rengi. Karanlık ve serin bir lacivert.&quot;], [&quot;Yeni kot&quot;, &quot;Hiç yıkanmamış denim. Koyu bir lacivert.&quot;], [&quot;Gece treni camı&quot;, &quot;Işıklar geçtikten sonraki cam. Laciverde yakın bir gri.&quot;], [&quot;Gece yarısı camı&quot;, &quot;Perdeyi açınca dışarısı. Siyahtan biraz daha mavi.&quot;], [&quot;Yıkanmış mürekkep&quot;, &quot;Mürekkepli elleri çalkaladığınız su. Soluk bir lacivert.&quot;], [&quot;Okul forması laciverdi&quot;, &quot;Yıllarca giyilmiş bir ceketin laciverdi. Ne siyah ne mavi.&quot;], [&quot;Islak kot&quot;, &quot;Çamaşır yeni asılmışken. Koyu ve bulanık bir mavi.&quot;], [&quot;Uskumru sırtı&quot;, &quot;Gümüş parıltılı mavimsi gri. Yağmurdan önceki gökyüzü.&quot;], [&quot;Eski iş tulumu&quot;, &quot;Yıllarca giyilip rengi solmuş bir mavi.&quot;], [&quot;Solmuş lacivert perde&quot;, &quot;Uzun süre güneş görmüş bir perde. Gücünü yitirmiş bir lacivert.&quot;], [&quot;Buğulu cam&quot;, &quot;İçeriden bakınca dışarısı puslu. Mavimsi gri.&quot;], [&quot;Sabah sisi&quot;, &quot;Binaların tepesinin silindiği bir sabah. Mavimsi açık gri.&quot;], [&quot;Islak kapüşonlu&quot;, &quot;Yağmurla koyulaşmış gri. Bulutlu bir şafak.&quot;], [&quot;Solmuş mor kazak&quot;, &quot;Yıkandıkça solmuş bir mor. Şafaktan hemen önce batı.&quot;], [&quot;Şeftali kabuğu&quot;, &quot;Tüylü taraf. Pembe ile turuncu arası.&quot;], [&quot;Kayısılı süt&quot;, &quot;Süte kayısı çekilmiş gibi. Çok açık bir turuncu.&quot;], [&quot;Güneş vuran beyaz duvar&quot;, &quot;Sabah duvar bir anlığına bu renge bürünür.&quot;], [&quot;Somon eti&quot;, &quot;Pişince kaybolan o pembe.&quot;], [&quot;Çilekli süt&quot;, &quot;Çalkalandıktan sonraki pembe.&quot;], [&quot;Ham kayısı&quot;, &quot;Sarının hâlâ baskın olduğu bir turuncu.&quot;], [&quot;Bardaktaki su&quot;, &quot;Işığın içinden geçtiği açık mavi.&quot;], [&quot;Soğuk musluk suyu&quot;, &quot;Elleri üşüten renk. Açık ve serin bir mavi.&quot;], [&quot;İnce buz&quot;, &quot;Baharda hafifçe donmuş su. Çok açık bir mavi.&quot;], [&quot;Porselen&quot;, &quot;Beyaz kâsede kalan mavi bir iz.&quot;], [&quot;Ütülü beyaz gömlek&quot;, &quot;Neredeyse beyaz, üstünde ince bir mavi. Çok berrak bir öğle.&quot;], [&quot;Deterjan köpüğü&quot;, &quot;Lavabonun üstünde yüzen beyaz köpük.&quot;], [&quot;Solmuş kot&quot;, &quot;Dizleri beyazlamış denim. Bulutlu bir günün mavisi.&quot;], [&quot;Mavi pastel boya&quot;, &quot;Kâğıda bastırarak sürünce çıkan mavi.&quot;], [&quot;Havuz fayansı&quot;, &quot;Suyun içinden görülen mavi. Açık bir günün öğlesi.&quot;], [&quot;Mavi tükenmez kalem&quot;, &quot;Kâğıda çekilmiş bir çizginin mavisi.&quot;], [&quot;Derin havuz suyu&quot;, &quot;Ayağın yere değmediği taraf. Yaz öğlesinde göğün tepesi.&quot;], [&quot;Mavi boyalı su&quot;, &quot;Fırçanın çalkalandığı kap. Açık bir öğleden sonranın mavisi.&quot;], [&quot;Dolma kalem mürekkebi&quot;, &quot;Şişenin içinde siyaha yakın bir mavi.&quot;], [&quot;Gazoz şişesi&quot;, &quot;Yeşil karışmış açık bir mavi.&quot;], [&quot;Buğulu ayna&quot;, &quot;Duştan sonraki ayna. Açık, mavimsi gri.&quot;], [&quot;Sisli cam&quot;, &quot;Karşı tarafı bulanıklaştıracak kadar puslu bir gri.&quot;], [&quot;Silgi tozu&quot;, &quot;Masada toplanan beyaz kırıntılar. Çok açık bir gri.&quot;], [&quot;Tebeşir tozu&quot;, &quot;Tahta silindikten sonra havada kalan beyazlık.&quot;], [&quot;Kuru çimento&quot;, &quot;Çoktan kurumuş bir zemin. Düz, açık bir gri.&quot;], [&quot;Soğumuş kül&quot;, &quot;Yanıp bitenden geriye kalan. Bulutlu bir günün sıradan grisi.&quot;], [&quot;Donuk pencere&quot;, &quot;Silseniz de değişmeyen renk. Mavimsi orta gri.&quot;], [&quot;Islak oluklu karton&quot;, &quot;Yağmur yemiş bir kutu. Sıcak tonlu bir gri.&quot;], [&quot;Kapalı ekran&quot;, &quot;Kapattıktan hemen sonraki siyahımsı gri.&quot;], [&quot;Yanmış kibrit&quot;, &quot;Yalnızca kararmış başı kalmış çöp. Koyu, morumsu gri.&quot;], [&quot;Bulaşık suyu&quot;, &quot;Üstünde yağ yüzen ılık su. Bulanık bir gri.&quot;], [&quot;Çamaşır kaynatma suyu&quot;, &quot;Buharı tüten beyaz su. Açık bir gri.&quot;], [&quot;Bıçak ağzı&quot;, &quot;Işık alan çelik. Mavimsi bir gri.&quot;], [&quot;Eski teneke çatı&quot;, &quot;Eski bir deponun çatısı. Yağmurdan hemen önceki mavi gri.&quot;], [&quot;Kapalı havada deniz&quot;, &quot;Gökyüzünü olduğu gibi yansıtan su. Koyu mavi gri.&quot;], [&quot;Islak çimento&quot;, &quot;Yağmur yemiş zemin. Koyu ve nemli bir gri.&quot;], [&quot;Kurşun kalem ucu&quot;, &quot;Ucu yatırılarak sürülmüş koyu gri. Yağmurlu bir öğleden sonra.&quot;], [&quot;Islak asfalt&quot;, &quot;Gece yağmurundan sonra yol. Siyaha yakın bir gri.&quot;], [&quot;Yosunlu duvar&quot;, &quot;Grinin üstüne yeşil sinmiş. Bazen fırtınadan hemen önce.&quot;], [&quot;Eski bozuk para&quot;, &quot;Elden ele geçmiş metal. Sarımsı bir gri.&quot;], [&quot;Pirinç suyu&quot;, &quot;Pirinci yıkayınca çıkan ilk su. Sıcak bir beyaz.&quot;], [&quot;Yumurta kabuğu&quot;, &quot;Tam beyaz olmayan bir beyaz.&quot;], [&quot;Eski kâğıt&quot;, &quot;Eski bir kitabın sayfaları. Sararmış bir beyaz.&quot;], [&quot;Eski gazete&quot;, &quot;Güneşte solmuş kâğıt. Gri ile sarı arası.&quot;], [&quot;Tozlu pencere&quot;, &quot;Silmek isteyeceğiniz puslu bir sarılık.&quot;], [&quot;Tahıl içeceği&quot;, &quot;Dibe çökmeden önceki bulanık bej.&quot;], [&quot;Eski sarı muşamba&quot;, &quot;Yıllarca basılmış bir zemin. Donuk bir sarı.&quot;], [&quot;Haşlanmış kestane&quot;, &quot;Soyulmuş kestanenin sarı içi.&quot;], [&quot;Kahveye dökülen süt&quot;, &quot;Yeni dökülmüş, henüz karışmamış.&quot;], [&quot;Tozlu kitaplık&quot;, &quot;Parmakla sürünce iz kalan açık gri kahve.&quot;], [&quot;Kuru çamur&quot;, &quot;Çatlamaya başlamış toprak. Açık bir kahverengi.&quot;], [&quot;Soğumuş sütlü çay&quot;, &quot;Yarım bırakılmış bir fincan. Bulanık pembemsi kahve.&quot;], [&quot;Islak mukavva&quot;, &quot;Yağmurla kabarmış kâğıt. Bulutlu bir gün batımının rengi.&quot;], [&quot;Islak ahşap zemin&quot;, &quot;Nemden kararmış ahşap.&quot;], [&quot;Küllü tuğla&quot;, &quot;Ateşe yakın duran yer. Koyu kırmızımsı gri.&quot;], [&quot;Kahve lekesi&quot;, &quot;Fincanı kaldırınca kalan yuvarlak iz.&quot;], [&quot;Kırmızı fasulye kabuğu&quot;, &quot;Uzun süre suda bekletilmiş fasulye. Koyu morumsu gri.&quot;], [&quot;Kavrulmuş soya unu&quot;, &quot;Soya ununa bulanmış bir yüzey. Yumuşak, kahvemsi bej.&quot;], [&quot;Yumurta sarısı&quot;, &quot;Patlamadan hemen önce. Koyu bir sarı.&quot;], [&quot;Tost ekmeği kenarı&quot;, &quot;Sarının kahveye döndüğü yer.&quot;], [&quot;Mandalina kabuğu&quot;, &quot;Soymadan önceki o turuncu.&quot;], [&quot;Izgara somon&quot;, &quot;Yüzeyi pişmiş pembemsi turuncu.&quot;], [&quot;Hurma kurusu&quot;, &quot;Üstü beyaz pudralı kuru trabzon hurması. Donuk bir turuncu.&quot;], [&quot;Odun közü&quot;, &quot;Alev değil, kızaran kömür.&quot;], [&quot;Olgun hurma&quot;, &quot;Patlamadan hemen önceki kırmızı turuncu.&quot;], [&quot;Tteokbokki sosu&quot;, &quot;Koyulaştıktan sonraki kırmızı. En koyu gün batımı.&quot;], [&quot;Karpuz içi&quot;, &quot;Ortadaki en tatlı kısım. Kırmızımsı pembe.&quot;], [&quot;Gül reçeli&quot;, &quot;Şekerde bekletilmiş yapraklar. Donuk pembemsi kırmızı.&quot;], [&quot;Kırmızı tuğla&quot;, &quot;Yıllarca yağmur yemiş bir duvar.&quot;], [&quot;Sönmüş köz&quot;, &quot;Küle bürünmüş ateş. Koyu kırmızımsı kahve.&quot;], [&quot;Erik kabuğu&quot;, &quot;Üstüne beyaz pus çökmüş kırmızımsı mor.&quot;], [&quot;Kırmızı fasulye lapası&quot;, &quot;Pirinç topları eklenmeden önceki koyu kırmızı kahve.&quot;], [&quot;Kalan şarap&quot;, &quot;Kadehin dibinde kalan koyu kırmızı mor.&quot;], [&quot;Solmuş leylak&quot;, &quot;Kuruyan bir çiçeğin soluk moru.&quot;], [&quot;Yaban mersinli süt&quot;, &quot;Tam karışmamış bir lila.&quot;], [&quot;Üzüm kabuğu&quot;, &quot;Yıkanmış, hâlâ ıslak koyu mor.&quot;], [&quot;Patlıcan kabuğu&quot;, &quot;Işığı yutan siyahımsı mor. Günün son rengi.&quot;]]}"></div>
+    </section>
 
-  <h2>Tahta bugündür</h2>
-  <p>Kırk sekiz kare, <strong>bugünün gökyüzünün geçeceği renklerdir</strong>. Her gün, bulunduğun yerdeki gerçek gün doğumu ve gün batımından ve bugünün bulut ile yağmur tahmininden yeniden hesaplanır. Bu yüzden dün dolu olan bir kare bugün boş olabilir. Tahtanın sana söylediği kaç tane topladığın değil, <strong>bugünden ne kadarını gösterebildiğindir</strong>.</p>
-  <p>Şimdi gökyüzünü çek, <strong>o saatin karesi</strong> yakaladığın renkle dolsun. Beklenenden farklı çıkarsa yine de girer: tahmin bir sezgidir; fotoğraf ise gerçekten oradaydı.</p>
-  <p><strong>Hiçbir şey yargılanmaz.</strong> Geçme kalma yok, tolerans yok. Kapalı bir günün grisi de o günün gökyüzü rengidir.</p>
+    <section class="problem reveal">
+      <h2>Gökyüzüne her gün bakıyorsun ama tek bir rengini hatırlamıyorsun</h2>
+      <p>İşe giderken baktığın gökyüzü, öğle yemeğinden çıkarken gördüğün gökyüzü: akşam olunca o renkler çoktan aklından çıkmış olur. Çektiğin gökyüzü fotoğrafları da galerideki her şeyin arasında kaybolur. SkyDex onları renk olarak toplar ve bugünün gökyüzünün geçtiği yolu tek bir tahtada gösterir.</p>
+    </section>
 
-  <h2>Her renge bir ad verilir</h2>
-  <p>Uygulama gökyüzünün rengini sana iki yolla söyler, Korece yazılmış olarak. Önce <strong>gözünün önüne getirebileceğin bir benzetme</strong> gelir, altında ise <strong>kaynağı olan bir ad</strong>. “Usuhanairo” daha kesin bir yanıt, ama bu sözcükte neredeyse kimse bir renk görmez ve görünmeyen bir ad, bir adın işini yapmaz.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Her gökyüzü bir ad alır</h2>
+        <p>Her renk önce gözünün önüne gelen bir ad alır: ince buz, havuz fayansı, olgun hurma gibi. Altında kökeni belli bir ad gelir: Kore rengi, Japon rengi, pigment ya da web rengi.<br>Eşleşme yakınsa başında Adı, uzaksa dürüstçe En yakın adı yazar.</p>
+      </div>
+      <div class="phone"><img src="../img/tr/02-name.jpg" alt="Her gökyüzü bir ad alır" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <div class="names">
-    <div class="name">
-      <span class="swatch" style="background:#7E90B6"></span>
-      <span>
-        <div class="simile">Solmuş lacivert perde</div>
-        <div class="real">Usuhanairo · geleneksel Japon rengi 薄花色</div>
-      </span>
-    </div>
-    <div class="name">
-      <span class="swatch" style="background:#D68F55"></span>
-      <span>
-        <div class="simile">Kızarmış ekmek kabuğu</div>
-        <div class="real">Kadmiyum turuncusu · pigment</div>
-      </span>
-    </div>
-    <div class="name">
-      <span class="swatch" style="background:#1C6DB4"></span>
-      <span>
-        <div class="simile">İçine mavi boya karıştırılmış su</div>
-        <div class="real">Cheongsaek · geleneksel Kore rengi</div>
-      </span>
-    </div>
-  </div>
-  <p>Kaynaklı adlar geleneksel Kore ve Japon renklerinden, pigmentlerden ve standart renk takımlarından gelir ve her değer kaynağıyla karşılaştırılmıştır. Uygulama ne kadar yakın olduğu konusunda da dürüsttür: eşleşme yeterince yakınsa “adı”, değilse “en yakın adı” der.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Bir satır bırak</h2>
+        <p>Fotoğrafı çeker çekmez bir kart açılır. Yukarı bakarken aklından geçeni yaz, tahtada o kareye her dokunduğunda yazı yeniden gökyüzünün üstünde belirir.<br>Başka bir günün gökyüzü rengini bu fotoğrafın üstüne serip sonucu görsel olarak da paylaşabilirsin.</p>
+      </div>
+      <div class="phone"><img src="../img/tr/03-card.jpg" alt="Bir satır bırak" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>Dolu kareler yaşlanır</h2>
-  <p>Bir fotoğraf gerçek rengini bir hafta korur, sonra sonraki sekiz hafta boyunca yavaşça solar. Silinmez ve hiçbir zaman tamamen kaybolmaz. O saatte gökyüzünü yeniden çekersen kare hemen tam rengine döner.</p>
-  <p>Bu bir ceza değil. Bozulacak bir seri ve geri kazanılacak bir şey yok. Gökyüzünden yapılmış bir tahtanın “o gökyüzü bir süre önceydi” demesinin dürüst bir yolu sadece.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Boş kareler yol gösterir</h2>
+        <p>Boş bir kareye dokun, günün hangi saatine ait olduğunu ve hangi rengi araman gerektiğini gör. Bulutsuz bir günde o saatte gökyüzünün nasıl göründüğünü de bulunduğun yerin gün doğumu ve gün batımı saatine göre söyler.<br>Rengin tutması gerekmez. Kapalı bir günün grisi de o günün gökyüzü rengidir.</p>
+      </div>
+      <div class="phone"><img src="../img/tr/05-empty.jpg" alt="Boş kareler yol gösterir" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>Aynı saat, farklı gökyüzü</h2>
-  <p>Günler tekrar eder. Aynı çalar saat, aynı yol, aynı pencere. Yalnızca üstlerindeki gökyüzü hiçbir zaman iki kez aynı olmaz. <strong>Tekrarlar</strong> ekranı, aynı saatte dışarıda olduğun günleri yan yana dizer, böylece bunu görebilirsin. Sıra tekrardır; renkler ise hiç tekrar etmeyen kısım.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Kayıt, palet, tekrarlar</h2>
+        <p>Gökyüzü fotoğraflarına sırayla göz at, renklerini mavi, gri ve kum rengi gibi paletlerde topla. Aynı saati başka bir gün yeniden çek, ikisi yan yana dursun.<br>Ana Ekran widget’ları bugünün tahtasını ve bugünün gökyüzünü bir bakışta gösterir.</p>
+      </div>
+      <div class="phone"><img src="../img/tr/04-palette.jpg" alt="Kayıt, palet, tekrarlar" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>Widget’lar</h2>
-  <p><strong>Bugünün Tahtası</strong> uygulamadaki gibi görünür: kırk sekiz kare, dolu olanlar için daireler, boş olanlar için halkalar. <strong>Bugünün Gökyüzü</strong>, bugün çektiğin fotoğrafı rengin adıyla gösterir ve Kilit Ekranı’nda da çalışır.</p>
+    <section class="reveal">
+      <h2>Başlamak için üç adım</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>Yukarı bak</h3><p>Tahtanın altındaki kamera düğmesine dokun, gökyüzü kare çerçeveyi doldursun.</p></li>
+<li class="card"><span class="n">2</span><h3>Bir kare dolar</h3><p>Şu anın karesi yakaladığın rengi ve bir ad alır.</p></li>
+<li class="card"><span class="n">3</span><h3>Bir satır bırak</h3><p>Açılan karta aklından geçeni yaz.</p></li></ol>
+    </section>
 
-  <h2>Senin kalır</h2>
-  <div class="quiet">
-    <p>Hesap yok, bize ait sunucu yok. Fotoğraflarının ve renklerinin yeri cihazındaki uygulama depolaması ve giriş yaptıysan kendi iCloud’undur. Geliştiriciye asla gönderilmez. Reklam yok, izleme yok, üçüncü taraf analizi yok.</p>
-    <p>Konum yalnızca gün doğumu, gün batımı ve bugünün tahmini için kullanılır ve kilometre hassasiyetiyle istenir. Hayır dersen uygulama sorunsuz çalışır. Ayrıntılar <a href="privacy.html">Gizlilik Politikası</a>’nda.</p>
-  </div>
+    <section class="reveal" id="commands">
+      <h2>Tahta günü böyle böler</h2>
+      <div class="card table">
+        <dl><div><dt>Gece yarısı · 00.00–05.00</dt><dd>altı kare</dd></div><div><dt>Şafak · 05.00–08.00</dt><dd>altı kare</dd></div><div><dt>Gündüz · 08.00–16.00</dt><dd>on iki kare</dd></div><div><dt>İkindi · 16.00–18.00</dt><dd>altı kare</dd></div><div><dt>Gün batımı · 18.00–21.00</dt><dd>on iki kare, her 15 dakikada bir</dd></div><div><dt>Gece · 21.00–24.00</dt><dd>altı kare</dd></div></dl>
+      </div>
+      <p class="muted">Gökyüzünün hızla değiştiği gün batımı çevresinde kareler sık, neredeyse hiç kıpırdamadığı gece yarısında ise geniştir. En üstte gece yarısı vardır ve gün aşağı doğru akar.</p>
+    </section>
+
+
+
+    <section class="reveal" id="faq">
+      <h2>Sorular</h2>
+      <div class="faq"><details><summary>Bir kare nasıl dolar?</summary><p>Bugün çektiğin gökyüzü, renk beklediğin gibi çıkmasa bile çektiğin saatin karesini doldurur. Çünkü o saatte gökyüzü gerçekten öyleydi. Önceki günlerin gökyüzü fotoğrafları renge göre yerleşir: bir karenin rengine yeterince yakınsa o kareyi doldurur ve her fotoğraf yalnızca bir kare doldurur.</p></details>
+<details><summary>Dün dolu olan bir kare bugün boş.</summary><p>Tahta her zaman bugündür. Dünkü gökyüzünün saatine göre doldurduğu kare, gün dönünce yalnızca renge göre yeniden eşleştirilir. Bu yüzden tahta bazı günler neredeyse doludur, bazı günler boş görünür. Fotoğrafların bir yere gitmedi: hepsi Kayıt’ta, renk sırasıyla da Palet’te duruyor.</p></details>
+<details><summary>Doldurduğum kareler soluyor.</summary><p>Bu bilerek böyle. Bir fotoğraf bir hafta boyunca gerçek rengini korur, ardından sonraki sekiz hafta içinde yavaş yavaş solar. Silinmez ve hiçbir zaman tamamen kaybolmaz. O saatte gökyüzünü yeniden çekersen kare hemen tam rengine döner. Bozulacak bir seri ya da geri kazanılacak bir puan yok.</p></details>
+<details><summary>Rengin tutması gerekiyor mu?</summary><p>Hayır. Geçti ya da kaldı diye bir şey yok. Her fotoğraf kaydedilir ve kapalı bir günün grisi de o günün gökyüzü rengidir.</p></details>
+<details><summary>Konumumu neden istiyor?</summary><p>Yalnızca boş bir kareye dokunduğunda, bulutsuz bir gökyüzünün o saatte nasıl göründüğünü bulunduğun yerin gün doğumu ve gün batımı saatine göre söyleyebilmek için. Kilometre düzeyinde yaklaşık konum kullanılır ve koordinatlar fotoğraflarına asla eklenmez. İzin vermezsen her şey yine çalışır, o zaman Seul esas alınır.</p></details>
+<details><summary>Galerimdeki bir gökyüzünü ekleyebilir miyim?</summary><p>Evet. Kamera yerine Fotoğraflar’dan seçtiğin gökyüzü de kare biçiminde kırpılır ve tıpkı yeni çektiğin bir fotoğraf gibi şu anın karesini doldurur.</p></details>
+<details><summary>Bir fotoğrafı nasıl silerim?</summary><p>Fotoğrafı aç ve Sil’e dokun ya da Kayıt’ta üzerinde sola kaydır. Hem cihazından hem iCloud’undan birlikte silinir. Uygulamayı silsen de iCloud’daki kopya kalır, yeniden yüklediğinde topladığın gökyüzü fotoğrafları geri gelir.</p></details>
+<details><summary>Telefon değiştirince ne olur?</summary><p>Topladığın gökyüzü fotoğrafları kendi iCloud’unda saklanır, bu yüzden aynı Apple Hesabı ile giriş yapılmış yeni cihazda kaldığın yerden devam eder. Ayrı bir hesap ya da sunucu yok, fotoğrafların ve renklerin geliştiriciye asla gönderilmez. Reklam yok, takip yok.</p></details>
+<details><summary>Gerçekten ücretsiz mi?</summary><p>Evet, tüm özellikler ücretsiz. Beğenirsen uygulama içinden geliştiriciye bahşiş bırakabilirsin ama bahşiş hiçbir şeyin kilidini açmaz.</p></details>
+<details><summary>Hangi cihazlarda çalışır?</summary><p>iOS 17.0 veya üzeri bir iPhone’da, yalnızca dikey yönde.</p></details></div>
+      <p class="contact">Hatalar, tuhaf davranışlar ya da söylemek istediğin her şey için <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> adresine yaz. O sırada ne yaptığını ve hangi iOS sürümünü kullandığını eklersen sorunu bulmak çok daha kolay olur.</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>Yarın sabah<br>bir kez yukarı bak</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6802295390">App Store’dan ücretsiz al</a>
+    </section>
+  </main>
 
   <footer>
-    <a href="support.html">Destek</a> ·
-    <a href="privacy.html">Gizlilik Politikası</a> ·
-    <a href="https://github.com/M1zz/SkyDex">GitHub</a>
-    <p style="margin:10px 0 0">Hava durumu verileri <a href="https://weatherkit.apple.com/legal-attribution.html">Apple Hava Durumu</a> tarafından sağlanır.</p>
+    <nav id="languages" class="langs" aria-label="Dil"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="../es/" hreflang="es" lang="es">Español</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../th/" hreflang="th" lang="th">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="../id/" hreflang="id" lang="id">Indonesia</a>
+<a href="../nb/" hreflang="nb" lang="nb">Norsk</a>
+<a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr" aria-current="page">Türkçe</a></nav>
+    <p><a href="privacy.html">Gizlilik Politikası</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 SkyDex</p>
   </footer>
 
-</main>
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>

@@ -1,340 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SkyDex</title>
-<meta name="description" content="Ứng dụng iOS sưu tầm bầu trời trong ngày thành màu sắc. Lấp đầy bảng bốn mươi tám ô bằng bầu trời hôm nay.">
-<link rel="canonical" href="https://m1zz.github.io/SkyDex/vi/">
-<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/SkyDex/">
-<link rel="alternate" hreflang="en" href="https://m1zz.github.io/SkyDex/en/">
-<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/SkyDex/en/">
-<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/SkyDex/ja/">
-<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/SkyDex/zh-Hans/">
-<link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/SkyDex/zh-Hant/">
-<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/SkyDex/ru/">
-<link rel="alternate" hreflang="es" href="https://m1zz.github.io/SkyDex/es/">
-<link rel="alternate" hreflang="de" href="https://m1zz.github.io/SkyDex/de/">
-<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/SkyDex/fr/">
-<link rel="alternate" hreflang="it" href="https://m1zz.github.io/SkyDex/it/">
-<link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/SkyDex/pt-BR/">
-<link rel="alternate" hreflang="th" href="https://m1zz.github.io/SkyDex/th/">
-<link rel="alternate" hreflang="vi" href="https://m1zz.github.io/SkyDex/vi/">
-<link rel="alternate" hreflang="cs" href="https://m1zz.github.io/SkyDex/cs/">
-<link rel="alternate" hreflang="da" href="https://m1zz.github.io/SkyDex/da/">
-<link rel="alternate" hreflang="el" href="https://m1zz.github.io/SkyDex/el/">
-<link rel="alternate" hreflang="fi" href="https://m1zz.github.io/SkyDex/fi/">
-<link rel="alternate" hreflang="id" href="https://m1zz.github.io/SkyDex/id/">
-<link rel="alternate" hreflang="nb" href="https://m1zz.github.io/SkyDex/nb/">
-<link rel="alternate" hreflang="nl" href="https://m1zz.github.io/SkyDex/nl/">
-<link rel="alternate" hreflang="pl" href="https://m1zz.github.io/SkyDex/pl/">
-<link rel="alternate" hreflang="sv" href="https://m1zz.github.io/SkyDex/sv/">
-<link rel="alternate" hreflang="tr" href="https://m1zz.github.io/SkyDex/tr/">
-<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/SkyDex/">
-<style>
-  :root {
-    --ink: #16202e;
-    --ink-soft: #5d6773;
-    --paper: #f4f5f7;
-    --card: #ffffff;
-    --line: #e2e5ea;
-    --accent: #2f7bbe;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ink: #eef1f5;
-      --ink-soft: #a2acb8;
-      --paper: #0b111c;
-      --card: #141c28;
-      --line: #26303e;
-      --accent: #7fa4ce;
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    padding: 0 20px 72px;
-    background: var(--paper);
-    color: var(--ink);
-    font: 17px/1.72 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
-      "Pretendard", "Segoe UI", Roboto, sans-serif;
-    -webkit-text-size-adjust: 100%;
-  }
-  main { max-width: 680px; margin: 0 auto; }
-  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
-
-  /* 하루 곡선 그대로 이어붙인 띠 */
-  .strip {
-    display: flex;
-    height: 8px;
-    border-radius: 4px;
-    overflow: hidden;
-    margin: 40px 0 34px;
-  }
-  .strip span { flex: 1 1 0; }
-
-  h1 {
-    font-size: 34px; line-height: 1.25; letter-spacing: -0.03em;
-    margin: 0 0 8px; text-align: center; font-weight: 700;
-  }
-  .lede {
-    margin: 0 auto 8px; text-align: center; color: var(--ink-soft);
-    max-width: 26em;
-  }
-  .platform {
-    text-align: center; color: var(--ink-soft); font-size: 14px;
-    margin: 0 0 36px;
-  }
-
-  /* 판 — 앱과 같은 6×8, 같은 색 */
-  .board {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
-    max-width: 340px;
-    margin: 0 auto 12px;
-  }
-  .bead {
-    aspect-ratio: 1;
-    border-radius: 50%;
-    border: 4px solid transparent;
-    display: block;
-  }
-  .bead.on { border: 0; }
-  .caption {
-    text-align: center; color: var(--ink-soft); font-size: 14px;
-    margin: 0 0 46px;
-  }
-
-  h2 {
-    font-size: 21px; letter-spacing: -0.01em; margin: 46px 0 12px;
-    padding-top: 28px; border-top: 1px solid var(--line);
-  }
-  p { margin: 0 0 14px; }
-  ul { margin: 0 0 14px; padding-left: 1.2em; }
-  li { margin-bottom: 8px; }
-  strong { font-weight: 600; }
-
-  /* 이름 카드 — 앱의 사진 카드 아래에 붙는 것과 같은 순서 */
-  .names { margin: 20px 0 8px; }
-  .name {
-    display: flex; align-items: center; gap: 14px;
-    background: var(--card); border: 1px solid var(--line);
-    border-radius: 16px; padding: 14px 16px; margin-bottom: 10px;
-  }
-  .swatch {
-    width: 46px; height: 46px; border-radius: 12px; flex: 0 0 auto;
-  }
-  .name .simile { font-size: 17px; font-weight: 600; }
-  .name .real { font-size: 13px; color: var(--ink-soft); }
-
-  .quiet {
-    background: var(--card); border: 1px solid var(--line);
-    border-radius: 16px; padding: 18px 20px; margin: 22px 0 8px;
-  }
-  .quiet p:last-child { margin-bottom: 0; }
-
-  footer {
-    margin-top: 60px; padding-top: 26px; border-top: 1px solid var(--line);
-    color: var(--ink-soft); font-size: 15px; text-align: center;
-  }
-  footer a { margin: 0 8px; }
-  nav.langs { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px 14px; margin: 18px 0 0; font-size: 14px; }
-  nav.langs a { color: var(--ink-soft); text-decoration: none; }
-  nav.langs a[aria-current] { color: var(--ink); font-weight: 600; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkyDex: bảng màu trời hôm nay, đầy dần sau mỗi lần chụp</title>
+  <meta name="description" content="Mỗi lần chụp bầu trời, một trong bốn mươi tám ô màu trời của ngày được lấp đầy và có một cái tên giống màu ấy. Miễn phí, không cần tài khoản.">
+  <meta name="theme-color" content="#2A74B6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b111c" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6802295390">
+  <link rel="canonical" href="https://m1zz.github.io/SkyDex/vi/">
+  <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/SkyDex/">
+  <link rel="alternate" hreflang="en" href="https://m1zz.github.io/SkyDex/en/">
+  <link rel="alternate" hreflang="ja" href="https://m1zz.github.io/SkyDex/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/SkyDex/zh-Hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/SkyDex/zh-Hant/">
+  <link rel="alternate" hreflang="ru" href="https://m1zz.github.io/SkyDex/ru/">
+  <link rel="alternate" hreflang="es" href="https://m1zz.github.io/SkyDex/es/">
+  <link rel="alternate" hreflang="de" href="https://m1zz.github.io/SkyDex/de/">
+  <link rel="alternate" hreflang="fr" href="https://m1zz.github.io/SkyDex/fr/">
+  <link rel="alternate" hreflang="it" href="https://m1zz.github.io/SkyDex/it/">
+  <link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/SkyDex/pt-BR/">
+  <link rel="alternate" hreflang="th" href="https://m1zz.github.io/SkyDex/th/">
+  <link rel="alternate" hreflang="vi" href="https://m1zz.github.io/SkyDex/vi/">
+  <link rel="alternate" hreflang="cs" href="https://m1zz.github.io/SkyDex/cs/">
+  <link rel="alternate" hreflang="da" href="https://m1zz.github.io/SkyDex/da/">
+  <link rel="alternate" hreflang="el" href="https://m1zz.github.io/SkyDex/el/">
+  <link rel="alternate" hreflang="fi" href="https://m1zz.github.io/SkyDex/fi/">
+  <link rel="alternate" hreflang="id" href="https://m1zz.github.io/SkyDex/id/">
+  <link rel="alternate" hreflang="nb" href="https://m1zz.github.io/SkyDex/nb/">
+  <link rel="alternate" hreflang="nl" href="https://m1zz.github.io/SkyDex/nl/">
+  <link rel="alternate" hreflang="pl" href="https://m1zz.github.io/SkyDex/pl/">
+  <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/SkyDex/sv/">
+  <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/SkyDex/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/SkyDex/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SkyDex: bảng màu trời hôm nay, đầy dần sau mỗi lần chụp">
+  <meta property="og:description" content="Mỗi lần chụp bầu trời, một trong bốn mươi tám ô màu trời của ngày được lấp đầy và có một cái tên giống màu ấy. Miễn phí, không cần tài khoản.">
+  <meta property="og:url" content="https://m1zz.github.io/SkyDex/vi/">
+  <meta property="og:image" content="https://m1zz.github.io/SkyDex/img/vi/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../sitegen.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#2A74B6}@media (prefers-color-scheme:dark){:root{--accent:#7FA4CE}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-<main>
-  <nav class="langs" aria-label="Language">
-    <a href="../" hreflang="ko" lang="ko">한국어</a>
-    <a href="../en/" hreflang="en" lang="en">English</a>
-    <a href="../ja/" hreflang="ja" lang="ja">日本語</a>
-    <a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
-    <a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
-    <a href="../ru/" hreflang="ru" lang="ru">Русский</a>
-    <a href="../es/" hreflang="es" lang="es">Español</a>
-    <a href="../de/" hreflang="de" lang="de">Deutsch</a>
-    <a href="../fr/" hreflang="fr" lang="fr">Français</a>
-    <a href="../it/" hreflang="it" lang="it">Italiano</a>
-    <a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
-    <a href="../th/" hreflang="th" lang="th">ไทย</a>
-    <a href="../vi/" hreflang="vi" lang="vi" aria-current="true">Tiếng Việt</a>
-    <a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
-    <a href="../da/" hreflang="da" lang="da">Dansk</a>
-    <a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
-    <a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
-    <a href="../id/" hreflang="id" lang="id">Indonesia</a>
-    <a href="../nb/" hreflang="nb" lang="nb">Norsk</a>
-    <a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
-    <a href="../pl/" hreflang="pl" lang="pl">Polski</a>
-    <a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
-    <a href="../tr/" hreflang="tr" lang="tr">Türkçe</a>
-  </nav>
+  <a class="skip" href="#main">Chuyển đến nội dung</a>
+  <header class="bar">
+    <a class="brand" href="../vi/"><img src="../icon.png" alt="" width="32" height="32">SkyDex</a>
+    <a class="lang-link" href="#languages">Ngôn ngữ</a>
+  </header>
 
-  <div class="strip" aria-hidden="true">
-    <span style="background:#080D18"></span>
-    <span style="background:#090E1A"></span>
-    <span style="background:#0A0F1C"></span>
-    <span style="background:#0A101E"></span>
-    <span style="background:#0B1120"></span>
-    <span style="background:#0C1221"></span>
-    <span style="background:#131B30"></span>
-    <span style="background:#1B263E"></span>
-    <span style="background:#6879A2"></span>
-    <span style="background:#99A7C5"></span>
-    <span style="background:#96ABCB"></span>
-    <span style="background:#7FA4CE"></span>
-    <span style="background:#709CCB"></span>
-    <span style="background:#5791C6"></span>
-    <span style="background:#508DC5"></span>
-    <span style="background:#3F83C1"></span>
-    <span style="background:#307BBE"></span>
-    <span style="background:#2B77BB"></span>
-    <span style="background:#1F6FB5"></span>
-    <span style="background:#1D6EB4"></span>
-    <span style="background:#2471B6"></span>
-    <span style="background:#2975B8"></span>
-    <span style="background:#3179BA"></span>
-    <span style="background:#4988C3"></span>
-    <span style="background:#558EC5"></span>
-    <span style="background:#6D9BCA"></span>
-    <span style="background:#7EA5CD"></span>
-    <span style="background:#8FA5BF"></span>
-    <span style="background:#B2A297"></span>
-    <span style="background:#C1A07E"></span>
-    <span style="background:#CC986A"></span>
-    <span style="background:#D68F56"></span>
-    <span style="background:#CC7C49"></span>
-    <span style="background:#B95B35"></span>
-    <span style="background:#A95239"></span>
-    <span style="background:#8F4440"></span>
-    <span style="background:#543852"></span>
-    <span style="background:#3B324D"></span>
-    <span style="background:#322F4B"></span>
-    <span style="background:#2B2A44"></span>
-    <span style="background:#20233A"></span>
-    <span style="background:#181D33"></span>
-    <span style="background:#161C30"></span>
-    <span style="background:#13192B"></span>
-    <span style="background:#0F1424"></span>
-    <span style="background:#0B111F"></span>
-    <span style="background:#0A101D"></span>
-    <span style="background:#080D19"></span>
-  </div>
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>Hôm nay bầu trời<br>mang màu gì?</h1>
+        <p class="lead">Chụp một tấm bầu trời, ô ứng với giờ ấy trên bảng bốn mươi tám ô sẽ mang màu bạn vừa chụp. Màu còn được đặt một cái tên gợi hình, như màu băng mỏng, màu gạch bể bơi hay màu hồng chín mềm.</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6802295390">Tải miễn phí ở App Store</a><a class="try" href="#try">Thử chạm vào bảng ↓</a></div>
+        <p class="muted small">Miễn phí. Không tài khoản, không đăng nhập.</p>
+      </div>
+      <div class="phone"><img src="../img/vi/01-board.jpg" alt="Hôm nay bầu trời mang màu gì?" width="600" height="1303" decoding="async"></div>
+    </section>
 
-  <h1>SkyDex</h1>
-  <p class="lede">Sưu tầm bầu trời trong ngày thành màu sắc.<br>Có một bảng bốn mươi tám ô, và bạn lấp đầy nó bằng bầu trời hôm nay.</p>
-  <p class="platform">iPhone · iOS 17.0 trở lên</p>
 
-  <div class="board" aria-hidden="true">
-    <span class="bead" style="border-color:#55565A" title="00:00–00:50"></span>
-    <span class="bead" style="border-color:#55565B" title="00:50–01:40"></span>
-    <span class="bead" style="border-color:#55565C" title="01:40–02:30"></span>
-    <span class="bead" style="border-color:#55575D" title="02:30–03:20"></span>
-    <span class="bead" style="border-color:#55575D" title="03:20–04:10"></span>
-    <span class="bead" style="border-color:#56575E" title="04:10–05:00"></span>
-    <span class="bead" style="border-color:#595A64" title="05:00–05:30"></span>
-    <span class="bead" style="border-color:#5C5E69" title="05:30–06:00"></span>
-    <span class="bead" style="border-color:#767B8B" title="06:00–06:30"></span>
-    <span class="bead on" style="background:#99A7C5" title="06:30–07:00 · #99A7C5"></span>
-    <span class="bead" style="border-color:#848B97" title="07:00–07:30"></span>
-    <span class="bead" style="border-color:#7D8998" title="07:30–08:00"></span>
-    <span class="bead on" style="background:#709CCB" title="08:00–08:40 · #709CCB"></span>
-    <span class="bead" style="border-color:#728397" title="08:40–09:20"></span>
-    <span class="bead" style="border-color:#718196" title="09:20–10:00"></span>
-    <span class="bead" style="border-color:#6D7E96" title="10:00–10:40"></span>
-    <span class="bead" style="border-color:#6B7C95" title="10:40–11:20"></span>
-    <span class="bead" style="border-color:#6A7A95" title="11:20–12:00"></span>
-    <span class="bead on" style="background:#1F6FB5" title="12:00–12:40 · #1F6FB5"></span>
-    <span class="bead" style="border-color:#687793" title="12:40–13:20"></span>
-    <span class="bead" style="border-color:#687893" title="13:20–14:00"></span>
-    <span class="bead" style="border-color:#697A93" title="14:00–14:40"></span>
-    <span class="bead" style="border-color:#6B7B94" title="14:40–15:20"></span>
-    <span class="bead" style="border-color:#6F8096" title="15:20–16:00"></span>
-    <span class="bead" style="border-color:#728297" title="16:00–16:20"></span>
-    <span class="bead" style="border-color:#788697" title="16:20–16:40"></span>
-    <span class="bead on" style="background:#7EA5CD" title="16:40–17:00 · #7EA5CD"></span>
-    <span class="bead" style="border-color:#828993" title="17:00–17:20"></span>
-    <span class="bead" style="border-color:#8E8884" title="17:20–17:40"></span>
-    <span class="bead on" style="background:#C1A07E" title="17:40–18:00 · #C1A07E"></span>
-    <span class="bead" style="border-color:#998474" title="18:00–18:15"></span>
-    <span class="bead on" style="background:#D68F56" title="18:15–18:30 · #D68F56"></span>
-    <span class="bead" style="border-color:#9C7B68" title="18:30–18:45"></span>
-    <span class="bead on" style="background:#B95B35" title="18:45–19:00 · #B95B35"></span>
-    <span class="bead" style="border-color:#936E63" title="19:00–19:15"></span>
-    <span class="bead" style="border-color:#896A66" title="19:15–19:30"></span>
-    <span class="bead" style="border-color:#71656F" title="19:30–19:45"></span>
-    <span class="bead" style="border-color:#67636E" title="19:45–20:00"></span>
-    <span class="bead" style="border-color:#64626E" title="20:00–20:15"></span>
-    <span class="bead" style="border-color:#61606B" title="20:15–20:30"></span>
-    <span class="bead" style="border-color:#5D5D68" title="20:30–20:45"></span>
-    <span class="bead" style="border-color:#5A5B65" title="20:45–21:00"></span>
-    <span class="bead on" style="background:#161C30" title="21:00–21:30 · #161C30"></span>
-    <span class="bead" style="border-color:#585A62" title="21:30–22:00"></span>
-    <span class="bead" style="border-color:#56585F" title="22:00–22:30"></span>
-    <span class="bead" style="border-color:#55575D" title="22:30–23:00"></span>
-    <span class="bead" style="border-color:#55575C" title="23:00–23:30"></span>
-    <span class="bead" style="border-color:#55565A" title="23:30–00:00"></span>
-  </div>
-  <p class="caption">Phía trên là giữa đêm; đi xuống thì trời sáng rồi lại tối. Vòng tròn đặc là bầu trời bạn đã chụp; vòng rỗng là bầu trời còn chưa tới.</p>
+    <section class="reveal" id="try">
+      <h2>Thử chạm vào bảng</h2>
+      <p class="muted">Chạm vào một ô để xem đó là bầu trời lúc nào trong ngày. Thêm một ảnh bầu trời để lấp ô của giờ hiện tại, rồi lật sang những ngày sau để xem bảng thay đổi ra sao.</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;Thử chạm vào bảng&quot;, &quot;lead&quot;: &quot;Chạm vào một ô để xem đó là bầu trời lúc nào trong ngày. Thêm một ảnh bầu trời để lấp ô của giờ hiện tại, rồi lật sang những ngày sau để xem bảng thay đổi ra sao.&quot;, &quot;photo&quot;: &quot;Thử thêm ảnh bầu trời&quot;, &quot;age&quot;: &quot;Kể từ ngày chụp&quot;, &quot;ageToday&quot;: &quot;Hôm nay&quot;, &quot;ageDay&quot;: &quot;{n} ngày sau&quot;, &quot;ageDays&quot;: &quot;{n} ngày sau&quot;, &quot;note&quot;: &quot;Bảng được lấp sẵn bằng những bầu trời mẫu giống trong ảnh chụp màn hình của ứng dụng. Ảnh bạn thêm chỉ được đọc trong trình duyệt này và không gửi đi đâu cả. Cách chọn màu, quy tắc lấp ô và tốc độ phai màu đều giống hệt trong ứng dụng.&quot;, &quot;now&quot;: &quot;Bây giờ&quot;, &quot;bands&quot;: [&quot;Nửa đêm&quot;, &quot;Rạng đông&quot;, &quot;Ban ngày&quot;, &quot;Chiều muộn&quot;, &quot;Hoàng hôn&quot;, &quot;Đêm&quot;], &quot;emptyTag&quot;: &quot;%@ · Vẫn còn trống&quot;, &quot;spot&quot;: &quot;Chỗ này sẽ được lấp bằng bầu trời chụp trong khoảng thời gian đó của ngày. Ảnh nào cũng vào được nguyên vẹn; màu không cần phải khớp.&quot;, &quot;sims&quot;: [[&quot;Màu mực tàu&quot;, &quot;Mực mài trên nghiên. Đêm sâu nhất.&quot;], [&quot;Màu biển đêm&quot;, &quot;Mặt nước nhìn xuống từ nơi không đèn. Đen phủ một lớp xanh.&quot;], [&quot;Màu đáy nồi cháy&quot;, &quot;Vết còn lại sau khi cháy. Màu đen không chút xanh.&quot;], [&quot;Màu mực khô&quot;, &quot;Vệt bút máy viết dở. Màu đen còn vương sắc xanh.&quot;], [&quot;Màu nước sâu&quot;, &quot;Màu của chỗ chân không chạm đáy. Xanh chàm tối và mát lạnh.&quot;], [&quot;Màu quần jean mới&quot;, &quot;Vải denim chưa giặt lần nào. Xanh chàm đậm.&quot;], [&quot;Màu cửa kính tàu đêm&quot;, &quot;Ô kính sau khi ánh đèn lướt qua. Xám ngả xanh chàm.&quot;], [&quot;Màu cửa kính nửa đêm&quot;, &quot;Bên ngoài lúc vén rèm. Xanh hơn màu đen một chút.&quot;], [&quot;Màu mực pha nước&quot;, &quot;Nước rửa tay dính mực. Xanh chàm nhạt.&quot;], [&quot;Xanh đồng phục&quot;, &quot;Màu chiếc áo khoác mặc đã vài năm. Không đen cũng chẳng xanh.&quot;], [&quot;Màu jean ướt&quot;, &quot;Lúc vừa phơi đồ. Xanh đậm và đục.&quot;], [&quot;Màu lưng cá thu&quot;, &quot;Xám xanh ánh bạc. Bầu trời trước cơn mưa.&quot;], [&quot;Màu đồ bảo hộ cũ&quot;, &quot;Màu xanh đã phai sau nhiều năm mặc.&quot;], [&quot;Màu rèm chàm bạc màu&quot;, &quot;Tấm rèm phơi nắng lâu ngày. Xanh chàm đã nhạt sức.&quot;], [&quot;Màu hơi nước đọng trên kính&quot;, &quot;Nhìn từ trong ra thấy mờ mờ. Xám ngả xanh.&quot;], [&quot;Màu sương sớm&quot;, &quot;Buổi sáng đầu các tòa nhà bị xóa mờ. Xám sáng hơi xanh.&quot;], [&quot;Màu áo hoodie ướt&quot;, &quot;Xám sẫm lại vì thấm nước mưa. Rạng sáng âm u.&quot;], [&quot;Màu áo len tím bạc&quot;, &quot;Màu tím đã phai sau nhiều lần giặt. Phía tây ngay trước bình minh.&quot;], [&quot;Màu vỏ đào&quot;, &quot;Phía có lông tơ. Giữa hồng và cam.&quot;], [&quot;Màu sữa mơ&quot;, &quot;Mơ xay cùng sữa. Cam rất nhạt.&quot;], [&quot;Màu tường trắng có nắng&quot;, &quot;Buổi sáng bức tường thoáng mang màu này.&quot;], [&quot;Màu thịt cá hồi&quot;, &quot;Sắc hồng ấy biến mất khi nướng.&quot;], [&quot;Màu sữa dâu&quot;, &quot;Màu hồng sau khi lắc đều.&quot;], [&quot;Màu mơ chưa chín&quot;, &quot;Màu cam mà sắc vàng vẫn còn trội.&quot;], [&quot;Màu nước trong cốc&quot;, &quot;Xanh nhạt khi ánh sáng xuyên qua.&quot;], [&quot;Màu nước máy lạnh&quot;, &quot;Màu làm buốt tay. Xanh nhạt và mát.&quot;], [&quot;Màu băng mỏng&quot;, &quot;Mặt nước đóng băng nhẹ mùa xuân. Xanh rất nhạt.&quot;], [&quot;Màu bát sứ&quot;, &quot;Chút sắc xanh còn lại trên chiếc bát trắng.&quot;], [&quot;Màu áo sơ mi trắng là phẳng&quot;, &quot;Gần như trắng, phủ một lớp xanh. Giữa trưa rất trong.&quot;], [&quot;Màu bọt xà phòng&quot;, &quot;Bọt trắng nổi trên chậu rửa bát.&quot;], [&quot;Màu jean bạc&quot;, &quot;Denim bạc trắng ở đầu gối. Màu xanh của ngày âm u.&quot;], [&quot;Màu bút sáp xanh&quot;, &quot;Màu xanh hiện ra khi chà mạnh lên giấy vẽ.&quot;], [&quot;Màu gạch bể bơi&quot;, &quot;Màu xanh nhìn qua làn nước. Giữa trưa ngày trong.&quot;], [&quot;Màu bút bi xanh&quot;, &quot;Màu xanh của nét kẻ trên giấy.&quot;], [&quot;Màu nước bể bơi sâu&quot;, &quot;Màu nước ở phía chân không chạm đáy. Đỉnh trời trưa giữa hè.&quot;], [&quot;Màu nước pha màu xanh&quot;, &quot;Trong ống rửa cọ. Màu xanh chiều ngày trong.&quot;], [&quot;Màu mực bút máy&quot;, &quot;Trong lọ, xanh gần như đen.&quot;], [&quot;Màu chai nước ngọt&quot;, &quot;Xanh nhạt pha chút lục.&quot;], [&quot;Màu gương mờ hơi nước&quot;, &quot;Tấm gương sau khi tắm. Xám xanh sáng.&quot;], [&quot;Màu kính phủ sương&quot;, &quot;Xám mờ đủ làm nhòe phía bên kia.&quot;], [&quot;Màu vụn tẩy&quot;, &quot;Lớp bụi trắng gom trên bàn. Xám rất nhạt.&quot;], [&quot;Màu bụi phấn&quot;, &quot;Ánh trắng còn lơ lửng sau khi xóa bảng.&quot;], [&quot;Màu xi măng khô&quot;, &quot;Nền nhà đã khô từ lâu. Xám sáng phẳng lặng.&quot;], [&quot;Màu tro nguội&quot;, &quot;Thứ còn lại khi đã cháy hết. Màu xám chuẩn của ngày âm u.&quot;], [&quot;Màu cửa kính mờ&quot;, &quot;Lau rồi vẫn thế. Xám trung tính ngả xanh.&quot;], [&quot;Màu bìa các-tông ướt&quot;, &quot;Chiếc hộp dầm mưa. Xám hơi ấm.&quot;], [&quot;Màu màn hình tắt&quot;, &quot;Xám đen ngay sau khi tắt nguồn.&quot;], [&quot;Màu que diêm cháy hết&quot;, &quot;Que diêm chỉ còn đầu đen. Tím xám tối.&quot;], [&quot;Màu nước rửa bát&quot;, &quot;Nước âm ấm nổi váng dầu. Xám đục.&quot;], [&quot;Màu nước luộc đồ&quot;, &quot;Nước trắng bốc hơi. Xám sáng.&quot;], [&quot;Màu lưỡi dao&quot;, &quot;Kim loại bắt sáng. Xám ngả xanh.&quot;], [&quot;Màu mái tôn cũ&quot;, &quot;Mái nhà kho lâu năm. Xám xanh ngay trước cơn mưa.&quot;], [&quot;Màu biển ngày âm u&quot;, &quot;Mặt nước in nguyên màu trời. Xám xanh tối.&quot;], [&quot;Màu xi măng ướt&quot;, &quot;Nền dầm mưa. Xám tối và ẩm.&quot;], [&quot;Màu ruột bút chì&quot;, &quot;Xám đậm tô bằng cạnh ruột chì. Chiều mưa.&quot;], [&quot;Màu nhựa đường ướt&quot;, &quot;Con đường sau cơn mưa đêm. Xám gần như đen.&quot;], [&quot;Màu tường rêu&quot;, &quot;Rêu xanh phủ lên màu xám. Đôi khi ngay trước bão.&quot;], [&quot;Màu đồng xu cũ&quot;, &quot;Kim loại dính dấu tay. Xám ngả vàng.&quot;], [&quot;Màu nước vo gạo&quot;, &quot;Nước vo gạo đầu tiên. Trắng ấm.&quot;], [&quot;Màu vỏ trứng&quot;, &quot;Một màu trắng không hoàn toàn trắng.&quot;], [&quot;Màu giấy cũ&quot;, &quot;Trang ruột sách cũ. Trắng ngả vàng.&quot;], [&quot;Màu giấy báo cũ&quot;, &quot;Giấy phai dưới nắng. Giữa xám và vàng.&quot;], [&quot;Màu cửa sổ phủ bụi vàng&quot;, &quot;Màu vàng mờ khiến người ta muốn lau.&quot;], [&quot;Màu nước bột ngũ cốc&quot;, &quot;Màu be đục trước khi lắng.&quot;], [&quot;Màu chiếu nhựa ố vàng&quot;, &quot;Sàn nhà bị đè lâu ngày. Vàng đục.&quot;], [&quot;Màu ruột hạt dẻ luộc&quot;, &quot;Phần ruột vàng của hạt dẻ đã bóc.&quot;], [&quot;Màu sữa rót vào cà phê&quot;, &quot;Lúc vừa rót, chưa kịp hòa.&quot;], [&quot;Màu kệ sách phủ bụi&quot;, &quot;Xám nâu sáng, lấy ngón tay quẹt là để lại vệt.&quot;], [&quot;Màu bùn khô&quot;, &quot;Nền đất bắt đầu nứt. Nâu nhạt.&quot;], [&quot;Màu trà sữa nguội&quot;, &quot;Ly uống dở để lại. Nâu hồng đục.&quot;], [&quot;Màu giấy bồi ướt&quot;, &quot;Tờ giấy dầm mưa phồng lên. Màu hoàng hôn âm u.&quot;], [&quot;Màu sàn gỗ dầm mưa&quot;, &quot;Gỗ thẫm lại vì ngấm nước.&quot;], [&quot;Màu gạch dính tro&quot;, &quot;Chỗ đã hơ lửa. Xám đỏ tối.&quot;], [&quot;Màu vết cà phê&quot;, &quot;Vết tròn còn lại khi nhấc cốc lên.&quot;], [&quot;Màu vỏ đậu đỏ luộc&quot;, &quot;Đậu đỏ ngâm nước lâu. Xám ngả tím sẫm.&quot;], [&quot;Màu bột đậu bánh dày&quot;, &quot;Bánh lăn bột đậu nành. Be ngả nâu dịu.&quot;], [&quot;Màu lòng đỏ trứng&quot;, &quot;Ngay trước khi vỡ. Vàng đậm.&quot;], [&quot;Màu viền bánh mì&quot;, &quot;Chỗ vàng chuyển sang nâu.&quot;], [&quot;Màu vỏ quýt&quot;, &quot;Màu cam ấy, trước khi bóc.&quot;], [&quot;Màu cá hồi nướng&quot;, &quot;Cam ngả hồng của mặt đã chín.&quot;], [&quot;Màu hồng sấy&quot;, &quot;Hồng sấy phủ phấn trắng. Cam đục.&quot;], [&quot;Màu than củi hồng&quot;, &quot;Không phải ngọn lửa, mà là than đỏ rực.&quot;], [&quot;Màu hồng chín mềm&quot;, &quot;Cam đỏ ngay trước khi chín nẫu.&quot;], [&quot;Màu nước sốt tteokbokki&quot;, &quot;Màu đỏ sau khi sốt sánh lại. Hoàng hôn đậm nhất.&quot;], [&quot;Màu ruột dưa hấu&quot;, &quot;Phần giữa ngọt nhất. Hồng đỏ.&quot;], [&quot;Màu mứt hoa hồng&quot;, &quot;Cánh hoa ngâm đường. Đỏ ngả hồng đục.&quot;], [&quot;Màu gạch đỏ&quot;, &quot;Bức tường dầm mưa nhiều năm.&quot;], [&quot;Màu than hồng nguội&quot;, &quot;Lửa phủ đầy tro. Nâu đỏ tối.&quot;], [&quot;Màu vỏ mận&quot;, &quot;Tím đỏ phủ một lớp phấn trắng.&quot;], [&quot;Màu chè đậu đỏ&quot;, &quot;Nâu đỏ sánh đặc, trước khi thả viên bột nếp.&quot;], [&quot;Màu rượu vang còn sót&quot;, &quot;Tím đỏ thẫm đọng dưới đáy ly.&quot;], [&quot;Màu tử đinh hương tàn&quot;, &quot;Màu tím nhạt của hoa đang héo.&quot;], [&quot;Màu sữa việt quất&quot;, &quot;Tím nhạt khuấy chưa đều.&quot;], [&quot;Màu vỏ nho&quot;, &quot;Tím đậm còn ướt sau khi rửa.&quot;], [&quot;Màu vỏ cà tím&quot;, &quot;Tím đen nuốt ánh sáng. Màu cuối cùng của ngày.&quot;]]}"></div>
+    </section>
 
-  <h2>Bảng chính là hôm nay</h2>
-  <p>Bốn mươi tám ô là <strong>những màu mà bầu trời hôm nay sẽ đi qua</strong>. Chúng được tính lại mỗi ngày từ giờ mặt trời mọc và lặn thực tế ở nơi bạn đứng và dự báo mây, mưa của hôm nay. Vì vậy một ô đã đầy hôm qua có thể trống hôm nay. Điều bảng cho bạn biết không phải là bạn đã sưu tầm bao nhiêu, mà là <strong>bạn có thể trình bày được bao nhiêu phần của hôm nay</strong>.</p>
-  <p>Chụp bầu trời ngay bây giờ và <strong>ô của giờ đó</strong> sẽ được lấp bằng màu bạn bắt được. Nếu khác với dự đoán, nó vẫn vào: dự báo chỉ là phỏng đoán, còn bức ảnh thì thực sự đã ở đó.</p>
-  <p><strong>Không có gì bị phán xét.</strong> Không đạt, không trượt, không dung sai. Màu xám của một ngày nhiều mây cũng là màu trời của ngày hôm đó.</p>
+    <section class="problem reveal">
+      <h2>Ngày nào cũng nhìn trời, mà chẳng nhớ nổi một màu</h2>
+      <p>Bầu trời ngước nhìn trên đường đi làm, bầu trời lúc bước ra sau bữa trưa: đến tối thì chẳng còn nhớ chúng màu gì. Những tấm ảnh trời đã chụp cũng chìm lẫn giữa bao ảnh khác trong thư viện. SkyDex gom ảnh bầu trời lại thành màu, và bày con đường bầu trời hôm nay đã đi qua lên một tấm bảng.</p>
+    </section>
 
-  <h2>Mỗi màu đều có tên</h2>
-  <p>Ứng dụng cho bạn biết bầu trời có màu gì theo hai cách, viết bằng tiếng Hàn. Trước hết là <strong>một phép so sánh bạn có thể hình dung</strong>, bên dưới là <strong>một cái tên có nguồn gốc</strong>. “Usuhanairo” là câu trả lời chính xác hơn, nhưng hầu như không ai thấy màu sắc trong từ đó, và một cái tên không nhìn thấy được thì không làm tròn việc của một cái tên.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Mỗi bầu trời đều có tên</h2>
+        <p>Màu bạn chụp trước hết được đặt một cái tên dễ hình dung, như màu băng mỏng, màu gạch bể bơi hay màu hồng chín mềm. Bên dưới là một cái tên có nguồn gốc, lấy từ màu Hàn, màu Nhật, chất màu hoặc màu web.<br>Đủ gần thì ứng dụng ghi “Tên là”, còn xa thì thành thật ghi “Tên gần nhất”.</p>
+      </div>
+      <div class="phone"><img src="../img/vi/02-name.jpg" alt="Mỗi bầu trời đều có tên" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <div class="names">
-    <div class="name">
-      <span class="swatch" style="background:#7E90B6"></span>
-      <span>
-        <div class="simile">Tấm rèm xanh navy đã phai</div>
-        <div class="real">Usuhanairo · màu truyền thống Nhật Bản 薄花色</div>
-      </span>
-    </div>
-    <div class="name">
-      <span class="swatch" style="background:#D68F55"></span>
-      <span>
-        <div class="simile">Vỏ bánh mì nướng</div>
-        <div class="real">Cam cadmium · sắc tố</div>
-      </span>
-    </div>
-    <div class="name">
-      <span class="swatch" style="background:#1C6DB4"></span>
-      <span>
-        <div class="simile">Nước hòa sơn xanh</div>
-        <div class="real">Cheongsaek · màu truyền thống Hàn Quốc</div>
-      </span>
-    </div>
-  </div>
-  <p>Các tên có nguồn gốc lấy từ màu truyền thống Hàn Quốc và Nhật Bản, sắc tố và bộ màu tiêu chuẩn, và mọi giá trị đều đã được đối chiếu với nguồn. Ứng dụng cũng trung thực về mức độ gần: khi khớp đủ gần thì nói “tên của nó là”, còn không thì nói “cái tên gần nhất là”.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Để lại một dòng</h2>
+        <p>Chụp xong, một tấm thẻ mở ra ngay. Hãy ghi lại điều bạn nghĩ khi nhìn bầu trời ấy; mỗi khi chạm vào ô đó trên bảng, dòng chữ sẽ lại hiện lên trên nền trời.<br>Bạn còn có thể khoác màu của bầu trời ngày khác lên bầu trời trong ảnh này, rồi chia sẻ thành một bức hình.</p>
+      </div>
+      <div class="phone"><img src="../img/vi/03-card.jpg" alt="Để lại một dòng" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>Ô đã đầy sẽ cũ đi</h2>
-  <p>Một bức ảnh giữ nguyên màu thật trong một tuần, rồi phai dần trong tám tuần tiếp theo. Nó không bị xóa và không bao giờ phai hẳn. Chụp lại bầu trời vào giờ đó và ô lập tức trở về màu đầy đủ.</p>
-  <p>Đó không phải hình phạt. Không có chuỗi nào để bị đứt và không có gì để giành lại. Đó chỉ là cách trung thực để một bảng làm bằng bầu trời nói “bầu trời đó đã là chuyện của một thời gian trước”.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Ô trống chỉ đường</h2>
+        <p>Chạm vào một ô trống để biết ô đó thuộc lúc nào trong ngày và nên tìm màu gì. Vào ngày không mây, bầu trời giờ ấy mang màu gì, ứng dụng cũng cho biết theo giờ mặt trời mọc và lặn ở nơi bạn đang ở.<br>Màu không cần phải khớp. Màu xám của ngày u ám cũng là màu trời của ngày hôm đó.</p>
+      </div>
+      <div class="phone"><img src="../img/vi/05-empty.jpg" alt="Ô trống chỉ đường" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>Cùng giờ, bầu trời khác</h2>
-  <p>Ngày tháng lặp lại. Cùng một chuông báo thức, cùng một lối đi, cùng một ô cửa. Chỉ có bầu trời phía trên là không bao giờ giống nhau hai lần. Màn hình <strong>Lặp lại</strong> xếp những ngày bạn đứng đó vào cùng một giờ để bạn nhìn thấy điều đó. Hàng ngang là sự lặp lại; màu sắc là phần không bao giờ lặp lại.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Nhật ký, Bảng màu, Lặp lại</h2>
+        <p>Xem lại những bầu trời đã chụp theo thứ tự thời gian, và gom các màu đã sưu tầm thành bảng màu theo nhóm như xanh lam, xám, màu cát. Chụp lại cùng một giờ vào ngày khác, hai bầu trời sẽ đứng cạnh nhau.<br>Widget trên Màn hình chính cho bạn xem ngay Bảng hôm nay và Bầu trời hôm nay.</p>
+      </div>
+      <div class="phone"><img src="../img/vi/04-palette.jpg" alt="Nhật ký, Bảng màu, Lặp lại" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>Widget</h2>
-  <p><strong>Bảng hôm nay</strong> trông giống hệt trong ứng dụng: bốn mươi tám ô, vòng tròn đặc cho ô đã đầy và vòng rỗng cho ô trống. <strong>Bầu trời hôm nay</strong> hiển thị ảnh bạn chụp hôm nay cùng tên màu của nó, và dùng được cả trên Màn hình khóa.</p>
+    <section class="reveal">
+      <h2>Chỉ ba bước để bắt đầu</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>Ngước nhìn lên</h3><p>Chạm nút máy ảnh dưới bảng và chụp sao cho bầu trời lấp kín ô vuông.</p></li>
+<li class="card"><span class="n">2</span><h3>Một ô được lấp</h3><p>Ô của giờ hiện tại mang màu bạn vừa chụp và có một cái tên.</p></li>
+<li class="card"><span class="n">3</span><h3>Để lại một dòng</h3><p>Ghi điều bạn nghĩ khi nhìn bầu trời ấy vào tấm thẻ vừa mở.</p></li></ol>
+    </section>
 
-  <h2>Vẫn là của bạn</h2>
-  <div class="quiet">
-    <p>Không tài khoản, không máy chủ của chúng tôi. Ảnh và màu của bạn nằm trong bộ nhớ của ứng dụng trên thiết bị và, nếu đã đăng nhập, trong iCloud của chính bạn. Chúng không bao giờ được gửi cho nhà phát triển. Không quảng cáo, không theo dõi, không phân tích của bên thứ ba.</p>
-    <p>Vị trí chỉ được dùng cho giờ mặt trời mọc, lặn và dự báo hôm nay, và chỉ được yêu cầu ở độ chính xác cỡ kilômét. Ứng dụng vẫn chạy tốt nếu bạn từ chối. Chi tiết nằm trong <a href="privacy.html">Chính sách quyền riêng tư</a>.</p>
-  </div>
+    <section class="reveal" id="commands">
+      <h2>Bảng chia một ngày như thế này</h2>
+      <div class="card table">
+        <dl><div><dt>Nửa đêm · 00:00–05:00</dt><dd>sáu ô</dd></div><div><dt>Rạng đông · 05:00–08:00</dt><dd>sáu ô</dd></div><div><dt>Ban ngày · 08:00–16:00</dt><dd>mười hai ô</dd></div><div><dt>Chiều muộn · 16:00–18:00</dt><dd>sáu ô</dd></div><div><dt>Hoàng hôn · 18:00–21:00</dt><dd>mười hai ô, mỗi ô 15 phút</dd></div><div><dt>Đêm · 21:00–24:00</dt><dd>sáu ô</dd></div></dl>
+      </div>
+      <p class="muted">Quanh hoàng hôn, khi bầu trời đổi màu nhanh, các ô xếp dày; giữa đêm, khi trời gần như đứng yên, các ô thưa hơn. Trên cùng là nửa đêm, càng xuống dưới, ngày càng trôi đi.</p>
+    </section>
+
+
+
+    <section class="reveal" id="faq">
+      <h2>Câu hỏi thường gặp</h2>
+      <div class="faq"><details><summary>Các ô được lấp như thế nào?</summary><p>Bầu trời chụp hôm nay sẽ lấp ô của giờ chụp. Dù màu không như bạn nghĩ, nó vẫn được giữ nguyên, vì bầu trời lúc ấy thật sự là như vậy. Những bầu trời sưu tầm từ trước thì vào theo màu: nếu đủ gần màu của ô nào, nó lấp ô đó, và mỗi bầu trời chỉ lấp một ô.</p></details>
+<details><summary>Ô hôm qua đã đầy, hôm nay lại trống.</summary><p>Bảng là của hôm nay. Những ô mà bầu trời hôm qua lấp theo giờ, sang ngày mới sẽ được ghép lại chỉ dựa vào màu. Vì thế có hôm bảng gần như đầy, có hôm trông trống trải. Ảnh không hề mất: mọi bầu trời đã sưu tầm vẫn nằm trong Nhật ký, và theo thứ tự màu trong Bảng màu.</p></details>
+<details><summary>Các ô đã lấp cứ nhạt dần.</summary><p>Đó là có chủ ý. Ảnh giữ nguyên màu trong một tuần, rồi phai chậm trong tám tuần tiếp theo. Ảnh không bị xóa và cũng không bao giờ phai hẳn. Chụp lại bầu trời vào khung giờ đó, ô sẽ trở về đúng màu ngay. Không có chuỗi ngày liên tiếp nào bị đứt, cũng không có con số nào phải giành lại.</p></details>
+<details><summary>Màu có cần khớp không?</summary><p>Không. Không có chuyện đạt hay trượt. Ảnh chụp luôn được lưu, và màu xám của ngày u ám cũng là màu trời của ngày hôm đó.</p></details>
+<details><summary>Vì sao ứng dụng hỏi vị trí?</summary><p>Chỉ để khi bạn chạm vào ô trống, ứng dụng cho biết bầu trời không mây giờ ấy mang màu gì, theo giờ mặt trời mọc và lặn ở nơi bạn đang ở. Ứng dụng chỉ dùng vị trí gần đúng ở mức cây số, và tọa độ không bao giờ gắn vào ảnh. Nếu bạn từ chối, ứng dụng vẫn chạy bình thường và lấy Seoul làm mốc.</p></details>
+<details><summary>Có thể thêm bầu trời từ thư viện ảnh không?</summary><p>Có. Bầu trời chọn từ ứng dụng Ảnh thay cho máy ảnh cũng được cắt vuông và lấp ô của giờ hiện tại, giống như bầu trời vừa chụp.</p></details>
+<details><summary>Làm sao để xóa ảnh?</summary><p>Mở ảnh rồi chạm Xóa, hoặc vuốt sang trái trong Nhật ký. Ảnh sẽ bị xóa cùng lúc trên thiết bị và trong iCloud. Nếu gỡ ứng dụng, bản sao trên iCloud vẫn còn, nên khi cài lại, những bầu trời đã sưu tầm sẽ quay về.</p></details>
+<details><summary>Đổi máy thì bầu trời đã sưu tầm ra sao?</summary><p>Bầu trời của bạn được lưu trong iCloud của chính bạn, nên tiếp tục trên thiết bị mới đăng nhập cùng Tài khoản Apple. Không có tài khoản riêng, không có máy chủ, ảnh và màu không bao giờ được gửi cho nhà phát triển. Không quảng cáo, không theo dõi.</p></details>
+<details><summary>Có thật là miễn phí không?</summary><p>Thật. Mọi tính năng đều miễn phí. Nếu thích, bạn có thể gửi một khoản ủng hộ nhỏ cho nhà phát triển ngay trong ứng dụng, nhưng khoản ủng hộ không mở khóa tính năng nào cả.</p></details>
+<details><summary>Dùng được trên thiết bị nào?</summary><p>iPhone chạy iOS 17.0 trở lên, chỉ ở màn hình dọc.</p></details></div>
+      <p class="contact">Gặp lỗi, thấy ứng dụng chạy lạ, hay có điều muốn nói, hãy gửi thư đến <a href="mailto:leeo@kakao.com">leeo@kakao.com</a>. Kèm theo tình huống lúc đó và phiên bản iOS sẽ giúp tìm ra nguyên nhân dễ hơn nhiều.</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>Sáng mai,<br>hãy ngước nhìn một lần thôi</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6802295390">Tải miễn phí ở App Store</a>
+    </section>
+  </main>
 
   <footer>
-    <a href="support.html">Hỗ trợ</a> ·
-    <a href="privacy.html">Chính sách quyền riêng tư</a> ·
-    <a href="https://github.com/M1zz/SkyDex">GitHub</a>
-    <p style="margin:10px 0 0">Dữ liệu thời tiết do <a href="https://weatherkit.apple.com/legal-attribution.html">Apple Weather</a> cung cấp.</p>
+    <nav id="languages" class="langs" aria-label="Ngôn ngữ"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="../es/" hreflang="es" lang="es">Español</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../th/" hreflang="th" lang="th">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi" aria-current="page">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="../id/" hreflang="id" lang="id">Indonesia</a>
+<a href="../nb/" hreflang="nb" lang="nb">Norsk</a>
+<a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">Chính sách quyền riêng tư</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 SkyDex</p>
   </footer>
 
-</main>
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>

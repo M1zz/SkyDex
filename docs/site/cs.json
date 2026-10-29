@@ -1,0 +1,541 @@
+{
+  "title": "SkyDex: tabule dnešních barev nebe, plněná fotkou po fotce",
+  "description": "Každá fotka nebe zaplní jednu ze čtyřiceti osmi barev dne a dostane jméno, které se k ní hodí. Zdarma a bez účtu.",
+  "hero": {
+    "headline": "Jakou barvu mělo\ndnes nebe?",
+    "lead": "Vyfoťte nebe a na tabuli o čtyřiceti osmi buňkách se buňka pro tu denní dobu zaplní barvou, kterou jste zachytili. Dostane i jméno, které si snadno představíte: tenký led, bazénové dlaždičky, zralý kaki.",
+    "cta": "Zdarma v App Store",
+    "note": "Zdarma. Bez účtu a bez přihlašování."
+  },
+  "demo": {
+    "title": "Vyzkoušejte si tabuli",
+    "lead": "Klepněte na buňku a uvidíte, ke které části dne patří. Přidejte fotku nebe a zaplní se buňka pro tuto chvíli. Pak posuňte dny dopředu a sledujte, jak se tabule mění.",
+    "photo": "Přidat fotku nebe",
+    "age": "Od vyfocení",
+    "ageToday": "Dnes",
+    "ageDay": "po {n} dni",
+    "ageDays": "po {n} dnech",
+    "note": "Tabule začíná stejnými ukázkovými nebi jako snímky obrazovky aplikace. Vaši fotku čte jen tento prohlížeč a nikam ji neposílá. Jak se vybírá barva, kterou buňku zaplní a jak rychle bledne, funguje přesně jako v aplikaci.",
+    "now": "Teď",
+    "bands": [
+      "Půlnoc",
+      "Svítání",
+      "Den",
+      "Pozdní odpoledne",
+      "Západ slunce",
+      "Noc"
+    ],
+    "emptyTag": "%@ · zatím prázdné",
+    "spot": "Toto místo se zaplní nebem pořízeným v téhle části dne. Vejde se jakákoli fotka tak, jak je; barva se shodovat nemusí.",
+    "sims": [
+      [
+        "Tuš",
+        "Tuš rozetřená na kameni. Nejhlubší noc."
+      ],
+      [
+        "Noční moře",
+        "Voda shora, tam kde nesvítí žádná světla. Čerň s vrstvou modři."
+      ],
+      [
+        "Dno připáleného hrnce",
+        "Stopa po připálení. Čerň bez modrého nádechu."
+      ],
+      [
+        "Zaschlý inkoust",
+        "Stopa odloženého plnicího pera. Čerň se zbytkem modři."
+      ],
+      [
+        "Hluboká voda",
+        "Barva míst, kde nedosáhnete na dno. Tmavá, chladná námořnická modř."
+      ],
+      [
+        "Nové džíny",
+        "Denim, který ještě nikdy neprošel pračkou. Sytá tmavá modř."
+      ],
+      [
+        "Okno nočního vlaku",
+        "Sklo poté, co kolem probleskla světla. Šeď blízká tmavé modři."
+      ],
+      [
+        "Okno o půlnoci",
+        "Venku za odhrnutým závěsem. O něco modřejší než čerň."
+      ],
+      [
+        "Spláchnutý inkoust",
+        "Voda po umytí inkoustu z rukou. Vybledlá tmavá modř."
+      ],
+      [
+        "Modř školní uniformy",
+        "Modř saka nošeného pár let. Ani černá, ani modrá."
+      ],
+      [
+        "Mokré džíny",
+        "Prádlo právě pověšené. Sytá, kalná modř."
+      ],
+      [
+        "Hřbet makrely",
+        "Modrošedá se stříbrným leskem. Obloha před deštěm."
+      ],
+      [
+        "Staré montérky",
+        "Modrá, která léty nošení vybledla."
+      ],
+      [
+        "Vybledlý modrý závěs",
+        "Závěs dlouho vystavený slunci. Unavená tmavá modř."
+      ],
+      [
+        "Orosené okno",
+        "Zevnitř je všechno zamlžené. Namodralá šeď."
+      ],
+      [
+        "Ranní mlha",
+        "Ráno, které smazalo vršky budov. Světlá šeď do modra."
+      ],
+      [
+        "Mokrá mikina",
+        "Šeď ztmavlá deštěm. Zamračené svítání."
+      ],
+      [
+        "Vybledlý fialový svetr",
+        "Fialová vypraná mnoha praními. Západ těsně před svítáním."
+      ],
+      [
+        "Slupka broskve",
+        "Ta chlupatá strana. Mezi růžovou a oranžovou."
+      ],
+      [
+        "Meruňkové mléko",
+        "Mléko s rozmixovanou meruňkou. Velmi světlá oranžová."
+      ],
+      [
+        "Bílá zeď ve slunci",
+        "Ráno má zeď na chvíli přesně tuhle barvu."
+      ],
+      [
+        "Syrový losos",
+        "Ta růžová, která pečením zmizí."
+      ],
+      [
+        "Jahodové mléko",
+        "Růžová po protřepání."
+      ],
+      [
+        "Nezralá meruňka",
+        "Oranžová, ve které ještě vítězí žlutá."
+      ],
+      [
+        "Voda ve sklenici",
+        "Světlá modř, kterou prošlo světlo."
+      ],
+      [
+        "Studená voda z kohoutku",
+        "Barva, ze které zebou ruce. Světlá, chladná modř."
+      ],
+      [
+        "Tenký led",
+        "Voda na jaře sotva zamrzlá. Velmi světlá modř."
+      ],
+      [
+        "Porcelánová miska",
+        "Modrý nádech, který zůstal v bílé misce."
+      ],
+      [
+        "Vyžehlená bílá košile",
+        "Skoro bílá s vrstvou modři. Velmi jasné poledne."
+      ],
+      [
+        "Pěna z jaru",
+        "Bílá pěna nad dřezem s nádobím."
+      ],
+      [
+        "Seprané džíny",
+        "Denim s vybledlými koleny. Modř zamračeného dne."
+      ],
+      [
+        "Modrá pastelka",
+        "Modrá, když pastelkou silně přitlačíte na papír."
+      ],
+      [
+        "Bazénové dlaždičky",
+        "Modř viděná skrz vodu. Jasné poledne."
+      ],
+      [
+        "Modrá propiska",
+        "Modř čáry na papíře."
+      ],
+      [
+        "Hluboký bazén",
+        "Voda tam, kde nedosáhnete na dno. Vrchol letního poledne."
+      ],
+      [
+        "Voda s modrou barvou",
+        "Kelímek na vymývání štětce. Modř jasného odpoledne."
+      ],
+      [
+        "Inkoust do pera",
+        "V lahvičce modrá skoro černá."
+      ],
+      [
+        "Láhev limonády",
+        "Světlá modř s příměsí zelené."
+      ],
+      [
+        "Orosené zrcadlo",
+        "Zrcadlo po sprše. Světlá namodralá šeď."
+      ],
+      [
+        "Zamlžené sklo",
+        "Mléčná šeď, ve které se rozpíjí protější strana."
+      ],
+      [
+        "Drobky z gumy",
+        "Bílý prach na stole. Velmi světlá šeď."
+      ],
+      [
+        "Křídový prach",
+        "Bělost, která zůstane ve vzduchu po smazání tabule."
+      ],
+      [
+        "Suchý cement",
+        "Dávno ztuhlá podlaha. Rovná světlá šeď."
+      ],
+      [
+        "Vychladlý popel",
+        "To, co zbude po ohni. Obyčejná šeď zamračeného dne."
+      ],
+      [
+        "Zakalené okno",
+        "Barva, kterou nesmyjete. Středně šedá do modra."
+      ],
+      [
+        "Mokrá vlnitá lepenka",
+        "Krabice v dešti. Šeď s teplým nádechem."
+      ],
+      [
+        "Zhasnutá obrazovka",
+        "Černošedá hned po vypnutí."
+      ],
+      [
+        "Ohořelá sirka",
+        "Dřívko se zčernalou hlavičkou. Tmavá šedofialová."
+      ],
+      [
+        "Voda po mytí nádobí",
+        "Vlažná voda s mastnými oky. Kalná šeď."
+      ],
+      [
+        "Voda z vyvářeného prádla",
+        "Bílá voda, ze které stoupá pára. Světlá šeď."
+      ],
+      [
+        "Ostří nože",
+        "Kov ve světle. Šeď s modrým nádechem."
+      ],
+      [
+        "Stará plechová střecha",
+        "Střecha staré kůlny. Modrošedá těsně před deštěm."
+      ],
+      [
+        "Moře za zamračeného dne",
+        "Voda, která převzala barvu nebe. Tmavá modrošedá."
+      ],
+      [
+        "Mokrý cement",
+        "Podlaha v dešti. Tmavá, vlhká šeď."
+      ],
+      [
+        "Tuha tužky",
+        "Tmavá šeď stínovaná naplocho. Deštivé odpoledne."
+      ],
+      [
+        "Mokrý asfalt",
+        "Silnice po nočním dešti. Šeď skoro černá."
+      ],
+      [
+        "Zeď porostlá mechem",
+        "Šeď prorostlá zelenou. Občas těsně před bouří."
+      ],
+      [
+        "Stará mince",
+        "Kov ohlazený rukama. Šeď do žluta."
+      ],
+      [
+        "Voda z praní rýže",
+        "První voda po propláchnutí rýže. Teplá bílá."
+      ],
+      [
+        "Vaječná skořápka",
+        "Bílá, která není úplně bílá."
+      ],
+      [
+        "Starý papír",
+        "Listy staré knihy. Zažloutlá bílá."
+      ],
+      [
+        "Staré noviny",
+        "Papír vybledlý sluncem. Mezi šedou a žlutou."
+      ],
+      [
+        "Okno v žlutém prachu",
+        "Kalná nažloutlost, kterou chcete setřít."
+      ],
+      [
+        "Obilný nápoj",
+        "Kalná béžová, než se usadí."
+      ],
+      [
+        "Zažloutlé linoleum",
+        "Podlaha léta zatížená nábytkem. Kalná žlutá."
+      ],
+      [
+        "Vařený kaštan",
+        "Žlutá dužina oloupaného kaštanu."
+      ],
+      [
+        "Mléko nalité do kávy",
+        "Právě nalité, ještě nerozmíchané."
+      ],
+      [
+        "Zaprášená knihovna",
+        "Světlá šedohnědá, na které prst nechá stopu."
+      ],
+      [
+        "Suchá hlína",
+        "Půda, která začíná praskat. Světle hnědá."
+      ],
+      [
+        "Vychladlý čaj s mlékem",
+        "Nedopitý šálek. Kalná narůžovělá hnědá."
+      ],
+      [
+        "Rozmoklá lepenka",
+        "Papír nabobtnalý deštěm. Barva zamračeného západu."
+      ],
+      [
+        "Mokrá dřevěná terasa",
+        "Dřevo ztmavlé vlhkostí."
+      ],
+      [
+        "Cihla v popelu",
+        "Místo, kde hořel oheň. Tmavá načervenalá šeď."
+      ],
+      [
+        "Skvrna od kávy",
+        "Kulatá stopa po odneseném hrnku."
+      ],
+      [
+        "Slupka vařených fazolí adzuki",
+        "Fazole dlouho namáčené ve vodě. Tmavá fialovošedá."
+      ],
+      [
+        "Sójová posypka",
+        "Rýžový koláček obalený v sójové mouce. Jemná nahnědlá béžová."
+      ],
+      [
+        "Žloutek",
+        "Těsně předtím, než ho propíchnete. Sytá žlutá."
+      ],
+      [
+        "Kůrka chleba",
+        "Místo, kde žlutá přechází v hnědou."
+      ],
+      [
+        "Mandarinková slupka",
+        "Ta oranžová, než ji oloupete."
+      ],
+      [
+        "Pečený losos",
+        "Narůžovělá oranžová opečeného povrchu."
+      ],
+      [
+        "Sušený kaki",
+        "Kaki s bílým povlakem. Kalná oranžová."
+      ],
+      [
+        "Žhavé uhlíky",
+        "Červené nejsou plameny, ale uhlíky."
+      ],
+      [
+        "Zralý kaki",
+        "Červenooranžová těsně předtím, než praskne."
+      ],
+      [
+        "Omáčka tteokbokki",
+        "Červená svařené pálivé omáčky. Nejsytější západ."
+      ],
+      [
+        "Dužina melounu",
+        "Nejsladší střed. Červená růžová."
+      ],
+      [
+        "Růžová marmeláda",
+        "Okvětní lístky v cukru. Kalná růžová červeň."
+      ],
+      [
+        "Červená cihla",
+        "Zeď, na kterou léta pršelo."
+      ],
+      [
+        "Vychladlé uhlíky",
+        "Oheň pod vrstvou popela. Tmavá červenohnědá."
+      ],
+      [
+        "Slupka švestky",
+        "Červenofialová s bílým povlakem."
+      ],
+      [
+        "Kaše z červených fazolí",
+        "Hustá červenohnědá, než se přidají knedlíčky."
+      ],
+      [
+        "Zbytek vína",
+        "Černočervená fialová na dně sklenky."
+      ],
+      [
+        "Odkvetlý šeřík",
+        "Mdlá fialová vadnoucího květu."
+      ],
+      [
+        "Borůvkové mléko",
+        "Nedomíchaná světlá fialová."
+      ],
+      [
+        "Slupka hroznu",
+        "Tmavá fialová, mokrá po umytí."
+      ],
+      [
+        "Slupka lilku",
+        "Černofialová, která pohlcuje světlo. Poslední barva dne."
+      ]
+    ]
+  },
+  "problem": {
+    "title": "Na nebe se díváte každý den, ale žádnou barvu si nepamatujete",
+    "text": "Nebe cestou do práce, nebe, když jste po obědě vyšli ven: večer už si jeho barvu nevybavíte. A fotky nebe, které jste přece jen pořídili, zapadnou mezi vším ostatním v knihovně. SkyDex je sbírá jako barvy a na jedné tabuli ukáže, kudy dnešní nebe prošlo."
+  },
+  "features": [
+    {
+      "title": "Každé nebe dostane jméno",
+      "text": "Každá barva nejdřív dostane jméno, které vám vykreslí obraz, třeba tenký led, bazénové dlaždičky nebo zralý kaki. Pod ním následuje jméno s původem: korejská barva, japonská barva, pigment nebo webová barva.\nKdyž je shoda blízko, stojí u něj Název, když ne, poctivě Nejbližší název.",
+      "shot": "02-name"
+    },
+    {
+      "title": "Zanechte řádek",
+      "text": "Hned po vyfocení se otevře karta. Napište, co se vám honilo hlavou při pohledu vzhůru, a pokaždé, když na tabuli klepnete na tu buňku, objeví se to znovu nad nebem.\nPřes tuto fotku můžete také položit barvu nebe z jiného dne a výsledek sdílet jako obrázek.",
+      "shot": "03-card"
+    },
+    {
+      "title": "Prázdné buňky ukazují cestu",
+      "text": "Klepněte na prázdnou buňku a uvidíte, ke které denní době patří a jakou barvu hledat. Řekne vám i to, jak nebe v tu hodinu vypadá za bezmračného dne, podle východu a západu slunce tam, kde jste.\nBarva se trefit nemusí. I šeď zataženého dne je barvou nebe toho dne.",
+      "shot": "05-empty"
+    },
+    {
+      "title": "Deník, paleta, opakování",
+      "text": "Procházejte svá nebe popořadě a sbírejte barvy do palet, jako je modrá, šedá nebo písková. Vyfoťte stejnou hodinu jiný den a obě nebe se postaví vedle sebe.\nWidgety na ploše ukážou dnešní tabuli i dnešní nebe na první pohled.",
+      "shot": "04-palette"
+    }
+  ],
+  "steps": {
+    "title": "Začít jde ve třech krocích",
+    "items": [
+      {
+        "title": "Podívejte se vzhůru",
+        "text": "Klepněte na tlačítko fotoaparátu pod tabulí a nechte nebe vyplnit čtverec."
+      },
+      {
+        "title": "Buňka se zaplní",
+        "text": "Buňka pro tuto chvíli dostane barvu, kterou jste zachytili, a jméno."
+      },
+      {
+        "title": "Zanechte řádek",
+        "text": "Na kartu, která se otevře, napište, na co jste právě mysleli."
+      }
+    ]
+  },
+  "reference": {
+    "title": "Jak tabule dělí den",
+    "rows": [
+      [
+        "Půlnoc · 0:00–5:00",
+        "šest buněk"
+      ],
+      [
+        "Svítání · 5:00–8:00",
+        "šest buněk"
+      ],
+      [
+        "Den · 8:00–16:00",
+        "dvanáct buněk"
+      ],
+      [
+        "Pozdní odpoledne · 16:00–18:00",
+        "šest buněk"
+      ],
+      [
+        "Západ slunce · 18:00–21:00",
+        "dvanáct buněk, jedna každých 15 minut"
+      ],
+      [
+        "Noc · 21:00–24:00",
+        "šest buněk"
+      ]
+    ],
+    "note": "Kolem západu slunce, kdy se nebe mění rychle, jsou buňky nahusto, uprostřed noci, kdy se skoro nehýbe, jsou široké. Nahoře je půlnoc a den plyne směrem dolů."
+  },
+  "faq": {
+    "title": "Časté otázky",
+    "items": [
+      {
+        "q": "Jak se buňka zaplní?",
+        "a": "Nebe vyfocené dnes zaplní buňku pro čas, kdy jste ho vyfotili, i když barva není taková, jakou jste čekali. Tak nebe v tu hodinu opravdu vypadalo. Nebe z dřívějších dnů se řadí podle barvy: je-li dost blízko barvě některé buňky, zaplní ji, a každé nebe zaplní jen jednu buňku."
+      },
+      {
+        "q": "Buňka, která byla včera plná, je dnes prázdná.",
+        "a": "Tabule je vždycky dnešní. Buňka, kterou včerejší nebe zaplnilo podle času, se s novým dnem znovu porovná už jen podle barvy. Proto je tabule někdy skoro plná a jindy působí prázdně. Vaše fotky nikam nezmizely: všechna nebe jsou v Deníku a seřazená podle barvy v Paletě."
+      },
+      {
+        "q": "Zaplněné buňky blednou.",
+        "a": "To je záměr. Fotka si týden drží svou skutečnou barvu a pak během dalších osmi týdnů pomalu bledne. Nesmaže se a nikdy nevybledne úplně. Vyfoťte nebe v tu dobu znovu a buňka se hned vrátí do plné barvy. Žádná série, kterou byste přerušili, žádné skóre, které byste museli dohánět."
+      },
+      {
+        "q": "Musí barva sedět?",
+        "a": "Ne. Nic se neschvaluje ani nezamítá. Každá fotka se uloží a i šeď zataženého dne je barvou nebe toho dne."
+      },
+      {
+        "q": "Proč aplikace chce znát polohu?",
+        "a": "Jen proto, aby vám po klepnutí na prázdnou buňku řekla, jak v tu hodinu vypadá bezmračné nebe, podle východu a západu slunce tam, kde jste. Používá jen přibližnou polohu s přesností na kilometry a souřadnice se k fotkám nikdy nepřipojují. Když přístup nepovolíte, vše funguje dál a výchozím bodem je Soul."
+      },
+      {
+        "q": "Můžu přidat nebe z knihovny fotek?",
+        "a": "Ano. Nebe vybrané ve Fotkách místo fotoaparátu se také ořízne na čtverec a zaplní buňku pro tuto chvíli, stejně jako to, které právě vyfotíte."
+      },
+      {
+        "q": "Jak smažu fotku?",
+        "a": "Otevřete fotku a klepněte na Smazat, nebo ji v Deníku přejeďte doleva. Zmizí ze zařízení i z iCloudu zároveň. Když smažete aplikaci, kopie v iCloudu zůstane, takže se vám nebe po nové instalaci vrátí."
+      },
+      {
+        "q": "Co se stane, když vyměním telefon?",
+        "a": "Nasbíraná nebe jsou ve vašem vlastním iCloudu, takže pokračují na novém zařízení přihlášeném ke stejnému účtu Apple. Žádný účet ani server, fotky a barvy se vývojáři nikdy neposílají. Žádné reklamy ani sledování."
+      },
+      {
+        "q": "Je to opravdu zdarma?",
+        "a": "Ano, všechny funkce jsou zdarma. Pokud se vám aplikace líbí, můžete vývojáři v aplikaci poslat spropitné, ale nic se tím neodemyká."
+      },
+      {
+        "q": "Na jakých zařízeních funguje?",
+        "a": "Na iPhonu s iOS 17.0 nebo novějším, pouze na výšku."
+      }
+    ]
+  },
+  "closing": {
+    "headline": "Zítra ráno\nse jednou podívejte vzhůru",
+    "cta": "Zdarma v App Store"
+  },
+  "ui": {
+    "skip": "Přejít na obsah",
+    "languages": "Jazyk",
+    "privacy": "Zásady ochrany osobních údajů",
+    "contact": "Chyby, divné chování nebo cokoli, co chcete říct, pište na {email}. Když připíšete, co jste právě dělali a jakou máte verzi iOS, najdu příčinu mnohem snáz."
+  }
+}

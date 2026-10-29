@@ -1,0 +1,541 @@
+{
+  "title": "SkyDex : une planche des couleurs du ciel, remplie photo après photo",
+  "description": "Chaque photo du ciel remplit l’une des quarante-huit couleurs de la journée et reçoit un nom qui lui ressemble. Gratuit, sans compte.",
+  "hero": {
+    "headline": "De quelle couleur\nétait le ciel aujourd’hui ?",
+    "lead": "Photographiez le ciel : sur une planche de quarante-huit cases, celle de l’heure se remplit de la couleur captée. Elle reçoit aussi un nom qui fait aussitôt image, comme Fine glace, Carrelage de piscine ou Kaki bien mûr.",
+    "cta": "Gratuit sur l’App Store",
+    "note": "Gratuit. Sans compte ni connexion."
+  },
+  "demo": {
+    "title": "Essayez la planche",
+    "lead": "Touchez une case pour voir à quel moment de la journée elle correspond. Ajoutez une photo de ciel pour remplir la case de maintenant, puis avancez de quelques jours pour voir la planche changer.",
+    "photo": "Ajouter une photo de ciel",
+    "age": "Depuis la prise de vue",
+    "ageToday": "Aujourd’hui",
+    "ageDay": "{n} jour plus tard",
+    "ageDays": "{n} jours plus tard",
+    "note": "La planche démarre avec les mêmes ciels d’exemple que les captures d’écran de l’app. Votre photo est lue uniquement dans ce navigateur et n’est envoyée nulle part. Le choix de la couleur, la case qu’elle remplit et la vitesse à laquelle elle pâlit fonctionnent exactement comme dans l’app.",
+    "now": "Maintenant",
+    "bands": [
+      "Minuit",
+      "Aube",
+      "Jour",
+      "Fin d'après-midi",
+      "Couchant",
+      "Nuit"
+    ],
+    "emptyTag": "%@ · encore vide",
+    "spot": "Cette place se remplit avec un ciel pris à ce moment de la journée. Toute photo y entre telle quelle ; la couleur n’a pas besoin de correspondre.",
+    "sims": [
+      [
+        "Encre de Chine",
+        "L'encre broyée sur la pierre. La nuit la plus profonde."
+      ],
+      [
+        "Mer de nuit",
+        "L'eau vue d'en haut, sans lumière. Du noir sous un voile de bleu."
+      ],
+      [
+        "Fond de casserole brûlée",
+        "La trace laissée par le feu. Un noir sans bleu."
+      ],
+      [
+        "Encre séchée",
+        "Un trait de stylo plume laissé là. Un noir qui garde du bleu."
+      ],
+      [
+        "Eau profonde",
+        "La couleur de l'endroit où l'on n'a plus pied. Un bleu marine sombre et frais."
+      ],
+      [
+        "Jean neuf",
+        "Un denim jamais lavé. Un bleu marine dense."
+      ],
+      [
+        "Vitre de train de nuit",
+        "La vitre après le passage des lumières. Un gris presque marine."
+      ],
+      [
+        "Vitre à minuit",
+        "Le dehors quand on tire le rideau. Un peu plus bleu que le noir."
+      ],
+      [
+        "Encre rincée",
+        "L'eau où l'on a rincé ses doigts tachés d'encre. Un marine pâle."
+      ],
+      [
+        "Marine d'uniforme",
+        "Le marine d'une veste portée des années. Ni noir ni bleu."
+      ],
+      [
+        "Jean mouillé",
+        "Le linge tout juste étendu. Un bleu sombre et trouble."
+      ],
+      [
+        "Dos de maquereau",
+        "Un gris bleuté aux reflets d'argent. Le ciel avant la pluie."
+      ],
+      [
+        "Bleu de travail usé",
+        "Un bleu éteint par des années de port."
+      ],
+      [
+        "Rideau marine délavé",
+        "Un rideau resté longtemps au soleil. Un marine fatigué."
+      ],
+      [
+        "Buée sur la vitre",
+        "De l'intérieur, le dehors est flou. Un gris bleuté."
+      ],
+      [
+        "Brume du matin",
+        "Un matin où le haut des immeubles s'efface. Un gris clair bleuté."
+      ],
+      [
+        "Sweat mouillé",
+        "Un gris assombri par la pluie. Une aube voilée."
+      ],
+      [
+        "Pull violet délavé",
+        "Un violet éteint par les lavages. L'ouest juste avant l'aube."
+      ],
+      [
+        "Peau de pêche",
+        "Le côté duveteux. Entre le rose et l'orange."
+      ],
+      [
+        "Lait à l'abricot",
+        "Du lait mixé avec de l'abricot. Un orange très pâle."
+      ],
+      [
+        "Mur blanc au soleil",
+        "Le matin, le mur prend un instant cette couleur."
+      ],
+      [
+        "Chair de saumon",
+        "Ce rose qui disparaît à la cuisson."
+      ],
+      [
+        "Lait fraise",
+        "Le rose une fois bien secoué."
+      ],
+      [
+        "Abricot pas mûr",
+        "Un orange où le jaune l'emporte encore."
+      ],
+      [
+        "Eau dans un verre",
+        "Un bleu pâle traversé par la lumière."
+      ],
+      [
+        "Eau froide du robinet",
+        "La couleur des mains gelées. Un bleu pâle et frais."
+      ],
+      [
+        "Fine glace",
+        "L'eau à peine gelée au printemps. Un bleu très pâle."
+      ],
+      [
+        "Porcelaine",
+        "Le reflet bleu d'un bol blanc."
+      ],
+      [
+        "Chemise blanche repassée",
+        "Presque blanc, sous un voile de bleu. Un midi très clair."
+      ],
+      [
+        "Mousse de vaisselle",
+        "La mousse blanche qui flotte dans l'évier."
+      ],
+      [
+        "Jean délavé",
+        "Un denim blanchi aux genoux. Le bleu d'un jour voilé."
+      ],
+      [
+        "Pastel bleu",
+        "Le bleu qui vient quand on appuie fort sur le papier."
+      ],
+      [
+        "Carrelage de piscine",
+        "Le bleu vu à travers l'eau. Midi par beau temps."
+      ],
+      [
+        "Stylo bille bleu",
+        "Le bleu d'un trait sur le papier."
+      ],
+      [
+        "Grand bain",
+        "L'eau du côté où l'on n'a plus pied. Le zénith d'un midi d'été."
+      ],
+      [
+        "Eau de peinture bleue",
+        "Le pot où l'on rince le pinceau. Le bleu d'un après-midi clair."
+      ],
+      [
+        "Encre de stylo plume",
+        "Dans le flacon, un bleu presque noir."
+      ],
+      [
+        "Bouteille de limonade",
+        "Un bleu pâle mêlé de vert."
+      ],
+      [
+        "Miroir embué",
+        "Le miroir après la douche. Un gris bleuté clair."
+      ],
+      [
+        "Verre embrumé",
+        "Un gris flou, juste assez pour brouiller l'autre côté."
+      ],
+      [
+        "Miettes de gomme",
+        "La poussière blanche sur le bureau. Un gris très pâle."
+      ],
+      [
+        "Poussière de craie",
+        "La blancheur qui flotte après avoir effacé le tableau."
+      ],
+      [
+        "Ciment sec",
+        "Un sol pris depuis longtemps. Un gris clair et uni."
+      ],
+      [
+        "Cendre froide",
+        "Ce qui reste après le feu. Le gris ordinaire d'un jour couvert."
+      ],
+      [
+        "Vitre terne",
+        "Une couleur qui reste même après nettoyage. Un gris moyen bleuté."
+      ],
+      [
+        "Carton ondulé mouillé",
+        "Une boîte sous la pluie. Un gris aux tons chauds."
+      ],
+      [
+        "Écran éteint",
+        "Le gris noir juste après l'extinction."
+      ],
+      [
+        "Allumette brûlée",
+        "Seule la tête noircie reste. Un gris violacé sombre."
+      ],
+      [
+        "Eau de vaisselle",
+        "Une eau tiède où flotte de la graisse. Un gris trouble."
+      ],
+      [
+        "Eau de lessive bouillie",
+        "Une eau blanche qui fume. Un gris clair."
+      ],
+      [
+        "Lame de couteau",
+        "Le métal sous la lumière. Un gris bleuté."
+      ],
+      [
+        "Vieux toit de tôle",
+        "Le toit d'un vieil entrepôt. Le gris bleu juste avant la pluie."
+      ],
+      [
+        "Mer par temps gris",
+        "L'eau qui reflète le ciel tel quel. Un gris bleu sombre."
+      ],
+      [
+        "Ciment mouillé",
+        "Un sol sous la pluie. Un gris sombre et humide."
+      ],
+      [
+        "Mine de crayon",
+        "Un gris foncé posé à plat. Un après-midi de pluie."
+      ],
+      [
+        "Asphalte mouillé",
+        "La route après une pluie de nuit. Un gris presque noir."
+      ],
+      [
+        "Mur moussu",
+        "Du vert a gagné le gris. Parfois, juste avant l'orage."
+      ],
+      [
+        "Vieille pièce",
+        "Du métal patiné par les mains. Un gris jaunâtre."
+      ],
+      [
+        "Eau de riz",
+        "La première eau de rinçage du riz. Un blanc chaud."
+      ],
+      [
+        "Coquille d'œuf",
+        "Un blanc qui n'est pas tout à fait blanc."
+      ],
+      [
+        "Vieux papier",
+        "Les pages d'un vieux livre. Un blanc jauni."
+      ],
+      [
+        "Vieux journal",
+        "Un papier passé au soleil. Entre le gris et le jaune."
+      ],
+      [
+        "Vitre poussiéreuse",
+        "Un jaune voilé qui donne envie de nettoyer."
+      ],
+      [
+        "Boisson aux céréales",
+        "Un beige trouble, avant que tout se dépose."
+      ],
+      [
+        "Vieux lino jaune",
+        "Un sol écrasé par les années. Un jaune terne."
+      ],
+      [
+        "Châtaigne cuite",
+        "L'intérieur jaune d'une châtaigne épluchée."
+      ],
+      [
+        "Lait versé dans le café",
+        "Juste versé, pas encore mélangé."
+      ],
+      [
+        "Étagère poussiéreuse",
+        "Un gris brun clair où le doigt laisse une trace."
+      ],
+      [
+        "Boue sèche",
+        "Une terre qui commence à craqueler. Un brun pâle."
+      ],
+      [
+        "Thé au lait refroidi",
+        "Une tasse laissée à moitié. Un brun rosé trouble."
+      ],
+      [
+        "Carton gris mouillé",
+        "Un papier gonflé par la pluie. La couleur d'un couchant voilé."
+      ],
+      [
+        "Terrasse en bois mouillée",
+        "Un bois assombri par l'humidité."
+      ],
+      [
+        "Brique cendrée",
+        "Là où le feu a chauffé. Un gris rouge sombre."
+      ],
+      [
+        "Trace de café",
+        "L'auréole laissée par la tasse."
+      ],
+      [
+        "Peau de haricot rouge",
+        "Des haricots trempés longtemps. Un gris violacé sombre."
+      ],
+      [
+        "Poudre de soja grillé",
+        "Une surface roulée dans la farine de soja. Un beige doux et brun."
+      ],
+      [
+        "Jaune d'œuf",
+        "Juste avant de crever. Un jaune intense."
+      ],
+      [
+        "Croûte de pain de mie",
+        "Là où le jaune devient brun."
+      ],
+      [
+        "Peau de mandarine",
+        "Cet orange-là, avant d'éplucher."
+      ],
+      [
+        "Saumon grillé",
+        "Un orange rosé, saisi en surface."
+      ],
+      [
+        "Kaki séché",
+        "Un kaki séché couvert de poudre. Un orange terne."
+      ],
+      [
+        "Braise de bois",
+        "Pas la flamme, mais le charbon rougeoyant."
+      ],
+      [
+        "Kaki bien mûr",
+        "Un orange rouge, juste avant d'éclater."
+      ],
+      [
+        "Sauce de tteokbokki",
+        "Le rouge après réduction. Le couchant le plus intense."
+      ],
+      [
+        "Chair de pastèque",
+        "Le cœur, la partie la plus sucrée. Un rose rouge."
+      ],
+      [
+        "Confiture de rose",
+        "Des pétales confits au sucre. Un rouge rosé terne."
+      ],
+      [
+        "Brique rouge",
+        "Un mur qui a pris la pluie pendant des années."
+      ],
+      [
+        "Braise refroidie",
+        "Un feu couvert de cendres. Un brun rouge sombre."
+      ],
+      [
+        "Peau de prune",
+        "Un violet rouge couvert d'une pruine blanche."
+      ],
+      [
+        "Soupe de haricots rouges",
+        "Un brun rouge épais, avant les boulettes de riz."
+      ],
+      [
+        "Fond de vin",
+        "Le violet sombre resté au fond du verre."
+      ],
+      [
+        "Lilas fané",
+        "Le violet voilé d'une fleur qui sèche."
+      ],
+      [
+        "Lait à la myrtille",
+        "Un lilas pas tout à fait mélangé."
+      ],
+      [
+        "Peau de raisin",
+        "Un violet profond, encore humide du lavage."
+      ],
+      [
+        "Peau d'aubergine",
+        "Un violet noir qui boit la lumière. La dernière couleur du jour."
+      ]
+    ]
+  },
+  "problem": {
+    "title": "On regarde le ciel tous les jours, et aucune couleur ne reste",
+    "text": "Le ciel du trajet du matin, celui de la sortie après le déjeuner : le soir venu, impossible de dire de quelle couleur ils étaient. Les photos de ciel qu’on a prises se perdent parmi toutes les autres. SkyDex les rassemble en couleurs et montre, sur une seule planche, le chemin qu’a suivi le ciel aujourd’hui."
+  },
+  "features": [
+    {
+      "title": "Chaque ciel reçoit un nom",
+      "text": "Chaque couleur reçoit d’abord un nom qui fait image, comme Fine glace, Carrelage de piscine ou Kaki bien mûr. En dessous vient un nom puisé à une source : couleur traditionnelle coréenne ou japonaise, pigment ou couleur web.\nQuand la correspondance est proche, l’app écrit « Son nom » ; sinon, elle dit franchement « Nom le plus proche ».",
+      "shot": "02-name"
+    },
+    {
+      "title": "Laissez une ligne",
+      "text": "Une carte s’ouvre dès la prise de vue. Notez ce qui vous passait par la tête en levant les yeux : la phrase reviendra flotter sur le ciel chaque fois que vous toucherez cette case sur la planche.\nVous pouvez aussi poser sur cette photo la couleur du ciel d’un autre jour, et partager le résultat en image.",
+      "shot": "03-card"
+    },
+    {
+      "title": "Les cases vides vous guident",
+      "text": "Touchez une case vide : elle vous dit à quel moment de la journée elle correspond et quelle couleur guetter. Elle montre aussi à quoi ressemble le ciel à cette heure par temps clair, calé sur le lever et le coucher du soleil là où vous êtes.\nLa couleur n’a pas besoin de correspondre. Le gris d’un jour couvert est lui aussi la couleur du ciel de ce jour-là.",
+      "shot": "05-empty"
+    },
+    {
+      "title": "Journal, palette, répétitions",
+      "text": "Parcourez vos ciels dans l’ordre et rassemblez vos couleurs en palettes par familles : bleu, gris, sable. Photographiez la même heure un autre jour, et les deux ciels se tiennent côte à côte.\nLes widgets de l’écran d’accueil affichent d’un coup d’œil la planche du jour et le ciel du jour.",
+      "shot": "04-palette"
+    }
+  ],
+  "steps": {
+    "title": "Trois gestes pour commencer",
+    "items": [
+      {
+        "title": "Levez les yeux",
+        "text": "Touchez le bouton de l’appareil photo sous la planche et laissez le ciel remplir le carré."
+      },
+      {
+        "title": "Une case se remplit",
+        "text": "La case de l’heure prend la couleur captée, et un nom."
+      },
+      {
+        "title": "Laissez une ligne",
+        "text": "Sur la carte qui s’ouvre, notez ce que ce ciel vous inspirait."
+      }
+    ]
+  },
+  "reference": {
+    "title": "Comment la planche découpe la journée",
+    "rows": [
+      [
+        "Minuit · 0 h–5 h",
+        "six cases"
+      ],
+      [
+        "Aube · 5 h–8 h",
+        "six cases"
+      ],
+      [
+        "Jour · 8 h–16 h",
+        "douze cases"
+      ],
+      [
+        "Fin d'après-midi · 16 h–18 h",
+        "six cases"
+      ],
+      [
+        "Couchant · 18 h–21 h",
+        "douze cases, une toutes les 15 minutes"
+      ],
+      [
+        "Nuit · 21 h–24 h",
+        "six cases"
+      ]
+    ],
+    "note": "Autour du couchant, quand le ciel change vite, les cases sont serrées ; au cœur de la nuit, quand il bouge à peine, elles sont larges. Minuit est en haut, et la journée s’écoule vers le bas."
+  },
+  "faq": {
+    "title": "Questions fréquentes",
+    "items": [
+      {
+        "q": "Comment une case se remplit-elle ?",
+        "a": "Un ciel photographié aujourd’hui remplit la case de l’heure de la prise, même si la couleur n’est pas celle que vous attendiez : c’était vraiment le ciel à cette heure-là. Les ciels des jours précédents entrent par la couleur : quand l’un d’eux est assez proche de la couleur d’une case, il la remplit, et chaque ciel ne remplit qu’une seule case."
+      },
+      {
+        "q": "Une case pleine hier est vide aujourd’hui.",
+        "a": "La planche, c’est aujourd’hui. Une case qu’un ciel d’hier remplissait grâce à son heure n’est plus rapprochée que par la couleur une fois le jour passé. Certains jours la planche est donc presque pleine, d’autres elle paraît vide. Vos photos n’ont pas disparu : tous vos ciels sont dans le Journal, et rangés par couleur dans la Palette."
+      },
+      {
+        "q": "Mes cases remplies pâlissent.",
+        "a": "C’est voulu. Une photo garde sa vraie couleur pendant une semaine, puis pâlit lentement au fil des huit semaines suivantes. Elle n’est pas effacée et ne disparaît jamais tout à fait. Photographiez de nouveau le ciel à cette heure-là et la case retrouve aussitôt toute sa couleur. Pas de série à préserver, pas de score à regagner."
+      },
+      {
+        "q": "La couleur doit-elle correspondre ?",
+        "a": "Non. Il n’y a ni réussite ni échec. Chaque photo est enregistrée, et le gris d’un jour couvert est lui aussi la couleur du ciel de ce jour-là."
+      },
+      {
+        "q": "Pourquoi l’app demande-t-elle ma position ?",
+        "a": "Uniquement pour vous montrer, quand vous touchez une case vide, la couleur d’un ciel sans nuages à cette heure, calée sur le lever et le coucher du soleil là où vous êtes. Elle n’utilise qu’une position approximative, au kilomètre près, et aucune coordonnée n’est jamais attachée à vos photos. Si vous refusez, tout fonctionne quand même, avec Séoul comme repère."
+      },
+      {
+        "q": "Puis-je ajouter un ciel de ma photothèque ?",
+        "a": "Oui. Un ciel choisi dans Photos plutôt qu’avec l’appareil photo est lui aussi recadré en carré, et remplit la case de maintenant, comme une photo prise sur le moment."
+      },
+      {
+        "q": "Comment supprimer une photo ?",
+        "a": "Ouvrez la photo et touchez « Supprimer », ou balayez-la vers la gauche dans le Journal. Elle disparaît à la fois de l’appareil et d’iCloud. Si vous supprimez l’app, la copie reste dans iCloud : vos ciels reviennent à la réinstallation."
+      },
+      {
+        "q": "Que se passe-t-il si je change d’appareil ?",
+        "a": "Vos ciels sont stockés dans votre propre iCloud et vous suivent sur un nouvel appareil connecté au même compte Apple. Pas de compte, pas de serveur : vos photos et vos couleurs ne sont jamais envoyées au développeur. Ni publicité ni pistage."
+      },
+      {
+        "q": "C’est vraiment gratuit ?",
+        "a": "Oui, toutes les fonctions sont gratuites. Si l’app vous plaît, vous pouvez laisser un pourboire au développeur depuis l’app, mais il ne débloque rien."
+      },
+      {
+        "q": "Sur quels appareils fonctionne-t-elle ?",
+        "a": "Sur iPhone avec iOS 17.0 ou ultérieur, en mode portrait uniquement."
+      }
+    ]
+  },
+  "closing": {
+    "headline": "Demain matin,\nlevez les yeux une seule fois",
+    "cta": "Gratuit sur l’App Store"
+  },
+  "ui": {
+    "skip": "Aller au contenu",
+    "languages": "Langue",
+    "privacy": "Politique de confidentialité",
+    "contact": "Un bug, un comportement étrange, ou simplement quelque chose à dire : écrivez à {email}. Précisez ce que vous faisiez et votre version d’iOS, cela aide beaucoup à trouver le problème."
+  }
+}

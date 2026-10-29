@@ -1,340 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SkyDex</title>
-<meta name="description" content="Una app para iOS que reúne el cielo del día como color. Llena un tablero de cuarenta y ocho casillas con el cielo de hoy.">
-<link rel="canonical" href="https://m1zz.github.io/SkyDex/es/">
-<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/SkyDex/">
-<link rel="alternate" hreflang="en" href="https://m1zz.github.io/SkyDex/en/">
-<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/SkyDex/en/">
-<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/SkyDex/ja/">
-<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/SkyDex/zh-Hans/">
-<link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/SkyDex/zh-Hant/">
-<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/SkyDex/ru/">
-<link rel="alternate" hreflang="es" href="https://m1zz.github.io/SkyDex/es/">
-<link rel="alternate" hreflang="de" href="https://m1zz.github.io/SkyDex/de/">
-<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/SkyDex/fr/">
-<link rel="alternate" hreflang="it" href="https://m1zz.github.io/SkyDex/it/">
-<link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/SkyDex/pt-BR/">
-<link rel="alternate" hreflang="th" href="https://m1zz.github.io/SkyDex/th/">
-<link rel="alternate" hreflang="vi" href="https://m1zz.github.io/SkyDex/vi/">
-<link rel="alternate" hreflang="cs" href="https://m1zz.github.io/SkyDex/cs/">
-<link rel="alternate" hreflang="da" href="https://m1zz.github.io/SkyDex/da/">
-<link rel="alternate" hreflang="el" href="https://m1zz.github.io/SkyDex/el/">
-<link rel="alternate" hreflang="fi" href="https://m1zz.github.io/SkyDex/fi/">
-<link rel="alternate" hreflang="id" href="https://m1zz.github.io/SkyDex/id/">
-<link rel="alternate" hreflang="nb" href="https://m1zz.github.io/SkyDex/nb/">
-<link rel="alternate" hreflang="nl" href="https://m1zz.github.io/SkyDex/nl/">
-<link rel="alternate" hreflang="pl" href="https://m1zz.github.io/SkyDex/pl/">
-<link rel="alternate" hreflang="sv" href="https://m1zz.github.io/SkyDex/sv/">
-<link rel="alternate" hreflang="tr" href="https://m1zz.github.io/SkyDex/tr/">
-<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/SkyDex/">
-<style>
-  :root {
-    --ink: #16202e;
-    --ink-soft: #5d6773;
-    --paper: #f4f5f7;
-    --card: #ffffff;
-    --line: #e2e5ea;
-    --accent: #2f7bbe;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ink: #eef1f5;
-      --ink-soft: #a2acb8;
-      --paper: #0b111c;
-      --card: #141c28;
-      --line: #26303e;
-      --accent: #7fa4ce;
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    padding: 0 20px 72px;
-    background: var(--paper);
-    color: var(--ink);
-    font: 17px/1.72 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
-      "Pretendard", "Segoe UI", Roboto, sans-serif;
-    -webkit-text-size-adjust: 100%;
-  }
-  main { max-width: 680px; margin: 0 auto; }
-  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
-
-  /* 하루 곡선 그대로 이어붙인 띠 */
-  .strip {
-    display: flex;
-    height: 8px;
-    border-radius: 4px;
-    overflow: hidden;
-    margin: 40px 0 34px;
-  }
-  .strip span { flex: 1 1 0; }
-
-  h1 {
-    font-size: 34px; line-height: 1.25; letter-spacing: -0.03em;
-    margin: 0 0 8px; text-align: center; font-weight: 700;
-  }
-  .lede {
-    margin: 0 auto 8px; text-align: center; color: var(--ink-soft);
-    max-width: 26em;
-  }
-  .platform {
-    text-align: center; color: var(--ink-soft); font-size: 14px;
-    margin: 0 0 36px;
-  }
-
-  /* 판 — 앱과 같은 6×8, 같은 색 */
-  .board {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
-    max-width: 340px;
-    margin: 0 auto 12px;
-  }
-  .bead {
-    aspect-ratio: 1;
-    border-radius: 50%;
-    border: 4px solid transparent;
-    display: block;
-  }
-  .bead.on { border: 0; }
-  .caption {
-    text-align: center; color: var(--ink-soft); font-size: 14px;
-    margin: 0 0 46px;
-  }
-
-  h2 {
-    font-size: 21px; letter-spacing: -0.01em; margin: 46px 0 12px;
-    padding-top: 28px; border-top: 1px solid var(--line);
-  }
-  p { margin: 0 0 14px; }
-  ul { margin: 0 0 14px; padding-left: 1.2em; }
-  li { margin-bottom: 8px; }
-  strong { font-weight: 600; }
-
-  /* 이름 카드 — 앱의 사진 카드 아래에 붙는 것과 같은 순서 */
-  .names { margin: 20px 0 8px; }
-  .name {
-    display: flex; align-items: center; gap: 14px;
-    background: var(--card); border: 1px solid var(--line);
-    border-radius: 16px; padding: 14px 16px; margin-bottom: 10px;
-  }
-  .swatch {
-    width: 46px; height: 46px; border-radius: 12px; flex: 0 0 auto;
-  }
-  .name .simile { font-size: 17px; font-weight: 600; }
-  .name .real { font-size: 13px; color: var(--ink-soft); }
-
-  .quiet {
-    background: var(--card); border: 1px solid var(--line);
-    border-radius: 16px; padding: 18px 20px; margin: 22px 0 8px;
-  }
-  .quiet p:last-child { margin-bottom: 0; }
-
-  footer {
-    margin-top: 60px; padding-top: 26px; border-top: 1px solid var(--line);
-    color: var(--ink-soft); font-size: 15px; text-align: center;
-  }
-  footer a { margin: 0 8px; }
-  nav.langs { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px 14px; margin: 18px 0 0; font-size: 14px; }
-  nav.langs a { color: var(--ink-soft); text-decoration: none; }
-  nav.langs a[aria-current] { color: var(--ink); font-weight: 600; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkyDex: un tablero con los colores del cielo, foto a foto</title>
+  <meta name="description" content="Cada foto del cielo llena uno de los cuarenta y ocho colores del día y recibe un nombre que se le parece. Gratis y sin cuenta.">
+  <meta name="theme-color" content="#2A74B6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b111c" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6802295390">
+  <link rel="canonical" href="https://m1zz.github.io/SkyDex/es/">
+  <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/SkyDex/">
+  <link rel="alternate" hreflang="en" href="https://m1zz.github.io/SkyDex/en/">
+  <link rel="alternate" hreflang="ja" href="https://m1zz.github.io/SkyDex/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/SkyDex/zh-Hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/SkyDex/zh-Hant/">
+  <link rel="alternate" hreflang="ru" href="https://m1zz.github.io/SkyDex/ru/">
+  <link rel="alternate" hreflang="es" href="https://m1zz.github.io/SkyDex/es/">
+  <link rel="alternate" hreflang="de" href="https://m1zz.github.io/SkyDex/de/">
+  <link rel="alternate" hreflang="fr" href="https://m1zz.github.io/SkyDex/fr/">
+  <link rel="alternate" hreflang="it" href="https://m1zz.github.io/SkyDex/it/">
+  <link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/SkyDex/pt-BR/">
+  <link rel="alternate" hreflang="th" href="https://m1zz.github.io/SkyDex/th/">
+  <link rel="alternate" hreflang="vi" href="https://m1zz.github.io/SkyDex/vi/">
+  <link rel="alternate" hreflang="cs" href="https://m1zz.github.io/SkyDex/cs/">
+  <link rel="alternate" hreflang="da" href="https://m1zz.github.io/SkyDex/da/">
+  <link rel="alternate" hreflang="el" href="https://m1zz.github.io/SkyDex/el/">
+  <link rel="alternate" hreflang="fi" href="https://m1zz.github.io/SkyDex/fi/">
+  <link rel="alternate" hreflang="id" href="https://m1zz.github.io/SkyDex/id/">
+  <link rel="alternate" hreflang="nb" href="https://m1zz.github.io/SkyDex/nb/">
+  <link rel="alternate" hreflang="nl" href="https://m1zz.github.io/SkyDex/nl/">
+  <link rel="alternate" hreflang="pl" href="https://m1zz.github.io/SkyDex/pl/">
+  <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/SkyDex/sv/">
+  <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/SkyDex/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/SkyDex/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SkyDex: un tablero con los colores del cielo, foto a foto">
+  <meta property="og:description" content="Cada foto del cielo llena uno de los cuarenta y ocho colores del día y recibe un nombre que se le parece. Gratis y sin cuenta.">
+  <meta property="og:url" content="https://m1zz.github.io/SkyDex/es/">
+  <meta property="og:image" content="https://m1zz.github.io/SkyDex/img/es/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../sitegen.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#2A74B6}@media (prefers-color-scheme:dark){:root{--accent:#7FA4CE}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-<main>
-  <nav class="langs" aria-label="Language">
-    <a href="../" hreflang="ko" lang="ko">한국어</a>
-    <a href="../en/" hreflang="en" lang="en">English</a>
-    <a href="../ja/" hreflang="ja" lang="ja">日本語</a>
-    <a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
-    <a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
-    <a href="../ru/" hreflang="ru" lang="ru">Русский</a>
-    <a href="../es/" hreflang="es" lang="es" aria-current="true">Español</a>
-    <a href="../de/" hreflang="de" lang="de">Deutsch</a>
-    <a href="../fr/" hreflang="fr" lang="fr">Français</a>
-    <a href="../it/" hreflang="it" lang="it">Italiano</a>
-    <a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
-    <a href="../th/" hreflang="th" lang="th">ไทย</a>
-    <a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
-    <a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
-    <a href="../da/" hreflang="da" lang="da">Dansk</a>
-    <a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
-    <a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
-    <a href="../id/" hreflang="id" lang="id">Indonesia</a>
-    <a href="../nb/" hreflang="nb" lang="nb">Norsk</a>
-    <a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
-    <a href="../pl/" hreflang="pl" lang="pl">Polski</a>
-    <a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
-    <a href="../tr/" hreflang="tr" lang="tr">Türkçe</a>
-  </nav>
+  <a class="skip" href="#main">Saltar al contenido</a>
+  <header class="bar">
+    <a class="brand" href="../es/"><img src="../icon.png" alt="" width="32" height="32">SkyDex</a>
+    <a class="lang-link" href="#languages">Idioma</a>
+  </header>
 
-  <div class="strip" aria-hidden="true">
-    <span style="background:#080D18"></span>
-    <span style="background:#090E1A"></span>
-    <span style="background:#0A0F1C"></span>
-    <span style="background:#0A101E"></span>
-    <span style="background:#0B1120"></span>
-    <span style="background:#0C1221"></span>
-    <span style="background:#131B30"></span>
-    <span style="background:#1B263E"></span>
-    <span style="background:#6879A2"></span>
-    <span style="background:#99A7C5"></span>
-    <span style="background:#96ABCB"></span>
-    <span style="background:#7FA4CE"></span>
-    <span style="background:#709CCB"></span>
-    <span style="background:#5791C6"></span>
-    <span style="background:#508DC5"></span>
-    <span style="background:#3F83C1"></span>
-    <span style="background:#307BBE"></span>
-    <span style="background:#2B77BB"></span>
-    <span style="background:#1F6FB5"></span>
-    <span style="background:#1D6EB4"></span>
-    <span style="background:#2471B6"></span>
-    <span style="background:#2975B8"></span>
-    <span style="background:#3179BA"></span>
-    <span style="background:#4988C3"></span>
-    <span style="background:#558EC5"></span>
-    <span style="background:#6D9BCA"></span>
-    <span style="background:#7EA5CD"></span>
-    <span style="background:#8FA5BF"></span>
-    <span style="background:#B2A297"></span>
-    <span style="background:#C1A07E"></span>
-    <span style="background:#CC986A"></span>
-    <span style="background:#D68F56"></span>
-    <span style="background:#CC7C49"></span>
-    <span style="background:#B95B35"></span>
-    <span style="background:#A95239"></span>
-    <span style="background:#8F4440"></span>
-    <span style="background:#543852"></span>
-    <span style="background:#3B324D"></span>
-    <span style="background:#322F4B"></span>
-    <span style="background:#2B2A44"></span>
-    <span style="background:#20233A"></span>
-    <span style="background:#181D33"></span>
-    <span style="background:#161C30"></span>
-    <span style="background:#13192B"></span>
-    <span style="background:#0F1424"></span>
-    <span style="background:#0B111F"></span>
-    <span style="background:#0A101D"></span>
-    <span style="background:#080D19"></span>
-  </div>
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>¿De qué color fue<br>el cielo hoy?</h1>
+        <p class="lead">Toma una foto del cielo y, en un tablero de cuarenta y ocho casillas, la de esa hora se llena con el color que captaste. También recibe un nombre que se ve con solo leerlo, como Hielo delgado, Azulejo de alberca o Caqui maduro.</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6802295390">Gratis en el App Store</a><a class="try" href="#try">Prueba el tablero ↓</a></div>
+        <p class="muted small">Gratis. Sin cuenta y sin iniciar sesión.</p>
+      </div>
+      <div class="phone"><img src="../img/es/01-board.jpg" alt="¿De qué color fue el cielo hoy?" width="600" height="1303" decoding="async"></div>
+    </section>
 
-  <h1>SkyDex</h1>
-  <p class="lede">Reúne el cielo del día como color.<br>Hay un tablero de cuarenta y ocho casillas, y lo llenas con el cielo de hoy.</p>
-  <p class="platform">iPhone · iOS 17.0 o posterior</p>
 
-  <div class="board" aria-hidden="true">
-    <span class="bead" style="border-color:#55565A" title="00:00–00:50"></span>
-    <span class="bead" style="border-color:#55565B" title="00:50–01:40"></span>
-    <span class="bead" style="border-color:#55565C" title="01:40–02:30"></span>
-    <span class="bead" style="border-color:#55575D" title="02:30–03:20"></span>
-    <span class="bead" style="border-color:#55575D" title="03:20–04:10"></span>
-    <span class="bead" style="border-color:#56575E" title="04:10–05:00"></span>
-    <span class="bead" style="border-color:#595A64" title="05:00–05:30"></span>
-    <span class="bead" style="border-color:#5C5E69" title="05:30–06:00"></span>
-    <span class="bead" style="border-color:#767B8B" title="06:00–06:30"></span>
-    <span class="bead on" style="background:#99A7C5" title="06:30–07:00 · #99A7C5"></span>
-    <span class="bead" style="border-color:#848B97" title="07:00–07:30"></span>
-    <span class="bead" style="border-color:#7D8998" title="07:30–08:00"></span>
-    <span class="bead on" style="background:#709CCB" title="08:00–08:40 · #709CCB"></span>
-    <span class="bead" style="border-color:#728397" title="08:40–09:20"></span>
-    <span class="bead" style="border-color:#718196" title="09:20–10:00"></span>
-    <span class="bead" style="border-color:#6D7E96" title="10:00–10:40"></span>
-    <span class="bead" style="border-color:#6B7C95" title="10:40–11:20"></span>
-    <span class="bead" style="border-color:#6A7A95" title="11:20–12:00"></span>
-    <span class="bead on" style="background:#1F6FB5" title="12:00–12:40 · #1F6FB5"></span>
-    <span class="bead" style="border-color:#687793" title="12:40–13:20"></span>
-    <span class="bead" style="border-color:#687893" title="13:20–14:00"></span>
-    <span class="bead" style="border-color:#697A93" title="14:00–14:40"></span>
-    <span class="bead" style="border-color:#6B7B94" title="14:40–15:20"></span>
-    <span class="bead" style="border-color:#6F8096" title="15:20–16:00"></span>
-    <span class="bead" style="border-color:#728297" title="16:00–16:20"></span>
-    <span class="bead" style="border-color:#788697" title="16:20–16:40"></span>
-    <span class="bead on" style="background:#7EA5CD" title="16:40–17:00 · #7EA5CD"></span>
-    <span class="bead" style="border-color:#828993" title="17:00–17:20"></span>
-    <span class="bead" style="border-color:#8E8884" title="17:20–17:40"></span>
-    <span class="bead on" style="background:#C1A07E" title="17:40–18:00 · #C1A07E"></span>
-    <span class="bead" style="border-color:#998474" title="18:00–18:15"></span>
-    <span class="bead on" style="background:#D68F56" title="18:15–18:30 · #D68F56"></span>
-    <span class="bead" style="border-color:#9C7B68" title="18:30–18:45"></span>
-    <span class="bead on" style="background:#B95B35" title="18:45–19:00 · #B95B35"></span>
-    <span class="bead" style="border-color:#936E63" title="19:00–19:15"></span>
-    <span class="bead" style="border-color:#896A66" title="19:15–19:30"></span>
-    <span class="bead" style="border-color:#71656F" title="19:30–19:45"></span>
-    <span class="bead" style="border-color:#67636E" title="19:45–20:00"></span>
-    <span class="bead" style="border-color:#64626E" title="20:00–20:15"></span>
-    <span class="bead" style="border-color:#61606B" title="20:15–20:30"></span>
-    <span class="bead" style="border-color:#5D5D68" title="20:30–20:45"></span>
-    <span class="bead" style="border-color:#5A5B65" title="20:45–21:00"></span>
-    <span class="bead on" style="background:#161C30" title="21:00–21:30 · #161C30"></span>
-    <span class="bead" style="border-color:#585A62" title="21:30–22:00"></span>
-    <span class="bead" style="border-color:#56585F" title="22:00–22:30"></span>
-    <span class="bead" style="border-color:#55575D" title="22:30–23:00"></span>
-    <span class="bead" style="border-color:#55575C" title="23:00–23:30"></span>
-    <span class="bead" style="border-color:#55565A" title="23:30–00:00"></span>
-  </div>
-  <p class="caption">Arriba está la medianoche; al bajar, se hace de día y luego vuelve a oscurecer. Un círculo lleno es un cielo que captaste; un anillo vacío está por venir.</p>
+    <section class="reveal" id="try">
+      <h2>Prueba el tablero</h2>
+      <p class="muted">Toca una casilla para ver a qué momento del día pertenece. Agrega una foto del cielo para llenar la casilla de ahora y luego avanza los días para ver cómo cambia el tablero.</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;Prueba el tablero&quot;, &quot;lead&quot;: &quot;Toca una casilla para ver a qué momento del día pertenece. Agrega una foto del cielo para llenar la casilla de ahora y luego avanza los días para ver cómo cambia el tablero.&quot;, &quot;photo&quot;: &quot;Agregar una foto del cielo&quot;, &quot;age&quot;: &quot;Desde la foto&quot;, &quot;ageToday&quot;: &quot;Hoy&quot;, &quot;ageDay&quot;: &quot;{n} día después&quot;, &quot;ageDays&quot;: &quot;{n} días después&quot;, &quot;note&quot;: &quot;El tablero empieza con los mismos cielos de ejemplo que las capturas de pantalla de la app. Tu foto se lee solo dentro de este navegador y no se envía a ningún lado. Cómo se elige el color, qué casilla llena y qué tan rápido se desvanece funcionan igual que en la app.&quot;, &quot;now&quot;: &quot;Ahora&quot;, &quot;bands&quot;: [&quot;Medianoche&quot;, &quot;Alba&quot;, &quot;Día&quot;, &quot;Tarde&quot;, &quot;Atardecer&quot;, &quot;Noche&quot;], &quot;emptyTag&quot;: &quot;%@ · Todavía vacío&quot;, &quot;spot&quot;: &quot;Este lugar se llena con un cielo captado en esa parte del día. Cualquier foto entra tal cual; el color no tiene por qué coincidir.&quot;, &quot;sims&quot;: [[&quot;Tinta china&quot;, &quot;Tinta molida en la piedra de entintar. La noche más honda.&quot;], [&quot;Mar de noche&quot;, &quot;Agua vista desde arriba, sin luces. Negro con una capa de azul.&quot;], [&quot;Fondo de olla quemada&quot;, &quot;La marca que deja lo quemado. Negro sin nada de azul.&quot;], [&quot;Tinta seca&quot;, &quot;Un trazo de pluma que quedó a medias. Negro con un resto de azul.&quot;], [&quot;Agua profunda&quot;, &quot;El color de donde ya no tocas fondo. Azul marino oscuro y frío.&quot;], [&quot;Mezclilla nueva&quot;, &quot;Denim que nunca se ha lavado. Azul marino intenso.&quot;], [&quot;Ventanilla de tren nocturno&quot;, &quot;El vidrio después de que pasan las luces. Gris casi azul marino.&quot;], [&quot;Ventana a medianoche&quot;, &quot;Lo de afuera al correr la cortina. Apenas más azul que el negro.&quot;], [&quot;Tinta en agua&quot;, &quot;El agua con que te enjuagas la tinta de las manos. Azul marino tenue.&quot;], [&quot;Azul marino de uniforme&quot;, &quot;Una chamarra de varios años. Ni negra ni azul.&quot;], [&quot;Mezclilla mojada&quot;, &quot;La ropa recién tendida. Azul oscuro y turbio.&quot;], [&quot;Lomo de caballa&quot;, &quot;Gris azulado con brillo plateado. El cielo antes de la lluvia.&quot;], [&quot;Overol gastado&quot;, &quot;Un azul apagado por años de uso.&quot;], [&quot;Cortina azul marino desteñida&quot;, &quot;Una cortina que vio mucho sol. Azul marino sin fuerza.&quot;], [&quot;Vaho en la ventana&quot;, &quot;Desde adentro, afuera se ve borroso. Gris azulado.&quot;], [&quot;Niebla de la mañana&quot;, &quot;Una mañana que borró lo alto de los edificios. Gris claro azulado.&quot;], [&quot;Sudadera mojada&quot;, &quot;Gris oscurecido por la lluvia. Madrugada nublada.&quot;], [&quot;Suéter lila desteñido&quot;, &quot;Un morado apagado de tanto lavarse. El oeste justo antes del alba.&quot;], [&quot;Piel de durazno&quot;, &quot;El lado con pelusa. Entre rosa y naranja.&quot;], [&quot;Leche de chabacano&quot;, &quot;Leche con chabacano molido. Naranja muy pálido.&quot;], [&quot;Pared blanca al sol&quot;, &quot;Por la mañana, la pared toma este color un momento.&quot;], [&quot;Salmón crudo&quot;, &quot;Ese rosa que desaparece al cocinarlo.&quot;], [&quot;Leche de fresa&quot;, &quot;El rosa que queda después de agitarla.&quot;], [&quot;Chabacano verde&quot;, &quot;Un naranja donde todavía gana el amarillo.&quot;], [&quot;Vaso de agua&quot;, &quot;Azul pálido atravesado por la luz.&quot;], [&quot;Agua fría de la llave&quot;, &quot;Un color que enfría las manos. Azul pálido y fresco.&quot;], [&quot;Hielo delgado&quot;, &quot;Agua apenas congelada en primavera. Azul muy pálido.&quot;], [&quot;Plato de porcelana&quot;, &quot;El azul que queda en un plato blanco.&quot;], [&quot;Camisa blanca planchada&quot;, &quot;Casi blanco, con una capa de azul. Un mediodía muy claro.&quot;], [&quot;Espuma de jabón&quot;, &quot;Espuma blanca flotando en el fregadero.&quot;], [&quot;Mezclilla deslavada&quot;, &quot;Denim con las rodillas blanqueadas. El azul de un día nublado.&quot;], [&quot;Crayón azul&quot;, &quot;El azul que sale al frotar fuerte sobre el papel.&quot;], [&quot;Azulejo de alberca&quot;, &quot;Azul visto a través del agua. Mediodía despejado.&quot;], [&quot;Pluma azul&quot;, &quot;El azul de una línea sobre el papel.&quot;], [&quot;Alberca honda&quot;, &quot;El agua donde ya no tocas fondo. Lo más alto del cielo un mediodía de verano.&quot;], [&quot;Agua con pintura azul&quot;, &quot;El vaso donde enjuagas el pincel. El azul de una tarde despejada.&quot;], [&quot;Tinta de pluma fuente&quot;, &quot;En el frasco, un azul casi negro.&quot;], [&quot;Botella de soda&quot;, &quot;Azul pálido con un toque de verde.&quot;], [&quot;Espejo empañado&quot;, &quot;El espejo después de bañarte. Gris azulado claro.&quot;], [&quot;Vidrio con niebla&quot;, &quot;Un gris borroso que desdibuja lo de enfrente.&quot;], [&quot;Migas de goma&quot;, &quot;Polvo blanco juntado en el escritorio. Gris muy pálido.&quot;], [&quot;Polvo de gis&quot;, &quot;El blanco que queda en el aire al borrar el pizarrón.&quot;], [&quot;Cemento seco&quot;, &quot;Un piso fraguado hace tiempo. Gris claro y parejo.&quot;], [&quot;Ceniza fría&quot;, &quot;Lo que queda cuando todo se quemó. El gris de siempre en un día nublado.&quot;], [&quot;Ventana opaca&quot;, &quot;Sigue igual aunque la limpies. Gris medio azulado.&quot;], [&quot;Cartón mojado&quot;, &quot;Una caja bajo la lluvia. Gris con algo de calidez.&quot;], [&quot;Pantalla apagada&quot;, &quot;El gris negruzco justo después de apagarla.&quot;], [&quot;Cerillo quemado&quot;, &quot;Un palito con la cabeza negra. Gris violáceo oscuro.&quot;], [&quot;Agua de trastes&quot;, &quot;Agua tibia con grasa encima. Gris turbio.&quot;], [&quot;Agua de hervir ropa&quot;, &quot;Agua blanca que suelta vapor. Gris claro.&quot;], [&quot;Filo de cuchillo&quot;, &quot;Metal bajo la luz. Gris azulado.&quot;], [&quot;Techo de lámina viejo&quot;, &quot;El techo de una bodega vieja. Gris azulado justo antes de llover.&quot;], [&quot;Mar en día nublado&quot;, &quot;Agua que refleja tal cual el cielo. Gris azulado oscuro.&quot;], [&quot;Cemento mojado&quot;, &quot;Un piso bajo la lluvia. Gris oscuro y húmedo.&quot;], [&quot;Grafito&quot;, &quot;Gris oscuro de lápiz acostado. Tarde de lluvia.&quot;], [&quot;Asfalto mojado&quot;, &quot;Una calle tras la lluvia nocturna. Gris casi negro.&quot;], [&quot;Barda con musgo&quot;, &quot;Gris con verde encima. A veces, antes de una tormenta.&quot;], [&quot;Moneda vieja&quot;, &quot;Metal gastado por las manos. Gris amarillento.&quot;], [&quot;Agua de arroz&quot;, &quot;La primera agua al lavar el arroz. Blanco cálido.&quot;], [&quot;Cascarón de huevo&quot;, &quot;Un blanco que no es del todo blanco.&quot;], [&quot;Papel viejo&quot;, &quot;Las páginas de un libro antiguo. Blanco amarillento.&quot;], [&quot;Periódico viejo&quot;, &quot;Papel quemado por el sol. Entre gris y amarillo.&quot;], [&quot;Ventana con polvo amarillo&quot;, &quot;Un amarillo turbio que te dan ganas de limpiar.&quot;], [&quot;Atole de granos tostados&quot;, &quot;Un beige turbio antes de asentarse.&quot;], [&quot;Piso de vinil amarillento&quot;, &quot;Un piso aplastado por los años. Amarillo turbio.&quot;], [&quot;Castaña cocida&quot;, &quot;El interior amarillo de una castaña pelada.&quot;], [&quot;Leche en el café&quot;, &quot;Recién servida, todavía sin mezclar.&quot;], [&quot;Librero con polvo&quot;, &quot;Gris café claro donde el dedo deja huella.&quot;], [&quot;Barro seco&quot;, &quot;Tierra que empieza a agrietarse. Café claro.&quot;], [&quot;Té con leche frío&quot;, &quot;Una taza a medio tomar. Café rosado turbio.&quot;], [&quot;Cartulina mojada&quot;, &quot;Papel hinchado por la lluvia. El color de un atardecer nublado.&quot;], [&quot;Terraza de madera mojada&quot;, &quot;Madera oscurecida por la humedad.&quot;], [&quot;Ladrillo con ceniza&quot;, &quot;Donde estuvo el fuego. Gris rojizo oscuro.&quot;], [&quot;Mancha de café&quot;, &quot;La marca redonda que queda al levantar la taza.&quot;], [&quot;Piel de frijol rojo&quot;, &quot;Frijol remojado mucho tiempo. Gris violáceo oscuro.&quot;], [&quot;Harina de soya tostada&quot;, &quot;Una superficie cubierta de soya tostada. Beige suave tirando a café.&quot;], [&quot;Yema de huevo&quot;, &quot;Justo antes de romperse. Amarillo intenso.&quot;], [&quot;Orilla del pan de caja&quot;, &quot;Donde el amarillo se vuelve café.&quot;], [&quot;Cáscara de mandarina&quot;, &quot;Ese naranja antes de pelarla.&quot;], [&quot;Salmón asado&quot;, &quot;Naranja rosado, dorado por fuera.&quot;], [&quot;Caqui seco&quot;, &quot;Caqui seco con su polvo blanco. Naranja apagado.&quot;], [&quot;Brasa de leña&quot;, &quot;No la llama, sino el carbón al rojo.&quot;], [&quot;Caqui maduro&quot;, &quot;Rojo anaranjado a punto de reventar.&quot;], [&quot;Salsa de tteokbokki&quot;, &quot;Rojo reducido en la olla. El atardecer más intenso.&quot;], [&quot;Pulpa de sandía&quot;, &quot;El centro, la parte más dulce. Rosa rojizo.&quot;], [&quot;Mermelada de rosa&quot;, &quot;Pétalos en azúcar. Rojo rosado apagado.&quot;], [&quot;Ladrillo rojo&quot;, &quot;Un muro que lleva años bajo la lluvia.&quot;], [&quot;Brasas que se apagan&quot;, &quot;Fuego cubierto de ceniza. Café rojizo oscuro.&quot;], [&quot;Piel de ciruela&quot;, &quot;Morado rojizo con polvo blanco encima.&quot;], [&quot;Papilla de frijol rojo&quot;, &quot;Café rojizo y espeso, antes de echarle las bolitas de arroz.&quot;], [&quot;Resto de vino&quot;, &quot;Morado rojizo oscuro en el fondo de la copa.&quot;], [&quot;Lila marchita&quot;, &quot;El morado tenue de una flor que se seca.&quot;], [&quot;Leche de mora azul&quot;, &quot;Lila a medio mezclar.&quot;], [&quot;Piel de uva&quot;, &quot;Morado oscuro, recién lavado y aún húmedo.&quot;], [&quot;Piel de berenjena&quot;, &quot;Morado negruzco que se traga la luz. El último color del día.&quot;]]}"></div>
+    </section>
 
-  <h2>El tablero es hoy</h2>
-  <p>Las cuarenta y ocho casillas son <strong>los colores por los que pasará el cielo de hoy</strong>. Se calculan de nuevo cada día a partir del amanecer y el atardecer reales de donde estás y del pronóstico de nubes y lluvia de hoy. Por eso, una casilla llena ayer puede estar vacía hoy. Lo que te dice el tablero no es cuántos cielos has reunido, sino <strong>cuánto de hoy puedes mostrar</strong>.</p>
-  <p>Fotografía el cielo ahora y <strong>la casilla de esa hora</strong> se llena con el color que captaste. Si sale distinto de lo esperado, entra igual: el pronóstico es una suposición; la foto sí estuvo ahí.</p>
-  <p><strong>Nada se juzga.</strong> Sin aprobar ni reprobar, sin tolerancias. El gris de un día nublado también es el color del cielo de ese día.</p>
+    <section class="problem reveal">
+      <h2>Ves el cielo todos los días, pero no recuerdas ni un color</h2>
+      <p>El cielo camino al trabajo, el de la salida después de comer: para la noche ya no sabes de qué color eran. Las fotos del cielo que sí tomaste se pierden entre todas las demás. SkyDex las junta como colores y muestra en un solo tablero el camino que siguió el cielo de hoy.</p>
+    </section>
 
-  <h2>Cada color recibe un nombre</h2>
-  <p>La app te dice de dos maneras de qué color es tu cielo, escritas en coreano. Primero viene <strong>una comparación que puedes imaginar</strong> y, debajo, <strong>un nombre con su origen</strong>. «Usuhanairo» es la respuesta más precisa, pero casi nadie ve un color en esa palabra, y un nombre que no se ve no cumple su función.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Cada cielo recibe un nombre</h2>
+        <p>Cada color recibe primero un nombre que se puede imaginar, como Hielo delgado, Azulejo de alberca o Caqui maduro. Debajo aparece un nombre con origen: un color tradicional coreano o japonés, un pigmento o un color web.<br>Si la coincidencia es cercana, dice Nombre; si no, con honestidad, Nombre más cercano.</p>
+      </div>
+      <div class="phone"><img src="../img/es/02-name.jpg" alt="Cada cielo recibe un nombre" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <div class="names">
-    <div class="name">
-      <span class="swatch" style="background:#7E90B6"></span>
-      <span>
-        <div class="simile">Cortina azul marino descolorida</div>
-        <div class="real">Usuhanairo · color tradicional japonés 薄花色</div>
-      </span>
-    </div>
-    <div class="name">
-      <span class="swatch" style="background:#D68F55"></span>
-      <span>
-        <div class="simile">Corteza de pan tostado</div>
-        <div class="real">Naranja de cadmio · pigmento</div>
-      </span>
-    </div>
-    <div class="name">
-      <span class="swatch" style="background:#1C6DB4"></span>
-      <span>
-        <div class="simile">Agua con pintura azul disuelta</div>
-        <div class="real">Cheongsaek · color tradicional coreano</div>
-      </span>
-    </div>
-  </div>
-  <p>Los nombres con origen provienen de colores tradicionales coreanos y japoneses, pigmentos y conjuntos de colores estándar, y cada valor se verificó con su fuente. La app también es honesta sobre qué tan cerca está: cuando el parecido es suficiente dice «el nombre es», y cuando no, «el nombre más cercano es».</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Deja una línea</h2>
+        <p>Justo después de la foto se abre una tarjeta. Escribe lo que pensabas al mirar hacia arriba y volverá a flotar sobre el cielo cada vez que toques esa casilla del tablero.<br>También puedes poner sobre esta foto el color del cielo de otro día y compartir el resultado como imagen.</p>
+      </div>
+      <div class="phone"><img src="../img/es/03-card.jpg" alt="Deja una línea" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>Las casillas llenas envejecen</h2>
-  <p>Una foto conserva su color verdadero durante una semana y luego se desvanece despacio a lo largo de ocho semanas. No se borra y nunca se desvanece del todo. Fotografía el cielo a esa hora otra vez y la casilla recupera de inmediato todo su color.</p>
-  <p>No es un castigo. No hay una racha que romper ni nada que recuperar. Es simplemente una forma honesta de que un tablero hecho de cielo diga «ese cielo fue hace un tiempo».</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Las casillas vacías te guían</h2>
+        <p>Toca una casilla vacía para saber a qué momento del día corresponde y qué color buscar. También te dice cómo se ve el cielo a esa hora en un día despejado, ajustado a la salida y la puesta del sol donde estás.<br>El color no tiene que coincidir. El gris de un día nublado también es el color del cielo de ese día.</p>
+      </div>
+      <div class="phone"><img src="../img/es/05-empty.jpg" alt="Las casillas vacías te guían" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>La misma hora, otro cielo</h2>
-  <p>Los días se repiten. La misma alarma, el mismo camino, la misma ventana. Solo el cielo que hay encima nunca es el mismo dos veces. La pantalla de <strong>Repeticiones</strong> alinea los días en que estuviste a la misma hora para que puedas verlo. La fila es la repetición; los colores son lo que nunca se repite.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Registro, paleta, repetición</h2>
+        <p>Recorre tus cielos en orden y reúne tus colores en paletas por familias, como azul, gris y arena. Si fotografías la misma hora otro día, los dos cielos quedan lado a lado.<br>Los widgets de la pantalla de inicio te muestran de un vistazo el tablero de hoy y el cielo de hoy.</p>
+      </div>
+      <div class="phone"><img src="../img/es/04-palette.jpg" alt="Registro, paleta, repetición" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>Widgets</h2>
-  <p><strong>El tablero de hoy</strong> se ve igual que en la app: cuarenta y ocho casillas, con círculos para las llenas y anillos para las vacías. <strong>El cielo de hoy</strong> muestra la foto que tomaste hoy con el nombre de su color, y también funciona en la pantalla bloqueada.</p>
+    <section class="reveal">
+      <h2>Empezar toma tres pasos</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>Mira hacia arriba</h3><p>Toca el botón de la cámara debajo del tablero y deja que el cielo llene el cuadro.</p></li>
+<li class="card"><span class="n">2</span><h3>Se llena una casilla</h3><p>La casilla de ahora toma el color que captaste y recibe un nombre.</p></li>
+<li class="card"><span class="n">3</span><h3>Deja una línea</h3><p>En la tarjeta que se abre, escribe lo que pensaste al ver ese cielo.</p></li></ol>
+    </section>
 
-  <h2>Sigue siendo tuyo</h2>
-  <div class="quiet">
-    <p>Sin cuenta y sin servidor nuestro. Tus fotos y colores viven en el almacenamiento de la app en tu dispositivo y, si iniciaste sesión, en tu propio iCloud. Nunca se envían al desarrollador. Sin anuncios, sin rastreo, sin analíticas de terceros.</p>
-    <p>La ubicación se usa solo para el amanecer, el atardecer y el pronóstico de hoy, y se solicita con precisión de kilómetros. La app funciona bien si dices que no. Los detalles están en la <a href="privacy.html">Política de privacidad</a>.</p>
-  </div>
+    <section class="reveal" id="commands">
+      <h2>Así divide el día el tablero</h2>
+      <div class="card table">
+        <dl><div><dt>Medianoche · 00:00–05:00</dt><dd>seis casillas</dd></div><div><dt>Alba · 05:00–08:00</dt><dd>seis casillas</dd></div><div><dt>Día · 08:00–16:00</dt><dd>doce casillas</dd></div><div><dt>Tarde · 16:00–18:00</dt><dd>seis casillas</dd></div><div><dt>Atardecer · 18:00–21:00</dt><dd>doce casillas, una cada 15 minutos</dd></div><div><dt>Noche · 21:00–24:00</dt><dd>seis casillas</dd></div></dl>
+      </div>
+      <p class="muted">Alrededor del atardecer, cuando el cielo cambia rápido, las casillas van apretadas; en plena noche, cuando casi no se mueve, son amplias. Arriba está la medianoche, y el día corre hacia abajo.</p>
+    </section>
+
+
+
+    <section class="reveal" id="faq">
+      <h2>Preguntas frecuentes</h2>
+      <div class="faq"><details><summary>¿Cómo se llena una casilla?</summary><p>Un cielo que fotografías hoy llena la casilla de la hora en que lo tomaste, aunque el color no sea el que esperabas: a esa hora el cielo de verdad era así. Los cielos de días anteriores entran por color: si uno se parece lo suficiente al color de una casilla, la llena, y cada cielo llena una sola casilla.</p></details>
+<details><summary>Una casilla que ayer estaba llena hoy está vacía.</summary><p>El tablero siempre es hoy. Una casilla que un cielo de ayer llenó por su hora vuelve a emparejarse solo por color cuando cambia el día. Por eso algunos días el tablero está casi lleno y otros se ve vacío. Tus fotos no se perdieron: todos tus cielos están en el Registro, y ordenados por color en la Paleta.</p></details>
+<details><summary>Mis casillas llenas se están desvaneciendo.</summary><p>Es a propósito. Una foto conserva su color real durante una semana y luego se desvanece despacio a lo largo de las ocho semanas siguientes. No se borra y nunca desaparece del todo. Vuelve a fotografiar el cielo a esa hora y la casilla recupera su color al instante. No hay racha que romper ni puntos que recuperar.</p></details>
+<details><summary>¿El color tiene que coincidir?</summary><p>No. No hay aprobado ni reprobado. Todas las fotos se guardan, y el gris de un día nublado también es el color del cielo de ese día.</p></details>
+<details><summary>¿Por qué pide mi ubicación?</summary><p>Solo para mostrarte, al tocar una casilla vacía, el color de un cielo despejado a esa hora, ajustado a la salida y la puesta del sol donde estás. Usa una ubicación aproximada, al kilómetro, y las coordenadas nunca se agregan a tus fotos. Si dices que no, todo sigue funcionando, con Seúl como referencia.</p></details>
+<details><summary>¿Puedo agregar un cielo de mi fototeca?</summary><p>Sí. Un cielo que eliges en Fotos en lugar de la cámara también se recorta en cuadrado y llena la casilla de ahora, igual que uno que acabas de tomar.</p></details>
+<details><summary>¿Cómo elimino una foto?</summary><p>Abre la foto y toca Eliminar, o deslízala hacia la izquierda en el Registro. Se borra del dispositivo y de iCloud a la vez. Si eliminas la app, la copia en iCloud se queda, así que tus cielos regresan al reinstalarla.</p></details>
+<details><summary>¿Qué pasa si cambio de dispositivo?</summary><p>Tus cielos se guardan en tu propio iCloud, así que pasan a un dispositivo nuevo con la misma cuenta de Apple. No hay cuenta ni servidor, y tus fotos y colores nunca se envían al desarrollador. Sin anuncios ni rastreo.</p></details>
+<details><summary>¿De verdad es gratis?</summary><p>Sí, todas las funciones son gratis. Si te gusta, puedes dejarle una propina al desarrollador desde la app, pero la propina no desbloquea nada.</p></details>
+<details><summary>¿En qué dispositivos funciona?</summary><p>En iPhone con iOS 17.0 o posterior, solo en vertical.</p></details></div>
+      <p class="contact">Errores, algo que se comporta raro o cualquier cosa que quieras decir: escribe a <a href="mailto:leeo@kakao.com">leeo@kakao.com</a>. Si cuentas qué estabas haciendo y qué versión de iOS tienes, es mucho más fácil encontrar el problema.</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>Mañana temprano,<br>mira hacia arriba una vez</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6802295390">Gratis en el App Store</a>
+    </section>
+  </main>
 
   <footer>
-    <a href="support.html">Soporte</a> ·
-    <a href="privacy.html">Política de privacidad</a> ·
-    <a href="https://github.com/M1zz/SkyDex">GitHub</a>
-    <p style="margin:10px 0 0">Datos meteorológicos proporcionados por <a href="https://weatherkit.apple.com/legal-attribution.html">Apple Weather</a>.</p>
+    <nav id="languages" class="langs" aria-label="Idioma"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="../es/" hreflang="es" lang="es" aria-current="page">Español</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../th/" hreflang="th" lang="th">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="../id/" hreflang="id" lang="id">Indonesia</a>
+<a href="../nb/" hreflang="nb" lang="nb">Norsk</a>
+<a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">Política de privacidad</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 SkyDex</p>
   </footer>
 
-</main>
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>

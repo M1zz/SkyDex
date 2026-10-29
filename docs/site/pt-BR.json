@@ -1,0 +1,541 @@
+{
+  "title": "SkyDex: um quadro com as cores do céu, foto por foto",
+  "description": "Cada foto do céu preenche uma das quarenta e oito cores do dia e ganha um nome parecido com ela. Grátis e sem conta.",
+  "hero": {
+    "headline": "De que cor estava\no céu hoje?",
+    "lead": "Fotografe o céu e, num quadro de quarenta e oito quadrados, o daquela hora se enche com a cor que você captou. Ele ganha também um nome que dá para enxergar, como Gelo fino, Azulejo de piscina ou Caqui maduro.",
+    "cta": "Baixe grátis na App Store",
+    "note": "Grátis. Sem conta e sem login."
+  },
+  "demo": {
+    "title": "Experimente o quadro",
+    "lead": "Toque em um quadrado para ver a que momento do dia ele pertence. Adicione uma foto do céu para preencher o quadrado de agora e depois avance os dias para ver como o quadro muda.",
+    "photo": "Adicionar uma foto do céu",
+    "age": "Desde a foto",
+    "ageToday": "Hoje",
+    "ageDay": "{n} dia depois",
+    "ageDays": "{n} dias depois",
+    "note": "O quadro começa com os mesmos céus de exemplo das capturas de tela do app. Sua foto é lida só dentro deste navegador e não é enviada para lugar nenhum. A escolha da cor, o quadrado que ela preenche e a velocidade com que desbota funcionam exatamente como no app.",
+    "now": "Agora",
+    "bands": [
+      "Meia-noite",
+      "Aurora",
+      "Dia",
+      "Fim de tarde",
+      "Pôr do sol",
+      "Noite"
+    ],
+    "emptyTag": "%@ · Ainda vazio",
+    "spot": "Este lugar é preenchido com um céu captado nesse período do dia. Qualquer foto entra como está; a cor não precisa combinar.",
+    "sims": [
+      [
+        "Nanquim",
+        "Tinta moída na pedra de tinta. A noite mais funda."
+      ],
+      [
+        "Mar à noite",
+        "Água vista de cima, sem nenhuma luz. Preto com uma camada de azul."
+      ],
+      [
+        "Fundo de panela queimada",
+        "A marca que fica do queimado. Preto sem nada de azul."
+      ],
+      [
+        "Tinta seca",
+        "Um traço de caneta deixado pela metade. Preto com um resto de azul."
+      ],
+      [
+        "Água funda",
+        "A cor de onde o pé não alcança. Azul-marinho escuro e frio."
+      ],
+      [
+        "Jeans novo",
+        "Jeans que nunca foi lavado. Azul-marinho intenso."
+      ],
+      [
+        "Janela de trem noturno",
+        "O vidro depois que as luzes passam. Cinza quase azul-marinho."
+      ],
+      [
+        "Janela à meia-noite",
+        "O lado de fora ao abrir a cortina. Só um pouco mais azul que o preto."
+      ],
+      [
+        "Tinta na água",
+        "A água em que você enxágua a tinta das mãos. Azul-marinho fraco."
+      ],
+      [
+        "Azul-marinho de uniforme",
+        "Uma jaqueta usada por anos. Nem preto, nem azul."
+      ],
+      [
+        "Jeans molhado",
+        "Roupa recém-estendida no varal. Azul escuro e turvo."
+      ],
+      [
+        "Dorso de cavala",
+        "Cinza-azulado com brilho prateado. O céu antes da chuva."
+      ],
+      [
+        "Macacão gasto",
+        "Um azul apagado por anos de uso."
+      ],
+      [
+        "Cortina azul-marinho desbotada",
+        "Uma cortina que pegou muito sol. Azul-marinho sem força."
+      ],
+      [
+        "Vidro embaçado",
+        "De dentro, o lado de fora fica borrado. Cinza-azulado."
+      ],
+      [
+        "Neblina da manhã",
+        "Uma manhã que apagou o alto dos prédios. Cinza-claro azulado."
+      ],
+      [
+        "Moletom molhado",
+        "Cinza escurecido pela chuva. Madrugada nublada."
+      ],
+      [
+        "Suéter lilás desbotado",
+        "Um roxo apagado de tanto lavar. O oeste logo antes do amanhecer."
+      ],
+      [
+        "Casca de pêssego",
+        "O lado com penugem. Entre o rosa e o laranja."
+      ],
+      [
+        "Leite de damasco",
+        "Leite batido com damasco. Laranja bem claro."
+      ],
+      [
+        "Parede branca ao sol",
+        "De manhã, a parede fica desta cor por um instante."
+      ],
+      [
+        "Salmão cru",
+        "Aquele rosa que some quando vai ao fogo."
+      ],
+      [
+        "Leite de morango",
+        "O rosa depois de chacoalhar."
+      ],
+      [
+        "Damasco verde",
+        "Um laranja em que o amarelo ainda ganha."
+      ],
+      [
+        "Copo d'água",
+        "Azul-claro atravessado pela luz."
+      ],
+      [
+        "Água fria da torneira",
+        "Uma cor que gela as mãos. Azul-claro e fresco."
+      ],
+      [
+        "Gelo fino",
+        "Água mal congelada na primavera. Azul bem claro."
+      ],
+      [
+        "Prato de porcelana",
+        "O azul que fica num prato branco."
+      ],
+      [
+        "Camisa branca passada",
+        "Quase branco, com uma camada de azul. Um meio-dia muito limpo."
+      ],
+      [
+        "Espuma de detergente",
+        "Espuma branca boiando na pia."
+      ],
+      [
+        "Jeans desbotado",
+        "Jeans com os joelhos esbranquiçados. O azul de um dia nublado."
+      ],
+      [
+        "Giz de cera azul",
+        "O azul que sai quando você esfrega forte no papel."
+      ],
+      [
+        "Azulejo de piscina",
+        "Azul visto através da água. Meio-dia de céu limpo."
+      ],
+      [
+        "Caneta azul",
+        "O azul de uma linha no papel."
+      ],
+      [
+        "Piscina funda",
+        "A água onde o pé não alcança. O alto do céu ao meio-dia, em pleno verão."
+      ],
+      [
+        "Água com tinta azul",
+        "O pote onde se lava o pincel. O azul de uma tarde limpa."
+      ],
+      [
+        "Tinta de caneta-tinteiro",
+        "No vidro, um azul quase preto."
+      ],
+      [
+        "Garrafa de soda",
+        "Azul-claro com um toque de verde."
+      ],
+      [
+        "Espelho embaçado",
+        "O espelho depois do banho. Cinza-azulado claro."
+      ],
+      [
+        "Vidro enevoado",
+        "Um cinza borrado que apaga o outro lado."
+      ],
+      [
+        "Farelo de borracha",
+        "Pó branco juntado na mesa. Cinza bem claro."
+      ],
+      [
+        "Pó de giz",
+        "O branco que fica no ar depois de apagar a lousa."
+      ],
+      [
+        "Cimento seco",
+        "Um piso que secou há muito tempo. Cinza-claro e uniforme."
+      ],
+      [
+        "Cinza fria",
+        "O que sobra depois que tudo queimou. O cinza típico de um dia nublado."
+      ],
+      [
+        "Vidro fosco",
+        "Continua igual mesmo depois de limpar. Cinza médio azulado."
+      ],
+      [
+        "Papelão molhado",
+        "Uma caixa que tomou chuva. Cinza com um calor de fundo."
+      ],
+      [
+        "Tela apagada",
+        "O cinza quase preto logo depois de desligar."
+      ],
+      [
+        "Fósforo queimado",
+        "Um palito com a cabeça preta. Cinza-arroxeado escuro."
+      ],
+      [
+        "Água de louça",
+        "Água morna com gordura boiando. Cinza turvo."
+      ],
+      [
+        "Água de ferver roupa",
+        "Água branca soltando vapor. Cinza-claro."
+      ],
+      [
+        "Lâmina de faca",
+        "Metal sob a luz. Cinza-azulado."
+      ],
+      [
+        "Telhado de zinco velho",
+        "O telhado de um galpão antigo. Cinza-azulado logo antes da chuva."
+      ],
+      [
+        "Mar em dia nublado",
+        "Água que reflete o céu como ele está. Cinza-azulado escuro."
+      ],
+      [
+        "Cimento molhado",
+        "Um piso que tomou chuva. Cinza escuro e úmido."
+      ],
+      [
+        "Grafite",
+        "Cinza escuro de lápis deitado. Tarde de chuva."
+      ],
+      [
+        "Asfalto molhado",
+        "Uma rua depois da chuva da noite. Cinza quase preto."
+      ],
+      [
+        "Muro com musgo",
+        "Cinza com verde por cima. Às vezes, antes de uma tempestade."
+      ],
+      [
+        "Moeda velha",
+        "Metal gasto pelas mãos. Cinza-amarelado."
+      ],
+      [
+        "Água de arroz",
+        "A primeira água ao lavar o arroz. Branco quente."
+      ],
+      [
+        "Casca de ovo",
+        "Um branco que não é totalmente branco."
+      ],
+      [
+        "Papel antigo",
+        "As páginas de um livro velho. Branco amarelado."
+      ],
+      [
+        "Jornal velho",
+        "Papel desbotado pelo sol. Entre o cinza e o amarelo."
+      ],
+      [
+        "Janela com poeira amarela",
+        "Um amarelo turvo que dá vontade de limpar."
+      ],
+      [
+        "Bebida de grãos torrados",
+        "Um bege turvo antes de assentar."
+      ],
+      [
+        "Piso vinílico amarelado",
+        "Um piso pisado por anos. Amarelo turvo."
+      ],
+      [
+        "Castanha cozida",
+        "O miolo amarelo de uma castanha descascada."
+      ],
+      [
+        "Leite no café",
+        "Acabou de cair, ainda sem misturar."
+      ],
+      [
+        "Estante empoeirada",
+        "Cinza-amarronzado claro onde o dedo deixa marca."
+      ],
+      [
+        "Barro seco",
+        "Chão de terra começando a rachar. Marrom-claro."
+      ],
+      [
+        "Chá com leite frio",
+        "Uma xícara esquecida pela metade. Marrom rosado e turvo."
+      ],
+      [
+        "Papelão molhado de chuva",
+        "Papel inchado pela chuva. A cor de um pôr do sol nublado."
+      ],
+      [
+        "Deck de madeira molhado",
+        "Madeira escurecida pela umidade."
+      ],
+      [
+        "Tijolo com cinzas",
+        "Onde o fogo esteve. Cinza-avermelhado escuro."
+      ],
+      [
+        "Mancha de café",
+        "A marca redonda que fica ao levantar a xícara."
+      ],
+      [
+        "Casca de feijão-azuki",
+        "Feijão deixado de molho por muito tempo. Cinza-arroxeado escuro."
+      ],
+      [
+        "Farinha de soja torrada",
+        "Uma superfície coberta de soja torrada. Bege suave puxado ao marrom."
+      ],
+      [
+        "Gema de ovo",
+        "Logo antes de estourar. Amarelo intenso."
+      ],
+      [
+        "Casca do pão de forma",
+        "O ponto em que o amarelo vira marrom."
+      ],
+      [
+        "Casca de tangerina",
+        "Aquele laranja antes de descascar."
+      ],
+      [
+        "Salmão grelhado",
+        "Laranja rosado, dourado por fora."
+      ],
+      [
+        "Caqui seco",
+        "Caqui seco com seu pó branco. Laranja apagado."
+      ],
+      [
+        "Brasa de lenha",
+        "Não a chama, mas o carvão em brasa."
+      ],
+      [
+        "Caqui maduro",
+        "Vermelho alaranjado prestes a se desfazer."
+      ],
+      [
+        "Molho de tteokbokki",
+        "O vermelho depois de reduzir. O pôr do sol mais intenso."
+      ],
+      [
+        "Polpa de melancia",
+        "O meio, a parte mais doce. Rosa avermelhado."
+      ],
+      [
+        "Geleia de rosas",
+        "Pétalas no açúcar. Vermelho rosado apagado."
+      ],
+      [
+        "Tijolo vermelho",
+        "Um muro que toma chuva há anos."
+      ],
+      [
+        "Brasa apagando",
+        "Fogo coberto de cinzas. Marrom-avermelhado escuro."
+      ],
+      [
+        "Casca de ameixa",
+        "Roxo avermelhado com um pó branco por cima."
+      ],
+      [
+        "Mingau de feijão-azuki",
+        "Marrom-avermelhado e espesso, antes das bolinhas de arroz."
+      ],
+      [
+        "Resto de vinho",
+        "Roxo escuro avermelhado no fundo da taça."
+      ],
+      [
+        "Lilás murcho",
+        "O roxo fraco de uma flor que seca."
+      ],
+      [
+        "Leite de mirtilo",
+        "Lilás misturado pela metade."
+      ],
+      [
+        "Casca de uva",
+        "Roxo escuro, recém-lavado e ainda molhado."
+      ],
+      [
+        "Casca de berinjela",
+        "Roxo quase preto que engole a luz. A última cor do dia."
+      ]
+    ]
+  },
+  "problem": {
+    "title": "Você vê o céu todo dia, mas não lembra de nenhuma cor",
+    "text": "O céu no caminho do trabalho, o céu na volta do almoço: à noite, você já não sabe de que cor eram. As fotos do céu que você tirou se perdem no meio de todas as outras. O SkyDex junta essas fotos como cores e mostra, em um só quadro, o caminho que o céu de hoje percorreu."
+  },
+  "features": [
+    {
+      "title": "Cada céu ganha um nome",
+      "text": "Cada cor ganha primeiro um nome que dá para imaginar, como Gelo fino, Azulejo de piscina ou Caqui maduro. Logo abaixo vem um nome com origem: uma cor tradicional coreana ou japonesa, um pigmento ou uma cor web.\nQuando a cor chega perto, aparece Nome; quando não, com franqueza, Nome mais próximo.",
+      "shot": "02-name"
+    },
+    {
+      "title": "Deixe uma linha",
+      "text": "Assim que você tira a foto, um cartão se abre. Escreva o que pensou ao olhar para cima, e a frase volta a flutuar sobre o céu sempre que você tocar naquele quadrado do quadro.\nVocê também pode pôr sobre esta foto a cor do céu de outro dia e compartilhar o resultado como imagem.",
+      "shot": "03-card"
+    },
+    {
+      "title": "Os quadrados vazios mostram o caminho",
+      "text": "Toque em um quadrado vazio para saber a que momento do dia ele corresponde e que cor procurar. Ele também mostra como fica o céu naquela hora em um dia sem nuvens, de acordo com o nascer e o pôr do sol onde você está.\nA cor não precisa bater. O cinza de um dia nublado também é a cor do céu daquele dia.",
+      "shot": "05-empty"
+    },
+    {
+      "title": "Registro, paleta, repetições",
+      "text": "Veja seus céus em ordem e reúna as cores em paletas por família, como azul, cinza e areia. Fotografe a mesma hora em outro dia e os dois céus ficam lado a lado.\nOs widgets da tela de início mostram num relance o quadro de hoje e o céu de hoje.",
+      "shot": "04-palette"
+    }
+  ],
+  "steps": {
+    "title": "Para começar, três passos",
+    "items": [
+      {
+        "title": "Olhe para cima",
+        "text": "Toque no botão da câmera embaixo do quadro e deixe o céu tomar todo o recorte quadrado."
+      },
+      {
+        "title": "Um quadrado se preenche",
+        "text": "O quadrado de agora ganha a cor que você captou, e um nome."
+      },
+      {
+        "title": "Deixe uma linha",
+        "text": "No cartão que se abre, escreva o que você pensou ao ver aquele céu."
+      }
+    ]
+  },
+  "reference": {
+    "title": "Como o quadro divide o dia",
+    "rows": [
+      [
+        "Meia-noite · 00:00–05:00",
+        "seis quadrados"
+      ],
+      [
+        "Aurora · 05:00–08:00",
+        "seis quadrados"
+      ],
+      [
+        "Dia · 08:00–16:00",
+        "doze quadrados"
+      ],
+      [
+        "Fim de tarde · 16:00–18:00",
+        "seis quadrados"
+      ],
+      [
+        "Pôr do sol · 18:00–21:00",
+        "doze quadrados, um a cada 15 minutos"
+      ],
+      [
+        "Noite · 21:00–24:00",
+        "seis quadrados"
+      ]
+    ],
+    "note": "Perto do pôr do sol, quando o céu muda depressa, os quadrados ficam apertados; no meio da madrugada, quando ele quase não muda, ficam largos. No alto fica a meia-noite, e o dia vai descendo."
+  },
+  "faq": {
+    "title": "Perguntas frequentes",
+    "items": [
+      {
+        "q": "Como um quadrado é preenchido?",
+        "a": "Um céu que você fotografa hoje preenche o quadrado da hora em que foi tirado, mesmo que a cor não seja a esperada: naquela hora, o céu estava assim mesmo. Os céus de dias anteriores entram pela cor: se um deles estiver perto o bastante da cor de um quadrado, preenche esse quadrado, e cada céu preenche um só."
+      },
+      {
+        "q": "Um quadrado que estava cheio ontem está vazio hoje.",
+        "a": "O quadro é sempre o de hoje. Um quadrado que um céu de ontem preencheu pelo horário volta a ser comparado só pela cor quando o dia vira. Por isso, em alguns dias o quadro fica quase cheio e em outros parece vazio. Suas fotos não sumiram: todos os céus estão no Registro e, em ordem de cor, na Paleta."
+      },
+      {
+        "q": "Meus quadrados preenchidos estão desbotando.",
+        "a": "É de propósito. Uma foto mantém a cor verdadeira por uma semana e depois desbota devagar ao longo das oito semanas seguintes. Ela não é apagada e nunca some por completo. Fotografe o céu naquela hora de novo e o quadrado volta na mesma hora à cor plena. Não há sequência para manter nem pontos para recuperar."
+      },
+      {
+        "q": "A cor precisa bater?",
+        "a": "Não. Não existe aprovado ou reprovado. Toda foto é salva, e o cinza de um dia nublado também é a cor do céu daquele dia."
+      },
+      {
+        "q": "Por que o app pede minha localização?",
+        "a": "Só para mostrar, quando você toca em um quadrado vazio, a cor de um céu sem nuvens naquela hora, de acordo com o nascer e o pôr do sol onde você está. Ele usa uma localização aproximada, na casa do quilômetro, e as coordenadas nunca são anexadas às fotos. Se você recusar, tudo continua funcionando, com Seul como referência."
+      },
+      {
+        "q": "Posso adicionar um céu da minha biblioteca?",
+        "a": "Pode. Um céu escolhido em Fotos em vez da câmera também é cortado em quadrado e preenche o quadrado de agora, como um que você acabou de fotografar."
+      },
+      {
+        "q": "Como apago uma foto?",
+        "a": "Abra a foto e toque em Apagar, ou deslize para a esquerda no Registro. Ela é removida do aparelho e do iCloud ao mesmo tempo. Se você apagar o app, a cópia no iCloud continua lá, e seus céus voltam quando você reinstalar."
+      },
+      {
+        "q": "O que acontece se eu trocar de aparelho?",
+        "a": "Seus céus ficam no seu próprio iCloud e seguem para um aparelho novo conectado à mesma Conta Apple. Não há conta nem servidor, e suas fotos e cores nunca são enviadas ao desenvolvedor. Sem anúncios e sem rastreamento."
+      },
+      {
+        "q": "É grátis mesmo?",
+        "a": "É, todos os recursos são grátis. Se gostar, você pode deixar uma gorjeta para o desenvolvedor dentro do app, mas a gorjeta não libera nada."
+      },
+      {
+        "q": "Em quais aparelhos funciona?",
+        "a": "No iPhone com iOS 17.0 ou posterior, só na vertical."
+      }
+    ]
+  },
+  "closing": {
+    "headline": "Amanhã de manhã,\nolhe para cima uma vez só",
+    "cta": "Baixe grátis na App Store"
+  },
+  "ui": {
+    "skip": "Pular para o conteúdo",
+    "languages": "Idioma",
+    "privacy": "Política de privacidade",
+    "contact": "Bugs, algo estranho ou qualquer coisa que você queira dizer: escreva para {email}. Contar o que você estava fazendo e qual versão do iOS usa ajuda muito a encontrar o problema."
+  }
+}

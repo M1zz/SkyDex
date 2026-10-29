@@ -1,0 +1,541 @@
+{
+  "title": "SkyDex: bảng màu trời hôm nay, đầy dần sau mỗi lần chụp",
+  "description": "Mỗi lần chụp bầu trời, một trong bốn mươi tám ô màu trời của ngày được lấp đầy và có một cái tên giống màu ấy. Miễn phí, không cần tài khoản.",
+  "hero": {
+    "headline": "Hôm nay bầu trời\nmang màu gì?",
+    "lead": "Chụp một tấm bầu trời, ô ứng với giờ ấy trên bảng bốn mươi tám ô sẽ mang màu bạn vừa chụp. Màu còn được đặt một cái tên gợi hình, như màu băng mỏng, màu gạch bể bơi hay màu hồng chín mềm.",
+    "cta": "Tải miễn phí ở App Store",
+    "note": "Miễn phí. Không tài khoản, không đăng nhập."
+  },
+  "demo": {
+    "title": "Thử chạm vào bảng",
+    "lead": "Chạm vào một ô để xem đó là bầu trời lúc nào trong ngày. Thêm một ảnh bầu trời để lấp ô của giờ hiện tại, rồi lật sang những ngày sau để xem bảng thay đổi ra sao.",
+    "photo": "Thử thêm ảnh bầu trời",
+    "age": "Kể từ ngày chụp",
+    "ageToday": "Hôm nay",
+    "ageDay": "{n} ngày sau",
+    "ageDays": "{n} ngày sau",
+    "note": "Bảng được lấp sẵn bằng những bầu trời mẫu giống trong ảnh chụp màn hình của ứng dụng. Ảnh bạn thêm chỉ được đọc trong trình duyệt này và không gửi đi đâu cả. Cách chọn màu, quy tắc lấp ô và tốc độ phai màu đều giống hệt trong ứng dụng.",
+    "now": "Bây giờ",
+    "bands": [
+      "Nửa đêm",
+      "Rạng đông",
+      "Ban ngày",
+      "Chiều muộn",
+      "Hoàng hôn",
+      "Đêm"
+    ],
+    "emptyTag": "%@ · Vẫn còn trống",
+    "spot": "Chỗ này sẽ được lấp bằng bầu trời chụp trong khoảng thời gian đó của ngày. Ảnh nào cũng vào được nguyên vẹn; màu không cần phải khớp.",
+    "sims": [
+      [
+        "Màu mực tàu",
+        "Mực mài trên nghiên. Đêm sâu nhất."
+      ],
+      [
+        "Màu biển đêm",
+        "Mặt nước nhìn xuống từ nơi không đèn. Đen phủ một lớp xanh."
+      ],
+      [
+        "Màu đáy nồi cháy",
+        "Vết còn lại sau khi cháy. Màu đen không chút xanh."
+      ],
+      [
+        "Màu mực khô",
+        "Vệt bút máy viết dở. Màu đen còn vương sắc xanh."
+      ],
+      [
+        "Màu nước sâu",
+        "Màu của chỗ chân không chạm đáy. Xanh chàm tối và mát lạnh."
+      ],
+      [
+        "Màu quần jean mới",
+        "Vải denim chưa giặt lần nào. Xanh chàm đậm."
+      ],
+      [
+        "Màu cửa kính tàu đêm",
+        "Ô kính sau khi ánh đèn lướt qua. Xám ngả xanh chàm."
+      ],
+      [
+        "Màu cửa kính nửa đêm",
+        "Bên ngoài lúc vén rèm. Xanh hơn màu đen một chút."
+      ],
+      [
+        "Màu mực pha nước",
+        "Nước rửa tay dính mực. Xanh chàm nhạt."
+      ],
+      [
+        "Xanh đồng phục",
+        "Màu chiếc áo khoác mặc đã vài năm. Không đen cũng chẳng xanh."
+      ],
+      [
+        "Màu jean ướt",
+        "Lúc vừa phơi đồ. Xanh đậm và đục."
+      ],
+      [
+        "Màu lưng cá thu",
+        "Xám xanh ánh bạc. Bầu trời trước cơn mưa."
+      ],
+      [
+        "Màu đồ bảo hộ cũ",
+        "Màu xanh đã phai sau nhiều năm mặc."
+      ],
+      [
+        "Màu rèm chàm bạc màu",
+        "Tấm rèm phơi nắng lâu ngày. Xanh chàm đã nhạt sức."
+      ],
+      [
+        "Màu hơi nước đọng trên kính",
+        "Nhìn từ trong ra thấy mờ mờ. Xám ngả xanh."
+      ],
+      [
+        "Màu sương sớm",
+        "Buổi sáng đầu các tòa nhà bị xóa mờ. Xám sáng hơi xanh."
+      ],
+      [
+        "Màu áo hoodie ướt",
+        "Xám sẫm lại vì thấm nước mưa. Rạng sáng âm u."
+      ],
+      [
+        "Màu áo len tím bạc",
+        "Màu tím đã phai sau nhiều lần giặt. Phía tây ngay trước bình minh."
+      ],
+      [
+        "Màu vỏ đào",
+        "Phía có lông tơ. Giữa hồng và cam."
+      ],
+      [
+        "Màu sữa mơ",
+        "Mơ xay cùng sữa. Cam rất nhạt."
+      ],
+      [
+        "Màu tường trắng có nắng",
+        "Buổi sáng bức tường thoáng mang màu này."
+      ],
+      [
+        "Màu thịt cá hồi",
+        "Sắc hồng ấy biến mất khi nướng."
+      ],
+      [
+        "Màu sữa dâu",
+        "Màu hồng sau khi lắc đều."
+      ],
+      [
+        "Màu mơ chưa chín",
+        "Màu cam mà sắc vàng vẫn còn trội."
+      ],
+      [
+        "Màu nước trong cốc",
+        "Xanh nhạt khi ánh sáng xuyên qua."
+      ],
+      [
+        "Màu nước máy lạnh",
+        "Màu làm buốt tay. Xanh nhạt và mát."
+      ],
+      [
+        "Màu băng mỏng",
+        "Mặt nước đóng băng nhẹ mùa xuân. Xanh rất nhạt."
+      ],
+      [
+        "Màu bát sứ",
+        "Chút sắc xanh còn lại trên chiếc bát trắng."
+      ],
+      [
+        "Màu áo sơ mi trắng là phẳng",
+        "Gần như trắng, phủ một lớp xanh. Giữa trưa rất trong."
+      ],
+      [
+        "Màu bọt xà phòng",
+        "Bọt trắng nổi trên chậu rửa bát."
+      ],
+      [
+        "Màu jean bạc",
+        "Denim bạc trắng ở đầu gối. Màu xanh của ngày âm u."
+      ],
+      [
+        "Màu bút sáp xanh",
+        "Màu xanh hiện ra khi chà mạnh lên giấy vẽ."
+      ],
+      [
+        "Màu gạch bể bơi",
+        "Màu xanh nhìn qua làn nước. Giữa trưa ngày trong."
+      ],
+      [
+        "Màu bút bi xanh",
+        "Màu xanh của nét kẻ trên giấy."
+      ],
+      [
+        "Màu nước bể bơi sâu",
+        "Màu nước ở phía chân không chạm đáy. Đỉnh trời trưa giữa hè."
+      ],
+      [
+        "Màu nước pha màu xanh",
+        "Trong ống rửa cọ. Màu xanh chiều ngày trong."
+      ],
+      [
+        "Màu mực bút máy",
+        "Trong lọ, xanh gần như đen."
+      ],
+      [
+        "Màu chai nước ngọt",
+        "Xanh nhạt pha chút lục."
+      ],
+      [
+        "Màu gương mờ hơi nước",
+        "Tấm gương sau khi tắm. Xám xanh sáng."
+      ],
+      [
+        "Màu kính phủ sương",
+        "Xám mờ đủ làm nhòe phía bên kia."
+      ],
+      [
+        "Màu vụn tẩy",
+        "Lớp bụi trắng gom trên bàn. Xám rất nhạt."
+      ],
+      [
+        "Màu bụi phấn",
+        "Ánh trắng còn lơ lửng sau khi xóa bảng."
+      ],
+      [
+        "Màu xi măng khô",
+        "Nền nhà đã khô từ lâu. Xám sáng phẳng lặng."
+      ],
+      [
+        "Màu tro nguội",
+        "Thứ còn lại khi đã cháy hết. Màu xám chuẩn của ngày âm u."
+      ],
+      [
+        "Màu cửa kính mờ",
+        "Lau rồi vẫn thế. Xám trung tính ngả xanh."
+      ],
+      [
+        "Màu bìa các-tông ướt",
+        "Chiếc hộp dầm mưa. Xám hơi ấm."
+      ],
+      [
+        "Màu màn hình tắt",
+        "Xám đen ngay sau khi tắt nguồn."
+      ],
+      [
+        "Màu que diêm cháy hết",
+        "Que diêm chỉ còn đầu đen. Tím xám tối."
+      ],
+      [
+        "Màu nước rửa bát",
+        "Nước âm ấm nổi váng dầu. Xám đục."
+      ],
+      [
+        "Màu nước luộc đồ",
+        "Nước trắng bốc hơi. Xám sáng."
+      ],
+      [
+        "Màu lưỡi dao",
+        "Kim loại bắt sáng. Xám ngả xanh."
+      ],
+      [
+        "Màu mái tôn cũ",
+        "Mái nhà kho lâu năm. Xám xanh ngay trước cơn mưa."
+      ],
+      [
+        "Màu biển ngày âm u",
+        "Mặt nước in nguyên màu trời. Xám xanh tối."
+      ],
+      [
+        "Màu xi măng ướt",
+        "Nền dầm mưa. Xám tối và ẩm."
+      ],
+      [
+        "Màu ruột bút chì",
+        "Xám đậm tô bằng cạnh ruột chì. Chiều mưa."
+      ],
+      [
+        "Màu nhựa đường ướt",
+        "Con đường sau cơn mưa đêm. Xám gần như đen."
+      ],
+      [
+        "Màu tường rêu",
+        "Rêu xanh phủ lên màu xám. Đôi khi ngay trước bão."
+      ],
+      [
+        "Màu đồng xu cũ",
+        "Kim loại dính dấu tay. Xám ngả vàng."
+      ],
+      [
+        "Màu nước vo gạo",
+        "Nước vo gạo đầu tiên. Trắng ấm."
+      ],
+      [
+        "Màu vỏ trứng",
+        "Một màu trắng không hoàn toàn trắng."
+      ],
+      [
+        "Màu giấy cũ",
+        "Trang ruột sách cũ. Trắng ngả vàng."
+      ],
+      [
+        "Màu giấy báo cũ",
+        "Giấy phai dưới nắng. Giữa xám và vàng."
+      ],
+      [
+        "Màu cửa sổ phủ bụi vàng",
+        "Màu vàng mờ khiến người ta muốn lau."
+      ],
+      [
+        "Màu nước bột ngũ cốc",
+        "Màu be đục trước khi lắng."
+      ],
+      [
+        "Màu chiếu nhựa ố vàng",
+        "Sàn nhà bị đè lâu ngày. Vàng đục."
+      ],
+      [
+        "Màu ruột hạt dẻ luộc",
+        "Phần ruột vàng của hạt dẻ đã bóc."
+      ],
+      [
+        "Màu sữa rót vào cà phê",
+        "Lúc vừa rót, chưa kịp hòa."
+      ],
+      [
+        "Màu kệ sách phủ bụi",
+        "Xám nâu sáng, lấy ngón tay quẹt là để lại vệt."
+      ],
+      [
+        "Màu bùn khô",
+        "Nền đất bắt đầu nứt. Nâu nhạt."
+      ],
+      [
+        "Màu trà sữa nguội",
+        "Ly uống dở để lại. Nâu hồng đục."
+      ],
+      [
+        "Màu giấy bồi ướt",
+        "Tờ giấy dầm mưa phồng lên. Màu hoàng hôn âm u."
+      ],
+      [
+        "Màu sàn gỗ dầm mưa",
+        "Gỗ thẫm lại vì ngấm nước."
+      ],
+      [
+        "Màu gạch dính tro",
+        "Chỗ đã hơ lửa. Xám đỏ tối."
+      ],
+      [
+        "Màu vết cà phê",
+        "Vết tròn còn lại khi nhấc cốc lên."
+      ],
+      [
+        "Màu vỏ đậu đỏ luộc",
+        "Đậu đỏ ngâm nước lâu. Xám ngả tím sẫm."
+      ],
+      [
+        "Màu bột đậu bánh dày",
+        "Bánh lăn bột đậu nành. Be ngả nâu dịu."
+      ],
+      [
+        "Màu lòng đỏ trứng",
+        "Ngay trước khi vỡ. Vàng đậm."
+      ],
+      [
+        "Màu viền bánh mì",
+        "Chỗ vàng chuyển sang nâu."
+      ],
+      [
+        "Màu vỏ quýt",
+        "Màu cam ấy, trước khi bóc."
+      ],
+      [
+        "Màu cá hồi nướng",
+        "Cam ngả hồng của mặt đã chín."
+      ],
+      [
+        "Màu hồng sấy",
+        "Hồng sấy phủ phấn trắng. Cam đục."
+      ],
+      [
+        "Màu than củi hồng",
+        "Không phải ngọn lửa, mà là than đỏ rực."
+      ],
+      [
+        "Màu hồng chín mềm",
+        "Cam đỏ ngay trước khi chín nẫu."
+      ],
+      [
+        "Màu nước sốt tteokbokki",
+        "Màu đỏ sau khi sốt sánh lại. Hoàng hôn đậm nhất."
+      ],
+      [
+        "Màu ruột dưa hấu",
+        "Phần giữa ngọt nhất. Hồng đỏ."
+      ],
+      [
+        "Màu mứt hoa hồng",
+        "Cánh hoa ngâm đường. Đỏ ngả hồng đục."
+      ],
+      [
+        "Màu gạch đỏ",
+        "Bức tường dầm mưa nhiều năm."
+      ],
+      [
+        "Màu than hồng nguội",
+        "Lửa phủ đầy tro. Nâu đỏ tối."
+      ],
+      [
+        "Màu vỏ mận",
+        "Tím đỏ phủ một lớp phấn trắng."
+      ],
+      [
+        "Màu chè đậu đỏ",
+        "Nâu đỏ sánh đặc, trước khi thả viên bột nếp."
+      ],
+      [
+        "Màu rượu vang còn sót",
+        "Tím đỏ thẫm đọng dưới đáy ly."
+      ],
+      [
+        "Màu tử đinh hương tàn",
+        "Màu tím nhạt của hoa đang héo."
+      ],
+      [
+        "Màu sữa việt quất",
+        "Tím nhạt khuấy chưa đều."
+      ],
+      [
+        "Màu vỏ nho",
+        "Tím đậm còn ướt sau khi rửa."
+      ],
+      [
+        "Màu vỏ cà tím",
+        "Tím đen nuốt ánh sáng. Màu cuối cùng của ngày."
+      ]
+    ]
+  },
+  "problem": {
+    "title": "Ngày nào cũng nhìn trời, mà chẳng nhớ nổi một màu",
+    "text": "Bầu trời ngước nhìn trên đường đi làm, bầu trời lúc bước ra sau bữa trưa: đến tối thì chẳng còn nhớ chúng màu gì. Những tấm ảnh trời đã chụp cũng chìm lẫn giữa bao ảnh khác trong thư viện. SkyDex gom ảnh bầu trời lại thành màu, và bày con đường bầu trời hôm nay đã đi qua lên một tấm bảng."
+  },
+  "features": [
+    {
+      "title": "Mỗi bầu trời đều có tên",
+      "text": "Màu bạn chụp trước hết được đặt một cái tên dễ hình dung, như màu băng mỏng, màu gạch bể bơi hay màu hồng chín mềm. Bên dưới là một cái tên có nguồn gốc, lấy từ màu Hàn, màu Nhật, chất màu hoặc màu web.\nĐủ gần thì ứng dụng ghi “Tên là”, còn xa thì thành thật ghi “Tên gần nhất”.",
+      "shot": "02-name"
+    },
+    {
+      "title": "Để lại một dòng",
+      "text": "Chụp xong, một tấm thẻ mở ra ngay. Hãy ghi lại điều bạn nghĩ khi nhìn bầu trời ấy; mỗi khi chạm vào ô đó trên bảng, dòng chữ sẽ lại hiện lên trên nền trời.\nBạn còn có thể khoác màu của bầu trời ngày khác lên bầu trời trong ảnh này, rồi chia sẻ thành một bức hình.",
+      "shot": "03-card"
+    },
+    {
+      "title": "Ô trống chỉ đường",
+      "text": "Chạm vào một ô trống để biết ô đó thuộc lúc nào trong ngày và nên tìm màu gì. Vào ngày không mây, bầu trời giờ ấy mang màu gì, ứng dụng cũng cho biết theo giờ mặt trời mọc và lặn ở nơi bạn đang ở.\nMàu không cần phải khớp. Màu xám của ngày u ám cũng là màu trời của ngày hôm đó.",
+      "shot": "05-empty"
+    },
+    {
+      "title": "Nhật ký, Bảng màu, Lặp lại",
+      "text": "Xem lại những bầu trời đã chụp theo thứ tự thời gian, và gom các màu đã sưu tầm thành bảng màu theo nhóm như xanh lam, xám, màu cát. Chụp lại cùng một giờ vào ngày khác, hai bầu trời sẽ đứng cạnh nhau.\nWidget trên Màn hình chính cho bạn xem ngay Bảng hôm nay và Bầu trời hôm nay.",
+      "shot": "04-palette"
+    }
+  ],
+  "steps": {
+    "title": "Chỉ ba bước để bắt đầu",
+    "items": [
+      {
+        "title": "Ngước nhìn lên",
+        "text": "Chạm nút máy ảnh dưới bảng và chụp sao cho bầu trời lấp kín ô vuông."
+      },
+      {
+        "title": "Một ô được lấp",
+        "text": "Ô của giờ hiện tại mang màu bạn vừa chụp và có một cái tên."
+      },
+      {
+        "title": "Để lại một dòng",
+        "text": "Ghi điều bạn nghĩ khi nhìn bầu trời ấy vào tấm thẻ vừa mở."
+      }
+    ]
+  },
+  "reference": {
+    "title": "Bảng chia một ngày như thế này",
+    "rows": [
+      [
+        "Nửa đêm · 00:00–05:00",
+        "sáu ô"
+      ],
+      [
+        "Rạng đông · 05:00–08:00",
+        "sáu ô"
+      ],
+      [
+        "Ban ngày · 08:00–16:00",
+        "mười hai ô"
+      ],
+      [
+        "Chiều muộn · 16:00–18:00",
+        "sáu ô"
+      ],
+      [
+        "Hoàng hôn · 18:00–21:00",
+        "mười hai ô, mỗi ô 15 phút"
+      ],
+      [
+        "Đêm · 21:00–24:00",
+        "sáu ô"
+      ]
+    ],
+    "note": "Quanh hoàng hôn, khi bầu trời đổi màu nhanh, các ô xếp dày; giữa đêm, khi trời gần như đứng yên, các ô thưa hơn. Trên cùng là nửa đêm, càng xuống dưới, ngày càng trôi đi."
+  },
+  "faq": {
+    "title": "Câu hỏi thường gặp",
+    "items": [
+      {
+        "q": "Các ô được lấp như thế nào?",
+        "a": "Bầu trời chụp hôm nay sẽ lấp ô của giờ chụp. Dù màu không như bạn nghĩ, nó vẫn được giữ nguyên, vì bầu trời lúc ấy thật sự là như vậy. Những bầu trời sưu tầm từ trước thì vào theo màu: nếu đủ gần màu của ô nào, nó lấp ô đó, và mỗi bầu trời chỉ lấp một ô."
+      },
+      {
+        "q": "Ô hôm qua đã đầy, hôm nay lại trống.",
+        "a": "Bảng là của hôm nay. Những ô mà bầu trời hôm qua lấp theo giờ, sang ngày mới sẽ được ghép lại chỉ dựa vào màu. Vì thế có hôm bảng gần như đầy, có hôm trông trống trải. Ảnh không hề mất: mọi bầu trời đã sưu tầm vẫn nằm trong Nhật ký, và theo thứ tự màu trong Bảng màu."
+      },
+      {
+        "q": "Các ô đã lấp cứ nhạt dần.",
+        "a": "Đó là có chủ ý. Ảnh giữ nguyên màu trong một tuần, rồi phai chậm trong tám tuần tiếp theo. Ảnh không bị xóa và cũng không bao giờ phai hẳn. Chụp lại bầu trời vào khung giờ đó, ô sẽ trở về đúng màu ngay. Không có chuỗi ngày liên tiếp nào bị đứt, cũng không có con số nào phải giành lại."
+      },
+      {
+        "q": "Màu có cần khớp không?",
+        "a": "Không. Không có chuyện đạt hay trượt. Ảnh chụp luôn được lưu, và màu xám của ngày u ám cũng là màu trời của ngày hôm đó."
+      },
+      {
+        "q": "Vì sao ứng dụng hỏi vị trí?",
+        "a": "Chỉ để khi bạn chạm vào ô trống, ứng dụng cho biết bầu trời không mây giờ ấy mang màu gì, theo giờ mặt trời mọc và lặn ở nơi bạn đang ở. Ứng dụng chỉ dùng vị trí gần đúng ở mức cây số, và tọa độ không bao giờ gắn vào ảnh. Nếu bạn từ chối, ứng dụng vẫn chạy bình thường và lấy Seoul làm mốc."
+      },
+      {
+        "q": "Có thể thêm bầu trời từ thư viện ảnh không?",
+        "a": "Có. Bầu trời chọn từ ứng dụng Ảnh thay cho máy ảnh cũng được cắt vuông và lấp ô của giờ hiện tại, giống như bầu trời vừa chụp."
+      },
+      {
+        "q": "Làm sao để xóa ảnh?",
+        "a": "Mở ảnh rồi chạm Xóa, hoặc vuốt sang trái trong Nhật ký. Ảnh sẽ bị xóa cùng lúc trên thiết bị và trong iCloud. Nếu gỡ ứng dụng, bản sao trên iCloud vẫn còn, nên khi cài lại, những bầu trời đã sưu tầm sẽ quay về."
+      },
+      {
+        "q": "Đổi máy thì bầu trời đã sưu tầm ra sao?",
+        "a": "Bầu trời của bạn được lưu trong iCloud của chính bạn, nên tiếp tục trên thiết bị mới đăng nhập cùng Tài khoản Apple. Không có tài khoản riêng, không có máy chủ, ảnh và màu không bao giờ được gửi cho nhà phát triển. Không quảng cáo, không theo dõi."
+      },
+      {
+        "q": "Có thật là miễn phí không?",
+        "a": "Thật. Mọi tính năng đều miễn phí. Nếu thích, bạn có thể gửi một khoản ủng hộ nhỏ cho nhà phát triển ngay trong ứng dụng, nhưng khoản ủng hộ không mở khóa tính năng nào cả."
+      },
+      {
+        "q": "Dùng được trên thiết bị nào?",
+        "a": "iPhone chạy iOS 17.0 trở lên, chỉ ở màn hình dọc."
+      }
+    ]
+  },
+  "closing": {
+    "headline": "Sáng mai,\nhãy ngước nhìn một lần thôi",
+    "cta": "Tải miễn phí ở App Store"
+  },
+  "ui": {
+    "skip": "Chuyển đến nội dung",
+    "languages": "Ngôn ngữ",
+    "privacy": "Chính sách quyền riêng tư",
+    "contact": "Gặp lỗi, thấy ứng dụng chạy lạ, hay có điều muốn nói, hãy gửi thư đến {email}. Kèm theo tình huống lúc đó và phiên bản iOS sẽ giúp tìm ra nguyên nhân dễ hơn nhiều."
+  }
+}

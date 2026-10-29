@@ -1,340 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="cs">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SkyDex</title>
-<meta name="description" content="Aplikace pro iOS, která sbírá nebe dne jako barvu. Zaplňte tabuli o čtyřiceti osmi buňkách dnešním nebem.">
-<link rel="canonical" href="https://m1zz.github.io/SkyDex/cs/">
-<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/SkyDex/">
-<link rel="alternate" hreflang="en" href="https://m1zz.github.io/SkyDex/en/">
-<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/SkyDex/en/">
-<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/SkyDex/ja/">
-<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/SkyDex/zh-Hans/">
-<link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/SkyDex/zh-Hant/">
-<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/SkyDex/ru/">
-<link rel="alternate" hreflang="es" href="https://m1zz.github.io/SkyDex/es/">
-<link rel="alternate" hreflang="de" href="https://m1zz.github.io/SkyDex/de/">
-<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/SkyDex/fr/">
-<link rel="alternate" hreflang="it" href="https://m1zz.github.io/SkyDex/it/">
-<link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/SkyDex/pt-BR/">
-<link rel="alternate" hreflang="th" href="https://m1zz.github.io/SkyDex/th/">
-<link rel="alternate" hreflang="vi" href="https://m1zz.github.io/SkyDex/vi/">
-<link rel="alternate" hreflang="cs" href="https://m1zz.github.io/SkyDex/cs/">
-<link rel="alternate" hreflang="da" href="https://m1zz.github.io/SkyDex/da/">
-<link rel="alternate" hreflang="el" href="https://m1zz.github.io/SkyDex/el/">
-<link rel="alternate" hreflang="fi" href="https://m1zz.github.io/SkyDex/fi/">
-<link rel="alternate" hreflang="id" href="https://m1zz.github.io/SkyDex/id/">
-<link rel="alternate" hreflang="nb" href="https://m1zz.github.io/SkyDex/nb/">
-<link rel="alternate" hreflang="nl" href="https://m1zz.github.io/SkyDex/nl/">
-<link rel="alternate" hreflang="pl" href="https://m1zz.github.io/SkyDex/pl/">
-<link rel="alternate" hreflang="sv" href="https://m1zz.github.io/SkyDex/sv/">
-<link rel="alternate" hreflang="tr" href="https://m1zz.github.io/SkyDex/tr/">
-<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/SkyDex/">
-<style>
-  :root {
-    --ink: #16202e;
-    --ink-soft: #5d6773;
-    --paper: #f4f5f7;
-    --card: #ffffff;
-    --line: #e2e5ea;
-    --accent: #2f7bbe;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ink: #eef1f5;
-      --ink-soft: #a2acb8;
-      --paper: #0b111c;
-      --card: #141c28;
-      --line: #26303e;
-      --accent: #7fa4ce;
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    padding: 0 20px 72px;
-    background: var(--paper);
-    color: var(--ink);
-    font: 17px/1.72 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
-      "Pretendard", "Segoe UI", Roboto, sans-serif;
-    -webkit-text-size-adjust: 100%;
-  }
-  main { max-width: 680px; margin: 0 auto; }
-  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
-
-  /* 하루 곡선 그대로 이어붙인 띠 */
-  .strip {
-    display: flex;
-    height: 8px;
-    border-radius: 4px;
-    overflow: hidden;
-    margin: 40px 0 34px;
-  }
-  .strip span { flex: 1 1 0; }
-
-  h1 {
-    font-size: 34px; line-height: 1.25; letter-spacing: -0.03em;
-    margin: 0 0 8px; text-align: center; font-weight: 700;
-  }
-  .lede {
-    margin: 0 auto 8px; text-align: center; color: var(--ink-soft);
-    max-width: 26em;
-  }
-  .platform {
-    text-align: center; color: var(--ink-soft); font-size: 14px;
-    margin: 0 0 36px;
-  }
-
-  /* 판 — 앱과 같은 6×8, 같은 색 */
-  .board {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
-    max-width: 340px;
-    margin: 0 auto 12px;
-  }
-  .bead {
-    aspect-ratio: 1;
-    border-radius: 50%;
-    border: 4px solid transparent;
-    display: block;
-  }
-  .bead.on { border: 0; }
-  .caption {
-    text-align: center; color: var(--ink-soft); font-size: 14px;
-    margin: 0 0 46px;
-  }
-
-  h2 {
-    font-size: 21px; letter-spacing: -0.01em; margin: 46px 0 12px;
-    padding-top: 28px; border-top: 1px solid var(--line);
-  }
-  p { margin: 0 0 14px; }
-  ul { margin: 0 0 14px; padding-left: 1.2em; }
-  li { margin-bottom: 8px; }
-  strong { font-weight: 600; }
-
-  /* 이름 카드 — 앱의 사진 카드 아래에 붙는 것과 같은 순서 */
-  .names { margin: 20px 0 8px; }
-  .name {
-    display: flex; align-items: center; gap: 14px;
-    background: var(--card); border: 1px solid var(--line);
-    border-radius: 16px; padding: 14px 16px; margin-bottom: 10px;
-  }
-  .swatch {
-    width: 46px; height: 46px; border-radius: 12px; flex: 0 0 auto;
-  }
-  .name .simile { font-size: 17px; font-weight: 600; }
-  .name .real { font-size: 13px; color: var(--ink-soft); }
-
-  .quiet {
-    background: var(--card); border: 1px solid var(--line);
-    border-radius: 16px; padding: 18px 20px; margin: 22px 0 8px;
-  }
-  .quiet p:last-child { margin-bottom: 0; }
-
-  footer {
-    margin-top: 60px; padding-top: 26px; border-top: 1px solid var(--line);
-    color: var(--ink-soft); font-size: 15px; text-align: center;
-  }
-  footer a { margin: 0 8px; }
-  nav.langs { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px 14px; margin: 18px 0 0; font-size: 14px; }
-  nav.langs a { color: var(--ink-soft); text-decoration: none; }
-  nav.langs a[aria-current] { color: var(--ink); font-weight: 600; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkyDex: tabule dnešních barev nebe, plněná fotkou po fotce</title>
+  <meta name="description" content="Každá fotka nebe zaplní jednu ze čtyřiceti osmi barev dne a dostane jméno, které se k ní hodí. Zdarma a bez účtu.">
+  <meta name="theme-color" content="#2A74B6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b111c" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6802295390">
+  <link rel="canonical" href="https://m1zz.github.io/SkyDex/cs/">
+  <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/SkyDex/">
+  <link rel="alternate" hreflang="en" href="https://m1zz.github.io/SkyDex/en/">
+  <link rel="alternate" hreflang="ja" href="https://m1zz.github.io/SkyDex/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/SkyDex/zh-Hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/SkyDex/zh-Hant/">
+  <link rel="alternate" hreflang="ru" href="https://m1zz.github.io/SkyDex/ru/">
+  <link rel="alternate" hreflang="es" href="https://m1zz.github.io/SkyDex/es/">
+  <link rel="alternate" hreflang="de" href="https://m1zz.github.io/SkyDex/de/">
+  <link rel="alternate" hreflang="fr" href="https://m1zz.github.io/SkyDex/fr/">
+  <link rel="alternate" hreflang="it" href="https://m1zz.github.io/SkyDex/it/">
+  <link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/SkyDex/pt-BR/">
+  <link rel="alternate" hreflang="th" href="https://m1zz.github.io/SkyDex/th/">
+  <link rel="alternate" hreflang="vi" href="https://m1zz.github.io/SkyDex/vi/">
+  <link rel="alternate" hreflang="cs" href="https://m1zz.github.io/SkyDex/cs/">
+  <link rel="alternate" hreflang="da" href="https://m1zz.github.io/SkyDex/da/">
+  <link rel="alternate" hreflang="el" href="https://m1zz.github.io/SkyDex/el/">
+  <link rel="alternate" hreflang="fi" href="https://m1zz.github.io/SkyDex/fi/">
+  <link rel="alternate" hreflang="id" href="https://m1zz.github.io/SkyDex/id/">
+  <link rel="alternate" hreflang="nb" href="https://m1zz.github.io/SkyDex/nb/">
+  <link rel="alternate" hreflang="nl" href="https://m1zz.github.io/SkyDex/nl/">
+  <link rel="alternate" hreflang="pl" href="https://m1zz.github.io/SkyDex/pl/">
+  <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/SkyDex/sv/">
+  <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/SkyDex/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/SkyDex/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SkyDex: tabule dnešních barev nebe, plněná fotkou po fotce">
+  <meta property="og:description" content="Každá fotka nebe zaplní jednu ze čtyřiceti osmi barev dne a dostane jméno, které se k ní hodí. Zdarma a bez účtu.">
+  <meta property="og:url" content="https://m1zz.github.io/SkyDex/cs/">
+  <meta property="og:image" content="https://m1zz.github.io/SkyDex/img/cs/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../sitegen.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#2A74B6}@media (prefers-color-scheme:dark){:root{--accent:#7FA4CE}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-<main>
-  <nav class="langs" aria-label="Language">
-    <a href="../" hreflang="ko" lang="ko">한국어</a>
-    <a href="../en/" hreflang="en" lang="en">English</a>
-    <a href="../ja/" hreflang="ja" lang="ja">日本語</a>
-    <a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
-    <a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
-    <a href="../ru/" hreflang="ru" lang="ru">Русский</a>
-    <a href="../es/" hreflang="es" lang="es">Español</a>
-    <a href="../de/" hreflang="de" lang="de">Deutsch</a>
-    <a href="../fr/" hreflang="fr" lang="fr">Français</a>
-    <a href="../it/" hreflang="it" lang="it">Italiano</a>
-    <a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
-    <a href="../th/" hreflang="th" lang="th">ไทย</a>
-    <a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
-    <a href="../cs/" hreflang="cs" lang="cs" aria-current="true">Čeština</a>
-    <a href="../da/" hreflang="da" lang="da">Dansk</a>
-    <a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
-    <a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
-    <a href="../id/" hreflang="id" lang="id">Indonesia</a>
-    <a href="../nb/" hreflang="nb" lang="nb">Norsk</a>
-    <a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
-    <a href="../pl/" hreflang="pl" lang="pl">Polski</a>
-    <a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
-    <a href="../tr/" hreflang="tr" lang="tr">Türkçe</a>
-  </nav>
+  <a class="skip" href="#main">Přejít na obsah</a>
+  <header class="bar">
+    <a class="brand" href="../cs/"><img src="../icon.png" alt="" width="32" height="32">SkyDex</a>
+    <a class="lang-link" href="#languages">Jazyk</a>
+  </header>
 
-  <div class="strip" aria-hidden="true">
-    <span style="background:#080D18"></span>
-    <span style="background:#090E1A"></span>
-    <span style="background:#0A0F1C"></span>
-    <span style="background:#0A101E"></span>
-    <span style="background:#0B1120"></span>
-    <span style="background:#0C1221"></span>
-    <span style="background:#131B30"></span>
-    <span style="background:#1B263E"></span>
-    <span style="background:#6879A2"></span>
-    <span style="background:#99A7C5"></span>
-    <span style="background:#96ABCB"></span>
-    <span style="background:#7FA4CE"></span>
-    <span style="background:#709CCB"></span>
-    <span style="background:#5791C6"></span>
-    <span style="background:#508DC5"></span>
-    <span style="background:#3F83C1"></span>
-    <span style="background:#307BBE"></span>
-    <span style="background:#2B77BB"></span>
-    <span style="background:#1F6FB5"></span>
-    <span style="background:#1D6EB4"></span>
-    <span style="background:#2471B6"></span>
-    <span style="background:#2975B8"></span>
-    <span style="background:#3179BA"></span>
-    <span style="background:#4988C3"></span>
-    <span style="background:#558EC5"></span>
-    <span style="background:#6D9BCA"></span>
-    <span style="background:#7EA5CD"></span>
-    <span style="background:#8FA5BF"></span>
-    <span style="background:#B2A297"></span>
-    <span style="background:#C1A07E"></span>
-    <span style="background:#CC986A"></span>
-    <span style="background:#D68F56"></span>
-    <span style="background:#CC7C49"></span>
-    <span style="background:#B95B35"></span>
-    <span style="background:#A95239"></span>
-    <span style="background:#8F4440"></span>
-    <span style="background:#543852"></span>
-    <span style="background:#3B324D"></span>
-    <span style="background:#322F4B"></span>
-    <span style="background:#2B2A44"></span>
-    <span style="background:#20233A"></span>
-    <span style="background:#181D33"></span>
-    <span style="background:#161C30"></span>
-    <span style="background:#13192B"></span>
-    <span style="background:#0F1424"></span>
-    <span style="background:#0B111F"></span>
-    <span style="background:#0A101D"></span>
-    <span style="background:#080D19"></span>
-  </div>
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>Jakou barvu mělo<br>dnes nebe?</h1>
+        <p class="lead">Vyfoťte nebe a na tabuli o čtyřiceti osmi buňkách se buňka pro tu denní dobu zaplní barvou, kterou jste zachytili. Dostane i jméno, které si snadno představíte: tenký led, bazénové dlaždičky, zralý kaki.</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6802295390">Zdarma v App Store</a><a class="try" href="#try">Vyzkoušejte si tabuli ↓</a></div>
+        <p class="muted small">Zdarma. Bez účtu a bez přihlašování.</p>
+      </div>
+      <div class="phone"><img src="../img/cs/01-board.jpg" alt="Jakou barvu mělo dnes nebe?" width="600" height="1303" decoding="async"></div>
+    </section>
 
-  <h1>SkyDex</h1>
-  <p class="lede">Sbírejte nebe dne jako barvu.<br>Je tu tabule o čtyřiceti osmi buňkách a vy ji plníte dnešním nebem.</p>
-  <p class="platform">iPhone · iOS 17.0 nebo novější</p>
 
-  <div class="board" aria-hidden="true">
-    <span class="bead" style="border-color:#55565A" title="00:00–00:50"></span>
-    <span class="bead" style="border-color:#55565B" title="00:50–01:40"></span>
-    <span class="bead" style="border-color:#55565C" title="01:40–02:30"></span>
-    <span class="bead" style="border-color:#55575D" title="02:30–03:20"></span>
-    <span class="bead" style="border-color:#55575D" title="03:20–04:10"></span>
-    <span class="bead" style="border-color:#56575E" title="04:10–05:00"></span>
-    <span class="bead" style="border-color:#595A64" title="05:00–05:30"></span>
-    <span class="bead" style="border-color:#5C5E69" title="05:30–06:00"></span>
-    <span class="bead" style="border-color:#767B8B" title="06:00–06:30"></span>
-    <span class="bead on" style="background:#99A7C5" title="06:30–07:00 · #99A7C5"></span>
-    <span class="bead" style="border-color:#848B97" title="07:00–07:30"></span>
-    <span class="bead" style="border-color:#7D8998" title="07:30–08:00"></span>
-    <span class="bead on" style="background:#709CCB" title="08:00–08:40 · #709CCB"></span>
-    <span class="bead" style="border-color:#728397" title="08:40–09:20"></span>
-    <span class="bead" style="border-color:#718196" title="09:20–10:00"></span>
-    <span class="bead" style="border-color:#6D7E96" title="10:00–10:40"></span>
-    <span class="bead" style="border-color:#6B7C95" title="10:40–11:20"></span>
-    <span class="bead" style="border-color:#6A7A95" title="11:20–12:00"></span>
-    <span class="bead on" style="background:#1F6FB5" title="12:00–12:40 · #1F6FB5"></span>
-    <span class="bead" style="border-color:#687793" title="12:40–13:20"></span>
-    <span class="bead" style="border-color:#687893" title="13:20–14:00"></span>
-    <span class="bead" style="border-color:#697A93" title="14:00–14:40"></span>
-    <span class="bead" style="border-color:#6B7B94" title="14:40–15:20"></span>
-    <span class="bead" style="border-color:#6F8096" title="15:20–16:00"></span>
-    <span class="bead" style="border-color:#728297" title="16:00–16:20"></span>
-    <span class="bead" style="border-color:#788697" title="16:20–16:40"></span>
-    <span class="bead on" style="background:#7EA5CD" title="16:40–17:00 · #7EA5CD"></span>
-    <span class="bead" style="border-color:#828993" title="17:00–17:20"></span>
-    <span class="bead" style="border-color:#8E8884" title="17:20–17:40"></span>
-    <span class="bead on" style="background:#C1A07E" title="17:40–18:00 · #C1A07E"></span>
-    <span class="bead" style="border-color:#998474" title="18:00–18:15"></span>
-    <span class="bead on" style="background:#D68F56" title="18:15–18:30 · #D68F56"></span>
-    <span class="bead" style="border-color:#9C7B68" title="18:30–18:45"></span>
-    <span class="bead on" style="background:#B95B35" title="18:45–19:00 · #B95B35"></span>
-    <span class="bead" style="border-color:#936E63" title="19:00–19:15"></span>
-    <span class="bead" style="border-color:#896A66" title="19:15–19:30"></span>
-    <span class="bead" style="border-color:#71656F" title="19:30–19:45"></span>
-    <span class="bead" style="border-color:#67636E" title="19:45–20:00"></span>
-    <span class="bead" style="border-color:#64626E" title="20:00–20:15"></span>
-    <span class="bead" style="border-color:#61606B" title="20:15–20:30"></span>
-    <span class="bead" style="border-color:#5D5D68" title="20:30–20:45"></span>
-    <span class="bead" style="border-color:#5A5B65" title="20:45–21:00"></span>
-    <span class="bead on" style="background:#161C30" title="21:00–21:30 · #161C30"></span>
-    <span class="bead" style="border-color:#585A62" title="21:30–22:00"></span>
-    <span class="bead" style="border-color:#56585F" title="22:00–22:30"></span>
-    <span class="bead" style="border-color:#55575D" title="22:30–23:00"></span>
-    <span class="bead" style="border-color:#55575C" title="23:00–23:30"></span>
-    <span class="bead" style="border-color:#55565A" title="23:30–00:00"></span>
-  </div>
-  <p class="caption">Nahoře je hluboká noc; směrem dolů se rozední, a pak se zase setmí. Plný kroužek je nebe, které jste zachytili; prázdný prstenec teprve přijde.</p>
+    <section class="reveal" id="try">
+      <h2>Vyzkoušejte si tabuli</h2>
+      <p class="muted">Klepněte na buňku a uvidíte, ke které části dne patří. Přidejte fotku nebe a zaplní se buňka pro tuto chvíli. Pak posuňte dny dopředu a sledujte, jak se tabule mění.</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;Vyzkoušejte si tabuli&quot;, &quot;lead&quot;: &quot;Klepněte na buňku a uvidíte, ke které části dne patří. Přidejte fotku nebe a zaplní se buňka pro tuto chvíli. Pak posuňte dny dopředu a sledujte, jak se tabule mění.&quot;, &quot;photo&quot;: &quot;Přidat fotku nebe&quot;, &quot;age&quot;: &quot;Od vyfocení&quot;, &quot;ageToday&quot;: &quot;Dnes&quot;, &quot;ageDay&quot;: &quot;po {n} dni&quot;, &quot;ageDays&quot;: &quot;po {n} dnech&quot;, &quot;note&quot;: &quot;Tabule začíná stejnými ukázkovými nebi jako snímky obrazovky aplikace. Vaši fotku čte jen tento prohlížeč a nikam ji neposílá. Jak se vybírá barva, kterou buňku zaplní a jak rychle bledne, funguje přesně jako v aplikaci.&quot;, &quot;now&quot;: &quot;Teď&quot;, &quot;bands&quot;: [&quot;Půlnoc&quot;, &quot;Svítání&quot;, &quot;Den&quot;, &quot;Pozdní odpoledne&quot;, &quot;Západ slunce&quot;, &quot;Noc&quot;], &quot;emptyTag&quot;: &quot;%@ · zatím prázdné&quot;, &quot;spot&quot;: &quot;Toto místo se zaplní nebem pořízeným v téhle části dne. Vejde se jakákoli fotka tak, jak je; barva se shodovat nemusí.&quot;, &quot;sims&quot;: [[&quot;Tuš&quot;, &quot;Tuš rozetřená na kameni. Nejhlubší noc.&quot;], [&quot;Noční moře&quot;, &quot;Voda shora, tam kde nesvítí žádná světla. Čerň s vrstvou modři.&quot;], [&quot;Dno připáleného hrnce&quot;, &quot;Stopa po připálení. Čerň bez modrého nádechu.&quot;], [&quot;Zaschlý inkoust&quot;, &quot;Stopa odloženého plnicího pera. Čerň se zbytkem modři.&quot;], [&quot;Hluboká voda&quot;, &quot;Barva míst, kde nedosáhnete na dno. Tmavá, chladná námořnická modř.&quot;], [&quot;Nové džíny&quot;, &quot;Denim, který ještě nikdy neprošel pračkou. Sytá tmavá modř.&quot;], [&quot;Okno nočního vlaku&quot;, &quot;Sklo poté, co kolem probleskla světla. Šeď blízká tmavé modři.&quot;], [&quot;Okno o půlnoci&quot;, &quot;Venku za odhrnutým závěsem. O něco modřejší než čerň.&quot;], [&quot;Spláchnutý inkoust&quot;, &quot;Voda po umytí inkoustu z rukou. Vybledlá tmavá modř.&quot;], [&quot;Modř školní uniformy&quot;, &quot;Modř saka nošeného pár let. Ani černá, ani modrá.&quot;], [&quot;Mokré džíny&quot;, &quot;Prádlo právě pověšené. Sytá, kalná modř.&quot;], [&quot;Hřbet makrely&quot;, &quot;Modrošedá se stříbrným leskem. Obloha před deštěm.&quot;], [&quot;Staré montérky&quot;, &quot;Modrá, která léty nošení vybledla.&quot;], [&quot;Vybledlý modrý závěs&quot;, &quot;Závěs dlouho vystavený slunci. Unavená tmavá modř.&quot;], [&quot;Orosené okno&quot;, &quot;Zevnitř je všechno zamlžené. Namodralá šeď.&quot;], [&quot;Ranní mlha&quot;, &quot;Ráno, které smazalo vršky budov. Světlá šeď do modra.&quot;], [&quot;Mokrá mikina&quot;, &quot;Šeď ztmavlá deštěm. Zamračené svítání.&quot;], [&quot;Vybledlý fialový svetr&quot;, &quot;Fialová vypraná mnoha praními. Západ těsně před svítáním.&quot;], [&quot;Slupka broskve&quot;, &quot;Ta chlupatá strana. Mezi růžovou a oranžovou.&quot;], [&quot;Meruňkové mléko&quot;, &quot;Mléko s rozmixovanou meruňkou. Velmi světlá oranžová.&quot;], [&quot;Bílá zeď ve slunci&quot;, &quot;Ráno má zeď na chvíli přesně tuhle barvu.&quot;], [&quot;Syrový losos&quot;, &quot;Ta růžová, která pečením zmizí.&quot;], [&quot;Jahodové mléko&quot;, &quot;Růžová po protřepání.&quot;], [&quot;Nezralá meruňka&quot;, &quot;Oranžová, ve které ještě vítězí žlutá.&quot;], [&quot;Voda ve sklenici&quot;, &quot;Světlá modř, kterou prošlo světlo.&quot;], [&quot;Studená voda z kohoutku&quot;, &quot;Barva, ze které zebou ruce. Světlá, chladná modř.&quot;], [&quot;Tenký led&quot;, &quot;Voda na jaře sotva zamrzlá. Velmi světlá modř.&quot;], [&quot;Porcelánová miska&quot;, &quot;Modrý nádech, který zůstal v bílé misce.&quot;], [&quot;Vyžehlená bílá košile&quot;, &quot;Skoro bílá s vrstvou modři. Velmi jasné poledne.&quot;], [&quot;Pěna z jaru&quot;, &quot;Bílá pěna nad dřezem s nádobím.&quot;], [&quot;Seprané džíny&quot;, &quot;Denim s vybledlými koleny. Modř zamračeného dne.&quot;], [&quot;Modrá pastelka&quot;, &quot;Modrá, když pastelkou silně přitlačíte na papír.&quot;], [&quot;Bazénové dlaždičky&quot;, &quot;Modř viděná skrz vodu. Jasné poledne.&quot;], [&quot;Modrá propiska&quot;, &quot;Modř čáry na papíře.&quot;], [&quot;Hluboký bazén&quot;, &quot;Voda tam, kde nedosáhnete na dno. Vrchol letního poledne.&quot;], [&quot;Voda s modrou barvou&quot;, &quot;Kelímek na vymývání štětce. Modř jasného odpoledne.&quot;], [&quot;Inkoust do pera&quot;, &quot;V lahvičce modrá skoro černá.&quot;], [&quot;Láhev limonády&quot;, &quot;Světlá modř s příměsí zelené.&quot;], [&quot;Orosené zrcadlo&quot;, &quot;Zrcadlo po sprše. Světlá namodralá šeď.&quot;], [&quot;Zamlžené sklo&quot;, &quot;Mléčná šeď, ve které se rozpíjí protější strana.&quot;], [&quot;Drobky z gumy&quot;, &quot;Bílý prach na stole. Velmi světlá šeď.&quot;], [&quot;Křídový prach&quot;, &quot;Bělost, která zůstane ve vzduchu po smazání tabule.&quot;], [&quot;Suchý cement&quot;, &quot;Dávno ztuhlá podlaha. Rovná světlá šeď.&quot;], [&quot;Vychladlý popel&quot;, &quot;To, co zbude po ohni. Obyčejná šeď zamračeného dne.&quot;], [&quot;Zakalené okno&quot;, &quot;Barva, kterou nesmyjete. Středně šedá do modra.&quot;], [&quot;Mokrá vlnitá lepenka&quot;, &quot;Krabice v dešti. Šeď s teplým nádechem.&quot;], [&quot;Zhasnutá obrazovka&quot;, &quot;Černošedá hned po vypnutí.&quot;], [&quot;Ohořelá sirka&quot;, &quot;Dřívko se zčernalou hlavičkou. Tmavá šedofialová.&quot;], [&quot;Voda po mytí nádobí&quot;, &quot;Vlažná voda s mastnými oky. Kalná šeď.&quot;], [&quot;Voda z vyvářeného prádla&quot;, &quot;Bílá voda, ze které stoupá pára. Světlá šeď.&quot;], [&quot;Ostří nože&quot;, &quot;Kov ve světle. Šeď s modrým nádechem.&quot;], [&quot;Stará plechová střecha&quot;, &quot;Střecha staré kůlny. Modrošedá těsně před deštěm.&quot;], [&quot;Moře za zamračeného dne&quot;, &quot;Voda, která převzala barvu nebe. Tmavá modrošedá.&quot;], [&quot;Mokrý cement&quot;, &quot;Podlaha v dešti. Tmavá, vlhká šeď.&quot;], [&quot;Tuha tužky&quot;, &quot;Tmavá šeď stínovaná naplocho. Deštivé odpoledne.&quot;], [&quot;Mokrý asfalt&quot;, &quot;Silnice po nočním dešti. Šeď skoro černá.&quot;], [&quot;Zeď porostlá mechem&quot;, &quot;Šeď prorostlá zelenou. Občas těsně před bouří.&quot;], [&quot;Stará mince&quot;, &quot;Kov ohlazený rukama. Šeď do žluta.&quot;], [&quot;Voda z praní rýže&quot;, &quot;První voda po propláchnutí rýže. Teplá bílá.&quot;], [&quot;Vaječná skořápka&quot;, &quot;Bílá, která není úplně bílá.&quot;], [&quot;Starý papír&quot;, &quot;Listy staré knihy. Zažloutlá bílá.&quot;], [&quot;Staré noviny&quot;, &quot;Papír vybledlý sluncem. Mezi šedou a žlutou.&quot;], [&quot;Okno v žlutém prachu&quot;, &quot;Kalná nažloutlost, kterou chcete setřít.&quot;], [&quot;Obilný nápoj&quot;, &quot;Kalná béžová, než se usadí.&quot;], [&quot;Zažloutlé linoleum&quot;, &quot;Podlaha léta zatížená nábytkem. Kalná žlutá.&quot;], [&quot;Vařený kaštan&quot;, &quot;Žlutá dužina oloupaného kaštanu.&quot;], [&quot;Mléko nalité do kávy&quot;, &quot;Právě nalité, ještě nerozmíchané.&quot;], [&quot;Zaprášená knihovna&quot;, &quot;Světlá šedohnědá, na které prst nechá stopu.&quot;], [&quot;Suchá hlína&quot;, &quot;Půda, která začíná praskat. Světle hnědá.&quot;], [&quot;Vychladlý čaj s mlékem&quot;, &quot;Nedopitý šálek. Kalná narůžovělá hnědá.&quot;], [&quot;Rozmoklá lepenka&quot;, &quot;Papír nabobtnalý deštěm. Barva zamračeného západu.&quot;], [&quot;Mokrá dřevěná terasa&quot;, &quot;Dřevo ztmavlé vlhkostí.&quot;], [&quot;Cihla v popelu&quot;, &quot;Místo, kde hořel oheň. Tmavá načervenalá šeď.&quot;], [&quot;Skvrna od kávy&quot;, &quot;Kulatá stopa po odneseném hrnku.&quot;], [&quot;Slupka vařených fazolí adzuki&quot;, &quot;Fazole dlouho namáčené ve vodě. Tmavá fialovošedá.&quot;], [&quot;Sójová posypka&quot;, &quot;Rýžový koláček obalený v sójové mouce. Jemná nahnědlá béžová.&quot;], [&quot;Žloutek&quot;, &quot;Těsně předtím, než ho propíchnete. Sytá žlutá.&quot;], [&quot;Kůrka chleba&quot;, &quot;Místo, kde žlutá přechází v hnědou.&quot;], [&quot;Mandarinková slupka&quot;, &quot;Ta oranžová, než ji oloupete.&quot;], [&quot;Pečený losos&quot;, &quot;Narůžovělá oranžová opečeného povrchu.&quot;], [&quot;Sušený kaki&quot;, &quot;Kaki s bílým povlakem. Kalná oranžová.&quot;], [&quot;Žhavé uhlíky&quot;, &quot;Červené nejsou plameny, ale uhlíky.&quot;], [&quot;Zralý kaki&quot;, &quot;Červenooranžová těsně předtím, než praskne.&quot;], [&quot;Omáčka tteokbokki&quot;, &quot;Červená svařené pálivé omáčky. Nejsytější západ.&quot;], [&quot;Dužina melounu&quot;, &quot;Nejsladší střed. Červená růžová.&quot;], [&quot;Růžová marmeláda&quot;, &quot;Okvětní lístky v cukru. Kalná růžová červeň.&quot;], [&quot;Červená cihla&quot;, &quot;Zeď, na kterou léta pršelo.&quot;], [&quot;Vychladlé uhlíky&quot;, &quot;Oheň pod vrstvou popela. Tmavá červenohnědá.&quot;], [&quot;Slupka švestky&quot;, &quot;Červenofialová s bílým povlakem.&quot;], [&quot;Kaše z červených fazolí&quot;, &quot;Hustá červenohnědá, než se přidají knedlíčky.&quot;], [&quot;Zbytek vína&quot;, &quot;Černočervená fialová na dně sklenky.&quot;], [&quot;Odkvetlý šeřík&quot;, &quot;Mdlá fialová vadnoucího květu.&quot;], [&quot;Borůvkové mléko&quot;, &quot;Nedomíchaná světlá fialová.&quot;], [&quot;Slupka hroznu&quot;, &quot;Tmavá fialová, mokrá po umytí.&quot;], [&quot;Slupka lilku&quot;, &quot;Černofialová, která pohlcuje světlo. Poslední barva dne.&quot;]]}"></div>
+    </section>
 
-  <h2>Tabule je dnešek</h2>
-  <p>Čtyřicet osm buněk jsou <strong>barvy, kterými dnešní nebe projde</strong>. Každý den se přepočítají podle skutečného východu a západu slunce tam, kde jste, a dnešní předpovědi oblačnosti a deště. Buňka zaplněná včera tak může být dnes prázdná. Tabule vám neříká, kolik jste jich nasbírali, ale <strong>kolik z dneška dokážete ukázat</strong>.</p>
-  <p>Vyfoťte nebe teď a <strong>buňka pro tuto dobu</strong> se zaplní zachycenou barvou. Pokud vyjde jinak, než se čekalo, stejně se tam vloží: předpověď je odhad, fotka tam skutečně byla.</p>
-  <p><strong>Nic se neposuzuje.</strong> Žádné prošel, neprošel, žádná tolerance. Šeď zataženého dne je také barvou nebe toho dne.</p>
+    <section class="problem reveal">
+      <h2>Na nebe se díváte každý den, ale žádnou barvu si nepamatujete</h2>
+      <p>Nebe cestou do práce, nebe, když jste po obědě vyšli ven: večer už si jeho barvu nevybavíte. A fotky nebe, které jste přece jen pořídili, zapadnou mezi vším ostatním v knihovně. SkyDex je sbírá jako barvy a na jedné tabuli ukáže, kudy dnešní nebe prošlo.</p>
+    </section>
 
-  <h2>Každá barva dostane jméno</h2>
-  <p>Aplikace vám říká, jakou barvu má vaše nebe, dvěma způsoby, napsanými korejsky. Nejprve přijde <strong>přirovnání, které si dokážete představit</strong> a pod ním <strong>jméno s původem</strong>. „Usuhanairo“ je přesnější odpověď, ale skoro nikdo v tom slově barvu nevidí, a jméno, které nevidíte, nedělá práci jména.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Každé nebe dostane jméno</h2>
+        <p>Každá barva nejdřív dostane jméno, které vám vykreslí obraz, třeba tenký led, bazénové dlaždičky nebo zralý kaki. Pod ním následuje jméno s původem: korejská barva, japonská barva, pigment nebo webová barva.<br>Když je shoda blízko, stojí u něj Název, když ne, poctivě Nejbližší název.</p>
+      </div>
+      <div class="phone"><img src="../img/cs/02-name.jpg" alt="Každé nebe dostane jméno" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <div class="names">
-    <div class="name">
-      <span class="swatch" style="background:#7E90B6"></span>
-      <span>
-        <div class="simile">Vybledlá námořnická záclona</div>
-        <div class="real">Usuhanairo · tradiční japonská barva 薄花色</div>
-      </span>
-    </div>
-    <div class="name">
-      <span class="swatch" style="background:#D68F55"></span>
-      <span>
-        <div class="simile">Kůrka topinky</div>
-        <div class="real">Kadmiová oranž · pigment</div>
-      </span>
-    </div>
-    <div class="name">
-      <span class="swatch" style="background:#1C6DB4"></span>
-      <span>
-        <div class="simile">Voda rozmíchaná s modrou barvou</div>
-        <div class="real">Cheongsaek · tradiční korejská barva</div>
-      </span>
-    </div>
-  </div>
-  <p>Jména s původem pocházejí z tradičních korejských a japonských barev, pigmentů a standardních barevných sad a každá hodnota byla ověřena u zdroje. Aplikace je také upřímná o tom, jak blízko je: když je shoda dost těsná, řekne „jméno je“, a když ne, „nejbližší jméno je“.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Zanechte řádek</h2>
+        <p>Hned po vyfocení se otevře karta. Napište, co se vám honilo hlavou při pohledu vzhůru, a pokaždé, když na tabuli klepnete na tu buňku, objeví se to znovu nad nebem.<br>Přes tuto fotku můžete také položit barvu nebe z jiného dne a výsledek sdílet jako obrázek.</p>
+      </div>
+      <div class="phone"><img src="../img/cs/03-card.jpg" alt="Zanechte řádek" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>Zaplněné buňky stárnou</h2>
-  <p>Fotka si týden drží skutečnou barvu, pak v dalších osmi týdnech pomalu bledne. Nesmaže se a nikdy úplně nezmizí. Vyfoťte nebe v tu dobu znovu a buňka se okamžitě vrátí do plné barvy.</p>
-  <p>Není to trest. Není tu žádná série, která by se mohla přerušit, a nic, co byste museli získávat zpět. Je to jen upřímný způsob, jak tabule složená z nebe říká „to nebe bylo před časem“.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Prázdné buňky ukazují cestu</h2>
+        <p>Klepněte na prázdnou buňku a uvidíte, ke které denní době patří a jakou barvu hledat. Řekne vám i to, jak nebe v tu hodinu vypadá za bezmračného dne, podle východu a západu slunce tam, kde jste.<br>Barva se trefit nemusí. I šeď zataženého dne je barvou nebe toho dne.</p>
+      </div>
+      <div class="phone"><img src="../img/cs/05-empty.jpg" alt="Prázdné buňky ukazují cestu" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>Stejná doba, jiné nebe</h2>
-  <p>Dny se opakují. Stejný budík, stejná cesta, stejné okno. Jen nebe nad nimi není nikdy dvakrát stejné. Obrazovka <strong>Opakování</strong> seřadí dny, kdy jste byli venku ve stejnou hodinu, abyste to viděli. Řada je opakování; barvy jsou to, co se neopakuje nikdy.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Deník, paleta, opakování</h2>
+        <p>Procházejte svá nebe popořadě a sbírejte barvy do palet, jako je modrá, šedá nebo písková. Vyfoťte stejnou hodinu jiný den a obě nebe se postaví vedle sebe.<br>Widgety na ploše ukážou dnešní tabuli i dnešní nebe na první pohled.</p>
+      </div>
+      <div class="phone"><img src="../img/cs/04-palette.jpg" alt="Deník, paleta, opakování" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>Widgety</h2>
-  <p><strong>Dnešní tabule</strong> vypadá přesně jako v aplikaci: čtyřicet osm buněk, plné kroužky pro zaplněné a prstence pro prázdné. <strong>Dnešní nebe</strong> ukazuje fotku, kterou jste dnes pořídili, s názvem její barvy, a funguje i na zamčené obrazovce.</p>
+    <section class="reveal">
+      <h2>Začít jde ve třech krocích</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>Podívejte se vzhůru</h3><p>Klepněte na tlačítko fotoaparátu pod tabulí a nechte nebe vyplnit čtverec.</p></li>
+<li class="card"><span class="n">2</span><h3>Buňka se zaplní</h3><p>Buňka pro tuto chvíli dostane barvu, kterou jste zachytili, a jméno.</p></li>
+<li class="card"><span class="n">3</span><h3>Zanechte řádek</h3><p>Na kartu, která se otevře, napište, na co jste právě mysleli.</p></li></ol>
+    </section>
 
-  <h2>Zůstává vaše</h2>
-  <div class="quiet">
-    <p>Žádný účet a žádný náš server. Vaše fotky a barvy žijí v úložišti aplikace ve vašem zařízení a, jste-li přihlášeni, ve vašem vlastním iCloudu. Vývojáři se nikdy neodesílají. Žádné reklamy, žádné sledování, žádná analytika třetích stran.</p>
-    <p>Poloha se používá jen pro východ a západ slunce a dnešní předpověď a žádá se s přesností na kilometry. Aplikace funguje dobře, i když odmítnete. Podrobnosti jsou v <a href="privacy.html">Zásadách ochrany soukromí</a>.</p>
-  </div>
+    <section class="reveal" id="commands">
+      <h2>Jak tabule dělí den</h2>
+      <div class="card table">
+        <dl><div><dt>Půlnoc · 0:00–5:00</dt><dd>šest buněk</dd></div><div><dt>Svítání · 5:00–8:00</dt><dd>šest buněk</dd></div><div><dt>Den · 8:00–16:00</dt><dd>dvanáct buněk</dd></div><div><dt>Pozdní odpoledne · 16:00–18:00</dt><dd>šest buněk</dd></div><div><dt>Západ slunce · 18:00–21:00</dt><dd>dvanáct buněk, jedna každých 15 minut</dd></div><div><dt>Noc · 21:00–24:00</dt><dd>šest buněk</dd></div></dl>
+      </div>
+      <p class="muted">Kolem západu slunce, kdy se nebe mění rychle, jsou buňky nahusto, uprostřed noci, kdy se skoro nehýbe, jsou široké. Nahoře je půlnoc a den plyne směrem dolů.</p>
+    </section>
+
+
+
+    <section class="reveal" id="faq">
+      <h2>Časté otázky</h2>
+      <div class="faq"><details><summary>Jak se buňka zaplní?</summary><p>Nebe vyfocené dnes zaplní buňku pro čas, kdy jste ho vyfotili, i když barva není taková, jakou jste čekali. Tak nebe v tu hodinu opravdu vypadalo. Nebe z dřívějších dnů se řadí podle barvy: je-li dost blízko barvě některé buňky, zaplní ji, a každé nebe zaplní jen jednu buňku.</p></details>
+<details><summary>Buňka, která byla včera plná, je dnes prázdná.</summary><p>Tabule je vždycky dnešní. Buňka, kterou včerejší nebe zaplnilo podle času, se s novým dnem znovu porovná už jen podle barvy. Proto je tabule někdy skoro plná a jindy působí prázdně. Vaše fotky nikam nezmizely: všechna nebe jsou v Deníku a seřazená podle barvy v Paletě.</p></details>
+<details><summary>Zaplněné buňky blednou.</summary><p>To je záměr. Fotka si týden drží svou skutečnou barvu a pak během dalších osmi týdnů pomalu bledne. Nesmaže se a nikdy nevybledne úplně. Vyfoťte nebe v tu dobu znovu a buňka se hned vrátí do plné barvy. Žádná série, kterou byste přerušili, žádné skóre, které byste museli dohánět.</p></details>
+<details><summary>Musí barva sedět?</summary><p>Ne. Nic se neschvaluje ani nezamítá. Každá fotka se uloží a i šeď zataženého dne je barvou nebe toho dne.</p></details>
+<details><summary>Proč aplikace chce znát polohu?</summary><p>Jen proto, aby vám po klepnutí na prázdnou buňku řekla, jak v tu hodinu vypadá bezmračné nebe, podle východu a západu slunce tam, kde jste. Používá jen přibližnou polohu s přesností na kilometry a souřadnice se k fotkám nikdy nepřipojují. Když přístup nepovolíte, vše funguje dál a výchozím bodem je Soul.</p></details>
+<details><summary>Můžu přidat nebe z knihovny fotek?</summary><p>Ano. Nebe vybrané ve Fotkách místo fotoaparátu se také ořízne na čtverec a zaplní buňku pro tuto chvíli, stejně jako to, které právě vyfotíte.</p></details>
+<details><summary>Jak smažu fotku?</summary><p>Otevřete fotku a klepněte na Smazat, nebo ji v Deníku přejeďte doleva. Zmizí ze zařízení i z iCloudu zároveň. Když smažete aplikaci, kopie v iCloudu zůstane, takže se vám nebe po nové instalaci vrátí.</p></details>
+<details><summary>Co se stane, když vyměním telefon?</summary><p>Nasbíraná nebe jsou ve vašem vlastním iCloudu, takže pokračují na novém zařízení přihlášeném ke stejnému účtu Apple. Žádný účet ani server, fotky a barvy se vývojáři nikdy neposílají. Žádné reklamy ani sledování.</p></details>
+<details><summary>Je to opravdu zdarma?</summary><p>Ano, všechny funkce jsou zdarma. Pokud se vám aplikace líbí, můžete vývojáři v aplikaci poslat spropitné, ale nic se tím neodemyká.</p></details>
+<details><summary>Na jakých zařízeních funguje?</summary><p>Na iPhonu s iOS 17.0 nebo novějším, pouze na výšku.</p></details></div>
+      <p class="contact">Chyby, divné chování nebo cokoli, co chcete říct, pište na <a href="mailto:leeo@kakao.com">leeo@kakao.com</a>. Když připíšete, co jste právě dělali a jakou máte verzi iOS, najdu příčinu mnohem snáz.</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>Zítra ráno<br>se jednou podívejte vzhůru</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6802295390">Zdarma v App Store</a>
+    </section>
+  </main>
 
   <footer>
-    <a href="support.html">Podpora</a> ·
-    <a href="privacy.html">Zásady ochrany soukromí</a> ·
-    <a href="https://github.com/M1zz/SkyDex">GitHub</a>
-    <p style="margin:10px 0 0">Údaje o počasí poskytuje <a href="https://weatherkit.apple.com/legal-attribution.html">Apple Počasí</a>.</p>
+    <nav id="languages" class="langs" aria-label="Jazyk"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="../es/" hreflang="es" lang="es">Español</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../th/" hreflang="th" lang="th">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs" aria-current="page">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="../id/" hreflang="id" lang="id">Indonesia</a>
+<a href="../nb/" hreflang="nb" lang="nb">Norsk</a>
+<a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">Zásady ochrany osobních údajů</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 SkyDex</p>
   </footer>
 
-</main>
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>

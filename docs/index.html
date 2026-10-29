@@ -1,363 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>하늘색</title>
-<meta name="description" content="하루의 하늘을 색으로 모으는 iOS 앱. 마흔여덟 칸의 판을 오늘 하늘로 채웁니다.">
-<link rel="canonical" href="https://m1zz.github.io/SkyDex/">
-<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/SkyDex/">
-<link rel="alternate" hreflang="en" href="https://m1zz.github.io/SkyDex/en/">
-<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/SkyDex/en/">
-<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/SkyDex/ja/">
-<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/SkyDex/zh-Hans/">
-<link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/SkyDex/zh-Hant/">
-<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/SkyDex/ru/">
-<link rel="alternate" hreflang="es" href="https://m1zz.github.io/SkyDex/es/">
-<link rel="alternate" hreflang="de" href="https://m1zz.github.io/SkyDex/de/">
-<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/SkyDex/fr/">
-<link rel="alternate" hreflang="it" href="https://m1zz.github.io/SkyDex/it/">
-<link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/SkyDex/pt-BR/">
-<link rel="alternate" hreflang="th" href="https://m1zz.github.io/SkyDex/th/">
-<link rel="alternate" hreflang="vi" href="https://m1zz.github.io/SkyDex/vi/">
-<link rel="alternate" hreflang="cs" href="https://m1zz.github.io/SkyDex/cs/">
-<link rel="alternate" hreflang="da" href="https://m1zz.github.io/SkyDex/da/">
-<link rel="alternate" hreflang="el" href="https://m1zz.github.io/SkyDex/el/">
-<link rel="alternate" hreflang="fi" href="https://m1zz.github.io/SkyDex/fi/">
-<link rel="alternate" hreflang="id" href="https://m1zz.github.io/SkyDex/id/">
-<link rel="alternate" hreflang="nb" href="https://m1zz.github.io/SkyDex/nb/">
-<link rel="alternate" hreflang="nl" href="https://m1zz.github.io/SkyDex/nl/">
-<link rel="alternate" hreflang="pl" href="https://m1zz.github.io/SkyDex/pl/">
-<link rel="alternate" hreflang="sv" href="https://m1zz.github.io/SkyDex/sv/">
-<link rel="alternate" hreflang="tr" href="https://m1zz.github.io/SkyDex/tr/">
-<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/SkyDex/">
-<style>
-  :root {
-    --ink: #16202e;
-    --ink-soft: #5d6773;
-    --paper: #f4f5f7;
-    --card: #ffffff;
-    --line: #e2e5ea;
-    --accent: #2f7bbe;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ink: #eef1f5;
-      --ink-soft: #a2acb8;
-      --paper: #0b111c;
-      --card: #141c28;
-      --line: #26303e;
-      --accent: #7fa4ce;
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    padding: 0 20px 72px;
-    background: var(--paper);
-    color: var(--ink);
-    font: 17px/1.72 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
-      "Pretendard", "Segoe UI", Roboto, sans-serif;
-    -webkit-text-size-adjust: 100%;
-  }
-  main { max-width: 680px; margin: 0 auto; }
-  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
-
-  /* 하루 곡선 그대로 이어붙인 띠 */
-  .strip {
-    display: flex;
-    height: 8px;
-    border-radius: 4px;
-    overflow: hidden;
-    margin: 40px 0 34px;
-  }
-  .strip span { flex: 1 1 0; }
-
-  h1 {
-    font-size: 34px; line-height: 1.25; letter-spacing: -0.03em;
-    margin: 0 0 8px; text-align: center; font-weight: 700;
-  }
-  .lede {
-    margin: 0 auto 8px; text-align: center; color: var(--ink-soft);
-    max-width: 26em;
-  }
-  .platform {
-    text-align: center; color: var(--ink-soft); font-size: 14px;
-    margin: 0 0 36px;
-  }
-
-  /* 판 — 앱과 같은 6×8, 같은 색 */
-  .board {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
-    max-width: 340px;
-    margin: 0 auto 12px;
-  }
-  .bead {
-    aspect-ratio: 1;
-    border-radius: 50%;
-    border: 4px solid transparent;
-    display: block;
-  }
-  .bead.on { border: 0; }
-  .caption {
-    text-align: center; color: var(--ink-soft); font-size: 14px;
-    margin: 0 0 46px;
-  }
-
-  h2 {
-    font-size: 21px; letter-spacing: -0.01em; margin: 46px 0 12px;
-    padding-top: 28px; border-top: 1px solid var(--line);
-  }
-  p { margin: 0 0 14px; }
-  ul { margin: 0 0 14px; padding-left: 1.2em; }
-  li { margin-bottom: 8px; }
-  strong { font-weight: 600; }
-
-  /* 이름 카드 — 앱의 사진 카드 아래에 붙는 것과 같은 순서 */
-  .names { margin: 20px 0 8px; }
-  .name {
-    display: flex; align-items: center; gap: 14px;
-    background: var(--card); border: 1px solid var(--line);
-    border-radius: 16px; padding: 14px 16px; margin-bottom: 10px;
-  }
-  .swatch {
-    width: 46px; height: 46px; border-radius: 12px; flex: 0 0 auto;
-  }
-  .name .simile { font-size: 17px; font-weight: 600; }
-  .name .real { font-size: 13px; color: var(--ink-soft); }
-
-  .quiet {
-    background: var(--card); border: 1px solid var(--line);
-    border-radius: 16px; padding: 18px 20px; margin: 22px 0 8px;
-  }
-  .quiet p:last-child { margin-bottom: 0; }
-
-  footer {
-    margin-top: 60px; padding-top: 26px; border-top: 1px solid var(--line);
-    color: var(--ink-soft); font-size: 15px; text-align: center;
-  }
-  footer a { margin: 0 8px; }
-  nav.langs { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px 14px; margin: 18px 0 0; font-size: 14px; }
-  nav.langs a { color: var(--ink-soft); text-decoration: none; }
-  nav.langs a[aria-current] { color: var(--ink); font-weight: 600; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>하늘색: 찍을 때마다 채워지는 오늘의 하늘 판</title>
+  <meta name="description" content="하늘을 한 장 찍을 때마다 하루의 하늘색 마흔여덟 칸이 하나씩 채워지고, 그 색을 닮은 이름이 붙습니다. 계정 없이 무료로 씁니다.">
+  <meta name="theme-color" content="#2A74B6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b111c" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6802295390">
+  <link rel="canonical" href="https://m1zz.github.io/SkyDex/">
+  <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/SkyDex/">
+  <link rel="alternate" hreflang="en" href="https://m1zz.github.io/SkyDex/en/">
+  <link rel="alternate" hreflang="ja" href="https://m1zz.github.io/SkyDex/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/SkyDex/zh-Hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/SkyDex/zh-Hant/">
+  <link rel="alternate" hreflang="ru" href="https://m1zz.github.io/SkyDex/ru/">
+  <link rel="alternate" hreflang="es" href="https://m1zz.github.io/SkyDex/es/">
+  <link rel="alternate" hreflang="de" href="https://m1zz.github.io/SkyDex/de/">
+  <link rel="alternate" hreflang="fr" href="https://m1zz.github.io/SkyDex/fr/">
+  <link rel="alternate" hreflang="it" href="https://m1zz.github.io/SkyDex/it/">
+  <link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/SkyDex/pt-BR/">
+  <link rel="alternate" hreflang="th" href="https://m1zz.github.io/SkyDex/th/">
+  <link rel="alternate" hreflang="vi" href="https://m1zz.github.io/SkyDex/vi/">
+  <link rel="alternate" hreflang="cs" href="https://m1zz.github.io/SkyDex/cs/">
+  <link rel="alternate" hreflang="da" href="https://m1zz.github.io/SkyDex/da/">
+  <link rel="alternate" hreflang="el" href="https://m1zz.github.io/SkyDex/el/">
+  <link rel="alternate" hreflang="fi" href="https://m1zz.github.io/SkyDex/fi/">
+  <link rel="alternate" hreflang="id" href="https://m1zz.github.io/SkyDex/id/">
+  <link rel="alternate" hreflang="nb" href="https://m1zz.github.io/SkyDex/nb/">
+  <link rel="alternate" hreflang="nl" href="https://m1zz.github.io/SkyDex/nl/">
+  <link rel="alternate" hreflang="pl" href="https://m1zz.github.io/SkyDex/pl/">
+  <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/SkyDex/sv/">
+  <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/SkyDex/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/SkyDex/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="하늘색: 찍을 때마다 채워지는 오늘의 하늘 판">
+  <meta property="og:description" content="하늘을 한 장 찍을 때마다 하루의 하늘색 마흔여덟 칸이 하나씩 채워지고, 그 색을 닮은 이름이 붙습니다. 계정 없이 무료로 씁니다.">
+  <meta property="og:url" content="https://m1zz.github.io/SkyDex/">
+  <meta property="og:image" content="https://m1zz.github.io/SkyDex/img/ko/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="icon.png">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="stylesheet" href="sitegen.css">
+  <link rel="stylesheet" href="demo.css">
+  <style>:root{--accent:#2A74B6}@media (prefers-color-scheme:dark){:root{--accent:#7FA4CE}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-<main>
-  <nav class="langs" aria-label="Language">
-    <a href="./" hreflang="ko" lang="ko" aria-current="true">한국어</a>
-    <a href="en/" hreflang="en" lang="en">English</a>
-    <a href="ja/" hreflang="ja" lang="ja">日本語</a>
-    <a href="zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
-    <a href="zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
-    <a href="ru/" hreflang="ru" lang="ru">Русский</a>
-    <a href="es/" hreflang="es" lang="es">Español</a>
-    <a href="de/" hreflang="de" lang="de">Deutsch</a>
-    <a href="fr/" hreflang="fr" lang="fr">Français</a>
-    <a href="it/" hreflang="it" lang="it">Italiano</a>
-    <a href="pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
-    <a href="th/" hreflang="th" lang="th">ไทย</a>
-    <a href="vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
-    <a href="cs/" hreflang="cs" lang="cs">Čeština</a>
-    <a href="da/" hreflang="da" lang="da">Dansk</a>
-    <a href="el/" hreflang="el" lang="el">Ελληνικά</a>
-    <a href="fi/" hreflang="fi" lang="fi">Suomi</a>
-    <a href="id/" hreflang="id" lang="id">Indonesia</a>
-    <a href="nb/" hreflang="nb" lang="nb">Norsk</a>
-    <a href="nl/" hreflang="nl" lang="nl">Nederlands</a>
-    <a href="pl/" hreflang="pl" lang="pl">Polski</a>
-    <a href="sv/" hreflang="sv" lang="sv">Svenska</a>
-    <a href="tr/" hreflang="tr" lang="tr">Türkçe</a>
-  </nav>
+  <a class="skip" href="#main">본문으로 건너뛰기</a>
+  <header class="bar">
+    <a class="brand" href=""><img src="icon.png" alt="" width="32" height="32">하늘색</a>
+    <a class="lang-link" href="#languages">언어</a>
+  </header>
 
-  <div class="strip" aria-hidden="true">
-    <span style="background:#080D18"></span>
-    <span style="background:#090E1A"></span>
-    <span style="background:#0A0F1C"></span>
-    <span style="background:#0A101E"></span>
-    <span style="background:#0B1120"></span>
-    <span style="background:#0C1221"></span>
-    <span style="background:#131B30"></span>
-    <span style="background:#1B263E"></span>
-    <span style="background:#6879A2"></span>
-    <span style="background:#99A7C5"></span>
-    <span style="background:#96ABCB"></span>
-    <span style="background:#7FA4CE"></span>
-    <span style="background:#709CCB"></span>
-    <span style="background:#5791C6"></span>
-    <span style="background:#508DC5"></span>
-    <span style="background:#3F83C1"></span>
-    <span style="background:#307BBE"></span>
-    <span style="background:#2B77BB"></span>
-    <span style="background:#1F6FB5"></span>
-    <span style="background:#1D6EB4"></span>
-    <span style="background:#2471B6"></span>
-    <span style="background:#2975B8"></span>
-    <span style="background:#3179BA"></span>
-    <span style="background:#4988C3"></span>
-    <span style="background:#558EC5"></span>
-    <span style="background:#6D9BCA"></span>
-    <span style="background:#7EA5CD"></span>
-    <span style="background:#8FA5BF"></span>
-    <span style="background:#B2A297"></span>
-    <span style="background:#C1A07E"></span>
-    <span style="background:#CC986A"></span>
-    <span style="background:#D68F56"></span>
-    <span style="background:#CC7C49"></span>
-    <span style="background:#B95B35"></span>
-    <span style="background:#A95239"></span>
-    <span style="background:#8F4440"></span>
-    <span style="background:#543852"></span>
-    <span style="background:#3B324D"></span>
-    <span style="background:#322F4B"></span>
-    <span style="background:#2B2A44"></span>
-    <span style="background:#20233A"></span>
-    <span style="background:#181D33"></span>
-    <span style="background:#161C30"></span>
-    <span style="background:#13192B"></span>
-    <span style="background:#0F1424"></span>
-    <span style="background:#0B111F"></span>
-    <span style="background:#0A101D"></span>
-    <span style="background:#080D19"></span>
-  </div>
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>오늘 하늘은<br>무슨 색이었나요?</h1>
+        <p class="lead">하늘을 한 장 찍으면 마흔여덟 칸의 판에서 그 시각의 칸이 찍은 색으로 채워집니다. 살얼음색, 수영장 타일색, 홍시색처럼 그 색을 닮은 이름도 붙습니다.</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6802295390">App Store에서 무료로 받기</a><a class="try" href="#try">판을 직접 눌러 보세요 ↓</a></div>
+        <p class="muted small">무료입니다. 계정도 로그인도 없습니다.</p>
+      </div>
+      <div class="phone"><img src="img/ko/01-board.jpg" alt="오늘 하늘은 무슨 색이었나요?" width="600" height="1303" decoding="async"></div>
+    </section>
 
-  <h1>하늘색</h1>
-  <p class="lede">하루의 하늘을 색으로 모읍니다.
-  마흔여덟 칸의 판이 있고, 오늘 하늘로 채웁니다.</p>
-  <p class="platform">iPhone · iOS 17.0 이상</p>
 
-  <div class="board" aria-hidden="true">
-    <span class="bead" style="border-color:#55565A" title="00:00–00:50"></span>
-    <span class="bead" style="border-color:#55565B" title="00:50–01:40"></span>
-    <span class="bead" style="border-color:#55565C" title="01:40–02:30"></span>
-    <span class="bead" style="border-color:#55575D" title="02:30–03:20"></span>
-    <span class="bead" style="border-color:#55575D" title="03:20–04:10"></span>
-    <span class="bead" style="border-color:#56575E" title="04:10–05:00"></span>
-    <span class="bead" style="border-color:#595A64" title="05:00–05:30"></span>
-    <span class="bead" style="border-color:#5C5E69" title="05:30–06:00"></span>
-    <span class="bead" style="border-color:#767B8B" title="06:00–06:30"></span>
-    <span class="bead on" style="background:#99A7C5" title="06:30–07:00 · #99A7C5"></span>
-    <span class="bead" style="border-color:#848B97" title="07:00–07:30"></span>
-    <span class="bead" style="border-color:#7D8998" title="07:30–08:00"></span>
-    <span class="bead on" style="background:#709CCB" title="08:00–08:40 · #709CCB"></span>
-    <span class="bead" style="border-color:#728397" title="08:40–09:20"></span>
-    <span class="bead" style="border-color:#718196" title="09:20–10:00"></span>
-    <span class="bead" style="border-color:#6D7E96" title="10:00–10:40"></span>
-    <span class="bead" style="border-color:#6B7C95" title="10:40–11:20"></span>
-    <span class="bead" style="border-color:#6A7A95" title="11:20–12:00"></span>
-    <span class="bead on" style="background:#1F6FB5" title="12:00–12:40 · #1F6FB5"></span>
-    <span class="bead" style="border-color:#687793" title="12:40–13:20"></span>
-    <span class="bead" style="border-color:#687893" title="13:20–14:00"></span>
-    <span class="bead" style="border-color:#697A93" title="14:00–14:40"></span>
-    <span class="bead" style="border-color:#6B7B94" title="14:40–15:20"></span>
-    <span class="bead" style="border-color:#6F8096" title="15:20–16:00"></span>
-    <span class="bead" style="border-color:#728297" title="16:00–16:20"></span>
-    <span class="bead" style="border-color:#788697" title="16:20–16:40"></span>
-    <span class="bead on" style="background:#7EA5CD" title="16:40–17:00 · #7EA5CD"></span>
-    <span class="bead" style="border-color:#828993" title="17:00–17:20"></span>
-    <span class="bead" style="border-color:#8E8884" title="17:20–17:40"></span>
-    <span class="bead on" style="background:#C1A07E" title="17:40–18:00 · #C1A07E"></span>
-    <span class="bead" style="border-color:#998474" title="18:00–18:15"></span>
-    <span class="bead on" style="background:#D68F56" title="18:15–18:30 · #D68F56"></span>
-    <span class="bead" style="border-color:#9C7B68" title="18:30–18:45"></span>
-    <span class="bead on" style="background:#B95B35" title="18:45–19:00 · #B95B35"></span>
-    <span class="bead" style="border-color:#936E63" title="19:00–19:15"></span>
-    <span class="bead" style="border-color:#896A66" title="19:15–19:30"></span>
-    <span class="bead" style="border-color:#71656F" title="19:30–19:45"></span>
-    <span class="bead" style="border-color:#67636E" title="19:45–20:00"></span>
-    <span class="bead" style="border-color:#64626E" title="20:00–20:15"></span>
-    <span class="bead" style="border-color:#61606B" title="20:15–20:30"></span>
-    <span class="bead" style="border-color:#5D5D68" title="20:30–20:45"></span>
-    <span class="bead" style="border-color:#5A5B65" title="20:45–21:00"></span>
-    <span class="bead on" style="background:#161C30" title="21:00–21:30 · #161C30"></span>
-    <span class="bead" style="border-color:#585A62" title="21:30–22:00"></span>
-    <span class="bead" style="border-color:#56585F" title="22:00–22:30"></span>
-    <span class="bead" style="border-color:#55575D" title="22:30–23:00"></span>
-    <span class="bead" style="border-color:#55575C" title="23:00–23:30"></span>
-    <span class="bead" style="border-color:#55565A" title="23:30–00:00"></span>
-  </div>
-  <p class="caption">위가 한밤, 아래로 내려오며 낮이 되고 다시 어두워집니다.
-  꽉 찬 원은 찍은 하늘, 빈 고리는 아직입니다.</p>
+    <section class="reveal" id="try">
+      <h2>판을 직접 눌러 보세요</h2>
+      <p class="muted">칸을 누르면 그 칸이 언제의 하늘인지 보입니다. 하늘 사진을 넣으면 지금 시각의 칸이 채워지고, 날을 넘겨 보면 판이 어떻게 달라지는지 보입니다.</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;판을 직접 눌러 보세요&quot;, &quot;lead&quot;: &quot;칸을 누르면 그 칸이 언제의 하늘인지 보입니다. 하늘 사진을 넣으면 지금 시각의 칸이 채워지고, 날을 넘겨 보면 판이 어떻게 달라지는지 보입니다.&quot;, &quot;photo&quot;: &quot;하늘 사진 넣어 보기&quot;, &quot;now&quot;: &quot;지금&quot;, &quot;age&quot;: &quot;찍은 날로부터&quot;, &quot;ageToday&quot;: &quot;오늘&quot;, &quot;ageDay&quot;: &quot;{n}일 뒤&quot;, &quot;ageDays&quot;: &quot;{n}일 뒤&quot;, &quot;note&quot;: &quot;판은 앱 스크린샷과 같은 예시 하늘로 채워 두었습니다. 넣은 사진은 이 브라우저 안에서만 읽고 어디로도 보내지 않습니다. 색을 고르는 방법, 칸을 채우는 규칙, 흐려지는 속도는 앱과 같습니다.&quot;, &quot;bands&quot;: [&quot;한밤&quot;, &quot;여명&quot;, &quot;낮&quot;, &quot;늦은 오후&quot;, &quot;노을&quot;, &quot;밤&quot;], &quot;emptyTag&quot;: &quot;%@ · 아직 비어 있음&quot;, &quot;spot&quot;: &quot;이 자리는 그 시간대에 찍은 하늘로 채워집니다. 어떤 사진이든 그대로 들어가고, 색이 맞아야 할 필요는 없습니다.&quot;, &quot;sims&quot;: [[&quot;먹물색&quot;, &quot;벼루에 갈아 놓은 먹. 가장 깊은 밤.&quot;], [&quot;밤바다색&quot;, &quot;불빛 없는 데서 내려다본 물. 검정에 파랑이 한 겹.&quot;], [&quot;탄 냄비 바닥색&quot;, &quot;태우고 남은 자국. 푸른 기 없는 검정.&quot;], [&quot;마른 잉크색&quot;, &quot;쓰다 만 만년필 자국. 푸른 기가 남은 검정.&quot;], [&quot;깊은 물색&quot;, &quot;발이 닿지 않는 곳의 색. 어둡고 서늘한 남색.&quot;], [&quot;새 청바지색&quot;, &quot;아직 한 번도 안 빤 데님. 진한 남색.&quot;], [&quot;야간열차 유리창색&quot;, &quot;불빛이 지나간 뒤의 유리. 남색에 가까운 회색.&quot;], [&quot;한밤 유리창색&quot;, &quot;커튼을 걷었을 때의 바깥. 검정보다 조금 파랗다.&quot;], [&quot;물에 씻은 잉크색&quot;, &quot;손에 묻은 잉크를 헹군 물. 흐린 남색.&quot;], [&quot;교복 남색&quot;, &quot;몇 해 입은 재킷의 남색. 검지도 파랗지도 않다.&quot;], [&quot;물에 젖은 청바지색&quot;, &quot;빨래를 막 널었을 때. 짙고 탁한 파랑.&quot;], [&quot;고등어 등색&quot;, &quot;은빛이 도는 청회색. 비 오기 전 하늘.&quot;], [&quot;낡은 작업복색&quot;, &quot;여러 해 입어 색이 죽은 파랑.&quot;], [&quot;바랜 남색 커튼색&quot;, &quot;해를 오래 본 커튼. 힘이 빠진 남색.&quot;], [&quot;창에 서린 김색&quot;, &quot;안에서 밖을 보면 뿌옇다. 푸른 회색.&quot;], [&quot;아침 안개색&quot;, &quot;건물 위쪽이 지워진 아침. 푸르스름한 밝은 회색.&quot;], [&quot;젖은 후드티색&quot;, &quot;빗물이 배어 진해진 회색. 흐린 새벽.&quot;], [&quot;빛바랜 보라 스웨터색&quot;, &quot;여러 번 빨아 색이 죽은 보라. 동트기 직전 서쪽.&quot;], [&quot;복숭아 껍질색&quot;, &quot;솜털 있는 쪽. 분홍과 주황 사이.&quot;], [&quot;살구 우유색&quot;, &quot;우유에 살구를 갈아 넣은 색. 아주 옅은 주황.&quot;], [&quot;햇살 든 흰 벽색&quot;, &quot;아침에 벽이 잠깐 이 색이 된다.&quot;], [&quot;연어살색&quot;, &quot;구우면 사라지는 그 분홍.&quot;], [&quot;딸기 우유색&quot;, &quot;흔들어 섞은 뒤의 분홍.&quot;], [&quot;덜 익은 살구색&quot;, &quot;노랑이 아직 이긴 주황.&quot;], [&quot;유리컵 물색&quot;, &quot;빛이 통과한 옅은 파랑.&quot;], [&quot;차가운 수돗물색&quot;, &quot;손 시린 색. 옅고 서늘한 파랑.&quot;], [&quot;살얼음색&quot;, &quot;봄에 살짝 언 물 위. 아주 옅은 파랑.&quot;], [&quot;사기그릇색&quot;, &quot;흰 그릇에 남은 푸른 기.&quot;], [&quot;다림질한 흰 셔츠색&quot;, &quot;거의 흰데 파랑이 한 겹. 아주 맑은 정오.&quot;], [&quot;세제 거품색&quot;, &quot;설거지통 위에 뜬 흰 거품.&quot;], [&quot;바랜 청바지색&quot;, &quot;무릎이 하얘진 데님. 흐린 낮의 파랑.&quot;], [&quot;파란 크레파스색&quot;, &quot;도화지에 세게 문질렀을 때 나오는 파랑.&quot;], [&quot;수영장 타일색&quot;, &quot;물을 통해 본 파랑. 맑은 날 한낮.&quot;], [&quot;파란 볼펜색&quot;, &quot;종이에 그은 선의 파랑.&quot;], [&quot;깊은 수영장 물색&quot;, &quot;발이 안 닿는 쪽 물색. 한여름 정오의 꼭대기.&quot;], [&quot;파란 물감 푼 물색&quot;, &quot;붓을 헹군 통 안. 맑은 날 오후의 파랑.&quot;], [&quot;만년필 잉크색&quot;, &quot;병 안에서는 검정에 가까운 파랑.&quot;], [&quot;사이다 병색&quot;, &quot;초록이 섞인 옅은 파랑.&quot;], [&quot;김 서린 거울색&quot;, &quot;샤워 뒤의 거울. 밝고 푸른 회색.&quot;], [&quot;안개 낀 유리색&quot;, &quot;건너편이 뭉개지는 정도의 뿌연 회색.&quot;], [&quot;지우개 가루색&quot;, &quot;책상에 모인 흰 가루. 아주 옅은 회색.&quot;], [&quot;분필 가루색&quot;, &quot;칠판을 지운 뒤 공기 중에 남는 흰빛.&quot;], [&quot;마른 시멘트색&quot;, &quot;굳은 지 오래된 바닥. 평평한 밝은 회색.&quot;], [&quot;식은 재색&quot;, &quot;다 타고 남은 것. 흐린 날 낮의 표준 회색.&quot;], [&quot;흐린 유리창색&quot;, &quot;닦아도 그대로인 색. 푸른 기 도는 중간 회색.&quot;], [&quot;젖은 골판지색&quot;, &quot;비 맞은 상자. 따뜻한 기가 도는 회색.&quot;], [&quot;꺼진 화면색&quot;, &quot;전원을 끈 직후의 검은 회색.&quot;], [&quot;다 탄 성냥색&quot;, &quot;머리만 검게 남은 개비. 어두운 회보라.&quot;], [&quot;설거지물색&quot;, &quot;기름 뜬 미지근한 물. 탁한 회색.&quot;], [&quot;빨래 삶은 물색&quot;, &quot;김이 올라오는 하얀 물. 밝은 회색.&quot;], [&quot;칼날색&quot;, &quot;빛을 받은 쇠. 푸른 기가 도는 회색.&quot;], [&quot;낡은 함석지붕색&quot;, &quot;오래된 창고 지붕. 비 오기 직전의 회청색.&quot;], [&quot;흐린 날 바다색&quot;, &quot;하늘색을 그대로 받은 물. 어두운 청회색.&quot;], [&quot;젖은 시멘트색&quot;, &quot;비 맞은 바닥. 어둡고 축축한 회색.&quot;], [&quot;연필심색&quot;, &quot;심을 눕혀 칠한 진회색. 비 오는 날 오후.&quot;], [&quot;젖은 아스팔트색&quot;, &quot;밤에 비 온 도로. 거의 검정에 가까운 회색.&quot;], [&quot;이끼 낀 담장색&quot;, &quot;회색에 초록이 슬었다. 폭풍 직전에 가끔.&quot;], [&quot;오래된 동전색&quot;, &quot;손때 묻은 쇠. 누런 기 도는 회색.&quot;], [&quot;쌀뜨물색&quot;, &quot;쌀 씻은 첫 물. 따뜻한 흰색.&quot;], [&quot;달걀 껍데기색&quot;, &quot;완전한 흰색이 아닌 흰색.&quot;], [&quot;묵은 종이색&quot;, &quot;오래된 책 속장. 누렇게 뜬 흰색.&quot;], [&quot;오래된 신문지색&quot;, &quot;볕에 바랜 종이. 회색과 누런색 사이.&quot;], [&quot;황사 낀 창문색&quot;, &quot;닦고 싶어지는 뿌연 누런빛.&quot;], [&quot;미숫가루 물색&quot;, &quot;가라앉기 전의 탁한 베이지.&quot;], [&quot;누런 장판색&quot;, &quot;오래 눌린 바닥. 탁한 노랑.&quot;], [&quot;삶은 밤 속살색&quot;, &quot;껍질 벗긴 밤의 노란 속.&quot;], [&quot;커피에 부은 우유색&quot;, &quot;막 부어 아직 안 섞였을 때.&quot;], [&quot;먼지 앉은 책장색&quot;, &quot;손가락으로 밀면 자국이 나는 밝은 회갈색.&quot;], [&quot;마른 진흙색&quot;, &quot;갈라지기 시작한 흙바닥. 옅은 갈색.&quot;], [&quot;식은 밀크티색&quot;, &quot;덜 마시고 둔 잔. 탁한 분홍빛 갈색.&quot;], [&quot;젖은 마분지색&quot;, &quot;비를 맞고 부푼 종이. 흐린 노을의 색.&quot;], [&quot;비 맞은 나무 데크색&quot;, &quot;물기를 머금어 어두워진 나무.&quot;], [&quot;재 묻은 벽돌색&quot;, &quot;불을 쬔 자리. 어두운 붉은 회색.&quot;], [&quot;커피 자국색&quot;, &quot;컵을 들어낸 뒤 남은 동그란 얼룩.&quot;], [&quot;삶은 팥 껍질색&quot;, &quot;물에 오래 불린 팥. 어두운 자줏빛 회색.&quot;], [&quot;인절미 고물색&quot;, &quot;콩가루를 묻힌 면. 부드러운 갈색빛 베이지.&quot;], [&quot;달걀노른자색&quot;, &quot;터뜨리기 직전. 진한 노랑.&quot;], [&quot;식빵 가장자리색&quot;, &quot;노랑이 갈색으로 넘어가는 지점.&quot;], [&quot;귤 껍질색&quot;, &quot;까기 전의 그 주황.&quot;], [&quot;구운 연어색&quot;, &quot;겉면이 익은 분홍빛 주황.&quot;], [&quot;곶감색&quot;, &quot;겉에 분이 난 곶감. 탁한 주황.&quot;], [&quot;장작 불씨색&quot;, &quot;불꽃이 아니라 숯이 붉은 상태.&quot;], [&quot;홍시색&quot;, &quot;물러 터지기 직전의 붉은 주황.&quot;], [&quot;떡볶이 국물색&quot;, &quot;졸아든 뒤의 붉은색. 가장 진한 노을.&quot;], [&quot;수박 속살색&quot;, &quot;가운데 가장 단 부분. 붉은 분홍.&quot;], [&quot;장미 잼색&quot;, &quot;설탕에 절인 꽃잎. 탁한 분홍빛 빨강.&quot;], [&quot;붉은 벽돌색&quot;, &quot;비를 여러 해 맞은 담벼락.&quot;], [&quot;식은 숯불색&quot;, &quot;재를 뒤집어쓴 불. 어두운 붉은 갈색.&quot;], [&quot;자두 겉면색&quot;, &quot;붉은 보라에 흰 가루가 앉은 색.&quot;], [&quot;팥죽색&quot;, &quot;새알 넣기 전의 걸쭉한 붉은 갈색.&quot;], [&quot;남은 포도주색&quot;, &quot;잔 바닥에 남은 검붉은 보라.&quot;], [&quot;지고 난 라일락색&quot;, &quot;말라가는 꽃의 흐린 보라.&quot;], [&quot;블루베리 우유색&quot;, &quot;섞다 만 연보라.&quot;], [&quot;포도 껍질색&quot;, &quot;씻어서 물기가 있는 진보라.&quot;], [&quot;가지 껍질색&quot;, &quot;빛을 먹는 검보라. 하루의 마지막 색.&quot;]]}"></div>
+    </section>
 
-  <h2>판은 오늘입니다</h2>
-  <p>마흔여덟 칸은 <strong>오늘 하늘이 지나갈 색</strong>입니다. 그 자리의 실제
-  일출·일몰 시각과 오늘 예보(구름·비)로 매일 다시 계산됩니다. 그래서 어제 차 있던 칸이
-  오늘은 비어 있을 수 있습니다. 판이 말하는 것은 모은 개수가 아니라
-  <strong>오늘을 얼마나 보여줄 수 있는가</strong>입니다.</p>
-  <p>지금 하늘을 찍으면 <strong>그 시각의 칸</strong>이 찍은 색으로 채워집니다. 예상과
-  다른 색이 나와도 그대로 들어갑니다 — 예보는 짐작이고, 사진은 그 자리에 있었습니다.</p>
-  <p><strong>판정이 없습니다.</strong> 통과도 실패도 허용 오차도 없습니다. 흐린 날의
-  회색도 그날의 하늘색입니다.</p>
+    <section class="problem reveal">
+      <h2>하늘은 매일 보는데, 기억나는 색은 없습니다</h2>
+      <p>출근길에 올려다본 하늘, 점심 먹고 나오던 길의 하늘이 무슨 색이었는지 저녁이 되면 떠오르지 않습니다. 사진첩에 남은 하늘 사진은 다른 사진들 사이에 묻힙니다. 하늘색은 하늘 사진을 색으로 모아, 오늘 하늘이 지나간 길을 한 판에 보여 줍니다.</p>
+    </section>
 
-  <h2>색에는 이름이 붙습니다</h2>
-  <p>찍은 하늘이 무슨 색인지 두 가지로 말해 줍니다. 먼저 <strong>눈에 보이는 비유</strong>가
-  오고, 그 밑에 <strong>출처 있는 이름</strong>이 따라옵니다. "우스하나이로"는 더 정확한
-  답이지만 그 말에서 색을 볼 수 있는 사람은 거의 없고, 볼 수 없는 이름은 이름이 하는 일을
-  하지 못하니까요.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>하늘마다 이름이 붙습니다</h2>
+        <p>찍은 색에는 살얼음색, 수영장 타일색, 홍시색처럼 눈에 그려지는 이름이 먼저 붙고, 그 아래 한국 전통색, 일본 전통색, 안료, 표준색에서 가져온 이름이 따라옵니다.<br>충분히 가까우면 이름은, 멀면 가장 가까운 이름은이라고 정직하게 말합니다.</p>
+      </div>
+      <div class="phone"><img src="img/ko/02-name.jpg" alt="하늘마다 이름이 붙습니다" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <div class="names">
-    <div class="name">
-      <span class="swatch" style="background:#7E90B6"></span>
-      <span>
-        <div class="simile">바랜 남색 커튼색</div>
-        <div class="real">우스하나이로 · 和色 薄花色</div>
-      </span>
-    </div>
-    <div class="name">
-      <span class="swatch" style="background:#D68F55"></span>
-      <span>
-        <div class="simile">식빵 가장자리색</div>
-        <div class="real">카드뮴 오렌지 · 안료</div>
-      </span>
-    </div>
-    <div class="name">
-      <span class="swatch" style="background:#1C6DB4"></span>
-      <span>
-        <div class="simile">파란 물감 푼 물색</div>
-        <div class="real">청색 · 전통색</div>
-      </span>
-    </div>
-  </div>
-  <p>이름 쪽은 한국 전통색 · 和色 · 안료 · 표준색에서 가져왔고 색값은 전부 출처에서
-  확인했습니다. 얼마나 가까운지도 숨기지 않습니다 — 충분히 가까우면 "이름은", 멀면
-  "가장 가까운 이름은"이라고 씁니다.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>한 마디를 남깁니다</h2>
+        <p>찍고 나면 바로 카드가 열립니다. 그 하늘을 보며 든 생각을 한 줄 적어 두면, 판에서 그 칸을 눌렀을 때 하늘 위에 다시 떠오릅니다.<br>다른 날 모은 하늘의 색을 이 사진의 하늘에 입혀 보고, 그림으로 공유할 수도 있습니다.</p>
+      </div>
+      <div class="phone"><img src="img/ko/03-card.jpg" alt="한 마디를 남깁니다" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>채운 칸은 나이를 먹습니다</h2>
-  <p>사진은 일주일 동안 제 색으로 있다가, 그 뒤 여덟 주에 걸쳐 천천히 옅어집니다.
-  지워지는 것이 아니고 끝까지 흐려지지도 않습니다. 그 시각의 하늘을 다시 찍으면 그 칸은
-  곧바로 제 색으로 돌아옵니다.</p>
-  <p>벌이 아닙니다. 끊기는 숫자도, 되찾아야 하는 연속 기록도 없습니다. 하늘로 만든 판이
-  "그 하늘은 한참 전이었다"고 말하는 정직한 방법일 뿐입니다.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>빈 칸은 길잡이가 됩니다</h2>
+        <p>빈 칸을 누르면 그 칸이 하루 중 언제인지, 어떤 색을 찾으면 되는지 알려 줍니다. 구름 없는 날이라면 이 시각 하늘이 어떤 색인지도 내 자리의 해 뜨고 지는 시각에 맞춰 말해 줍니다.<br>색이 맞아야 할 필요는 없습니다. 흐린 날의 회색도 그날의 하늘색입니다.</p>
+      </div>
+      <div class="phone"><img src="img/ko/05-empty.jpg" alt="빈 칸은 길잡이가 됩니다" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>같은 시각, 다른 하늘</h2>
-  <p>하루는 되풀이됩니다. 같은 알람, 같은 길, 같은 창. 그 위의 하늘만 두 번 같지
-  않습니다. <strong>되풀이</strong> 화면은 같은 시각에 여러 번 서 본 날들을 한 줄로 놓아
-  그것을 보여줍니다. 줄은 되풀이고, 색은 되풀이되지 않는 쪽입니다.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>기록, 팔레트, 되풀이</h2>
+        <p>찍은 하늘을 시간순으로 보고, 모은 색을 파랑, 회색, 모래빛 같은 갈래별 팔레트로 모아 봅니다. 같은 시각의 하늘을 다른 날 다시 찍으면 둘이 나란히 섭니다.<br>홈 화면 위젯으로 오늘의 판과 오늘 찍은 하늘을 바로 봅니다.</p>
+      </div>
+      <div class="phone"><img src="img/ko/04-palette.jpg" alt="기록, 팔레트, 되풀이" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>위젯</h2>
-  <p><strong>오늘의 판</strong>은 앱의 그림 그대로 — 마흔여덟 칸, 채운 것은 원, 빈 것은
-  고리. <strong>오늘의 하늘</strong>은 오늘 찍은 사진과 그 색의 이름이고, 잠금화면에도
-  놓을 수 있습니다.</p>
+    <section class="reveal">
+      <h2>시작은 세 단계면 됩니다</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>하늘을 올려다봅니다</h3><p>판 아래 카메라 단추를 누르고, 하늘이 정사각형을 채우도록 찍습니다.</p></li>
+<li class="card"><span class="n">2</span><h3>칸이 채워집니다</h3><p>지금 시각의 칸이 찍은 색으로 채워지고 이름이 붙습니다.</p></li>
+<li class="card"><span class="n">3</span><h3>한 줄을 남깁니다</h3><p>열린 카드에 그 하늘을 보며 든 생각을 적습니다.</p></li></ol>
+    </section>
 
-  <h2>내 기기와 내 iCloud에만 있습니다</h2>
-  <div class="quiet">
-    <p>계정이 없고 서버가 없습니다. 사진도 색도 기기 안의 앱 저장소와, 로그인했다면 본인의
-    iCloud에만 있고, 개발자에게 전송되지 않습니다. 광고·추적·제3자 분석 도구를 쓰지 않습니다.</p>
-    <p>위치는 일출·일몰과 오늘 예보에만 쓰고 킬로미터 단위로만 요청합니다. 거부해도
-    앱은 그대로 동작합니다. 자세한 것은
-    <a href="privacy.html">개인정보 처리방침</a>에 있습니다.</p>
-  </div>
+    <section class="reveal" id="commands">
+      <h2>판은 하루를 이렇게 나눕니다</h2>
+      <div class="card table">
+        <dl><div><dt>한밤 · 0시~5시</dt><dd>여섯 칸</dd></div><div><dt>여명 · 5시~8시</dt><dd>여섯 칸</dd></div><div><dt>낮 · 8시~16시</dt><dd>열두 칸</dd></div><div><dt>늦은 오후 · 16시~18시</dt><dd>여섯 칸</dd></div><div><dt>노을 · 18시~21시</dt><dd>열두 칸, 15분마다 한 칸</dd></div><div><dt>밤 · 21시~24시</dt><dd>여섯 칸</dd></div></dl>
+      </div>
+      <p class="muted">하늘이 빨리 바뀌는 노을 무렵은 칸이 촘촘하고, 오래 비슷한 한밤은 칸이 넓습니다. 위가 한밤이고 아래로 내려올수록 하루가 흘러갑니다.</p>
+    </section>
+
+
+
+    <section class="reveal" id="faq">
+      <h2>자주 묻는 질문</h2>
+      <div class="faq"><details><summary>칸은 어떻게 채워지나요?</summary><p>오늘 찍은 하늘은 찍은 시각의 칸을 채웁니다. 예상과 다른 색이 나와도 그대로 들어갑니다. 실제로 그 시간의 하늘이 그랬으니까요. 예전에 모아 둔 하늘은 색으로 들어갑니다. 어느 칸의 색과 충분히 가까우면 그 칸을 채우고, 하늘 하나는 한 칸만 채웁니다.</p></details>
+<details><summary>어제 차 있던 칸이 오늘은 비어 있어요.</summary><p>판은 오늘입니다. 어제 찍은 하늘이 시각으로 채웠던 칸은 오늘이 되면 색으로만 다시 맞춰 봅니다. 그래서 어떤 날은 거의 다 차고 어떤 날은 비어 보입니다. 사진이 사라진 것은 아닙니다. 모은 하늘은 전부 기록에, 색 순서로는 팔레트에 그대로 있습니다.</p></details>
+<details><summary>채운 칸이 점점 흐려져요.</summary><p>일부러 그렇습니다. 사진은 일주일 동안 제 색으로 있다가, 그 뒤 여덟 주에 걸쳐 천천히 옅어집니다. 지워지는 것이 아니고 끝까지 흐려지지도 않습니다. 그 시간대의 하늘을 다시 찍으면 곧바로 제 색으로 돌아옵니다. 끊기는 연속 기록도, 되찾아야 할 숫자도 없습니다.</p></details>
+<details><summary>색이 맞아야 하나요?</summary><p>아닙니다. 통과나 실패 같은 판정이 없습니다. 찍은 사진은 무조건 저장되고, 흐린 날의 회색도 그날의 하늘색입니다.</p></details>
+<details><summary>위치는 왜 묻나요?</summary><p>빈 칸을 눌렀을 때 구름 없는 날 이 시각의 하늘색을 내 자리의 해 뜨고 지는 시각에 맞춰 알려 주는 데만 씁니다. 킬로미터 단위의 대략적인 위치만 쓰고, 좌표는 사진에 붙지 않습니다. 거부해도 앱은 그대로 동작하고, 그때는 서울을 기준으로 합니다.</p></details>
+<details><summary>사진첩에 있는 하늘도 넣을 수 있나요?</summary><p>네. 카메라 대신 사진 앱에서 고른 하늘도 정사각형으로 잘려 들어가고, 지금 찍은 하늘처럼 지금 시각의 칸을 채웁니다.</p></details>
+<details><summary>사진을 지우려면 어떻게 하나요?</summary><p>사진을 열고 지우기를 누르거나, 기록에서 왼쪽으로 밀면 됩니다. 기기와 iCloud에서 함께 지워집니다. 앱을 삭제해도 iCloud에 있는 사본은 남아서, 다시 설치하면 모은 하늘이 돌아옵니다.</p></details>
+<details><summary>기기를 바꾸면 모은 하늘은 어떻게 되나요?</summary><p>모은 하늘은 내 iCloud에 저장되어 같은 Apple 계정으로 로그인한 새 기기에서 이어집니다. 계정도 서버도 없고, 사진과 색은 개발자에게 전송되지 않습니다. 광고나 추적도 없습니다.</p></details>
+<details><summary>정말 무료인가요?</summary><p>네, 모든 기능이 무료입니다. 마음에 들면 앱 안에서 개발자에게 팁을 보낼 수 있지만, 팁으로 열리는 기능은 없습니다.</p></details>
+<details><summary>어떤 기기에서 쓰나요?</summary><p>iOS 17.0 이상의 iPhone에서 씁니다. 세로 화면 전용입니다.</p></details></div>
+      <p class="contact">버그나 이상한 동작, 하고 싶은 이야기는 <a href="mailto:leeo@kakao.com">leeo@kakao.com</a>로 보내 주세요. 어떤 상황이었는지와 iOS 버전을 함께 적어 주시면 찾기가 훨씬 쉽습니다.</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>내일 아침,<br>한 번만 올려다보세요</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6802295390">App Store에서 무료로 받기</a>
+    </section>
+  </main>
 
   <footer>
-    <a href="support.html">지원</a> ·
-    <a href="privacy.html">개인정보 처리방침</a> ·
-    <a href="https://github.com/M1zz/SkyDex">GitHub</a>
-    <p style="margin:10px 0 0">Weather data provided by
-      <a href="https://weatherkit.apple.com/legal-attribution.html">Apple Weather</a>.</p>
+    <nav id="languages" class="langs" aria-label="언어"><a href="" hreflang="ko" lang="ko" aria-current="page">한국어</a>
+<a href="en/" hreflang="en" lang="en">English</a>
+<a href="ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="es/" hreflang="es" lang="es">Español</a>
+<a href="de/" hreflang="de" lang="de">Deutsch</a>
+<a href="fr/" hreflang="fr" lang="fr">Français</a>
+<a href="it/" hreflang="it" lang="it">Italiano</a>
+<a href="pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="th/" hreflang="th" lang="th">ไทย</a>
+<a href="vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="da/" hreflang="da" lang="da">Dansk</a>
+<a href="el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="id/" hreflang="id" lang="id">Indonesia</a>
+<a href="nb/" hreflang="nb" lang="nb">Norsk</a>
+<a href="nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">개인정보처리방침</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 SkyDex</p>
   </footer>
 
-</main>
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="demo.js"></script>
 </body>
 </html>

@@ -1,0 +1,541 @@
+{
+  "title": "SkyDex: ett bräde med dagens himmelsfärger, fyllt en bild i taget",
+  "description": "Varje bild av himlen fyller en av dagens fyrtioåtta himmelsfärger och får ett namn som liknar den. Gratis och utan konto.",
+  "hero": {
+    "headline": "Vilken färg hade\nhimlen idag?",
+    "lead": "Fota himlen, så fylls rutan för den tiden på dagen med färgen du fångade, på ett bräde med fyrtioåtta rutor. Färgen får också ett namn du kan se framför dig, som tunn is, simbassängkakel eller mogen kaki.",
+    "cta": "Hämta gratis på App Store",
+    "note": "Gratis. Inget konto, ingen inloggning."
+  },
+  "demo": {
+    "title": "Prova brädet",
+    "lead": "Tryck på en ruta för att se vilken del av dagen den hör till. Lägg till en himmelsbild för att fylla rutan för just nu, spola sedan fram dagarna och se hur brädet förändras.",
+    "photo": "Lägg till en himmelsbild",
+    "age": "Sedan bilderna togs",
+    "ageToday": "Idag",
+    "ageDay": "{n} dag senare",
+    "ageDays": "{n} dagar senare",
+    "note": "Brädet börjar med samma exempelhimlar som appens skärmbilder. Din bild läses bara här i webbläsaren och skickas ingenstans. Hur färgen väljs, vilken ruta den fyller och hur fort den bleknar fungerar precis som i appen.",
+    "now": "Nu",
+    "bands": [
+      "Midnatt",
+      "Gryning",
+      "Dag",
+      "Sen eftermiddag",
+      "Solnedgång",
+      "Natt"
+    ],
+    "emptyTag": "%@ · ännu tom",
+    "spot": "Den här platsen fylls av en himmel tagen vid den tiden på dagen. Vilken bild som helst kommer in som den är; färgen behöver inte matcha.",
+    "sims": [
+      [
+        "Tuschsvart",
+        "Tusch rivet på stenen. Den djupaste natten."
+      ],
+      [
+        "Nattligt hav",
+        "Vatten sett ovanifrån, utan ljus. Svart med ett lager blått."
+      ],
+      [
+        "Bränd kastrullbotten",
+        "Spåret efter något som brändes. Svart utan blå ton."
+      ],
+      [
+        "Torkat bläck",
+        "Ett avbrutet reservoarpennstreck. Svart med kvar av blått."
+      ],
+      [
+        "Djupt vatten",
+        "Färgen där fötterna inte når botten. Mörk, sval marinblå."
+      ],
+      [
+        "Nya jeans",
+        "Denim som aldrig har tvättats. Djup marinblå."
+      ],
+      [
+        "Nattågsfönster",
+        "Glaset när ljusen har passerat. Grått, nästan marinblått."
+      ],
+      [
+        "Midnattsfönster",
+        "Utsikten när du drar undan gardinen. Lite blåare än svart."
+      ],
+      [
+        "Urtvättat bläck",
+        "Vattnet efter att du sköljt bläck från händerna. Blek marinblå."
+      ],
+      [
+        "Skoluniformsblå",
+        "Marinblått på en jacka som burits i flera år. Varken svart eller blått."
+      ],
+      [
+        "Våta jeans",
+        "Precis upphängd tvätt. Djup, grumlig blå."
+      ],
+      [
+        "Makrillrygg",
+        "Blågrått med silverskimmer. Himlen innan regnet."
+      ],
+      [
+        "Sliten arbetsoverall",
+        "Blått som bleknat efter många års bruk."
+      ],
+      [
+        "Blekt marinblå gardin",
+        "En gardin som sett solen länge. Marinblått utan kraft."
+      ],
+      [
+        "Imma på rutan",
+        "Disigt när du tittar ut inifrån. Blågrått."
+      ],
+      [
+        "Morgondimma",
+        "En morgon då husens tak är bortsuddade. Ljust, blåaktigt grått."
+      ],
+      [
+        "Blöt luvtröja",
+        "Grått som mörknat av regn. En mulen gryning."
+      ],
+      [
+        "Blekt lila tröja",
+        "Lila som tvättats många gånger. Västerhimlen strax före gryningen."
+      ],
+      [
+        "Persikoskal",
+        "Den lena sidan. Mellan rosa och orange."
+      ],
+      [
+        "Aprikosmjölk",
+        "Mjölk mixad med aprikos. Mycket ljus orange."
+      ],
+      [
+        "Solbelyst vit vägg",
+        "På morgonen blir väggen den här färgen en stund."
+      ],
+      [
+        "Laxkött",
+        "Den rosa som försvinner när den steks."
+      ],
+      [
+        "Jordgubbsmjölk",
+        "Rosa efter att den skakats om."
+      ],
+      [
+        "Omogen aprikos",
+        "Orange där gult fortfarande vinner."
+      ],
+      [
+        "Vattenglas",
+        "Ljusblått som ljuset har gått igenom."
+      ],
+      [
+        "Kallt kranvatten",
+        "Färgen av kalla händer. Blek, sval blå."
+      ],
+      [
+        "Tunn is",
+        "Vatten som frusit lätt på våren. Mycket ljus blå."
+      ],
+      [
+        "Porslinsskål",
+        "Det blå skimret kvar i en vit skål."
+      ],
+      [
+        "Struken vit skjorta",
+        "Nästan vitt, med ett lager blått. En mycket klar middag."
+      ],
+      [
+        "Diskskum",
+        "Vitt skum ovanpå diskvattnet."
+      ],
+      [
+        "Blekta jeans",
+        "Denim som blivit vit på knäna. Blått en disig dag."
+      ],
+      [
+        "Blå krita",
+        "Blått som kommer när du trycker hårt mot ritpapperet."
+      ],
+      [
+        "Simbassängkakel",
+        "Blått sett genom vatten. Mitt på en klar dag."
+      ],
+      [
+        "Blå kulspetspenna",
+        "Det blå i ett streck på papper."
+      ],
+      [
+        "Djup simbassäng",
+        "Vattnet där du inte bottnar. Toppen av en högsommarmiddag."
+      ],
+      [
+        "Vatten med blå färg",
+        "Burken där penseln sköljs. Blått en klar eftermiddag."
+      ],
+      [
+        "Reservoarpennbläck",
+        "I flaskan ett blått som är nästan svart."
+      ],
+      [
+        "Läskflaska",
+        "Ljusblått med en ton av grönt."
+      ],
+      [
+        "Immig spegel",
+        "Spegeln efter duschen. Ljust blågrått."
+      ],
+      [
+        "Dimmigt glas",
+        "Disigt grått, så att andra sidan suddas ut."
+      ],
+      [
+        "Suddgummismulor",
+        "Vitt damm samlat på skrivbordet. Mycket ljust grått."
+      ],
+      [
+        "Kritdamm",
+        "Det vita som dröjer i luften när tavlan suddats."
+      ],
+      [
+        "Torr cement",
+        "Ett golv som stelnat för länge sedan. Jämnt, ljust grått."
+      ],
+      [
+        "Kall aska",
+        "Det som blir kvar när allt brunnit. Standardgrått en mulen dag."
+      ],
+      [
+        "Grumlig fönsterruta",
+        "Färgen som inte går bort hur du än torkar. Mellangrått med blå ton."
+      ],
+      [
+        "Blöt wellpapp",
+        "En låda som stått i regnet. Grått med varm ton."
+      ],
+      [
+        "Släckt skärm",
+        "Svartgrått precis när strömmen slagits av."
+      ],
+      [
+        "Bränd tändsticka",
+        "En sticka där bara huvudet är svart. Mörkt gråviolett."
+      ],
+      [
+        "Diskvatten",
+        "Ljummet vatten med fett på ytan. Grumligt grått."
+      ],
+      [
+        "Kokvatten för tvätt",
+        "Vitt vatten som ångar. Ljust grått."
+      ],
+      [
+        "Knivblad",
+        "Stål i ljuset. Grått med blå ton."
+      ],
+      [
+        "Gammalt plåttak",
+        "Taket på ett gammalt förråd. Blågrått strax före regnet."
+      ],
+      [
+        "Hav en mulen dag",
+        "Vatten som tar emot himlens färg. Mörkt blågrått."
+      ],
+      [
+        "Våt cement",
+        "Ett golv efter regn. Mörkt, fuktigt grått."
+      ],
+      [
+        "Blyerts",
+        "Mörkgrått, målat med stiftet på sidan. En regnig eftermiddag."
+      ],
+      [
+        "Våt asfalt",
+        "En väg efter nattregn. Grått, nästan svart."
+      ],
+      [
+        "Mossig mur",
+        "Grått där grönt har slagit rot. Ibland strax före ett oväder."
+      ],
+      [
+        "Gammalt mynt",
+        "Metall nött av händer. Grått med gulaktig ton."
+      ],
+      [
+        "Risvatten",
+        "Det första vattnet när ris sköljs. Varmt vitt."
+      ],
+      [
+        "Äggskal",
+        "Vitt som inte är helt vitt."
+      ],
+      [
+        "Gammalt papper",
+        "Inlagan i en gammal bok. Gulnat vitt."
+      ],
+      [
+        "Gammal tidning",
+        "Papper blekt av solen. Mellan grått och gult."
+      ],
+      [
+        "Fönster med gulsand",
+        "Ett dammigt gult skimmer som gör att du vill putsa."
+      ],
+      [
+        "Rostat sädesmjöl i vatten",
+        "Grumlig beige innan det sjunker till botten."
+      ],
+      [
+        "Gulnad golvmatta",
+        "Ett golv som pressats länge. Grumligt gult."
+      ],
+      [
+        "Kokt kastanj",
+        "Det gula inuti en skalad kastanj."
+      ],
+      [
+        "Mjölk i kaffe",
+        "Precis ihälld, ännu inte blandad."
+      ],
+      [
+        "Dammig bokhylla",
+        "Ljust gråbrunt som får märken när du drar ett finger över det."
+      ],
+      [
+        "Torr lera",
+        "Jordgolv som börjat spricka. Ljusbrunt."
+      ],
+      [
+        "Kall mjölkte",
+        "En kopp som lämnats halvdrucken. Grumligt rosabrunt."
+      ],
+      [
+        "Blöt kartong",
+        "Papper som svällt i regnet. Färgen av en blek solnedgång."
+      ],
+      [
+        "Regnvåt trädäck",
+        "Trä som mörknat av fukt."
+      ],
+      [
+        "Askigt tegel",
+        "Där elden har värmt. Mörkt rödgrått."
+      ],
+      [
+        "Kaffefläck",
+        "Den runda fläcken efter att du lyft koppen."
+      ],
+      [
+        "Kokt rödböna",
+        "Bönor som legat länge i vatten. Mörkt purpurgrått."
+      ],
+      [
+        "Rostat sojamjöl",
+        "Rostat sojamjöl på riskakor. Mjuk brunaktig beige."
+      ],
+      [
+        "Äggula",
+        "Precis innan den spricker. Djupt gult."
+      ],
+      [
+        "Brödkant",
+        "Där gult övergår i brunt."
+      ],
+      [
+        "Mandarinskal",
+        "Den orange färgen innan du skalar."
+      ],
+      [
+        "Grillad lax",
+        "Rosa orange där ytan fått färg."
+      ],
+      [
+        "Torkad kaki",
+        "Torkad kaki med vitt pudrat skal. Grumlig orange."
+      ],
+      [
+        "Glöd",
+        "Inte lågan, utan kolen som glöder röd."
+      ],
+      [
+        "Mogen kaki",
+        "Rödorange precis innan den spricker."
+      ],
+      [
+        "Tteokbokkisås",
+        "Rött efter att såsen kokat ihop. Den djupaste solnedgången."
+      ],
+      [
+        "Vattenmelon",
+        "Den sötaste biten i mitten. Rödrosa."
+      ],
+      [
+        "Rosmarmelad",
+        "Kronblad syltade i socker. Grumligt rosarött."
+      ],
+      [
+        "Rött tegel",
+        "En mur som stått i regnet i många år."
+      ],
+      [
+        "Falnande glöd",
+        "En eld täckt av aska. Mörkt rödbrunt."
+      ],
+      [
+        "Plommonskal",
+        "Rödviolett med ett vitt dunlager."
+      ],
+      [
+        "Rödbönsgröt",
+        "Tjockt rödbrunt, innan risbollarna läggs i."
+      ],
+      [
+        "Vinskvätt",
+        "Mörkt rödviolett kvar i botten av glaset."
+      ],
+      [
+        "Vissnad syren",
+        "Den bleka lila färgen hos en blomma som torkar."
+      ],
+      [
+        "Blåbärsmjölk",
+        "Ljuslila som inte riktigt blandats."
+      ],
+      [
+        "Druvskal",
+        "Djup lila, nyss sköljd och fortfarande våt."
+      ],
+      [
+        "Aubergineskal",
+        "Svartviolett som slukar ljuset. Dagens sista färg."
+      ]
+    ]
+  },
+  "problem": {
+    "title": "Du ser himlen varje dag men minns inte en enda färg",
+    "text": "Himlen på väg till jobbet, himlen när du gick ut efter lunch: på kvällen är färgerna borta. De himmelsbilder du faktiskt tog försvinner bland allt annat i bildbiblioteket. SkyDex samlar dem som färger och visar på ett enda bräde vilken väg dagens himmel tog."
+  },
+  "features": [
+    {
+      "title": "Varje himmel får ett namn",
+      "text": "Varje färg får först ett namn du kan se framför dig, som tunn is, simbassängkakel eller mogen kaki. Under det kommer ett namn med ursprung: koreansk färg, japansk färg, pigment eller webbfärg.\nNär träffen är nära står det Namn, annars står det ärligt Närmaste namn.",
+      "shot": "02-name"
+    },
+    {
+      "title": "Lämna en rad",
+      "text": "Ett kort öppnas så fort du har fotat. Skriv vad du tänkte medan du tittade upp, så svävar det fram över himlen igen varje gång du trycker på rutan på brädet.\nDu kan också lägga en annan dags himmelsfärg över bilden och dela resultatet som en bild.",
+      "shot": "03-card"
+    },
+    {
+      "title": "Tomma rutor visar vägen",
+      "text": "Tryck på en tom ruta för att se vilken del av dagen den hör till och vilken färg du ska leta efter. Den berättar också hur himlen ser ut vid den tiden en molnfri dag, anpassat efter soluppgång och solnedgång där du är.\nFärgen behöver inte stämma. Det grå en mulen dag är också den dagens himmelsfärg.",
+      "shot": "05-empty"
+    },
+    {
+      "title": "Logg, palett, upprepning",
+      "text": "Bläddra bland dina himlar i ordning och samla färgerna i paletter som Blått, Grå och Sandfärgat. Fota samma timme en annan dag så hamnar de två sida vid sida.\nWidgetar på hemskärmen visar dagens bräde och dagens himmel med en blick.",
+      "shot": "04-palette"
+    }
+  ],
+  "steps": {
+    "title": "Tre steg för att komma igång",
+    "items": [
+      {
+        "title": "Titta upp",
+        "text": "Tryck på kameraknappen under brädet och låt himlen fylla kvadraten."
+      },
+      {
+        "title": "En ruta fylls",
+        "text": "Rutan för just nu får färgen du fångade, och ett namn."
+      },
+      {
+        "title": "Lämna en rad",
+        "text": "Skriv på kortet som öppnas vad du tänkte."
+      }
+    ]
+  },
+  "reference": {
+    "title": "Så delar brädet upp dagen",
+    "rows": [
+      [
+        "Midnatt · 00.00–05.00",
+        "sex rutor"
+      ],
+      [
+        "Gryning · 05.00–08.00",
+        "sex rutor"
+      ],
+      [
+        "Dag · 08.00–16.00",
+        "tolv rutor"
+      ],
+      [
+        "Sen eftermiddag · 16.00–18.00",
+        "sex rutor"
+      ],
+      [
+        "Solnedgång · 18.00–21.00",
+        "tolv rutor, en per kvart"
+      ],
+      [
+        "Natt · 21.00–24.00",
+        "sex rutor"
+      ]
+    ],
+    "note": "Kring solnedgången, när himlen skiftar snabbt, sitter rutorna tätt, och mitt i natten, när den knappt rör sig, är de breda. Överst är midnatt, och dagen rinner nedåt."
+  },
+  "faq": {
+    "title": "Frågor",
+    "items": [
+      {
+        "q": "Hur fylls en ruta?",
+        "a": "En himmel du fotar idag fyller rutan för tiden du tog den, även om färgen inte blev som du väntat. Så såg himlen faktiskt ut just då. Himlar från tidigare dagar kommer in efter färg: ligger en tillräckligt nära en rutas färg fyller den rutan, och varje himmel fyller bara en ruta."
+      },
+      {
+        "q": "En ruta som var full igår är tom idag.",
+        "a": "Brädet är alltid idag. En ruta som gårdagens himmel fyllde efter tid matchas på nytt enbart efter färg när dygnet slår om. Därför är brädet vissa dagar nästan fullt och andra dagar ganska tomt. Dina bilder har inte försvunnit: alla himlar finns i Logg och i färgordning i Palett."
+      },
+      {
+        "q": "Mina fyllda rutor bleknar.",
+        "a": "Det är med flit. En bild behåller sin riktiga färg i en vecka och bleknar sedan långsamt under de följande åtta veckorna. Den raderas inte och bleknar aldrig bort helt. Fota himlen vid den tiden igen så får rutan genast full färg tillbaka. Ingen svit att bryta, inga poäng att vinna tillbaka."
+      },
+      {
+        "q": "Måste färgen stämma?",
+        "a": "Nej. Det finns inget godkänt eller underkänt. Alla bilder sparas, och det grå en mulen dag är också den dagens himmelsfärg."
+      },
+      {
+        "q": "Varför frågar appen efter min plats?",
+        "a": "Bara för att kunna berätta, när du trycker på en tom ruta, hur en molnfri himmel ser ut vid den tiden, anpassat efter soluppgång och solnedgång där du är. Den använder en ungefärlig plats på kilometernivå, och koordinater kopplas aldrig till dina bilder. Säger du nej fungerar allt ändå, med Seoul som utgångspunkt."
+      },
+      {
+        "q": "Kan jag lägga till en himmel från bildbiblioteket?",
+        "a": "Ja. En himmel du väljer i Bilder i stället för med kameran beskärs också till en kvadrat och fyller rutan för just nu, precis som en du fotar."
+      },
+      {
+        "q": "Hur raderar jag en bild?",
+        "a": "Öppna bilden och tryck på Radera, eller svep åt vänster på den i Logg. Den tas bort från både enheten och iCloud. Raderar du appen ligger kopian kvar i iCloud, så dina himlar kommer tillbaka om du installerar den igen."
+      },
+      {
+        "q": "Vad händer när jag byter telefon?",
+        "a": "Dina himlar sparas i din egen iCloud, så de följer med till en ny enhet som är inloggad med samma Apple-konto. Inget konto och ingen server, och dina bilder och färger skickas aldrig till utvecklaren. Ingen reklam, ingen spårning."
+      },
+      {
+        "q": "Är den verkligen gratis?",
+        "a": "Ja, alla funktioner är gratis. Gillar du appen kan du ge utvecklaren dricks i appen, men dricks låser inte upp något."
+      },
+      {
+        "q": "Vilka enheter fungerar den på?",
+        "a": "iPhone med iOS 17.0 eller senare, endast i stående läge."
+      }
+    ]
+  },
+  "closing": {
+    "headline": "Imorgon bitti,\ntitta upp bara en gång",
+    "cta": "Hämta gratis på App Store"
+  },
+  "ui": {
+    "skip": "Hoppa till innehållet",
+    "languages": "Språk",
+    "privacy": "Integritetspolicy",
+    "contact": "Buggar, konstigt beteende eller något du vill säga: skriv till {email}. Berätta gärna vad du gjorde och vilken iOS-version du har, så blir det mycket lättare att hitta orsaken."
+  }
+}

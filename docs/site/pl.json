@@ -1,0 +1,541 @@
+{
+  "title": "SkyDex: tablica dzisiejszych kolorów nieba, wypełniana zdjęcie po zdjęciu",
+  "description": "Każde zdjęcie nieba wypełnia jeden z czterdziestu ośmiu kolorów dnia i dostaje nazwę, która go przypomina. Za darmo i bez konta.",
+  "hero": {
+    "headline": "Jaki kolor miało\ndziś niebo?",
+    "lead": "Zrób zdjęcie nieba, a na tablicy z czterdziestu ośmiu pól pole tej pory dnia wypełni się złapanym kolorem. Kolor dostanie też nazwę, którą łatwo zobaczyć oczami wyobraźni: cienki lód, płytki basenowe, dojrzały kaki.",
+    "cta": "Za darmo w App Store",
+    "note": "Za darmo. Bez konta i bez logowania."
+  },
+  "demo": {
+    "title": "Wypróbuj tablicę",
+    "lead": "Dotknij pola, żeby zobaczyć, do jakiej pory dnia należy. Dodaj zdjęcie nieba, a wypełni się pole na tę chwilę. Potem przesuń dni do przodu i zobacz, jak zmienia się tablica.",
+    "photo": "Dodaj zdjęcie nieba",
+    "age": "Od zrobienia zdjęć",
+    "ageToday": "Dziś",
+    "ageDay": "po {n} dniu",
+    "ageDays": "po {n} dniach",
+    "note": "Na początku tablica ma te same przykładowe nieba co zrzuty ekranu aplikacji. Twoje zdjęcie jest odczytywane tylko w tej przeglądarce i nigdzie nie trafia. Wybór koloru, to, które pole wypełnia, i tempo blaknięcia działają dokładnie tak jak w aplikacji.",
+    "now": "Teraz",
+    "bands": [
+      "Północ",
+      "Świt",
+      "Dzień",
+      "Późne popołudnie",
+      "Zachód",
+      "Noc"
+    ],
+    "emptyTag": "%@ · jeszcze puste",
+    "spot": "To miejsce wypełni niebo zrobione o tej porze dnia. Każde zdjęcie wchodzi takie, jakie jest; kolor nie musi pasować.",
+    "sims": [
+      [
+        "Tusz",
+        "Tusz roztarty na kamieniu. Najgłębsza noc."
+      ],
+      [
+        "Nocne morze",
+        "Woda widziana z góry tam, gdzie nie ma świateł. Czerń z warstwą błękitu."
+      ],
+      [
+        "Dno przypalonego garnka",
+        "Ślad po przypaleniu. Czerń bez odrobiny błękitu."
+      ],
+      [
+        "Zaschnięty atrament",
+        "Ślad porzuconego pióra. Czerń z resztką błękitu."
+      ],
+      [
+        "Głęboka woda",
+        "Kolor miejsca, gdzie nie sięga się dna. Ciemny, chłodny granat."
+      ],
+      [
+        "Nowe dżinsy",
+        "Denim jeszcze nigdy nieprany. Głęboki granat."
+      ],
+      [
+        "Szyba nocnego pociągu",
+        "Szkło, gdy światła już przemknęły. Szarość bliska granatu."
+      ],
+      [
+        "Szyba o północy",
+        "Świat za odsuniętą zasłoną. Odrobinę bardziej niebieski niż czerń."
+      ],
+      [
+        "Spłukany atrament",
+        "Woda po umyciu rąk z atramentu. Wyblakły granat."
+      ],
+      [
+        "Granat szkolnego mundurka",
+        "Granat marynarki noszonej od lat. Ani czarny, ani niebieski."
+      ],
+      [
+        "Mokre dżinsy",
+        "Pranie świeżo rozwieszone. Głęboki, mętny niebieski."
+      ],
+      [
+        "Grzbiet makreli",
+        "Niebieskoszary z połyskiem srebra. Niebo przed deszczem."
+      ],
+      [
+        "Stary kombinezon roboczy",
+        "Niebieski, który zgasł po latach noszenia."
+      ],
+      [
+        "Wyblakła granatowa zasłona",
+        "Zasłona długo wystawiona na słońce. Granat bez sił."
+      ],
+      [
+        "Zaparowana szyba",
+        "Patrząc ze środka, wszystko jest mleczne. Niebieskawa szarość."
+      ],
+      [
+        "Poranna mgła",
+        "Poranek, który wymazał szczyty budynków. Jasna szarość z nutą błękitu."
+      ],
+      [
+        "Mokra bluza",
+        "Szarość pociemniała od deszczu. Pochmurny świt."
+      ],
+      [
+        "Sprany fioletowy sweter",
+        "Fiolet zgaszony wieloma praniami. Zachód tuż przed świtem."
+      ],
+      [
+        "Skórka brzoskwini",
+        "Strona z meszkiem. Między różem a pomarańczem."
+      ],
+      [
+        "Mleko morelowe",
+        "Mleko ze zmiksowaną morelą. Bardzo blady pomarańcz."
+      ],
+      [
+        "Biała ściana w słońcu",
+        "Rano ściana na chwilę przybiera ten kolor."
+      ],
+      [
+        "Surowy łosoś",
+        "Ten róż, który znika podczas pieczenia."
+      ],
+      [
+        "Mleko truskawkowe",
+        "Róż po wymieszaniu."
+      ],
+      [
+        "Niedojrzała morela",
+        "Pomarańcz, w którym żółty wciąż wygrywa."
+      ],
+      [
+        "Woda w szklance",
+        "Blady błękit, przez który przeszło światło."
+      ],
+      [
+        "Zimna woda z kranu",
+        "Kolor zmarzniętych dłoni. Blady, chłodny błękit."
+      ],
+      [
+        "Cienki lód",
+        "Woda ledwo ścięta wiosennym przymrozkiem. Bardzo blady błękit."
+      ],
+      [
+        "Porcelanowa miska",
+        "Błękit, który został w białej misce."
+      ],
+      [
+        "Wyprasowana biała koszula",
+        "Prawie biel z warstwą błękitu. Bardzo czyste południe."
+      ],
+      [
+        "Piana z płynu",
+        "Biała piana nad zlewem z naczyniami."
+      ],
+      [
+        "Sprane dżinsy",
+        "Denim z wytartymi kolanami. Błękit pochmurnego dnia."
+      ],
+      [
+        "Niebieska kredka",
+        "Niebieski, gdy mocno przyciśniesz kredkę do papieru."
+      ],
+      [
+        "Płytki basenowe",
+        "Błękit widziany przez wodę. Pogodne południe."
+      ],
+      [
+        "Niebieski długopis",
+        "Niebieski linii na papierze."
+      ],
+      [
+        "Głęboki basen",
+        "Woda tam, gdzie nie sięga się dna. Szczyt letniego południa."
+      ],
+      [
+        "Woda z niebieską farbą",
+        "Kubek do płukania pędzla. Błękit pogodnego popołudnia."
+      ],
+      [
+        "Atrament do pióra",
+        "W kałamarzu niebieski bliski czerni."
+      ],
+      [
+        "Butelka lemoniady",
+        "Blady błękit z domieszką zieleni."
+      ],
+      [
+        "Zaparowane lustro",
+        "Lustro po prysznicu. Jasna niebieskawa szarość."
+      ],
+      [
+        "Zamglona szyba",
+        "Mleczna szarość, w której rozmywa się drugi brzeg."
+      ],
+      [
+        "Okruchy gumki",
+        "Biały pył zebrany na biurku. Bardzo jasna szarość."
+      ],
+      [
+        "Pył kredowy",
+        "Biel, która zostaje w powietrzu po starciu tablicy."
+      ],
+      [
+        "Suchy cement",
+        "Dawno zastygła posadzka. Równa jasna szarość."
+      ],
+      [
+        "Zimny popiół",
+        "To, co zostaje po ogniu. Zwykła szarość pochmurnego dnia."
+      ],
+      [
+        "Mętna szyba",
+        "Kolor, którego nie da się zmyć. Średnia szarość z nutą błękitu."
+      ],
+      [
+        "Mokra tektura falista",
+        "Karton na deszczu. Szarość z ciepłym odcieniem."
+      ],
+      [
+        "Wygaszony ekran",
+        "Czarna szarość tuż po wyłączeniu."
+      ],
+      [
+        "Spalona zapałka",
+        "Patyczek z czarną główką. Ciemny szarofiolet."
+      ],
+      [
+        "Woda po zmywaniu",
+        "Letnia woda z okami tłuszczu. Mętna szarość."
+      ],
+      [
+        "Woda z gotowania prania",
+        "Biała woda, nad którą unosi się para. Jasna szarość."
+      ],
+      [
+        "Ostrze noża",
+        "Metal w świetle. Szarość z nutą błękitu."
+      ],
+      [
+        "Stary blaszany dach",
+        "Dach starej szopy. Niebieskoszary tuż przed deszczem."
+      ],
+      [
+        "Morze w pochmurny dzień",
+        "Woda, która przejęła kolor nieba. Ciemny niebieskoszary."
+      ],
+      [
+        "Mokry cement",
+        "Posadzka na deszczu. Ciemna, wilgotna szarość."
+      ],
+      [
+        "Grafit ołówka",
+        "Ciemna szarość cieniowana płasko. Deszczowe popołudnie."
+      ],
+      [
+        "Mokry asfalt",
+        "Droga po nocnym deszczu. Szarość prawie czarna."
+      ],
+      [
+        "Omszały mur",
+        "Szarość porośnięta zielenią. Czasem tuż przed burzą."
+      ],
+      [
+        "Stara moneta",
+        "Metal wytarty dłońmi. Szarość z żółtawym odcieniem."
+      ],
+      [
+        "Woda po płukaniu ryżu",
+        "Pierwsza woda z płukania ryżu. Ciepła biel."
+      ],
+      [
+        "Skorupka jajka",
+        "Biel, która nie jest całkiem biała."
+      ],
+      [
+        "Stary papier",
+        "Kartki starej książki. Pożółkła biel."
+      ],
+      [
+        "Stara gazeta",
+        "Papier wyblakły od słońca. Między szarością a żółcią."
+      ],
+      [
+        "Szyba w żółtym pyle",
+        "Mętna żółtawość, którą chce się przetrzeć."
+      ],
+      [
+        "Napój zbożowy",
+        "Mętny beż, zanim osad opadnie."
+      ],
+      [
+        "Pożółkłe linoleum",
+        "Podłoga przygnieciona latami. Mętna żółć."
+      ],
+      [
+        "Gotowany kasztan",
+        "Żółty miąższ obranego kasztana."
+      ],
+      [
+        "Mleko wlane do kawy",
+        "Dopiero wlane, jeszcze niewymieszane."
+      ],
+      [
+        "Zakurzona półka",
+        "Jasny szarobrąz, na którym palec zostawia ślad."
+      ],
+      [
+        "Sucha glina",
+        "Ziemia, która zaczyna pękać. Jasny brąz."
+      ],
+      [
+        "Wystygła herbata z mlekiem",
+        "Niedopita filiżanka. Mętny różowawy brąz."
+      ],
+      [
+        "Rozmokła tektura",
+        "Papier napęczniały od deszczu. Kolor pochmurnego zachodu."
+      ],
+      [
+        "Mokry drewniany taras",
+        "Drewno pociemniałe od wilgoci."
+      ],
+      [
+        "Cegła w popiele",
+        "Miejsce, gdzie palił się ogień. Ciemna czerwonawa szarość."
+      ],
+      [
+        "Plama po kawie",
+        "Okrągły ślad po zdjętym kubku."
+      ],
+      [
+        "Skórka gotowanej fasoli adzuki",
+        "Fasola długo moczona w wodzie. Ciemny fioletowoszary."
+      ],
+      [
+        "Posypka sojowa",
+        "Ciastko ryżowe obtoczone w mące sojowej. Miękki brązowawy beż."
+      ],
+      [
+        "Żółtko",
+        "Tuż przed przebiciem. Intensywna żółć."
+      ],
+      [
+        "Skórka chleba",
+        "Miejsce, gdzie żółć przechodzi w brąz."
+      ],
+      [
+        "Skórka mandarynki",
+        "Ten pomarańcz sprzed obrania."
+      ],
+      [
+        "Pieczony łosoś",
+        "Różowawy pomarańcz przypieczonej skórki."
+      ],
+      [
+        "Suszony kaki",
+        "Kaki z białym nalotem. Mętny pomarańcz."
+      ],
+      [
+        "Żar w ognisku",
+        "Czerwone nie płomienie, tylko węgle."
+      ],
+      [
+        "Dojrzały kaki",
+        "Czerwony pomarańcz tuż przed pęknięciem."
+      ],
+      [
+        "Sos tteokbokki",
+        "Czerwień zredukowanego ostrego sosu. Najgłębszy zachód."
+      ],
+      [
+        "Miąższ arbuza",
+        "Najsłodszy środek. Czerwony róż."
+      ],
+      [
+        "Konfitura różana",
+        "Płatki w cukrze. Mętna różowa czerwień."
+      ],
+      [
+        "Czerwona cegła",
+        "Mur wystawiony na deszcze wielu lat."
+      ],
+      [
+        "Stygnący żar",
+        "Ogień przysypany popiołem. Ciemny czerwony brąz."
+      ],
+      [
+        "Skórka śliwki",
+        "Czerwony fiolet z białym nalotem."
+      ],
+      [
+        "Zupa z czerwonej fasoli",
+        "Gęsty czerwony brąz, zanim dodasz kluseczki."
+      ],
+      [
+        "Resztka wina",
+        "Czarnoczerwony fiolet na dnie kieliszka."
+      ],
+      [
+        "Przekwitły bez",
+        "Blady fiolet więdnącego kwiatu."
+      ],
+      [
+        "Mleko jagodowe",
+        "Niedomieszany jasny fiolet."
+      ],
+      [
+        "Skórka winogrona",
+        "Głęboki fiolet, mokry po umyciu."
+      ],
+      [
+        "Skórka bakłażana",
+        "Czarny fiolet, który pochłania światło. Ostatni kolor dnia."
+      ]
+    ]
+  },
+  "problem": {
+    "title": "Patrzysz na niebo codziennie, a nie pamiętasz ani jednego koloru",
+    "text": "Niebo w drodze do pracy, niebo w drodze z lunchu: wieczorem po tych kolorach nie ma już śladu. A zdjęcia nieba, które jednak udało się zrobić, giną wśród wszystkich innych w galerii. SkyDex zbiera je jako kolory i pokazuje na jednej tablicy, jaką drogę przeszło dziś niebo."
+  },
+  "features": [
+    {
+      "title": "Każde niebo dostaje nazwę",
+      "text": "Każdy kolor dostaje najpierw nazwę, którą widać oczami wyobraźni, jak cienki lód, płytki basenowe czy dojrzały kaki. Pod nią pojawia się nazwa z pochodzeniem: kolor koreański, kolor japoński, pigment albo kolor webowy.\nGdy trafienie jest bliskie, widnieje przy niej Nazwa, a gdy nie, uczciwie Najbliższa nazwa.",
+      "shot": "02-name"
+    },
+    {
+      "title": "Zostaw linijkę",
+      "text": "Karta otwiera się zaraz po zrobieniu zdjęcia. Zapisz myśl, która przyszła ci do głowy przy patrzeniu w górę, a wróci nad niebem za każdym razem, gdy dotkniesz tego pola na tablicy.\nMożesz też nałożyć na to zdjęcie kolor nieba z innego dnia i udostępnić efekt jako obraz.",
+      "shot": "03-card"
+    },
+    {
+      "title": "Puste pola wskazują drogę",
+      "text": "Dotknij pustego pola, a zobaczysz, do jakiej pory dnia należy i jakiego koloru szukać. Pole powie ci też, jak wygląda niebo o tej porze w bezchmurny dzień, według wschodu i zachodu słońca tam, gdzie jesteś.\nKolor nie musi się zgadzać. Szarość pochmurnego dnia też jest kolorem nieba tego dnia.",
+      "shot": "05-empty"
+    },
+    {
+      "title": "Dziennik, paleta, powtórzenia",
+      "text": "Przeglądaj swoje nieba po kolei i zbieraj kolory w palety, takie jak niebieski, szary czy piaskowy. Sfotografuj tę samą godzinę innego dnia, a oba nieba staną obok siebie.\nWidżety na ekranie początkowym pokazują dzisiejszą tablicę i dzisiejsze niebo na pierwszy rzut oka.",
+      "shot": "04-palette"
+    }
+  ],
+  "steps": {
+    "title": "Na start wystarczą trzy kroki",
+    "items": [
+      {
+        "title": "Spójrz w górę",
+        "text": "Dotknij przycisku aparatu pod tablicą i pozwól, by niebo wypełniło kwadrat."
+      },
+      {
+        "title": "Pole się wypełnia",
+        "text": "Pole na tę chwilę dostaje złapany kolor i nazwę."
+      },
+      {
+        "title": "Zostaw linijkę",
+        "text": "Na karcie, która się otworzy, zapisz, co chodziło ci po głowie."
+      }
+    ]
+  },
+  "reference": {
+    "title": "Tak tablica dzieli dzień",
+    "rows": [
+      [
+        "Północ · 0:00–5:00",
+        "sześć pól"
+      ],
+      [
+        "Świt · 5:00–8:00",
+        "sześć pól"
+      ],
+      [
+        "Dzień · 8:00–16:00",
+        "dwanaście pól"
+      ],
+      [
+        "Późne popołudnie · 16:00–18:00",
+        "sześć pól"
+      ],
+      [
+        "Zachód · 18:00–21:00",
+        "dwanaście pól, jedno co 15 minut"
+      ],
+      [
+        "Noc · 21:00–24:00",
+        "sześć pól"
+      ]
+    ],
+    "note": "Wokół zachodu słońca, gdy niebo zmienia się szybko, pola leżą gęsto, a w środku nocy, gdy prawie stoi w miejscu, są szerokie. Na górze jest północ, a dzień płynie w dół."
+  },
+  "faq": {
+    "title": "Pytania",
+    "items": [
+      {
+        "q": "Jak wypełnia się pole?",
+        "a": "Niebo sfotografowane dziś wypełnia pole godziny, o której powstało zdjęcie, nawet jeśli kolor nie jest taki, jakiego się spodziewasz. Tak właśnie wyglądało wtedy niebo. Nieba z wcześniejszych dni trafiają na tablicę według koloru: jeśli któreś jest dość blisko koloru danego pola, wypełnia je, a każde niebo wypełnia tylko jedno pole."
+      },
+      {
+        "q": "Pole, które wczoraj było pełne, dziś jest puste.",
+        "a": "Tablica to zawsze dzisiaj. Pole, które wczorajsze niebo wypełniło według godziny, po zmianie dnia jest dopasowywane od nowa już tylko po kolorze. Dlatego jednego dnia tablica jest prawie pełna, a innego wygląda na pustą. Twoje zdjęcia nigdzie nie zniknęły: wszystkie nieba są w Dzienniku, a uporządkowane według koloru w Palecie."
+      },
+      {
+        "q": "Wypełnione pola blakną.",
+        "a": "To celowe. Zdjęcie przez tydzień zachowuje prawdziwy kolor, a potem przez kolejne osiem tygodni powoli blaknie. Nie jest usuwane i nigdy nie blaknie do końca. Sfotografuj niebo o tej porze jeszcze raz, a pole od razu wróci do pełnego koloru. Żadnej serii do przerwania, żadnych punktów do odrabiania."
+      },
+      {
+        "q": "Czy kolor musi pasować?",
+        "a": "Nie. Nie ma zaliczenia ani oblania. Każde zdjęcie się zapisuje, a szarość pochmurnego dnia też jest kolorem nieba tego dnia."
+      },
+      {
+        "q": "Po co aplikacji moja lokalizacja?",
+        "a": "Tylko po to, by po dotknięciu pustego pola powiedzieć ci, jak o tej porze wygląda bezchmurne niebo, według wschodu i zachodu słońca tam, gdzie jesteś. Używa przybliżonej lokalizacji z dokładnością do kilometrów, a współrzędne nigdy nie są dołączane do zdjęć. Jeśli odmówisz, wszystko działa dalej, a punktem odniesienia jest Seul."
+      },
+      {
+        "q": "Czy mogę dodać niebo z biblioteki zdjęć?",
+        "a": "Tak. Niebo wybrane w Zdjęciach zamiast aparatu też zostanie przycięte do kwadratu i wypełni pole na tę chwilę, tak samo jak to, które właśnie fotografujesz."
+      },
+      {
+        "q": "Jak usunąć zdjęcie?",
+        "a": "Otwórz zdjęcie i dotknij Usuń albo przesuń je w lewo w Dzienniku. Znika jednocześnie z urządzenia i z iCloud. Jeśli usuniesz aplikację, kopia w iCloud zostaje, więc po ponownej instalacji twoje nieba wrócą."
+      },
+      {
+        "q": "Co się stanie, gdy zmienię telefon?",
+        "a": "Zebrane nieba są zapisane w twoim własnym iCloud, więc przechodzą na nowe urządzenie zalogowane na to samo konto Apple. Nie ma osobnego konta ani serwera, a zdjęcia i kolory nigdy nie trafiają do dewelopera. Bez reklam i bez śledzenia."
+      },
+      {
+        "q": "Czy to naprawdę za darmo?",
+        "a": "Tak, wszystkie funkcje są bezpłatne. Jeśli aplikacja ci się spodoba, możesz w niej dać deweloperowi napiwek, ale napiwek niczego nie odblokowuje."
+      },
+      {
+        "q": "Na jakich urządzeniach działa?",
+        "a": "Na iPhonie z iOS 17.0 lub nowszym, tylko w pionie."
+      }
+    ]
+  },
+  "closing": {
+    "headline": "Jutro rano\nspójrz w górę choć raz",
+    "cta": "Za darmo w App Store"
+  },
+  "ui": {
+    "skip": "Przejdź do treści",
+    "languages": "Język",
+    "privacy": "Polityka prywatności",
+    "contact": "Błędy, dziwne zachowanie albo cokolwiek, co chcesz powiedzieć: napisz na {email}. Jeśli dodasz, co się wtedy działo i jaką masz wersję iOS, dużo łatwiej będzie znaleźć przyczynę."
+  }
+}

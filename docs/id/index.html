@@ -1,340 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SkyDex</title>
-<meta name="description" content="Aplikasi iOS yang mengumpulkan langit hari itu sebagai warna. Isi papan empat puluh delapan kotak dengan langit hari ini.">
-<link rel="canonical" href="https://m1zz.github.io/SkyDex/id/">
-<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/SkyDex/">
-<link rel="alternate" hreflang="en" href="https://m1zz.github.io/SkyDex/en/">
-<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/SkyDex/en/">
-<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/SkyDex/ja/">
-<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/SkyDex/zh-Hans/">
-<link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/SkyDex/zh-Hant/">
-<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/SkyDex/ru/">
-<link rel="alternate" hreflang="es" href="https://m1zz.github.io/SkyDex/es/">
-<link rel="alternate" hreflang="de" href="https://m1zz.github.io/SkyDex/de/">
-<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/SkyDex/fr/">
-<link rel="alternate" hreflang="it" href="https://m1zz.github.io/SkyDex/it/">
-<link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/SkyDex/pt-BR/">
-<link rel="alternate" hreflang="th" href="https://m1zz.github.io/SkyDex/th/">
-<link rel="alternate" hreflang="vi" href="https://m1zz.github.io/SkyDex/vi/">
-<link rel="alternate" hreflang="cs" href="https://m1zz.github.io/SkyDex/cs/">
-<link rel="alternate" hreflang="da" href="https://m1zz.github.io/SkyDex/da/">
-<link rel="alternate" hreflang="el" href="https://m1zz.github.io/SkyDex/el/">
-<link rel="alternate" hreflang="fi" href="https://m1zz.github.io/SkyDex/fi/">
-<link rel="alternate" hreflang="id" href="https://m1zz.github.io/SkyDex/id/">
-<link rel="alternate" hreflang="nb" href="https://m1zz.github.io/SkyDex/nb/">
-<link rel="alternate" hreflang="nl" href="https://m1zz.github.io/SkyDex/nl/">
-<link rel="alternate" hreflang="pl" href="https://m1zz.github.io/SkyDex/pl/">
-<link rel="alternate" hreflang="sv" href="https://m1zz.github.io/SkyDex/sv/">
-<link rel="alternate" hreflang="tr" href="https://m1zz.github.io/SkyDex/tr/">
-<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/SkyDex/">
-<style>
-  :root {
-    --ink: #16202e;
-    --ink-soft: #5d6773;
-    --paper: #f4f5f7;
-    --card: #ffffff;
-    --line: #e2e5ea;
-    --accent: #2f7bbe;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ink: #eef1f5;
-      --ink-soft: #a2acb8;
-      --paper: #0b111c;
-      --card: #141c28;
-      --line: #26303e;
-      --accent: #7fa4ce;
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    padding: 0 20px 72px;
-    background: var(--paper);
-    color: var(--ink);
-    font: 17px/1.72 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
-      "Pretendard", "Segoe UI", Roboto, sans-serif;
-    -webkit-text-size-adjust: 100%;
-  }
-  main { max-width: 680px; margin: 0 auto; }
-  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
-
-  /* 하루 곡선 그대로 이어붙인 띠 */
-  .strip {
-    display: flex;
-    height: 8px;
-    border-radius: 4px;
-    overflow: hidden;
-    margin: 40px 0 34px;
-  }
-  .strip span { flex: 1 1 0; }
-
-  h1 {
-    font-size: 34px; line-height: 1.25; letter-spacing: -0.03em;
-    margin: 0 0 8px; text-align: center; font-weight: 700;
-  }
-  .lede {
-    margin: 0 auto 8px; text-align: center; color: var(--ink-soft);
-    max-width: 26em;
-  }
-  .platform {
-    text-align: center; color: var(--ink-soft); font-size: 14px;
-    margin: 0 0 36px;
-  }
-
-  /* 판 — 앱과 같은 6×8, 같은 색 */
-  .board {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
-    max-width: 340px;
-    margin: 0 auto 12px;
-  }
-  .bead {
-    aspect-ratio: 1;
-    border-radius: 50%;
-    border: 4px solid transparent;
-    display: block;
-  }
-  .bead.on { border: 0; }
-  .caption {
-    text-align: center; color: var(--ink-soft); font-size: 14px;
-    margin: 0 0 46px;
-  }
-
-  h2 {
-    font-size: 21px; letter-spacing: -0.01em; margin: 46px 0 12px;
-    padding-top: 28px; border-top: 1px solid var(--line);
-  }
-  p { margin: 0 0 14px; }
-  ul { margin: 0 0 14px; padding-left: 1.2em; }
-  li { margin-bottom: 8px; }
-  strong { font-weight: 600; }
-
-  /* 이름 카드 — 앱의 사진 카드 아래에 붙는 것과 같은 순서 */
-  .names { margin: 20px 0 8px; }
-  .name {
-    display: flex; align-items: center; gap: 14px;
-    background: var(--card); border: 1px solid var(--line);
-    border-radius: 16px; padding: 14px 16px; margin-bottom: 10px;
-  }
-  .swatch {
-    width: 46px; height: 46px; border-radius: 12px; flex: 0 0 auto;
-  }
-  .name .simile { font-size: 17px; font-weight: 600; }
-  .name .real { font-size: 13px; color: var(--ink-soft); }
-
-  .quiet {
-    background: var(--card); border: 1px solid var(--line);
-    border-radius: 16px; padding: 18px 20px; margin: 22px 0 8px;
-  }
-  .quiet p:last-child { margin-bottom: 0; }
-
-  footer {
-    margin-top: 60px; padding-top: 26px; border-top: 1px solid var(--line);
-    color: var(--ink-soft); font-size: 15px; text-align: center;
-  }
-  footer a { margin: 0 8px; }
-  nav.langs { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px 14px; margin: 18px 0 0; font-size: 14px; }
-  nav.langs a { color: var(--ink-soft); text-decoration: none; }
-  nav.langs a[aria-current] { color: var(--ink); font-weight: 600; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkyDex: papan warna langit hari ini, terisi setiap kali kamu memotret</title>
+  <meta name="description" content="Setiap foto langit mengisi satu dari empat puluh delapan warna langit hari itu dan mendapat nama yang mirip warnanya. Gratis, tanpa akun.">
+  <meta name="theme-color" content="#2A74B6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b111c" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6802295390">
+  <link rel="canonical" href="https://m1zz.github.io/SkyDex/id/">
+  <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/SkyDex/">
+  <link rel="alternate" hreflang="en" href="https://m1zz.github.io/SkyDex/en/">
+  <link rel="alternate" hreflang="ja" href="https://m1zz.github.io/SkyDex/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/SkyDex/zh-Hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/SkyDex/zh-Hant/">
+  <link rel="alternate" hreflang="ru" href="https://m1zz.github.io/SkyDex/ru/">
+  <link rel="alternate" hreflang="es" href="https://m1zz.github.io/SkyDex/es/">
+  <link rel="alternate" hreflang="de" href="https://m1zz.github.io/SkyDex/de/">
+  <link rel="alternate" hreflang="fr" href="https://m1zz.github.io/SkyDex/fr/">
+  <link rel="alternate" hreflang="it" href="https://m1zz.github.io/SkyDex/it/">
+  <link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/SkyDex/pt-BR/">
+  <link rel="alternate" hreflang="th" href="https://m1zz.github.io/SkyDex/th/">
+  <link rel="alternate" hreflang="vi" href="https://m1zz.github.io/SkyDex/vi/">
+  <link rel="alternate" hreflang="cs" href="https://m1zz.github.io/SkyDex/cs/">
+  <link rel="alternate" hreflang="da" href="https://m1zz.github.io/SkyDex/da/">
+  <link rel="alternate" hreflang="el" href="https://m1zz.github.io/SkyDex/el/">
+  <link rel="alternate" hreflang="fi" href="https://m1zz.github.io/SkyDex/fi/">
+  <link rel="alternate" hreflang="id" href="https://m1zz.github.io/SkyDex/id/">
+  <link rel="alternate" hreflang="nb" href="https://m1zz.github.io/SkyDex/nb/">
+  <link rel="alternate" hreflang="nl" href="https://m1zz.github.io/SkyDex/nl/">
+  <link rel="alternate" hreflang="pl" href="https://m1zz.github.io/SkyDex/pl/">
+  <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/SkyDex/sv/">
+  <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/SkyDex/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/SkyDex/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SkyDex: papan warna langit hari ini, terisi setiap kali kamu memotret">
+  <meta property="og:description" content="Setiap foto langit mengisi satu dari empat puluh delapan warna langit hari itu dan mendapat nama yang mirip warnanya. Gratis, tanpa akun.">
+  <meta property="og:url" content="https://m1zz.github.io/SkyDex/id/">
+  <meta property="og:image" content="https://m1zz.github.io/SkyDex/img/id/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../sitegen.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#2A74B6}@media (prefers-color-scheme:dark){:root{--accent:#7FA4CE}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-<main>
-  <nav class="langs" aria-label="Language">
-    <a href="../" hreflang="ko" lang="ko">한국어</a>
-    <a href="../en/" hreflang="en" lang="en">English</a>
-    <a href="../ja/" hreflang="ja" lang="ja">日本語</a>
-    <a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
-    <a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
-    <a href="../ru/" hreflang="ru" lang="ru">Русский</a>
-    <a href="../es/" hreflang="es" lang="es">Español</a>
-    <a href="../de/" hreflang="de" lang="de">Deutsch</a>
-    <a href="../fr/" hreflang="fr" lang="fr">Français</a>
-    <a href="../it/" hreflang="it" lang="it">Italiano</a>
-    <a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
-    <a href="../th/" hreflang="th" lang="th">ไทย</a>
-    <a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
-    <a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
-    <a href="../da/" hreflang="da" lang="da">Dansk</a>
-    <a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
-    <a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
-    <a href="../id/" hreflang="id" lang="id" aria-current="true">Indonesia</a>
-    <a href="../nb/" hreflang="nb" lang="nb">Norsk</a>
-    <a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
-    <a href="../pl/" hreflang="pl" lang="pl">Polski</a>
-    <a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
-    <a href="../tr/" hreflang="tr" lang="tr">Türkçe</a>
-  </nav>
+  <a class="skip" href="#main">Langsung ke konten</a>
+  <header class="bar">
+    <a class="brand" href="../id/"><img src="../icon.png" alt="" width="32" height="32">SkyDex</a>
+    <a class="lang-link" href="#languages">Bahasa</a>
+  </header>
 
-  <div class="strip" aria-hidden="true">
-    <span style="background:#080D18"></span>
-    <span style="background:#090E1A"></span>
-    <span style="background:#0A0F1C"></span>
-    <span style="background:#0A101E"></span>
-    <span style="background:#0B1120"></span>
-    <span style="background:#0C1221"></span>
-    <span style="background:#131B30"></span>
-    <span style="background:#1B263E"></span>
-    <span style="background:#6879A2"></span>
-    <span style="background:#99A7C5"></span>
-    <span style="background:#96ABCB"></span>
-    <span style="background:#7FA4CE"></span>
-    <span style="background:#709CCB"></span>
-    <span style="background:#5791C6"></span>
-    <span style="background:#508DC5"></span>
-    <span style="background:#3F83C1"></span>
-    <span style="background:#307BBE"></span>
-    <span style="background:#2B77BB"></span>
-    <span style="background:#1F6FB5"></span>
-    <span style="background:#1D6EB4"></span>
-    <span style="background:#2471B6"></span>
-    <span style="background:#2975B8"></span>
-    <span style="background:#3179BA"></span>
-    <span style="background:#4988C3"></span>
-    <span style="background:#558EC5"></span>
-    <span style="background:#6D9BCA"></span>
-    <span style="background:#7EA5CD"></span>
-    <span style="background:#8FA5BF"></span>
-    <span style="background:#B2A297"></span>
-    <span style="background:#C1A07E"></span>
-    <span style="background:#CC986A"></span>
-    <span style="background:#D68F56"></span>
-    <span style="background:#CC7C49"></span>
-    <span style="background:#B95B35"></span>
-    <span style="background:#A95239"></span>
-    <span style="background:#8F4440"></span>
-    <span style="background:#543852"></span>
-    <span style="background:#3B324D"></span>
-    <span style="background:#322F4B"></span>
-    <span style="background:#2B2A44"></span>
-    <span style="background:#20233A"></span>
-    <span style="background:#181D33"></span>
-    <span style="background:#161C30"></span>
-    <span style="background:#13192B"></span>
-    <span style="background:#0F1424"></span>
-    <span style="background:#0B111F"></span>
-    <span style="background:#0A101D"></span>
-    <span style="background:#080D19"></span>
-  </div>
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>Hari ini langit<br>berwarna apa?</h1>
+        <p class="lead">Potret langit, dan di papan empat puluh delapan kotak, kotak untuk jam itu terisi warna yang kamu tangkap. Warnanya juga mendapat nama yang mudah dibayangkan, seperti es tipis, ubin kolam renang, atau kesemek matang.</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6802295390">Unduh gratis di App Store</a><a class="try" href="#try">Coba ketuk papannya ↓</a></div>
+        <p class="muted small">Gratis. Tanpa akun, tanpa login.</p>
+      </div>
+      <div class="phone"><img src="../img/id/01-board.jpg" alt="Hari ini langit berwarna apa?" width="600" height="1303" decoding="async"></div>
+    </section>
 
-  <h1>SkyDex</h1>
-  <p class="lede">Kumpulkan langit hari itu sebagai warna.<br>Ada papan dengan empat puluh delapan kotak, dan kamu mengisinya dengan langit hari ini.</p>
-  <p class="platform">iPhone · iOS 17.0 atau lebih baru</p>
 
-  <div class="board" aria-hidden="true">
-    <span class="bead" style="border-color:#55565A" title="00:00–00:50"></span>
-    <span class="bead" style="border-color:#55565B" title="00:50–01:40"></span>
-    <span class="bead" style="border-color:#55565C" title="01:40–02:30"></span>
-    <span class="bead" style="border-color:#55575D" title="02:30–03:20"></span>
-    <span class="bead" style="border-color:#55575D" title="03:20–04:10"></span>
-    <span class="bead" style="border-color:#56575E" title="04:10–05:00"></span>
-    <span class="bead" style="border-color:#595A64" title="05:00–05:30"></span>
-    <span class="bead" style="border-color:#5C5E69" title="05:30–06:00"></span>
-    <span class="bead" style="border-color:#767B8B" title="06:00–06:30"></span>
-    <span class="bead on" style="background:#99A7C5" title="06:30–07:00 · #99A7C5"></span>
-    <span class="bead" style="border-color:#848B97" title="07:00–07:30"></span>
-    <span class="bead" style="border-color:#7D8998" title="07:30–08:00"></span>
-    <span class="bead on" style="background:#709CCB" title="08:00–08:40 · #709CCB"></span>
-    <span class="bead" style="border-color:#728397" title="08:40–09:20"></span>
-    <span class="bead" style="border-color:#718196" title="09:20–10:00"></span>
-    <span class="bead" style="border-color:#6D7E96" title="10:00–10:40"></span>
-    <span class="bead" style="border-color:#6B7C95" title="10:40–11:20"></span>
-    <span class="bead" style="border-color:#6A7A95" title="11:20–12:00"></span>
-    <span class="bead on" style="background:#1F6FB5" title="12:00–12:40 · #1F6FB5"></span>
-    <span class="bead" style="border-color:#687793" title="12:40–13:20"></span>
-    <span class="bead" style="border-color:#687893" title="13:20–14:00"></span>
-    <span class="bead" style="border-color:#697A93" title="14:00–14:40"></span>
-    <span class="bead" style="border-color:#6B7B94" title="14:40–15:20"></span>
-    <span class="bead" style="border-color:#6F8096" title="15:20–16:00"></span>
-    <span class="bead" style="border-color:#728297" title="16:00–16:20"></span>
-    <span class="bead" style="border-color:#788697" title="16:20–16:40"></span>
-    <span class="bead on" style="background:#7EA5CD" title="16:40–17:00 · #7EA5CD"></span>
-    <span class="bead" style="border-color:#828993" title="17:00–17:20"></span>
-    <span class="bead" style="border-color:#8E8884" title="17:20–17:40"></span>
-    <span class="bead on" style="background:#C1A07E" title="17:40–18:00 · #C1A07E"></span>
-    <span class="bead" style="border-color:#998474" title="18:00–18:15"></span>
-    <span class="bead on" style="background:#D68F56" title="18:15–18:30 · #D68F56"></span>
-    <span class="bead" style="border-color:#9C7B68" title="18:30–18:45"></span>
-    <span class="bead on" style="background:#B95B35" title="18:45–19:00 · #B95B35"></span>
-    <span class="bead" style="border-color:#936E63" title="19:00–19:15"></span>
-    <span class="bead" style="border-color:#896A66" title="19:15–19:30"></span>
-    <span class="bead" style="border-color:#71656F" title="19:30–19:45"></span>
-    <span class="bead" style="border-color:#67636E" title="19:45–20:00"></span>
-    <span class="bead" style="border-color:#64626E" title="20:00–20:15"></span>
-    <span class="bead" style="border-color:#61606B" title="20:15–20:30"></span>
-    <span class="bead" style="border-color:#5D5D68" title="20:30–20:45"></span>
-    <span class="bead" style="border-color:#5A5B65" title="20:45–21:00"></span>
-    <span class="bead on" style="background:#161C30" title="21:00–21:30 · #161C30"></span>
-    <span class="bead" style="border-color:#585A62" title="21:30–22:00"></span>
-    <span class="bead" style="border-color:#56585F" title="22:00–22:30"></span>
-    <span class="bead" style="border-color:#55575D" title="22:30–23:00"></span>
-    <span class="bead" style="border-color:#55575C" title="23:00–23:30"></span>
-    <span class="bead" style="border-color:#55565A" title="23:30–00:00"></span>
-  </div>
-  <p class="caption">Bagian atas adalah tengah malam; bergerak ke bawah, hari menjadi siang lalu gelap lagi. Lingkaran penuh adalah langit yang sudah kamu tangkap; cincin kosong masih akan datang.</p>
+    <section class="reveal" id="try">
+      <h2>Coba ketuk papannya</h2>
+      <p class="muted">Ketuk sebuah kotak untuk melihat langit jam berapa yang diwakilinya. Tambahkan foto langit untuk mengisi kotak jam sekarang, lalu majukan harinya dan lihat bagaimana papan berubah.</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;Coba ketuk papannya&quot;, &quot;lead&quot;: &quot;Ketuk sebuah kotak untuk melihat langit jam berapa yang diwakilinya. Tambahkan foto langit untuk mengisi kotak jam sekarang, lalu majukan harinya dan lihat bagaimana papan berubah.&quot;, &quot;photo&quot;: &quot;Coba tambahkan foto langit&quot;, &quot;age&quot;: &quot;Sejak hari pemotretan&quot;, &quot;ageToday&quot;: &quot;Hari ini&quot;, &quot;ageDay&quot;: &quot;{n} hari kemudian&quot;, &quot;ageDays&quot;: &quot;{n} hari kemudian&quot;, &quot;note&quot;: &quot;Papan ini sudah diisi langit contoh yang sama dengan tangkapan layar aplikasi. Foto yang kamu tambahkan hanya dibaca di dalam browser ini dan tidak dikirim ke mana pun. Cara memilih warna, aturan mengisi kotak, dan kecepatan memudar semuanya sama persis dengan aplikasi.&quot;, &quot;now&quot;: &quot;Sekarang&quot;, &quot;bands&quot;: [&quot;Tengah malam&quot;, &quot;Fajar&quot;, &quot;Siang&quot;, &quot;Sore&quot;, &quot;Senja&quot;, &quot;Malam&quot;], &quot;emptyTag&quot;: &quot;%@ · Masih kosong&quot;, &quot;spot&quot;: &quot;Tempat ini terisi langit yang dipotret pada waktu itu. Foto apa pun masuk apa adanya; warnanya tak harus cocok.&quot;, &quot;sims&quot;: [[&quot;Tinta bak&quot;, &quot;Tinta yang digerus di batu tinta. Malam yang paling dalam.&quot;], [&quot;Laut malam&quot;, &quot;Air yang dilihat dari tempat tanpa cahaya. Hitam berlapis biru.&quot;], [&quot;Dasar panci gosong&quot;, &quot;Bekas yang tertinggal setelah gosong. Hitam tanpa semburat biru.&quot;], [&quot;Tinta kering&quot;, &quot;Bekas pena yang ditinggalkan. Hitam dengan sisa biru.&quot;], [&quot;Air dalam&quot;, &quot;Warna tempat kaki tak lagi menyentuh dasar. Biru tua yang gelap dan sejuk.&quot;], [&quot;Jin baru&quot;, &quot;Denim yang belum pernah dicuci. Biru tua pekat.&quot;], [&quot;Jendela kereta malam&quot;, &quot;Kaca setelah cahaya lewat. Kelabu yang hampir biru tua.&quot;], [&quot;Jendela tengah malam&quot;, &quot;Di luar saat tirai dibuka. Sedikit lebih biru dari hitam.&quot;], [&quot;Tinta yang terbilas&quot;, &quot;Air bekas membilas tinta di tangan. Biru tua yang pudar.&quot;], [&quot;Biru seragam sekolah&quot;, &quot;Biru tua jaket yang dipakai bertahun-tahun. Tidak hitam, tidak juga biru.&quot;], [&quot;Jin basah&quot;, &quot;Saat cucian baru dijemur. Biru tua yang kusam.&quot;], [&quot;Punggung ikan kembung&quot;, &quot;Kelabu kebiruan berkilau perak. Langit sebelum hujan.&quot;], [&quot;Baju kerja lusuh&quot;, &quot;Biru yang warnanya mati karena bertahun-tahun dipakai.&quot;], [&quot;Tirai biru pudar&quot;, &quot;Tirai yang lama terkena matahari. Biru tua yang kehilangan tenaga.&quot;], [&quot;Embun di jendela&quot;, &quot;Dari dalam, luar tampak buram. Kelabu kebiruan.&quot;], [&quot;Kabut pagi&quot;, &quot;Pagi saat puncak gedung terhapus. Kelabu terang kebiruan.&quot;], [&quot;Hoodie basah&quot;, &quot;Kelabu yang menggelap karena air hujan. Fajar yang mendung.&quot;], [&quot;Sweter ungu pudar&quot;, &quot;Ungu yang mati karena sering dicuci. Langit barat menjelang fajar.&quot;], [&quot;Kulit persik&quot;, &quot;Sisi yang berbulu halus. Di antara merah muda dan jingga.&quot;], [&quot;Susu aprikot&quot;, &quot;Aprikot yang diblender dengan susu. Jingga yang sangat pucat.&quot;], [&quot;Dinding putih bermentari&quot;, &quot;Di pagi hari, dinding sebentar menjadi warna ini.&quot;], [&quot;Daging salmon&quot;, &quot;Merah muda yang hilang saat dipanggang.&quot;], [&quot;Susu stroberi&quot;, &quot;Merah muda setelah dikocok.&quot;], [&quot;Aprikot mentah&quot;, &quot;Jingga yang kuningnya masih menang.&quot;], [&quot;Air di gelas kaca&quot;, &quot;Biru pucat yang ditembus cahaya.&quot;], [&quot;Air keran dingin&quot;, &quot;Warna yang membuat tangan dingin. Biru pucat dan sejuk.&quot;], [&quot;Es tipis&quot;, &quot;Air yang sedikit membeku di musim semi. Biru yang sangat pucat.&quot;], [&quot;Mangkuk porselen&quot;, &quot;Semburat biru yang tersisa di mangkuk putih.&quot;], [&quot;Kemeja putih disetrika&quot;, &quot;Hampir putih dengan selapis biru. Siang yang sangat cerah.&quot;], [&quot;Busa sabun&quot;, &quot;Busa putih di atas bak cuci piring.&quot;], [&quot;Jin pudar&quot;, &quot;Denim yang lututnya memutih. Biru siang yang berawan.&quot;], [&quot;Krayon biru&quot;, &quot;Biru yang muncul saat krayon ditekan kuat di kertas gambar.&quot;], [&quot;Ubin kolam renang&quot;, &quot;Biru yang dilihat melalui air. Tengah hari yang cerah.&quot;], [&quot;Pulpen biru&quot;, &quot;Biru garis yang ditarik di kertas.&quot;], [&quot;Kolam renang dalam&quot;, &quot;Air di sisi yang tak terjangkau kaki. Puncak langit siang di musim panas.&quot;], [&quot;Air bekas cat biru&quot;, &quot;Wadah bilasan kuas. Biru sore hari yang cerah.&quot;], [&quot;Tinta pena&quot;, &quot;Di dalam botol, biru yang hampir hitam.&quot;], [&quot;Botol limun&quot;, &quot;Biru pucat yang bercampur hijau.&quot;], [&quot;Cermin berembun&quot;, &quot;Cermin setelah mandi. Kelabu kebiruan yang terang.&quot;], [&quot;Kaca berkabut&quot;, &quot;Kelabu buram yang membuat seberang tampak kabur.&quot;], [&quot;Remah penghapus&quot;, &quot;Serbuk putih yang terkumpul di meja. Kelabu sangat pucat.&quot;], [&quot;Debu kapur&quot;, &quot;Putih yang tertinggal di udara setelah papan tulis dihapus.&quot;], [&quot;Semen kering&quot;, &quot;Lantai yang lama mengeras. Kelabu terang yang rata.&quot;], [&quot;Abu dingin&quot;, &quot;Sisa yang sudah habis terbakar. Kelabu biasa di siang berawan.&quot;], [&quot;Jendela buram&quot;, &quot;Warna yang tak hilang meski dilap. Kelabu sedang kebiruan.&quot;], [&quot;Kardus basah&quot;, &quot;Kotak yang kehujanan. Kelabu dengan semburat hangat.&quot;], [&quot;Layar mati&quot;, &quot;Kelabu kehitaman sesaat setelah dimatikan.&quot;], [&quot;Korek api terbakar&quot;, &quot;Batang yang tinggal kepalanya menghitam. Ungu kelabu gelap.&quot;], [&quot;Air cucian piring&quot;, &quot;Air suam berminyak. Kelabu yang keruh.&quot;], [&quot;Air rebusan cucian&quot;, &quot;Air putih yang mengepul. Kelabu terang.&quot;], [&quot;Mata pisau&quot;, &quot;Besi yang terkena cahaya. Kelabu kebiruan.&quot;], [&quot;Atap seng tua&quot;, &quot;Atap gudang lama. Kelabu kebiruan sebelum hujan.&quot;], [&quot;Laut mendung&quot;, &quot;Air yang menyerap warna langit. Kelabu kebiruan yang gelap.&quot;], [&quot;Semen basah&quot;, &quot;Lantai kehujanan. Kelabu yang gelap dan lembap.&quot;], [&quot;Isi pensil&quot;, &quot;Kelabu tua yang diarsir dengan pensil miring. Sore yang hujan.&quot;], [&quot;Aspal basah&quot;, &quot;Jalan setelah hujan malam. Kelabu yang hampir hitam.&quot;], [&quot;Tembok berlumut&quot;, &quot;Hijau yang menjalar di atas kelabu. Kadang muncul sebelum badai.&quot;], [&quot;Koin tua&quot;, &quot;Logam yang kusam oleh tangan. Kelabu kekuningan.&quot;], [&quot;Air cucian beras&quot;, &quot;Air pertama dari mencuci beras. Putih yang hangat.&quot;], [&quot;Kulit telur&quot;, &quot;Putih yang bukan putih sempurna.&quot;], [&quot;Kertas tua&quot;, &quot;Halaman dalam buku lama. Putih yang menguning.&quot;], [&quot;Koran lama&quot;, &quot;Kertas yang pudar oleh matahari. Di antara kelabu dan kuning.&quot;], [&quot;Jendela berdebu pasir&quot;, &quot;Kuning buram yang membuatmu ingin mengelapnya.&quot;], [&quot;Minuman bubuk biji-bijian&quot;, &quot;Krem keruh sebelum mengendap.&quot;], [&quot;Alas lantai kuning tua&quot;, &quot;Lantai yang lama tertekan. Kuning yang kusam.&quot;], [&quot;Isi kastanye rebus&quot;, &quot;Bagian dalam kastanye yang kuning setelah dikupas.&quot;], [&quot;Susu dalam kopi&quot;, &quot;Saat baru dituang dan belum tercampur.&quot;], [&quot;Rak buku berdebu&quot;, &quot;Cokelat kelabu terang yang meninggalkan bekas saat disentuh jari.&quot;], [&quot;Lumpur kering&quot;, &quot;Tanah yang mulai retak. Cokelat muda.&quot;], [&quot;Teh susu dingin&quot;, &quot;Cangkir yang ditinggalkan setengah. Cokelat kemerahan yang kusam.&quot;], [&quot;Karton basah&quot;, &quot;Kertas yang mengembang kena hujan. Warna senja yang mendung.&quot;], [&quot;Dek kayu kehujanan&quot;, &quot;Kayu yang menggelap karena menyerap air.&quot;], [&quot;Bata berabu&quot;, &quot;Bekas terkena api. Kelabu kemerahan yang gelap.&quot;], [&quot;Noda kopi&quot;, &quot;Lingkaran noda setelah cangkir diangkat.&quot;], [&quot;Kulit kacang merah rebus&quot;, &quot;Kacang merah yang lama direndam. Kelabu keunguan yang gelap.&quot;], [&quot;Bubuk kedelai injeolmi&quot;, &quot;Kue beras berlumur bubuk kedelai. Krem kecokelatan yang lembut.&quot;], [&quot;Kuning telur&quot;, &quot;Sesaat sebelum pecah. Kuning yang pekat.&quot;], [&quot;Pinggiran roti tawar&quot;, &quot;Titik saat kuning berubah menjadi cokelat.&quot;], [&quot;Kulit jeruk&quot;, &quot;Jingga sebelum dikupas.&quot;], [&quot;Salmon panggang&quot;, &quot;Jingga kemerahan di permukaan yang matang.&quot;], [&quot;Kesemek kering&quot;, &quot;Kesemek kering bertabur gula putih. Jingga yang kusam.&quot;], [&quot;Bara kayu&quot;, &quot;Bukan nyala api, tapi arang yang membara.&quot;], [&quot;Kesemek matang&quot;, &quot;Jingga kemerahan sesaat sebelum lembek pecah.&quot;], [&quot;Kuah tteokbokki&quot;, &quot;Merah setelah kuahnya menyusut. Senja yang paling pekat.&quot;], [&quot;Daging semangka&quot;, &quot;Bagian tengah yang paling manis. Merah muda kemerahan.&quot;], [&quot;Selai mawar&quot;, &quot;Kelopak yang direndam gula. Merah kemerahmudaan yang kusam.&quot;], [&quot;Bata merah&quot;, &quot;Tembok yang bertahun-tahun kehujanan.&quot;], [&quot;Bara arang yang meredup&quot;, &quot;Api yang tertutup abu. Cokelat kemerahan yang gelap.&quot;], [&quot;Kulit plum&quot;, &quot;Ungu kemerahan bertabur serbuk putih.&quot;], [&quot;Bubur kacang merah&quot;, &quot;Cokelat kemerahan yang kental, sebelum bola ketan dimasukkan.&quot;], [&quot;Sisa anggur merah&quot;, &quot;Ungu kehitaman yang tertinggal di dasar gelas.&quot;], [&quot;Lilac yang layu&quot;, &quot;Ungu pudar bunga yang mulai mengering.&quot;], [&quot;Susu bluberi&quot;, &quot;Ungu muda yang belum teraduk rata.&quot;], [&quot;Kulit anggur&quot;, &quot;Ungu tua yang basah setelah dicuci.&quot;], [&quot;Kulit terung&quot;, &quot;Ungu kehitaman yang menelan cahaya. Warna terakhir hari ini.&quot;]]}"></div>
+    </section>
 
-  <h2>Papan itu adalah hari ini</h2>
-  <p>Empat puluh delapan kotak itu adalah <strong>warna-warna yang akan dilewati langit hari ini</strong>. Warna-warna itu dihitung ulang setiap hari dari matahari terbit dan terbenam yang sebenarnya di tempatmu serta prakiraan awan dan hujan hari ini. Jadi kotak yang terisi kemarin bisa kosong hari ini. Yang disampaikan papan bukan berapa banyak yang sudah kamu kumpulkan, melainkan <strong>seberapa banyak hari ini yang bisa kamu tunjukkan</strong>.</p>
-  <p>Potret langit sekarang, dan <strong>kotak untuk jam itu</strong> terisi dengan warna yang kamu tangkap. Kalau hasilnya berbeda dari perkiraan, foto tetap masuk: prakiraan hanyalah tebakan; fotonya benar-benar ada di sana.</p>
-  <p><strong>Tidak ada yang dinilai.</strong> Tak ada lulus atau gagal, tak ada toleransi. Abu-abu pada hari mendung juga warna langit hari itu.</p>
+    <section class="problem reveal">
+      <h2>Kamu melihat langit setiap hari, tapi tak ingat satu warna pun</h2>
+      <p>Langit yang kamu tengok di jalan menuju kantor, langit saat keluar selepas makan siang: menjelang malam, warnanya sudah hilang dari ingatan. Foto langit yang sempat kamu ambil pun tenggelam di antara foto-foto lain di galeri. SkyDex mengumpulkan foto langit sebagai warna, lalu menata jejak langit hari ini dalam satu papan.</p>
+    </section>
 
-  <h2>Setiap warna punya nama</h2>
-  <p>Aplikasi memberi tahu warna langitmu dengan dua cara, yang ditulis dalam bahasa Korea. Pertama datang <strong>perbandingan yang bisa kamu bayangkan</strong>, dan di bawahnya <strong>nama beserta asal-usulnya</strong>. “Usuhanairo” adalah jawaban yang lebih tepat, tetapi hampir tak ada yang melihat warna dalam kata itu, dan nama yang tak terlihat tidak menjalankan tugas sebuah nama.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Setiap langit punya nama</h2>
+        <p>Warna yang kamu potret lebih dulu mendapat nama yang langsung terbayang, seperti es tipis, ubin kolam renang, atau kesemek matang. Di bawahnya menyusul nama yang punya asal-usul, dari warna Korea, warna Jepang, pigmen, atau warna web.<br>Kalau cukup dekat, tertulis “Namanya”; kalau masih jauh, aplikasi jujur menulis “Nama terdekat”.</p>
+      </div>
+      <div class="phone"><img src="../img/id/02-name.jpg" alt="Setiap langit punya nama" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <div class="names">
-    <div class="name">
-      <span class="swatch" style="background:#7E90B6"></span>
-      <span>
-        <div class="simile">Tirai biru tua yang memudar</div>
-        <div class="real">Usuhanairo · warna tradisional Jepang 薄花色</div>
-      </span>
-    </div>
-    <div class="name">
-      <span class="swatch" style="background:#D68F55"></span>
-      <span>
-        <div class="simile">Kulit roti panggang</div>
-        <div class="real">Oranye kadmium · pigmen</div>
-      </span>
-    </div>
-    <div class="name">
-      <span class="swatch" style="background:#1C6DB4"></span>
-      <span>
-        <div class="simile">Air yang diaduk dengan cat biru</div>
-        <div class="real">Cheongsaek · warna tradisional Korea</div>
-      </span>
-    </div>
-  </div>
-  <p>Nama beserta asal-usulnya berasal dari warna tradisional Korea dan Jepang, pigmen, dan set warna standar, dan setiap nilai sudah dicek ke sumbernya. Aplikasi juga jujur soal seberapa dekat kecocokannya: bila cukup dekat ia berkata “namanya adalah”, bila tidak, “nama terdekatnya adalah”.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Tinggalkan satu baris</h2>
+        <p>Begitu selesai memotret, sebuah kartu langsung terbuka. Tulis satu baris tentang apa yang kamu pikirkan saat menatap langit itu, dan tulisan itu muncul lagi di atas langit setiap kali kamu mengetuk kotaknya di papan.<br>Kamu juga bisa memakaikan warna langit dari hari lain ke langit di foto ini, lalu membagikannya sebagai gambar.</p>
+      </div>
+      <div class="phone"><img src="../img/id/03-card.jpg" alt="Tinggalkan satu baris" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>Kotak yang terisi menua</h2>
-  <p>Sebuah foto mempertahankan warna aslinya selama seminggu, lalu memudar perlahan dalam delapan minggu berikutnya. Foto tidak dihapus dan tidak pernah memudar sepenuhnya. Potret langit pada jam itu lagi dan kotaknya langsung kembali berwarna penuh.</p>
-  <p>Ini bukan hukuman. Tidak ada rentetan yang bisa putus dan tidak ada yang perlu direbut kembali. Ini hanya cara jujur bagi papan yang terbuat dari langit untuk berkata “langit itu sudah beberapa waktu lalu”.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Kotak kosong jadi penunjuk jalan</h2>
+        <p>Ketuk kotak kosong untuk tahu kotak itu mewakili jam berapa dan warna apa yang perlu dicari. Untuk hari tanpa awan, aplikasi juga memberi tahu warna langit pada jam itu, disesuaikan dengan waktu matahari terbit dan terbenam di tempatmu.<br>Warnanya tidak harus cocok. Abu-abu di hari mendung juga warna langit hari itu.</p>
+      </div>
+      <div class="phone"><img src="../img/id/05-empty.jpg" alt="Kotak kosong jadi penunjuk jalan" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>Jam yang sama, langit berbeda</h2>
-  <p>Hari-hari berulang. Alarm yang sama, rute yang sama, jendela yang sama. Hanya langit di atasnya yang tak pernah sama dua kali. Layar <strong>Pengulangan</strong> menjajarkan hari-hari saat kamu berada di sana pada jam yang sama agar kamu bisa melihatnya. Barisnya adalah pengulangan; warnanya adalah bagian yang tak pernah berulang.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Log, Palet, Pengulangan</h2>
+        <p>Lihat langit yang kamu potret menurut urutan waktu, dan kumpulkan warnanya ke dalam palet per kelompok seperti biru, abu-abu, dan warna pasir. Potret langit di jam yang sama pada hari lain, dan keduanya akan berdiri berdampingan.<br>Widget di Layar Utama menampilkan Papan Hari Ini dan Langit Hari Ini sekilas.</p>
+      </div>
+      <div class="phone"><img src="../img/id/04-palette.jpg" alt="Log, Palet, Pengulangan" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>Widget</h2>
-  <p><strong>Papan Hari Ini</strong> tampak persis seperti di aplikasi: empat puluh delapan kotak, lingkaran untuk yang terisi dan cincin untuk yang kosong. <strong>Langit Hari Ini</strong> menampilkan foto yang kamu ambil hari ini beserta nama warnanya, dan juga berfungsi di Layar Kunci.</p>
+    <section class="reveal">
+      <h2>Mulai dalam tiga langkah</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>Tengadah ke langit</h3><p>Ketuk tombol kamera di bawah papan, lalu potret sampai langit memenuhi kotak persegi.</p></li>
+<li class="card"><span class="n">2</span><h3>Kotak terisi</h3><p>Kotak untuk jam sekarang terisi warna yang kamu tangkap dan mendapat nama.</p></li>
+<li class="card"><span class="n">3</span><h3>Tulis satu baris</h3><p>Di kartu yang terbuka, tulis apa yang kamu pikirkan saat menatap langit itu.</p></li></ol>
+    </section>
 
-  <h2>Tetap milikmu</h2>
-  <div class="quiet">
-    <p>Tanpa akun, tanpa server milik kami. Foto dan warnamu berada di penyimpanan aplikasi di perangkatmu dan, jika sudah masuk, di iCloud milikmu sendiri. Semuanya tidak pernah dikirim ke pengembang. Tanpa iklan, tanpa pelacakan, tanpa analitik pihak ketiga.</p>
-    <p>Lokasi hanya dipakai untuk matahari terbit, terbenam, dan prakiraan hari ini, dan diminta dengan akurasi kilometer. Aplikasi berjalan baik meski kamu menolak. Rinciannya ada di <a href="privacy.html">Kebijakan Privasi</a>.</p>
-  </div>
+    <section class="reveal" id="commands">
+      <h2>Begini papan membagi hari</h2>
+      <div class="card table">
+        <dl><div><dt>Tengah malam · 00.00–05.00</dt><dd>enam kotak</dd></div><div><dt>Fajar · 05.00–08.00</dt><dd>enam kotak</dd></div><div><dt>Siang · 08.00–16.00</dt><dd>dua belas kotak</dd></div><div><dt>Sore · 16.00–18.00</dt><dd>enam kotak</dd></div><div><dt>Senja · 18.00–21.00</dt><dd>dua belas kotak, satu tiap 15 menit</dd></div><div><dt>Malam · 21.00–24.00</dt><dd>enam kotak</dd></div></dl>
+      </div>
+      <p class="muted">Di sekitar senja, saat langit cepat berubah, kotaknya rapat; di tengah malam, saat langit nyaris tak bergerak, kotaknya renggang. Bagian atas papan adalah tengah malam, dan hari mengalir ke bawah.</p>
+    </section>
+
+
+
+    <section class="reveal" id="faq">
+      <h2>Pertanyaan umum</h2>
+      <div class="faq"><details><summary>Bagaimana kotak terisi?</summary><p>Langit yang kamu potret hari ini mengisi kotak untuk jam pemotretannya. Meski warnanya tidak seperti yang kamu duga, foto tetap masuk apa adanya, karena memang begitulah langit pada jam itu. Langit yang kamu kumpulkan di hari-hari sebelumnya masuk berdasarkan warna: jika cukup dekat dengan warna sebuah kotak, ia mengisi kotak itu, dan satu langit hanya mengisi satu kotak.</p></details>
+<details><summary>Kotak yang kemarin penuh, hari ini kosong.</summary><p>Papan ini adalah hari ini. Kotak yang kemarin diisi langit berdasarkan jamnya akan dicocokkan ulang hanya berdasarkan warna begitu hari berganti. Karena itu, ada hari ketika papan hampir penuh dan ada hari ketika papan terlihat kosong. Fotomu tidak hilang: semua langit tetap ada di Log, dan menurut urutan warna di Palet.</p></details>
+<details><summary>Kotak yang sudah terisi makin pudar.</summary><p>Memang disengaja. Foto mempertahankan warna aslinya selama seminggu, lalu memudar perlahan selama delapan minggu berikutnya. Foto tidak dihapus dan tidak pernah pudar sepenuhnya. Potret lagi langit di jam itu, dan kotaknya langsung kembali ke warna aslinya. Tidak ada rentetan hari yang terputus, tidak ada angka yang harus dikejar kembali.</p></details>
+<details><summary>Apakah warnanya harus cocok?</summary><p>Tidak. Tidak ada lulus atau gagal. Setiap foto pasti tersimpan, dan abu-abu di hari mendung juga warna langit hari itu.</p></details>
+<details><summary>Kenapa aplikasi meminta lokasi?</summary><p>Hanya untuk memberi tahu, saat kamu mengetuk kotak kosong, warna langit tanpa awan pada jam itu, disesuaikan dengan waktu matahari terbit dan terbenam di tempatmu. Yang dipakai hanya lokasi perkiraan dalam skala kilometer, dan koordinat tidak pernah ditempelkan ke foto. Kalau kamu menolak, aplikasi tetap berjalan seperti biasa dengan Seoul sebagai acuan.</p></details>
+<details><summary>Bisakah aku menambahkan langit dari galeri foto?</summary><p>Bisa. Langit yang kamu pilih dari aplikasi Foto, bukan dari kamera, juga dipotong menjadi persegi dan mengisi kotak jam sekarang, sama seperti langit yang baru dipotret.</p></details>
+<details><summary>Bagaimana cara menghapus foto?</summary><p>Buka fotonya lalu ketuk Hapus, atau geser ke kiri di Log. Foto terhapus dari perangkat dan iCloud sekaligus. Menghapus aplikasi tidak menghapus salinan di iCloud, jadi langitmu kembali saat aplikasi dipasang ulang.</p></details>
+<details><summary>Bagaimana kalau aku ganti ponsel?</summary><p>Langitmu tersimpan di iCloud milikmu sendiri, jadi berlanjut di perangkat baru yang masuk dengan Akun Apple yang sama. Tidak ada akun aplikasi, tidak ada server, dan foto serta warnamu tidak pernah dikirim ke pengembang. Tanpa iklan, tanpa pelacakan.</p></details>
+<details><summary>Benar-benar gratis?</summary><p>Ya, semua fitur gratis. Kalau suka, kamu bisa memberi tip kepada pengembang dari dalam aplikasi, tapi tip tidak membuka fitur apa pun.</p></details>
+<details><summary>Bisa dipakai di perangkat apa?</summary><p>iPhone dengan iOS 17.0 atau yang lebih baru, hanya dalam posisi tegak.</p></details></div>
+      <p class="contact">Menemukan bug, perilaku aneh, atau ada yang ingin kamu sampaikan? Kirim ke <a href="mailto:leeo@kakao.com">leeo@kakao.com</a>. Ceritakan apa yang sedang kamu lakukan dan versi iOS-mu, supaya masalahnya jauh lebih mudah ditemukan.</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>Besok pagi,<br>tengadahlah sekali saja</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6802295390">Unduh gratis di App Store</a>
+    </section>
+  </main>
 
   <footer>
-    <a href="support.html">Dukungan</a> ·
-    <a href="privacy.html">Kebijakan Privasi</a> ·
-    <a href="https://github.com/M1zz/SkyDex">GitHub</a>
-    <p style="margin:10px 0 0">Data cuaca disediakan oleh <a href="https://weatherkit.apple.com/legal-attribution.html">Apple Weather</a>.</p>
+    <nav id="languages" class="langs" aria-label="Bahasa"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="../es/" hreflang="es" lang="es">Español</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../th/" hreflang="th" lang="th">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="../id/" hreflang="id" lang="id" aria-current="page">Indonesia</a>
+<a href="../nb/" hreflang="nb" lang="nb">Norsk</a>
+<a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">Kebijakan Privasi</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 SkyDex</p>
   </footer>
 
-</main>
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>

@@ -1,0 +1,541 @@
+{
+  "title": "SkyDex: Ein Brett voller Himmelsfarben, Foto für Foto",
+  "description": "Jedes Foto vom Himmel füllt eines von achtundvierzig Himmelsfeldern deines Tages und bekommt einen Namen, der passt. Gratis, ohne Konto.",
+  "hero": {
+    "headline": "Welche Farbe hatte\nder Himmel heute?",
+    "lead": "Fotografiere den Himmel, und auf dem Brett mit achtundvierzig Feldern füllt sich das Feld für diese Uhrzeit mit der Farbe, die du eingefangen hast. Dazu kommt ein Name, den man gleich vor sich sieht: Dünnes Eis, Schwimmbadfliese oder Reife Kaki.",
+    "cta": "Gratis im App Store laden",
+    "note": "Kostenlos. Kein Konto, keine Anmeldung."
+  },
+  "demo": {
+    "title": "Probier das Brett aus",
+    "lead": "Tippe ein Feld an, und du siehst, zu welcher Tageszeit es gehört. Füg ein Himmelsfoto hinzu, um das Feld für jetzt zu füllen, und blättere dann ein paar Tage weiter, um zu sehen, wie sich das Brett verändert.",
+    "photo": "Himmelsfoto hinzufügen",
+    "age": "Seit der Aufnahme",
+    "ageToday": "Heute",
+    "ageDay": "{n} Tag später",
+    "ageDays": "{n} Tage später",
+    "note": "Das Brett beginnt mit denselben Beispielhimmeln wie die Bildschirmfotos der App. Dein Foto wird nur in diesem Browser gelesen und nirgendwohin geschickt. Wie die Farbe gewählt wird, welches Feld sie füllt und wie schnell sie verblasst, funktioniert genau wie in der App.",
+    "now": "Jetzt",
+    "bands": [
+      "Mitternacht",
+      "Morgengrauen",
+      "Tag",
+      "Später Nachmittag",
+      "Abendrot",
+      "Nacht"
+    ],
+    "emptyTag": "%@ · noch leer",
+    "spot": "Dieser Platz füllt sich mit einem Himmel aus dieser Tageszeit. Jedes Foto wird unverändert übernommen; die Farbe muss nicht passen.",
+    "sims": [
+      [
+        "Tusche",
+        "Auf dem Reibstein angeriebene Tusche. Die tiefste Nacht."
+      ],
+      [
+        "Nachtmeer",
+        "Wasser von oben, ohne ein Licht. Schwarz mit einem Hauch Blau."
+      ],
+      [
+        "Angebrannter Topfboden",
+        "Was nach dem Anbrennen bleibt. Schwarz ohne jedes Blau."
+      ],
+      [
+        "Getrocknete Tinte",
+        "Die Spur eines liegen gelassenen Füllers. Schwarz mit einem Rest Blau."
+      ],
+      [
+        "Tiefes Wasser",
+        "Die Farbe dort, wo die Füße keinen Grund mehr finden. Dunkles, kühles Marineblau."
+      ],
+      [
+        "Neue Jeans",
+        "Denim, noch nie gewaschen. Kräftiges Marineblau."
+      ],
+      [
+        "Nachtzugfenster",
+        "Glas, nachdem die Lichter vorbeigezogen sind. Grau, fast marineblau."
+      ],
+      [
+        "Fenster um Mitternacht",
+        "Draußen, wenn du den Vorhang aufziehst. Etwas blauer als Schwarz."
+      ],
+      [
+        "Verwaschene Tinte",
+        "Wasser, in dem du Tinte von den Händen gespült hast. Blasses Marineblau."
+      ],
+      [
+        "Schuluniformblau",
+        "Das Marineblau einer jahrelang getragenen Jacke. Weder schwarz noch blau."
+      ],
+      [
+        "Nasse Jeans",
+        "Gerade aufgehängte Wäsche. Dunkles, trübes Blau."
+      ],
+      [
+        "Makrelenrücken",
+        "Blaugrau mit Silberschimmer. Himmel vor dem Regen."
+      ],
+      [
+        "Alte Arbeitsjacke",
+        "Ein Blau, über Jahre getragen und verblasst."
+      ],
+      [
+        "Verblichener Vorhang",
+        "Ein Vorhang, der lange in der Sonne hing. Müdes Marineblau."
+      ],
+      [
+        "Beschlagenes Fenster",
+        "Von drinnen sieht draußen alles milchig aus. Bläuliches Grau."
+      ],
+      [
+        "Morgennebel",
+        "Ein Morgen, an dem die Dächer verschwinden. Helles, bläuliches Grau."
+      ],
+      [
+        "Nasser Hoodie",
+        "Grau, vom Regen dunkler geworden. Ein trüber früher Morgen."
+      ],
+      [
+        "Verwaschener Lilapulli",
+        "Ein Lila, oft gewaschen und matt. Der Westen kurz vor Sonnenaufgang."
+      ],
+      [
+        "Pfirsichhaut",
+        "Die Seite mit dem Flaum. Zwischen Rosa und Orange."
+      ],
+      [
+        "Aprikosenmilch",
+        "Milch mit pürierter Aprikose. Ganz helles Orange."
+      ],
+      [
+        "Weiße Wand im Sonnenlicht",
+        "Am Morgen hat die Wand kurz diese Farbe."
+      ],
+      [
+        "Lachsfleisch",
+        "Das Rosa, das beim Braten verschwindet."
+      ],
+      [
+        "Erdbeermilch",
+        "Das Rosa nach dem Schütteln."
+      ],
+      [
+        "Unreife Aprikose",
+        "Ein Orange, in dem das Gelb noch gewinnt."
+      ],
+      [
+        "Wasserglas",
+        "Ein helles Blau, durch das Licht fällt."
+      ],
+      [
+        "Kaltes Leitungswasser",
+        "Eine Farbe, bei der die Hände frieren. Helles, kühles Blau."
+      ],
+      [
+        "Dünnes Eis",
+        "Über Wasser, das im Frühling leicht gefroren ist. Ganz helles Blau."
+      ],
+      [
+        "Porzellanschale",
+        "Der blaue Hauch in einer weißen Schale."
+      ],
+      [
+        "Gebügeltes weißes Hemd",
+        "Fast weiß, mit einem Hauch Blau. Ein ganz klarer Mittag."
+      ],
+      [
+        "Spülschaum",
+        "Weißer Schaum über dem Abwasch."
+      ],
+      [
+        "Verwaschene Jeans",
+        "Denim mit hellen Knien. Das Blau eines trüben Tages."
+      ],
+      [
+        "Blaue Wachsmalkreide",
+        "Das Blau, wenn du fest übers Zeichenpapier reibst."
+      ],
+      [
+        "Schwimmbadfliese",
+        "Blau, durch Wasser gesehen. Mittag an einem klaren Tag."
+      ],
+      [
+        "Blauer Kugelschreiber",
+        "Das Blau einer Linie auf Papier."
+      ],
+      [
+        "Tiefes Becken",
+        "Wasser dort, wo man nicht mehr steht. Der Zenit an einem Hochsommermittag."
+      ],
+      [
+        "Pinselwasser",
+        "Das Glas, in dem du den Pinsel ausgewaschen hast. Das Blau eines klaren Nachmittags."
+      ],
+      [
+        "Füllertinte",
+        "Im Fass ein Blau, das fast schwarz ist."
+      ],
+      [
+        "Limonadenflasche",
+        "Helles Blau mit etwas Grün darin."
+      ],
+      [
+        "Beschlagener Spiegel",
+        "Der Spiegel nach dem Duschen. Helles, bläuliches Grau."
+      ],
+      [
+        "Nebliges Glas",
+        "Milchiges Grau, in dem die andere Seite verschwimmt."
+      ],
+      [
+        "Radiergummikrümel",
+        "Weiße Krümel auf dem Tisch. Ganz helles Grau."
+      ],
+      [
+        "Kreidestaub",
+        "Das Weiß, das nach dem Tafelwischen in der Luft hängt."
+      ],
+      [
+        "Trockener Zement",
+        "Ein lange ausgehärteter Boden. Gleichmäßiges helles Grau."
+      ],
+      [
+        "Kalte Asche",
+        "Was nach dem Feuer bleibt. Das übliche Grau eines trüben Tages."
+      ],
+      [
+        "Trübes Fensterglas",
+        "Eine Farbe, die auch nach dem Putzen bleibt. Mittleres Grau mit Blaustich."
+      ],
+      [
+        "Nasser Karton",
+        "Eine Kiste im Regen. Grau mit warmem Ton."
+      ],
+      [
+        "Ausgeschalteter Bildschirm",
+        "Schwarzgrau, gleich nach dem Ausschalten."
+      ],
+      [
+        "Abgebranntes Streichholz",
+        "Ein Hölzchen mit schwarzem Kopf. Dunkles Graulila."
+      ],
+      [
+        "Spülwasser",
+        "Lauwarmes Wasser mit Fettaugen. Trübes Grau."
+      ],
+      [
+        "Kochwäschewasser",
+        "Weißes Wasser, aus dem Dampf steigt. Helles Grau."
+      ],
+      [
+        "Messerklinge",
+        "Stahl im Licht. Grau mit Blaustich."
+      ],
+      [
+        "Altes Blechdach",
+        "Das Dach eines alten Schuppens. Graublau kurz vor dem Regen."
+      ],
+      [
+        "Meer an trüben Tagen",
+        "Wasser, das die Farbe des Himmels annimmt. Dunkles Blaugrau."
+      ],
+      [
+        "Nasser Zement",
+        "Boden im Regen. Dunkles, feuchtes Grau."
+      ],
+      [
+        "Bleistiftmine",
+        "Dunkelgrau, mit flach gehaltener Mine gemalt. Ein Regennachmittag."
+      ],
+      [
+        "Nasser Asphalt",
+        "Eine Straße nach nächtlichem Regen. Grau, fast schwarz."
+      ],
+      [
+        "Bemooste Mauer",
+        "Grau mit grünem Anflug. Manchmal kurz vor dem Sturm."
+      ],
+      [
+        "Alte Münze",
+        "Abgegriffenes Metall. Grau mit gelblichem Ton."
+      ],
+      [
+        "Reiswasser",
+        "Das erste Wasser beim Reiswaschen. Warmes Weiß."
+      ],
+      [
+        "Eierschale",
+        "Ein Weiß, das nicht ganz weiß ist."
+      ],
+      [
+        "Altes Papier",
+        "Die Innenseiten eines alten Buchs. Vergilbtes Weiß."
+      ],
+      [
+        "Alte Zeitung",
+        "Von der Sonne gebleichtes Papier. Zwischen Grau und Gelb."
+      ],
+      [
+        "Staubiges Fenster",
+        "Trübes Gelb vom Wüstenstaub. Man möchte es wegwischen."
+      ],
+      [
+        "Getreidedrink",
+        "Trübes Beige, bevor sich das Pulver setzt."
+      ],
+      [
+        "Gelbes Linoleum",
+        "Ein Boden, lange plattgedrückt. Trübes Gelb."
+      ],
+      [
+        "Gekochte Kastanie",
+        "Das gelbe Innere einer geschälten Kastanie."
+      ],
+      [
+        "Milch im Kaffee",
+        "Gerade eingegossen, noch nicht verrührt."
+      ],
+      [
+        "Staubiges Bücherregal",
+        "Helles Graubraun, in dem dein Finger eine Spur hinterlässt."
+      ],
+      [
+        "Trockener Lehm",
+        "Erdboden, der zu reißen beginnt. Helles Braun."
+      ],
+      [
+        "Kalter Milchtee",
+        "Eine halb volle, stehen gelassene Tasse. Trübes, rosiges Braun."
+      ],
+      [
+        "Nasse Pappe",
+        "Pappe, im Regen aufgequollen. Die Farbe eines trüben Abendrots."
+      ],
+      [
+        "Nasse Holzterrasse",
+        "Holz, das sich mit Wasser vollgesogen hat und dunkel wurde."
+      ],
+      [
+        "Rußiger Ziegel",
+        "Eine Stelle nah am Feuer. Dunkles, rötliches Grau."
+      ],
+      [
+        "Kaffeefleck",
+        "Der runde Fleck, der bleibt, wenn du die Tasse anhebst."
+      ],
+      [
+        "Gekochte rote Bohnen",
+        "Lange eingeweichte rote Bohnen. Dunkles, purpurnes Grau."
+      ],
+      [
+        "Geröstetes Sojamehl",
+        "Mit Sojamehl bestäubt. Weiches, bräunliches Beige."
+      ],
+      [
+        "Eigelb",
+        "Kurz bevor es aufplatzt. Kräftiges Gelb."
+      ],
+      [
+        "Brotrinde",
+        "Wo Gelb in Braun übergeht."
+      ],
+      [
+        "Mandarinenschale",
+        "Das Orange vor dem Schälen."
+      ],
+      [
+        "Gebratener Lachs",
+        "Rosiges Orange, außen gegart."
+      ],
+      [
+        "Getrocknete Kaki",
+        "Kaki mit weißem Belag. Trübes Orange."
+      ],
+      [
+        "Glut im Holzfeuer",
+        "Keine Flamme, sondern rot glühende Kohle."
+      ],
+      [
+        "Reife Kaki",
+        "Rotorange, kurz bevor sie zu weich wird."
+      ],
+      [
+        "Tteokbokki-Rot",
+        "Rot, wenn die Soße eingekocht ist. Das tiefste Abendrot."
+      ],
+      [
+        "Wassermelone",
+        "Die süßeste Stelle in der Mitte. Rötliches Rosa."
+      ],
+      [
+        "Rosenmarmelade",
+        "In Zucker eingelegte Blüten. Trübes, rosiges Rot."
+      ],
+      [
+        "Roter Backstein",
+        "Eine Mauer nach vielen Jahren Regen."
+      ],
+      [
+        "Erkaltete Glut",
+        "Feuer unter Asche. Dunkles Rotbraun."
+      ],
+      [
+        "Pflaumenschale",
+        "Rötliches Lila mit weißem Belag."
+      ],
+      [
+        "Rote-Bohnen-Brei",
+        "Dickes Rotbraun, bevor die Reisbällchen hineinkommen."
+      ],
+      [
+        "Weinrest",
+        "Dunkelrotes Lila am Boden des Glases."
+      ],
+      [
+        "Verblühter Flieder",
+        "Das blasse Lila einer welkenden Blüte."
+      ],
+      [
+        "Blaubeermilch",
+        "Halb verrührtes Zartlila."
+      ],
+      [
+        "Traubenschale",
+        "Frisch gewaschenes, feuchtes Dunkellila."
+      ],
+      [
+        "Auberginenschale",
+        "Schwarzlila, das das Licht schluckt. Die letzte Farbe des Tages."
+      ]
+    ]
+  },
+  "problem": {
+    "title": "Jeden Tag schaust du in den Himmel, und keine Farbe bleibt hängen",
+    "text": "Der Himmel auf dem Weg zur Arbeit, der Himmel nach dem Mittagessen: Am Abend weißt du nicht mehr, welche Farbe er hatte. Die Himmelsfotos, die du doch gemacht hast, gehen zwischen allen anderen Bildern unter. SkyDex sammelt sie als Farben und legt den Weg, den der Himmel heute genommen hat, auf ein einziges Brett."
+  },
+  "features": [
+    {
+      "title": "Jeder Himmel bekommt einen Namen",
+      "text": "Jede Farbe bekommt zuerst einen Namen, den man vor Augen hat, etwa Dünnes Eis, Schwimmbadfliese oder Reife Kaki. Darunter folgt ein Name mit Herkunft: eine traditionelle koreanische oder japanische Farbe, ein Pigment oder eine Webfarbe.\nDie App bleibt dabei ehrlich: Liegt die Farbe nah genug, steht dort „Name“, sonst „Nächster Name“.",
+      "shot": "02-name"
+    },
+    {
+      "title": "Hinterlass eine Zeile",
+      "text": "Gleich nach dem Foto öffnet sich eine Karte. Schreib auf, was dir beim Blick nach oben durch den Kopf ging. Tippst du später das Feld auf dem Brett an, schwebt es wieder über dem Himmel.\nDu kannst auch die Farbe eines anderen Tages über dieses Foto legen und das Ergebnis als Bild teilen.",
+      "shot": "03-card"
+    },
+    {
+      "title": "Leere Felder zeigen den Weg",
+      "text": "Tippe ein leeres Feld an, und du erfährst, zu welcher Tageszeit es gehört und nach welcher Farbe du Ausschau halten kannst. Es zeigt dir auch, wie der Himmel zu dieser Stunde an einem wolkenlosen Tag aussieht, abgestimmt auf Sonnenauf- und -untergang an deinem Ort.\nDie Farbe muss nicht passen. Das Grau eines bedeckten Tages ist auch die Himmelsfarbe dieses Tages.",
+      "shot": "05-empty"
+    },
+    {
+      "title": "Verlauf, Palette, Wiederkehr",
+      "text": "Sieh deine Himmel der Reihe nach durch und sammle deine Farben in Paletten wie Blau, Grau und Sandfarben. Fotografierst du dieselbe Stunde an einem anderen Tag, stehen beide nebeneinander.\nWidgets auf dem Home-Bildschirm zeigen dir das Brett von heute und den Himmel von heute auf einen Blick.",
+      "shot": "04-palette"
+    }
+  ],
+  "steps": {
+    "title": "In drei Schritten geht es los",
+    "items": [
+      {
+        "title": "Schau nach oben",
+        "text": "Tippe auf die Kamerataste unter dem Brett und lass den Himmel das Quadrat füllen."
+      },
+      {
+        "title": "Ein Feld füllt sich",
+        "text": "Das Feld für die aktuelle Uhrzeit nimmt die eingefangene Farbe an und bekommt einen Namen."
+      },
+      {
+        "title": "Hinterlass eine Zeile",
+        "text": "Schreib auf die Karte, die sich öffnet, was du beim Blick nach oben gedacht hast."
+      }
+    ]
+  },
+  "reference": {
+    "title": "So teilt das Brett den Tag ein",
+    "rows": [
+      [
+        "Mitternacht · 00:00–05:00",
+        "sechs Felder"
+      ],
+      [
+        "Morgengrauen · 05:00–08:00",
+        "sechs Felder"
+      ],
+      [
+        "Tag · 08:00–16:00",
+        "zwölf Felder"
+      ],
+      [
+        "Später Nachmittag · 16:00–18:00",
+        "sechs Felder"
+      ],
+      [
+        "Abendrot · 18:00–21:00",
+        "zwölf Felder, alle 15 Minuten eines"
+      ],
+      [
+        "Nacht · 21:00–24:00",
+        "sechs Felder"
+      ]
+    ],
+    "note": "Um den Sonnenuntergang, wenn sich der Himmel schnell verändert, liegen die Felder dicht beieinander. Mitten in der Nacht, wenn er lange gleich bleibt, sind sie weit. Oben steht Mitternacht, und nach unten hin vergeht der Tag."
+  },
+  "faq": {
+    "title": "Häufige Fragen",
+    "items": [
+      {
+        "q": "Wie füllt sich ein Feld?",
+        "a": "Ein Himmel, den du heute fotografierst, füllt das Feld für die Uhrzeit der Aufnahme, auch wenn die Farbe anders ausfällt als erwartet. So sah der Himmel zu dieser Stunde eben aus. Himmel von früheren Tagen kommen über ihre Farbe hinein: Liegt einer nah genug an der Farbe eines Feldes, füllt er es, und jeder Himmel füllt nur ein Feld."
+      },
+      {
+        "q": "Ein Feld, das gestern voll war, ist heute leer.",
+        "a": "Das Brett zeigt immer heute. Ein Feld, das ein Himmel von gestern über seine Uhrzeit gefüllt hat, wird mit dem neuen Tag nur noch nach Farbe zugeordnet. Deshalb ist das Brett an manchen Tagen fast voll und wirkt an anderen leer. Deine Fotos sind nicht verschwunden: Jeder Himmel steht im Verlauf und, nach Farben geordnet, in der Palette."
+      },
+      {
+        "q": "Meine gefüllten Felder verblassen.",
+        "a": "Das ist Absicht. Ein Foto behält eine Woche lang seine echte Farbe und verblasst dann langsam über die folgenden acht Wochen. Es wird nicht gelöscht und verblasst nie ganz. Fotografierst du den Himmel zu dieser Zeit noch einmal, ist die volle Farbe sofort zurück. Es gibt keine Serie, die reißen kann, und keine Punkte, die du zurückholen musst."
+      },
+      {
+        "q": "Muss die Farbe passen?",
+        "a": "Nein. Es gibt kein Bestanden oder Durchgefallen. Jedes Foto wird gespeichert, und das Grau eines bedeckten Tages ist auch die Himmelsfarbe dieses Tages."
+      },
+      {
+        "q": "Warum fragt die App nach meinem Standort?",
+        "a": "Nur damit ein leeres Feld dir zeigen kann, wie der wolkenlose Himmel zu dieser Stunde aussieht, abgestimmt auf Sonnenauf- und -untergang an deinem Ort. Die App nutzt nur einen ungefähren Standort auf den Kilometer genau, und an Fotos werden nie Koordinaten gehängt. Lehnst du ab, funktioniert trotzdem alles, dann mit Seoul als Bezugspunkt."
+      },
+      {
+        "q": "Kann ich einen Himmel aus meiner Mediathek hinzufügen?",
+        "a": "Ja. Ein Himmel, den du statt mit der Kamera aus Fotos auswählst, wird ebenfalls quadratisch zugeschnitten und füllt wie ein frisch fotografierter das Feld für jetzt."
+      },
+      {
+        "q": "Wie lösche ich ein Foto?",
+        "a": "Öffne das Foto und tippe auf „Löschen“, oder wisch es im Verlauf nach links. Es verschwindet zugleich von deinem Gerät und aus iCloud. Löschst du die App, bleibt die Kopie in iCloud erhalten, und nach einer Neuinstallation sind deine Himmel wieder da."
+      },
+      {
+        "q": "Was passiert, wenn ich das Gerät wechsle?",
+        "a": "Deine Himmel liegen in deiner eigenen iCloud und ziehen mit auf ein neues Gerät, das mit demselben Apple Account angemeldet ist. Es gibt kein Konto und keinen Server, und Fotos und Farben gehen nie an den Entwickler. Keine Werbung, kein Tracking."
+      },
+      {
+        "q": "Ist das wirklich kostenlos?",
+        "a": "Ja, alle Funktionen sind kostenlos. Wenn dir die App gefällt, kannst du dem Entwickler in der App ein Trinkgeld geben, aber damit wird nichts freigeschaltet."
+      },
+      {
+        "q": "Auf welchen Geräten läuft die App?",
+        "a": "Auf dem iPhone ab iOS 17.0, nur im Hochformat."
+      }
+    ]
+  },
+  "closing": {
+    "headline": "Morgen früh,\nschau nur einmal nach oben",
+    "cta": "Gratis im App Store laden"
+  },
+  "ui": {
+    "skip": "Zum Inhalt springen",
+    "languages": "Sprache",
+    "privacy": "Datenschutzerklärung",
+    "contact": "Fehler, merkwürdiges Verhalten oder etwas, das du loswerden möchtest: Schreib an {email}. Wenn du dazuschreibst, was du gerade getan hast und welche iOS-Version du hast, lässt sich das Problem viel leichter finden."
+  }
+}

@@ -1,0 +1,541 @@
+{
+  "title": "SkyDex: päivän taivaanvärien lauta, joka täyttyy kuva kerrallaan",
+  "description": "Jokainen taivaskuva täyttää yhden päivän 48 taivaanväristä ja saa nimen, joka muistuttaa sitä. Ilmainen, eikä tiliä tarvita.",
+  "hero": {
+    "headline": "Minkä värinen\ntaivas oli tänään?",
+    "lead": "Kuvaa taivas, niin neljänkymmenenkahdeksan ruudun laudalla sen kellonajan ruutu täyttyy tavoittamallasi värillä. Väri saa myös nimen, jonka näkee mielessään: ohut jää, uima-altaan laatta, kypsä kaki.",
+    "cta": "Ilmaiseksi App Storesta",
+    "note": "Ilmainen. Ei tiliä, ei kirjautumista."
+  },
+  "demo": {
+    "title": "Kokeile lautaa",
+    "lead": "Napauta ruutua, niin näet, mihin vuorokaudenaikaan se kuuluu. Lisää taivaskuva, niin tämän hetken ruutu täyttyy. Kelaa sitten päiviä eteenpäin ja katso, miten lauta muuttuu.",
+    "photo": "Lisää taivaskuva",
+    "age": "Kuvaamisesta",
+    "ageToday": "Tänään",
+    "ageDay": "{n} päivä myöhemmin",
+    "ageDays": "{n} päivää myöhemmin",
+    "note": "Laudalla on aluksi samat esimerkkitaivaat kuin sovelluksen kuvakaappauksissa. Kuvasi luetaan vain tässä selaimessa, eikä sitä lähetetä minnekään. Värin valinta, täytettävä ruutu ja haalistumisen tahti toimivat täsmälleen kuten sovelluksessa.",
+    "now": "Nyt",
+    "bands": [
+      "Keskiyö",
+      "Aamunkoitto",
+      "Päivä",
+      "Myöhäinen iltapäivä",
+      "Auringonlasku",
+      "Yö"
+    ],
+    "emptyTag": "%@ · vielä tyhjä",
+    "spot": "Tämä paikka täyttyy taivaalla, joka on kuvattu tuona vuorokaudenaikana. Mikä tahansa kuva menee sellaisenaan; väriltä ei vaadita vastaavuutta.",
+    "sims": [
+      [
+        "Tussinmusta",
+        "Kivellä hierottu tussi. Syvin yö."
+      ],
+      [
+        "Yöllinen meri",
+        "Vesi ylhäältä katsottuna, ilman valoja. Mustaa ja kerros sinistä."
+      ],
+      [
+        "Palanut kattilanpohja",
+        "Jälki siitä, mikä paloi. Mustaa ilman sinistä sävyä."
+      ],
+      [
+        "Kuivunut muste",
+        "Kesken jäänyt täytekynän jälki. Mustaa, jossa sinistä on jäljellä."
+      ],
+      [
+        "Syvä vesi",
+        "Väri siellä, missä jalat eivät yllä pohjaan. Tumma, viileä laivastonsininen."
+      ],
+      [
+        "Uudet farkut",
+        "Denimiä, jota ei ole vielä kertaakaan pesty. Syvä laivastonsininen."
+      ],
+      [
+        "Yöjunan ikkuna",
+        "Lasi, kun valot ovat menneet ohi. Harmaata, melkein laivastonsinistä."
+      ],
+      [
+        "Keskiyön ikkuna",
+        "Näkymä, kun vedät verhot sivuun. Vähän sinisempää kuin musta."
+      ],
+      [
+        "Haalistunut muste",
+        "Vesi, jolla huuhdoit musteen käsistäsi. Haalea laivastonsininen."
+      ],
+      [
+        "Koulupuvun sininen",
+        "Vuosia käytetyn takin laivastonsininen. Ei mustaa eikä sinistä."
+      ],
+      [
+        "Märät farkut",
+        "Juuri ripustettu pyykki. Syvä, samea sininen."
+      ],
+      [
+        "Makrillin selkä",
+        "Hopeanhohtoinen siniharmaa. Taivas ennen sadetta."
+      ],
+      [
+        "Kulunut haalari",
+        "Sininen, joka on haalistunut vuosien käytössä."
+      ],
+      [
+        "Haalistunut sininen verho",
+        "Verho, joka on nähnyt aurinkoa pitkään. Voimaton laivastonsininen."
+      ],
+      [
+        "Huurre ikkunassa",
+        "Sisältä ulos katsoessa utuista. Sinertävä harmaa."
+      ],
+      [
+        "Aamusumu",
+        "Aamu, jolloin talojen yläosat ovat pyyhkiytyneet pois. Vaalea, sinertävä harmaa."
+      ],
+      [
+        "Märkä huppari",
+        "Sateesta tummunut harmaa. Pilvinen aamunkoitto."
+      ],
+      [
+        "Haalistunut liila villapaita",
+        "Monta kertaa pesty violetti. Läntinen taivas juuri ennen aamunkoittoa."
+      ],
+      [
+        "Persikankuori",
+        "Nukkainen puoli. Vaaleanpunaisen ja oranssin välissä."
+      ],
+      [
+        "Aprikoosimaito",
+        "Maitoa ja soseutettua aprikoosia. Hyvin vaalea oranssi."
+      ],
+      [
+        "Auringon valaisema valkoinen seinä",
+        "Aamulla seinä on hetken tämän värinen."
+      ],
+      [
+        "Lohen liha",
+        "Se vaaleanpunainen, joka katoaa paistaessa."
+      ],
+      [
+        "Mansikkamaito",
+        "Vaaleanpunainen ravistelun jälkeen."
+      ],
+      [
+        "Raaka aprikoosi",
+        "Oranssi, jossa keltainen vielä voittaa."
+      ],
+      [
+        "Vesilasi",
+        "Vaalea sininen, jonka läpi valo on kulkenut."
+      ],
+      [
+        "Kylmä hanavesi",
+        "Kylmien käsien väri. Haalea, viileä sininen."
+      ],
+      [
+        "Ohut jää",
+        "Keväällä kevyesti jäätynyt vesi. Hyvin vaalea sininen."
+      ],
+      [
+        "Posliinikulho",
+        "Valkoiseen kulhoon jäänyt sininen vivahde."
+      ],
+      [
+        "Silitetty valkoinen paita",
+        "Melkein valkoista, kerros sinistä. Hyvin kirkas keskipäivä."
+      ],
+      [
+        "Tiskivaahto",
+        "Valkoinen vaahto tiskiveden pinnalla."
+      ],
+      [
+        "Haalistuneet farkut",
+        "Polvista vaalentunut denim. Utuisen päivän sininen."
+      ],
+      [
+        "Sininen väriliitu",
+        "Sininen, joka syntyy, kun painat lujaa piirustuspaperiin."
+      ],
+      [
+        "Uima-altaan laatta",
+        "Sininen veden läpi nähtynä. Kirkkaan päivän keskipäivä."
+      ],
+      [
+        "Sininen kuulakynä",
+        "Paperille vedetyn viivan sininen."
+      ],
+      [
+        "Syvä uima-allas",
+        "Vesi siellä, missä et yllä pohjaan. Keskikesän keskipäivän huippu."
+      ],
+      [
+        "Sinivärivesi",
+        "Purkki, jossa sivellin huuhdotaan. Kirkkaan iltapäivän sininen."
+      ],
+      [
+        "Täytekynän muste",
+        "Pullossa sininen, joka on melkein mustaa."
+      ],
+      [
+        "Limsapullo",
+        "Vaalea sininen, jossa on vihreää."
+      ],
+      [
+        "Huurtunut peili",
+        "Peili suihkun jälkeen. Vaalea siniharmaa."
+      ],
+      [
+        "Sumuinen lasi",
+        "Utuinen harmaa, jossa toinen puoli sumenee."
+      ],
+      [
+        "Pyyhekumin muru",
+        "Pöydälle kertynyt valkoinen pöly. Hyvin vaalea harmaa."
+      ],
+      [
+        "Liitupöly",
+        "Valkoinen, joka jää ilmaan taulun pyyhkimisen jälkeen."
+      ],
+      [
+        "Kuiva sementti",
+        "Kauan sitten kovettunut lattia. Tasainen vaalea harmaa."
+      ],
+      [
+        "Kylmä tuhka",
+        "Se, mikä jää, kun kaikki on palanut. Pilvisen päivän perusharmaa."
+      ],
+      [
+        "Samea ikkunalasi",
+        "Väri, joka ei lähde pyyhkimällä. Sinertävä keskiharmaa."
+      ],
+      [
+        "Märkä aaltopahvi",
+        "Sateessa seissyt laatikko. Lämpimän sävyinen harmaa."
+      ],
+      [
+        "Sammunut näyttö",
+        "Mustanharmaa heti virran katkaisun jälkeen."
+      ],
+      [
+        "Palanut tulitikku",
+        "Tikku, jonka vain pää on musta. Tumma harmaanvioletti."
+      ],
+      [
+        "Tiskivesi",
+        "Haaleaa vettä ja rasvaa pinnalla. Samea harmaa."
+      ],
+      [
+        "Pyykinkeittovesi",
+        "Höyryävä valkoinen vesi. Vaalea harmaa."
+      ],
+      [
+        "Veitsenterä",
+        "Terästä valossa. Sinertävä harmaa."
+      ],
+      [
+        "Vanha peltikatto",
+        "Vanhan varaston katto. Siniharmaa juuri ennen sadetta."
+      ],
+      [
+        "Meri pilvisenä päivänä",
+        "Vesi, joka ottaa taivaan värin. Tumma siniharmaa."
+      ],
+      [
+        "Märkä sementti",
+        "Lattia sateen jälkeen. Tumma, kostea harmaa."
+      ],
+      [
+        "Lyijykynä",
+        "Tummanharmaa, kynän kyljellä väritetty. Sateinen iltapäivä."
+      ],
+      [
+        "Märkä asfaltti",
+        "Tie yösateen jälkeen. Harmaa, melkein musta."
+      ],
+      [
+        "Sammaloitunut muuri",
+        "Harmaa, johon vihreä on juurtunut. Joskus juuri ennen myrskyä."
+      ],
+      [
+        "Vanha kolikko",
+        "Käsissä kulunut metalli. Kellertävä harmaa."
+      ],
+      [
+        "Riisinhuuhteluvesi",
+        "Ensimmäinen vesi riisiä huuhdellessa. Lämmin valkoinen."
+      ],
+      [
+        "Munankuori",
+        "Valkoinen, joka ei ole aivan valkoinen."
+      ],
+      [
+        "Vanha paperi",
+        "Vanhan kirjan sivut. Kellastunut valkoinen."
+      ],
+      [
+        "Vanha sanomalehti",
+        "Auringon haalistama paperi. Harmaan ja keltaisen välissä."
+      ],
+      [
+        "Hiekkapölyinen ikkuna",
+        "Utuinen keltainen hohde, joka saa haluamaan pestä lasin."
+      ],
+      [
+        "Paahdettu viljajuoma",
+        "Samea beige ennen kuin se laskeutuu pohjalle."
+      ],
+      [
+        "Kellastunut lattiamatto",
+        "Pitkään painettu lattia. Samea keltainen."
+      ],
+      [
+        "Keitetty kastanja",
+        "Kuoritun kastanjan keltainen sisus."
+      ],
+      [
+        "Maito kahvissa",
+        "Juuri kaadettu, ei vielä sekoittunut."
+      ],
+      [
+        "Pölyinen kirjahylly",
+        "Vaalea harmaanruskea, johon sormi jättää jäljen."
+      ],
+      [
+        "Kuiva savi",
+        "Halkeilemaan alkanut savimaa. Vaaleanruskea."
+      ],
+      [
+        "Jäähtynyt maitotee",
+        "Kesken jätetty kuppi. Samea punertavanruskea."
+      ],
+      [
+        "Märkä pahvi",
+        "Sateessa turvonnut paperi. Haalean auringonlaskun väri."
+      ],
+      [
+        "Sateen kastelema puuterassi",
+        "Kosteudesta tummunut puu."
+      ],
+      [
+        "Tuhkainen tiili",
+        "Kohta, jota tuli on lämmittänyt. Tumma punaharmaa."
+      ],
+      [
+        "Kahvitahra",
+        "Pyöreä tahra kupin nostamisen jälkeen."
+      ],
+      [
+        "Keitetty punapapu",
+        "Pitkään vedessä liotetut pavut. Tumma purppuranharmaa."
+      ],
+      [
+        "Paahdettu soijajauho",
+        "Soijajauhoon kieritetty riisikakku. Pehmeä ruskehtava beige."
+      ],
+      [
+        "Munankeltuainen",
+        "Juuri ennen kuin se puhkeaa. Syvä keltainen."
+      ],
+      [
+        "Leivänkuori",
+        "Kohta, jossa keltainen muuttuu ruskeaksi."
+      ],
+      [
+        "Mandariininkuori",
+        "Se oranssi ennen kuorimista."
+      ],
+      [
+        "Paistettu lohi",
+        "Vaaleanpunertava oranssi, jossa pinta on kypsynyt."
+      ],
+      [
+        "Kuivattu kaki",
+        "Kuivattu kaki, jonka pinnalla on valkoista huurretta. Samea oranssi."
+      ],
+      [
+        "Hiillos",
+        "Ei liekki, vaan punaisena hehkuva hiili."
+      ],
+      [
+        "Kypsä kaki",
+        "Punaoranssi juuri ennen kuin hedelmä halkeaa."
+      ],
+      [
+        "Tteokbokki-kastike",
+        "Punainen, kun kastike on kiehunut kokoon. Syvin auringonlasku."
+      ],
+      [
+        "Vesimeloni",
+        "Makein kohta keskellä. Punertava vaaleanpunainen."
+      ],
+      [
+        "Ruusuhillo",
+        "Sokeriin säilötyt terälehdet. Samea punertava vaaleanpunainen."
+      ],
+      [
+        "Punatiili",
+        "Muuri, joka on seissyt sateessa monta vuotta."
+      ],
+      [
+        "Hiipuva hiillos",
+        "Tuhkan peittämä tuli. Tumma punaruskea."
+      ],
+      [
+        "Luumunkuori",
+        "Punavioletti, jonka päällä on valkoinen kerros."
+      ],
+      [
+        "Punapapupuuro",
+        "Paksu punaruskea ennen kuin riisipallot lisätään."
+      ],
+      [
+        "Viinin tilkka",
+        "Tumma punavioletti lasin pohjalla."
+      ],
+      [
+        "Kuihtunut syreeni",
+        "Kuivuvan kukan haalea violetti."
+      ],
+      [
+        "Mustikkamaito",
+        "Vaalea liila, jota ei ole sekoitettu loppuun."
+      ],
+      [
+        "Viinirypäleen kuori",
+        "Syvä violetti, juuri huuhdottu ja vielä märkä."
+      ],
+      [
+        "Munakoison kuori",
+        "Valon nielevä mustanvioletti. Päivän viimeinen väri."
+      ]
+    ]
+  },
+  "problem": {
+    "title": "Katsot taivasta joka päivä, mutta et muista siitä yhtään väriä",
+    "text": "Taivas töihin mennessä, taivas lounaalta palatessa: illalla värit ovat jo poissa. Ne taivaskuvat, jotka sentään otit, hukkuvat kaiken muun sekaan kuvakirjastossa. SkyDex kerää ne väreinä ja näyttää yhdellä laudalla, mitä reittiä tämän päivän taivas kulki."
+  },
+  "features": [
+    {
+      "title": "Jokainen taivas saa nimen",
+      "text": "Jokainen väri saa ensin nimen, jonka näkee silmissään, kuten ohut jää, uima-altaan laatta tai kypsä kaki. Sen alla on nimi, jolla on alkuperä: korealainen väri, japanilainen väri, pigmentti tai verkkoväri.\nKun osuma on lähellä, siinä lukee Nimi. Kun ei ole, siinä lukee rehellisesti Lähin nimi.",
+      "shot": "02-name"
+    },
+    {
+      "title": "Jätä rivi",
+      "text": "Kortti avautuu heti kuvaamisen jälkeen. Kirjoita, mitä ajattelit katsoessasi ylös, niin teksti nousee taas taivaan päälle aina, kun napautat sitä ruutua laudalla.\nVoit myös sävyttää kuvan toisen päivän taivaan värillä ja jakaa tuloksen kuvana.",
+      "shot": "03-card"
+    },
+    {
+      "title": "Tyhjät ruudut näyttävät tien",
+      "text": "Napauta tyhjää ruutua, niin näet, mihin vuorokaudenaikaan se kuuluu ja minkä väristä taivasta kannattaa etsiä. Se kertoo myös, miltä pilvetön taivas näyttää siihen aikaan, sijaintisi auringonnousun ja -laskun mukaan.\nVärin ei tarvitse osua. Pilvisen päivän harmaa on sekin sen päivän taivaanväri.",
+      "shot": "05-empty"
+    },
+    {
+      "title": "Loki, paletti, toistot",
+      "text": "Selaa taivaitasi järjestyksessä ja kokoa värit paleteiksi, kuten sininen, harmaa ja hiekka. Kuvaa sama tunti toisena päivänä, niin taivaat asettuvat rinnakkain.\nKotivalikon widgetit näyttävät päivän laudan ja päivän taivaan yhdellä silmäyksellä.",
+      "shot": "04-palette"
+    }
+  ],
+  "steps": {
+    "title": "Alkuun kolmella askeleella",
+    "items": [
+      {
+        "title": "Katso ylös",
+        "text": "Napauta laudan alla olevaa kamerapainiketta ja anna taivaan täyttää neliö."
+      },
+      {
+        "title": "Ruutu täyttyy",
+        "text": "Tämän hetken ruutu saa tavoittamasi värin ja nimen."
+      },
+      {
+        "title": "Jätä rivi",
+        "text": "Kirjoita avautuvaan korttiin, mitä ajattelit."
+      }
+    ]
+  },
+  "reference": {
+    "title": "Näin lauta jakaa päivän",
+    "rows": [
+      [
+        "Keskiyö · 0.00–5.00",
+        "kuusi ruutua"
+      ],
+      [
+        "Aamunkoitto · 5.00–8.00",
+        "kuusi ruutua"
+      ],
+      [
+        "Päivä · 8.00–16.00",
+        "kaksitoista ruutua"
+      ],
+      [
+        "Myöhäinen iltapäivä · 16.00–18.00",
+        "kuusi ruutua"
+      ],
+      [
+        "Auringonlasku · 18.00–21.00",
+        "kaksitoista ruutua, yksi vartin välein"
+      ],
+      [
+        "Yö · 21.00–24.00",
+        "kuusi ruutua"
+      ]
+    ],
+    "note": "Auringonlaskun aikaan, kun taivas muuttuu nopeasti, ruudut ovat tiheässä, ja keskellä yötä, kun se tuskin liikkuu, ne ovat leveitä. Ylimpänä on keskiyö, ja päivä kulkee alaspäin."
+  },
+  "faq": {
+    "title": "Kysymyksiä",
+    "items": [
+      {
+        "q": "Miten ruutu täyttyy?",
+        "a": "Tänään kuvaamasi taivas täyttää kuvaushetken ruudun, vaikka väri ei olisi sitä, mitä odotit. Sellainen taivas sillä hetkellä oikeasti oli. Aiempien päivien taivaat menevät sisään värin mukaan: jos taivas on tarpeeksi lähellä jonkin ruudun väriä, se täyttää sen, ja kukin taivas täyttää vain yhden ruudun."
+      },
+      {
+        "q": "Eilen täynnä ollut ruutu on tänään tyhjä.",
+        "a": "Lauta on aina tämä päivä. Ruutu, jonka eilinen taivas täytti kellonajan perusteella, sovitetaan päivän vaihtuessa uudelleen pelkän värin mukaan. Siksi lauta on joinakin päivinä lähes täynnä ja toisina tyhjän näköinen. Kuvasi eivät ole kadonneet: kaikki taivaat ovat Lokissa ja värijärjestyksessä Paletissa."
+      },
+      {
+        "q": "Täytetyt ruudut haalistuvat.",
+        "a": "Tarkoituksella. Kuva säilyttää oikean värinsä viikon ja haalistuu sitten hitaasti seuraavien kahdeksan viikon aikana. Sitä ei poisteta, eikä se koskaan haalistu kokonaan. Kuvaa taivas siihen aikaan uudelleen, niin ruutu palaa heti täyteen väriinsä. Ei katkeavaa putkea, ei takaisin ansaittavia pisteitä."
+      },
+      {
+        "q": "Pitääkö värin osua?",
+        "a": "Ei. Hyväksyttyä tai hylättyä ei ole. Jokainen kuva tallentuu, ja pilvisen päivän harmaa on sekin sen päivän taivaanväri."
+      },
+      {
+        "q": "Miksi sovellus kysyy sijaintiani?",
+        "a": "Vain siksi, että se voi tyhjää ruutua napauttaessasi kertoa, miltä pilvetön taivas näyttää siihen aikaan, sijaintisi auringonnousun ja -laskun mukaan. Se käyttää likimääräistä sijaintia kilometrin tarkkuudella, eikä koordinaatteja liitetä kuviin. Jos kiellät sijainnin, kaikki toimii silti, ja vertailukohtana on Soul."
+      },
+      {
+        "q": "Voinko lisätä taivaan kuvakirjastosta?",
+        "a": "Kyllä. Kameran sijaan Kuvat-apista valittu taivas rajataan sekin neliöksi ja täyttää tämän hetken ruudun aivan kuin juuri ottamasi kuva."
+      },
+      {
+        "q": "Miten poistan kuvan?",
+        "a": "Avaa kuva ja napauta Poista, tai pyyhkäise sitä vasemmalle Lokissa. Se poistuu laitteelta ja iCloudista yhtä aikaa. Jos poistat sovelluksen, kopio jää iCloudiin, joten taivaasi palaavat, kun asennat sen uudelleen."
+      },
+      {
+        "q": "Mitä tapahtuu, kun vaihdan puhelinta?",
+        "a": "Taivaasi tallentuvat omaan iCloudiisi, joten ne siirtyvät uudelle laitteelle, jolla on kirjauduttu samalle Apple-tilille. Ei erillistä tiliä eikä palvelinta, eikä kuviasi tai värejäsi lähetetä kehittäjälle. Ei mainoksia, ei seurantaa."
+      },
+      {
+        "q": "Onko se tosiaan ilmainen?",
+        "a": "Kyllä, kaikki ominaisuudet ovat ilmaisia. Jos pidät sovelluksesta, voit antaa kehittäjälle tipin sovelluksessa, mutta tippi ei avaa mitään uutta."
+      },
+      {
+        "q": "Millä laitteilla se toimii?",
+        "a": "iPhonessa, jossa on iOS 17.0 tai uudempi, vain pystysuunnassa."
+      }
+    ]
+  },
+  "closing": {
+    "headline": "Huomenaamuna\nkatso ylös edes kerran",
+    "cta": "Ilmaiseksi App Storesta"
+  },
+  "ui": {
+    "skip": "Siirry sisältöön",
+    "languages": "Kieli",
+    "privacy": "Tietosuojakäytäntö",
+    "contact": "Bugit, oudot toiminnot tai mitä tahansa haluat sanoa: kirjoita osoitteeseen {email}. Kun kerrot, mitä olit tekemässä ja mikä iOS-versio sinulla on, syy löytyy paljon helpommin."
+  }
+}

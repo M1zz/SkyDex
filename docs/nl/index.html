@@ -1,340 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SkyDex</title>
-<meta name="description" content="Een iOS-app die de lucht van de dag als kleur verzamelt. Vul een bord van achtenveertig vakjes met de lucht van vandaag.">
-<link rel="canonical" href="https://m1zz.github.io/SkyDex/nl/">
-<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/SkyDex/">
-<link rel="alternate" hreflang="en" href="https://m1zz.github.io/SkyDex/en/">
-<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/SkyDex/en/">
-<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/SkyDex/ja/">
-<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/SkyDex/zh-Hans/">
-<link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/SkyDex/zh-Hant/">
-<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/SkyDex/ru/">
-<link rel="alternate" hreflang="es" href="https://m1zz.github.io/SkyDex/es/">
-<link rel="alternate" hreflang="de" href="https://m1zz.github.io/SkyDex/de/">
-<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/SkyDex/fr/">
-<link rel="alternate" hreflang="it" href="https://m1zz.github.io/SkyDex/it/">
-<link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/SkyDex/pt-BR/">
-<link rel="alternate" hreflang="th" href="https://m1zz.github.io/SkyDex/th/">
-<link rel="alternate" hreflang="vi" href="https://m1zz.github.io/SkyDex/vi/">
-<link rel="alternate" hreflang="cs" href="https://m1zz.github.io/SkyDex/cs/">
-<link rel="alternate" hreflang="da" href="https://m1zz.github.io/SkyDex/da/">
-<link rel="alternate" hreflang="el" href="https://m1zz.github.io/SkyDex/el/">
-<link rel="alternate" hreflang="fi" href="https://m1zz.github.io/SkyDex/fi/">
-<link rel="alternate" hreflang="id" href="https://m1zz.github.io/SkyDex/id/">
-<link rel="alternate" hreflang="nb" href="https://m1zz.github.io/SkyDex/nb/">
-<link rel="alternate" hreflang="nl" href="https://m1zz.github.io/SkyDex/nl/">
-<link rel="alternate" hreflang="pl" href="https://m1zz.github.io/SkyDex/pl/">
-<link rel="alternate" hreflang="sv" href="https://m1zz.github.io/SkyDex/sv/">
-<link rel="alternate" hreflang="tr" href="https://m1zz.github.io/SkyDex/tr/">
-<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/SkyDex/">
-<style>
-  :root {
-    --ink: #16202e;
-    --ink-soft: #5d6773;
-    --paper: #f4f5f7;
-    --card: #ffffff;
-    --line: #e2e5ea;
-    --accent: #2f7bbe;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ink: #eef1f5;
-      --ink-soft: #a2acb8;
-      --paper: #0b111c;
-      --card: #141c28;
-      --line: #26303e;
-      --accent: #7fa4ce;
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    padding: 0 20px 72px;
-    background: var(--paper);
-    color: var(--ink);
-    font: 17px/1.72 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
-      "Pretendard", "Segoe UI", Roboto, sans-serif;
-    -webkit-text-size-adjust: 100%;
-  }
-  main { max-width: 680px; margin: 0 auto; }
-  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
-
-  /* 하루 곡선 그대로 이어붙인 띠 */
-  .strip {
-    display: flex;
-    height: 8px;
-    border-radius: 4px;
-    overflow: hidden;
-    margin: 40px 0 34px;
-  }
-  .strip span { flex: 1 1 0; }
-
-  h1 {
-    font-size: 34px; line-height: 1.25; letter-spacing: -0.03em;
-    margin: 0 0 8px; text-align: center; font-weight: 700;
-  }
-  .lede {
-    margin: 0 auto 8px; text-align: center; color: var(--ink-soft);
-    max-width: 26em;
-  }
-  .platform {
-    text-align: center; color: var(--ink-soft); font-size: 14px;
-    margin: 0 0 36px;
-  }
-
-  /* 판 — 앱과 같은 6×8, 같은 색 */
-  .board {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
-    max-width: 340px;
-    margin: 0 auto 12px;
-  }
-  .bead {
-    aspect-ratio: 1;
-    border-radius: 50%;
-    border: 4px solid transparent;
-    display: block;
-  }
-  .bead.on { border: 0; }
-  .caption {
-    text-align: center; color: var(--ink-soft); font-size: 14px;
-    margin: 0 0 46px;
-  }
-
-  h2 {
-    font-size: 21px; letter-spacing: -0.01em; margin: 46px 0 12px;
-    padding-top: 28px; border-top: 1px solid var(--line);
-  }
-  p { margin: 0 0 14px; }
-  ul { margin: 0 0 14px; padding-left: 1.2em; }
-  li { margin-bottom: 8px; }
-  strong { font-weight: 600; }
-
-  /* 이름 카드 — 앱의 사진 카드 아래에 붙는 것과 같은 순서 */
-  .names { margin: 20px 0 8px; }
-  .name {
-    display: flex; align-items: center; gap: 14px;
-    background: var(--card); border: 1px solid var(--line);
-    border-radius: 16px; padding: 14px 16px; margin-bottom: 10px;
-  }
-  .swatch {
-    width: 46px; height: 46px; border-radius: 12px; flex: 0 0 auto;
-  }
-  .name .simile { font-size: 17px; font-weight: 600; }
-  .name .real { font-size: 13px; color: var(--ink-soft); }
-
-  .quiet {
-    background: var(--card); border: 1px solid var(--line);
-    border-radius: 16px; padding: 18px 20px; margin: 22px 0 8px;
-  }
-  .quiet p:last-child { margin-bottom: 0; }
-
-  footer {
-    margin-top: 60px; padding-top: 26px; border-top: 1px solid var(--line);
-    color: var(--ink-soft); font-size: 15px; text-align: center;
-  }
-  footer a { margin: 0 8px; }
-  nav.langs { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px 14px; margin: 18px 0 0; font-size: 14px; }
-  nav.langs a { color: var(--ink-soft); text-decoration: none; }
-  nav.langs a[aria-current] { color: var(--ink); font-weight: 600; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkyDex: een bord met de kleuren van de lucht, foto voor foto</title>
+  <meta name="description" content="Elke foto van de lucht vult een van de achtenveertig luchtkleuren van de dag en krijgt een naam die erbij past. Gratis, zonder account.">
+  <meta name="theme-color" content="#2A74B6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b111c" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6802295390">
+  <link rel="canonical" href="https://m1zz.github.io/SkyDex/nl/">
+  <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/SkyDex/">
+  <link rel="alternate" hreflang="en" href="https://m1zz.github.io/SkyDex/en/">
+  <link rel="alternate" hreflang="ja" href="https://m1zz.github.io/SkyDex/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/SkyDex/zh-Hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/SkyDex/zh-Hant/">
+  <link rel="alternate" hreflang="ru" href="https://m1zz.github.io/SkyDex/ru/">
+  <link rel="alternate" hreflang="es" href="https://m1zz.github.io/SkyDex/es/">
+  <link rel="alternate" hreflang="de" href="https://m1zz.github.io/SkyDex/de/">
+  <link rel="alternate" hreflang="fr" href="https://m1zz.github.io/SkyDex/fr/">
+  <link rel="alternate" hreflang="it" href="https://m1zz.github.io/SkyDex/it/">
+  <link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/SkyDex/pt-BR/">
+  <link rel="alternate" hreflang="th" href="https://m1zz.github.io/SkyDex/th/">
+  <link rel="alternate" hreflang="vi" href="https://m1zz.github.io/SkyDex/vi/">
+  <link rel="alternate" hreflang="cs" href="https://m1zz.github.io/SkyDex/cs/">
+  <link rel="alternate" hreflang="da" href="https://m1zz.github.io/SkyDex/da/">
+  <link rel="alternate" hreflang="el" href="https://m1zz.github.io/SkyDex/el/">
+  <link rel="alternate" hreflang="fi" href="https://m1zz.github.io/SkyDex/fi/">
+  <link rel="alternate" hreflang="id" href="https://m1zz.github.io/SkyDex/id/">
+  <link rel="alternate" hreflang="nb" href="https://m1zz.github.io/SkyDex/nb/">
+  <link rel="alternate" hreflang="nl" href="https://m1zz.github.io/SkyDex/nl/">
+  <link rel="alternate" hreflang="pl" href="https://m1zz.github.io/SkyDex/pl/">
+  <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/SkyDex/sv/">
+  <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/SkyDex/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/SkyDex/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SkyDex: een bord met de kleuren van de lucht, foto voor foto">
+  <meta property="og:description" content="Elke foto van de lucht vult een van de achtenveertig luchtkleuren van de dag en krijgt een naam die erbij past. Gratis, zonder account.">
+  <meta property="og:url" content="https://m1zz.github.io/SkyDex/nl/">
+  <meta property="og:image" content="https://m1zz.github.io/SkyDex/img/nl/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../sitegen.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#2A74B6}@media (prefers-color-scheme:dark){:root{--accent:#7FA4CE}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-<main>
-  <nav class="langs" aria-label="Language">
-    <a href="../" hreflang="ko" lang="ko">한국어</a>
-    <a href="../en/" hreflang="en" lang="en">English</a>
-    <a href="../ja/" hreflang="ja" lang="ja">日本語</a>
-    <a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
-    <a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
-    <a href="../ru/" hreflang="ru" lang="ru">Русский</a>
-    <a href="../es/" hreflang="es" lang="es">Español</a>
-    <a href="../de/" hreflang="de" lang="de">Deutsch</a>
-    <a href="../fr/" hreflang="fr" lang="fr">Français</a>
-    <a href="../it/" hreflang="it" lang="it">Italiano</a>
-    <a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
-    <a href="../th/" hreflang="th" lang="th">ไทย</a>
-    <a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
-    <a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
-    <a href="../da/" hreflang="da" lang="da">Dansk</a>
-    <a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
-    <a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
-    <a href="../id/" hreflang="id" lang="id">Indonesia</a>
-    <a href="../nb/" hreflang="nb" lang="nb">Norsk</a>
-    <a href="../nl/" hreflang="nl" lang="nl" aria-current="true">Nederlands</a>
-    <a href="../pl/" hreflang="pl" lang="pl">Polski</a>
-    <a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
-    <a href="../tr/" hreflang="tr" lang="tr">Türkçe</a>
-  </nav>
+  <a class="skip" href="#main">Naar de inhoud</a>
+  <header class="bar">
+    <a class="brand" href="../nl/"><img src="../icon.png" alt="" width="32" height="32">SkyDex</a>
+    <a class="lang-link" href="#languages">Taal</a>
+  </header>
 
-  <div class="strip" aria-hidden="true">
-    <span style="background:#080D18"></span>
-    <span style="background:#090E1A"></span>
-    <span style="background:#0A0F1C"></span>
-    <span style="background:#0A101E"></span>
-    <span style="background:#0B1120"></span>
-    <span style="background:#0C1221"></span>
-    <span style="background:#131B30"></span>
-    <span style="background:#1B263E"></span>
-    <span style="background:#6879A2"></span>
-    <span style="background:#99A7C5"></span>
-    <span style="background:#96ABCB"></span>
-    <span style="background:#7FA4CE"></span>
-    <span style="background:#709CCB"></span>
-    <span style="background:#5791C6"></span>
-    <span style="background:#508DC5"></span>
-    <span style="background:#3F83C1"></span>
-    <span style="background:#307BBE"></span>
-    <span style="background:#2B77BB"></span>
-    <span style="background:#1F6FB5"></span>
-    <span style="background:#1D6EB4"></span>
-    <span style="background:#2471B6"></span>
-    <span style="background:#2975B8"></span>
-    <span style="background:#3179BA"></span>
-    <span style="background:#4988C3"></span>
-    <span style="background:#558EC5"></span>
-    <span style="background:#6D9BCA"></span>
-    <span style="background:#7EA5CD"></span>
-    <span style="background:#8FA5BF"></span>
-    <span style="background:#B2A297"></span>
-    <span style="background:#C1A07E"></span>
-    <span style="background:#CC986A"></span>
-    <span style="background:#D68F56"></span>
-    <span style="background:#CC7C49"></span>
-    <span style="background:#B95B35"></span>
-    <span style="background:#A95239"></span>
-    <span style="background:#8F4440"></span>
-    <span style="background:#543852"></span>
-    <span style="background:#3B324D"></span>
-    <span style="background:#322F4B"></span>
-    <span style="background:#2B2A44"></span>
-    <span style="background:#20233A"></span>
-    <span style="background:#181D33"></span>
-    <span style="background:#161C30"></span>
-    <span style="background:#13192B"></span>
-    <span style="background:#0F1424"></span>
-    <span style="background:#0B111F"></span>
-    <span style="background:#0A101D"></span>
-    <span style="background:#080D19"></span>
-  </div>
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>Welke kleur had<br>de lucht vandaag?</h1>
+        <p class="lead">Fotografeer de lucht, en op een bord van achtenveertig vakjes vult het vakje van dat moment zich met de kleur die je vastlegde. Het krijgt ook een naam die je meteen voor je ziet, zoals Dun ijs, Zwembadtegel of Rijpe kaki.</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6802295390">Gratis in de App Store</a><a class="try" href="#try">Probeer het bord ↓</a></div>
+        <p class="muted small">Gratis. Geen account, niet inloggen.</p>
+      </div>
+      <div class="phone"><img src="../img/nl/01-board.jpg" alt="Welke kleur had de lucht vandaag?" width="600" height="1303" decoding="async"></div>
+    </section>
 
-  <h1>SkyDex</h1>
-  <p class="lede">Verzamel de lucht van de dag als kleur.<br>Er is een bord met achtenveertig vakjes, en jij vult het met de lucht van vandaag.</p>
-  <p class="platform">iPhone · iOS 17.0 of nieuwer</p>
 
-  <div class="board" aria-hidden="true">
-    <span class="bead" style="border-color:#55565A" title="00:00–00:50"></span>
-    <span class="bead" style="border-color:#55565B" title="00:50–01:40"></span>
-    <span class="bead" style="border-color:#55565C" title="01:40–02:30"></span>
-    <span class="bead" style="border-color:#55575D" title="02:30–03:20"></span>
-    <span class="bead" style="border-color:#55575D" title="03:20–04:10"></span>
-    <span class="bead" style="border-color:#56575E" title="04:10–05:00"></span>
-    <span class="bead" style="border-color:#595A64" title="05:00–05:30"></span>
-    <span class="bead" style="border-color:#5C5E69" title="05:30–06:00"></span>
-    <span class="bead" style="border-color:#767B8B" title="06:00–06:30"></span>
-    <span class="bead on" style="background:#99A7C5" title="06:30–07:00 · #99A7C5"></span>
-    <span class="bead" style="border-color:#848B97" title="07:00–07:30"></span>
-    <span class="bead" style="border-color:#7D8998" title="07:30–08:00"></span>
-    <span class="bead on" style="background:#709CCB" title="08:00–08:40 · #709CCB"></span>
-    <span class="bead" style="border-color:#728397" title="08:40–09:20"></span>
-    <span class="bead" style="border-color:#718196" title="09:20–10:00"></span>
-    <span class="bead" style="border-color:#6D7E96" title="10:00–10:40"></span>
-    <span class="bead" style="border-color:#6B7C95" title="10:40–11:20"></span>
-    <span class="bead" style="border-color:#6A7A95" title="11:20–12:00"></span>
-    <span class="bead on" style="background:#1F6FB5" title="12:00–12:40 · #1F6FB5"></span>
-    <span class="bead" style="border-color:#687793" title="12:40–13:20"></span>
-    <span class="bead" style="border-color:#687893" title="13:20–14:00"></span>
-    <span class="bead" style="border-color:#697A93" title="14:00–14:40"></span>
-    <span class="bead" style="border-color:#6B7B94" title="14:40–15:20"></span>
-    <span class="bead" style="border-color:#6F8096" title="15:20–16:00"></span>
-    <span class="bead" style="border-color:#728297" title="16:00–16:20"></span>
-    <span class="bead" style="border-color:#788697" title="16:20–16:40"></span>
-    <span class="bead on" style="background:#7EA5CD" title="16:40–17:00 · #7EA5CD"></span>
-    <span class="bead" style="border-color:#828993" title="17:00–17:20"></span>
-    <span class="bead" style="border-color:#8E8884" title="17:20–17:40"></span>
-    <span class="bead on" style="background:#C1A07E" title="17:40–18:00 · #C1A07E"></span>
-    <span class="bead" style="border-color:#998474" title="18:00–18:15"></span>
-    <span class="bead on" style="background:#D68F56" title="18:15–18:30 · #D68F56"></span>
-    <span class="bead" style="border-color:#9C7B68" title="18:30–18:45"></span>
-    <span class="bead on" style="background:#B95B35" title="18:45–19:00 · #B95B35"></span>
-    <span class="bead" style="border-color:#936E63" title="19:00–19:15"></span>
-    <span class="bead" style="border-color:#896A66" title="19:15–19:30"></span>
-    <span class="bead" style="border-color:#71656F" title="19:30–19:45"></span>
-    <span class="bead" style="border-color:#67636E" title="19:45–20:00"></span>
-    <span class="bead" style="border-color:#64626E" title="20:00–20:15"></span>
-    <span class="bead" style="border-color:#61606B" title="20:15–20:30"></span>
-    <span class="bead" style="border-color:#5D5D68" title="20:30–20:45"></span>
-    <span class="bead" style="border-color:#5A5B65" title="20:45–21:00"></span>
-    <span class="bead on" style="background:#161C30" title="21:00–21:30 · #161C30"></span>
-    <span class="bead" style="border-color:#585A62" title="21:30–22:00"></span>
-    <span class="bead" style="border-color:#56585F" title="22:00–22:30"></span>
-    <span class="bead" style="border-color:#55575D" title="22:30–23:00"></span>
-    <span class="bead" style="border-color:#55575C" title="23:00–23:30"></span>
-    <span class="bead" style="border-color:#55565A" title="23:30–00:00"></span>
-  </div>
-  <p class="caption">Bovenaan is het midden van de nacht; naar beneden wordt het dag en daarna weer donker. Een gevulde cirkel is een lucht die je hebt vastgelegd; een lege ring komt nog.</p>
+    <section class="reveal" id="try">
+      <h2>Probeer het bord</h2>
+      <p class="muted">Tik op een vakje om te zien bij welk moment van de dag het hoort. Voeg een foto van de lucht toe om het vakje van nu te vullen, en spoel daarna een paar dagen door om te zien hoe het bord verandert.</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;Probeer het bord&quot;, &quot;lead&quot;: &quot;Tik op een vakje om te zien bij welk moment van de dag het hoort. Voeg een foto van de lucht toe om het vakje van nu te vullen, en spoel daarna een paar dagen door om te zien hoe het bord verandert.&quot;, &quot;photo&quot;: &quot;Foto van de lucht toevoegen&quot;, &quot;age&quot;: &quot;Sinds de foto&quot;, &quot;ageToday&quot;: &quot;Vandaag&quot;, &quot;ageDay&quot;: &quot;{n} dag later&quot;, &quot;ageDays&quot;: &quot;{n} dagen later&quot;, &quot;note&quot;: &quot;Het bord begint met dezelfde voorbeeldluchten als de schermafbeeldingen van de app. Je foto wordt alleen in deze browser gelezen en nergens naartoe gestuurd. Hoe de kleur wordt gekozen, welk vakje hij vult en hoe snel hij vervaagt, werkt precies zoals in de app.&quot;, &quot;now&quot;: &quot;Nu&quot;, &quot;bands&quot;: [&quot;Middernacht&quot;, &quot;Dageraad&quot;, &quot;Dag&quot;, &quot;Late middag&quot;, &quot;Zonsondergang&quot;, &quot;Nacht&quot;], &quot;emptyTag&quot;: &quot;%@ · Nog leeg&quot;, &quot;spot&quot;: &quot;Deze plek wordt gevuld met een lucht die in dat deel van de dag is vastgelegd. Elke foto komt erin zoals hij is; de kleur hoeft niet te kloppen.&quot;, &quot;sims&quot;: [[&quot;Inktsteenzwart&quot;, &quot;Inkt gewreven op een inktsteen. De diepste nacht.&quot;], [&quot;Nachtzee&quot;, &quot;Water van bovenaf, ver van elk licht. Zwart met een laagje blauw.&quot;], [&quot;Aangebrande pan&quot;, &quot;Wat overblijft na het aanbranden. Zwart zonder zweem van blauw.&quot;], [&quot;Opgedroogde inkt&quot;, &quot;Een half geschreven vulpenlijn. Zwart waar nog wat blauw in zit.&quot;], [&quot;Diep water&quot;, &quot;De kleur van waar je de bodem niet raakt. Donker, koel marineblauw.&quot;], [&quot;Nieuwe spijkerbroek&quot;, &quot;Denim die nog nooit gewassen is. Diep marineblauw.&quot;], [&quot;Nachttreinraam&quot;, &quot;Glas nadat de lichtjes voorbij zijn. Grijs dat naar marineblauw neigt.&quot;], [&quot;Middernachtraam&quot;, &quot;Buiten, als je het gordijn opzij schuift. Iets blauwer dan zwart.&quot;], [&quot;Uitgespoelde inkt&quot;, &quot;Water waarin je inkt van je handen spoelde. Vaag marineblauw.&quot;], [&quot;Schooluniformblauw&quot;, &quot;Het marineblauw van een jasje dat jaren gedragen is. Niet zwart, niet blauw.&quot;], [&quot;Natte spijkerbroek&quot;, &quot;Net aan de lijn gehangen. Diep, troebel blauw.&quot;], [&quot;Makreelrug&quot;, &quot;Zilverig blauwgrijs. De lucht voor de regen.&quot;], [&quot;Oude werkkleding&quot;, &quot;Blauw dat dof is geworden na jaren dragen.&quot;], [&quot;Verschoten blauw gordijn&quot;, &quot;Een gordijn dat te veel zon heeft gezien. Marineblauw zonder kracht.&quot;], [&quot;Beslagen raam&quot;, &quot;Wazig als je van binnen naar buiten kijkt. Blauwig grijs.&quot;], [&quot;Ochtendmist&quot;, &quot;Een ochtend die de bovenkant van gebouwen uitwiste. Licht blauwig grijs.&quot;], [&quot;Natte hoodie&quot;, &quot;Grijs, donker geworden van opgezogen regen. Een bewolkte dageraad.&quot;], [&quot;Verschoten paarse trui&quot;, &quot;Paars, dof van vele wasbeurten. Het westen vlak voor zonsopgang.&quot;], [&quot;Perzikschil&quot;, &quot;De donzige kant. Tussen roze en oranje in.&quot;], [&quot;Abrikozenmelk&quot;, &quot;Abrikoos door melk gemengd. Het lichtste oranje.&quot;], [&quot;Witte muur in de zon&quot;, &quot;Elke ochtend krijgt de muur even deze kleur.&quot;], [&quot;Zalmroze&quot;, &quot;Het roze dat verdwijnt als je het bakt.&quot;], [&quot;Aardbeienmelk&quot;, &quot;Het roze na flink schudden.&quot;], [&quot;Onrijpe abrikoos&quot;, &quot;Oranje waarin het geel nog wint.&quot;], [&quot;Glas water&quot;, &quot;Lichtblauw waar het licht doorheen is gegaan.&quot;], [&quot;Koud kraanwater&quot;, &quot;De kleur van koude handen. Licht, koel blauw.&quot;], [&quot;Dun ijs&quot;, &quot;Water dat in het voorjaar net bevroren is. Het lichtste blauw.&quot;], [&quot;Porseleinen kom&quot;, &quot;De zweem van blauw in een witte kom.&quot;], [&quot;Gestreken wit overhemd&quot;, &quot;Bijna wit, met een laagje blauw. Een heel heldere middag.&quot;], [&quot;Afwassop&quot;, &quot;Wit schuim op het afwaswater.&quot;], [&quot;Verschoten spijkerbroek&quot;, &quot;Denim dat wit is geworden bij de knieën. Het blauw van een heiige dag.&quot;], [&quot;Blauw waskrijt&quot;, &quot;Het blauw dat je krijgt als je hard op tekenpapier drukt.&quot;], [&quot;Zwembadtegel&quot;, &quot;Blauw gezien door water. Middag op een heldere dag.&quot;], [&quot;Blauwe balpen&quot;, &quot;Het blauw van een lijn op papier.&quot;], [&quot;Diepe-badblauw&quot;, &quot;Het water in het diepe. De top van de lucht op een zomermiddag.&quot;], [&quot;Penseelwaterblauw&quot;, &quot;Het potje waarin je penselen spoelt. Blauw van een heldere middag.&quot;], [&quot;Vulpeninkt&quot;, &quot;In de fles een blauw dat bijna zwart is.&quot;], [&quot;Limonadeflesgroen&quot;, &quot;Lichtblauw met wat groen erin.&quot;], [&quot;Beslagen spiegel&quot;, &quot;De spiegel na het douchen. Licht blauwig grijs.&quot;], [&quot;Matglas&quot;, &quot;Wazig grijs dat de overkant laat vervagen.&quot;], [&quot;Gumkruimels&quot;, &quot;Wit stof verzameld op een bureau. Het lichtste grijs.&quot;], [&quot;Krijtstof&quot;, &quot;Het wit dat in de lucht hangt na het bord uitvegen.&quot;], [&quot;Droog cement&quot;, &quot;Een vloer die lang geleden is uitgehard. Vlak, lichtgrijs.&quot;], [&quot;Koude as&quot;, &quot;Wat overblijft als alles is opgebrand. Het gewone grijs van een bewolkte dag.&quot;], [&quot;Troebele ruit&quot;, &quot;Hij blijft deze kleur, hoe je ook poetst. Middengrijs met een zweem van blauw.&quot;], [&quot;Nat karton&quot;, &quot;Een doos die in de regen stond. Grijs met wat warmte.&quot;], [&quot;Uitgezet scherm&quot;, &quot;Het zwartgrijs vlak nadat je het uitzet.&quot;], [&quot;Opgebrande lucifer&quot;, &quot;Een houtje waarvan alleen de kop zwart is. Donker grijspaars.&quot;], [&quot;Afwaswater&quot;, &quot;Lauw water met vet erop. Troebel grijs.&quot;], [&quot;Kookwaswater&quot;, &quot;Dampend wit water. Lichtgrijs.&quot;], [&quot;Messnede&quot;, &quot;Staal dat het licht vangt. Grijs met een zweem van blauw.&quot;], [&quot;Oud zinken dak&quot;, &quot;Het dak van een oude schuur. Blauwgrijs vlak voor de regen.&quot;], [&quot;Zee bij bewolking&quot;, &quot;Water dat de kleur van de lucht heeft overgenomen. Donker blauwgrijs.&quot;], [&quot;Nat cement&quot;, &quot;Stoep na de regen. Donker, vochtig grijs.&quot;], [&quot;Potloodgrijs&quot;, &quot;Donkergrijs, gearceerd met de zijkant van de punt. Een regenachtige middag.&quot;], [&quot;Nat asfalt&quot;, &quot;Een weg na regen in de nacht. Grijs dat bijna zwart is.&quot;], [&quot;Bemoste muur&quot;, &quot;Grijs waar groen in kruipt. Soms vlak voor een storm.&quot;], [&quot;Oude munt&quot;, &quot;Metaal versleten door vele handen. Gelig grijs.&quot;], [&quot;Rijstspoelwater&quot;, &quot;Het eerste water als je rijst wast. Warm wit.&quot;], [&quot;Eierschaal&quot;, &quot;Wit dat niet helemaal wit is.&quot;], [&quot;Oud papier&quot;, &quot;De binnenbladzijden van een oud boek. Vergeeld wit.&quot;], [&quot;Oude krant&quot;, &quot;Papier, verbleekt door de zon. Tussen grijs en geel.&quot;], [&quot;Stoffig raam&quot;, &quot;Een wazig geel dat je wilt afvegen.&quot;], [&quot;Graandrankje&quot;, &quot;Troebel beige, voordat het bezinkt.&quot;], [&quot;Vergeelde vloermat&quot;, &quot;Een vloer die jarenlang is platgedrukt. Troebel geel.&quot;], [&quot;Gekookte kastanje&quot;, &quot;Het gele binnenste van een gepelde kastanje.&quot;], [&quot;Melk in koffie&quot;, &quot;Net ingeschonken, nog niet geroerd.&quot;], [&quot;Stoffige boekenplank&quot;, &quot;Licht grijsbruin waar je vinger een spoor in trekt.&quot;], [&quot;Droge modder&quot;, &quot;Aarde die net begint te barsten. Lichtbruin.&quot;], [&quot;Koude melkthee&quot;, &quot;Een half leeggedronken kop. Troebel roze-bruin.&quot;], [&quot;Nat bordpapier&quot;, &quot;Papier opgezwollen van de regen. De kleur van een bewolkte zonsondergang.&quot;], [&quot;Natte houten vlonder&quot;, &quot;Hout, donker geworden van het water dat het opnam.&quot;], [&quot;Beroete baksteen&quot;, &quot;Waar het vuur brandde. Donker roodachtig grijs.&quot;], [&quot;Koffievlek&quot;, &quot;De ronde vlek die achterblijft als je het kopje optilt.&quot;], [&quot;Gekookte rode boon&quot;, &quot;Rode bonen die lang hebben geweekt. Donker paarsig grijs.&quot;], [&quot;Geroosterd sojameel&quot;, &quot;Rijstcake gerold in bonenmeel. Zacht bruinig beige.&quot;], [&quot;Eidooier&quot;, &quot;Vlak voordat hij breekt. Diep geel.&quot;], [&quot;Broodkorst&quot;, &quot;Waar geel overgaat in bruin.&quot;], [&quot;Mandarijnschil&quot;, &quot;Dat oranje, voordat je hem pelt.&quot;], [&quot;Gegrilde zalm&quot;, &quot;Roze-oranje waar de buitenkant gaar is.&quot;], [&quot;Gedroogde kaki&quot;, &quot;Een gedroogde kaki met een wit poederlaagje. Troebel oranje.&quot;], [&quot;Smeulend haardhout&quot;, &quot;Niet de vlam, maar de gloeiende kolen.&quot;], [&quot;Rijpe kaki&quot;, &quot;Roodoranje, vlak voordat hij openbarst.&quot;], [&quot;Tteokbokki-rood&quot;, &quot;Het rood van pittige rijstcakesaus, ingekookt. De diepste zonsondergang.&quot;], [&quot;Watermeloen&quot;, &quot;Het zoetste stuk in het midden. Roodachtig roze.&quot;], [&quot;Rozenjam&quot;, &quot;Bloemblaadjes ingemaakt in suiker. Troebel roze-rood.&quot;], [&quot;Rode baksteen&quot;, &quot;Een muur die jaren regen heeft doorstaan.&quot;], [&quot;Afkoelende houtskool&quot;, &quot;Vuur onder een laag as. Donker roodbruin.&quot;], [&quot;Pruimenschil&quot;, &quot;Roodpaars met een wit waas.&quot;], [&quot;Rodebonenpap&quot;, &quot;Dik roodbruin, voordat de rijstballetjes erin gaan.&quot;], [&quot;Restje wijn&quot;, &quot;Donker roodpaars onder in het glas.&quot;], [&quot;Uitgebloeide sering&quot;, &quot;Het vale paars van een verdrogende bloem.&quot;], [&quot;Bosbessenmelk&quot;, &quot;Lichtpaars, half doorgeroerd.&quot;], [&quot;Druivenschil&quot;, &quot;Diep paars, net gewassen en nog nat.&quot;], [&quot;Auberginevel&quot;, &quot;Zwartpaars dat het licht opslokt. De laatste kleur van de dag.&quot;]]}"></div>
+    </section>
 
-  <h2>Het bord is vandaag</h2>
-  <p>De achtenveertig vakjes zijn <strong>de kleuren waar de lucht van vandaag doorheen gaat</strong>. Ze worden elke dag opnieuw berekend uit de werkelijke zonsopgang en zonsondergang waar je bent en de verwachting van vandaag voor wolken en regen. Een vakje dat gisteren gevuld was, kan vandaag dus leeg zijn. Wat het bord je vertelt is niet hoeveel je hebt verzameld, maar <strong>hoeveel van vandaag je kunt laten zien</strong>.</p>
-  <p>Fotografeer nu de lucht en <strong>het vakje voor dat tijdstip</strong> wordt gevuld met de kleur die je hebt vastgelegd. Valt die anders uit dan verwacht, dan komt hij er toch in: de verwachting is een gok; de foto was er echt.</p>
-  <p><strong>Niets wordt beoordeeld.</strong> Geen geslaagd, geen gezakt, geen marge. Het grijs van een bewolkte dag is ook de luchtkleur van die dag.</p>
+    <section class="problem reveal">
+      <h2>Je kijkt elke dag naar de lucht, maar geen kleur blijft hangen</h2>
+      <p>De lucht op weg naar je werk, de lucht toen je na de lunch naar buiten liep: 's avonds weet je niet meer welke kleur ze hadden. De luchtfoto's die je wel maakte, raken ondergesneeuwd tussen al je andere foto's. SkyDex verzamelt ze als kleuren en legt de weg die de lucht vandaag aflegde op één bord.</p>
+    </section>
 
-  <h2>Elke kleur krijgt een naam</h2>
-  <p>De app vertelt je op twee manieren welke kleur je lucht heeft, in het Koreaans geschreven. Eerst komt <strong>een vergelijking die je je kunt voorstellen</strong>, en daaronder <strong>een naam met herkomst</strong>. ‘Usuhanairo’ is het preciezere antwoord, maar bijna niemand ziet een kleur in dat woord, en een naam die je niet ziet, doet het werk van een naam niet.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Elke lucht krijgt een naam</h2>
+        <p>Elke kleur krijgt eerst een naam die je voor je ziet, zoals Dun ijs, Zwembadtegel of Rijpe kaki. Daaronder volgt een naam met een herkomst: een traditionele Koreaanse of Japanse kleur, een pigment of een webkleur.<br>Ligt de kleur dichtbij, dan staat er Naam. Zo niet, dan staat er eerlijk Dichtstbijzijnde naam.</p>
+      </div>
+      <div class="phone"><img src="../img/nl/02-name.jpg" alt="Elke lucht krijgt een naam" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <div class="names">
-    <div class="name">
-      <span class="swatch" style="background:#7E90B6"></span>
-      <span>
-        <div class="simile">Verbleekt marineblauw gordijn</div>
-        <div class="real">Usuhanairo · traditionele Japanse kleur 薄花色</div>
-      </span>
-    </div>
-    <div class="name">
-      <span class="swatch" style="background:#D68F55"></span>
-      <span>
-        <div class="simile">Korstje van geroosterd brood</div>
-        <div class="real">Cadmiumoranje · pigment</div>
-      </span>
-    </div>
-    <div class="name">
-      <span class="swatch" style="background:#1C6DB4"></span>
-      <span>
-        <div class="simile">Water waar blauwe verf in is geroerd</div>
-        <div class="real">Cheongsaek · traditionele Koreaanse kleur</div>
-      </span>
-    </div>
-  </div>
-  <p>De namen met herkomst komen uit traditionele Koreaanse en Japanse kleuren, pigmenten en standaardkleurensets, en elke waarde is aan de bron gecontroleerd. De app is ook eerlijk over hoe dichtbij ze zit: is de overeenkomst dichtbij genoeg, dan zegt ze ‘de naam is’, zo niet, dan ‘de dichtstbijzijnde naam is’.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Laat een regel achter</h2>
+        <p>Meteen na de foto gaat een kaart open. Schrijf op wat je dacht toen je omhoogkeek, en het zweeft weer boven de lucht zodra je op dat vakje op het bord tikt.<br>Je kunt ook de kleur van de lucht van een andere dag over deze foto leggen en het resultaat als afbeelding delen.</p>
+      </div>
+      <div class="phone"><img src="../img/nl/03-card.jpg" alt="Laat een regel achter" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>Gevulde vakjes worden ouder</h2>
-  <p>Een foto behoudt een week lang zijn ware kleur en vervaagt daarna langzaam over de volgende acht weken. Hij wordt niet verwijderd en verdwijnt nooit helemaal. Fotografeer de lucht op dat tijdstip opnieuw en het vakje heeft meteen weer volle kleur.</p>
-  <p>Het is geen straf. Er is geen reeks die kan breken en niets om terug te winnen. Het is gewoon een eerlijke manier voor een bord van lucht om te zeggen: ‘die lucht was een tijdje geleden’.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Lege vakjes wijzen de weg</h2>
+        <p>Tik op een leeg vakje en je ziet bij welk moment van de dag het hoort en naar welke kleur je kunt uitkijken. Het vertelt ook hoe de lucht er op dat uur uitziet op een wolkeloze dag, afgestemd op zonsopgang en zonsondergang waar jij bent.<br>De kleur hoeft niet te kloppen. Het grijs van een bewolkte dag is ook de luchtkleur van die dag.</p>
+      </div>
+      <div class="phone"><img src="../img/nl/05-empty.jpg" alt="Lege vakjes wijzen de weg" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>Zelfde tijd, andere lucht</h2>
-  <p>Dagen herhalen zich. Dezelfde wekker, dezelfde route, hetzelfde raam. Alleen de lucht erboven is nooit twee keer hetzelfde. Het scherm <strong>Herhalingen</strong> zet de dagen op een rij waarop je op hetzelfde tijdstip buiten stond, zodat je het kunt zien. De rij is de herhaling; de kleuren zijn het deel dat zich nooit herhaalt.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Logboek, palet, herhalingen</h2>
+        <p>Blader op volgorde door je luchten en verzamel je kleuren in paletten per familie, zoals blauw, grijs en zandkleurig. Fotografeer hetzelfde uur op een andere dag en de twee staan naast elkaar.<br>Widgets op je beginscherm laten in één oogopslag het bord van vandaag en de lucht van vandaag zien.</p>
+      </div>
+      <div class="phone"><img src="../img/nl/04-palette.jpg" alt="Logboek, palet, herhalingen" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>Widgets</h2>
-  <p><strong>Het bord van vandaag</strong> ziet er net zo uit als in de app: achtenveertig vakjes, cirkels voor gevulde en ringen voor lege. <strong>De lucht van vandaag</strong> toont de foto die je vandaag hebt gemaakt met de naam van de kleur, en werkt ook op het toegangsscherm.</p>
+    <section class="reveal">
+      <h2>Beginnen kost drie stappen</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>Kijk omhoog</h3><p>Tik op de cameraknop onder het bord en laat de lucht het vierkant vullen.</p></li>
+<li class="card"><span class="n">2</span><h3>Een vakje vult zich</h3><p>Het vakje van nu krijgt de kleur die je vastlegde, en een naam.</p></li>
+<li class="card"><span class="n">3</span><h3>Laat een regel achter</h3><p>Schrijf op de kaart die opengaat wat je bij die lucht dacht.</p></li></ol>
+    </section>
 
-  <h2>Het blijft van jou</h2>
-  <div class="quiet">
-    <p>Geen account en geen server van ons. Je foto's en kleuren staan in de opslag van de app op je apparaat en, als je bent ingelogd, in je eigen iCloud. Ze worden nooit naar de ontwikkelaar gestuurd. Geen advertenties, geen tracking, geen analyse van derden.</p>
-    <p>Locatie wordt alleen gebruikt voor zonsopgang, zonsondergang en de verwachting van vandaag, en wordt gevraagd met een nauwkeurigheid van kilometers. De app werkt prima als je nee zegt. De details staan in het <a href="privacy.html">Privacybeleid</a>.</p>
-  </div>
+    <section class="reveal" id="commands">
+      <h2>Zo verdeelt het bord de dag</h2>
+      <div class="card table">
+        <dl><div><dt>Middernacht · 00:00–05:00</dt><dd>zes vakjes</dd></div><div><dt>Dageraad · 05:00–08:00</dt><dd>zes vakjes</dd></div><div><dt>Dag · 08:00–16:00</dt><dd>twaalf vakjes</dd></div><div><dt>Late middag · 16:00–18:00</dt><dd>zes vakjes</dd></div><div><dt>Zonsondergang · 18:00–21:00</dt><dd>twaalf vakjes, één per 15 minuten</dd></div><div><dt>Nacht · 21:00–24:00</dt><dd>zes vakjes</dd></div></dl>
+      </div>
+      <p class="muted">Rond zonsondergang, als de lucht snel verandert, liggen de vakjes dicht op elkaar. Midden in de nacht, als hij nauwelijks verandert, zijn ze ruim. Bovenaan staat middernacht, en naar beneden loopt de dag verder.</p>
+    </section>
+
+
+
+    <section class="reveal" id="faq">
+      <h2>Veelgestelde vragen</h2>
+      <div class="faq"><details><summary>Hoe raakt een vakje gevuld?</summary><p>Een lucht die je vandaag fotografeert, vult het vakje van het tijdstip waarop je hem vastlegde, ook als de kleur anders uitvalt dan je dacht. Zo zag de lucht er op dat uur nu eenmaal uit. Luchten van eerdere dagen gaan erin op kleur: ligt er een dicht genoeg bij de kleur van een vakje, dan vult hij dat vakje, en elke lucht vult maar één vakje.</p></details>
+<details><summary>Een vakje dat gisteren vol was, is vandaag leeg.</summary><p>Het bord is altijd vandaag. Een vakje dat een lucht van gisteren op tijdstip vulde, wordt na de dagwissel alleen nog op kleur gekoppeld. Daarom is het bord de ene dag bijna vol en ziet het er de andere dag leeg uit. Je foto's zijn niet weg: elke lucht staat in het Logboek, en op kleurvolgorde in het Palet.</p></details>
+<details><summary>Mijn gevulde vakjes vervagen.</summary><p>Dat is met opzet. Een foto houdt een week lang zijn echte kleur en vervaagt daarna langzaam over de volgende acht weken. Hij wordt niet gewist en verdwijnt nooit helemaal. Fotografeer de lucht op dat tijdstip opnieuw en het vakje heeft meteen weer volle kleur. Er is geen reeks die kan breken en geen score om terug te winnen.</p></details>
+<details><summary>Moet de kleur kloppen?</summary><p>Nee. Er is geen geslaagd of gezakt. Elke foto wordt bewaard, en het grijs van een bewolkte dag is ook de luchtkleur van die dag.</p></details>
+<details><summary>Waarom vraagt de app om mijn locatie?</summary><p>Alleen om je, als je op een leeg vakje tikt, te laten zien hoe een wolkeloze lucht er op dat uur uitziet, afgestemd op zonsopgang en zonsondergang waar jij bent. De app gebruikt alleen een globale locatie, op de kilometer nauwkeurig, en coördinaten worden nooit aan je foto's gehangen. Weiger je, dan werkt alles gewoon, met Seoul als uitgangspunt.</p></details>
+<details><summary>Kan ik een lucht uit mijn fotobibliotheek toevoegen?</summary><p>Ja. Een lucht die je in Foto's kiest in plaats van met de camera, wordt ook vierkant bijgesneden en vult het vakje van nu, net als een die je ter plekke fotografeert.</p></details>
+<details><summary>Hoe wis ik een foto?</summary><p>Open de foto en tik op Wis, of veeg hem in het Logboek naar links. Hij verdwijnt tegelijk van je apparaat en uit iCloud. Verwijder je de app, dan blijft de kopie in iCloud staan en komen je luchten terug als je hem opnieuw installeert.</p></details>
+<details><summary>Wat gebeurt er als ik een ander apparaat neem?</summary><p>Je luchten staan in je eigen iCloud en gaan mee naar een nieuw apparaat met hetzelfde Apple Account. Er is geen account en geen server, en je foto's en kleuren worden nooit naar de ontwikkelaar gestuurd. Geen advertenties, geen tracking.</p></details>
+<details><summary>Is het echt gratis?</summary><p>Ja, alle functies zijn gratis. Vind je de app fijn, dan kun je de ontwikkelaar in de app een fooi geven, maar een fooi ontgrendelt niets.</p></details>
+<details><summary>Op welke apparaten werkt het?</summary><p>Op iPhone met iOS 17.0 of later, alleen staand.</p></details></div>
+      <p class="contact">Bugs, vreemd gedrag of iets wat je kwijt wilt: schrijf naar <a href="mailto:leeo@kakao.com">leeo@kakao.com</a>. Vertel erbij wat je aan het doen was en welke iOS-versie je hebt, dan is het probleem veel makkelijker te vinden.</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>Morgenochtend,<br>kijk één keer omhoog</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6802295390">Gratis in de App Store</a>
+    </section>
+  </main>
 
   <footer>
-    <a href="support.html">Support</a> ·
-    <a href="privacy.html">Privacybeleid</a> ·
-    <a href="https://github.com/M1zz/SkyDex">GitHub</a>
-    <p style="margin:10px 0 0">Weergegevens geleverd door <a href="https://weatherkit.apple.com/legal-attribution.html">Apple Weer</a>.</p>
+    <nav id="languages" class="langs" aria-label="Taal"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="../es/" hreflang="es" lang="es">Español</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../th/" hreflang="th" lang="th">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="../id/" hreflang="id" lang="id">Indonesia</a>
+<a href="../nb/" hreflang="nb" lang="nb">Norsk</a>
+<a href="../nl/" hreflang="nl" lang="nl" aria-current="page">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">Privacybeleid</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 SkyDex</p>
   </footer>
 
-</main>
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>

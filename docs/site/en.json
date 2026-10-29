@@ -1,0 +1,541 @@
+{
+  "title": "SkyDex: a board of the day's sky colours, filled one photo at a time",
+  "description": "Every photo of the sky fills one of the day's forty-eight sky colours and gets a name that looks like it. Free, with no account.",
+  "hero": {
+    "headline": "What colour was\nthe sky today?",
+    "lead": "Photograph the sky and the cell for that time of day fills with the colour you caught, on a board of forty-eight. It also gets a name you can picture, like thin ice, pool tile or ripe persimmon.",
+    "cta": "Get it free on the App Store",
+    "note": "Free. No account, no sign-in."
+  },
+  "demo": {
+    "title": "Try the board",
+    "lead": "Tap a cell to see which part of the day it is. Add a sky photo to fill the cell for right now, then move the days forward and watch the board change.",
+    "photo": "Add a sky photo",
+    "now": "Now",
+    "age": "Since these were taken",
+    "ageToday": "Today",
+    "ageDay": "{n} day later",
+    "ageDays": "{n} days later",
+    "note": "The board starts with the same sample skies as the app's screenshots. Your photo is read only inside this browser and never sent anywhere. How the colour is picked, which cell it fills and how fast it fades all work exactly as in the app.",
+    "bands": [
+      "Midnight",
+      "Dawn",
+      "Day",
+      "Late afternoon",
+      "Sunset",
+      "Night"
+    ],
+    "emptyTag": "%@ · Still empty",
+    "spot": "This spot fills with a sky taken in that part of the day. Any photo goes in as it is; the color doesn't have to match.",
+    "sims": [
+      [
+        "Ink-stone black",
+        "Ink ground on an inkstone. The deepest night."
+      ],
+      [
+        "Night sea",
+        "Water seen from above, far from any light. Black with a layer of blue."
+      ],
+      [
+        "Burnt pan",
+        "What's left after burning. Black without a trace of blue."
+      ],
+      [
+        "Dried ink",
+        "A fountain-pen line left half-written. Black with some blue still in it."
+      ],
+      [
+        "Deep water",
+        "The color of where your feet don't touch. Dark, cool navy."
+      ],
+      [
+        "New jeans",
+        "Denim that's never been washed. Deep navy."
+      ],
+      [
+        "Night-train window",
+        "Glass after the lights have passed. A gray close to navy."
+      ],
+      [
+        "Midnight window",
+        "Outside, when you pull back the curtain. A little bluer than black."
+      ],
+      [
+        "Rinsed ink",
+        "Water you rinsed inky hands in. Pale navy."
+      ],
+      [
+        "School-uniform navy",
+        "The navy of a jacket worn for years. Neither black nor blue."
+      ],
+      [
+        "Wet jeans",
+        "Just hung out to dry. A deep, murky blue."
+      ],
+      [
+        "Mackerel back",
+        "Silvery blue-gray. The sky before rain."
+      ],
+      [
+        "Old work clothes",
+        "A blue gone flat after years of wear."
+      ],
+      [
+        "Faded navy curtain",
+        "A curtain that's seen too much sun. Navy that's lost its strength."
+      ],
+      [
+        "Fogged window",
+        "Hazy when you look out from inside. A bluish gray."
+      ],
+      [
+        "Morning fog",
+        "A morning that erased the tops of buildings. Pale bluish gray."
+      ],
+      [
+        "Wet hoodie",
+        "Gray darkened by soaked-in rain. A cloudy dawn."
+      ],
+      [
+        "Faded purple sweater",
+        "Purple dulled by many washes. The west just before sunrise."
+      ],
+      [
+        "Peach skin",
+        "The fuzzy side. Between pink and orange."
+      ],
+      [
+        "Apricot milk",
+        "Apricot blended into milk. The palest orange."
+      ],
+      [
+        "Sunlit white wall",
+        "For a moment each morning, the wall turns this color."
+      ],
+      [
+        "Salmon flesh",
+        "The pink that disappears when you cook it."
+      ],
+      [
+        "Strawberry milk",
+        "The pink after a good shake."
+      ],
+      [
+        "Unripe apricot",
+        "Orange where yellow is still winning."
+      ],
+      [
+        "Glass of water",
+        "Pale blue that light has passed through."
+      ],
+      [
+        "Cold tap water",
+        "The color of cold hands. Pale, cool blue."
+      ],
+      [
+        "Thin ice",
+        "Water barely frozen in early spring. The palest blue."
+      ],
+      [
+        "Porcelain bowl",
+        "The hint of blue left in a white bowl."
+      ],
+      [
+        "Ironed white shirt",
+        "Almost white, with one layer of blue. A very clear noon."
+      ],
+      [
+        "Soap suds",
+        "White foam floating on the dishwater."
+      ],
+      [
+        "Faded jeans",
+        "Denim gone white at the knees. The blue of a hazy day."
+      ],
+      [
+        "Blue crayon",
+        "The blue you get pressing hard on drawing paper."
+      ],
+      [
+        "Swimming-pool tile",
+        "Blue seen through water. Midday on a clear day."
+      ],
+      [
+        "Blue ballpoint",
+        "The blue of a line drawn on paper."
+      ],
+      [
+        "Deep-end blue",
+        "The water at the deep end. The top of the sky at midsummer noon."
+      ],
+      [
+        "Paint-water blue",
+        "The jar you rinse brushes in. Blue of a clear afternoon."
+      ],
+      [
+        "Fountain-pen ink",
+        "In the bottle, a blue that's almost black."
+      ],
+      [
+        "Soda-bottle green",
+        "Pale blue with green mixed in."
+      ],
+      [
+        "Steamed-up mirror",
+        "The mirror after a shower. Light bluish gray."
+      ],
+      [
+        "Frosted glass",
+        "A hazy gray that blurs what's on the other side."
+      ],
+      [
+        "Eraser crumbs",
+        "White dust gathered on a desk. The palest gray."
+      ],
+      [
+        "Chalk dust",
+        "The whiteness left in the air after wiping the board."
+      ],
+      [
+        "Dry cement",
+        "A floor set long ago. Flat, light gray."
+      ],
+      [
+        "Cold ash",
+        "What's left when everything has burned. The standard gray of an overcast day."
+      ],
+      [
+        "Cloudy windowpane",
+        "It stays this color however you wipe it. Mid gray with a hint of blue."
+      ],
+      [
+        "Wet cardboard",
+        "A box left in the rain. Gray with some warmth."
+      ],
+      [
+        "Blank screen",
+        "The black-gray right after you switch it off."
+      ],
+      [
+        "Spent match",
+        "A stick with only its head left black. Dark grayish purple."
+      ],
+      [
+        "Dishwater",
+        "Lukewarm water with oil on top. Murky gray."
+      ],
+      [
+        "Laundry-boil water",
+        "Steaming white water. Light gray."
+      ],
+      [
+        "Knife edge",
+        "Steel catching the light. Gray with a hint of blue."
+      ],
+      [
+        "Old tin roof",
+        "The roof of an old shed. Blue-gray just before rain."
+      ],
+      [
+        "Overcast sea",
+        "Water that took on the sky's color. Dark blue-gray."
+      ],
+      [
+        "Wet cement",
+        "Sidewalk after rain. Dark, damp gray."
+      ],
+      [
+        "Pencil lead",
+        "Dark gray shaded with the side of the lead. A rainy afternoon."
+      ],
+      [
+        "Wet asphalt",
+        "A road after rain at night. Gray that's almost black."
+      ],
+      [
+        "Mossy wall",
+        "Gray with green creeping in. Sometimes just before a storm."
+      ],
+      [
+        "Old coin",
+        "Metal worn by many hands. Yellowish gray."
+      ],
+      [
+        "Rice-rinse water",
+        "The first water from washing rice. A warm white."
+      ],
+      [
+        "Eggshell",
+        "A white that isn't quite white."
+      ],
+      [
+        "Old paper",
+        "Inside pages of an old book. White gone yellow."
+      ],
+      [
+        "Old newspaper",
+        "Paper faded by the sun. Between gray and yellow."
+      ],
+      [
+        "Dusty-wind window",
+        "A hazy yellow that makes you want to wipe it."
+      ],
+      [
+        "Grain-powder drink",
+        "Murky beige, before it settles."
+      ],
+      [
+        "Yellowed floor mat",
+        "A floor pressed down for years. Murky yellow."
+      ],
+      [
+        "Boiled chestnut",
+        "The yellow inside of a peeled chestnut."
+      ],
+      [
+        "Milk poured into coffee",
+        "Just poured, not yet stirred."
+      ],
+      [
+        "Dusty bookshelf",
+        "Light grayish brown that shows a fingerprint."
+      ],
+      [
+        "Dry mud",
+        "Earth just starting to crack. Pale brown."
+      ],
+      [
+        "Cold milk tea",
+        "A cup left half-drunk. Murky pinkish brown."
+      ],
+      [
+        "Wet cardboard paper",
+        "Paper swollen with rain. The color of a cloudy sunset."
+      ],
+      [
+        "Rain-soaked deck",
+        "Wood darkened by the water it's taken in."
+      ],
+      [
+        "Ash-stained brick",
+        "Where the fire was. Dark reddish gray."
+      ],
+      [
+        "Coffee ring",
+        "The round stain left after lifting the cup."
+      ],
+      [
+        "Boiled red-bean skin",
+        "Red beans soaked for a long time. Dark purplish gray."
+      ],
+      [
+        "Roasted soybean powder",
+        "Rice cake rolled in bean powder. Soft brownish beige."
+      ],
+      [
+        "Egg yolk",
+        "Just before it breaks. Deep yellow."
+      ],
+      [
+        "Bread crust",
+        "Where yellow turns into brown."
+      ],
+      [
+        "Tangerine peel",
+        "That orange, before you peel it."
+      ],
+      [
+        "Grilled salmon",
+        "Pinkish orange where the surface is cooked."
+      ],
+      [
+        "Dried persimmon",
+        "A dried persimmon dusted white. Murky orange."
+      ],
+      [
+        "Firewood embers",
+        "Not the flame, but the coals glowing red."
+      ],
+      [
+        "Ripe persimmon",
+        "Red orange, just before it bursts."
+      ],
+      [
+        "Tteokbokki red",
+        "The red of spicy rice-cake sauce, cooked down. The deepest sunset."
+      ],
+      [
+        "Watermelon flesh",
+        "The sweetest part in the middle. Reddish pink."
+      ],
+      [
+        "Rose jam",
+        "Petals preserved in sugar. Murky pinkish red."
+      ],
+      [
+        "Red brick",
+        "A wall that's taken years of rain."
+      ],
+      [
+        "Cooling charcoal",
+        "Fire covered in ash. Dark reddish brown."
+      ],
+      [
+        "Plum skin",
+        "Reddish purple with a white bloom."
+      ],
+      [
+        "Red-bean porridge",
+        "Thick reddish brown, before the rice balls go in."
+      ],
+      [
+        "Leftover wine",
+        "Dark red purple at the bottom of the glass."
+      ],
+      [
+        "Wilted lilac",
+        "The faded purple of a drying flower."
+      ],
+      [
+        "Blueberry milk",
+        "Pale purple, half stirred."
+      ],
+      [
+        "Grape skin",
+        "Deep purple, freshly washed and still wet."
+      ],
+      [
+        "Eggplant skin",
+        "A black purple that swallows light. The last color of the day."
+      ]
+    ]
+  },
+  "problem": {
+    "title": "You look at the sky every day, but can't remember a single colour",
+    "text": "The sky on the way to work, the sky when you stepped out after lunch: by evening the colours are gone. The sky photos you did take get buried among everything else in your camera roll. SkyDex collects them as colours and lays out the path today's sky took on a single board."
+  },
+  "features": [
+    {
+      "title": "Every sky gets a name",
+      "text": "Each colour first gets a name you can see in your head, like thin ice, pool tile or ripe persimmon. Beneath it comes a name with a source: a Korean or Japanese traditional colour, a pigment or a standard colour.\nWhen the match is close it says Named; when it isn't, it says Nearest name.",
+      "shot": "02-name"
+    },
+    {
+      "title": "Leave a line",
+      "text": "A card opens as soon as you shoot. Write down what you were thinking as you looked up, and it floats back over the sky whenever you tap that cell on the board.\nYou can also lay the colour of another day's sky over this photo and share the result as a picture.",
+      "shot": "03-card"
+    },
+    {
+      "title": "Empty cells show the way",
+      "text": "Tap an empty cell to see which part of the day it is and what colour to look for. It also tells you what the sky at that hour looks like on a cloudless day, timed to sunrise and sunset where you are.\nThe colour doesn't have to match. The grey of an overcast day is that day's sky colour too.",
+      "shot": "05-empty"
+    },
+    {
+      "title": "Log, palette, repeats",
+      "text": "Browse your skies in order, and gather your colours into palettes such as blues, greys and sandy tones. Shoot the same hour on another day and the two stand side by side.\nHome Screen widgets show today's board and today's sky at a glance.",
+      "shot": "04-palette"
+    }
+  ],
+  "steps": {
+    "title": "Three steps to start",
+    "items": [
+      {
+        "title": "Look up",
+        "text": "Tap the camera button under the board and let the sky fill the square."
+      },
+      {
+        "title": "A cell fills in",
+        "text": "The cell for right now takes the colour you caught, and a name."
+      },
+      {
+        "title": "Leave a line",
+        "text": "Write what you were thinking on the card that opens."
+      }
+    ]
+  },
+  "reference": {
+    "title": "How the board divides the day",
+    "rows": [
+      [
+        "Midnight · 00:00–05:00",
+        "six cells"
+      ],
+      [
+        "Dawn · 05:00–08:00",
+        "six cells"
+      ],
+      [
+        "Day · 08:00–16:00",
+        "twelve cells"
+      ],
+      [
+        "Late afternoon · 16:00–18:00",
+        "six cells"
+      ],
+      [
+        "Sunset · 18:00–21:00",
+        "twelve cells, one every 15 minutes"
+      ],
+      [
+        "Night · 21:00–24:00",
+        "six cells"
+      ]
+    ],
+    "note": "Cells are packed tight around sunset, when the sky changes fast, and spread out in the middle of the night, when it barely moves. The top of the board is midnight, and the day runs downwards."
+  },
+  "faq": {
+    "title": "Questions",
+    "items": [
+      {
+        "q": "How does a cell fill?",
+        "a": "A sky you shoot today fills the cell for the time you shot it, even if the colour isn't what you expected. That really was the sky at that hour. Skies from earlier days go in by colour: if one is close enough to a cell's colour it fills that cell, and each sky fills only one cell."
+      },
+      {
+        "q": "A cell that was full yesterday is empty today.",
+        "a": "The board is today. A cell that yesterday's sky filled by its time is matched again by colour alone once the day turns. So some days the board is nearly full and some days it looks empty. Your photos haven't gone anywhere: every sky is in the Log, and in colour order in the Palette."
+      },
+      {
+        "q": "My filled cells are fading.",
+        "a": "That's on purpose. A photo keeps its true colour for a week, then slowly fades over the next eight weeks. It isn't deleted, and it never fades away completely. Shoot the sky at that time again and the cell snaps straight back to full colour. There's no streak to break and no score to win back."
+      },
+      {
+        "q": "Does the colour have to match?",
+        "a": "No. There's no pass or fail. Every photo is saved, and the grey of an overcast day is that day's sky colour too."
+      },
+      {
+        "q": "Why does it ask for my location?",
+        "a": "Only to tell you, when you tap an empty cell, what a cloudless sky looks like at that hour, timed to sunrise and sunset where you are. It uses an approximate location to the nearest kilometre, and coordinates are never attached to your photos. If you say no, everything still works, using Seoul as the reference."
+      },
+      {
+        "q": "Can I add a sky from my photo library?",
+        "a": "Yes. A sky you pick from Photos instead of the camera is cropped to a square as well, and fills the cell for right now, just like one you shoot."
+      },
+      {
+        "q": "How do I delete a photo?",
+        "a": "Open the photo and tap Delete, or swipe left on it in the Log. It's removed from your device and your iCloud together. Deleting the app leaves the copy in iCloud, so your skies come back if you reinstall."
+      },
+      {
+        "q": "What happens when I switch phones?",
+        "a": "Your skies are stored in your own iCloud, so they carry over to a new device signed in to the same Apple Account. There's no account and no server, and your photos and colours are never sent to the developer. No ads, no tracking."
+      },
+      {
+        "q": "Is it really free?",
+        "a": "Yes, every feature is free. If you like it you can leave the developer a tip in the app, but tips don't unlock anything."
+      },
+      {
+        "q": "Which devices does it run on?",
+        "a": "iPhone with iOS 17.0 or later, in portrait only."
+      }
+    ]
+  },
+  "closing": {
+    "headline": "Tomorrow morning,\nlook up just once",
+    "cta": "Get it free on the App Store"
+  },
+  "ui": {
+    "skip": "Skip to content",
+    "languages": "Language",
+    "privacy": "Privacy Policy",
+    "contact": "Bugs, odd behaviour, or anything you'd like to say: write to {email}. Telling us what you were doing and your iOS version makes things much easier to track down."
+  }
+}

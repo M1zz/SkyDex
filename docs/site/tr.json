@@ -1,0 +1,541 @@
+{
+  "title": "SkyDex: fotoğraf fotoğraf dolan günün gökyüzü renkleri tahtası",
+  "description": "Gökyüzünün her fotoğrafı, günün kırk sekiz gökyüzü renginden birini doldurur ve ona benzeyen bir ad alır. Ücretsiz, hesap gerekmez.",
+  "hero": {
+    "headline": "Bugün gökyüzü\nne renkti?",
+    "lead": "Gökyüzünü fotoğrafla, kırk sekiz karelik tahtada o saatin karesi yakaladığın renkle dolsun. Renk, gözünün önüne getirebileceğin bir ad da alır: ince buz, havuz fayansı, olgun hurma gibi.",
+    "cta": "App Store’dan ücretsiz al",
+    "note": "Ücretsiz. Hesap yok, giriş yok."
+  },
+  "demo": {
+    "title": "Tahtayı dene",
+    "lead": "Bir kareye dokun, günün hangi saatine ait olduğunu gör. Bir gökyüzü fotoğrafı ekle, şu anın karesi dolsun. Sonra günleri ileri sar ve tahtanın nasıl değiştiğini izle.",
+    "photo": "Gökyüzü fotoğrafı ekle",
+    "age": "Çekildikten sonra",
+    "ageToday": "Bugün",
+    "ageDay": "{n} gün sonra",
+    "ageDays": "{n} gün sonra",
+    "note": "Tahta, uygulamanın ekran görüntülerindeki örnek gökyüzü fotoğraflarıyla başlar. Fotoğrafın yalnızca bu tarayıcıda okunur, hiçbir yere gönderilmez. Rengin nasıl seçildiği, hangi kareyi doldurduğu ve ne hızla solduğu uygulamadakiyle birebir aynıdır.",
+    "now": "Şimdi",
+    "bands": [
+      "Gece yarısı",
+      "Şafak",
+      "Gündüz",
+      "İkindi",
+      "Gün batımı",
+      "Gece"
+    ],
+    "emptyTag": "%@ · henüz boş",
+    "spot": "Bu yer, günün o diliminde çekilmiş bir gökyüzüyle dolar. Her fotoğraf olduğu gibi girer; rengin uyması gerekmez.",
+    "sims": [
+      [
+        "Çini mürekkebi",
+        "Taşta ezilmiş mürekkep. Gecenin en derini."
+      ],
+      [
+        "Gece denizi",
+        "Işıksız bir yerden aşağı bakılan su. Siyahın üstünde ince bir mavi."
+      ],
+      [
+        "Yanık tencere dibi",
+        "Ateşin bıraktığı iz. Mavisi olmayan bir siyah."
+      ],
+      [
+        "Kurumuş mürekkep",
+        "Yarım kalmış bir dolma kalem izi. Mavisi kalmış bir siyah."
+      ],
+      [
+        "Derin su",
+        "Ayağın yere değmediği yerin rengi. Karanlık ve serin bir lacivert."
+      ],
+      [
+        "Yeni kot",
+        "Hiç yıkanmamış denim. Koyu bir lacivert."
+      ],
+      [
+        "Gece treni camı",
+        "Işıklar geçtikten sonraki cam. Laciverde yakın bir gri."
+      ],
+      [
+        "Gece yarısı camı",
+        "Perdeyi açınca dışarısı. Siyahtan biraz daha mavi."
+      ],
+      [
+        "Yıkanmış mürekkep",
+        "Mürekkepli elleri çalkaladığınız su. Soluk bir lacivert."
+      ],
+      [
+        "Okul forması laciverdi",
+        "Yıllarca giyilmiş bir ceketin laciverdi. Ne siyah ne mavi."
+      ],
+      [
+        "Islak kot",
+        "Çamaşır yeni asılmışken. Koyu ve bulanık bir mavi."
+      ],
+      [
+        "Uskumru sırtı",
+        "Gümüş parıltılı mavimsi gri. Yağmurdan önceki gökyüzü."
+      ],
+      [
+        "Eski iş tulumu",
+        "Yıllarca giyilip rengi solmuş bir mavi."
+      ],
+      [
+        "Solmuş lacivert perde",
+        "Uzun süre güneş görmüş bir perde. Gücünü yitirmiş bir lacivert."
+      ],
+      [
+        "Buğulu cam",
+        "İçeriden bakınca dışarısı puslu. Mavimsi gri."
+      ],
+      [
+        "Sabah sisi",
+        "Binaların tepesinin silindiği bir sabah. Mavimsi açık gri."
+      ],
+      [
+        "Islak kapüşonlu",
+        "Yağmurla koyulaşmış gri. Bulutlu bir şafak."
+      ],
+      [
+        "Solmuş mor kazak",
+        "Yıkandıkça solmuş bir mor. Şafaktan hemen önce batı."
+      ],
+      [
+        "Şeftali kabuğu",
+        "Tüylü taraf. Pembe ile turuncu arası."
+      ],
+      [
+        "Kayısılı süt",
+        "Süte kayısı çekilmiş gibi. Çok açık bir turuncu."
+      ],
+      [
+        "Güneş vuran beyaz duvar",
+        "Sabah duvar bir anlığına bu renge bürünür."
+      ],
+      [
+        "Somon eti",
+        "Pişince kaybolan o pembe."
+      ],
+      [
+        "Çilekli süt",
+        "Çalkalandıktan sonraki pembe."
+      ],
+      [
+        "Ham kayısı",
+        "Sarının hâlâ baskın olduğu bir turuncu."
+      ],
+      [
+        "Bardaktaki su",
+        "Işığın içinden geçtiği açık mavi."
+      ],
+      [
+        "Soğuk musluk suyu",
+        "Elleri üşüten renk. Açık ve serin bir mavi."
+      ],
+      [
+        "İnce buz",
+        "Baharda hafifçe donmuş su. Çok açık bir mavi."
+      ],
+      [
+        "Porselen",
+        "Beyaz kâsede kalan mavi bir iz."
+      ],
+      [
+        "Ütülü beyaz gömlek",
+        "Neredeyse beyaz, üstünde ince bir mavi. Çok berrak bir öğle."
+      ],
+      [
+        "Deterjan köpüğü",
+        "Lavabonun üstünde yüzen beyaz köpük."
+      ],
+      [
+        "Solmuş kot",
+        "Dizleri beyazlamış denim. Bulutlu bir günün mavisi."
+      ],
+      [
+        "Mavi pastel boya",
+        "Kâğıda bastırarak sürünce çıkan mavi."
+      ],
+      [
+        "Havuz fayansı",
+        "Suyun içinden görülen mavi. Açık bir günün öğlesi."
+      ],
+      [
+        "Mavi tükenmez kalem",
+        "Kâğıda çekilmiş bir çizginin mavisi."
+      ],
+      [
+        "Derin havuz suyu",
+        "Ayağın yere değmediği taraf. Yaz öğlesinde göğün tepesi."
+      ],
+      [
+        "Mavi boyalı su",
+        "Fırçanın çalkalandığı kap. Açık bir öğleden sonranın mavisi."
+      ],
+      [
+        "Dolma kalem mürekkebi",
+        "Şişenin içinde siyaha yakın bir mavi."
+      ],
+      [
+        "Gazoz şişesi",
+        "Yeşil karışmış açık bir mavi."
+      ],
+      [
+        "Buğulu ayna",
+        "Duştan sonraki ayna. Açık, mavimsi gri."
+      ],
+      [
+        "Sisli cam",
+        "Karşı tarafı bulanıklaştıracak kadar puslu bir gri."
+      ],
+      [
+        "Silgi tozu",
+        "Masada toplanan beyaz kırıntılar. Çok açık bir gri."
+      ],
+      [
+        "Tebeşir tozu",
+        "Tahta silindikten sonra havada kalan beyazlık."
+      ],
+      [
+        "Kuru çimento",
+        "Çoktan kurumuş bir zemin. Düz, açık bir gri."
+      ],
+      [
+        "Soğumuş kül",
+        "Yanıp bitenden geriye kalan. Bulutlu bir günün sıradan grisi."
+      ],
+      [
+        "Donuk pencere",
+        "Silseniz de değişmeyen renk. Mavimsi orta gri."
+      ],
+      [
+        "Islak oluklu karton",
+        "Yağmur yemiş bir kutu. Sıcak tonlu bir gri."
+      ],
+      [
+        "Kapalı ekran",
+        "Kapattıktan hemen sonraki siyahımsı gri."
+      ],
+      [
+        "Yanmış kibrit",
+        "Yalnızca kararmış başı kalmış çöp. Koyu, morumsu gri."
+      ],
+      [
+        "Bulaşık suyu",
+        "Üstünde yağ yüzen ılık su. Bulanık bir gri."
+      ],
+      [
+        "Çamaşır kaynatma suyu",
+        "Buharı tüten beyaz su. Açık bir gri."
+      ],
+      [
+        "Bıçak ağzı",
+        "Işık alan çelik. Mavimsi bir gri."
+      ],
+      [
+        "Eski teneke çatı",
+        "Eski bir deponun çatısı. Yağmurdan hemen önceki mavi gri."
+      ],
+      [
+        "Kapalı havada deniz",
+        "Gökyüzünü olduğu gibi yansıtan su. Koyu mavi gri."
+      ],
+      [
+        "Islak çimento",
+        "Yağmur yemiş zemin. Koyu ve nemli bir gri."
+      ],
+      [
+        "Kurşun kalem ucu",
+        "Ucu yatırılarak sürülmüş koyu gri. Yağmurlu bir öğleden sonra."
+      ],
+      [
+        "Islak asfalt",
+        "Gece yağmurundan sonra yol. Siyaha yakın bir gri."
+      ],
+      [
+        "Yosunlu duvar",
+        "Grinin üstüne yeşil sinmiş. Bazen fırtınadan hemen önce."
+      ],
+      [
+        "Eski bozuk para",
+        "Elden ele geçmiş metal. Sarımsı bir gri."
+      ],
+      [
+        "Pirinç suyu",
+        "Pirinci yıkayınca çıkan ilk su. Sıcak bir beyaz."
+      ],
+      [
+        "Yumurta kabuğu",
+        "Tam beyaz olmayan bir beyaz."
+      ],
+      [
+        "Eski kâğıt",
+        "Eski bir kitabın sayfaları. Sararmış bir beyaz."
+      ],
+      [
+        "Eski gazete",
+        "Güneşte solmuş kâğıt. Gri ile sarı arası."
+      ],
+      [
+        "Tozlu pencere",
+        "Silmek isteyeceğiniz puslu bir sarılık."
+      ],
+      [
+        "Tahıl içeceği",
+        "Dibe çökmeden önceki bulanık bej."
+      ],
+      [
+        "Eski sarı muşamba",
+        "Yıllarca basılmış bir zemin. Donuk bir sarı."
+      ],
+      [
+        "Haşlanmış kestane",
+        "Soyulmuş kestanenin sarı içi."
+      ],
+      [
+        "Kahveye dökülen süt",
+        "Yeni dökülmüş, henüz karışmamış."
+      ],
+      [
+        "Tozlu kitaplık",
+        "Parmakla sürünce iz kalan açık gri kahve."
+      ],
+      [
+        "Kuru çamur",
+        "Çatlamaya başlamış toprak. Açık bir kahverengi."
+      ],
+      [
+        "Soğumuş sütlü çay",
+        "Yarım bırakılmış bir fincan. Bulanık pembemsi kahve."
+      ],
+      [
+        "Islak mukavva",
+        "Yağmurla kabarmış kâğıt. Bulutlu bir gün batımının rengi."
+      ],
+      [
+        "Islak ahşap zemin",
+        "Nemden kararmış ahşap."
+      ],
+      [
+        "Küllü tuğla",
+        "Ateşe yakın duran yer. Koyu kırmızımsı gri."
+      ],
+      [
+        "Kahve lekesi",
+        "Fincanı kaldırınca kalan yuvarlak iz."
+      ],
+      [
+        "Kırmızı fasulye kabuğu",
+        "Uzun süre suda bekletilmiş fasulye. Koyu morumsu gri."
+      ],
+      [
+        "Kavrulmuş soya unu",
+        "Soya ununa bulanmış bir yüzey. Yumuşak, kahvemsi bej."
+      ],
+      [
+        "Yumurta sarısı",
+        "Patlamadan hemen önce. Koyu bir sarı."
+      ],
+      [
+        "Tost ekmeği kenarı",
+        "Sarının kahveye döndüğü yer."
+      ],
+      [
+        "Mandalina kabuğu",
+        "Soymadan önceki o turuncu."
+      ],
+      [
+        "Izgara somon",
+        "Yüzeyi pişmiş pembemsi turuncu."
+      ],
+      [
+        "Hurma kurusu",
+        "Üstü beyaz pudralı kuru trabzon hurması. Donuk bir turuncu."
+      ],
+      [
+        "Odun közü",
+        "Alev değil, kızaran kömür."
+      ],
+      [
+        "Olgun hurma",
+        "Patlamadan hemen önceki kırmızı turuncu."
+      ],
+      [
+        "Tteokbokki sosu",
+        "Koyulaştıktan sonraki kırmızı. En koyu gün batımı."
+      ],
+      [
+        "Karpuz içi",
+        "Ortadaki en tatlı kısım. Kırmızımsı pembe."
+      ],
+      [
+        "Gül reçeli",
+        "Şekerde bekletilmiş yapraklar. Donuk pembemsi kırmızı."
+      ],
+      [
+        "Kırmızı tuğla",
+        "Yıllarca yağmur yemiş bir duvar."
+      ],
+      [
+        "Sönmüş köz",
+        "Küle bürünmüş ateş. Koyu kırmızımsı kahve."
+      ],
+      [
+        "Erik kabuğu",
+        "Üstüne beyaz pus çökmüş kırmızımsı mor."
+      ],
+      [
+        "Kırmızı fasulye lapası",
+        "Pirinç topları eklenmeden önceki koyu kırmızı kahve."
+      ],
+      [
+        "Kalan şarap",
+        "Kadehin dibinde kalan koyu kırmızı mor."
+      ],
+      [
+        "Solmuş leylak",
+        "Kuruyan bir çiçeğin soluk moru."
+      ],
+      [
+        "Yaban mersinli süt",
+        "Tam karışmamış bir lila."
+      ],
+      [
+        "Üzüm kabuğu",
+        "Yıkanmış, hâlâ ıslak koyu mor."
+      ],
+      [
+        "Patlıcan kabuğu",
+        "Işığı yutan siyahımsı mor. Günün son rengi."
+      ]
+    ]
+  },
+  "problem": {
+    "title": "Gökyüzüne her gün bakıyorsun ama tek bir rengini hatırlamıyorsun",
+    "text": "İşe giderken baktığın gökyüzü, öğle yemeğinden çıkarken gördüğün gökyüzü: akşam olunca o renkler çoktan aklından çıkmış olur. Çektiğin gökyüzü fotoğrafları da galerideki her şeyin arasında kaybolur. SkyDex onları renk olarak toplar ve bugünün gökyüzünün geçtiği yolu tek bir tahtada gösterir."
+  },
+  "features": [
+    {
+      "title": "Her gökyüzü bir ad alır",
+      "text": "Her renk önce gözünün önüne gelen bir ad alır: ince buz, havuz fayansı, olgun hurma gibi. Altında kökeni belli bir ad gelir: Kore rengi, Japon rengi, pigment ya da web rengi.\nEşleşme yakınsa başında Adı, uzaksa dürüstçe En yakın adı yazar.",
+      "shot": "02-name"
+    },
+    {
+      "title": "Bir satır bırak",
+      "text": "Fotoğrafı çeker çekmez bir kart açılır. Yukarı bakarken aklından geçeni yaz, tahtada o kareye her dokunduğunda yazı yeniden gökyüzünün üstünde belirir.\nBaşka bir günün gökyüzü rengini bu fotoğrafın üstüne serip sonucu görsel olarak da paylaşabilirsin.",
+      "shot": "03-card"
+    },
+    {
+      "title": "Boş kareler yol gösterir",
+      "text": "Boş bir kareye dokun, günün hangi saatine ait olduğunu ve hangi rengi araman gerektiğini gör. Bulutsuz bir günde o saatte gökyüzünün nasıl göründüğünü de bulunduğun yerin gün doğumu ve gün batımı saatine göre söyler.\nRengin tutması gerekmez. Kapalı bir günün grisi de o günün gökyüzü rengidir.",
+      "shot": "05-empty"
+    },
+    {
+      "title": "Kayıt, palet, tekrarlar",
+      "text": "Gökyüzü fotoğraflarına sırayla göz at, renklerini mavi, gri ve kum rengi gibi paletlerde topla. Aynı saati başka bir gün yeniden çek, ikisi yan yana dursun.\nAna Ekran widget’ları bugünün tahtasını ve bugünün gökyüzünü bir bakışta gösterir.",
+      "shot": "04-palette"
+    }
+  ],
+  "steps": {
+    "title": "Başlamak için üç adım",
+    "items": [
+      {
+        "title": "Yukarı bak",
+        "text": "Tahtanın altındaki kamera düğmesine dokun, gökyüzü kare çerçeveyi doldursun."
+      },
+      {
+        "title": "Bir kare dolar",
+        "text": "Şu anın karesi yakaladığın rengi ve bir ad alır."
+      },
+      {
+        "title": "Bir satır bırak",
+        "text": "Açılan karta aklından geçeni yaz."
+      }
+    ]
+  },
+  "reference": {
+    "title": "Tahta günü böyle böler",
+    "rows": [
+      [
+        "Gece yarısı · 00.00–05.00",
+        "altı kare"
+      ],
+      [
+        "Şafak · 05.00–08.00",
+        "altı kare"
+      ],
+      [
+        "Gündüz · 08.00–16.00",
+        "on iki kare"
+      ],
+      [
+        "İkindi · 16.00–18.00",
+        "altı kare"
+      ],
+      [
+        "Gün batımı · 18.00–21.00",
+        "on iki kare, her 15 dakikada bir"
+      ],
+      [
+        "Gece · 21.00–24.00",
+        "altı kare"
+      ]
+    ],
+    "note": "Gökyüzünün hızla değiştiği gün batımı çevresinde kareler sık, neredeyse hiç kıpırdamadığı gece yarısında ise geniştir. En üstte gece yarısı vardır ve gün aşağı doğru akar."
+  },
+  "faq": {
+    "title": "Sorular",
+    "items": [
+      {
+        "q": "Bir kare nasıl dolar?",
+        "a": "Bugün çektiğin gökyüzü, renk beklediğin gibi çıkmasa bile çektiğin saatin karesini doldurur. Çünkü o saatte gökyüzü gerçekten öyleydi. Önceki günlerin gökyüzü fotoğrafları renge göre yerleşir: bir karenin rengine yeterince yakınsa o kareyi doldurur ve her fotoğraf yalnızca bir kare doldurur."
+      },
+      {
+        "q": "Dün dolu olan bir kare bugün boş.",
+        "a": "Tahta her zaman bugündür. Dünkü gökyüzünün saatine göre doldurduğu kare, gün dönünce yalnızca renge göre yeniden eşleştirilir. Bu yüzden tahta bazı günler neredeyse doludur, bazı günler boş görünür. Fotoğrafların bir yere gitmedi: hepsi Kayıt’ta, renk sırasıyla da Palet’te duruyor."
+      },
+      {
+        "q": "Doldurduğum kareler soluyor.",
+        "a": "Bu bilerek böyle. Bir fotoğraf bir hafta boyunca gerçek rengini korur, ardından sonraki sekiz hafta içinde yavaş yavaş solar. Silinmez ve hiçbir zaman tamamen kaybolmaz. O saatte gökyüzünü yeniden çekersen kare hemen tam rengine döner. Bozulacak bir seri ya da geri kazanılacak bir puan yok."
+      },
+      {
+        "q": "Rengin tutması gerekiyor mu?",
+        "a": "Hayır. Geçti ya da kaldı diye bir şey yok. Her fotoğraf kaydedilir ve kapalı bir günün grisi de o günün gökyüzü rengidir."
+      },
+      {
+        "q": "Konumumu neden istiyor?",
+        "a": "Yalnızca boş bir kareye dokunduğunda, bulutsuz bir gökyüzünün o saatte nasıl göründüğünü bulunduğun yerin gün doğumu ve gün batımı saatine göre söyleyebilmek için. Kilometre düzeyinde yaklaşık konum kullanılır ve koordinatlar fotoğraflarına asla eklenmez. İzin vermezsen her şey yine çalışır, o zaman Seul esas alınır."
+      },
+      {
+        "q": "Galerimdeki bir gökyüzünü ekleyebilir miyim?",
+        "a": "Evet. Kamera yerine Fotoğraflar’dan seçtiğin gökyüzü de kare biçiminde kırpılır ve tıpkı yeni çektiğin bir fotoğraf gibi şu anın karesini doldurur."
+      },
+      {
+        "q": "Bir fotoğrafı nasıl silerim?",
+        "a": "Fotoğrafı aç ve Sil’e dokun ya da Kayıt’ta üzerinde sola kaydır. Hem cihazından hem iCloud’undan birlikte silinir. Uygulamayı silsen de iCloud’daki kopya kalır, yeniden yüklediğinde topladığın gökyüzü fotoğrafları geri gelir."
+      },
+      {
+        "q": "Telefon değiştirince ne olur?",
+        "a": "Topladığın gökyüzü fotoğrafları kendi iCloud’unda saklanır, bu yüzden aynı Apple Hesabı ile giriş yapılmış yeni cihazda kaldığın yerden devam eder. Ayrı bir hesap ya da sunucu yok, fotoğrafların ve renklerin geliştiriciye asla gönderilmez. Reklam yok, takip yok."
+      },
+      {
+        "q": "Gerçekten ücretsiz mi?",
+        "a": "Evet, tüm özellikler ücretsiz. Beğenirsen uygulama içinden geliştiriciye bahşiş bırakabilirsin ama bahşiş hiçbir şeyin kilidini açmaz."
+      },
+      {
+        "q": "Hangi cihazlarda çalışır?",
+        "a": "iOS 17.0 veya üzeri bir iPhone’da, yalnızca dikey yönde."
+      }
+    ]
+  },
+  "closing": {
+    "headline": "Yarın sabah\nbir kez yukarı bak",
+    "cta": "App Store’dan ücretsiz al"
+  },
+  "ui": {
+    "skip": "İçeriğe geç",
+    "languages": "Dil",
+    "privacy": "Gizlilik Politikası",
+    "contact": "Hatalar, tuhaf davranışlar ya da söylemek istediğin her şey için {email} adresine yaz. O sırada ne yaptığını ve hangi iOS sürümünü kullandığını eklersen sorunu bulmak çok daha kolay olur."
+  }
+}

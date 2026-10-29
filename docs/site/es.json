@@ -1,0 +1,541 @@
+{
+  "title": "SkyDex: un tablero con los colores del cielo, foto a foto",
+  "description": "Cada foto del cielo llena uno de los cuarenta y ocho colores del día y recibe un nombre que se le parece. Gratis y sin cuenta.",
+  "hero": {
+    "headline": "¿De qué color fue\nel cielo hoy?",
+    "lead": "Toma una foto del cielo y, en un tablero de cuarenta y ocho casillas, la de esa hora se llena con el color que captaste. También recibe un nombre que se ve con solo leerlo, como Hielo delgado, Azulejo de alberca o Caqui maduro.",
+    "cta": "Gratis en el App Store",
+    "note": "Gratis. Sin cuenta y sin iniciar sesión."
+  },
+  "demo": {
+    "title": "Prueba el tablero",
+    "lead": "Toca una casilla para ver a qué momento del día pertenece. Agrega una foto del cielo para llenar la casilla de ahora y luego avanza los días para ver cómo cambia el tablero.",
+    "photo": "Agregar una foto del cielo",
+    "age": "Desde la foto",
+    "ageToday": "Hoy",
+    "ageDay": "{n} día después",
+    "ageDays": "{n} días después",
+    "note": "El tablero empieza con los mismos cielos de ejemplo que las capturas de pantalla de la app. Tu foto se lee solo dentro de este navegador y no se envía a ningún lado. Cómo se elige el color, qué casilla llena y qué tan rápido se desvanece funcionan igual que en la app.",
+    "now": "Ahora",
+    "bands": [
+      "Medianoche",
+      "Alba",
+      "Día",
+      "Tarde",
+      "Atardecer",
+      "Noche"
+    ],
+    "emptyTag": "%@ · Todavía vacío",
+    "spot": "Este lugar se llena con un cielo captado en esa parte del día. Cualquier foto entra tal cual; el color no tiene por qué coincidir.",
+    "sims": [
+      [
+        "Tinta china",
+        "Tinta molida en la piedra de entintar. La noche más honda."
+      ],
+      [
+        "Mar de noche",
+        "Agua vista desde arriba, sin luces. Negro con una capa de azul."
+      ],
+      [
+        "Fondo de olla quemada",
+        "La marca que deja lo quemado. Negro sin nada de azul."
+      ],
+      [
+        "Tinta seca",
+        "Un trazo de pluma que quedó a medias. Negro con un resto de azul."
+      ],
+      [
+        "Agua profunda",
+        "El color de donde ya no tocas fondo. Azul marino oscuro y frío."
+      ],
+      [
+        "Mezclilla nueva",
+        "Denim que nunca se ha lavado. Azul marino intenso."
+      ],
+      [
+        "Ventanilla de tren nocturno",
+        "El vidrio después de que pasan las luces. Gris casi azul marino."
+      ],
+      [
+        "Ventana a medianoche",
+        "Lo de afuera al correr la cortina. Apenas más azul que el negro."
+      ],
+      [
+        "Tinta en agua",
+        "El agua con que te enjuagas la tinta de las manos. Azul marino tenue."
+      ],
+      [
+        "Azul marino de uniforme",
+        "Una chamarra de varios años. Ni negra ni azul."
+      ],
+      [
+        "Mezclilla mojada",
+        "La ropa recién tendida. Azul oscuro y turbio."
+      ],
+      [
+        "Lomo de caballa",
+        "Gris azulado con brillo plateado. El cielo antes de la lluvia."
+      ],
+      [
+        "Overol gastado",
+        "Un azul apagado por años de uso."
+      ],
+      [
+        "Cortina azul marino desteñida",
+        "Una cortina que vio mucho sol. Azul marino sin fuerza."
+      ],
+      [
+        "Vaho en la ventana",
+        "Desde adentro, afuera se ve borroso. Gris azulado."
+      ],
+      [
+        "Niebla de la mañana",
+        "Una mañana que borró lo alto de los edificios. Gris claro azulado."
+      ],
+      [
+        "Sudadera mojada",
+        "Gris oscurecido por la lluvia. Madrugada nublada."
+      ],
+      [
+        "Suéter lila desteñido",
+        "Un morado apagado de tanto lavarse. El oeste justo antes del alba."
+      ],
+      [
+        "Piel de durazno",
+        "El lado con pelusa. Entre rosa y naranja."
+      ],
+      [
+        "Leche de chabacano",
+        "Leche con chabacano molido. Naranja muy pálido."
+      ],
+      [
+        "Pared blanca al sol",
+        "Por la mañana, la pared toma este color un momento."
+      ],
+      [
+        "Salmón crudo",
+        "Ese rosa que desaparece al cocinarlo."
+      ],
+      [
+        "Leche de fresa",
+        "El rosa que queda después de agitarla."
+      ],
+      [
+        "Chabacano verde",
+        "Un naranja donde todavía gana el amarillo."
+      ],
+      [
+        "Vaso de agua",
+        "Azul pálido atravesado por la luz."
+      ],
+      [
+        "Agua fría de la llave",
+        "Un color que enfría las manos. Azul pálido y fresco."
+      ],
+      [
+        "Hielo delgado",
+        "Agua apenas congelada en primavera. Azul muy pálido."
+      ],
+      [
+        "Plato de porcelana",
+        "El azul que queda en un plato blanco."
+      ],
+      [
+        "Camisa blanca planchada",
+        "Casi blanco, con una capa de azul. Un mediodía muy claro."
+      ],
+      [
+        "Espuma de jabón",
+        "Espuma blanca flotando en el fregadero."
+      ],
+      [
+        "Mezclilla deslavada",
+        "Denim con las rodillas blanqueadas. El azul de un día nublado."
+      ],
+      [
+        "Crayón azul",
+        "El azul que sale al frotar fuerte sobre el papel."
+      ],
+      [
+        "Azulejo de alberca",
+        "Azul visto a través del agua. Mediodía despejado."
+      ],
+      [
+        "Pluma azul",
+        "El azul de una línea sobre el papel."
+      ],
+      [
+        "Alberca honda",
+        "El agua donde ya no tocas fondo. Lo más alto del cielo un mediodía de verano."
+      ],
+      [
+        "Agua con pintura azul",
+        "El vaso donde enjuagas el pincel. El azul de una tarde despejada."
+      ],
+      [
+        "Tinta de pluma fuente",
+        "En el frasco, un azul casi negro."
+      ],
+      [
+        "Botella de soda",
+        "Azul pálido con un toque de verde."
+      ],
+      [
+        "Espejo empañado",
+        "El espejo después de bañarte. Gris azulado claro."
+      ],
+      [
+        "Vidrio con niebla",
+        "Un gris borroso que desdibuja lo de enfrente."
+      ],
+      [
+        "Migas de goma",
+        "Polvo blanco juntado en el escritorio. Gris muy pálido."
+      ],
+      [
+        "Polvo de gis",
+        "El blanco que queda en el aire al borrar el pizarrón."
+      ],
+      [
+        "Cemento seco",
+        "Un piso fraguado hace tiempo. Gris claro y parejo."
+      ],
+      [
+        "Ceniza fría",
+        "Lo que queda cuando todo se quemó. El gris de siempre en un día nublado."
+      ],
+      [
+        "Ventana opaca",
+        "Sigue igual aunque la limpies. Gris medio azulado."
+      ],
+      [
+        "Cartón mojado",
+        "Una caja bajo la lluvia. Gris con algo de calidez."
+      ],
+      [
+        "Pantalla apagada",
+        "El gris negruzco justo después de apagarla."
+      ],
+      [
+        "Cerillo quemado",
+        "Un palito con la cabeza negra. Gris violáceo oscuro."
+      ],
+      [
+        "Agua de trastes",
+        "Agua tibia con grasa encima. Gris turbio."
+      ],
+      [
+        "Agua de hervir ropa",
+        "Agua blanca que suelta vapor. Gris claro."
+      ],
+      [
+        "Filo de cuchillo",
+        "Metal bajo la luz. Gris azulado."
+      ],
+      [
+        "Techo de lámina viejo",
+        "El techo de una bodega vieja. Gris azulado justo antes de llover."
+      ],
+      [
+        "Mar en día nublado",
+        "Agua que refleja tal cual el cielo. Gris azulado oscuro."
+      ],
+      [
+        "Cemento mojado",
+        "Un piso bajo la lluvia. Gris oscuro y húmedo."
+      ],
+      [
+        "Grafito",
+        "Gris oscuro de lápiz acostado. Tarde de lluvia."
+      ],
+      [
+        "Asfalto mojado",
+        "Una calle tras la lluvia nocturna. Gris casi negro."
+      ],
+      [
+        "Barda con musgo",
+        "Gris con verde encima. A veces, antes de una tormenta."
+      ],
+      [
+        "Moneda vieja",
+        "Metal gastado por las manos. Gris amarillento."
+      ],
+      [
+        "Agua de arroz",
+        "La primera agua al lavar el arroz. Blanco cálido."
+      ],
+      [
+        "Cascarón de huevo",
+        "Un blanco que no es del todo blanco."
+      ],
+      [
+        "Papel viejo",
+        "Las páginas de un libro antiguo. Blanco amarillento."
+      ],
+      [
+        "Periódico viejo",
+        "Papel quemado por el sol. Entre gris y amarillo."
+      ],
+      [
+        "Ventana con polvo amarillo",
+        "Un amarillo turbio que te dan ganas de limpiar."
+      ],
+      [
+        "Atole de granos tostados",
+        "Un beige turbio antes de asentarse."
+      ],
+      [
+        "Piso de vinil amarillento",
+        "Un piso aplastado por los años. Amarillo turbio."
+      ],
+      [
+        "Castaña cocida",
+        "El interior amarillo de una castaña pelada."
+      ],
+      [
+        "Leche en el café",
+        "Recién servida, todavía sin mezclar."
+      ],
+      [
+        "Librero con polvo",
+        "Gris café claro donde el dedo deja huella."
+      ],
+      [
+        "Barro seco",
+        "Tierra que empieza a agrietarse. Café claro."
+      ],
+      [
+        "Té con leche frío",
+        "Una taza a medio tomar. Café rosado turbio."
+      ],
+      [
+        "Cartulina mojada",
+        "Papel hinchado por la lluvia. El color de un atardecer nublado."
+      ],
+      [
+        "Terraza de madera mojada",
+        "Madera oscurecida por la humedad."
+      ],
+      [
+        "Ladrillo con ceniza",
+        "Donde estuvo el fuego. Gris rojizo oscuro."
+      ],
+      [
+        "Mancha de café",
+        "La marca redonda que queda al levantar la taza."
+      ],
+      [
+        "Piel de frijol rojo",
+        "Frijol remojado mucho tiempo. Gris violáceo oscuro."
+      ],
+      [
+        "Harina de soya tostada",
+        "Una superficie cubierta de soya tostada. Beige suave tirando a café."
+      ],
+      [
+        "Yema de huevo",
+        "Justo antes de romperse. Amarillo intenso."
+      ],
+      [
+        "Orilla del pan de caja",
+        "Donde el amarillo se vuelve café."
+      ],
+      [
+        "Cáscara de mandarina",
+        "Ese naranja antes de pelarla."
+      ],
+      [
+        "Salmón asado",
+        "Naranja rosado, dorado por fuera."
+      ],
+      [
+        "Caqui seco",
+        "Caqui seco con su polvo blanco. Naranja apagado."
+      ],
+      [
+        "Brasa de leña",
+        "No la llama, sino el carbón al rojo."
+      ],
+      [
+        "Caqui maduro",
+        "Rojo anaranjado a punto de reventar."
+      ],
+      [
+        "Salsa de tteokbokki",
+        "Rojo reducido en la olla. El atardecer más intenso."
+      ],
+      [
+        "Pulpa de sandía",
+        "El centro, la parte más dulce. Rosa rojizo."
+      ],
+      [
+        "Mermelada de rosa",
+        "Pétalos en azúcar. Rojo rosado apagado."
+      ],
+      [
+        "Ladrillo rojo",
+        "Un muro que lleva años bajo la lluvia."
+      ],
+      [
+        "Brasas que se apagan",
+        "Fuego cubierto de ceniza. Café rojizo oscuro."
+      ],
+      [
+        "Piel de ciruela",
+        "Morado rojizo con polvo blanco encima."
+      ],
+      [
+        "Papilla de frijol rojo",
+        "Café rojizo y espeso, antes de echarle las bolitas de arroz."
+      ],
+      [
+        "Resto de vino",
+        "Morado rojizo oscuro en el fondo de la copa."
+      ],
+      [
+        "Lila marchita",
+        "El morado tenue de una flor que se seca."
+      ],
+      [
+        "Leche de mora azul",
+        "Lila a medio mezclar."
+      ],
+      [
+        "Piel de uva",
+        "Morado oscuro, recién lavado y aún húmedo."
+      ],
+      [
+        "Piel de berenjena",
+        "Morado negruzco que se traga la luz. El último color del día."
+      ]
+    ]
+  },
+  "problem": {
+    "title": "Ves el cielo todos los días, pero no recuerdas ni un color",
+    "text": "El cielo camino al trabajo, el de la salida después de comer: para la noche ya no sabes de qué color eran. Las fotos del cielo que sí tomaste se pierden entre todas las demás. SkyDex las junta como colores y muestra en un solo tablero el camino que siguió el cielo de hoy."
+  },
+  "features": [
+    {
+      "title": "Cada cielo recibe un nombre",
+      "text": "Cada color recibe primero un nombre que se puede imaginar, como Hielo delgado, Azulejo de alberca o Caqui maduro. Debajo aparece un nombre con origen: un color tradicional coreano o japonés, un pigmento o un color web.\nSi la coincidencia es cercana, dice Nombre; si no, con honestidad, Nombre más cercano.",
+      "shot": "02-name"
+    },
+    {
+      "title": "Deja una línea",
+      "text": "Justo después de la foto se abre una tarjeta. Escribe lo que pensabas al mirar hacia arriba y volverá a flotar sobre el cielo cada vez que toques esa casilla del tablero.\nTambién puedes poner sobre esta foto el color del cielo de otro día y compartir el resultado como imagen.",
+      "shot": "03-card"
+    },
+    {
+      "title": "Las casillas vacías te guían",
+      "text": "Toca una casilla vacía para saber a qué momento del día corresponde y qué color buscar. También te dice cómo se ve el cielo a esa hora en un día despejado, ajustado a la salida y la puesta del sol donde estás.\nEl color no tiene que coincidir. El gris de un día nublado también es el color del cielo de ese día.",
+      "shot": "05-empty"
+    },
+    {
+      "title": "Registro, paleta, repetición",
+      "text": "Recorre tus cielos en orden y reúne tus colores en paletas por familias, como azul, gris y arena. Si fotografías la misma hora otro día, los dos cielos quedan lado a lado.\nLos widgets de la pantalla de inicio te muestran de un vistazo el tablero de hoy y el cielo de hoy.",
+      "shot": "04-palette"
+    }
+  ],
+  "steps": {
+    "title": "Empezar toma tres pasos",
+    "items": [
+      {
+        "title": "Mira hacia arriba",
+        "text": "Toca el botón de la cámara debajo del tablero y deja que el cielo llene el cuadro."
+      },
+      {
+        "title": "Se llena una casilla",
+        "text": "La casilla de ahora toma el color que captaste y recibe un nombre."
+      },
+      {
+        "title": "Deja una línea",
+        "text": "En la tarjeta que se abre, escribe lo que pensaste al ver ese cielo."
+      }
+    ]
+  },
+  "reference": {
+    "title": "Así divide el día el tablero",
+    "rows": [
+      [
+        "Medianoche · 00:00–05:00",
+        "seis casillas"
+      ],
+      [
+        "Alba · 05:00–08:00",
+        "seis casillas"
+      ],
+      [
+        "Día · 08:00–16:00",
+        "doce casillas"
+      ],
+      [
+        "Tarde · 16:00–18:00",
+        "seis casillas"
+      ],
+      [
+        "Atardecer · 18:00–21:00",
+        "doce casillas, una cada 15 minutos"
+      ],
+      [
+        "Noche · 21:00–24:00",
+        "seis casillas"
+      ]
+    ],
+    "note": "Alrededor del atardecer, cuando el cielo cambia rápido, las casillas van apretadas; en plena noche, cuando casi no se mueve, son amplias. Arriba está la medianoche, y el día corre hacia abajo."
+  },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "items": [
+      {
+        "q": "¿Cómo se llena una casilla?",
+        "a": "Un cielo que fotografías hoy llena la casilla de la hora en que lo tomaste, aunque el color no sea el que esperabas: a esa hora el cielo de verdad era así. Los cielos de días anteriores entran por color: si uno se parece lo suficiente al color de una casilla, la llena, y cada cielo llena una sola casilla."
+      },
+      {
+        "q": "Una casilla que ayer estaba llena hoy está vacía.",
+        "a": "El tablero siempre es hoy. Una casilla que un cielo de ayer llenó por su hora vuelve a emparejarse solo por color cuando cambia el día. Por eso algunos días el tablero está casi lleno y otros se ve vacío. Tus fotos no se perdieron: todos tus cielos están en el Registro, y ordenados por color en la Paleta."
+      },
+      {
+        "q": "Mis casillas llenas se están desvaneciendo.",
+        "a": "Es a propósito. Una foto conserva su color real durante una semana y luego se desvanece despacio a lo largo de las ocho semanas siguientes. No se borra y nunca desaparece del todo. Vuelve a fotografiar el cielo a esa hora y la casilla recupera su color al instante. No hay racha que romper ni puntos que recuperar."
+      },
+      {
+        "q": "¿El color tiene que coincidir?",
+        "a": "No. No hay aprobado ni reprobado. Todas las fotos se guardan, y el gris de un día nublado también es el color del cielo de ese día."
+      },
+      {
+        "q": "¿Por qué pide mi ubicación?",
+        "a": "Solo para mostrarte, al tocar una casilla vacía, el color de un cielo despejado a esa hora, ajustado a la salida y la puesta del sol donde estás. Usa una ubicación aproximada, al kilómetro, y las coordenadas nunca se agregan a tus fotos. Si dices que no, todo sigue funcionando, con Seúl como referencia."
+      },
+      {
+        "q": "¿Puedo agregar un cielo de mi fototeca?",
+        "a": "Sí. Un cielo que eliges en Fotos en lugar de la cámara también se recorta en cuadrado y llena la casilla de ahora, igual que uno que acabas de tomar."
+      },
+      {
+        "q": "¿Cómo elimino una foto?",
+        "a": "Abre la foto y toca Eliminar, o deslízala hacia la izquierda en el Registro. Se borra del dispositivo y de iCloud a la vez. Si eliminas la app, la copia en iCloud se queda, así que tus cielos regresan al reinstalarla."
+      },
+      {
+        "q": "¿Qué pasa si cambio de dispositivo?",
+        "a": "Tus cielos se guardan en tu propio iCloud, así que pasan a un dispositivo nuevo con la misma cuenta de Apple. No hay cuenta ni servidor, y tus fotos y colores nunca se envían al desarrollador. Sin anuncios ni rastreo."
+      },
+      {
+        "q": "¿De verdad es gratis?",
+        "a": "Sí, todas las funciones son gratis. Si te gusta, puedes dejarle una propina al desarrollador desde la app, pero la propina no desbloquea nada."
+      },
+      {
+        "q": "¿En qué dispositivos funciona?",
+        "a": "En iPhone con iOS 17.0 o posterior, solo en vertical."
+      }
+    ]
+  },
+  "closing": {
+    "headline": "Mañana temprano,\nmira hacia arriba una vez",
+    "cta": "Gratis en el App Store"
+  },
+  "ui": {
+    "skip": "Saltar al contenido",
+    "languages": "Idioma",
+    "privacy": "Política de privacidad",
+    "contact": "Errores, algo que se comporta raro o cualquier cosa que quieras decir: escribe a {email}. Si cuentas qué estabas haciendo y qué versión de iOS tienes, es mucho más fácil encontrar el problema."
+  }
+}

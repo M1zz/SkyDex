@@ -1,340 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SkyDex</title>
-<meta name="description" content="Приложение для iOS, которое собирает небо дня в цвета. Заполняйте доску из сорока восьми клеток сегодняшним небом.">
-<link rel="canonical" href="https://m1zz.github.io/SkyDex/ru/">
-<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/SkyDex/">
-<link rel="alternate" hreflang="en" href="https://m1zz.github.io/SkyDex/en/">
-<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/SkyDex/en/">
-<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/SkyDex/ja/">
-<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/SkyDex/zh-Hans/">
-<link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/SkyDex/zh-Hant/">
-<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/SkyDex/ru/">
-<link rel="alternate" hreflang="es" href="https://m1zz.github.io/SkyDex/es/">
-<link rel="alternate" hreflang="de" href="https://m1zz.github.io/SkyDex/de/">
-<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/SkyDex/fr/">
-<link rel="alternate" hreflang="it" href="https://m1zz.github.io/SkyDex/it/">
-<link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/SkyDex/pt-BR/">
-<link rel="alternate" hreflang="th" href="https://m1zz.github.io/SkyDex/th/">
-<link rel="alternate" hreflang="vi" href="https://m1zz.github.io/SkyDex/vi/">
-<link rel="alternate" hreflang="cs" href="https://m1zz.github.io/SkyDex/cs/">
-<link rel="alternate" hreflang="da" href="https://m1zz.github.io/SkyDex/da/">
-<link rel="alternate" hreflang="el" href="https://m1zz.github.io/SkyDex/el/">
-<link rel="alternate" hreflang="fi" href="https://m1zz.github.io/SkyDex/fi/">
-<link rel="alternate" hreflang="id" href="https://m1zz.github.io/SkyDex/id/">
-<link rel="alternate" hreflang="nb" href="https://m1zz.github.io/SkyDex/nb/">
-<link rel="alternate" hreflang="nl" href="https://m1zz.github.io/SkyDex/nl/">
-<link rel="alternate" hreflang="pl" href="https://m1zz.github.io/SkyDex/pl/">
-<link rel="alternate" hreflang="sv" href="https://m1zz.github.io/SkyDex/sv/">
-<link rel="alternate" hreflang="tr" href="https://m1zz.github.io/SkyDex/tr/">
-<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/SkyDex/">
-<style>
-  :root {
-    --ink: #16202e;
-    --ink-soft: #5d6773;
-    --paper: #f4f5f7;
-    --card: #ffffff;
-    --line: #e2e5ea;
-    --accent: #2f7bbe;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ink: #eef1f5;
-      --ink-soft: #a2acb8;
-      --paper: #0b111c;
-      --card: #141c28;
-      --line: #26303e;
-      --accent: #7fa4ce;
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    padding: 0 20px 72px;
-    background: var(--paper);
-    color: var(--ink);
-    font: 17px/1.72 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
-      "Pretendard", "Segoe UI", Roboto, sans-serif;
-    -webkit-text-size-adjust: 100%;
-  }
-  main { max-width: 680px; margin: 0 auto; }
-  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
-
-  /* 하루 곡선 그대로 이어붙인 띠 */
-  .strip {
-    display: flex;
-    height: 8px;
-    border-radius: 4px;
-    overflow: hidden;
-    margin: 40px 0 34px;
-  }
-  .strip span { flex: 1 1 0; }
-
-  h1 {
-    font-size: 34px; line-height: 1.25; letter-spacing: -0.03em;
-    margin: 0 0 8px; text-align: center; font-weight: 700;
-  }
-  .lede {
-    margin: 0 auto 8px; text-align: center; color: var(--ink-soft);
-    max-width: 26em;
-  }
-  .platform {
-    text-align: center; color: var(--ink-soft); font-size: 14px;
-    margin: 0 0 36px;
-  }
-
-  /* 판 — 앱과 같은 6×8, 같은 색 */
-  .board {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
-    max-width: 340px;
-    margin: 0 auto 12px;
-  }
-  .bead {
-    aspect-ratio: 1;
-    border-radius: 50%;
-    border: 4px solid transparent;
-    display: block;
-  }
-  .bead.on { border: 0; }
-  .caption {
-    text-align: center; color: var(--ink-soft); font-size: 14px;
-    margin: 0 0 46px;
-  }
-
-  h2 {
-    font-size: 21px; letter-spacing: -0.01em; margin: 46px 0 12px;
-    padding-top: 28px; border-top: 1px solid var(--line);
-  }
-  p { margin: 0 0 14px; }
-  ul { margin: 0 0 14px; padding-left: 1.2em; }
-  li { margin-bottom: 8px; }
-  strong { font-weight: 600; }
-
-  /* 이름 카드 — 앱의 사진 카드 아래에 붙는 것과 같은 순서 */
-  .names { margin: 20px 0 8px; }
-  .name {
-    display: flex; align-items: center; gap: 14px;
-    background: var(--card); border: 1px solid var(--line);
-    border-radius: 16px; padding: 14px 16px; margin-bottom: 10px;
-  }
-  .swatch {
-    width: 46px; height: 46px; border-radius: 12px; flex: 0 0 auto;
-  }
-  .name .simile { font-size: 17px; font-weight: 600; }
-  .name .real { font-size: 13px; color: var(--ink-soft); }
-
-  .quiet {
-    background: var(--card); border: 1px solid var(--line);
-    border-radius: 16px; padding: 18px 20px; margin: 22px 0 8px;
-  }
-  .quiet p:last-child { margin-bottom: 0; }
-
-  footer {
-    margin-top: 60px; padding-top: 26px; border-top: 1px solid var(--line);
-    color: var(--ink-soft); font-size: 15px; text-align: center;
-  }
-  footer a { margin: 0 8px; }
-  nav.langs { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px 14px; margin: 18px 0 0; font-size: 14px; }
-  nav.langs a { color: var(--ink-soft); text-decoration: none; }
-  nav.langs a[aria-current] { color: var(--ink); font-weight: 600; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkyDex: доска цветов неба, которая заполняется с каждым снимком</title>
+  <meta name="description" content="Каждый снимок неба заполняет одну из сорока восьми клеток с цветами дня и получает похожее на цвет название. Бесплатно и без аккаунта.">
+  <meta name="theme-color" content="#2A74B6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b111c" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6802295390">
+  <link rel="canonical" href="https://m1zz.github.io/SkyDex/ru/">
+  <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/SkyDex/">
+  <link rel="alternate" hreflang="en" href="https://m1zz.github.io/SkyDex/en/">
+  <link rel="alternate" hreflang="ja" href="https://m1zz.github.io/SkyDex/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/SkyDex/zh-Hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/SkyDex/zh-Hant/">
+  <link rel="alternate" hreflang="ru" href="https://m1zz.github.io/SkyDex/ru/">
+  <link rel="alternate" hreflang="es" href="https://m1zz.github.io/SkyDex/es/">
+  <link rel="alternate" hreflang="de" href="https://m1zz.github.io/SkyDex/de/">
+  <link rel="alternate" hreflang="fr" href="https://m1zz.github.io/SkyDex/fr/">
+  <link rel="alternate" hreflang="it" href="https://m1zz.github.io/SkyDex/it/">
+  <link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/SkyDex/pt-BR/">
+  <link rel="alternate" hreflang="th" href="https://m1zz.github.io/SkyDex/th/">
+  <link rel="alternate" hreflang="vi" href="https://m1zz.github.io/SkyDex/vi/">
+  <link rel="alternate" hreflang="cs" href="https://m1zz.github.io/SkyDex/cs/">
+  <link rel="alternate" hreflang="da" href="https://m1zz.github.io/SkyDex/da/">
+  <link rel="alternate" hreflang="el" href="https://m1zz.github.io/SkyDex/el/">
+  <link rel="alternate" hreflang="fi" href="https://m1zz.github.io/SkyDex/fi/">
+  <link rel="alternate" hreflang="id" href="https://m1zz.github.io/SkyDex/id/">
+  <link rel="alternate" hreflang="nb" href="https://m1zz.github.io/SkyDex/nb/">
+  <link rel="alternate" hreflang="nl" href="https://m1zz.github.io/SkyDex/nl/">
+  <link rel="alternate" hreflang="pl" href="https://m1zz.github.io/SkyDex/pl/">
+  <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/SkyDex/sv/">
+  <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/SkyDex/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/SkyDex/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SkyDex: доска цветов неба, которая заполняется с каждым снимком">
+  <meta property="og:description" content="Каждый снимок неба заполняет одну из сорока восьми клеток с цветами дня и получает похожее на цвет название. Бесплатно и без аккаунта.">
+  <meta property="og:url" content="https://m1zz.github.io/SkyDex/ru/">
+  <meta property="og:image" content="https://m1zz.github.io/SkyDex/img/ru/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../sitegen.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#2A74B6}@media (prefers-color-scheme:dark){:root{--accent:#7FA4CE}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-<main>
-  <nav class="langs" aria-label="Language">
-    <a href="../" hreflang="ko" lang="ko">한국어</a>
-    <a href="../en/" hreflang="en" lang="en">English</a>
-    <a href="../ja/" hreflang="ja" lang="ja">日本語</a>
-    <a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
-    <a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
-    <a href="../ru/" hreflang="ru" lang="ru" aria-current="true">Русский</a>
-    <a href="../es/" hreflang="es" lang="es">Español</a>
-    <a href="../de/" hreflang="de" lang="de">Deutsch</a>
-    <a href="../fr/" hreflang="fr" lang="fr">Français</a>
-    <a href="../it/" hreflang="it" lang="it">Italiano</a>
-    <a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
-    <a href="../th/" hreflang="th" lang="th">ไทย</a>
-    <a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
-    <a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
-    <a href="../da/" hreflang="da" lang="da">Dansk</a>
-    <a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
-    <a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
-    <a href="../id/" hreflang="id" lang="id">Indonesia</a>
-    <a href="../nb/" hreflang="nb" lang="nb">Norsk</a>
-    <a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
-    <a href="../pl/" hreflang="pl" lang="pl">Polski</a>
-    <a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
-    <a href="../tr/" hreflang="tr" lang="tr">Türkçe</a>
-  </nav>
+  <a class="skip" href="#main">Перейти к содержанию</a>
+  <header class="bar">
+    <a class="brand" href="../ru/"><img src="../icon.png" alt="" width="32" height="32">SkyDex</a>
+    <a class="lang-link" href="#languages">Язык</a>
+  </header>
 
-  <div class="strip" aria-hidden="true">
-    <span style="background:#080D18"></span>
-    <span style="background:#090E1A"></span>
-    <span style="background:#0A0F1C"></span>
-    <span style="background:#0A101E"></span>
-    <span style="background:#0B1120"></span>
-    <span style="background:#0C1221"></span>
-    <span style="background:#131B30"></span>
-    <span style="background:#1B263E"></span>
-    <span style="background:#6879A2"></span>
-    <span style="background:#99A7C5"></span>
-    <span style="background:#96ABCB"></span>
-    <span style="background:#7FA4CE"></span>
-    <span style="background:#709CCB"></span>
-    <span style="background:#5791C6"></span>
-    <span style="background:#508DC5"></span>
-    <span style="background:#3F83C1"></span>
-    <span style="background:#307BBE"></span>
-    <span style="background:#2B77BB"></span>
-    <span style="background:#1F6FB5"></span>
-    <span style="background:#1D6EB4"></span>
-    <span style="background:#2471B6"></span>
-    <span style="background:#2975B8"></span>
-    <span style="background:#3179BA"></span>
-    <span style="background:#4988C3"></span>
-    <span style="background:#558EC5"></span>
-    <span style="background:#6D9BCA"></span>
-    <span style="background:#7EA5CD"></span>
-    <span style="background:#8FA5BF"></span>
-    <span style="background:#B2A297"></span>
-    <span style="background:#C1A07E"></span>
-    <span style="background:#CC986A"></span>
-    <span style="background:#D68F56"></span>
-    <span style="background:#CC7C49"></span>
-    <span style="background:#B95B35"></span>
-    <span style="background:#A95239"></span>
-    <span style="background:#8F4440"></span>
-    <span style="background:#543852"></span>
-    <span style="background:#3B324D"></span>
-    <span style="background:#322F4B"></span>
-    <span style="background:#2B2A44"></span>
-    <span style="background:#20233A"></span>
-    <span style="background:#181D33"></span>
-    <span style="background:#161C30"></span>
-    <span style="background:#13192B"></span>
-    <span style="background:#0F1424"></span>
-    <span style="background:#0B111F"></span>
-    <span style="background:#0A101D"></span>
-    <span style="background:#080D19"></span>
-  </div>
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>Какого цвета<br>было небо сегодня?</h1>
+        <p class="lead">Сфотографируйте небо, и на доске из сорока восьми клеток клетка этого часа окрасится в пойманный цвет. А ещё цвет получит название, которое легко представить: «Тонкий лёд», «Плитка бассейна», «Спелая хурма».</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6802295390">Бесплатно в App Store</a><a class="try" href="#try">Попробуйте доску сами ↓</a></div>
+        <p class="muted small">Бесплатно. Без аккаунта и без входа.</p>
+      </div>
+      <div class="phone"><img src="../img/ru/01-board.jpg" alt="Какого цвета было небо сегодня?" width="600" height="1303" decoding="async"></div>
+    </section>
 
-  <h1>SkyDex</h1>
-  <p class="lede">Собирайте небо дня в цвета.<br>Есть доска из сорока восьми клеток, и вы заполняете её сегодняшним небом.</p>
-  <p class="platform">iPhone · iOS 17.0 или новее</p>
 
-  <div class="board" aria-hidden="true">
-    <span class="bead" style="border-color:#55565A" title="00:00–00:50"></span>
-    <span class="bead" style="border-color:#55565B" title="00:50–01:40"></span>
-    <span class="bead" style="border-color:#55565C" title="01:40–02:30"></span>
-    <span class="bead" style="border-color:#55575D" title="02:30–03:20"></span>
-    <span class="bead" style="border-color:#55575D" title="03:20–04:10"></span>
-    <span class="bead" style="border-color:#56575E" title="04:10–05:00"></span>
-    <span class="bead" style="border-color:#595A64" title="05:00–05:30"></span>
-    <span class="bead" style="border-color:#5C5E69" title="05:30–06:00"></span>
-    <span class="bead" style="border-color:#767B8B" title="06:00–06:30"></span>
-    <span class="bead on" style="background:#99A7C5" title="06:30–07:00 · #99A7C5"></span>
-    <span class="bead" style="border-color:#848B97" title="07:00–07:30"></span>
-    <span class="bead" style="border-color:#7D8998" title="07:30–08:00"></span>
-    <span class="bead on" style="background:#709CCB" title="08:00–08:40 · #709CCB"></span>
-    <span class="bead" style="border-color:#728397" title="08:40–09:20"></span>
-    <span class="bead" style="border-color:#718196" title="09:20–10:00"></span>
-    <span class="bead" style="border-color:#6D7E96" title="10:00–10:40"></span>
-    <span class="bead" style="border-color:#6B7C95" title="10:40–11:20"></span>
-    <span class="bead" style="border-color:#6A7A95" title="11:20–12:00"></span>
-    <span class="bead on" style="background:#1F6FB5" title="12:00–12:40 · #1F6FB5"></span>
-    <span class="bead" style="border-color:#687793" title="12:40–13:20"></span>
-    <span class="bead" style="border-color:#687893" title="13:20–14:00"></span>
-    <span class="bead" style="border-color:#697A93" title="14:00–14:40"></span>
-    <span class="bead" style="border-color:#6B7B94" title="14:40–15:20"></span>
-    <span class="bead" style="border-color:#6F8096" title="15:20–16:00"></span>
-    <span class="bead" style="border-color:#728297" title="16:00–16:20"></span>
-    <span class="bead" style="border-color:#788697" title="16:20–16:40"></span>
-    <span class="bead on" style="background:#7EA5CD" title="16:40–17:00 · #7EA5CD"></span>
-    <span class="bead" style="border-color:#828993" title="17:00–17:20"></span>
-    <span class="bead" style="border-color:#8E8884" title="17:20–17:40"></span>
-    <span class="bead on" style="background:#C1A07E" title="17:40–18:00 · #C1A07E"></span>
-    <span class="bead" style="border-color:#998474" title="18:00–18:15"></span>
-    <span class="bead on" style="background:#D68F56" title="18:15–18:30 · #D68F56"></span>
-    <span class="bead" style="border-color:#9C7B68" title="18:30–18:45"></span>
-    <span class="bead on" style="background:#B95B35" title="18:45–19:00 · #B95B35"></span>
-    <span class="bead" style="border-color:#936E63" title="19:00–19:15"></span>
-    <span class="bead" style="border-color:#896A66" title="19:15–19:30"></span>
-    <span class="bead" style="border-color:#71656F" title="19:30–19:45"></span>
-    <span class="bead" style="border-color:#67636E" title="19:45–20:00"></span>
-    <span class="bead" style="border-color:#64626E" title="20:00–20:15"></span>
-    <span class="bead" style="border-color:#61606B" title="20:15–20:30"></span>
-    <span class="bead" style="border-color:#5D5D68" title="20:30–20:45"></span>
-    <span class="bead" style="border-color:#5A5B65" title="20:45–21:00"></span>
-    <span class="bead on" style="background:#161C30" title="21:00–21:30 · #161C30"></span>
-    <span class="bead" style="border-color:#585A62" title="21:30–22:00"></span>
-    <span class="bead" style="border-color:#56585F" title="22:00–22:30"></span>
-    <span class="bead" style="border-color:#55575D" title="22:30–23:00"></span>
-    <span class="bead" style="border-color:#55575C" title="23:00–23:30"></span>
-    <span class="bead" style="border-color:#55565A" title="23:30–00:00"></span>
-  </div>
-  <p class="caption">Вверху — глубокая ночь; чем ниже, тем ближе день, а затем снова тьма. Закрашенный кружок — снятое вами небо, пустое кольцо — небо, которое ещё впереди.</p>
+    <section class="reveal" id="try">
+      <h2>Попробуйте доску сами</h2>
+      <p class="muted">Коснитесь клетки, чтобы узнать, к какому времени дня она относится. Добавьте фото неба, и заполнится клетка текущего часа; листайте дни вперёд и смотрите, как меняется доска.</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;Попробуйте доску сами&quot;, &quot;lead&quot;: &quot;Коснитесь клетки, чтобы узнать, к какому времени дня она относится. Добавьте фото неба, и заполнится клетка текущего часа; листайте дни вперёд и смотрите, как меняется доска.&quot;, &quot;photo&quot;: &quot;Добавить фото неба&quot;, &quot;age&quot;: &quot;Со дня съёмки&quot;, &quot;ageToday&quot;: &quot;Сегодня&quot;, &quot;ageDay&quot;: &quot;Через {n} день&quot;, &quot;ageDays&quot;: &quot;Через {n} дн.&quot;, &quot;note&quot;: &quot;Доска заполнена теми же примерами неба, что и на скриншотах приложения. Ваше фото читается только внутри этого браузера и никуда не отправляется. Выбор цвета, правила заполнения клеток и скорость выцветания такие же, как в приложении.&quot;, &quot;now&quot;: &quot;Сейчас&quot;, &quot;bands&quot;: [&quot;Полночь&quot;, &quot;Рассвет&quot;, &quot;День&quot;, &quot;Под вечер&quot;, &quot;Закат&quot;, &quot;Ночь&quot;], &quot;emptyTag&quot;: &quot;%@ · пока пусто&quot;, &quot;spot&quot;: &quot;Это место заполнится небом, снятым в это время суток. Подойдёт любое фото как есть — цвет совпадать не обязан.&quot;, &quot;sims&quot;: [[&quot;Тушь&quot;, &quot;Тушь, растёртая на тушечнице. Самая глубокая ночь.&quot;], [&quot;Ночное море&quot;, &quot;Вода, если смотреть на неё сверху, где нет огней. Чёрный с налётом синего.&quot;], [&quot;Дно пригоревшей кастрюли&quot;, &quot;След от пригоревшего. Чёрный без синевы.&quot;], [&quot;Высохшие чернила&quot;, &quot;След брошенной перьевой ручки. Чёрный с остатком синевы.&quot;], [&quot;Глубокая вода&quot;, &quot;Цвет там, где не достать дна. Тёмная прохладная синева.&quot;], [&quot;Новые джинсы&quot;, &quot;Деним, ни разу не стиранный. Густой тёмно-синий.&quot;], [&quot;Окно ночного поезда&quot;, &quot;Стекло, когда огни уже пронеслись мимо. Серый, почти тёмно-синий.&quot;], [&quot;Окно в полночь&quot;, &quot;Улица за отдёрнутой шторой. Чуть синее чёрного.&quot;], [&quot;Размытые чернила&quot;, &quot;Вода, в которой смыли чернила с рук. Блёклый тёмно-синий.&quot;], [&quot;Синяя школьная форма&quot;, &quot;Синева пиджака, ношенного несколько лет. Ни чёрный, ни синий.&quot;], [&quot;Мокрые джинсы&quot;, &quot;Бельё, только что развешенное. Густой мутный синий.&quot;], [&quot;Спинка скумбрии&quot;, &quot;Сине-серый с серебром. Небо перед дождём.&quot;], [&quot;Старая рабочая роба&quot;, &quot;Синий, выцветший за годы носки.&quot;], [&quot;Выцветшая синяя штора&quot;, &quot;Штора, долго стоявшая на солнце. Обессилевший тёмно-синий.&quot;], [&quot;Запотевшее окно&quot;, &quot;Изнутри всё мутно. Голубовато-серый.&quot;], [&quot;Утренний туман&quot;, &quot;Утро, стёршее верхушки домов. Светло-серый с голубизной.&quot;], [&quot;Мокрая толстовка&quot;, &quot;Серый, потемневший от дождя. Пасмурный рассвет.&quot;], [&quot;Выцветший лиловый свитер&quot;, &quot;Лиловый, полинявший от стирок. Запад перед самым рассветом.&quot;], [&quot;Кожица персика&quot;, &quot;Пушистая сторона. Между розовым и оранжевым.&quot;], [&quot;Абрикосовое молоко&quot;, &quot;Молоко с перетёртым абрикосом. Едва заметный оранжевый.&quot;], [&quot;Белая стена в солнце&quot;, &quot;Утром стена ненадолго становится такой.&quot;], [&quot;Мякоть лосося&quot;, &quot;Тот розовый, что исчезает при жарке.&quot;], [&quot;Клубничное молоко&quot;, &quot;Розовый, когда уже взболтали.&quot;], [&quot;Незрелый абрикос&quot;, &quot;Оранжевый, в котором ещё побеждает жёлтый.&quot;], [&quot;Вода в стакане&quot;, &quot;Бледно-голубой, сквозь который прошёл свет.&quot;], [&quot;Холодная вода из-под крана&quot;, &quot;Цвет, от которого стынут руки. Бледный прохладный голубой.&quot;], [&quot;Тонкий лёд&quot;, &quot;Вода, едва схваченная весенним морозом. Очень бледный голубой.&quot;], [&quot;Фарфоровая чаша&quot;, &quot;Голубизна, оставшаяся в белой посуде.&quot;], [&quot;Выглаженная белая рубашка&quot;, &quot;Почти белый, с налётом голубого. Очень ясный полдень.&quot;], [&quot;Мыльная пена&quot;, &quot;Белая пена над раковиной с посудой.&quot;], [&quot;Выцветшие джинсы&quot;, &quot;Деним с побелевшими коленями. Синий пасмурного дня.&quot;], [&quot;Синий мелок&quot;, &quot;Синий, когда с нажимом водишь мелком по бумаге.&quot;], [&quot;Плитка бассейна&quot;, &quot;Синий сквозь толщу воды. Ясный полдень.&quot;], [&quot;Синяя шариковая ручка&quot;, &quot;Синий линии на бумаге.&quot;], [&quot;Глубина бассейна&quot;, &quot;Вода там, где не достать дна. Вершина летнего полудня.&quot;], [&quot;Вода с синей краской&quot;, &quot;Банка, где полощут кисть. Синий ясного дня после полудня.&quot;], [&quot;Чернила для перьевой ручки&quot;, &quot;В пузырьке синий почти чёрный.&quot;], [&quot;Бутылка лимонада&quot;, &quot;Бледно-голубой с примесью зелени.&quot;], [&quot;Запотевшее зеркало&quot;, &quot;Зеркало после душа. Светлый голубовато-серый.&quot;], [&quot;Стекло в тумане&quot;, &quot;Мутный серый, в котором расплывается всё напротив.&quot;], [&quot;Крошки ластика&quot;, &quot;Белая пыль на столе. Очень светлый серый.&quot;], [&quot;Меловая пыль&quot;, &quot;Белизна в воздухе после того, как стёрли доску.&quot;], [&quot;Сухой цемент&quot;, &quot;Давно застывший пол. Ровный светло-серый.&quot;], [&quot;Остывший пепел&quot;, &quot;То, что осталось после огня. Обычный серый пасмурного дня.&quot;], [&quot;Мутное окно&quot;, &quot;Цвет, который не оттирается. Средний серый с голубизной.&quot;], [&quot;Мокрый гофрокартон&quot;, &quot;Коробка под дождём. Серый с тёплым оттенком.&quot;], [&quot;Погасший экран&quot;, &quot;Чёрно-серый сразу после выключения.&quot;], [&quot;Сгоревшая спичка&quot;, &quot;Палочка с почерневшей головкой. Тёмный серо-лиловый.&quot;], [&quot;Вода после мытья посуды&quot;, &quot;Тепловатая вода с жирными пятнами. Мутный серый.&quot;], [&quot;Вода от кипячения белья&quot;, &quot;Белая вода, от которой идёт пар. Светло-серый.&quot;], [&quot;Лезвие ножа&quot;, &quot;Металл на свету. Серый с голубизной.&quot;], [&quot;Старая жестяная крыша&quot;, &quot;Крыша старого сарая. Сине-серый перед самым дождём.&quot;], [&quot;Море в пасмурный день&quot;, &quot;Вода, вобравшая цвет неба. Тёмный сине-серый.&quot;], [&quot;Мокрый цемент&quot;, &quot;Пол под дождём. Тёмный сырой серый.&quot;], [&quot;Грифель карандаша&quot;, &quot;Тёмно-серый, если штриховать плашмя. Дождливый день после полудня.&quot;], [&quot;Мокрый асфальт&quot;, &quot;Дорога после ночного дождя. Серый, почти чёрный.&quot;], [&quot;Стена во мху&quot;, &quot;Серый, тронутый зеленью. Бывает перед грозой.&quot;], [&quot;Старая монета&quot;, &quot;Металл, затёртый руками. Серый с желтизной.&quot;], [&quot;Вода от риса&quot;, &quot;Первая вода после промывки риса. Тёплый белый.&quot;], [&quot;Яичная скорлупа&quot;, &quot;Белый, который не совсем белый.&quot;], [&quot;Старая бумага&quot;, &quot;Страницы старой книги. Пожелтевший белый.&quot;], [&quot;Старая газета&quot;, &quot;Бумага, выгоревшая на солнце. Между серым и жёлтым.&quot;], [&quot;Окно в пыльной мгле&quot;, &quot;Мутная желтизна, которую хочется протереть.&quot;], [&quot;Злаковый напиток&quot;, &quot;Мутный бежевый, пока мука не осела.&quot;], [&quot;Пожелтевший линолеум&quot;, &quot;Пол, годами придавленный мебелью. Мутный жёлтый.&quot;], [&quot;Варёный каштан&quot;, &quot;Жёлтая мякоть очищенного каштана.&quot;], [&quot;Молоко в кофе&quot;, &quot;Только налили, ещё не размешали.&quot;], [&quot;Пыльная книжная полка&quot;, &quot;Светлый серо-коричневый, на котором палец оставляет след.&quot;], [&quot;Сухая глина&quot;, &quot;Земля, которая начала трескаться. Светло-коричневый.&quot;], [&quot;Остывший чай с молоком&quot;, &quot;Недопитая чашка. Мутный розовато-коричневый.&quot;], [&quot;Размокший картон&quot;, &quot;Бумага, разбухшая от дождя. Цвет пасмурного заката.&quot;], [&quot;Мокрый деревянный настил&quot;, &quot;Дерево, потемневшее от влаги.&quot;], [&quot;Кирпич в золе&quot;, &quot;Место, где горел огонь. Тёмный красновато-серый.&quot;], [&quot;Кофейное пятно&quot;, &quot;Круглый след от убранной чашки.&quot;], [&quot;Кожура варёной фасоли&quot;, &quot;Красная фасоль, долго вымоченная в воде. Тёмный лилово-серый.&quot;], [&quot;Соевая обсыпка&quot;, &quot;Рисовая лепёшка в соевой муке. Мягкий коричневато-бежевый.&quot;], [&quot;Яичный желток&quot;, &quot;Перед тем как проткнуть. Насыщенный жёлтый.&quot;], [&quot;Корочка хлеба&quot;, &quot;Там, где жёлтый переходит в коричневый.&quot;], [&quot;Мандариновая кожура&quot;, &quot;Тот оранжевый, пока не очистили.&quot;], [&quot;Жареный лосось&quot;, &quot;Розовато-оранжевый с подрумяненной корочкой.&quot;], [&quot;Сушёная хурма&quot;, &quot;Хурма с белым налётом. Мутный оранжевый.&quot;], [&quot;Тлеющие угли&quot;, &quot;Красное не пламя, а угли.&quot;], [&quot;Спелая хурма&quot;, &quot;Красно-оранжевый, вот-вот лопнет.&quot;], [&quot;Соус ттокпокки&quot;, &quot;Красный уваренного острого соуса. Самый густой закат.&quot;], [&quot;Мякоть арбуза&quot;, &quot;Самая сладкая середина. Красно-розовый.&quot;], [&quot;Розовое варенье&quot;, &quot;Лепестки в сахаре. Мутный розово-красный.&quot;], [&quot;Красный кирпич&quot;, &quot;Стена под дождями многих лет.&quot;], [&quot;Остывшие угли&quot;, &quot;Огонь под слоем пепла. Тёмный красно-коричневый.&quot;], [&quot;Кожица сливы&quot;, &quot;Красно-лиловый с белым налётом.&quot;], [&quot;Каша из красной фасоли&quot;, &quot;Густой красно-коричневый, пока не положили клёцки.&quot;], [&quot;Недопитое вино&quot;, &quot;Чёрно-красный лиловый на дне бокала.&quot;], [&quot;Отцветшая сирень&quot;, &quot;Блёклый лиловый увядающего цветка.&quot;], [&quot;Черничное молоко&quot;, &quot;Недомешанный светло-лиловый.&quot;], [&quot;Кожица винограда&quot;, &quot;Тёмно-лиловый, мокрый после мытья.&quot;], [&quot;Кожура баклажана&quot;, &quot;Чёрно-лиловый, поглощающий свет. Последний цвет дня.&quot;]]}"></div>
+    </section>
 
-  <h2>Доска — это сегодня</h2>
-  <p>Сорок восемь клеток — это <strong>цвета, через которые пройдёт сегодняшнее небо</strong>. Их заново рассчитывают каждый день по реальным восходу и закату в вашем месте и по сегодняшнему прогнозу облачности и осадков. Поэтому клетка, заполненная вчера, сегодня может оказаться пустой. Доска показывает не то, сколько вы собрали, а то, <strong>сколько из сегодняшнего дня вы можете показать</strong>.</p>
-  <p>Снимите небо сейчас — и <strong>клетка этого времени</strong> заполнится пойманным цветом. Даже если он не совпал с ожидаемым, снимок всё равно ляжет в доску: прогноз — это догадка, а фото действительно было там.</p>
-  <p><strong>Ничто не оценивается.</strong> Нет «зачёта» и «незачёта», нет допусков. Серый цвет пасмурного дня — тоже цвет неба этого дня.</p>
+    <section class="problem reveal">
+      <h2>Вы видите небо каждый день, но не помните ни одного цвета</h2>
+      <p>Небо по дороге на работу, небо, когда вы вышли после обеда: к вечеру их цвет уже не вспомнить. А снимки неба, которые вы всё-таки сделали, теряются среди остальных фото в галерее. SkyDex собирает снимки неба как цвета и показывает на одной доске путь, который сегодня прошло небо.</p>
+    </section>
 
-  <h2>У каждого цвета есть имя</h2>
-  <p>Приложение называет цвет вашего неба двумя способами (на корейском). Сначала — <strong>сравнение, которое можно представить</strong>, а под ним — <strong>название с источником</strong>. «Усухана-иро» — более точный ответ, но почти никто не видит цвет в этом слове, а имя, которое не видно, не выполняет работу имени.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>У каждого неба есть имя</h2>
+        <p>Сначала цвет получает название, которое сразу встаёт перед глазами: «Тонкий лёд», «Плитка бассейна», «Спелая хурма». Под ним идёт название с происхождением: корейский цвет, японский цвет, пигмент или веб-цвет.<br>Если совпадение близкое, приложение пишет «Название», если далёкое, честно пишет «Ближайшее название».</p>
+      </div>
+      <div class="phone"><img src="../img/ru/02-name.jpg" alt="У каждого неба есть имя" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <div class="names">
-    <div class="name">
-      <span class="swatch" style="background:#7E90B6"></span>
-      <span>
-        <div class="simile">Выцветшая тёмно-синяя штора</div>
-        <div class="real">Усухана-иро · традиционный цвет Японии 薄花色</div>
-      </span>
-    </div>
-    <div class="name">
-      <span class="swatch" style="background:#D68F55"></span>
-      <span>
-        <div class="simile">Корочка тоста</div>
-        <div class="real">Кадмиевый оранжевый · пигмент</div>
-      </span>
-    </div>
-    <div class="name">
-      <span class="swatch" style="background:#1C6DB4"></span>
-      <span>
-        <div class="simile">Вода, в которой размешали синюю краску</div>
-        <div class="real">Чхонсэк · традиционный цвет Кореи</div>
-      </span>
-    </div>
-  </div>
-  <p>Названия с источником взяты из традиционных цветов Кореи и Японии, из пигментов и стандартных наборов цветов; каждое значение сверено с первоисточником. Приложение честно говорит и о степени сходства: если совпадение достаточно близкое, оно пишет «название цвета —», а если нет, — «ближайшее название —».</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Оставьте строчку</h2>
+        <p>Сразу после снимка открывается карточка. Запишите, о чём вы подумали, глядя на это небо, и строчка снова всплывёт над ним, когда вы коснётесь этой клетки на доске.<br>Можно наложить на небо этого снимка цвет неба, собранного в другой день, и поделиться результатом как картинкой.</p>
+      </div>
+      <div class="phone"><img src="../img/ru/03-card.jpg" alt="Оставьте строчку" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>Заполненные клетки стареют</h2>
-  <p>Фото неделю хранит настоящий цвет, а затем в течение восьми недель медленно выцветает. Оно не удаляется и не исчезает совсем. Снимите небо в это же время снова — и клетка тут же вернёт полную яркость.</p>
-  <p>Это не наказание. Нет серии, которую можно прервать, и нечего отыгрывать. Это просто честный способ для доски, сделанной из неба, сказать: «то небо было давно».</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Пустые клетки подсказывают путь</h2>
+        <p>Коснитесь пустой клетки, и вы узнаете, к какому времени дня она относится и какой цвет искать. А ещё приложение скажет, какого цвета небо в этот час в безоблачный день, с учётом восхода и заката там, где вы находитесь.<br>Цвет не обязан совпадать. Серое пасмурное небо тоже цвет неба этого дня.</p>
+      </div>
+      <div class="phone"><img src="../img/ru/05-empty.jpg" alt="Пустые клетки подсказывают путь" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>Тот же час, другое небо</h2>
-  <p>Дни повторяются. Тот же будильник, тот же маршрут, то же окно. И только небо над ними никогда не бывает одним и тем же. Экран <strong>«Повторы»</strong> выстраивает дни, когда вы смотрели вверх в один и тот же час, чтобы это было видно. Ряд — это повторение, а цвета — то, что не повторяется никогда.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Журнал, палитра, повторы</h2>
+        <p>Просматривайте снятое небо по порядку и собирайте цвета в палитры по семействам: синий, серый, песочный. Снимите тот же час в другой день, и два неба встанут рядом.<br>Виджеты на экране «Домой» сразу показывают «Доску сегодня» и «Небо сегодня».</p>
+      </div>
+      <div class="phone"><img src="../img/ru/04-palette.jpg" alt="Журнал, палитра, повторы" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>Виджеты</h2>
-  <p><strong>Доска сегодня</strong> выглядит точно как в приложении: сорок восемь клеток, кружки для заполненных и кольца для пустых. <strong>Небо сегодня</strong> показывает снятое сегодня фото с названием его цвета и работает и на экране блокировки.</p>
+    <section class="reveal">
+      <h2>Начать можно за три шага</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>Поднимите глаза</h3><p>Нажмите кнопку камеры под доской и снимите так, чтобы небо заполнило квадрат.</p></li>
+<li class="card"><span class="n">2</span><h3>Клетка заполняется</h3><p>Клетка текущего часа окрашивается в пойманный цвет и получает название.</p></li>
+<li class="card"><span class="n">3</span><h3>Оставьте строчку</h3><p>В открывшейся карточке запишите, о чём вы подумали, глядя на это небо.</p></li></ol>
+    </section>
 
-  <h2>Всё остаётся вашим</h2>
-  <div class="quiet">
-    <p>Нет аккаунта и нет нашего сервера. Ваши фото и цвета хранятся в памяти приложения на устройстве и — если вы вошли в iCloud — в вашем собственном iCloud. Разработчику они не отправляются. Никакой рекламы, слежки и сторонней аналитики.</p>
-    <p>Геопозиция нужна только для восхода, заката и сегодняшнего прогноза и запрашивается с точностью до километров. Если вы откажете, приложение будет работать как обычно. Подробности — в <a href="privacy.html">Политике конфиденциальности</a>.</p>
-  </div>
+    <section class="reveal" id="commands">
+      <h2>Как доска делит день</h2>
+      <div class="card table">
+        <dl><div><dt>Полночь · 00:00–05:00</dt><dd>шесть клеток</dd></div><div><dt>Рассвет · 05:00–08:00</dt><dd>шесть клеток</dd></div><div><dt>День · 08:00–16:00</dt><dd>двенадцать клеток</dd></div><div><dt>Под вечер · 16:00–18:00</dt><dd>шесть клеток</dd></div><div><dt>Закат · 18:00–21:00</dt><dd>двенадцать клеток, по одной на 15 минут</dd></div><div><dt>Ночь · 21:00–24:00</dt><dd>шесть клеток</dd></div></dl>
+      </div>
+      <p class="muted">Около заката, когда небо меняется быстро, клетки идут часто, а глубокой ночью, когда оно почти неподвижно, редко. Наверху доски полночь, и чем ниже, тем дальше идёт день.</p>
+    </section>
+
+
+
+    <section class="reveal" id="faq">
+      <h2>Вопросы и ответы</h2>
+      <div class="faq"><details><summary>Как заполняются клетки?</summary><p>Небо, снятое сегодня, занимает клетку того часа, когда вы его сняли, даже если цвет оказался не тем, что вы ждали. Ведь в этот час небо действительно было таким. Небо из прошлых дней встаёт по цвету: если оно достаточно близко к цвету какой-то клетки, то занимает её, и одно небо заполняет только одну клетку.</p></details>
+<details><summary>Вчера клетка была заполнена, а сегодня пуста.</summary><p>Доска показывает сегодняшний день. Клетки, которые вчерашнее небо заняло по времени, с наступлением нового дня сопоставляются заново, только по цвету. Поэтому в какие-то дни доска почти полна, а в какие-то выглядит пустой. Ваши фото никуда не делись: всё собранное небо хранится в Журнале, а по порядку цветов в Палитре.</p></details>
+<details><summary>Заполненные клетки бледнеют.</summary><p>Так задумано. Неделю снимок держит свой настоящий цвет, а потом в течение восьми недель медленно выцветает. Он не удаляется и никогда не бледнеет до конца. Снимите небо в это время ещё раз, и клетка сразу вернёт полный цвет. Здесь нет серии, которая может прерваться, и нет счёта, который нужно отыгрывать.</p></details>
+<details><summary>Цвет должен совпадать?</summary><p>Нет. Здесь нет оценок «прошёл» или «не прошёл». Каждый снимок сохраняется, а серое пасмурное небо тоже цвет неба этого дня.</p></details>
+<details><summary>Зачем приложению геопозиция?</summary><p>Только для того, чтобы при касании пустой клетки сказать, какого цвета безоблачное небо в этот час, с учётом восхода и заката там, где вы находитесь. Используется лишь приблизительное местоположение с точностью до километра, и координаты не прикрепляются к снимкам. Если откажете, всё будет работать, а точкой отсчёта станет Сеул.</p></details>
+<details><summary>Можно добавить небо из медиатеки?</summary><p>Да. Небо, выбранное в приложении «Фото» вместо камеры, тоже обрезается до квадрата и заполняет клетку текущего часа, как только что снятое.</p></details>
+<details><summary>Как удалить снимок?</summary><p>Откройте снимок и нажмите «Удалить» или смахните его влево в Журнале. Он удалится и с устройства, и из iCloud. Если удалить приложение, копия в iCloud останется, и после повторной установки собранное небо вернётся.</p></details>
+<details><summary>Что будет с собранным небом при смене телефона?</summary><p>Ваше небо хранится в вашем собственном iCloud и переносится на новое устройство, где выполнен вход в тот же Аккаунт Apple. Нет ни аккаунта в приложении, ни сервера, а фото и цвета никогда не отправляются разработчику. Ни рекламы, ни отслеживания.</p></details>
+<details><summary>Это правда бесплатно?</summary><p>Да, все функции бесплатны. Если приложение понравится, можно оставить разработчику чаевые прямо в нём, но чаевые ничего не открывают.</p></details>
+<details><summary>На каких устройствах работает?</summary><p>На iPhone с iOS 17.0 или новее, только в вертикальной ориентации.</p></details></div>
+      <p class="contact">Нашли ошибку, странное поведение или просто хотите что-то сказать? Пишите на <a href="mailto:leeo@kakao.com">leeo@kakao.com</a>. Если опишете, что вы делали, и укажете версию iOS, найти причину будет гораздо проще.</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>Завтра утром<br>просто поднимите глаза</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6802295390">Бесплатно в App Store</a>
+    </section>
+  </main>
 
   <footer>
-    <a href="support.html">Поддержка</a> ·
-    <a href="privacy.html">Политика конфиденциальности</a> ·
-    <a href="https://github.com/M1zz/SkyDex">GitHub</a>
-    <p style="margin:10px 0 0">Данные о погоде предоставлены сервисом <a href="https://weatherkit.apple.com/legal-attribution.html">Apple Weather</a>.</p>
+    <nav id="languages" class="langs" aria-label="Язык"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru" aria-current="page">Русский</a>
+<a href="../es/" hreflang="es" lang="es">Español</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../th/" hreflang="th" lang="th">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="../id/" hreflang="id" lang="id">Indonesia</a>
+<a href="../nb/" hreflang="nb" lang="nb">Norsk</a>
+<a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">Политика конфиденциальности</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 SkyDex</p>
   </footer>
 
-</main>
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>

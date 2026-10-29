@@ -1,0 +1,541 @@
+{
+  "title": "SkyDex: papan warna langit hari ini, terisi setiap kali kamu memotret",
+  "description": "Setiap foto langit mengisi satu dari empat puluh delapan warna langit hari itu dan mendapat nama yang mirip warnanya. Gratis, tanpa akun.",
+  "hero": {
+    "headline": "Hari ini langit\nberwarna apa?",
+    "lead": "Potret langit, dan di papan empat puluh delapan kotak, kotak untuk jam itu terisi warna yang kamu tangkap. Warnanya juga mendapat nama yang mudah dibayangkan, seperti es tipis, ubin kolam renang, atau kesemek matang.",
+    "cta": "Unduh gratis di App Store",
+    "note": "Gratis. Tanpa akun, tanpa login."
+  },
+  "demo": {
+    "title": "Coba ketuk papannya",
+    "lead": "Ketuk sebuah kotak untuk melihat langit jam berapa yang diwakilinya. Tambahkan foto langit untuk mengisi kotak jam sekarang, lalu majukan harinya dan lihat bagaimana papan berubah.",
+    "photo": "Coba tambahkan foto langit",
+    "age": "Sejak hari pemotretan",
+    "ageToday": "Hari ini",
+    "ageDay": "{n} hari kemudian",
+    "ageDays": "{n} hari kemudian",
+    "note": "Papan ini sudah diisi langit contoh yang sama dengan tangkapan layar aplikasi. Foto yang kamu tambahkan hanya dibaca di dalam browser ini dan tidak dikirim ke mana pun. Cara memilih warna, aturan mengisi kotak, dan kecepatan memudar semuanya sama persis dengan aplikasi.",
+    "now": "Sekarang",
+    "bands": [
+      "Tengah malam",
+      "Fajar",
+      "Siang",
+      "Sore",
+      "Senja",
+      "Malam"
+    ],
+    "emptyTag": "%@ · Masih kosong",
+    "spot": "Tempat ini terisi langit yang dipotret pada waktu itu. Foto apa pun masuk apa adanya; warnanya tak harus cocok.",
+    "sims": [
+      [
+        "Tinta bak",
+        "Tinta yang digerus di batu tinta. Malam yang paling dalam."
+      ],
+      [
+        "Laut malam",
+        "Air yang dilihat dari tempat tanpa cahaya. Hitam berlapis biru."
+      ],
+      [
+        "Dasar panci gosong",
+        "Bekas yang tertinggal setelah gosong. Hitam tanpa semburat biru."
+      ],
+      [
+        "Tinta kering",
+        "Bekas pena yang ditinggalkan. Hitam dengan sisa biru."
+      ],
+      [
+        "Air dalam",
+        "Warna tempat kaki tak lagi menyentuh dasar. Biru tua yang gelap dan sejuk."
+      ],
+      [
+        "Jin baru",
+        "Denim yang belum pernah dicuci. Biru tua pekat."
+      ],
+      [
+        "Jendela kereta malam",
+        "Kaca setelah cahaya lewat. Kelabu yang hampir biru tua."
+      ],
+      [
+        "Jendela tengah malam",
+        "Di luar saat tirai dibuka. Sedikit lebih biru dari hitam."
+      ],
+      [
+        "Tinta yang terbilas",
+        "Air bekas membilas tinta di tangan. Biru tua yang pudar."
+      ],
+      [
+        "Biru seragam sekolah",
+        "Biru tua jaket yang dipakai bertahun-tahun. Tidak hitam, tidak juga biru."
+      ],
+      [
+        "Jin basah",
+        "Saat cucian baru dijemur. Biru tua yang kusam."
+      ],
+      [
+        "Punggung ikan kembung",
+        "Kelabu kebiruan berkilau perak. Langit sebelum hujan."
+      ],
+      [
+        "Baju kerja lusuh",
+        "Biru yang warnanya mati karena bertahun-tahun dipakai."
+      ],
+      [
+        "Tirai biru pudar",
+        "Tirai yang lama terkena matahari. Biru tua yang kehilangan tenaga."
+      ],
+      [
+        "Embun di jendela",
+        "Dari dalam, luar tampak buram. Kelabu kebiruan."
+      ],
+      [
+        "Kabut pagi",
+        "Pagi saat puncak gedung terhapus. Kelabu terang kebiruan."
+      ],
+      [
+        "Hoodie basah",
+        "Kelabu yang menggelap karena air hujan. Fajar yang mendung."
+      ],
+      [
+        "Sweter ungu pudar",
+        "Ungu yang mati karena sering dicuci. Langit barat menjelang fajar."
+      ],
+      [
+        "Kulit persik",
+        "Sisi yang berbulu halus. Di antara merah muda dan jingga."
+      ],
+      [
+        "Susu aprikot",
+        "Aprikot yang diblender dengan susu. Jingga yang sangat pucat."
+      ],
+      [
+        "Dinding putih bermentari",
+        "Di pagi hari, dinding sebentar menjadi warna ini."
+      ],
+      [
+        "Daging salmon",
+        "Merah muda yang hilang saat dipanggang."
+      ],
+      [
+        "Susu stroberi",
+        "Merah muda setelah dikocok."
+      ],
+      [
+        "Aprikot mentah",
+        "Jingga yang kuningnya masih menang."
+      ],
+      [
+        "Air di gelas kaca",
+        "Biru pucat yang ditembus cahaya."
+      ],
+      [
+        "Air keran dingin",
+        "Warna yang membuat tangan dingin. Biru pucat dan sejuk."
+      ],
+      [
+        "Es tipis",
+        "Air yang sedikit membeku di musim semi. Biru yang sangat pucat."
+      ],
+      [
+        "Mangkuk porselen",
+        "Semburat biru yang tersisa di mangkuk putih."
+      ],
+      [
+        "Kemeja putih disetrika",
+        "Hampir putih dengan selapis biru. Siang yang sangat cerah."
+      ],
+      [
+        "Busa sabun",
+        "Busa putih di atas bak cuci piring."
+      ],
+      [
+        "Jin pudar",
+        "Denim yang lututnya memutih. Biru siang yang berawan."
+      ],
+      [
+        "Krayon biru",
+        "Biru yang muncul saat krayon ditekan kuat di kertas gambar."
+      ],
+      [
+        "Ubin kolam renang",
+        "Biru yang dilihat melalui air. Tengah hari yang cerah."
+      ],
+      [
+        "Pulpen biru",
+        "Biru garis yang ditarik di kertas."
+      ],
+      [
+        "Kolam renang dalam",
+        "Air di sisi yang tak terjangkau kaki. Puncak langit siang di musim panas."
+      ],
+      [
+        "Air bekas cat biru",
+        "Wadah bilasan kuas. Biru sore hari yang cerah."
+      ],
+      [
+        "Tinta pena",
+        "Di dalam botol, biru yang hampir hitam."
+      ],
+      [
+        "Botol limun",
+        "Biru pucat yang bercampur hijau."
+      ],
+      [
+        "Cermin berembun",
+        "Cermin setelah mandi. Kelabu kebiruan yang terang."
+      ],
+      [
+        "Kaca berkabut",
+        "Kelabu buram yang membuat seberang tampak kabur."
+      ],
+      [
+        "Remah penghapus",
+        "Serbuk putih yang terkumpul di meja. Kelabu sangat pucat."
+      ],
+      [
+        "Debu kapur",
+        "Putih yang tertinggal di udara setelah papan tulis dihapus."
+      ],
+      [
+        "Semen kering",
+        "Lantai yang lama mengeras. Kelabu terang yang rata."
+      ],
+      [
+        "Abu dingin",
+        "Sisa yang sudah habis terbakar. Kelabu biasa di siang berawan."
+      ],
+      [
+        "Jendela buram",
+        "Warna yang tak hilang meski dilap. Kelabu sedang kebiruan."
+      ],
+      [
+        "Kardus basah",
+        "Kotak yang kehujanan. Kelabu dengan semburat hangat."
+      ],
+      [
+        "Layar mati",
+        "Kelabu kehitaman sesaat setelah dimatikan."
+      ],
+      [
+        "Korek api terbakar",
+        "Batang yang tinggal kepalanya menghitam. Ungu kelabu gelap."
+      ],
+      [
+        "Air cucian piring",
+        "Air suam berminyak. Kelabu yang keruh."
+      ],
+      [
+        "Air rebusan cucian",
+        "Air putih yang mengepul. Kelabu terang."
+      ],
+      [
+        "Mata pisau",
+        "Besi yang terkena cahaya. Kelabu kebiruan."
+      ],
+      [
+        "Atap seng tua",
+        "Atap gudang lama. Kelabu kebiruan sebelum hujan."
+      ],
+      [
+        "Laut mendung",
+        "Air yang menyerap warna langit. Kelabu kebiruan yang gelap."
+      ],
+      [
+        "Semen basah",
+        "Lantai kehujanan. Kelabu yang gelap dan lembap."
+      ],
+      [
+        "Isi pensil",
+        "Kelabu tua yang diarsir dengan pensil miring. Sore yang hujan."
+      ],
+      [
+        "Aspal basah",
+        "Jalan setelah hujan malam. Kelabu yang hampir hitam."
+      ],
+      [
+        "Tembok berlumut",
+        "Hijau yang menjalar di atas kelabu. Kadang muncul sebelum badai."
+      ],
+      [
+        "Koin tua",
+        "Logam yang kusam oleh tangan. Kelabu kekuningan."
+      ],
+      [
+        "Air cucian beras",
+        "Air pertama dari mencuci beras. Putih yang hangat."
+      ],
+      [
+        "Kulit telur",
+        "Putih yang bukan putih sempurna."
+      ],
+      [
+        "Kertas tua",
+        "Halaman dalam buku lama. Putih yang menguning."
+      ],
+      [
+        "Koran lama",
+        "Kertas yang pudar oleh matahari. Di antara kelabu dan kuning."
+      ],
+      [
+        "Jendela berdebu pasir",
+        "Kuning buram yang membuatmu ingin mengelapnya."
+      ],
+      [
+        "Minuman bubuk biji-bijian",
+        "Krem keruh sebelum mengendap."
+      ],
+      [
+        "Alas lantai kuning tua",
+        "Lantai yang lama tertekan. Kuning yang kusam."
+      ],
+      [
+        "Isi kastanye rebus",
+        "Bagian dalam kastanye yang kuning setelah dikupas."
+      ],
+      [
+        "Susu dalam kopi",
+        "Saat baru dituang dan belum tercampur."
+      ],
+      [
+        "Rak buku berdebu",
+        "Cokelat kelabu terang yang meninggalkan bekas saat disentuh jari."
+      ],
+      [
+        "Lumpur kering",
+        "Tanah yang mulai retak. Cokelat muda."
+      ],
+      [
+        "Teh susu dingin",
+        "Cangkir yang ditinggalkan setengah. Cokelat kemerahan yang kusam."
+      ],
+      [
+        "Karton basah",
+        "Kertas yang mengembang kena hujan. Warna senja yang mendung."
+      ],
+      [
+        "Dek kayu kehujanan",
+        "Kayu yang menggelap karena menyerap air."
+      ],
+      [
+        "Bata berabu",
+        "Bekas terkena api. Kelabu kemerahan yang gelap."
+      ],
+      [
+        "Noda kopi",
+        "Lingkaran noda setelah cangkir diangkat."
+      ],
+      [
+        "Kulit kacang merah rebus",
+        "Kacang merah yang lama direndam. Kelabu keunguan yang gelap."
+      ],
+      [
+        "Bubuk kedelai injeolmi",
+        "Kue beras berlumur bubuk kedelai. Krem kecokelatan yang lembut."
+      ],
+      [
+        "Kuning telur",
+        "Sesaat sebelum pecah. Kuning yang pekat."
+      ],
+      [
+        "Pinggiran roti tawar",
+        "Titik saat kuning berubah menjadi cokelat."
+      ],
+      [
+        "Kulit jeruk",
+        "Jingga sebelum dikupas."
+      ],
+      [
+        "Salmon panggang",
+        "Jingga kemerahan di permukaan yang matang."
+      ],
+      [
+        "Kesemek kering",
+        "Kesemek kering bertabur gula putih. Jingga yang kusam."
+      ],
+      [
+        "Bara kayu",
+        "Bukan nyala api, tapi arang yang membara."
+      ],
+      [
+        "Kesemek matang",
+        "Jingga kemerahan sesaat sebelum lembek pecah."
+      ],
+      [
+        "Kuah tteokbokki",
+        "Merah setelah kuahnya menyusut. Senja yang paling pekat."
+      ],
+      [
+        "Daging semangka",
+        "Bagian tengah yang paling manis. Merah muda kemerahan."
+      ],
+      [
+        "Selai mawar",
+        "Kelopak yang direndam gula. Merah kemerahmudaan yang kusam."
+      ],
+      [
+        "Bata merah",
+        "Tembok yang bertahun-tahun kehujanan."
+      ],
+      [
+        "Bara arang yang meredup",
+        "Api yang tertutup abu. Cokelat kemerahan yang gelap."
+      ],
+      [
+        "Kulit plum",
+        "Ungu kemerahan bertabur serbuk putih."
+      ],
+      [
+        "Bubur kacang merah",
+        "Cokelat kemerahan yang kental, sebelum bola ketan dimasukkan."
+      ],
+      [
+        "Sisa anggur merah",
+        "Ungu kehitaman yang tertinggal di dasar gelas."
+      ],
+      [
+        "Lilac yang layu",
+        "Ungu pudar bunga yang mulai mengering."
+      ],
+      [
+        "Susu bluberi",
+        "Ungu muda yang belum teraduk rata."
+      ],
+      [
+        "Kulit anggur",
+        "Ungu tua yang basah setelah dicuci."
+      ],
+      [
+        "Kulit terung",
+        "Ungu kehitaman yang menelan cahaya. Warna terakhir hari ini."
+      ]
+    ]
+  },
+  "problem": {
+    "title": "Kamu melihat langit setiap hari, tapi tak ingat satu warna pun",
+    "text": "Langit yang kamu tengok di jalan menuju kantor, langit saat keluar selepas makan siang: menjelang malam, warnanya sudah hilang dari ingatan. Foto langit yang sempat kamu ambil pun tenggelam di antara foto-foto lain di galeri. SkyDex mengumpulkan foto langit sebagai warna, lalu menata jejak langit hari ini dalam satu papan."
+  },
+  "features": [
+    {
+      "title": "Setiap langit punya nama",
+      "text": "Warna yang kamu potret lebih dulu mendapat nama yang langsung terbayang, seperti es tipis, ubin kolam renang, atau kesemek matang. Di bawahnya menyusul nama yang punya asal-usul, dari warna Korea, warna Jepang, pigmen, atau warna web.\nKalau cukup dekat, tertulis “Namanya”; kalau masih jauh, aplikasi jujur menulis “Nama terdekat”.",
+      "shot": "02-name"
+    },
+    {
+      "title": "Tinggalkan satu baris",
+      "text": "Begitu selesai memotret, sebuah kartu langsung terbuka. Tulis satu baris tentang apa yang kamu pikirkan saat menatap langit itu, dan tulisan itu muncul lagi di atas langit setiap kali kamu mengetuk kotaknya di papan.\nKamu juga bisa memakaikan warna langit dari hari lain ke langit di foto ini, lalu membagikannya sebagai gambar.",
+      "shot": "03-card"
+    },
+    {
+      "title": "Kotak kosong jadi penunjuk jalan",
+      "text": "Ketuk kotak kosong untuk tahu kotak itu mewakili jam berapa dan warna apa yang perlu dicari. Untuk hari tanpa awan, aplikasi juga memberi tahu warna langit pada jam itu, disesuaikan dengan waktu matahari terbit dan terbenam di tempatmu.\nWarnanya tidak harus cocok. Abu-abu di hari mendung juga warna langit hari itu.",
+      "shot": "05-empty"
+    },
+    {
+      "title": "Log, Palet, Pengulangan",
+      "text": "Lihat langit yang kamu potret menurut urutan waktu, dan kumpulkan warnanya ke dalam palet per kelompok seperti biru, abu-abu, dan warna pasir. Potret langit di jam yang sama pada hari lain, dan keduanya akan berdiri berdampingan.\nWidget di Layar Utama menampilkan Papan Hari Ini dan Langit Hari Ini sekilas.",
+      "shot": "04-palette"
+    }
+  ],
+  "steps": {
+    "title": "Mulai dalam tiga langkah",
+    "items": [
+      {
+        "title": "Tengadah ke langit",
+        "text": "Ketuk tombol kamera di bawah papan, lalu potret sampai langit memenuhi kotak persegi."
+      },
+      {
+        "title": "Kotak terisi",
+        "text": "Kotak untuk jam sekarang terisi warna yang kamu tangkap dan mendapat nama."
+      },
+      {
+        "title": "Tulis satu baris",
+        "text": "Di kartu yang terbuka, tulis apa yang kamu pikirkan saat menatap langit itu."
+      }
+    ]
+  },
+  "reference": {
+    "title": "Begini papan membagi hari",
+    "rows": [
+      [
+        "Tengah malam · 00.00–05.00",
+        "enam kotak"
+      ],
+      [
+        "Fajar · 05.00–08.00",
+        "enam kotak"
+      ],
+      [
+        "Siang · 08.00–16.00",
+        "dua belas kotak"
+      ],
+      [
+        "Sore · 16.00–18.00",
+        "enam kotak"
+      ],
+      [
+        "Senja · 18.00–21.00",
+        "dua belas kotak, satu tiap 15 menit"
+      ],
+      [
+        "Malam · 21.00–24.00",
+        "enam kotak"
+      ]
+    ],
+    "note": "Di sekitar senja, saat langit cepat berubah, kotaknya rapat; di tengah malam, saat langit nyaris tak bergerak, kotaknya renggang. Bagian atas papan adalah tengah malam, dan hari mengalir ke bawah."
+  },
+  "faq": {
+    "title": "Pertanyaan umum",
+    "items": [
+      {
+        "q": "Bagaimana kotak terisi?",
+        "a": "Langit yang kamu potret hari ini mengisi kotak untuk jam pemotretannya. Meski warnanya tidak seperti yang kamu duga, foto tetap masuk apa adanya, karena memang begitulah langit pada jam itu. Langit yang kamu kumpulkan di hari-hari sebelumnya masuk berdasarkan warna: jika cukup dekat dengan warna sebuah kotak, ia mengisi kotak itu, dan satu langit hanya mengisi satu kotak."
+      },
+      {
+        "q": "Kotak yang kemarin penuh, hari ini kosong.",
+        "a": "Papan ini adalah hari ini. Kotak yang kemarin diisi langit berdasarkan jamnya akan dicocokkan ulang hanya berdasarkan warna begitu hari berganti. Karena itu, ada hari ketika papan hampir penuh dan ada hari ketika papan terlihat kosong. Fotomu tidak hilang: semua langit tetap ada di Log, dan menurut urutan warna di Palet."
+      },
+      {
+        "q": "Kotak yang sudah terisi makin pudar.",
+        "a": "Memang disengaja. Foto mempertahankan warna aslinya selama seminggu, lalu memudar perlahan selama delapan minggu berikutnya. Foto tidak dihapus dan tidak pernah pudar sepenuhnya. Potret lagi langit di jam itu, dan kotaknya langsung kembali ke warna aslinya. Tidak ada rentetan hari yang terputus, tidak ada angka yang harus dikejar kembali."
+      },
+      {
+        "q": "Apakah warnanya harus cocok?",
+        "a": "Tidak. Tidak ada lulus atau gagal. Setiap foto pasti tersimpan, dan abu-abu di hari mendung juga warna langit hari itu."
+      },
+      {
+        "q": "Kenapa aplikasi meminta lokasi?",
+        "a": "Hanya untuk memberi tahu, saat kamu mengetuk kotak kosong, warna langit tanpa awan pada jam itu, disesuaikan dengan waktu matahari terbit dan terbenam di tempatmu. Yang dipakai hanya lokasi perkiraan dalam skala kilometer, dan koordinat tidak pernah ditempelkan ke foto. Kalau kamu menolak, aplikasi tetap berjalan seperti biasa dengan Seoul sebagai acuan."
+      },
+      {
+        "q": "Bisakah aku menambahkan langit dari galeri foto?",
+        "a": "Bisa. Langit yang kamu pilih dari aplikasi Foto, bukan dari kamera, juga dipotong menjadi persegi dan mengisi kotak jam sekarang, sama seperti langit yang baru dipotret."
+      },
+      {
+        "q": "Bagaimana cara menghapus foto?",
+        "a": "Buka fotonya lalu ketuk Hapus, atau geser ke kiri di Log. Foto terhapus dari perangkat dan iCloud sekaligus. Menghapus aplikasi tidak menghapus salinan di iCloud, jadi langitmu kembali saat aplikasi dipasang ulang."
+      },
+      {
+        "q": "Bagaimana kalau aku ganti ponsel?",
+        "a": "Langitmu tersimpan di iCloud milikmu sendiri, jadi berlanjut di perangkat baru yang masuk dengan Akun Apple yang sama. Tidak ada akun aplikasi, tidak ada server, dan foto serta warnamu tidak pernah dikirim ke pengembang. Tanpa iklan, tanpa pelacakan."
+      },
+      {
+        "q": "Benar-benar gratis?",
+        "a": "Ya, semua fitur gratis. Kalau suka, kamu bisa memberi tip kepada pengembang dari dalam aplikasi, tapi tip tidak membuka fitur apa pun."
+      },
+      {
+        "q": "Bisa dipakai di perangkat apa?",
+        "a": "iPhone dengan iOS 17.0 atau yang lebih baru, hanya dalam posisi tegak."
+      }
+    ]
+  },
+  "closing": {
+    "headline": "Besok pagi,\ntengadahlah sekali saja",
+    "cta": "Unduh gratis di App Store"
+  },
+  "ui": {
+    "skip": "Langsung ke konten",
+    "languages": "Bahasa",
+    "privacy": "Kebijakan Privasi",
+    "contact": "Menemukan bug, perilaku aneh, atau ada yang ingin kamu sampaikan? Kirim ke {email}. Ceritakan apa yang sedang kamu lakukan dan versi iOS-mu, supaya masalahnya jauh lebih mudah ditemukan."
+  }
+}

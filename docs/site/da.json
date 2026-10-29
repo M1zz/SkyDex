@@ -1,0 +1,541 @@
+{
+  "title": "SkyDex: et bræt med dagens himmelfarver, fyldt ét billede ad gangen",
+  "description": "Hvert billede af himlen udfylder én af dagens otteogfyrre himmelfarver og får et navn, der ligner den. Gratis og uden konto.",
+  "hero": {
+    "headline": "Hvilken farve havde\nhimlen i dag?",
+    "lead": "Tag et billede af himlen, så fyldes feltet for det tidspunkt med den farve, du fangede, på et bræt med otteogfyrre felter. Farven får også et navn, du kan se for dig, som tynd is, svømmebassinflise eller moden kaki.",
+    "cta": "Hent gratis i App Store",
+    "note": "Gratis. Ingen konto, intet login."
+  },
+  "demo": {
+    "title": "Prøv brættet",
+    "lead": "Tryk på et felt for at se, hvilken del af dagen det hører til. Tilføj et billede af himlen for at udfylde feltet for lige nu, og spol så dagene frem og se brættet ændre sig.",
+    "photo": "Tilføj et himmelbillede",
+    "age": "Siden billederne blev taget",
+    "ageToday": "I dag",
+    "ageDay": "{n} dag senere",
+    "ageDays": "{n} dage senere",
+    "note": "Brættet starter med de samme eksempelhimle som appens skærmbilleder. Dit billede læses kun her i browseren og sendes ingen steder hen. Hvordan farven vælges, hvilket felt den udfylder, og hvor hurtigt den falmer, fungerer præcis som i appen.",
+    "now": "Nu",
+    "bands": [
+      "Midnat",
+      "Daggry",
+      "Dag",
+      "Sen eftermiddag",
+      "Solnedgang",
+      "Nat"
+    ],
+    "emptyTag": "%@ · endnu tom",
+    "spot": "Pladsen fyldes med en himmel taget på det tidspunkt af dagen. Ethvert billede kommer ind, som det er; farven behøver ikke passe.",
+    "sims": [
+      [
+        "Tusch",
+        "Tusch revet på stenen. Den dybeste nat."
+      ],
+      [
+        "Havet om natten",
+        "Vand set ovenfra, uden lys. Sort med et lag blåt."
+      ],
+      [
+        "Brændt grydebund",
+        "Sporet efter noget, der brændte på. Sort uden blåt."
+      ],
+      [
+        "Indtørret blæk",
+        "Spor af en fyldepen, der blev lagt fra sig. Sort med en rest af blåt."
+      ],
+      [
+        "Dybt vand",
+        "Farven der, hvor fødderne ikke kan nå bunden. Mørk, kølig marineblå."
+      ],
+      [
+        "Nye jeans",
+        "Denim, der aldrig har været vasket. Mættet marineblå."
+      ],
+      [
+        "Nattogsvindue",
+        "Glasset, når lysene er gledet forbi. Grå, næsten marineblå."
+      ],
+      [
+        "Vindue ved midnat",
+        "Udenfor, når du trækker gardinet fra. Lidt blåere end sort."
+      ],
+      [
+        "Udvasket blæk",
+        "Vandet, du skyllede blæk af hænderne i. Bleg marineblå."
+      ],
+      [
+        "Skoleuniformsblå",
+        "Marineblå fra en jakke, der er brugt i årevis. Hverken sort eller blå."
+      ],
+      [
+        "Våde jeans",
+        "Vasketøj, der lige er hængt op. Mørk, mat blå."
+      ],
+      [
+        "Makrelryg",
+        "Blågrå med et sølvskær. Himlen før regn."
+      ],
+      [
+        "Slidt arbejdsjakke",
+        "En blå, der er falmet efter mange års brug."
+      ],
+      [
+        "Falmet gardin",
+        "Et gardin, der længe har hængt i solen. Træt marineblå."
+      ],
+      [
+        "Dugget rude",
+        "Indefra ser alt udenfor mælket ud. Blålig grå."
+      ],
+      [
+        "Morgentåge",
+        "En morgen, hvor toppen af husene forsvinder. Lys, blålig grå."
+      ],
+      [
+        "Våd hættetrøje",
+        "Grå, der er blevet mørkere af regn. En grå, tidlig morgen."
+      ],
+      [
+        "Falmet lilla sweater",
+        "En lilla, der er vasket mat. Vesthimlen lige før solopgang."
+      ],
+      [
+        "Ferskenskind",
+        "Siden med dun. Mellem lyserød og orange."
+      ],
+      [
+        "Abrikosmælk",
+        "Mælk med moset abrikos. Meget lys orange."
+      ],
+      [
+        "Hvid væg i sollys",
+        "Om morgenen får væggen et øjeblik denne farve."
+      ],
+      [
+        "Laksekød",
+        "Den lyserøde farve, der forsvinder på panden."
+      ],
+      [
+        "Jordbærmælk",
+        "Den lyserøde farve, når den er rystet."
+      ],
+      [
+        "Umoden abrikos",
+        "En orange, hvor det gule stadig vinder."
+      ],
+      [
+        "Vandglas",
+        "En lys blå, som lyset går igennem."
+      ],
+      [
+        "Koldt vand fra hanen",
+        "En farve, der får hænderne til at fryse. Lys, kølig blå."
+      ],
+      [
+        "Tynd is",
+        "Vand, der er frosset let til om foråret. Meget lys blå."
+      ],
+      [
+        "Porcelænsskål",
+        "Det blå skær i en hvid skål."
+      ],
+      [
+        "Strøget hvid skjorte",
+        "Næsten hvid med et lag blåt. En helt klar himmel ved middagstid."
+      ],
+      [
+        "Opvaskeskum",
+        "Hvidt skum over opvasken."
+      ],
+      [
+        "Falmede jeans",
+        "Denim med hvide knæ. Blå på en overskyet dag."
+      ],
+      [
+        "Blå farvekridt",
+        "Den blå, der kommer, når du trykker hårdt på tegnepapiret."
+      ],
+      [
+        "Svømmebassinflise",
+        "Blå set gennem vand. Middagstid på en klar dag."
+      ],
+      [
+        "Blå kuglepen",
+        "Den blå i en streg på papir."
+      ],
+      [
+        "Dybt bassin",
+        "Vandet, hvor man ikke kan bunde. Himlens top ved middagstid midt på sommeren."
+      ],
+      [
+        "Penselvand",
+        "Glasset, hvor du skyllede penslen. Blå på en klar eftermiddag."
+      ],
+      [
+        "Fyldepenblæk",
+        "I flasken en blå, der næsten er sort."
+      ],
+      [
+        "Sodavandsflaske",
+        "Lys blå med lidt grønt i."
+      ],
+      [
+        "Dugget spejl",
+        "Spejlet efter et bad. Lys, blålig grå."
+      ],
+      [
+        "Tåget glas",
+        "Mælket grå, der udvisker det på den anden side."
+      ],
+      [
+        "Viskelædersmuler",
+        "Hvide smuler på bordet. Meget lys grå."
+      ],
+      [
+        "Kridtstøv",
+        "Det hvide, der hænger i luften, når tavlen er visket ud."
+      ],
+      [
+        "Tør cement",
+        "Et gulv, der hærdede for længe siden. Jævn lys grå."
+      ],
+      [
+        "Kold aske",
+        "Det, der er tilbage, når alt er brændt. Den almindelige grå på en gråvejrsdag."
+      ],
+      [
+        "Grumset rude",
+        "En farve, der bliver siddende, selv når du pudser. Mellemgrå med et blåt skær."
+      ],
+      [
+        "Våd pap",
+        "En kasse i regnvejr. Grå med et varmt skær."
+      ],
+      [
+        "Slukket skærm",
+        "Sortgrå, lige efter at strømmen er slået fra."
+      ],
+      [
+        "Brændt tændstik",
+        "En pind med sort hoved. Mørk gråviolet."
+      ],
+      [
+        "Opvaskevand",
+        "Lunkent vand med fedtøjne. Grumset grå."
+      ],
+      [
+        "Kogevaskevand",
+        "Hvidt vand, der damper. Lys grå."
+      ],
+      [
+        "Knivsæg",
+        "Stål i lyset. Grå med et blåt skær."
+      ],
+      [
+        "Gammelt bliktag",
+        "Taget på et gammelt skur. Gråblå lige før regn."
+      ],
+      [
+        "Hav i gråvejr",
+        "Vand, der tager himlens farve. Mørk blågrå."
+      ],
+      [
+        "Våd cement",
+        "Et gulv i regn. Mørk, fugtig grå."
+      ],
+      [
+        "Blyantsstift",
+        "Mørkegrå, tegnet med stiften på skrå. En regnfuld eftermiddag."
+      ],
+      [
+        "Våd asfalt",
+        "En vej efter regn om natten. Grå, næsten sort."
+      ],
+      [
+        "Mosgroet mur",
+        "Grå med et grønt anstrøg. Af og til lige før stormen."
+      ],
+      [
+        "Gammel mønt",
+        "Metal, slidt af hænder. Grå med et gulligt skær."
+      ],
+      [
+        "Risvand",
+        "Det første vand, når ris skylles. Varm hvid."
+      ],
+      [
+        "Æggeskal",
+        "En hvid, der ikke er helt hvid."
+      ],
+      [
+        "Gammelt papir",
+        "Siderne i en gammel bog. Gulnet hvid."
+      ],
+      [
+        "Gammel avis",
+        "Papir, blegt af solen. Mellem grå og gul."
+      ],
+      [
+        "Støvet rude",
+        "Grumset gul af ørkenstøv. Man får lyst til at tørre den af."
+      ],
+      [
+        "Kornpulverdrik",
+        "Grumset beige, før pulveret synker til bunds."
+      ],
+      [
+        "Gulnet linoleum",
+        "Et gulv, der er trådt på i årevis. Mat gul."
+      ],
+      [
+        "Kogt kastanje",
+        "Den gule kerne i en pillet kastanje."
+      ],
+      [
+        "Mælk i kaffe",
+        "Lige hældt i, endnu ikke rørt rundt."
+      ],
+      [
+        "Støvet bogreol",
+        "Lys gråbrun, hvor din finger efterlader et spor."
+      ],
+      [
+        "Tørt ler",
+        "Jord, der begynder at revne. Lys brun."
+      ],
+      [
+        "Kold mælkete",
+        "En halvt drukket kop, der blev stående. Mat rosabrun."
+      ],
+      [
+        "Vådt karton",
+        "Papir, der er svulmet op i regnen. Farven af en grå solnedgang."
+      ],
+      [
+        "Våd træterrasse",
+        "Træ, der har suget vand og er blevet mørkt."
+      ],
+      [
+        "Sodet mursten",
+        "Stedet tæt på ilden. Mørk rødlig grå."
+      ],
+      [
+        "Kaffeplet",
+        "Den runde plet, når du løfter koppen."
+      ],
+      [
+        "Kogte røde bønner",
+        "Bønner, der har ligget længe i blød. Mørk purpurgrå."
+      ],
+      [
+        "Ristet sojamel",
+        "Overfladen drysset med sojamel. Blød brunlig beige."
+      ],
+      [
+        "Æggeblomme",
+        "Lige før den brister. Kraftig gul."
+      ],
+      [
+        "Brødskorpe",
+        "Stedet, hvor gul går over i brun."
+      ],
+      [
+        "Mandarinskræl",
+        "Den orange, før du piller den."
+      ],
+      [
+        "Stegt laks",
+        "Rosa orange, stegt på overfladen."
+      ],
+      [
+        "Tørret kaki",
+        "Kaki med hvidt pudder. Mat orange."
+      ],
+      [
+        "Gløder i brændet",
+        "Ikke flammer, men rødglødende trækul."
+      ],
+      [
+        "Moden kaki",
+        "Rødorange, lige før den bliver for blød."
+      ],
+      [
+        "Tteokbokki-rød",
+        "Rød, når saucen er kogt ind. Den dybeste solnedgang."
+      ],
+      [
+        "Vandmelon",
+        "Det sødeste sted i midten. Rødlig lyserød."
+      ],
+      [
+        "Rosensyltetøj",
+        "Kronblade lagt i sukker. Mat rosarød."
+      ],
+      [
+        "Rød mursten",
+        "En mur efter mange års regn."
+      ],
+      [
+        "Afkølede gløder",
+        "Ild under aske. Mørk rødbrun."
+      ],
+      [
+        "Blommeskind",
+        "Rødlig lilla med hvid dug."
+      ],
+      [
+        "Rødbønnegrød",
+        "Tyk rødbrun, før riskuglerne kommer i."
+      ],
+      [
+        "Vinrest",
+        "Mørkerød lilla i bunden af glasset."
+      ],
+      [
+        "Afblomstret syren",
+        "Den blege lilla i en visnende blomst."
+      ],
+      [
+        "Blåbærmælk",
+        "Halvt omrørt lyslilla."
+      ],
+      [
+        "Druehud",
+        "Nyvasket, fugtig mørkelilla."
+      ],
+      [
+        "Auberginehud",
+        "Sortlilla, der sluger lyset. Dagens sidste farve."
+      ]
+    ]
+  },
+  "problem": {
+    "title": "Du ser himlen hver dag, men kan ikke huske en eneste farve",
+    "text": "Himlen på vej til arbejde, himlen da du gik ud efter frokost: om aftenen er farverne væk. De himmelbilleder, du faktisk tog, drukner blandt alt det andet i dit fotobibliotek. SkyDex samler dem som farver og viser på ét bræt, hvilken vej dagens himmel gik."
+  },
+  "features": [
+    {
+      "title": "Hver himmel får et navn",
+      "text": "Hver farve får først et navn, du kan se for dig, som tynd is, svømmebassinflise eller moden kaki. Under det følger et navn med en oprindelse: koreansk farve, japansk farve, pigment eller webfarve.\nEr farven tæt på, står der Navn. Er den ikke, står der ærligt Nærmeste navn.",
+      "shot": "02-name"
+    },
+    {
+      "title": "Efterlad en linje",
+      "text": "Et kort åbner sig, så snart du har taget billedet. Skriv, hvad du tænkte, mens du så op, så dukker det frem over himlen igen, hver gang du trykker på feltet på brættet.\nDu kan også lægge en anden dags himmelfarve over billedet og dele resultatet som et billede.",
+      "shot": "03-card"
+    },
+    {
+      "title": "Tomme felter viser vej",
+      "text": "Tryk på et tomt felt for at se, hvilken del af dagen det hører til, og hvilken farve du skal lede efter. Det fortæller også, hvordan himlen ser ud på det tidspunkt en skyfri dag, afstemt efter solopgang og solnedgang der, hvor du er.\nFarven behøver ikke at passe. Det grå på en overskyet dag er også den dags himmelfarve.",
+      "shot": "05-empty"
+    },
+    {
+      "title": "Log, palet, gentagelser",
+      "text": "Gennemse dine himle i rækkefølge, og saml farverne i paletter som blå, grå og sandfarvet. Tag den samme time en anden dag, så står de to side om side.\nWidgets på hjemmeskærmen viser dagens bræt og dagens himmel med ét blik.",
+      "shot": "04-palette"
+    }
+  ],
+  "steps": {
+    "title": "Tre trin, så er du i gang",
+    "items": [
+      {
+        "title": "Se op",
+        "text": "Tryk på kameraknappen under brættet, og lad himlen fylde firkanten."
+      },
+      {
+        "title": "Et felt fyldes",
+        "text": "Feltet for lige nu får den farve, du fangede, og et navn."
+      },
+      {
+        "title": "Efterlad en linje",
+        "text": "Skriv på kortet, der åbner sig, hvad du tænkte."
+      }
+    ]
+  },
+  "reference": {
+    "title": "Sådan deler brættet dagen",
+    "rows": [
+      [
+        "Midnat · 00.00–05.00",
+        "seks felter"
+      ],
+      [
+        "Daggry · 05.00–08.00",
+        "seks felter"
+      ],
+      [
+        "Dag · 08.00–16.00",
+        "tolv felter"
+      ],
+      [
+        "Sen eftermiddag · 16.00–18.00",
+        "seks felter"
+      ],
+      [
+        "Solnedgang · 18.00–21.00",
+        "tolv felter, ét for hvert kvarter"
+      ],
+      [
+        "Nat · 21.00–24.00",
+        "seks felter"
+      ]
+    ],
+    "note": "Omkring solnedgang, hvor himlen skifter hurtigt, sidder felterne tæt, og midt om natten, hvor den næsten står stille, er de brede. Øverst er midnat, og dagen løber nedad."
+  },
+  "faq": {
+    "title": "Spørgsmål",
+    "items": [
+      {
+        "q": "Hvordan bliver et felt udfyldt?",
+        "a": "En himmel, du tager i dag, udfylder feltet for det tidspunkt, du tog den, også selvom farven ikke blev, som du ventede. Sådan så himlen faktisk ud lige da. Himle fra tidligere dage kommer ind efter farve: ligger en tæt nok på et felts farve, udfylder den feltet, og hver himmel udfylder kun ét felt."
+      },
+      {
+        "q": "Et felt, der var fyldt i går, er tomt i dag.",
+        "a": "Brættet er altid i dag. Et felt, som gårsdagens himmel udfyldte efter tidspunkt, bliver matchet igen alene efter farve, når dagen skifter. Derfor er brættet nogle dage næsten fuldt og andre dage ret tomt. Dine billeder er ikke forsvundet: alle himle ligger i Log og i farverækkefølge i Palet."
+      },
+      {
+        "q": "Mine udfyldte felter falmer.",
+        "a": "Det er med vilje. Et billede beholder sin rigtige farve i en uge og falmer så langsomt over de næste otte uger. Det bliver ikke slettet og falmer aldrig helt væk. Tag himlen på det tidspunkt igen, så står feltet straks i fuld farve. Der er ingen stime at bryde og ingen point at vinde tilbage."
+      },
+      {
+        "q": "Skal farven passe?",
+        "a": "Nej. Der er ikke noget, der hedder bestået eller dumpet. Alle billeder gemmes, og det grå på en overskyet dag er også den dags himmelfarve."
+      },
+      {
+        "q": "Hvorfor spørger appen om min placering?",
+        "a": "Kun for at kunne fortælle dig, når du trykker på et tomt felt, hvordan en skyfri himmel ser ud på det tidspunkt, afstemt efter solopgang og solnedgang der, hvor du er. Den bruger en omtrentlig placering på kilometerniveau, og koordinater bliver aldrig knyttet til dine billeder. Siger du nej, virker alt stadig, og Seoul bruges som udgangspunkt."
+      },
+      {
+        "q": "Kan jeg tilføje en himmel fra mit fotobibliotek?",
+        "a": "Ja. En himmel, du vælger i Fotos i stedet for med kameraet, beskæres også til en firkant og udfylder feltet for lige nu, præcis som en, du tager."
+      },
+      {
+        "q": "Hvordan sletter jeg et billede?",
+        "a": "Åbn billedet og tryk på Slet, eller stryg til venstre på det i Log. Det fjernes fra både din enhed og din iCloud. Sletter du appen, bliver kopien i iCloud liggende, så dine himle kommer tilbage, hvis du installerer den igen."
+      },
+      {
+        "q": "Hvad sker der, når jeg skifter telefon?",
+        "a": "Dine himle gemmes i din egen iCloud, så de følger med til en ny enhed, der er logget ind med den samme Apple-konto. Der er ingen konto og ingen server, og dine billeder og farver sendes aldrig til udvikleren. Ingen reklamer, ingen sporing."
+      },
+      {
+        "q": "Er den virkelig gratis?",
+        "a": "Ja, alle funktioner er gratis. Kan du lide appen, kan du give udvikleren drikkepenge inde i appen, men de låser ikke op for noget."
+      },
+      {
+        "q": "Hvilke enheder virker den på?",
+        "a": "iPhone med iOS 17.0 eller nyere, kun i stående format."
+      }
+    ]
+  },
+  "closing": {
+    "headline": "I morgen tidlig,\nkig op bare én gang",
+    "cta": "Hent gratis i App Store"
+  },
+  "ui": {
+    "skip": "Spring til indhold",
+    "languages": "Sprog",
+    "privacy": "Privatlivspolitik",
+    "contact": "Fejl, mærkelig opførsel eller noget, du gerne vil sige: skriv til {email}. Fortæl gerne, hvad du var i gang med, og hvilken iOS-version du har, så er det meget nemmere at finde årsagen."
+  }
+}

@@ -1,340 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="el">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SkyDex</title>
-<meta name="description" content="Μια εφαρμογή iOS που συλλέγει τον ουρανό της ημέρας ως χρώμα. Γεμίστε έναν πίνακα σαράντα οκτώ τετραγώνων με τον σημερινό ουρανό.">
-<link rel="canonical" href="https://m1zz.github.io/SkyDex/el/">
-<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/SkyDex/">
-<link rel="alternate" hreflang="en" href="https://m1zz.github.io/SkyDex/en/">
-<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/SkyDex/en/">
-<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/SkyDex/ja/">
-<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/SkyDex/zh-Hans/">
-<link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/SkyDex/zh-Hant/">
-<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/SkyDex/ru/">
-<link rel="alternate" hreflang="es" href="https://m1zz.github.io/SkyDex/es/">
-<link rel="alternate" hreflang="de" href="https://m1zz.github.io/SkyDex/de/">
-<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/SkyDex/fr/">
-<link rel="alternate" hreflang="it" href="https://m1zz.github.io/SkyDex/it/">
-<link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/SkyDex/pt-BR/">
-<link rel="alternate" hreflang="th" href="https://m1zz.github.io/SkyDex/th/">
-<link rel="alternate" hreflang="vi" href="https://m1zz.github.io/SkyDex/vi/">
-<link rel="alternate" hreflang="cs" href="https://m1zz.github.io/SkyDex/cs/">
-<link rel="alternate" hreflang="da" href="https://m1zz.github.io/SkyDex/da/">
-<link rel="alternate" hreflang="el" href="https://m1zz.github.io/SkyDex/el/">
-<link rel="alternate" hreflang="fi" href="https://m1zz.github.io/SkyDex/fi/">
-<link rel="alternate" hreflang="id" href="https://m1zz.github.io/SkyDex/id/">
-<link rel="alternate" hreflang="nb" href="https://m1zz.github.io/SkyDex/nb/">
-<link rel="alternate" hreflang="nl" href="https://m1zz.github.io/SkyDex/nl/">
-<link rel="alternate" hreflang="pl" href="https://m1zz.github.io/SkyDex/pl/">
-<link rel="alternate" hreflang="sv" href="https://m1zz.github.io/SkyDex/sv/">
-<link rel="alternate" hreflang="tr" href="https://m1zz.github.io/SkyDex/tr/">
-<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/SkyDex/">
-<style>
-  :root {
-    --ink: #16202e;
-    --ink-soft: #5d6773;
-    --paper: #f4f5f7;
-    --card: #ffffff;
-    --line: #e2e5ea;
-    --accent: #2f7bbe;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ink: #eef1f5;
-      --ink-soft: #a2acb8;
-      --paper: #0b111c;
-      --card: #141c28;
-      --line: #26303e;
-      --accent: #7fa4ce;
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    padding: 0 20px 72px;
-    background: var(--paper);
-    color: var(--ink);
-    font: 17px/1.72 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
-      "Pretendard", "Segoe UI", Roboto, sans-serif;
-    -webkit-text-size-adjust: 100%;
-  }
-  main { max-width: 680px; margin: 0 auto; }
-  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
-
-  /* 하루 곡선 그대로 이어붙인 띠 */
-  .strip {
-    display: flex;
-    height: 8px;
-    border-radius: 4px;
-    overflow: hidden;
-    margin: 40px 0 34px;
-  }
-  .strip span { flex: 1 1 0; }
-
-  h1 {
-    font-size: 34px; line-height: 1.25; letter-spacing: -0.03em;
-    margin: 0 0 8px; text-align: center; font-weight: 700;
-  }
-  .lede {
-    margin: 0 auto 8px; text-align: center; color: var(--ink-soft);
-    max-width: 26em;
-  }
-  .platform {
-    text-align: center; color: var(--ink-soft); font-size: 14px;
-    margin: 0 0 36px;
-  }
-
-  /* 판 — 앱과 같은 6×8, 같은 색 */
-  .board {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
-    max-width: 340px;
-    margin: 0 auto 12px;
-  }
-  .bead {
-    aspect-ratio: 1;
-    border-radius: 50%;
-    border: 4px solid transparent;
-    display: block;
-  }
-  .bead.on { border: 0; }
-  .caption {
-    text-align: center; color: var(--ink-soft); font-size: 14px;
-    margin: 0 0 46px;
-  }
-
-  h2 {
-    font-size: 21px; letter-spacing: -0.01em; margin: 46px 0 12px;
-    padding-top: 28px; border-top: 1px solid var(--line);
-  }
-  p { margin: 0 0 14px; }
-  ul { margin: 0 0 14px; padding-left: 1.2em; }
-  li { margin-bottom: 8px; }
-  strong { font-weight: 600; }
-
-  /* 이름 카드 — 앱의 사진 카드 아래에 붙는 것과 같은 순서 */
-  .names { margin: 20px 0 8px; }
-  .name {
-    display: flex; align-items: center; gap: 14px;
-    background: var(--card); border: 1px solid var(--line);
-    border-radius: 16px; padding: 14px 16px; margin-bottom: 10px;
-  }
-  .swatch {
-    width: 46px; height: 46px; border-radius: 12px; flex: 0 0 auto;
-  }
-  .name .simile { font-size: 17px; font-weight: 600; }
-  .name .real { font-size: 13px; color: var(--ink-soft); }
-
-  .quiet {
-    background: var(--card); border: 1px solid var(--line);
-    border-radius: 16px; padding: 18px 20px; margin: 22px 0 8px;
-  }
-  .quiet p:last-child { margin-bottom: 0; }
-
-  footer {
-    margin-top: 60px; padding-top: 26px; border-top: 1px solid var(--line);
-    color: var(--ink-soft); font-size: 15px; text-align: center;
-  }
-  footer a { margin: 0 8px; }
-  nav.langs { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px 14px; margin: 18px 0 0; font-size: 14px; }
-  nav.langs a { color: var(--ink-soft); text-decoration: none; }
-  nav.langs a[aria-current] { color: var(--ink); font-weight: 600; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkyDex: ένας πίνακας με τα χρώματα του ουρανού, φωτογραφία με φωτογραφία</title>
+  <meta name="description" content="Κάθε φωτογραφία του ουρανού γεμίζει ένα από τα σαράντα οκτώ χρώματα της ημέρας και παίρνει ένα όνομα που του μοιάζει. Δωρεάν, χωρίς λογαριασμό.">
+  <meta name="theme-color" content="#2A74B6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b111c" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6802295390">
+  <link rel="canonical" href="https://m1zz.github.io/SkyDex/el/">
+  <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/SkyDex/">
+  <link rel="alternate" hreflang="en" href="https://m1zz.github.io/SkyDex/en/">
+  <link rel="alternate" hreflang="ja" href="https://m1zz.github.io/SkyDex/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/SkyDex/zh-Hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/SkyDex/zh-Hant/">
+  <link rel="alternate" hreflang="ru" href="https://m1zz.github.io/SkyDex/ru/">
+  <link rel="alternate" hreflang="es" href="https://m1zz.github.io/SkyDex/es/">
+  <link rel="alternate" hreflang="de" href="https://m1zz.github.io/SkyDex/de/">
+  <link rel="alternate" hreflang="fr" href="https://m1zz.github.io/SkyDex/fr/">
+  <link rel="alternate" hreflang="it" href="https://m1zz.github.io/SkyDex/it/">
+  <link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/SkyDex/pt-BR/">
+  <link rel="alternate" hreflang="th" href="https://m1zz.github.io/SkyDex/th/">
+  <link rel="alternate" hreflang="vi" href="https://m1zz.github.io/SkyDex/vi/">
+  <link rel="alternate" hreflang="cs" href="https://m1zz.github.io/SkyDex/cs/">
+  <link rel="alternate" hreflang="da" href="https://m1zz.github.io/SkyDex/da/">
+  <link rel="alternate" hreflang="el" href="https://m1zz.github.io/SkyDex/el/">
+  <link rel="alternate" hreflang="fi" href="https://m1zz.github.io/SkyDex/fi/">
+  <link rel="alternate" hreflang="id" href="https://m1zz.github.io/SkyDex/id/">
+  <link rel="alternate" hreflang="nb" href="https://m1zz.github.io/SkyDex/nb/">
+  <link rel="alternate" hreflang="nl" href="https://m1zz.github.io/SkyDex/nl/">
+  <link rel="alternate" hreflang="pl" href="https://m1zz.github.io/SkyDex/pl/">
+  <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/SkyDex/sv/">
+  <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/SkyDex/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/SkyDex/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SkyDex: ένας πίνακας με τα χρώματα του ουρανού, φωτογραφία με φωτογραφία">
+  <meta property="og:description" content="Κάθε φωτογραφία του ουρανού γεμίζει ένα από τα σαράντα οκτώ χρώματα της ημέρας και παίρνει ένα όνομα που του μοιάζει. Δωρεάν, χωρίς λογαριασμό.">
+  <meta property="og:url" content="https://m1zz.github.io/SkyDex/el/">
+  <meta property="og:image" content="https://m1zz.github.io/SkyDex/img/el/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../sitegen.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#2A74B6}@media (prefers-color-scheme:dark){:root{--accent:#7FA4CE}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-<main>
-  <nav class="langs" aria-label="Language">
-    <a href="../" hreflang="ko" lang="ko">한국어</a>
-    <a href="../en/" hreflang="en" lang="en">English</a>
-    <a href="../ja/" hreflang="ja" lang="ja">日本語</a>
-    <a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
-    <a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
-    <a href="../ru/" hreflang="ru" lang="ru">Русский</a>
-    <a href="../es/" hreflang="es" lang="es">Español</a>
-    <a href="../de/" hreflang="de" lang="de">Deutsch</a>
-    <a href="../fr/" hreflang="fr" lang="fr">Français</a>
-    <a href="../it/" hreflang="it" lang="it">Italiano</a>
-    <a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
-    <a href="../th/" hreflang="th" lang="th">ไทย</a>
-    <a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
-    <a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
-    <a href="../da/" hreflang="da" lang="da">Dansk</a>
-    <a href="../el/" hreflang="el" lang="el" aria-current="true">Ελληνικά</a>
-    <a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
-    <a href="../id/" hreflang="id" lang="id">Indonesia</a>
-    <a href="../nb/" hreflang="nb" lang="nb">Norsk</a>
-    <a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
-    <a href="../pl/" hreflang="pl" lang="pl">Polski</a>
-    <a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
-    <a href="../tr/" hreflang="tr" lang="tr">Türkçe</a>
-  </nav>
+  <a class="skip" href="#main">Μετάβαση στο περιεχόμενο</a>
+  <header class="bar">
+    <a class="brand" href="../el/"><img src="../icon.png" alt="" width="32" height="32">SkyDex</a>
+    <a class="lang-link" href="#languages">Γλώσσα</a>
+  </header>
 
-  <div class="strip" aria-hidden="true">
-    <span style="background:#080D18"></span>
-    <span style="background:#090E1A"></span>
-    <span style="background:#0A0F1C"></span>
-    <span style="background:#0A101E"></span>
-    <span style="background:#0B1120"></span>
-    <span style="background:#0C1221"></span>
-    <span style="background:#131B30"></span>
-    <span style="background:#1B263E"></span>
-    <span style="background:#6879A2"></span>
-    <span style="background:#99A7C5"></span>
-    <span style="background:#96ABCB"></span>
-    <span style="background:#7FA4CE"></span>
-    <span style="background:#709CCB"></span>
-    <span style="background:#5791C6"></span>
-    <span style="background:#508DC5"></span>
-    <span style="background:#3F83C1"></span>
-    <span style="background:#307BBE"></span>
-    <span style="background:#2B77BB"></span>
-    <span style="background:#1F6FB5"></span>
-    <span style="background:#1D6EB4"></span>
-    <span style="background:#2471B6"></span>
-    <span style="background:#2975B8"></span>
-    <span style="background:#3179BA"></span>
-    <span style="background:#4988C3"></span>
-    <span style="background:#558EC5"></span>
-    <span style="background:#6D9BCA"></span>
-    <span style="background:#7EA5CD"></span>
-    <span style="background:#8FA5BF"></span>
-    <span style="background:#B2A297"></span>
-    <span style="background:#C1A07E"></span>
-    <span style="background:#CC986A"></span>
-    <span style="background:#D68F56"></span>
-    <span style="background:#CC7C49"></span>
-    <span style="background:#B95B35"></span>
-    <span style="background:#A95239"></span>
-    <span style="background:#8F4440"></span>
-    <span style="background:#543852"></span>
-    <span style="background:#3B324D"></span>
-    <span style="background:#322F4B"></span>
-    <span style="background:#2B2A44"></span>
-    <span style="background:#20233A"></span>
-    <span style="background:#181D33"></span>
-    <span style="background:#161C30"></span>
-    <span style="background:#13192B"></span>
-    <span style="background:#0F1424"></span>
-    <span style="background:#0B111F"></span>
-    <span style="background:#0A101D"></span>
-    <span style="background:#080D19"></span>
-  </div>
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>Τι χρώμα είχε<br>ο ουρανός σήμερα;</h1>
+        <p class="lead">Φωτογραφίστε τον ουρανό και, σε έναν πίνακα με σαράντα οκτώ τετράγωνα, το τετράγωνο εκείνης της ώρας γεμίζει με το χρώμα που πιάσατε. Παίρνει κι ένα όνομα που το βλέπετε αμέσως μπροστά σας, όπως Λεπτός πάγος, Πλακάκι πισίνας ή Ώριμο λωτό.</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6802295390">Δωρεάν στο App Store</a><a class="try" href="#try">Δοκιμάστε τον πίνακα ↓</a></div>
+        <p class="muted small">Δωρεάν. Χωρίς λογαριασμό, χωρίς σύνδεση.</p>
+      </div>
+      <div class="phone"><img src="../img/el/01-board.jpg" alt="Τι χρώμα είχε ο ουρανός σήμερα;" width="600" height="1303" decoding="async"></div>
+    </section>
 
-  <h1>SkyDex</h1>
-  <p class="lede">Συλλέξτε τον ουρανό της ημέρας ως χρώμα.<br>Υπάρχει ένας πίνακας σαράντα οκτώ τετραγώνων και τον γεμίζετε με τον σημερινό ουρανό.</p>
-  <p class="platform">iPhone · iOS 17.0 ή νεότερο</p>
 
-  <div class="board" aria-hidden="true">
-    <span class="bead" style="border-color:#55565A" title="00:00–00:50"></span>
-    <span class="bead" style="border-color:#55565B" title="00:50–01:40"></span>
-    <span class="bead" style="border-color:#55565C" title="01:40–02:30"></span>
-    <span class="bead" style="border-color:#55575D" title="02:30–03:20"></span>
-    <span class="bead" style="border-color:#55575D" title="03:20–04:10"></span>
-    <span class="bead" style="border-color:#56575E" title="04:10–05:00"></span>
-    <span class="bead" style="border-color:#595A64" title="05:00–05:30"></span>
-    <span class="bead" style="border-color:#5C5E69" title="05:30–06:00"></span>
-    <span class="bead" style="border-color:#767B8B" title="06:00–06:30"></span>
-    <span class="bead on" style="background:#99A7C5" title="06:30–07:00 · #99A7C5"></span>
-    <span class="bead" style="border-color:#848B97" title="07:00–07:30"></span>
-    <span class="bead" style="border-color:#7D8998" title="07:30–08:00"></span>
-    <span class="bead on" style="background:#709CCB" title="08:00–08:40 · #709CCB"></span>
-    <span class="bead" style="border-color:#728397" title="08:40–09:20"></span>
-    <span class="bead" style="border-color:#718196" title="09:20–10:00"></span>
-    <span class="bead" style="border-color:#6D7E96" title="10:00–10:40"></span>
-    <span class="bead" style="border-color:#6B7C95" title="10:40–11:20"></span>
-    <span class="bead" style="border-color:#6A7A95" title="11:20–12:00"></span>
-    <span class="bead on" style="background:#1F6FB5" title="12:00–12:40 · #1F6FB5"></span>
-    <span class="bead" style="border-color:#687793" title="12:40–13:20"></span>
-    <span class="bead" style="border-color:#687893" title="13:20–14:00"></span>
-    <span class="bead" style="border-color:#697A93" title="14:00–14:40"></span>
-    <span class="bead" style="border-color:#6B7B94" title="14:40–15:20"></span>
-    <span class="bead" style="border-color:#6F8096" title="15:20–16:00"></span>
-    <span class="bead" style="border-color:#728297" title="16:00–16:20"></span>
-    <span class="bead" style="border-color:#788697" title="16:20–16:40"></span>
-    <span class="bead on" style="background:#7EA5CD" title="16:40–17:00 · #7EA5CD"></span>
-    <span class="bead" style="border-color:#828993" title="17:00–17:20"></span>
-    <span class="bead" style="border-color:#8E8884" title="17:20–17:40"></span>
-    <span class="bead on" style="background:#C1A07E" title="17:40–18:00 · #C1A07E"></span>
-    <span class="bead" style="border-color:#998474" title="18:00–18:15"></span>
-    <span class="bead on" style="background:#D68F56" title="18:15–18:30 · #D68F56"></span>
-    <span class="bead" style="border-color:#9C7B68" title="18:30–18:45"></span>
-    <span class="bead on" style="background:#B95B35" title="18:45–19:00 · #B95B35"></span>
-    <span class="bead" style="border-color:#936E63" title="19:00–19:15"></span>
-    <span class="bead" style="border-color:#896A66" title="19:15–19:30"></span>
-    <span class="bead" style="border-color:#71656F" title="19:30–19:45"></span>
-    <span class="bead" style="border-color:#67636E" title="19:45–20:00"></span>
-    <span class="bead" style="border-color:#64626E" title="20:00–20:15"></span>
-    <span class="bead" style="border-color:#61606B" title="20:15–20:30"></span>
-    <span class="bead" style="border-color:#5D5D68" title="20:30–20:45"></span>
-    <span class="bead" style="border-color:#5A5B65" title="20:45–21:00"></span>
-    <span class="bead on" style="background:#161C30" title="21:00–21:30 · #161C30"></span>
-    <span class="bead" style="border-color:#585A62" title="21:30–22:00"></span>
-    <span class="bead" style="border-color:#56585F" title="22:00–22:30"></span>
-    <span class="bead" style="border-color:#55575D" title="22:30–23:00"></span>
-    <span class="bead" style="border-color:#55575C" title="23:00–23:30"></span>
-    <span class="bead" style="border-color:#55565A" title="23:30–00:00"></span>
-  </div>
-  <p class="caption">Στην κορυφή είναι τα μεσάνυχτα· καθώς κατεβαίνετε, γίνεται μέρα και μετά ξανασκοτεινιάζει. Ένας γεμάτος κύκλος είναι ένας ουρανός που πιάσατε· ένας άδειος δακτύλιος δεν έχει έρθει ακόμη.</p>
+    <section class="reveal" id="try">
+      <h2>Δοκιμάστε τον πίνακα</h2>
+      <p class="muted">Πατήστε ένα τετράγωνο για να δείτε σε ποια ώρα της μέρας ανήκει. Προσθέστε μια φωτογραφία του ουρανού για να γεμίσει το τετράγωνο της τωρινής ώρας, και μετά προχωρήστε τις μέρες για να δείτε πώς αλλάζει ο πίνακας.</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;Δοκιμάστε τον πίνακα&quot;, &quot;lead&quot;: &quot;Πατήστε ένα τετράγωνο για να δείτε σε ποια ώρα της μέρας ανήκει. Προσθέστε μια φωτογραφία του ουρανού για να γεμίσει το τετράγωνο της τωρινής ώρας, και μετά προχωρήστε τις μέρες για να δείτε πώς αλλάζει ο πίνακας.&quot;, &quot;photo&quot;: &quot;Προσθήκη φωτογραφίας ουρανού&quot;, &quot;age&quot;: &quot;Από τη λήψη&quot;, &quot;ageToday&quot;: &quot;Σήμερα&quot;, &quot;ageDay&quot;: &quot;{n} μέρα μετά&quot;, &quot;ageDays&quot;: &quot;{n} μέρες μετά&quot;, &quot;note&quot;: &quot;Ο πίνακας ξεκινά με τους ίδιους ουρανούς-παραδείγματα που έχουν και τα στιγμιότυπα της εφαρμογής. Η φωτογραφία σας διαβάζεται μόνο μέσα σε αυτό το πρόγραμμα περιήγησης και δεν στέλνεται πουθενά. Ο τρόπος που επιλέγεται το χρώμα, το τετράγωνο που γεμίζει και το πόσο γρήγορα ξεθωριάζει λειτουργούν ακριβώς όπως στην εφαρμογή.&quot;, &quot;now&quot;: &quot;Τώρα&quot;, &quot;bands&quot;: [&quot;Μεσάνυχτα&quot;, &quot;Αυγή&quot;, &quot;Μέρα&quot;, &quot;Αργά το απόγευμα&quot;, &quot;Δειλινό&quot;, &quot;Νύχτα&quot;], &quot;emptyTag&quot;: &quot;%@ · ακόμη κενό&quot;, &quot;spot&quot;: &quot;Αυτή η θέση γεμίζει με έναν ουρανό που τραβήχτηκε εκείνο το μέρος της ημέρας. Κάθε φωτογραφία μπαίνει όπως είναι· το χρώμα δεν χρειάζεται να ταιριάζει.&quot;, &quot;sims&quot;: [[&quot;Σινική μελάνη&quot;, &quot;Μελάνι τριμμένο στην πέτρα. Η πιο βαθιά νύχτα.&quot;], [&quot;Νυχτερινή θάλασσα&quot;, &quot;Νερό ιδωμένο από ψηλά, χωρίς φως. Μαύρο με ένα πέπλο μπλε.&quot;], [&quot;Καμένος πάτος κατσαρόλας&quot;, &quot;Το σημάδι που άφησε η φωτιά. Μαύρο χωρίς ίχνος μπλε.&quot;], [&quot;Ξερό μελάνι&quot;, &quot;Μια γραμμή πένας που έμεινε μισή. Μαύρο που κρατά λίγο μπλε.&quot;], [&quot;Βαθύ νερό&quot;, &quot;Το χρώμα εκεί που δεν πατάς. Σκούρο, δροσερό μπλε μαρέν.&quot;], [&quot;Καινούργιο τζιν&quot;, &quot;Ντένιμ που δεν έχει πλυθεί ποτέ. Βαθύ μπλε μαρέν.&quot;], [&quot;Τζάμι νυχτερινού τρένου&quot;, &quot;Το τζάμι αφού περάσουν τα φώτα. Γκρι σχεδόν μπλε μαρέν.&quot;], [&quot;Τζάμι τα μεσάνυχτα&quot;, &quot;Έξω, όταν τραβάς την κουρτίνα. Λίγο πιο μπλε από το μαύρο.&quot;], [&quot;Ξεπλυμένο μελάνι&quot;, &quot;Το νερό όπου ξέπλυνες τα λεκιασμένα δάχτυλα. Ξεθωριασμένο μπλε μαρέν.&quot;], [&quot;Μπλε σχολικής στολής&quot;, &quot;Το μπλε ενός σακακιού που φοριέται χρόνια. Ούτε μαύρο ούτε μπλε.&quot;], [&quot;Βρεγμένο τζιν&quot;, &quot;Μόλις απλωμένη μπουγάδα. Βαθύ, θολό μπλε.&quot;], [&quot;Ράχη σκουμπριού&quot;, &quot;Γαλαζωπό γκρι με ασημένιες ανταύγειες. Ο ουρανός πριν τη βροχή.&quot;], [&quot;Παλιά φόρμα εργασίας&quot;, &quot;Ένα μπλε που έσβησε μετά από χρόνια χρήσης.&quot;], [&quot;Ξεθωριασμένη μπλε κουρτίνα&quot;, &quot;Μια κουρτίνα που είδε πολύ ήλιο. Κουρασμένο μπλε μαρέν.&quot;], [&quot;Θολωμένο τζάμι&quot;, &quot;Από μέσα, το έξω φαίνεται θολό. Γαλαζωπό γκρι.&quot;], [&quot;Πρωινή ομίχλη&quot;, &quot;Ένα πρωί που σβήνει τις κορυφές των κτιρίων. Ανοιχτό γαλαζωπό γκρι.&quot;], [&quot;Βρεγμένο φούτερ&quot;, &quot;Γκρι που σκούρυνε από τη βροχή. Μια συννεφιασμένη αυγή.&quot;], [&quot;Ξεθωριασμένο μοβ πουλόβερ&quot;, &quot;Μοβ που έσβησε από τα πλυσίματα. Η δύση λίγο πριν την αυγή.&quot;], [&quot;Φλούδα ροδάκινου&quot;, &quot;Η χνουδωτή πλευρά. Ανάμεσα σε ροζ και πορτοκαλί.&quot;], [&quot;Γάλα βερίκοκο&quot;, &quot;Γάλα χτυπημένο με βερίκοκο. Πολύ απαλό πορτοκαλί.&quot;], [&quot;Λευκός τοίχος στον ήλιο&quot;, &quot;Το πρωί, ο τοίχος παίρνει για λίγο αυτό το χρώμα.&quot;], [&quot;Σάρκα σολομού&quot;, &quot;Εκείνο το ροζ που χάνεται στο μαγείρεμα.&quot;], [&quot;Γάλα φράουλα&quot;, &quot;Το ροζ αφού το ανακινήσεις.&quot;], [&quot;Άγουρο βερίκοκο&quot;, &quot;Πορτοκαλί όπου το κίτρινο ακόμη υπερισχύει.&quot;], [&quot;Νερό σε ποτήρι&quot;, &quot;Απαλό μπλε που το διαπερνά το φως.&quot;], [&quot;Κρύο νερό βρύσης&quot;, &quot;Το χρώμα των παγωμένων χεριών. Απαλό, δροσερό μπλε.&quot;], [&quot;Λεπτός πάγος&quot;, &quot;Νερό μόλις παγωμένο την άνοιξη. Πολύ απαλό μπλε.&quot;], [&quot;Πορσελάνη&quot;, &quot;Η μπλε ανταύγεια σε ένα λευκό μπολ.&quot;], [&quot;Σιδερωμένο λευκό πουκάμισο&quot;, &quot;Σχεδόν λευκό, με ένα πέπλο μπλε. Ένα πολύ καθαρό μεσημέρι.&quot;], [&quot;Αφρός απορρυπαντικού&quot;, &quot;Ο λευκός αφρός που επιπλέει στον νεροχύτη.&quot;], [&quot;Ξεβαμμένο τζιν&quot;, &quot;Ντένιμ που άσπρισε στα γόνατα. Το μπλε μιας θολής μέρας.&quot;], [&quot;Μπλε κηρομπογιά&quot;, &quot;Το μπλε που βγαίνει όταν πατάς δυνατά στο χαρτί.&quot;], [&quot;Πλακάκι πισίνας&quot;, &quot;Το μπλε μέσα από το νερό. Μεσημέρι μιας καθαρής μέρας.&quot;], [&quot;Μπλε στυλό&quot;, &quot;Το μπλε μιας γραμμής στο χαρτί.&quot;], [&quot;Βαθιά πισίνα&quot;, &quot;Το νερό στη μεριά που δεν πατάς. Το ζενίθ ενός καλοκαιρινού μεσημεριού.&quot;], [&quot;Νερό με μπλε μπογιά&quot;, &quot;Το δοχείο όπου ξεπλένεις το πινέλο. Το μπλε ενός καθαρού απογεύματος.&quot;], [&quot;Μελάνι πένας&quot;, &quot;Μέσα στο μπουκάλι, ένα μπλε σχεδόν μαύρο.&quot;], [&quot;Μπουκάλι λεμονάδας&quot;, &quot;Απαλό μπλε με λίγο πράσινο.&quot;], [&quot;Θολωμένος καθρέφτης&quot;, &quot;Ο καθρέφτης μετά το ντους. Ανοιχτό γαλαζωπό γκρι.&quot;], [&quot;Ομιχλώδες γυαλί&quot;, &quot;Θολό γκρι, όσο χρειάζεται για να σβήσει την απέναντι πλευρά.&quot;], [&quot;Ψίχουλα γόμας&quot;, &quot;Η λευκή σκόνη στο γραφείο. Πολύ απαλό γκρι.&quot;], [&quot;Σκόνη κιμωλίας&quot;, &quot;Η λευκότητα που μένει στον αέρα αφού σβήσεις τον πίνακα.&quot;], [&quot;Ξερό τσιμέντο&quot;, &quot;Ένα πάτωμα που έχει στεγνώσει από καιρό. Επίπεδο ανοιχτό γκρι.&quot;], [&quot;Κρύα στάχτη&quot;, &quot;Ό,τι μένει μετά τη φωτιά. Το συνηθισμένο γκρι μιας συννεφιασμένης μέρας.&quot;], [&quot;Θαμπό τζάμι&quot;, &quot;Ένα χρώμα που μένει όσο κι αν το καθαρίσεις. Γαλαζωπό μεσαίο γκρι.&quot;], [&quot;Βρεγμένο χαρτόκουτο&quot;, &quot;Ένα κουτί στη βροχή. Γκρι με ζεστό τόνο.&quot;], [&quot;Σβηστή οθόνη&quot;, &quot;Το μαυριδερό γκρι μόλις κλείσει η οθόνη.&quot;], [&quot;Καμένο σπίρτο&quot;, &quot;Έμεινε μόνο η μαυρισμένη κεφαλή. Σκούρο μοβ γκρι.&quot;], [&quot;Νερό από πιάτα&quot;, &quot;Χλιαρό νερό με λίπος στην επιφάνεια. Θολό γκρι.&quot;], [&quot;Νερό βρασμένης μπουγάδας&quot;, &quot;Λευκό νερό που αχνίζει. Ανοιχτό γκρι.&quot;], [&quot;Λεπίδα μαχαιριού&quot;, &quot;Μέταλλο στο φως. Γαλαζωπό γκρι.&quot;], [&quot;Παλιά τσίγκινη στέγη&quot;, &quot;Η στέγη μιας παλιάς αποθήκης. Το γκριζογάλανο λίγο πριν τη βροχή.&quot;], [&quot;Θάλασσα σε συννεφιά&quot;, &quot;Νερό που καθρεφτίζει τον ουρανό όπως είναι. Σκούρο γκριζογάλανο.&quot;], [&quot;Βρεγμένο τσιμέντο&quot;, &quot;Ένα πάτωμα στη βροχή. Σκούρο, υγρό γκρι.&quot;], [&quot;Μύτη μολυβιού&quot;, &quot;Σκούρο γκρι απλωμένο πλάγια. Ένα βροχερό απόγευμα.&quot;], [&quot;Βρεγμένη άσφαλτος&quot;, &quot;Ο δρόμος μετά από νυχτερινή βροχή. Γκρι σχεδόν μαύρο.&quot;], [&quot;Τοίχος με βρύα&quot;, &quot;Το πράσινο κέρδισε το γκρι. Καμιά φορά, λίγο πριν την καταιγίδα.&quot;], [&quot;Παλιό νόμισμα&quot;, &quot;Μέταλλο φθαρμένο από τα χέρια. Κιτρινωπό γκρι.&quot;], [&quot;Νερό από ρύζι&quot;, &quot;Το πρώτο νερό από το ξέπλυμα του ρυζιού. Ζεστό λευκό.&quot;], [&quot;Τσόφλι αυγού&quot;, &quot;Ένα λευκό που δεν είναι εντελώς λευκό.&quot;], [&quot;Παλιό χαρτί&quot;, &quot;Οι σελίδες ενός παλιού βιβλίου. Κιτρινισμένο λευκό.&quot;], [&quot;Παλιά εφημερίδα&quot;, &quot;Χαρτί που το έκαψε ο ήλιος. Ανάμεσα σε γκρι και κίτρινο.&quot;], [&quot;Σκονισμένο τζάμι&quot;, &quot;Ένα θολό κιτρινωπό που σε κάνει να θες να το καθαρίσεις.&quot;], [&quot;Ρόφημα δημητριακών&quot;, &quot;Θολό μπεζ, πριν κατακαθίσει.&quot;], [&quot;Παλιό κίτρινο δάπεδο&quot;, &quot;Ένα πάτωμα πατημένο χρόνια. Θαμπό κίτρινο.&quot;], [&quot;Βραστό κάστανο&quot;, &quot;Το κίτρινο εσωτερικό ενός ξεφλουδισμένου κάστανου.&quot;], [&quot;Γάλα στον καφέ&quot;, &quot;Μόλις χύθηκε, ακόμη ανακάτευτο.&quot;], [&quot;Σκονισμένο ράφι&quot;, &quot;Ανοιχτό γκριζοκαφέ, όπου το δάχτυλο αφήνει σημάδι.&quot;], [&quot;Ξερή λάσπη&quot;, &quot;Χώμα που αρχίζει να σκάει. Απαλό καφέ.&quot;], [&quot;Κρύο τσάι με γάλα&quot;, &quot;Ένα φλιτζάνι μισοτελειωμένο. Θολό ροζ καφέ.&quot;], [&quot;Βρεγμένο χαρτόνι&quot;, &quot;Χαρτί φουσκωμένο από τη βροχή. Το χρώμα ενός θολού δειλινού.&quot;], [&quot;Βρεγμένο ξύλινο ντεκ&quot;, &quot;Ξύλο που σκούρυνε από την υγρασία.&quot;], [&quot;Τούβλο με στάχτη&quot;, &quot;Εκεί που ζεστάθηκε από τη φωτιά. Σκούρο κοκκινωπό γκρι.&quot;], [&quot;Λεκές καφέ&quot;, &quot;Ο κύκλος που άφησε το φλιτζάνι.&quot;], [&quot;Φλούδα κόκκινου φασολιού&quot;, &quot;Φασόλια μουλιασμένα πολλή ώρα. Σκούρο μοβ γκρι.&quot;], [&quot;Αλεύρι καβουρδισμένης σόγιας&quot;, &quot;Επιφάνεια πασπαλισμένη με αλεύρι σόγιας. Απαλό καφετί μπεζ.&quot;], [&quot;Κρόκος αυγού&quot;, &quot;Λίγο πριν σπάσει. Έντονο κίτρινο.&quot;], [&quot;Κόρα ψωμιού του τοστ&quot;, &quot;Εκεί όπου το κίτρινο γίνεται καφέ.&quot;], [&quot;Φλούδα μανταρινιού&quot;, &quot;Εκείνο το πορτοκαλί, πριν το ξεφλουδίσεις.&quot;], [&quot;Ψητός σολομός&quot;, &quot;Ροζ πορτοκαλί, ψημένο στην επιφάνεια.&quot;], [&quot;Αποξηραμένο λωτό&quot;, &quot;Αποξηραμένο λωτό με λευκή πούδρα. Θαμπό πορτοκαλί.&quot;], [&quot;Θράκα&quot;, &quot;Όχι η φλόγα, αλλά το κάρβουνο που κοκκινίζει.&quot;], [&quot;Ώριμο λωτό&quot;, &quot;Κόκκινο πορτοκαλί, λίγο πριν σκάσει.&quot;], [&quot;Σάλτσα τοκμπόκι&quot;, &quot;Το κόκκινο αφού δέσει. Το πιο έντονο δειλινό.&quot;], [&quot;Σάρκα καρπουζιού&quot;, &quot;Η καρδιά, το πιο γλυκό σημείο. Κόκκινο ροζ.&quot;], [&quot;Μαρμελάδα τριαντάφυλλο&quot;, &quot;Πέταλα ζαχαρωμένα. Θαμπό ροζ κόκκινο.&quot;], [&quot;Κόκκινο τούβλο&quot;, &quot;Ένας τοίχος που δέχτηκε βροχή για χρόνια.&quot;], [&quot;Σβησμένη θράκα&quot;, &quot;Φωτιά σκεπασμένη με στάχτη. Σκούρο κοκκινοκαφέ.&quot;], [&quot;Φλούδα δαμάσκηνου&quot;, &quot;Κόκκινο μοβ με λευκή πούδρα.&quot;], [&quot;Σούπα κόκκινων φασολιών&quot;, &quot;Πηχτό κοκκινοκαφέ, πριν μπουν τα ρυζοκεφτεδάκια.&quot;], [&quot;Υπόλειμμα κρασιού&quot;, &quot;Το σκούρο μοβ που έμεινε στον πάτο του ποτηριού.&quot;], [&quot;Μαραμένη πασχαλιά&quot;, &quot;Το θολό μοβ ενός λουλουδιού που ξεραίνεται.&quot;], [&quot;Γάλα μύρτιλο&quot;, &quot;Ένα λιλά ανακατεμένο μισό.&quot;], [&quot;Φλούδα σταφυλιού&quot;, &quot;Βαθύ μοβ, ακόμη υγρό από το πλύσιμο.&quot;], [&quot;Φλούδα μελιτζάνας&quot;, &quot;Μαυριδερό μοβ που ρουφά το φως. Το τελευταίο χρώμα της μέρας.&quot;]]}"></div>
+    </section>
 
-  <h2>Ο πίνακας είναι το σήμερα</h2>
-  <p>Τα σαράντα οκτώ τετράγωνα είναι <strong>τα χρώματα από τα οποία θα περάσει ο σημερινός ουρανός</strong>. Υπολογίζονται ξανά κάθε μέρα από την πραγματική ανατολή και δύση του ηλίου εκεί που βρίσκεστε και την πρόγνωση της ημέρας για σύννεφα και βροχή. Έτσι ένα τετράγωνο που ήταν γεμάτο χθες μπορεί να είναι άδειο σήμερα. Αυτό που σας λέει ο πίνακας δεν είναι πόσους έχετε συλλέξει, αλλά <strong>πόσο από το σήμερα μπορείτε να δείξετε</strong>.</p>
-  <p>Φωτογραφίστε τον ουρανό τώρα και <strong>το τετράγωνο εκείνης της ώρας</strong> γεμίζει με το χρώμα που πιάσατε. Αν βγει διαφορετικό από το αναμενόμενο, μπαίνει παρ' όλα αυτά: η πρόγνωση είναι εικασία· η φωτογραφία ήταν πραγματικά εκεί.</p>
-  <p><strong>Τίποτα δεν κρίνεται.</strong> Ούτε επιτυχία ούτε αποτυχία, καμία ανοχή. Το γκρι μιας συννεφιασμένης μέρας είναι κι αυτό το χρώμα του ουρανού της μέρας.</p>
+    <section class="problem reveal">
+      <h2>Βλέπετε τον ουρανό κάθε μέρα, αλλά δεν θυμάστε κανένα χρώμα</h2>
+      <p>Ο ουρανός στον δρόμο για τη δουλειά, ο ουρανός όταν βγήκατε μετά το φαγητό: ως το βράδυ, δεν θυμάστε τι χρώμα είχαν. Οι φωτογραφίες του ουρανού που τραβήξατε χάνονται ανάμεσα σε όλες τις άλλες. Το SkyDex τις μαζεύει ως χρώματα και απλώνει σε έναν μόνο πίνακα τη διαδρομή που έκανε ο ουρανός σήμερα.</p>
+    </section>
 
-  <h2>Κάθε χρώμα παίρνει όνομα</h2>
-  <p>Η εφαρμογή σάς λέει με δύο τρόπους τι χρώμα έχει ο ουρανός σας, γραμμένους στα κορεατικά. Πρώτα έρχεται <strong>μια σύγκριση που μπορείτε να φανταστείτε</strong> και από κάτω <strong>ένα όνομα με πηγή</strong>. Το «Usuhanairo» είναι η πιο ακριβής απάντηση, αλλά σχεδόν κανείς δεν βλέπει χρώμα σε αυτή τη λέξη, και ένα όνομα που δεν το βλέπεις δεν κάνει τη δουλειά ενός ονόματος.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Κάθε ουρανός παίρνει όνομα</h2>
+        <p>Κάθε χρώμα παίρνει πρώτα ένα όνομα που το βλέπετε με τη φαντασία, όπως Λεπτός πάγος, Πλακάκι πισίνας ή Ώριμο λωτό. Από κάτω ακολουθεί ένα όνομα με προέλευση: ένα παραδοσιακό κορεατικό ή ιαπωνικό χρώμα, μια χρωστική ή ένα χρώμα του διαδικτύου.<br>Όταν η αντιστοιχία είναι κοντινή γράφει Όνομα· όταν δεν είναι, γράφει τίμια Πλησιέστερο όνομα.</p>
+      </div>
+      <div class="phone"><img src="../img/el/02-name.jpg" alt="Κάθε ουρανός παίρνει όνομα" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <div class="names">
-    <div class="name">
-      <span class="swatch" style="background:#7E90B6"></span>
-      <span>
-        <div class="simile">Ξεθωριασμένη ναυτικού μπλε κουρτίνα</div>
-        <div class="real">Usuhanairo · παραδοσιακό ιαπωνικό χρώμα 薄花色</div>
-      </span>
-    </div>
-    <div class="name">
-      <span class="swatch" style="background:#D68F55"></span>
-      <span>
-        <div class="simile">Κόρα φρυγανιάς</div>
-        <div class="real">Πορτοκαλί του καδμίου · χρωστική</div>
-      </span>
-    </div>
-    <div class="name">
-      <span class="swatch" style="background:#1C6DB4"></span>
-      <span>
-        <div class="simile">Νερό με ανακατεμένο μπλε χρώμα</div>
-        <div class="real">Cheongsaek · παραδοσιακό κορεατικό χρώμα</div>
-      </span>
-    </div>
-  </div>
-  <p>Τα ονόματα με πηγή προέρχονται από παραδοσιακά κορεατικά και ιαπωνικά χρώματα, χρωστικές και τυπικές χρωματικές σειρές, και κάθε τιμή ελέγχθηκε με την πηγή της. Η εφαρμογή είναι και ειλικρινής για το πόσο κοντά είναι: όταν η αντιστοιχία είναι αρκετά στενή λέει «το όνομα είναι», και όταν δεν είναι, «το πλησιέστερο όνομα είναι».</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Αφήστε μια γραμμή</h2>
+        <p>Μόλις τραβήξετε τη φωτογραφία, ανοίγει μια κάρτα. Γράψτε τι σκεφτήκατε κοιτάζοντας ψηλά, και θα ξαναεμφανίζεται πάνω από τον ουρανό κάθε φορά που πατάτε εκείνο το τετράγωνο στον πίνακα.<br>Μπορείτε επίσης να απλώσετε πάνω σε αυτή τη φωτογραφία το χρώμα του ουρανού μιας άλλης μέρας και να μοιραστείτε το αποτέλεσμα ως εικόνα.</p>
+      </div>
+      <div class="phone"><img src="../img/el/03-card.jpg" alt="Αφήστε μια γραμμή" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>Τα γεμάτα τετράγωνα γερνούν</h2>
-  <p>Μια φωτογραφία κρατά το αληθινό της χρώμα για μία εβδομάδα και μετά ξεθωριάζει αργά τις επόμενες οκτώ εβδομάδες. Δεν διαγράφεται και δεν χάνεται ποτέ τελείως. Φωτογραφίστε ξανά τον ουρανό εκείνη την ώρα και το τετράγωνο επανέρχεται αμέσως σε πλήρες χρώμα.</p>
-  <p>Δεν είναι ποινή. Δεν υπάρχει σερί που να σπάσει ούτε κάτι να ξανακερδίσετε. Είναι απλώς ένας ειλικρινής τρόπος για έναν πίνακα φτιαγμένο από ουρανό να πει «εκείνος ο ουρανός ήταν πριν από λίγο καιρό».</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Τα άδεια τετράγωνα δείχνουν τον δρόμο</h2>
+        <p>Πατήστε ένα άδειο τετράγωνο για να μάθετε σε ποια ώρα της μέρας αντιστοιχεί και ποιο χρώμα να αναζητήσετε. Σας λέει επίσης πώς είναι ο ουρανός εκείνη την ώρα μια μέρα χωρίς σύννεφα, σύμφωνα με την ανατολή και τη δύση του ήλιου εκεί που βρίσκεστε.<br>Το χρώμα δεν χρειάζεται να ταιριάζει. Το γκρι μιας συννεφιασμένης μέρας είναι κι αυτό το χρώμα του ουρανού εκείνης της μέρας.</p>
+      </div>
+      <div class="phone"><img src="../img/el/05-empty.jpg" alt="Τα άδεια τετράγωνα δείχνουν τον δρόμο" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>Ίδια ώρα, άλλος ουρανός</h2>
-  <p>Οι μέρες επαναλαμβάνονται. Το ίδιο ξυπνητήρι, η ίδια διαδρομή, το ίδιο παράθυρο. Μόνο ο ουρανός από πάνω δεν είναι ποτέ ο ίδιος δύο φορές. Η οθόνη <strong>Επαναλήψεις</strong> παραθέτει τις μέρες που βρεθήκατε εκεί την ίδια ώρα, ώστε να το δείτε. Η σειρά είναι η επανάληψη· τα χρώματα είναι το κομμάτι που δεν επαναλαμβάνεται ποτέ.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Ιστορικό, παλέτα, επαναλήψεις</h2>
+        <p>Δείτε τους ουρανούς σας με τη σειρά και συγκεντρώστε τα χρώματά σας σε παλέτες ανά οικογένεια, όπως Μπλε, Γκρι και Χρώμα άμμου. Φωτογραφίστε την ίδια ώρα μια άλλη μέρα, και οι δύο ουρανοί στέκονται δίπλα δίπλα.<br>Τα γραφικά στοιχεία της οθόνης αφετηρίας δείχνουν με μια ματιά τον σημερινό πίνακα και τον σημερινό ουρανό.</p>
+      </div>
+      <div class="phone"><img src="../img/el/04-palette.jpg" alt="Ιστορικό, παλέτα, επαναλήψεις" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>Widgets</h2>
-  <p><strong>Ο σημερινός πίνακας</strong> μοιάζει ακριβώς με της εφαρμογής: σαράντα οκτώ τετράγωνα, κύκλοι για τα γεμάτα και δακτύλιοι για τα άδεια. Ο <strong>σημερινός ουρανός</strong> δείχνει τη φωτογραφία που τραβήξατε σήμερα με το όνομα του χρώματός της και λειτουργεί και στην οθόνη κλειδώματος.</p>
+    <section class="reveal">
+      <h2>Τρία βήματα για να ξεκινήσετε</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>Κοιτάξτε ψηλά</h3><p>Πατήστε το κουμπί της κάμερας κάτω από τον πίνακα και αφήστε τον ουρανό να γεμίσει το τετράγωνο κάδρο.</p></li>
+<li class="card"><span class="n">2</span><h3>Ένα τετράγωνο γεμίζει</h3><p>Το τετράγωνο της τωρινής ώρας παίρνει το χρώμα που πιάσατε, κι ένα όνομα.</p></li>
+<li class="card"><span class="n">3</span><h3>Αφήστε μια γραμμή</h3><p>Στην κάρτα που ανοίγει, γράψτε τι σκεφτήκατε βλέποντας εκείνον τον ουρανό.</p></li></ol>
+    </section>
 
-  <h2>Παραμένει δικό σας</h2>
-  <div class="quiet">
-    <p>Χωρίς λογαριασμό, χωρίς δικό μας διακομιστή. Οι φωτογραφίες και τα χρώματά σας μένουν στον χώρο αποθήκευσης της εφαρμογής στη συσκευή σας και, αν έχετε συνδεθεί, στο δικό σας iCloud. Δεν στέλνονται ποτέ στον προγραμματιστή. Χωρίς διαφημίσεις, χωρίς παρακολούθηση, χωρίς ανάλυση τρίτων.</p>
-    <p>Η τοποθεσία χρησιμοποιείται μόνο για την ανατολή, τη δύση και τη σημερινή πρόγνωση και ζητείται με ακρίβεια χιλιομέτρων. Η εφαρμογή λειτουργεί μια χαρά αν πείτε όχι. Οι λεπτομέρειες βρίσκονται στην <a href="privacy.html">Πολιτική απορρήτου</a>.</p>
-  </div>
+    <section class="reveal" id="commands">
+      <h2>Πώς μοιράζει ο πίνακας τη μέρα</h2>
+      <div class="card table">
+        <dl><div><dt>Μεσάνυχτα · 00:00–05:00</dt><dd>έξι τετράγωνα</dd></div><div><dt>Αυγή · 05:00–08:00</dt><dd>έξι τετράγωνα</dd></div><div><dt>Μέρα · 08:00–16:00</dt><dd>δώδεκα τετράγωνα</dd></div><div><dt>Αργά το απόγευμα · 16:00–18:00</dt><dd>έξι τετράγωνα</dd></div><div><dt>Δειλινό · 18:00–21:00</dt><dd>δώδεκα τετράγωνα, ένα κάθε 15 λεπτά</dd></div><div><dt>Νύχτα · 21:00–24:00</dt><dd>έξι τετράγωνα</dd></div></dl>
+      </div>
+      <p class="muted">Γύρω στο δειλινό, όταν ο ουρανός αλλάζει γρήγορα, τα τετράγωνα είναι πυκνά· στα βαθιά της νύχτας, όταν μένει για ώρες ίδιος, είναι αραιά. Πάνω πάνω βρίσκονται τα μεσάνυχτα, και προς τα κάτω κυλά η μέρα.</p>
+    </section>
+
+
+
+    <section class="reveal" id="faq">
+      <h2>Συχνές ερωτήσεις</h2>
+      <div class="faq"><details><summary>Πώς γεμίζει ένα τετράγωνο;</summary><p>Ένας ουρανός που φωτογραφίζετε σήμερα γεμίζει το τετράγωνο της ώρας λήψης, ακόμη κι αν το χρώμα βγει διαφορετικό από ό,τι περιμένατε. Έτσι ήταν πράγματι ο ουρανός εκείνη την ώρα. Οι ουρανοί προηγούμενων ημερών μπαίνουν με βάση το χρώμα: αν κάποιος είναι αρκετά κοντά στο χρώμα ενός τετραγώνου, το γεμίζει, και κάθε ουρανός γεμίζει μόνο ένα τετράγωνο.</p></details>
+<details><summary>Ένα τετράγωνο που χθες ήταν γεμάτο σήμερα είναι άδειο.</summary><p>Ο πίνακας είναι πάντα το σήμερα. Ένα τετράγωνο που το γέμισε ένας χθεσινός ουρανός λόγω ώρας, με την αλλαγή της μέρας αντιστοιχίζεται ξανά μόνο με βάση το χρώμα. Γι' αυτό κάποιες μέρες ο πίνακας είναι σχεδόν γεμάτος και κάποιες φαίνεται άδειος. Οι φωτογραφίες σας δεν χάθηκαν: όλοι οι ουρανοί είναι στο Ιστορικό, και με σειρά χρώματος στην Παλέτα.</p></details>
+<details><summary>Τα γεμάτα τετράγωνα ξεθωριάζουν.</summary><p>Είναι σκόπιμο. Μια φωτογραφία κρατά το αληθινό της χρώμα για μία εβδομάδα και μετά ξεθωριάζει αργά μέσα στις επόμενες οκτώ εβδομάδες. Δεν διαγράφεται και δεν σβήνει ποτέ εντελώς. Φωτογραφίστε ξανά τον ουρανό εκείνη την ώρα και το τετράγωνο ξαναπαίρνει αμέσως όλο του το χρώμα. Δεν υπάρχει σερί που μπορεί να σπάσει ούτε πόντοι να ξανακερδίσετε.</p></details>
+<details><summary>Πρέπει να ταιριάζει το χρώμα;</summary><p>Όχι. Δεν υπάρχει επιτυχία ή αποτυχία. Κάθε φωτογραφία αποθηκεύεται, και το γκρι μιας συννεφιασμένης μέρας είναι κι αυτό το χρώμα του ουρανού εκείνης της μέρας.</p></details>
+<details><summary>Γιατί ζητά την τοποθεσία μου;</summary><p>Μόνο για να σας δείξει, όταν πατάτε ένα άδειο τετράγωνο, το χρώμα ενός ανέφελου ουρανού εκείνη την ώρα, σύμφωνα με την ανατολή και τη δύση του ήλιου εκεί που βρίσκεστε. Χρησιμοποιεί μόνο μια κατά προσέγγιση τοποθεσία, με ακρίβεια χιλιομέτρου, και οι συντεταγμένες δεν επισυνάπτονται ποτέ στις φωτογραφίες. Αν αρνηθείτε, όλα λειτουργούν κανονικά, με τη Σεούλ ως σημείο αναφοράς.</p></details>
+<details><summary>Μπορώ να προσθέσω έναν ουρανό από τη βιβλιοθήκη μου;</summary><p>Ναι. Ένας ουρανός που επιλέγετε από τις Φωτογραφίες αντί για την κάμερα κόβεται κι αυτός σε τετράγωνο και γεμίζει το τετράγωνο της τωρινής ώρας, όπως ένας που μόλις τραβήξατε.</p></details>
+<details><summary>Πώς διαγράφω μια φωτογραφία;</summary><p>Ανοίξτε τη φωτογραφία και πατήστε Διαγραφή, ή σύρετέ την προς τα αριστερά στο Ιστορικό. Διαγράφεται ταυτόχρονα από τη συσκευή και από το iCloud. Αν διαγράψετε την εφαρμογή, το αντίγραφο στο iCloud μένει, οπότε οι ουρανοί σας επιστρέφουν όταν την εγκαταστήσετε ξανά.</p></details>
+<details><summary>Τι γίνεται αν αλλάξω συσκευή;</summary><p>Οι ουρανοί σας φυλάσσονται στο δικό σας iCloud και σας ακολουθούν σε μια νέα συσκευή με τον ίδιο λογαριασμό Apple. Δεν υπάρχει λογαριασμός ούτε διακομιστής, και οι φωτογραφίες και τα χρώματά σας δεν στέλνονται ποτέ στον προγραμματιστή. Χωρίς διαφημίσεις, χωρίς παρακολούθηση.</p></details>
+<details><summary>Είναι πραγματικά δωρεάν;</summary><p>Ναι, όλες οι λειτουργίες είναι δωρεάν. Αν σας αρέσει, μπορείτε να αφήσετε ένα φιλοδώρημα στον προγραμματιστή μέσα από την εφαρμογή, αλλά το φιλοδώρημα δεν ξεκλειδώνει τίποτα.</p></details>
+<details><summary>Σε ποιες συσκευές λειτουργεί;</summary><p>Σε iPhone με iOS 17.0 ή νεότερο, μόνο σε κατακόρυφο προσανατολισμό.</p></details></div>
+      <p class="contact">Σφάλματα, περίεργη συμπεριφορά ή ό,τι άλλο θέλετε να πείτε: γράψτε στο <a href="mailto:leeo@kakao.com">leeo@kakao.com</a>. Αν αναφέρετε τι κάνατε εκείνη τη στιγμή και ποια έκδοση iOS έχετε, το πρόβλημα βρίσκεται πολύ πιο εύκολα.</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>Αύριο το πρωί,<br>κοιτάξτε ψηλά μία φορά μόνο</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6802295390">Δωρεάν στο App Store</a>
+    </section>
+  </main>
 
   <footer>
-    <a href="support.html">Υποστήριξη</a> ·
-    <a href="privacy.html">Πολιτική απορρήτου</a> ·
-    <a href="https://github.com/M1zz/SkyDex">GitHub</a>
-    <p style="margin:10px 0 0">Δεδομένα καιρού από το <a href="https://weatherkit.apple.com/legal-attribution.html">Apple Καιρός</a>.</p>
+    <nav id="languages" class="langs" aria-label="Γλώσσα"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="../es/" hreflang="es" lang="es">Español</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../th/" hreflang="th" lang="th">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el" aria-current="page">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="../id/" hreflang="id" lang="id">Indonesia</a>
+<a href="../nb/" hreflang="nb" lang="nb">Norsk</a>
+<a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">Πολιτική απορρήτου</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 SkyDex</p>
   </footer>
 
-</main>
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>

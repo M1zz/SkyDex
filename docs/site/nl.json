@@ -1,0 +1,541 @@
+{
+  "title": "SkyDex: een bord met de kleuren van de lucht, foto voor foto",
+  "description": "Elke foto van de lucht vult een van de achtenveertig luchtkleuren van de dag en krijgt een naam die erbij past. Gratis, zonder account.",
+  "hero": {
+    "headline": "Welke kleur had\nde lucht vandaag?",
+    "lead": "Fotografeer de lucht, en op een bord van achtenveertig vakjes vult het vakje van dat moment zich met de kleur die je vastlegde. Het krijgt ook een naam die je meteen voor je ziet, zoals Dun ijs, Zwembadtegel of Rijpe kaki.",
+    "cta": "Gratis in de App Store",
+    "note": "Gratis. Geen account, niet inloggen."
+  },
+  "demo": {
+    "title": "Probeer het bord",
+    "lead": "Tik op een vakje om te zien bij welk moment van de dag het hoort. Voeg een foto van de lucht toe om het vakje van nu te vullen, en spoel daarna een paar dagen door om te zien hoe het bord verandert.",
+    "photo": "Foto van de lucht toevoegen",
+    "age": "Sinds de foto",
+    "ageToday": "Vandaag",
+    "ageDay": "{n} dag later",
+    "ageDays": "{n} dagen later",
+    "note": "Het bord begint met dezelfde voorbeeldluchten als de schermafbeeldingen van de app. Je foto wordt alleen in deze browser gelezen en nergens naartoe gestuurd. Hoe de kleur wordt gekozen, welk vakje hij vult en hoe snel hij vervaagt, werkt precies zoals in de app.",
+    "now": "Nu",
+    "bands": [
+      "Middernacht",
+      "Dageraad",
+      "Dag",
+      "Late middag",
+      "Zonsondergang",
+      "Nacht"
+    ],
+    "emptyTag": "%@ · Nog leeg",
+    "spot": "Deze plek wordt gevuld met een lucht die in dat deel van de dag is vastgelegd. Elke foto komt erin zoals hij is; de kleur hoeft niet te kloppen.",
+    "sims": [
+      [
+        "Inktsteenzwart",
+        "Inkt gewreven op een inktsteen. De diepste nacht."
+      ],
+      [
+        "Nachtzee",
+        "Water van bovenaf, ver van elk licht. Zwart met een laagje blauw."
+      ],
+      [
+        "Aangebrande pan",
+        "Wat overblijft na het aanbranden. Zwart zonder zweem van blauw."
+      ],
+      [
+        "Opgedroogde inkt",
+        "Een half geschreven vulpenlijn. Zwart waar nog wat blauw in zit."
+      ],
+      [
+        "Diep water",
+        "De kleur van waar je de bodem niet raakt. Donker, koel marineblauw."
+      ],
+      [
+        "Nieuwe spijkerbroek",
+        "Denim die nog nooit gewassen is. Diep marineblauw."
+      ],
+      [
+        "Nachttreinraam",
+        "Glas nadat de lichtjes voorbij zijn. Grijs dat naar marineblauw neigt."
+      ],
+      [
+        "Middernachtraam",
+        "Buiten, als je het gordijn opzij schuift. Iets blauwer dan zwart."
+      ],
+      [
+        "Uitgespoelde inkt",
+        "Water waarin je inkt van je handen spoelde. Vaag marineblauw."
+      ],
+      [
+        "Schooluniformblauw",
+        "Het marineblauw van een jasje dat jaren gedragen is. Niet zwart, niet blauw."
+      ],
+      [
+        "Natte spijkerbroek",
+        "Net aan de lijn gehangen. Diep, troebel blauw."
+      ],
+      [
+        "Makreelrug",
+        "Zilverig blauwgrijs. De lucht voor de regen."
+      ],
+      [
+        "Oude werkkleding",
+        "Blauw dat dof is geworden na jaren dragen."
+      ],
+      [
+        "Verschoten blauw gordijn",
+        "Een gordijn dat te veel zon heeft gezien. Marineblauw zonder kracht."
+      ],
+      [
+        "Beslagen raam",
+        "Wazig als je van binnen naar buiten kijkt. Blauwig grijs."
+      ],
+      [
+        "Ochtendmist",
+        "Een ochtend die de bovenkant van gebouwen uitwiste. Licht blauwig grijs."
+      ],
+      [
+        "Natte hoodie",
+        "Grijs, donker geworden van opgezogen regen. Een bewolkte dageraad."
+      ],
+      [
+        "Verschoten paarse trui",
+        "Paars, dof van vele wasbeurten. Het westen vlak voor zonsopgang."
+      ],
+      [
+        "Perzikschil",
+        "De donzige kant. Tussen roze en oranje in."
+      ],
+      [
+        "Abrikozenmelk",
+        "Abrikoos door melk gemengd. Het lichtste oranje."
+      ],
+      [
+        "Witte muur in de zon",
+        "Elke ochtend krijgt de muur even deze kleur."
+      ],
+      [
+        "Zalmroze",
+        "Het roze dat verdwijnt als je het bakt."
+      ],
+      [
+        "Aardbeienmelk",
+        "Het roze na flink schudden."
+      ],
+      [
+        "Onrijpe abrikoos",
+        "Oranje waarin het geel nog wint."
+      ],
+      [
+        "Glas water",
+        "Lichtblauw waar het licht doorheen is gegaan."
+      ],
+      [
+        "Koud kraanwater",
+        "De kleur van koude handen. Licht, koel blauw."
+      ],
+      [
+        "Dun ijs",
+        "Water dat in het voorjaar net bevroren is. Het lichtste blauw."
+      ],
+      [
+        "Porseleinen kom",
+        "De zweem van blauw in een witte kom."
+      ],
+      [
+        "Gestreken wit overhemd",
+        "Bijna wit, met een laagje blauw. Een heel heldere middag."
+      ],
+      [
+        "Afwassop",
+        "Wit schuim op het afwaswater."
+      ],
+      [
+        "Verschoten spijkerbroek",
+        "Denim dat wit is geworden bij de knieën. Het blauw van een heiige dag."
+      ],
+      [
+        "Blauw waskrijt",
+        "Het blauw dat je krijgt als je hard op tekenpapier drukt."
+      ],
+      [
+        "Zwembadtegel",
+        "Blauw gezien door water. Middag op een heldere dag."
+      ],
+      [
+        "Blauwe balpen",
+        "Het blauw van een lijn op papier."
+      ],
+      [
+        "Diepe-badblauw",
+        "Het water in het diepe. De top van de lucht op een zomermiddag."
+      ],
+      [
+        "Penseelwaterblauw",
+        "Het potje waarin je penselen spoelt. Blauw van een heldere middag."
+      ],
+      [
+        "Vulpeninkt",
+        "In de fles een blauw dat bijna zwart is."
+      ],
+      [
+        "Limonadeflesgroen",
+        "Lichtblauw met wat groen erin."
+      ],
+      [
+        "Beslagen spiegel",
+        "De spiegel na het douchen. Licht blauwig grijs."
+      ],
+      [
+        "Matglas",
+        "Wazig grijs dat de overkant laat vervagen."
+      ],
+      [
+        "Gumkruimels",
+        "Wit stof verzameld op een bureau. Het lichtste grijs."
+      ],
+      [
+        "Krijtstof",
+        "Het wit dat in de lucht hangt na het bord uitvegen."
+      ],
+      [
+        "Droog cement",
+        "Een vloer die lang geleden is uitgehard. Vlak, lichtgrijs."
+      ],
+      [
+        "Koude as",
+        "Wat overblijft als alles is opgebrand. Het gewone grijs van een bewolkte dag."
+      ],
+      [
+        "Troebele ruit",
+        "Hij blijft deze kleur, hoe je ook poetst. Middengrijs met een zweem van blauw."
+      ],
+      [
+        "Nat karton",
+        "Een doos die in de regen stond. Grijs met wat warmte."
+      ],
+      [
+        "Uitgezet scherm",
+        "Het zwartgrijs vlak nadat je het uitzet."
+      ],
+      [
+        "Opgebrande lucifer",
+        "Een houtje waarvan alleen de kop zwart is. Donker grijspaars."
+      ],
+      [
+        "Afwaswater",
+        "Lauw water met vet erop. Troebel grijs."
+      ],
+      [
+        "Kookwaswater",
+        "Dampend wit water. Lichtgrijs."
+      ],
+      [
+        "Messnede",
+        "Staal dat het licht vangt. Grijs met een zweem van blauw."
+      ],
+      [
+        "Oud zinken dak",
+        "Het dak van een oude schuur. Blauwgrijs vlak voor de regen."
+      ],
+      [
+        "Zee bij bewolking",
+        "Water dat de kleur van de lucht heeft overgenomen. Donker blauwgrijs."
+      ],
+      [
+        "Nat cement",
+        "Stoep na de regen. Donker, vochtig grijs."
+      ],
+      [
+        "Potloodgrijs",
+        "Donkergrijs, gearceerd met de zijkant van de punt. Een regenachtige middag."
+      ],
+      [
+        "Nat asfalt",
+        "Een weg na regen in de nacht. Grijs dat bijna zwart is."
+      ],
+      [
+        "Bemoste muur",
+        "Grijs waar groen in kruipt. Soms vlak voor een storm."
+      ],
+      [
+        "Oude munt",
+        "Metaal versleten door vele handen. Gelig grijs."
+      ],
+      [
+        "Rijstspoelwater",
+        "Het eerste water als je rijst wast. Warm wit."
+      ],
+      [
+        "Eierschaal",
+        "Wit dat niet helemaal wit is."
+      ],
+      [
+        "Oud papier",
+        "De binnenbladzijden van een oud boek. Vergeeld wit."
+      ],
+      [
+        "Oude krant",
+        "Papier, verbleekt door de zon. Tussen grijs en geel."
+      ],
+      [
+        "Stoffig raam",
+        "Een wazig geel dat je wilt afvegen."
+      ],
+      [
+        "Graandrankje",
+        "Troebel beige, voordat het bezinkt."
+      ],
+      [
+        "Vergeelde vloermat",
+        "Een vloer die jarenlang is platgedrukt. Troebel geel."
+      ],
+      [
+        "Gekookte kastanje",
+        "Het gele binnenste van een gepelde kastanje."
+      ],
+      [
+        "Melk in koffie",
+        "Net ingeschonken, nog niet geroerd."
+      ],
+      [
+        "Stoffige boekenplank",
+        "Licht grijsbruin waar je vinger een spoor in trekt."
+      ],
+      [
+        "Droge modder",
+        "Aarde die net begint te barsten. Lichtbruin."
+      ],
+      [
+        "Koude melkthee",
+        "Een half leeggedronken kop. Troebel roze-bruin."
+      ],
+      [
+        "Nat bordpapier",
+        "Papier opgezwollen van de regen. De kleur van een bewolkte zonsondergang."
+      ],
+      [
+        "Natte houten vlonder",
+        "Hout, donker geworden van het water dat het opnam."
+      ],
+      [
+        "Beroete baksteen",
+        "Waar het vuur brandde. Donker roodachtig grijs."
+      ],
+      [
+        "Koffievlek",
+        "De ronde vlek die achterblijft als je het kopje optilt."
+      ],
+      [
+        "Gekookte rode boon",
+        "Rode bonen die lang hebben geweekt. Donker paarsig grijs."
+      ],
+      [
+        "Geroosterd sojameel",
+        "Rijstcake gerold in bonenmeel. Zacht bruinig beige."
+      ],
+      [
+        "Eidooier",
+        "Vlak voordat hij breekt. Diep geel."
+      ],
+      [
+        "Broodkorst",
+        "Waar geel overgaat in bruin."
+      ],
+      [
+        "Mandarijnschil",
+        "Dat oranje, voordat je hem pelt."
+      ],
+      [
+        "Gegrilde zalm",
+        "Roze-oranje waar de buitenkant gaar is."
+      ],
+      [
+        "Gedroogde kaki",
+        "Een gedroogde kaki met een wit poederlaagje. Troebel oranje."
+      ],
+      [
+        "Smeulend haardhout",
+        "Niet de vlam, maar de gloeiende kolen."
+      ],
+      [
+        "Rijpe kaki",
+        "Roodoranje, vlak voordat hij openbarst."
+      ],
+      [
+        "Tteokbokki-rood",
+        "Het rood van pittige rijstcakesaus, ingekookt. De diepste zonsondergang."
+      ],
+      [
+        "Watermeloen",
+        "Het zoetste stuk in het midden. Roodachtig roze."
+      ],
+      [
+        "Rozenjam",
+        "Bloemblaadjes ingemaakt in suiker. Troebel roze-rood."
+      ],
+      [
+        "Rode baksteen",
+        "Een muur die jaren regen heeft doorstaan."
+      ],
+      [
+        "Afkoelende houtskool",
+        "Vuur onder een laag as. Donker roodbruin."
+      ],
+      [
+        "Pruimenschil",
+        "Roodpaars met een wit waas."
+      ],
+      [
+        "Rodebonenpap",
+        "Dik roodbruin, voordat de rijstballetjes erin gaan."
+      ],
+      [
+        "Restje wijn",
+        "Donker roodpaars onder in het glas."
+      ],
+      [
+        "Uitgebloeide sering",
+        "Het vale paars van een verdrogende bloem."
+      ],
+      [
+        "Bosbessenmelk",
+        "Lichtpaars, half doorgeroerd."
+      ],
+      [
+        "Druivenschil",
+        "Diep paars, net gewassen en nog nat."
+      ],
+      [
+        "Auberginevel",
+        "Zwartpaars dat het licht opslokt. De laatste kleur van de dag."
+      ]
+    ]
+  },
+  "problem": {
+    "title": "Je kijkt elke dag naar de lucht, maar geen kleur blijft hangen",
+    "text": "De lucht op weg naar je werk, de lucht toen je na de lunch naar buiten liep: 's avonds weet je niet meer welke kleur ze hadden. De luchtfoto's die je wel maakte, raken ondergesneeuwd tussen al je andere foto's. SkyDex verzamelt ze als kleuren en legt de weg die de lucht vandaag aflegde op één bord."
+  },
+  "features": [
+    {
+      "title": "Elke lucht krijgt een naam",
+      "text": "Elke kleur krijgt eerst een naam die je voor je ziet, zoals Dun ijs, Zwembadtegel of Rijpe kaki. Daaronder volgt een naam met een herkomst: een traditionele Koreaanse of Japanse kleur, een pigment of een webkleur.\nLigt de kleur dichtbij, dan staat er Naam. Zo niet, dan staat er eerlijk Dichtstbijzijnde naam.",
+      "shot": "02-name"
+    },
+    {
+      "title": "Laat een regel achter",
+      "text": "Meteen na de foto gaat een kaart open. Schrijf op wat je dacht toen je omhoogkeek, en het zweeft weer boven de lucht zodra je op dat vakje op het bord tikt.\nJe kunt ook de kleur van de lucht van een andere dag over deze foto leggen en het resultaat als afbeelding delen.",
+      "shot": "03-card"
+    },
+    {
+      "title": "Lege vakjes wijzen de weg",
+      "text": "Tik op een leeg vakje en je ziet bij welk moment van de dag het hoort en naar welke kleur je kunt uitkijken. Het vertelt ook hoe de lucht er op dat uur uitziet op een wolkeloze dag, afgestemd op zonsopgang en zonsondergang waar jij bent.\nDe kleur hoeft niet te kloppen. Het grijs van een bewolkte dag is ook de luchtkleur van die dag.",
+      "shot": "05-empty"
+    },
+    {
+      "title": "Logboek, palet, herhalingen",
+      "text": "Blader op volgorde door je luchten en verzamel je kleuren in paletten per familie, zoals blauw, grijs en zandkleurig. Fotografeer hetzelfde uur op een andere dag en de twee staan naast elkaar.\nWidgets op je beginscherm laten in één oogopslag het bord van vandaag en de lucht van vandaag zien.",
+      "shot": "04-palette"
+    }
+  ],
+  "steps": {
+    "title": "Beginnen kost drie stappen",
+    "items": [
+      {
+        "title": "Kijk omhoog",
+        "text": "Tik op de cameraknop onder het bord en laat de lucht het vierkant vullen."
+      },
+      {
+        "title": "Een vakje vult zich",
+        "text": "Het vakje van nu krijgt de kleur die je vastlegde, en een naam."
+      },
+      {
+        "title": "Laat een regel achter",
+        "text": "Schrijf op de kaart die opengaat wat je bij die lucht dacht."
+      }
+    ]
+  },
+  "reference": {
+    "title": "Zo verdeelt het bord de dag",
+    "rows": [
+      [
+        "Middernacht · 00:00–05:00",
+        "zes vakjes"
+      ],
+      [
+        "Dageraad · 05:00–08:00",
+        "zes vakjes"
+      ],
+      [
+        "Dag · 08:00–16:00",
+        "twaalf vakjes"
+      ],
+      [
+        "Late middag · 16:00–18:00",
+        "zes vakjes"
+      ],
+      [
+        "Zonsondergang · 18:00–21:00",
+        "twaalf vakjes, één per 15 minuten"
+      ],
+      [
+        "Nacht · 21:00–24:00",
+        "zes vakjes"
+      ]
+    ],
+    "note": "Rond zonsondergang, als de lucht snel verandert, liggen de vakjes dicht op elkaar. Midden in de nacht, als hij nauwelijks verandert, zijn ze ruim. Bovenaan staat middernacht, en naar beneden loopt de dag verder."
+  },
+  "faq": {
+    "title": "Veelgestelde vragen",
+    "items": [
+      {
+        "q": "Hoe raakt een vakje gevuld?",
+        "a": "Een lucht die je vandaag fotografeert, vult het vakje van het tijdstip waarop je hem vastlegde, ook als de kleur anders uitvalt dan je dacht. Zo zag de lucht er op dat uur nu eenmaal uit. Luchten van eerdere dagen gaan erin op kleur: ligt er een dicht genoeg bij de kleur van een vakje, dan vult hij dat vakje, en elke lucht vult maar één vakje."
+      },
+      {
+        "q": "Een vakje dat gisteren vol was, is vandaag leeg.",
+        "a": "Het bord is altijd vandaag. Een vakje dat een lucht van gisteren op tijdstip vulde, wordt na de dagwissel alleen nog op kleur gekoppeld. Daarom is het bord de ene dag bijna vol en ziet het er de andere dag leeg uit. Je foto's zijn niet weg: elke lucht staat in het Logboek, en op kleurvolgorde in het Palet."
+      },
+      {
+        "q": "Mijn gevulde vakjes vervagen.",
+        "a": "Dat is met opzet. Een foto houdt een week lang zijn echte kleur en vervaagt daarna langzaam over de volgende acht weken. Hij wordt niet gewist en verdwijnt nooit helemaal. Fotografeer de lucht op dat tijdstip opnieuw en het vakje heeft meteen weer volle kleur. Er is geen reeks die kan breken en geen score om terug te winnen."
+      },
+      {
+        "q": "Moet de kleur kloppen?",
+        "a": "Nee. Er is geen geslaagd of gezakt. Elke foto wordt bewaard, en het grijs van een bewolkte dag is ook de luchtkleur van die dag."
+      },
+      {
+        "q": "Waarom vraagt de app om mijn locatie?",
+        "a": "Alleen om je, als je op een leeg vakje tikt, te laten zien hoe een wolkeloze lucht er op dat uur uitziet, afgestemd op zonsopgang en zonsondergang waar jij bent. De app gebruikt alleen een globale locatie, op de kilometer nauwkeurig, en coördinaten worden nooit aan je foto's gehangen. Weiger je, dan werkt alles gewoon, met Seoul als uitgangspunt."
+      },
+      {
+        "q": "Kan ik een lucht uit mijn fotobibliotheek toevoegen?",
+        "a": "Ja. Een lucht die je in Foto's kiest in plaats van met de camera, wordt ook vierkant bijgesneden en vult het vakje van nu, net als een die je ter plekke fotografeert."
+      },
+      {
+        "q": "Hoe wis ik een foto?",
+        "a": "Open de foto en tik op Wis, of veeg hem in het Logboek naar links. Hij verdwijnt tegelijk van je apparaat en uit iCloud. Verwijder je de app, dan blijft de kopie in iCloud staan en komen je luchten terug als je hem opnieuw installeert."
+      },
+      {
+        "q": "Wat gebeurt er als ik een ander apparaat neem?",
+        "a": "Je luchten staan in je eigen iCloud en gaan mee naar een nieuw apparaat met hetzelfde Apple Account. Er is geen account en geen server, en je foto's en kleuren worden nooit naar de ontwikkelaar gestuurd. Geen advertenties, geen tracking."
+      },
+      {
+        "q": "Is het echt gratis?",
+        "a": "Ja, alle functies zijn gratis. Vind je de app fijn, dan kun je de ontwikkelaar in de app een fooi geven, maar een fooi ontgrendelt niets."
+      },
+      {
+        "q": "Op welke apparaten werkt het?",
+        "a": "Op iPhone met iOS 17.0 of later, alleen staand."
+      }
+    ]
+  },
+  "closing": {
+    "headline": "Morgenochtend,\nkijk één keer omhoog",
+    "cta": "Gratis in de App Store"
+  },
+  "ui": {
+    "skip": "Naar de inhoud",
+    "languages": "Taal",
+    "privacy": "Privacybeleid",
+    "contact": "Bugs, vreemd gedrag of iets wat je kwijt wilt: schrijf naar {email}. Vertel erbij wat je aan het doen was en welke iOS-versie je hebt, dan is het probleem veel makkelijker te vinden."
+  }
+}

@@ -1,340 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="th">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SkyDex</title>
-<meta name="description" content="แอป iOS ที่สะสมท้องฟ้าของวันเป็นสี เติมกระดานสี่สิบแปดช่องด้วยท้องฟ้าของวันนี้">
-<link rel="canonical" href="https://m1zz.github.io/SkyDex/th/">
-<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/SkyDex/">
-<link rel="alternate" hreflang="en" href="https://m1zz.github.io/SkyDex/en/">
-<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/SkyDex/en/">
-<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/SkyDex/ja/">
-<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/SkyDex/zh-Hans/">
-<link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/SkyDex/zh-Hant/">
-<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/SkyDex/ru/">
-<link rel="alternate" hreflang="es" href="https://m1zz.github.io/SkyDex/es/">
-<link rel="alternate" hreflang="de" href="https://m1zz.github.io/SkyDex/de/">
-<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/SkyDex/fr/">
-<link rel="alternate" hreflang="it" href="https://m1zz.github.io/SkyDex/it/">
-<link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/SkyDex/pt-BR/">
-<link rel="alternate" hreflang="th" href="https://m1zz.github.io/SkyDex/th/">
-<link rel="alternate" hreflang="vi" href="https://m1zz.github.io/SkyDex/vi/">
-<link rel="alternate" hreflang="cs" href="https://m1zz.github.io/SkyDex/cs/">
-<link rel="alternate" hreflang="da" href="https://m1zz.github.io/SkyDex/da/">
-<link rel="alternate" hreflang="el" href="https://m1zz.github.io/SkyDex/el/">
-<link rel="alternate" hreflang="fi" href="https://m1zz.github.io/SkyDex/fi/">
-<link rel="alternate" hreflang="id" href="https://m1zz.github.io/SkyDex/id/">
-<link rel="alternate" hreflang="nb" href="https://m1zz.github.io/SkyDex/nb/">
-<link rel="alternate" hreflang="nl" href="https://m1zz.github.io/SkyDex/nl/">
-<link rel="alternate" hreflang="pl" href="https://m1zz.github.io/SkyDex/pl/">
-<link rel="alternate" hreflang="sv" href="https://m1zz.github.io/SkyDex/sv/">
-<link rel="alternate" hreflang="tr" href="https://m1zz.github.io/SkyDex/tr/">
-<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/SkyDex/">
-<style>
-  :root {
-    --ink: #16202e;
-    --ink-soft: #5d6773;
-    --paper: #f4f5f7;
-    --card: #ffffff;
-    --line: #e2e5ea;
-    --accent: #2f7bbe;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ink: #eef1f5;
-      --ink-soft: #a2acb8;
-      --paper: #0b111c;
-      --card: #141c28;
-      --line: #26303e;
-      --accent: #7fa4ce;
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    padding: 0 20px 72px;
-    background: var(--paper);
-    color: var(--ink);
-    font: 17px/1.72 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
-      "Pretendard", "Segoe UI", Roboto, sans-serif;
-    -webkit-text-size-adjust: 100%;
-  }
-  main { max-width: 680px; margin: 0 auto; }
-  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
-
-  /* 하루 곡선 그대로 이어붙인 띠 */
-  .strip {
-    display: flex;
-    height: 8px;
-    border-radius: 4px;
-    overflow: hidden;
-    margin: 40px 0 34px;
-  }
-  .strip span { flex: 1 1 0; }
-
-  h1 {
-    font-size: 34px; line-height: 1.25; letter-spacing: -0.03em;
-    margin: 0 0 8px; text-align: center; font-weight: 700;
-  }
-  .lede {
-    margin: 0 auto 8px; text-align: center; color: var(--ink-soft);
-    max-width: 26em;
-  }
-  .platform {
-    text-align: center; color: var(--ink-soft); font-size: 14px;
-    margin: 0 0 36px;
-  }
-
-  /* 판 — 앱과 같은 6×8, 같은 색 */
-  .board {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
-    max-width: 340px;
-    margin: 0 auto 12px;
-  }
-  .bead {
-    aspect-ratio: 1;
-    border-radius: 50%;
-    border: 4px solid transparent;
-    display: block;
-  }
-  .bead.on { border: 0; }
-  .caption {
-    text-align: center; color: var(--ink-soft); font-size: 14px;
-    margin: 0 0 46px;
-  }
-
-  h2 {
-    font-size: 21px; letter-spacing: -0.01em; margin: 46px 0 12px;
-    padding-top: 28px; border-top: 1px solid var(--line);
-  }
-  p { margin: 0 0 14px; }
-  ul { margin: 0 0 14px; padding-left: 1.2em; }
-  li { margin-bottom: 8px; }
-  strong { font-weight: 600; }
-
-  /* 이름 카드 — 앱의 사진 카드 아래에 붙는 것과 같은 순서 */
-  .names { margin: 20px 0 8px; }
-  .name {
-    display: flex; align-items: center; gap: 14px;
-    background: var(--card); border: 1px solid var(--line);
-    border-radius: 16px; padding: 14px 16px; margin-bottom: 10px;
-  }
-  .swatch {
-    width: 46px; height: 46px; border-radius: 12px; flex: 0 0 auto;
-  }
-  .name .simile { font-size: 17px; font-weight: 600; }
-  .name .real { font-size: 13px; color: var(--ink-soft); }
-
-  .quiet {
-    background: var(--card); border: 1px solid var(--line);
-    border-radius: 16px; padding: 18px 20px; margin: 22px 0 8px;
-  }
-  .quiet p:last-child { margin-bottom: 0; }
-
-  footer {
-    margin-top: 60px; padding-top: 26px; border-top: 1px solid var(--line);
-    color: var(--ink-soft); font-size: 15px; text-align: center;
-  }
-  footer a { margin: 0 8px; }
-  nav.langs { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px 14px; margin: 18px 0 0; font-size: 14px; }
-  nav.langs a { color: var(--ink-soft); text-decoration: none; }
-  nav.langs a[aria-current] { color: var(--ink); font-weight: 600; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkyDex: กระดานท้องฟ้าของวันนี้ ที่เติมเต็มทุกครั้งที่ถ่าย</title>
+  <meta name="description" content="ทุกครั้งที่ถ่ายท้องฟ้า หนึ่งในสี่สิบแปดช่องสีท้องฟ้าของวันจะถูกเติม พร้อมชื่อที่คล้ายสีนั้น ใช้ฟรี ไม่ต้องมีบัญชี">
+  <meta name="theme-color" content="#2A74B6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b111c" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6802295390">
+  <link rel="canonical" href="https://m1zz.github.io/SkyDex/th/">
+  <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/SkyDex/">
+  <link rel="alternate" hreflang="en" href="https://m1zz.github.io/SkyDex/en/">
+  <link rel="alternate" hreflang="ja" href="https://m1zz.github.io/SkyDex/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/SkyDex/zh-Hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/SkyDex/zh-Hant/">
+  <link rel="alternate" hreflang="ru" href="https://m1zz.github.io/SkyDex/ru/">
+  <link rel="alternate" hreflang="es" href="https://m1zz.github.io/SkyDex/es/">
+  <link rel="alternate" hreflang="de" href="https://m1zz.github.io/SkyDex/de/">
+  <link rel="alternate" hreflang="fr" href="https://m1zz.github.io/SkyDex/fr/">
+  <link rel="alternate" hreflang="it" href="https://m1zz.github.io/SkyDex/it/">
+  <link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/SkyDex/pt-BR/">
+  <link rel="alternate" hreflang="th" href="https://m1zz.github.io/SkyDex/th/">
+  <link rel="alternate" hreflang="vi" href="https://m1zz.github.io/SkyDex/vi/">
+  <link rel="alternate" hreflang="cs" href="https://m1zz.github.io/SkyDex/cs/">
+  <link rel="alternate" hreflang="da" href="https://m1zz.github.io/SkyDex/da/">
+  <link rel="alternate" hreflang="el" href="https://m1zz.github.io/SkyDex/el/">
+  <link rel="alternate" hreflang="fi" href="https://m1zz.github.io/SkyDex/fi/">
+  <link rel="alternate" hreflang="id" href="https://m1zz.github.io/SkyDex/id/">
+  <link rel="alternate" hreflang="nb" href="https://m1zz.github.io/SkyDex/nb/">
+  <link rel="alternate" hreflang="nl" href="https://m1zz.github.io/SkyDex/nl/">
+  <link rel="alternate" hreflang="pl" href="https://m1zz.github.io/SkyDex/pl/">
+  <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/SkyDex/sv/">
+  <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/SkyDex/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/SkyDex/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SkyDex: กระดานท้องฟ้าของวันนี้ ที่เติมเต็มทุกครั้งที่ถ่าย">
+  <meta property="og:description" content="ทุกครั้งที่ถ่ายท้องฟ้า หนึ่งในสี่สิบแปดช่องสีท้องฟ้าของวันจะถูกเติม พร้อมชื่อที่คล้ายสีนั้น ใช้ฟรี ไม่ต้องมีบัญชี">
+  <meta property="og:url" content="https://m1zz.github.io/SkyDex/th/">
+  <meta property="og:image" content="https://m1zz.github.io/SkyDex/img/th/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../sitegen.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#2A74B6}@media (prefers-color-scheme:dark){:root{--accent:#7FA4CE}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-<main>
-  <nav class="langs" aria-label="Language">
-    <a href="../" hreflang="ko" lang="ko">한국어</a>
-    <a href="../en/" hreflang="en" lang="en">English</a>
-    <a href="../ja/" hreflang="ja" lang="ja">日本語</a>
-    <a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
-    <a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
-    <a href="../ru/" hreflang="ru" lang="ru">Русский</a>
-    <a href="../es/" hreflang="es" lang="es">Español</a>
-    <a href="../de/" hreflang="de" lang="de">Deutsch</a>
-    <a href="../fr/" hreflang="fr" lang="fr">Français</a>
-    <a href="../it/" hreflang="it" lang="it">Italiano</a>
-    <a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
-    <a href="../th/" hreflang="th" lang="th" aria-current="true">ไทย</a>
-    <a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
-    <a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
-    <a href="../da/" hreflang="da" lang="da">Dansk</a>
-    <a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
-    <a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
-    <a href="../id/" hreflang="id" lang="id">Indonesia</a>
-    <a href="../nb/" hreflang="nb" lang="nb">Norsk</a>
-    <a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
-    <a href="../pl/" hreflang="pl" lang="pl">Polski</a>
-    <a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
-    <a href="../tr/" hreflang="tr" lang="tr">Türkçe</a>
-  </nav>
+  <a class="skip" href="#main">ข้ามไปยังเนื้อหา</a>
+  <header class="bar">
+    <a class="brand" href="../th/"><img src="../icon.png" alt="" width="32" height="32">SkyDex</a>
+    <a class="lang-link" href="#languages">ภาษา</a>
+  </header>
 
-  <div class="strip" aria-hidden="true">
-    <span style="background:#080D18"></span>
-    <span style="background:#090E1A"></span>
-    <span style="background:#0A0F1C"></span>
-    <span style="background:#0A101E"></span>
-    <span style="background:#0B1120"></span>
-    <span style="background:#0C1221"></span>
-    <span style="background:#131B30"></span>
-    <span style="background:#1B263E"></span>
-    <span style="background:#6879A2"></span>
-    <span style="background:#99A7C5"></span>
-    <span style="background:#96ABCB"></span>
-    <span style="background:#7FA4CE"></span>
-    <span style="background:#709CCB"></span>
-    <span style="background:#5791C6"></span>
-    <span style="background:#508DC5"></span>
-    <span style="background:#3F83C1"></span>
-    <span style="background:#307BBE"></span>
-    <span style="background:#2B77BB"></span>
-    <span style="background:#1F6FB5"></span>
-    <span style="background:#1D6EB4"></span>
-    <span style="background:#2471B6"></span>
-    <span style="background:#2975B8"></span>
-    <span style="background:#3179BA"></span>
-    <span style="background:#4988C3"></span>
-    <span style="background:#558EC5"></span>
-    <span style="background:#6D9BCA"></span>
-    <span style="background:#7EA5CD"></span>
-    <span style="background:#8FA5BF"></span>
-    <span style="background:#B2A297"></span>
-    <span style="background:#C1A07E"></span>
-    <span style="background:#CC986A"></span>
-    <span style="background:#D68F56"></span>
-    <span style="background:#CC7C49"></span>
-    <span style="background:#B95B35"></span>
-    <span style="background:#A95239"></span>
-    <span style="background:#8F4440"></span>
-    <span style="background:#543852"></span>
-    <span style="background:#3B324D"></span>
-    <span style="background:#322F4B"></span>
-    <span style="background:#2B2A44"></span>
-    <span style="background:#20233A"></span>
-    <span style="background:#181D33"></span>
-    <span style="background:#161C30"></span>
-    <span style="background:#13192B"></span>
-    <span style="background:#0F1424"></span>
-    <span style="background:#0B111F"></span>
-    <span style="background:#0A101D"></span>
-    <span style="background:#080D19"></span>
-  </div>
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>ท้องฟ้าวันนี้<br>เป็นสีอะไร</h1>
+        <p class="lead">ถ่ายท้องฟ้าหนึ่งภาพ ช่องของเวลานั้นบนกระดานสี่สิบแปดช่องจะถูกเติมด้วยสีที่คุณถ่ายได้ และได้ชื่อที่คล้ายสีนั้น เช่น สีน้ำแข็งบาง สีกระเบื้องสระว่ายน้ำ หรือสีลูกพลับสุก</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6802295390">ดาวน์โหลดฟรีบน App Store</a><a class="try" href="#try">ลองแตะกระดานดู ↓</a></div>
+        <p class="muted small">ฟรี ไม่ต้องมีบัญชี ไม่ต้องลงชื่อเข้าใช้</p>
+      </div>
+      <div class="phone"><img src="../img/th/01-board.jpg" alt="ท้องฟ้าวันนี้ เป็นสีอะไร" width="600" height="1303" decoding="async"></div>
+    </section>
 
-  <h1>SkyDex</h1>
-  <p class="lede">สะสมท้องฟ้าของวันเป็นสี<br>มีกระดานสี่สิบแปดช่อง และคุณเติมมันด้วยท้องฟ้าของวันนี้</p>
-  <p class="platform">iPhone · iOS 17.0 ขึ้นไป</p>
 
-  <div class="board" aria-hidden="true">
-    <span class="bead" style="border-color:#55565A" title="00:00–00:50"></span>
-    <span class="bead" style="border-color:#55565B" title="00:50–01:40"></span>
-    <span class="bead" style="border-color:#55565C" title="01:40–02:30"></span>
-    <span class="bead" style="border-color:#55575D" title="02:30–03:20"></span>
-    <span class="bead" style="border-color:#55575D" title="03:20–04:10"></span>
-    <span class="bead" style="border-color:#56575E" title="04:10–05:00"></span>
-    <span class="bead" style="border-color:#595A64" title="05:00–05:30"></span>
-    <span class="bead" style="border-color:#5C5E69" title="05:30–06:00"></span>
-    <span class="bead" style="border-color:#767B8B" title="06:00–06:30"></span>
-    <span class="bead on" style="background:#99A7C5" title="06:30–07:00 · #99A7C5"></span>
-    <span class="bead" style="border-color:#848B97" title="07:00–07:30"></span>
-    <span class="bead" style="border-color:#7D8998" title="07:30–08:00"></span>
-    <span class="bead on" style="background:#709CCB" title="08:00–08:40 · #709CCB"></span>
-    <span class="bead" style="border-color:#728397" title="08:40–09:20"></span>
-    <span class="bead" style="border-color:#718196" title="09:20–10:00"></span>
-    <span class="bead" style="border-color:#6D7E96" title="10:00–10:40"></span>
-    <span class="bead" style="border-color:#6B7C95" title="10:40–11:20"></span>
-    <span class="bead" style="border-color:#6A7A95" title="11:20–12:00"></span>
-    <span class="bead on" style="background:#1F6FB5" title="12:00–12:40 · #1F6FB5"></span>
-    <span class="bead" style="border-color:#687793" title="12:40–13:20"></span>
-    <span class="bead" style="border-color:#687893" title="13:20–14:00"></span>
-    <span class="bead" style="border-color:#697A93" title="14:00–14:40"></span>
-    <span class="bead" style="border-color:#6B7B94" title="14:40–15:20"></span>
-    <span class="bead" style="border-color:#6F8096" title="15:20–16:00"></span>
-    <span class="bead" style="border-color:#728297" title="16:00–16:20"></span>
-    <span class="bead" style="border-color:#788697" title="16:20–16:40"></span>
-    <span class="bead on" style="background:#7EA5CD" title="16:40–17:00 · #7EA5CD"></span>
-    <span class="bead" style="border-color:#828993" title="17:00–17:20"></span>
-    <span class="bead" style="border-color:#8E8884" title="17:20–17:40"></span>
-    <span class="bead on" style="background:#C1A07E" title="17:40–18:00 · #C1A07E"></span>
-    <span class="bead" style="border-color:#998474" title="18:00–18:15"></span>
-    <span class="bead on" style="background:#D68F56" title="18:15–18:30 · #D68F56"></span>
-    <span class="bead" style="border-color:#9C7B68" title="18:30–18:45"></span>
-    <span class="bead on" style="background:#B95B35" title="18:45–19:00 · #B95B35"></span>
-    <span class="bead" style="border-color:#936E63" title="19:00–19:15"></span>
-    <span class="bead" style="border-color:#896A66" title="19:15–19:30"></span>
-    <span class="bead" style="border-color:#71656F" title="19:30–19:45"></span>
-    <span class="bead" style="border-color:#67636E" title="19:45–20:00"></span>
-    <span class="bead" style="border-color:#64626E" title="20:00–20:15"></span>
-    <span class="bead" style="border-color:#61606B" title="20:15–20:30"></span>
-    <span class="bead" style="border-color:#5D5D68" title="20:30–20:45"></span>
-    <span class="bead" style="border-color:#5A5B65" title="20:45–21:00"></span>
-    <span class="bead on" style="background:#161C30" title="21:00–21:30 · #161C30"></span>
-    <span class="bead" style="border-color:#585A62" title="21:30–22:00"></span>
-    <span class="bead" style="border-color:#56585F" title="22:00–22:30"></span>
-    <span class="bead" style="border-color:#55575D" title="22:30–23:00"></span>
-    <span class="bead" style="border-color:#55575C" title="23:00–23:30"></span>
-    <span class="bead" style="border-color:#55565A" title="23:30–00:00"></span>
-  </div>
-  <p class="caption">ด้านบนคือกลางดึก เลื่อนลงมาจะเป็นกลางวัน แล้วมืดลงอีกครั้ง วงกลมทึบคือท้องฟ้าที่คุณถ่ายไว้ ส่วนวงแหวนว่างคือท้องฟ้าที่ยังมาไม่ถึง</p>
+    <section class="reveal" id="try">
+      <h2>ลองแตะกระดานดู</h2>
+      <p class="muted">แตะช่องเพื่อดูว่าเป็นท้องฟ้าช่วงไหนของวัน ใส่ภาพท้องฟ้าเพื่อเติมช่องของเวลาตอนนี้ แล้วเลื่อนวันไปข้างหน้าเพื่อดูว่ากระดานเปลี่ยนไปอย่างไร</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;ลองแตะกระดานดู&quot;, &quot;lead&quot;: &quot;แตะช่องเพื่อดูว่าเป็นท้องฟ้าช่วงไหนของวัน ใส่ภาพท้องฟ้าเพื่อเติมช่องของเวลาตอนนี้ แล้วเลื่อนวันไปข้างหน้าเพื่อดูว่ากระดานเปลี่ยนไปอย่างไร&quot;, &quot;photo&quot;: &quot;ลองใส่ภาพท้องฟ้า&quot;, &quot;age&quot;: &quot;นับจากวันที่ถ่าย&quot;, &quot;ageToday&quot;: &quot;วันนี้&quot;, &quot;ageDay&quot;: &quot;ผ่านไป {n} วัน&quot;, &quot;ageDays&quot;: &quot;ผ่านไป {n} วัน&quot;, &quot;note&quot;: &quot;กระดานนี้เติมไว้ด้วยท้องฟ้าตัวอย่างชุดเดียวกับภาพหน้าจอของแอป ภาพที่คุณใส่จะถูกอ่านภายในเบราว์เซอร์นี้เท่านั้น และไม่ถูกส่งไปที่ใด วิธีเลือกสี กติกาการเติมช่อง และความเร็วในการจางลง เหมือนในแอปทุกอย่าง&quot;, &quot;now&quot;: &quot;ตอนนี้&quot;, &quot;bands&quot;: [&quot;กลางดึก&quot;, &quot;รุ่งสาง&quot;, &quot;กลางวัน&quot;, &quot;บ่ายแก่&quot;, &quot;แสงเย็น&quot;, &quot;ค่ำคืน&quot;], &quot;emptyTag&quot;: &quot;%@ · ยังว่างอยู่&quot;, &quot;spot&quot;: &quot;ช่องนี้จะถูกเติมด้วยท้องฟ้าที่ถ่ายในช่วงเวลานั้นของวัน รูปไหนก็ใส่ได้ตามเดิม สีไม่จำเป็นต้องตรงกัน&quot;, &quot;sims&quot;: [[&quot;สีน้ำหมึกจีน&quot;, &quot;หมึกแท่งที่ฝนบนจานฝน ค่ำคืนที่ลึกที่สุด&quot;], [&quot;สีทะเลยามค่ำ&quot;, &quot;น้ำที่มองลงไปจากที่ไร้แสงไฟ ดำที่มีน้ำเงินบางๆ หนึ่งชั้น&quot;], [&quot;สีก้นหม้อไหม้&quot;, &quot;รอยที่เหลือหลังไหม้ ดำที่ไม่มีสีฟ้าเจือ&quot;], [&quot;สีหมึกแห้ง&quot;, &quot;รอยปากกาหมึกซึมที่เขียนค้างไว้ ดำที่ยังมีสีฟ้าเหลืออยู่&quot;], [&quot;สีน้ำลึก&quot;, &quot;สีของน้ำตรงที่เท้าแตะไม่ถึง กรมท่าที่มืดและเย็น&quot;], [&quot;สียีนส์ใหม่&quot;, &quot;เดนิมที่ยังไม่เคยซัก กรมท่าเข้ม&quot;], [&quot;สีกระจกรถไฟกลางคืน&quot;, &quot;กระจกหลังแสงไฟผ่านไป เทาที่เกือบเป็นกรมท่า&quot;], [&quot;สีหน้าต่างยามดึก&quot;, &quot;ข้างนอกตอนเปิดม่าน ฟ้ากว่าสีดำอีกนิด&quot;], [&quot;สีหมึกล้างน้ำ&quot;, &quot;น้ำที่ล้างหมึกออกจากมือ กรมท่าจางๆ&quot;], [&quot;สีกรมท่าชุดนักเรียน&quot;, &quot;กรมท่าของแจ็กเก็ตที่ใส่มาหลายปี ไม่ดำและไม่ฟ้า&quot;], [&quot;สียีนส์เปียกน้ำ&quot;, &quot;ตอนเพิ่งตากผ้า น้ำเงินเข้มและหม่น&quot;], [&quot;สีหลังปลาซาบะ&quot;, &quot;เทาอมฟ้าเหลือบเงิน ฟ้าก่อนฝนตก&quot;], [&quot;สีชุดช่างเก่า&quot;, &quot;น้ำเงินที่ซีดเพราะใส่มาหลายปี&quot;], [&quot;สีม่านกรมท่าซีด&quot;, &quot;ม่านที่โดนแดดมานาน กรมท่าที่หมดแรง&quot;], [&quot;สีไอน้ำบนกระจก&quot;, &quot;มองจากข้างในออกไปจะพร่ามัว เทาอมฟ้า&quot;], [&quot;สีหมอกยามเช้า&quot;, &quot;เช้าที่ยอดตึกหายไป เทาอ่อนอมฟ้า&quot;], [&quot;สีฮู้ดดี้เปียก&quot;, &quot;เทาที่เข้มขึ้นเพราะซับน้ำฝน รุ่งเช้าที่ครึ้ม&quot;], [&quot;สีสเวตเตอร์ม่วงซีด&quot;, &quot;ม่วงที่ซีดเพราะซักหลายครั้ง ทิศตะวันตกก่อนฟ้าสาง&quot;], [&quot;สีเปลือกพีช&quot;, &quot;ด้านที่มีขนอ่อน ระหว่างชมพูกับส้ม&quot;], [&quot;สีนมแอปริคอต&quot;, &quot;แอปริคอตปั่นใส่นม ส้มอ่อนมาก&quot;], [&quot;สีผนังขาวต้องแดด&quot;, &quot;ตอนเช้าผนังกลายเป็นสีนี้อยู่ครู่หนึ่ง&quot;], [&quot;สีเนื้อปลาแซลมอน&quot;, &quot;ชมพูที่หายไปเมื่อย่าง&quot;], [&quot;สีนมสตรอว์เบอร์รี&quot;, &quot;ชมพูหลังเขย่าให้เข้ากัน&quot;], [&quot;สีแอปริคอตดิบ&quot;, &quot;ส้มที่สีเหลืองยังชนะอยู่&quot;], [&quot;สีน้ำในแก้ว&quot;, &quot;ฟ้าอ่อนที่แสงลอดผ่าน&quot;], [&quot;สีน้ำประปาเย็น&quot;, &quot;สีที่ทำให้มือเย็นเฉียบ ฟ้าอ่อนและเย็น&quot;], [&quot;สีน้ำแข็งบาง&quot;, &quot;ผิวน้ำที่แข็งตัวบางๆ ในฤดูใบไม้ผลิ ฟ้าอ่อนมาก&quot;], [&quot;สีถ้วยกระเบื้อง&quot;, &quot;สีฟ้าจางๆ ที่หลงเหลือบนชามขาว&quot;], [&quot;สีเสื้อเชิ้ตขาวรีดแล้ว&quot;, &quot;เกือบขาวแต่มีฟ้าหนึ่งชั้น เที่ยงวันที่ใสมาก&quot;], [&quot;สีฟองน้ำยาล้างจาน&quot;, &quot;ฟองขาวที่ลอยบนอ่างล้างจาน&quot;], [&quot;สียีนส์ซีด&quot;, &quot;เดนิมที่หัวเข่าขาวแล้ว ฟ้าของกลางวันครึ้มๆ&quot;], [&quot;สีสีเทียนฟ้า&quot;, &quot;ฟ้าที่ได้เมื่อระบายแรงๆ บนกระดาษวาดเขียน&quot;], [&quot;สีกระเบื้องสระว่ายน้ำ&quot;, &quot;ฟ้าที่มองผ่านน้ำ เที่ยงวันอากาศแจ่มใส&quot;], [&quot;สีปากกาลูกลื่นน้ำเงิน&quot;, &quot;น้ำเงินของเส้นที่ขีดบนกระดาษ&quot;], [&quot;สีน้ำสระลึก&quot;, &quot;สีน้ำฝั่งที่เท้าแตะไม่ถึง จุดสูงสุดของเที่ยงวันกลางฤดูร้อน&quot;], [&quot;สีน้ำละลายสีฟ้า&quot;, &quot;ในกระป๋องล้างพู่กัน น้ำเงินของบ่ายวันฟ้าใส&quot;], [&quot;สีหมึกปากกาหมึกซึม&quot;, &quot;ในขวดเป็นน้ำเงินที่เกือบดำ&quot;], [&quot;สีขวดน้ำโซดา&quot;, &quot;ฟ้าอ่อนที่เจือเขียว&quot;], [&quot;สีกระจกเป็นฝ้า&quot;, &quot;กระจกหลังอาบน้ำ เทาอมฟ้าสว่าง&quot;], [&quot;สีกระจกในหมอก&quot;, &quot;เทาพร่ามัวพอให้ฝั่งตรงข้ามเลือนไป&quot;], [&quot;สีเศษยางลบ&quot;, &quot;ผงขาวที่กองอยู่บนโต๊ะ เทาอ่อนมาก&quot;], [&quot;สีฝุ่นชอล์ก&quot;, &quot;แสงขาวที่ค้างในอากาศหลังลบกระดาน&quot;], [&quot;สีปูนแห้ง&quot;, &quot;พื้นที่แข็งตัวมานาน เทาอ่อนเรียบๆ&quot;], [&quot;สีขี้เถ้าเย็น&quot;, &quot;สิ่งที่เหลือหลังไหม้หมด เทามาตรฐานของกลางวันครึ้ม&quot;], [&quot;สีกระจกขุ่น&quot;, &quot;สีที่เช็ดแล้วก็ยังเหมือนเดิม เทากลางอมฟ้า&quot;], [&quot;สีกระดาษลังเปียก&quot;, &quot;กล่องที่โดนฝน เทาที่มีความอุ่นเจือ&quot;], [&quot;สีจอที่ปิดแล้ว&quot;, &quot;เทาดำทันทีหลังปิดเครื่อง&quot;], [&quot;สีไม้ขีดที่ไหม้แล้ว&quot;, &quot;ก้านที่เหลือแค่หัวดำ เทาอมม่วงเข้ม&quot;], [&quot;สีน้ำล้างจาน&quot;, &quot;น้ำอุ่นๆ ที่มีคราบมันลอย เทาขุ่น&quot;], [&quot;สีน้ำต้มผ้า&quot;, &quot;น้ำขาวที่มีไอลอยขึ้นมา เทาสว่าง&quot;], [&quot;สีใบมีด&quot;, &quot;เหล็กที่ต้องแสง เทาอมฟ้า&quot;], [&quot;สีหลังคาสังกะสีเก่า&quot;, &quot;หลังคาโกดังเก่า เทาอมน้ำเงินก่อนฝนจะตก&quot;], [&quot;สีทะเลวันครึ้ม&quot;, &quot;น้ำที่รับสีฟ้าไปทั้งหมด เทาอมน้ำเงินเข้ม&quot;], [&quot;สีปูนเปียก&quot;, &quot;พื้นที่โดนฝน เทาเข้มและชื้น&quot;], [&quot;สีไส้ดินสอ&quot;, &quot;เทาเข้มที่ระบายด้วยไส้ดินสอแนวนอน บ่ายวันฝนตก&quot;], [&quot;สียางมะตอยเปียก&quot;, &quot;ถนนหลังฝนตกยามค่ำ เทาที่เกือบดำ&quot;], [&quot;สีกำแพงตะไคร่&quot;, &quot;เขียวขึ้นบนสีเทา บางครั้งเห็นก่อนพายุเข้า&quot;], [&quot;สีเหรียญเก่า&quot;, &quot;โลหะที่ผ่านมือมามาก เทาอมเหลือง&quot;], [&quot;สีน้ำซาวข้าว&quot;, &quot;น้ำแรกที่ซาวข้าว ขาวอุ่น&quot;], [&quot;สีเปลือกไข่&quot;, &quot;ขาวที่ไม่ได้ขาวสนิท&quot;], [&quot;สีกระดาษเก่า&quot;, &quot;หน้าในของหนังสือเก่า ขาวที่เหลืองขึ้น&quot;], [&quot;สีหนังสือพิมพ์เก่า&quot;, &quot;กระดาษที่ซีดเพราะแดด ระหว่างเทากับเหลืองหม่น&quot;], [&quot;สีหน้าต่างฝุ่นทราย&quot;, &quot;เหลืองหม่นพร่ามัวที่ชวนให้อยากเช็ด&quot;], [&quot;สีน้ำแป้งธัญพืช&quot;, &quot;เบจขุ่นก่อนตะกอนจะนอนก้น&quot;], [&quot;สีเสื่อน้ำมันเหลือง&quot;, &quot;พื้นที่ถูกกดทับมานาน เหลืองหม่น&quot;], [&quot;สีเนื้อเกาลัดต้ม&quot;, &quot;เนื้อในสีเหลืองของเกาลัดที่แกะเปลือกแล้ว&quot;], [&quot;สีนมที่เทลงในกาแฟ&quot;, &quot;ตอนเพิ่งเทและยังไม่ทันผสม&quot;], [&quot;สีชั้นหนังสือฝุ่นเกาะ&quot;, &quot;เทาน้ำตาลอ่อนที่เอานิ้วปาดแล้วเป็นรอย&quot;], [&quot;สีดินโคลนแห้ง&quot;, &quot;พื้นดินที่เริ่มแตกระแหง น้ำตาลอ่อน&quot;], [&quot;สีชานมเย็นชืด&quot;, &quot;แก้วที่ดื่มไม่หมด น้ำตาลอมชมพูหม่น&quot;], [&quot;สีกระดาษแข็งเปียก&quot;, &quot;กระดาษที่โดนฝนจนพองตัว สีของแสงเย็นที่ครึ้ม&quot;], [&quot;สีพื้นไม้โดนฝน&quot;, &quot;ไม้ที่อุ้มน้ำจนสีเข้มขึ้น&quot;], [&quot;สีอิฐเปื้อนเถ้า&quot;, &quot;ที่ที่โดนไฟ เทาอมแดงเข้ม&quot;], [&quot;สีคราบกาแฟ&quot;, &quot;รอยวงกลมที่เหลือหลังยกแก้วออก&quot;], [&quot;สีเปลือกถั่วแดงต้ม&quot;, &quot;ถั่วแดงที่แช่น้ำนาน เทาอมม่วงเข้ม&quot;], [&quot;สีผงถั่วเหลืองคั่ว&quot;, &quot;ด้านที่คลุกผงถั่ว เบจอมน้ำตาลนุ่มๆ&quot;], [&quot;สีไข่แดง&quot;, &quot;ก่อนจะเจาะให้แตก เหลืองเข้ม&quot;], [&quot;สีขอบขนมปัง&quot;, &quot;จุดที่เหลืองเปลี่ยนเป็นน้ำตาล&quot;], [&quot;สีเปลือกส้ม&quot;, &quot;สีส้มก่อนแกะเปลือก&quot;], [&quot;สีแซลมอนย่าง&quot;, &quot;ส้มอมชมพูของผิวที่สุกแล้ว&quot;], [&quot;สีลูกพลับแห้ง&quot;, &quot;พลับแห้งที่มีแป้งขาวขึ้นผิว ส้มหม่น&quot;], [&quot;สีถ่านฟืนคุ&quot;, &quot;ไม่ใช่เปลวไฟ แต่เป็นถ่านที่ยังแดงอยู่&quot;], [&quot;สีลูกพลับสุก&quot;, &quot;ส้มอมแดงก่อนจะนิ่มจนแตก&quot;], [&quot;สีน้ำซอสต็อกบกกี&quot;, &quot;แดงหลังเคี่ยวจนงวด แสงเย็นที่เข้มที่สุด&quot;], [&quot;สีเนื้อแตงโม&quot;, &quot;ส่วนกลางที่หวานที่สุด ชมพูอมแดง&quot;], [&quot;สีแยมกุหลาบ&quot;, &quot;กลีบดอกไม้แช่น้ำตาล แดงอมชมพูหม่น&quot;], [&quot;สีอิฐแดง&quot;, &quot;กำแพงที่ตากฝนมาหลายปี&quot;], [&quot;สีถ่านที่เย็นลง&quot;, &quot;ไฟที่ถูกเถ้าคลุม น้ำตาลอมแดงเข้ม&quot;], [&quot;สีผิวลูกพลัม&quot;, &quot;ม่วงแดงที่มีนวลขาวเกาะ&quot;], [&quot;สีโจ๊กถั่วแดง&quot;, &quot;น้ำตาลแดงข้นก่อนใส่บัวลอย&quot;], [&quot;สีไวน์ที่เหลือ&quot;, &quot;ม่วงแดงเข้มที่ค้างก้นแก้ว&quot;], [&quot;สีไลแลกที่โรยแล้ว&quot;, &quot;ม่วงจางของดอกไม้ที่กำลังแห้ง&quot;], [&quot;สีนมบลูเบอร์รี&quot;, &quot;ม่วงอ่อนที่ผสมไม่ทันเข้ากัน&quot;], [&quot;สีเปลือกองุ่น&quot;, &quot;ม่วงเข้มที่เพิ่งล้างและยังมีน้ำเกาะ&quot;], [&quot;สีเปลือกมะเขือม่วง&quot;, &quot;ม่วงดำที่ดูดกลืนแสง สีสุดท้ายของวัน&quot;]]}"></div>
+    </section>
 
-  <h2>กระดานคือวันนี้</h2>
-  <p>สี่สิบแปดช่องคือ<strong>สีที่ท้องฟ้าวันนี้จะผ่านไป</strong> คำนวณใหม่ทุกวันจากเวลาพระอาทิตย์ขึ้นและตกจริงในที่ที่คุณอยู่ และพยากรณ์เมฆกับฝนของวันนี้ ช่องที่เต็มเมื่อวานจึงอาจว่างในวันนี้ สิ่งที่กระดานบอกคุณไม่ใช่ว่าสะสมได้กี่ภาพ แต่คือ<strong>วันนี้คุณแสดงได้มากแค่ไหน</strong></p>
-  <p>ถ่ายท้องฟ้าตอนนี้ แล้ว<strong>ช่องของเวลานั้น</strong>จะถูกเติมด้วยสีที่คุณจับได้ ถึงจะต่างจากที่คาดไว้ก็ยังใส่เข้าไป เพราะพยากรณ์เป็นเพียงการเดา ส่วนภาพถ่ายนั้นอยู่ตรงนั้นจริง ๆ</p>
-  <p><strong>ไม่มีอะไรถูกตัดสิน</strong> ไม่มีผ่านหรือไม่ผ่าน ไม่มีเกณฑ์ผ่อนผัน สีเทาของวันที่ฟ้าครึ้มก็เป็นสีท้องฟ้าของวันนั้นเช่นกัน</p>
+    <section class="problem reveal">
+      <h2>เราเห็นท้องฟ้าทุกวัน แต่จำสีไม่ได้สักสี</h2>
+      <p>ท้องฟ้าที่เงยมองระหว่างทางไปทำงาน ท้องฟ้าตอนเดินออกมาหลังมื้อกลางวัน พอถึงตอนเย็นก็นึกไม่ออกแล้วว่าเป็นสีอะไร ภาพท้องฟ้าที่ถ่ายไว้ก็จมหายไปในคลังรูปภาพ SkyDex เก็บภาพท้องฟ้าเป็นสี แล้ววางเส้นทางที่ท้องฟ้าวันนี้ผ่านมาไว้บนกระดานเดียว</p>
+    </section>
 
-  <h2>ทุกสีมีชื่อ</h2>
-  <p>แอปบอกว่าท้องฟ้าของคุณเป็นสีอะไรสองแบบ เขียนเป็นภาษาเกาหลี แบบแรกคือ<strong>การเปรียบเทียบที่นึกภาพออก</strong> และด้านล่างคือ<strong>ชื่อที่มีที่มา</strong> “อุสุฮานาอิโระ” เป็นคำตอบที่แม่นยำกว่า แต่แทบไม่มีใครเห็นสีจากคำนี้ และชื่อที่มองไม่เห็นก็ทำหน้าที่ของชื่อไม่ได้</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>ท้องฟ้าทุกผืนมีชื่อ</h2>
+        <p>สีที่ถ่ายได้จะได้ชื่อที่นึกภาพออกก่อน เช่น สีน้ำแข็งบาง สีกระเบื้องสระว่ายน้ำ หรือสีลูกพลับสุก ด้านล่างตามด้วยชื่อที่มีที่มา จากสีเกาหลี สีญี่ปุ่น สีพิกเมนต์ หรือสีมาตรฐาน<br>ถ้าใกล้พอจะขึ้นว่า “ชื่อ” ถ้ายังห่างก็บอกตรง ๆ ว่า “ชื่อที่ใกล้ที่สุด”</p>
+      </div>
+      <div class="phone"><img src="../img/th/02-name.jpg" alt="ท้องฟ้าทุกผืนมีชื่อ" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <div class="names">
-    <div class="name">
-      <span class="swatch" style="background:#7E90B6"></span>
-      <span>
-        <div class="simile">ม่านสีกรมท่าที่ซีดจาง</div>
-        <div class="real">อุสุฮานาอิโระ · สีดั้งเดิมของญี่ปุ่น 薄花色</div>
-      </span>
-    </div>
-    <div class="name">
-      <span class="swatch" style="background:#D68F55"></span>
-      <span>
-        <div class="simile">ขอบขนมปังปิ้ง</div>
-        <div class="real">ส้มแคดเมียม · เม็ดสี</div>
-      </span>
-    </div>
-    <div class="name">
-      <span class="swatch" style="background:#1C6DB4"></span>
-      <span>
-        <div class="simile">น้ำที่ผสมสีน้ำเงินลงไป</div>
-        <div class="real">ชองแซก · สีดั้งเดิมของเกาหลี</div>
-      </span>
-    </div>
-  </div>
-  <p>ชื่อที่มีที่มามาจากสีดั้งเดิมของเกาหลีและญี่ปุ่น เม็ดสี และชุดสีมาตรฐาน และทุกค่าได้ตรวจสอบกับแหล่งที่มาแล้ว แอปยังซื่อตรงเรื่องความใกล้เคียงด้วย ถ้าตรงมากพอจะบอกว่า “ชื่อคือ” และถ้าไม่ถึงจะบอกว่า “ชื่อที่ใกล้เคียงที่สุดคือ”</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>เขียนไว้สักบรรทัด</h2>
+        <p>ถ่ายเสร็จ การ์ดจะเปิดขึ้นทันที เขียนสิ่งที่คิดตอนมองท้องฟ้านั้นไว้หนึ่งบรรทัด แล้วเมื่อแตะช่องนั้นบนกระดาน ข้อความจะลอยขึ้นเหนือท้องฟ้าอีกครั้ง<br>คุณยังนำสีของท้องฟ้าที่เก็บไว้ในวันอื่นมาแต่งลงบนท้องฟ้าในภาพนี้ แล้วแชร์เป็นรูปได้ด้วย</p>
+      </div>
+      <div class="phone"><img src="../img/th/03-card.jpg" alt="เขียนไว้สักบรรทัด" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>ช่องที่เติมแล้วจะเก่าลง</h2>
-  <p>ภาพถ่ายคงสีจริงไว้หนึ่งสัปดาห์ แล้วค่อย ๆ จางลงในแปดสัปดาห์ถัดไป ภาพไม่ถูกลบและไม่เคยจางหายไปหมด ถ่ายท้องฟ้าเวลานั้นอีกครั้ง ช่องก็กลับมามีสีเต็มทันที</p>
-  <p>นี่ไม่ใช่การลงโทษ ไม่มีสถิติต่อเนื่องที่ต้องรักษา และไม่มีอะไรต้องเอากลับคืน เป็นเพียงวิธีที่ซื่อตรงที่กระดานซึ่งทำจากท้องฟ้าจะบอกว่า “ท้องฟ้านั้นผ่านมาสักพักแล้ว”</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>ช่องว่างช่วยนำทาง</h2>
+        <p>แตะช่องว่างเพื่อดูว่าช่องนั้นเป็นช่วงไหนของวัน และควรมองหาสีอะไร ถ้าเป็นวันที่ไม่มีเมฆ แอปจะบอกด้วยว่าท้องฟ้าเวลานี้เป็นสีอะไร โดยอิงเวลาพระอาทิตย์ขึ้นและตกตรงที่คุณอยู่<br>สีไม่จำเป็นต้องตรง สีเทาของวันฟ้าครึ้มก็คือสีท้องฟ้าของวันนั้นเหมือนกัน</p>
+      </div>
+      <div class="phone"><img src="../img/th/05-empty.jpg" alt="ช่องว่างช่วยนำทาง" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>เวลาเดียวกัน ท้องฟ้าต่างกัน</h2>
-  <p>วันเวลาซ้ำกัน นาฬิกาปลุกเดิม เส้นทางเดิม หน้าต่างบานเดิม มีเพียงท้องฟ้าด้านบนที่ไม่เคยเหมือนเดิมสองครั้ง หน้า<strong>ถ่ายซ้ำ</strong>เรียงวันที่คุณอยู่ตรงนั้นในเวลาเดียวกันมาให้ดู แถวคือการซ้ำ ส่วนสีคือสิ่งที่ไม่เคยซ้ำ</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>บันทึก จานสี ถ่ายซ้ำ</h2>
+        <p>ดูท้องฟ้าที่ถ่ายไว้ตามลำดับเวลา และรวมสีที่สะสมเป็นจานสีตามกลุ่ม เช่น น้ำเงิน เทา และสีทราย ถ้าถ่ายท้องฟ้าเวลาเดิมในอีกวัน สองภาพจะเรียงอยู่เคียงกัน<br>วิดเจ็ตบนหน้าจอโฮมแสดงกระดานวันนี้และท้องฟ้าวันนี้ให้เห็นได้ทันที</p>
+      </div>
+      <div class="phone"><img src="../img/th/04-palette.jpg" alt="บันทึก จานสี ถ่ายซ้ำ" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>วิดเจ็ต</h2>
-  <p><strong>กระดานวันนี้</strong>หน้าตาเหมือนในแอป คือสี่สิบแปดช่อง วงกลมทึบสำหรับช่องที่เติมแล้ว และวงแหวนสำหรับช่องว่าง ส่วน<strong>ท้องฟ้าวันนี้</strong>แสดงภาพที่คุณถ่ายวันนี้พร้อมชื่อสี และใช้บนหน้าจอล็อกได้ด้วย</p>
+    <section class="reveal">
+      <h2>เริ่มได้ในสามขั้นตอน</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>เงยหน้ามองท้องฟ้า</h3><p>แตะปุ่มกล้องใต้กระดาน แล้วถ่ายให้ท้องฟ้าเต็มกรอบสี่เหลี่ยมจัตุรัส</p></li>
+<li class="card"><span class="n">2</span><h3>ช่องถูกเติม</h3><p>ช่องของเวลาตอนนี้จะถูกเติมด้วยสีที่ถ่ายได้ พร้อมชื่อ</p></li>
+<li class="card"><span class="n">3</span><h3>เขียนไว้หนึ่งบรรทัด</h3><p>เขียนสิ่งที่คิดตอนมองท้องฟ้านั้นลงในการ์ดที่เปิดขึ้น</p></li></ol>
+    </section>
 
-  <h2>ยังเป็นของคุณ</h2>
-  <div class="quiet">
-    <p>ไม่มีบัญชี ไม่มีเซิร์ฟเวอร์ของเรา รูปภาพและสีของคุณอยู่ในที่เก็บข้อมูลของแอปบนอุปกรณ์ และถ้าลงชื่อเข้าใช้อยู่ ก็อยู่ใน iCloud ของคุณเอง ไม่มีการส่งไปยังนักพัฒนา ไม่มีโฆษณา ไม่ติดตาม และไม่มีการวิเคราะห์จากบุคคลที่สาม</p>
-    <p>ตำแหน่งที่ตั้งใช้เพื่อเวลาพระอาทิตย์ขึ้นและตกกับพยากรณ์ของวันนี้เท่านั้น และขอด้วยความแม่นยำระดับกิโลเมตร แอปทำงานได้ดีแม้คุณไม่อนุญาต รายละเอียดอยู่ใน<a href="privacy.html">นโยบายความเป็นส่วนตัว</a></p>
-  </div>
+    <section class="reveal" id="commands">
+      <h2>กระดานแบ่งหนึ่งวันแบบนี้</h2>
+      <div class="card table">
+        <dl><div><dt>กลางดึก · 00:00–05:00</dt><dd>6 ช่อง</dd></div><div><dt>รุ่งสาง · 05:00–08:00</dt><dd>6 ช่อง</dd></div><div><dt>กลางวัน · 08:00–16:00</dt><dd>12 ช่อง</dd></div><div><dt>บ่ายแก่ · 16:00–18:00</dt><dd>6 ช่อง</dd></div><div><dt>แสงเย็น · 18:00–21:00</dt><dd>12 ช่อง ช่องละ 15 นาที</dd></div><div><dt>ค่ำคืน · 21:00–24:00</dt><dd>6 ช่อง</dd></div></dl>
+      </div>
+      <p class="muted">ช่วงแสงเย็นที่ท้องฟ้าเปลี่ยนเร็ว ช่องจะถี่ ส่วนกลางดึกที่ท้องฟ้าแทบไม่เปลี่ยน ช่องจะกว้าง บนสุดคือกลางดึก และยิ่งลงมาข้างล่าง วันก็ยิ่งผ่านไป</p>
+    </section>
+
+
+
+    <section class="reveal" id="faq">
+      <h2>คำถามที่พบบ่อย</h2>
+      <div class="faq"><details><summary>ช่องถูกเติมอย่างไร</summary><p>ท้องฟ้าที่ถ่ายวันนี้จะเติมช่องของเวลาที่ถ่าย แม้สีจะไม่ตรงกับที่คาดไว้ก็ใส่ลงไปตามนั้น เพราะท้องฟ้าเวลานั้นเป็นอย่างนั้นจริง ๆ ส่วนท้องฟ้าที่เก็บไว้ก่อนหน้าจะเข้าตามสี ถ้าใกล้กับสีของช่องไหนมากพอก็จะเติมช่องนั้น และท้องฟ้าหนึ่งภาพเติมได้เพียงหนึ่งช่อง</p></details>
+<details><summary>ช่องที่เต็มเมื่อวาน วันนี้กลับว่าง</summary><p>กระดานคือวันนี้ ช่องที่ท้องฟ้าของเมื่อวานเติมไว้ตามเวลา พอขึ้นวันใหม่จะถูกจับคู่ใหม่ด้วยสีเพียงอย่างเดียว บางวันกระดานจึงเกือบเต็ม บางวันก็ดูว่างเปล่า ภาพไม่ได้หายไปไหน ท้องฟ้าที่สะสมไว้ยังอยู่ครบในบันทึก และเรียงตามสีในจานสี</p></details>
+<details><summary>ช่องที่เติมแล้วค่อย ๆ จางลง</summary><p>ตั้งใจให้เป็นแบบนั้น ภาพจะคงสีเดิมไว้หนึ่งสัปดาห์ จากนั้นค่อย ๆ จางลงตลอดแปดสัปดาห์ถัดไป ภาพไม่ได้ถูกลบ และไม่จางจนหายไปหมด ถ้าถ่ายท้องฟ้าช่วงเวลานั้นอีกครั้ง ช่องจะกลับมาเป็นสีเดิมทันที ไม่มีสถิติต่อเนื่องที่ขาดตอน และไม่มีตัวเลขที่ต้องไล่เก็บคืน</p></details>
+<details><summary>สีต้องตรงไหม</summary><p>ไม่ต้อง ไม่มีการตัดสินว่าผ่านหรือไม่ผ่าน ภาพที่ถ่ายจะถูกบันทึกเสมอ และสีเทาของวันฟ้าครึ้มก็คือสีท้องฟ้าของวันนั้น</p></details>
+<details><summary>ทำไมแอปถึงขอตำแหน่ง</summary><p>ใช้เพียงเพื่อบอกสีท้องฟ้าของวันที่ไม่มีเมฆ ณ เวลานั้น เมื่อคุณแตะช่องว่าง โดยอิงเวลาพระอาทิตย์ขึ้นและตกตรงที่คุณอยู่ ใช้แค่ตำแหน่งคร่าว ๆ ระดับกิโลเมตร และไม่แนบพิกัดไปกับภาพ ถ้าไม่อนุญาต แอปก็ยังใช้ได้ตามปกติ โดยใช้กรุงโซลเป็นเกณฑ์</p></details>
+<details><summary>ใส่ท้องฟ้าจากคลังรูปภาพได้ไหม</summary><p>ได้ ท้องฟ้าที่เลือกจากแอปรูปภาพแทนกล้องจะถูกครอบเป็นสี่เหลี่ยมจัตุรัสเช่นกัน และเติมช่องของเวลาตอนนี้เหมือนท้องฟ้าที่เพิ่งถ่าย</p></details>
+<details><summary>ลบภาพได้อย่างไร</summary><p>เปิดภาพแล้วแตะ “ลบ” หรือปัดไปทางซ้ายในบันทึก ภาพจะถูกลบทั้งจากอุปกรณ์และ iCloud พร้อมกัน ถ้าลบแอป สำเนาใน iCloud ยังอยู่ เมื่อติดตั้งใหม่ ท้องฟ้าที่สะสมไว้ก็จะกลับมา</p></details>
+<details><summary>ถ้าเปลี่ยนเครื่อง ท้องฟ้าที่สะสมไว้จะเป็นอย่างไร</summary><p>ท้องฟ้าที่สะสมไว้เก็บอยู่ใน iCloud ของคุณเอง จึงใช้ต่อได้บนเครื่องใหม่ที่ลงชื่อเข้าใช้ด้วยบัญชี Apple เดียวกัน ไม่มีบัญชีของแอป ไม่มีเซิร์ฟเวอร์ ภาพและสีไม่ถูกส่งไปให้นักพัฒนา ไม่มีโฆษณา และไม่มีการติดตาม</p></details>
+<details><summary>ฟรีจริงไหม</summary><p>จริง ทุกฟีเจอร์ใช้ได้ฟรี ถ้าชอบ คุณส่งทิปให้นักพัฒนาได้ในแอป แต่ทิปไม่ได้ปลดล็อกฟีเจอร์ใด ๆ</p></details>
+<details><summary>ใช้กับอุปกรณ์ใดได้บ้าง</summary><p>iPhone ที่ใช้ iOS 17.0 ขึ้นไป แสดงผลแนวตั้งเท่านั้น</p></details></div>
+      <p class="contact">หากพบข้อผิดพลาด การทำงานที่แปลกไป หรืออยากบอกอะไร ส่งอีเมลมาที่ <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> ได้เลย ถ้าเล่าด้วยว่าเกิดขึ้นตอนไหนและใช้ iOS เวอร์ชันอะไร จะช่วยให้หาสาเหตุได้ง่ายขึ้นมาก</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>พรุ่งนี้เช้า<br>ลองเงยหน้ามองสักครั้ง</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6802295390">ดาวน์โหลดฟรีบน App Store</a>
+    </section>
+  </main>
 
   <footer>
-    <a href="support.html">ช่วยเหลือ</a> ·
-    <a href="privacy.html">นโยบายความเป็นส่วนตัว</a> ·
-    <a href="https://github.com/M1zz/SkyDex">GitHub</a>
-    <p style="margin:10px 0 0">ข้อมูลสภาพอากาศจาก <a href="https://weatherkit.apple.com/legal-attribution.html">Apple Weather</a></p>
+    <nav id="languages" class="langs" aria-label="ภาษา"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="../es/" hreflang="es" lang="es">Español</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../th/" hreflang="th" lang="th" aria-current="page">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="../id/" hreflang="id" lang="id">Indonesia</a>
+<a href="../nb/" hreflang="nb" lang="nb">Norsk</a>
+<a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">นโยบายความเป็นส่วนตัว</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 SkyDex</p>
   </footer>
 
-</main>
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>

@@ -1,0 +1,541 @@
+{
+  "title": "SkyDex: et brett med dagens himmelfarger, fylt ett bilde om gangen",
+  "description": "Hvert bilde av himmelen fyller én av dagens førtiåtte himmelfarger og får et navn som ligner den. Gratis og uten konto.",
+  "hero": {
+    "headline": "Hvilken farge hadde\nhimmelen i dag?",
+    "lead": "Ta et bilde av himmelen, så fylles ruten for det tidspunktet med fargen du fanget, på et brett med førtiåtte ruter. Fargen får også et navn du kan se for deg, som tynn is, bassengflis eller moden kaki.",
+    "cta": "Hent gratis i App Store",
+    "note": "Gratis. Ingen konto, ingen pålogging."
+  },
+  "demo": {
+    "title": "Prøv brettet",
+    "lead": "Trykk på en rute for å se hvilken del av dagen den hører til. Legg til et bilde av himmelen for å fylle ruten for akkurat nå, spol så dagene fremover og se brettet endre seg.",
+    "photo": "Legg til et himmelbilde",
+    "age": "Siden bildene ble tatt",
+    "ageToday": "I dag",
+    "ageDay": "{n} dag senere",
+    "ageDays": "{n} dager senere",
+    "note": "Brettet starter med de samme eksempelhimlene som appens skjermbilder. Bildet ditt leses bare her i nettleseren og sendes ingen steder. Hvordan fargen velges, hvilken rute den fyller og hvor fort den blekner, fungerer akkurat som i appen.",
+    "now": "Nå",
+    "bands": [
+      "Midnatt",
+      "Daggry",
+      "Dag",
+      "Sen ettermiddag",
+      "Solnedgang",
+      "Natt"
+    ],
+    "emptyTag": "%@ · fortsatt tom",
+    "spot": "Denne plassen fylles med en himmel tatt på det tidspunktet av dagen. Alle bilder kommer inn som de er; fargen trenger ikke passe.",
+    "sims": [
+      [
+        "Tusj",
+        "Tusj revet på steinen. Den dypeste natten."
+      ],
+      [
+        "Havet om natten",
+        "Vann sett ovenfra, uten lys. Svart med et lag blått."
+      ],
+      [
+        "Brent kjelebunn",
+        "Sporet etter noe som brant seg fast. Svart uten blått."
+      ],
+      [
+        "Inntørket blekk",
+        "Spor av en fyllepenn som ble lagt fra seg. Svart med en rest av blått."
+      ],
+      [
+        "Dypt vann",
+        "Fargen der føttene ikke når bunnen. Mørk, kjølig marineblå."
+      ],
+      [
+        "Nye jeans",
+        "Denim som aldri har vært vasket. Mettet marineblå."
+      ],
+      [
+        "Nattogvindu",
+        "Glasset når lysene har passert. Grå, nesten marineblå."
+      ],
+      [
+        "Vindu ved midnatt",
+        "Utenfor når du trekker fra gardinen. Litt blåere enn svart."
+      ],
+      [
+        "Utvasket blekk",
+        "Vannet du skylte blekk av hendene i. Blek marineblå."
+      ],
+      [
+        "Skoleuniformblå",
+        "Marineblått fra en jakke brukt i årevis. Verken svart eller blå."
+      ],
+      [
+        "Våte jeans",
+        "Klesvask som nettopp er hengt opp. Mørk, matt blå."
+      ],
+      [
+        "Makrellrygg",
+        "Blågrå med sølvskjær. Himmelen før regn."
+      ],
+      [
+        "Slitt arbeidsjakke",
+        "En blå som har falmet etter mange års bruk."
+      ],
+      [
+        "Falmet gardin",
+        "En gardin som lenge har hengt i sola. Trøtt marineblå."
+      ],
+      [
+        "Dugget vindu",
+        "Innenfra ser alt ute melkeaktig ut. Blålig grå."
+      ],
+      [
+        "Morgentåke",
+        "En morgen der toppen av husene forsvinner. Lys, blålig grå."
+      ],
+      [
+        "Våt hettegenser",
+        "Grå som har blitt mørkere av regn. En grå, tidlig morgen."
+      ],
+      [
+        "Falmet lilla genser",
+        "En lilla som er vasket matt. Vesthimmelen like før soloppgang."
+      ],
+      [
+        "Ferskenskall",
+        "Siden med dun. Mellom rosa og oransje."
+      ],
+      [
+        "Aprikosmelk",
+        "Melk med most aprikos. Svært lys oransje."
+      ],
+      [
+        "Hvit vegg i sollys",
+        "Om morgenen får veggen et øyeblikk denne fargen."
+      ],
+      [
+        "Laksekjøtt",
+        "Den rosa fargen som forsvinner i panna."
+      ],
+      [
+        "Jordbærmelk",
+        "Den rosa fargen når den er ristet."
+      ],
+      [
+        "Umoden aprikos",
+        "En oransje der det gule fortsatt vinner."
+      ],
+      [
+        "Vannglass",
+        "En lys blå som lyset går gjennom."
+      ],
+      [
+        "Kaldt vann fra springen",
+        "En farge som får hendene til å fryse. Lys, kjølig blå."
+      ],
+      [
+        "Tynn is",
+        "Vann som har frosset lett om våren. Svært lys blå."
+      ],
+      [
+        "Porselensskål",
+        "Det blå skjæret i en hvit skål."
+      ],
+      [
+        "Strøket hvit skjorte",
+        "Nesten hvit med et lag blått. Helt klar himmel midt på dagen."
+      ],
+      [
+        "Oppvaskskum",
+        "Hvitt skum over oppvasken."
+      ],
+      [
+        "Falmede jeans",
+        "Denim med hvite knær. Blått en overskyet dag."
+      ],
+      [
+        "Blått fargekritt",
+        "Det blå som kommer når du trykker hardt på tegnepapiret."
+      ],
+      [
+        "Bassengflis",
+        "Blått sett gjennom vann. Midt på dagen en klar dag."
+      ],
+      [
+        "Blå kulepenn",
+        "Det blå i en strek på papir."
+      ],
+      [
+        "Dypt basseng",
+        "Vannet der du ikke når bunnen. Himmelens topp midt på dagen om høysommeren."
+      ],
+      [
+        "Penselvann",
+        "Glasset der du skylte penselen. Blått en klar ettermiddag."
+      ],
+      [
+        "Fyllepennblekk",
+        "I flasken en blå som nesten er svart."
+      ],
+      [
+        "Brusflaske",
+        "Lys blå med litt grønt i."
+      ],
+      [
+        "Dugget speil",
+        "Speilet etter dusjen. Lys, blålig grå."
+      ],
+      [
+        "Tåkete glass",
+        "Melkeaktig grå som visker ut det på den andre siden."
+      ],
+      [
+        "Viskelærsmuler",
+        "Hvite smuler på pulten. Svært lys grå."
+      ],
+      [
+        "Krittstøv",
+        "Det hvite som henger i lufta når tavla er visket ut."
+      ],
+      [
+        "Tørr sement",
+        "Et gulv som herdet for lenge siden. Jevn lys grå."
+      ],
+      [
+        "Kald aske",
+        "Det som er igjen når alt har brent. Den vanlige gråfargen en gråværsdag."
+      ],
+      [
+        "Grumsete vindu",
+        "En farge som blir sittende selv når du pusser. Mellomgrå med blått skjær."
+      ],
+      [
+        "Våt papp",
+        "En eske i regnet. Grå med et varmt skjær."
+      ],
+      [
+        "Avslått skjerm",
+        "Svartgrå, like etter at strømmen er slått av."
+      ],
+      [
+        "Brent fyrstikk",
+        "En pinne med svart hode. Mørk gråfiolett."
+      ],
+      [
+        "Oppvaskvann",
+        "Lunkent vann med fettøyne. Grumsete grå."
+      ],
+      [
+        "Kokevaskvann",
+        "Hvitt vann som damper. Lys grå."
+      ],
+      [
+        "Knivblad",
+        "Stål i lyset. Grå med blått skjær."
+      ],
+      [
+        "Gammelt blikktak",
+        "Taket på et gammelt skur. Gråblå like før regn."
+      ],
+      [
+        "Hav i gråvær",
+        "Vann som tar himmelens farge. Mørk blågrå."
+      ],
+      [
+        "Våt sement",
+        "Et gulv i regn. Mørk, fuktig grå."
+      ],
+      [
+        "Blyantstift",
+        "Mørkegrå, tegnet med stiften på skrå. En regnfull ettermiddag."
+      ],
+      [
+        "Våt asfalt",
+        "En vei etter regn om natten. Grå, nesten svart."
+      ],
+      [
+        "Mosegrodd mur",
+        "Grå med et grønt anstrøk. Av og til like før uværet."
+      ],
+      [
+        "Gammel mynt",
+        "Metall slitt av hender. Grå med et gulaktig skjær."
+      ],
+      [
+        "Risvann",
+        "Det første vannet når ris skylles. Varm hvit."
+      ],
+      [
+        "Eggeskall",
+        "En hvit som ikke er helt hvit."
+      ],
+      [
+        "Gammelt papir",
+        "Sidene i en gammel bok. Gulnet hvit."
+      ],
+      [
+        "Gammel avis",
+        "Papir bleket av sola. Mellom grå og gul."
+      ],
+      [
+        "Støvete vindu",
+        "Grumsete gul av ørkenstøv. Du får lyst til å tørke det av."
+      ],
+      [
+        "Kornpulverdrikk",
+        "Grumsete beige før pulveret synker til bunns."
+      ],
+      [
+        "Gulnet linoleum",
+        "Et gulv som er tråkket på i årevis. Matt gul."
+      ],
+      [
+        "Kokt kastanje",
+        "Den gule kjernen i en skrelt kastanje."
+      ],
+      [
+        "Melk i kaffe",
+        "Akkurat helt i, ennå ikke rørt rundt."
+      ],
+      [
+        "Støvete bokhylle",
+        "Lys gråbrun der fingeren din etterlater et spor."
+      ],
+      [
+        "Tørr leire",
+        "Jord som begynner å sprekke. Lys brun."
+      ],
+      [
+        "Kald melkete",
+        "En halvdrukket kopp som ble stående. Matt rosabrun."
+      ],
+      [
+        "Våt kartong",
+        "Papir som har svulmet opp i regnet. Fargen på en grå solnedgang."
+      ],
+      [
+        "Våt treterrasse",
+        "Tre som har trukket til seg vann og blitt mørkt."
+      ],
+      [
+        "Sotet murstein",
+        "Stedet nær ilden. Mørk rødlig grå."
+      ],
+      [
+        "Kaffeflekk",
+        "Den runde flekken når du løfter koppen."
+      ],
+      [
+        "Kokte røde bønner",
+        "Bønner som har ligget lenge i bløt. Mørk purpurgrå."
+      ],
+      [
+        "Ristet soyamel",
+        "Overflaten drysset med soyamel. Myk brunlig beige."
+      ],
+      [
+        "Eggeplomme",
+        "Like før den sprekker. Kraftig gul."
+      ],
+      [
+        "Brødskorpe",
+        "Der gult går over i brunt."
+      ],
+      [
+        "Mandarinskall",
+        "Det oransje før du skreller den."
+      ],
+      [
+        "Stekt laks",
+        "Rosa oransje, stekt på overflaten."
+      ],
+      [
+        "Tørket kaki",
+        "Kaki med hvitt pudder. Matt oransje."
+      ],
+      [
+        "Glør i veden",
+        "Ikke flammer, men rødglødende kull."
+      ],
+      [
+        "Moden kaki",
+        "Rødoransje, like før den blir for myk."
+      ],
+      [
+        "Tteokbokki-rød",
+        "Rødt når sausen har kokt inn. Den dypeste solnedgangen."
+      ],
+      [
+        "Vannmelon",
+        "Det søteste stedet i midten. Rødlig rosa."
+      ],
+      [
+        "Rosesyltetøy",
+        "Kronblader lagt i sukker. Matt rosarød."
+      ],
+      [
+        "Rød murstein",
+        "En mur etter mange års regn."
+      ],
+      [
+        "Avkjølte glør",
+        "Ild under aske. Mørk rødbrun."
+      ],
+      [
+        "Plommeskall",
+        "Rødlig lilla med hvit dogg."
+      ],
+      [
+        "Rødbønnegrøt",
+        "Tykk rødbrun før riskulene kommer i."
+      ],
+      [
+        "Vinrest",
+        "Mørkerød lilla i bunnen av glasset."
+      ],
+      [
+        "Avblomstret syrin",
+        "Den bleke lillafargen i en visnende blomst."
+      ],
+      [
+        "Blåbærmelk",
+        "Halvt omrørt lyslilla."
+      ],
+      [
+        "Druehud",
+        "Nyvasket, fuktig mørk lilla."
+      ],
+      [
+        "Auberginehud",
+        "Svartlilla som sluker lyset. Dagens siste farge."
+      ]
+    ]
+  },
+  "problem": {
+    "title": "Du ser på himmelen hver dag, men husker ikke én eneste farge",
+    "text": "Himmelen på vei til jobb, himmelen da du gikk ut etter lunsj: om kvelden er fargene borte. De himmelbildene du faktisk tok, drukner blant alt det andre i bildebiblioteket. SkyDex samler dem som farger og viser på ett brett hvilken vei dagens himmel gikk."
+  },
+  "features": [
+    {
+      "title": "Hver himmel får et navn",
+      "text": "Hver farge får først et navn du kan se for deg, som tynn is, bassengflis eller moden kaki. Under det kommer et navn med opphav: koreansk farge, japansk farge, pigment eller webfarge.\nNår treffet er nært, står det Navn. Når det ikke er det, står det ærlig Nærmeste navn.",
+      "shot": "02-name"
+    },
+    {
+      "title": "Legg igjen en linje",
+      "text": "Et kort åpner seg med en gang du har tatt bildet. Skriv hva du tenkte mens du så opp, så dukker det fram over himmelen igjen hver gang du trykker på ruten på brettet.\nDu kan også legge fargen fra en annen dags himmel over bildet og dele resultatet som et bilde.",
+      "shot": "03-card"
+    },
+    {
+      "title": "Tomme ruter viser vei",
+      "text": "Trykk på en tom rute for å se hvilken del av dagen den hører til, og hvilken farge du skal se etter. Den forteller også hvordan himmelen ser ut på det tidspunktet en skyfri dag, tilpasset soloppgang og solnedgang der du er.\nFargen trenger ikke å stemme. Det grå på en overskyet dag er også den dagens himmelfarge.",
+      "shot": "05-empty"
+    },
+    {
+      "title": "Logg, palett, gjentakelse",
+      "text": "Bla gjennom himlene dine i rekkefølge, og samle fargene i paletter som blå, grå og sandfarget. Ta samme time en annen dag, så står de to side om side.\nWidgets på Hjem-skjermen viser dagens brett og dagens himmel med ett blikk.",
+      "shot": "04-palette"
+    }
+  ],
+  "steps": {
+    "title": "Tre steg, så er du i gang",
+    "items": [
+      {
+        "title": "Se opp",
+        "text": "Trykk på kameraknappen under brettet, og la himmelen fylle kvadratet."
+      },
+      {
+        "title": "En rute fylles",
+        "text": "Ruten for akkurat nå får fargen du fanget, og et navn."
+      },
+      {
+        "title": "Legg igjen en linje",
+        "text": "Skriv på kortet som åpner seg, hva du tenkte."
+      }
+    ]
+  },
+  "reference": {
+    "title": "Slik deler brettet dagen",
+    "rows": [
+      [
+        "Midnatt · 00.00–05.00",
+        "seks ruter"
+      ],
+      [
+        "Daggry · 05.00–08.00",
+        "seks ruter"
+      ],
+      [
+        "Dag · 08.00–16.00",
+        "tolv ruter"
+      ],
+      [
+        "Sen ettermiddag · 16.00–18.00",
+        "seks ruter"
+      ],
+      [
+        "Solnedgang · 18.00–21.00",
+        "tolv ruter, én hvert kvarter"
+      ],
+      [
+        "Natt · 21.00–24.00",
+        "seks ruter"
+      ]
+    ],
+    "note": "Rundt solnedgang, når himmelen skifter fort, sitter rutene tett, og midt på natten, når den nesten står stille, er de brede. Øverst er midnatt, og dagen renner nedover."
+  },
+  "faq": {
+    "title": "Spørsmål",
+    "items": [
+      {
+        "q": "Hvordan fylles en rute?",
+        "a": "En himmel du tar i dag, fyller ruten for tidspunktet du tok den, også om fargen ikke ble som du ventet. Slik så himmelen faktisk ut da. Himler fra tidligere dager kommer inn etter farge: ligger en nær nok fargen til en rute, fyller den ruten, og hver himmel fyller bare én rute."
+      },
+      {
+        "q": "En rute som var full i går, er tom i dag.",
+        "a": "Brettet er alltid i dag. En rute som gårsdagens himmel fylte etter tidspunkt, matches på nytt bare etter farge når døgnet skifter. Derfor er brettet noen dager nesten fullt og andre dager ganske tomt. Bildene dine er ikke borte: alle himlene ligger i Logg, og i fargerekkefølge i Palett."
+      },
+      {
+        "q": "De fylte rutene mine blekner.",
+        "a": "Det er med vilje. Et bilde beholder sin ekte farge i en uke og blekner så sakte over de neste åtte ukene. Det slettes ikke, og det blekner aldri helt bort. Ta himmelen på det tidspunktet igjen, så får ruten straks full farge tilbake. Ingen rekke å bryte, ingen poeng å vinne tilbake."
+      },
+      {
+        "q": "Må fargen stemme?",
+        "a": "Nei. Her finnes verken godkjent eller underkjent. Alle bilder lagres, og det grå på en overskyet dag er også den dagens himmelfarge."
+      },
+      {
+        "q": "Hvorfor spør appen om posisjonen min?",
+        "a": "Bare for å kunne fortelle deg, når du trykker på en tom rute, hvordan en skyfri himmel ser ut på det tidspunktet, tilpasset soloppgang og solnedgang der du er. Den bruker en omtrentlig posisjon på kilometernivå, og koordinater festes aldri til bildene dine. Sier du nei, virker alt likevel, og Seoul brukes som utgangspunkt."
+      },
+      {
+        "q": "Kan jeg legge til en himmel fra bildebiblioteket?",
+        "a": "Ja. En himmel du velger i Bilder i stedet for med kameraet, beskjæres også til et kvadrat og fyller ruten for akkurat nå, på samme måte som en du tar."
+      },
+      {
+        "q": "Hvordan sletter jeg et bilde?",
+        "a": "Åpne bildet og trykk på Slett, eller sveip mot venstre på det i Logg. Det fjernes fra både enheten og iCloud. Sletter du appen, blir kopien i iCloud liggende, så himlene dine kommer tilbake hvis du installerer den på nytt."
+      },
+      {
+        "q": "Hva skjer når jeg bytter telefon?",
+        "a": "Himlene dine lagres i din egen iCloud, så de følger med til en ny enhet som er logget på med den samme Apple-kontoen. Ingen konto og ingen server, og bildene og fargene dine sendes aldri til utvikleren. Ingen reklame, ingen sporing."
+      },
+      {
+        "q": "Er den virkelig gratis?",
+        "a": "Ja, alle funksjoner er gratis. Liker du appen, kan du gi utvikleren tips i appen, men tips låser ikke opp noe."
+      },
+      {
+        "q": "Hvilke enheter fungerer den på?",
+        "a": "iPhone med iOS 17.0 eller nyere, bare stående."
+      }
+    ]
+  },
+  "closing": {
+    "headline": "I morgen tidlig,\nse opp bare én gang",
+    "cta": "Hent gratis i App Store"
+  },
+  "ui": {
+    "skip": "Hopp til innholdet",
+    "languages": "Språk",
+    "privacy": "Personvernerklæring",
+    "contact": "Feil, rar oppførsel eller noe du vil si: skriv til {email}. Fortell gjerne hva du holdt på med og hvilken iOS-versjon du har, så blir det mye lettere å finne årsaken."
+  }
+}

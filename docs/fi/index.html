@@ -1,340 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fi">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SkyDex</title>
-<meta name="description" content="iOS-appi, joka kerää päivän taivaan väreinä. Täytä neljänkymmenenkahdeksan ruudun lauta tämän päivän taivaalla.">
-<link rel="canonical" href="https://m1zz.github.io/SkyDex/fi/">
-<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/SkyDex/">
-<link rel="alternate" hreflang="en" href="https://m1zz.github.io/SkyDex/en/">
-<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/SkyDex/en/">
-<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/SkyDex/ja/">
-<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/SkyDex/zh-Hans/">
-<link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/SkyDex/zh-Hant/">
-<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/SkyDex/ru/">
-<link rel="alternate" hreflang="es" href="https://m1zz.github.io/SkyDex/es/">
-<link rel="alternate" hreflang="de" href="https://m1zz.github.io/SkyDex/de/">
-<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/SkyDex/fr/">
-<link rel="alternate" hreflang="it" href="https://m1zz.github.io/SkyDex/it/">
-<link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/SkyDex/pt-BR/">
-<link rel="alternate" hreflang="th" href="https://m1zz.github.io/SkyDex/th/">
-<link rel="alternate" hreflang="vi" href="https://m1zz.github.io/SkyDex/vi/">
-<link rel="alternate" hreflang="cs" href="https://m1zz.github.io/SkyDex/cs/">
-<link rel="alternate" hreflang="da" href="https://m1zz.github.io/SkyDex/da/">
-<link rel="alternate" hreflang="el" href="https://m1zz.github.io/SkyDex/el/">
-<link rel="alternate" hreflang="fi" href="https://m1zz.github.io/SkyDex/fi/">
-<link rel="alternate" hreflang="id" href="https://m1zz.github.io/SkyDex/id/">
-<link rel="alternate" hreflang="nb" href="https://m1zz.github.io/SkyDex/nb/">
-<link rel="alternate" hreflang="nl" href="https://m1zz.github.io/SkyDex/nl/">
-<link rel="alternate" hreflang="pl" href="https://m1zz.github.io/SkyDex/pl/">
-<link rel="alternate" hreflang="sv" href="https://m1zz.github.io/SkyDex/sv/">
-<link rel="alternate" hreflang="tr" href="https://m1zz.github.io/SkyDex/tr/">
-<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/SkyDex/">
-<style>
-  :root {
-    --ink: #16202e;
-    --ink-soft: #5d6773;
-    --paper: #f4f5f7;
-    --card: #ffffff;
-    --line: #e2e5ea;
-    --accent: #2f7bbe;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ink: #eef1f5;
-      --ink-soft: #a2acb8;
-      --paper: #0b111c;
-      --card: #141c28;
-      --line: #26303e;
-      --accent: #7fa4ce;
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    padding: 0 20px 72px;
-    background: var(--paper);
-    color: var(--ink);
-    font: 17px/1.72 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
-      "Pretendard", "Segoe UI", Roboto, sans-serif;
-    -webkit-text-size-adjust: 100%;
-  }
-  main { max-width: 680px; margin: 0 auto; }
-  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
-
-  /* 하루 곡선 그대로 이어붙인 띠 */
-  .strip {
-    display: flex;
-    height: 8px;
-    border-radius: 4px;
-    overflow: hidden;
-    margin: 40px 0 34px;
-  }
-  .strip span { flex: 1 1 0; }
-
-  h1 {
-    font-size: 34px; line-height: 1.25; letter-spacing: -0.03em;
-    margin: 0 0 8px; text-align: center; font-weight: 700;
-  }
-  .lede {
-    margin: 0 auto 8px; text-align: center; color: var(--ink-soft);
-    max-width: 26em;
-  }
-  .platform {
-    text-align: center; color: var(--ink-soft); font-size: 14px;
-    margin: 0 0 36px;
-  }
-
-  /* 판 — 앱과 같은 6×8, 같은 색 */
-  .board {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
-    max-width: 340px;
-    margin: 0 auto 12px;
-  }
-  .bead {
-    aspect-ratio: 1;
-    border-radius: 50%;
-    border: 4px solid transparent;
-    display: block;
-  }
-  .bead.on { border: 0; }
-  .caption {
-    text-align: center; color: var(--ink-soft); font-size: 14px;
-    margin: 0 0 46px;
-  }
-
-  h2 {
-    font-size: 21px; letter-spacing: -0.01em; margin: 46px 0 12px;
-    padding-top: 28px; border-top: 1px solid var(--line);
-  }
-  p { margin: 0 0 14px; }
-  ul { margin: 0 0 14px; padding-left: 1.2em; }
-  li { margin-bottom: 8px; }
-  strong { font-weight: 600; }
-
-  /* 이름 카드 — 앱의 사진 카드 아래에 붙는 것과 같은 순서 */
-  .names { margin: 20px 0 8px; }
-  .name {
-    display: flex; align-items: center; gap: 14px;
-    background: var(--card); border: 1px solid var(--line);
-    border-radius: 16px; padding: 14px 16px; margin-bottom: 10px;
-  }
-  .swatch {
-    width: 46px; height: 46px; border-radius: 12px; flex: 0 0 auto;
-  }
-  .name .simile { font-size: 17px; font-weight: 600; }
-  .name .real { font-size: 13px; color: var(--ink-soft); }
-
-  .quiet {
-    background: var(--card); border: 1px solid var(--line);
-    border-radius: 16px; padding: 18px 20px; margin: 22px 0 8px;
-  }
-  .quiet p:last-child { margin-bottom: 0; }
-
-  footer {
-    margin-top: 60px; padding-top: 26px; border-top: 1px solid var(--line);
-    color: var(--ink-soft); font-size: 15px; text-align: center;
-  }
-  footer a { margin: 0 8px; }
-  nav.langs { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px 14px; margin: 18px 0 0; font-size: 14px; }
-  nav.langs a { color: var(--ink-soft); text-decoration: none; }
-  nav.langs a[aria-current] { color: var(--ink); font-weight: 600; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkyDex: päivän taivaanvärien lauta, joka täyttyy kuva kerrallaan</title>
+  <meta name="description" content="Jokainen taivaskuva täyttää yhden päivän 48 taivaanväristä ja saa nimen, joka muistuttaa sitä. Ilmainen, eikä tiliä tarvita.">
+  <meta name="theme-color" content="#2A74B6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b111c" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6802295390">
+  <link rel="canonical" href="https://m1zz.github.io/SkyDex/fi/">
+  <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/SkyDex/">
+  <link rel="alternate" hreflang="en" href="https://m1zz.github.io/SkyDex/en/">
+  <link rel="alternate" hreflang="ja" href="https://m1zz.github.io/SkyDex/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/SkyDex/zh-Hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/SkyDex/zh-Hant/">
+  <link rel="alternate" hreflang="ru" href="https://m1zz.github.io/SkyDex/ru/">
+  <link rel="alternate" hreflang="es" href="https://m1zz.github.io/SkyDex/es/">
+  <link rel="alternate" hreflang="de" href="https://m1zz.github.io/SkyDex/de/">
+  <link rel="alternate" hreflang="fr" href="https://m1zz.github.io/SkyDex/fr/">
+  <link rel="alternate" hreflang="it" href="https://m1zz.github.io/SkyDex/it/">
+  <link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/SkyDex/pt-BR/">
+  <link rel="alternate" hreflang="th" href="https://m1zz.github.io/SkyDex/th/">
+  <link rel="alternate" hreflang="vi" href="https://m1zz.github.io/SkyDex/vi/">
+  <link rel="alternate" hreflang="cs" href="https://m1zz.github.io/SkyDex/cs/">
+  <link rel="alternate" hreflang="da" href="https://m1zz.github.io/SkyDex/da/">
+  <link rel="alternate" hreflang="el" href="https://m1zz.github.io/SkyDex/el/">
+  <link rel="alternate" hreflang="fi" href="https://m1zz.github.io/SkyDex/fi/">
+  <link rel="alternate" hreflang="id" href="https://m1zz.github.io/SkyDex/id/">
+  <link rel="alternate" hreflang="nb" href="https://m1zz.github.io/SkyDex/nb/">
+  <link rel="alternate" hreflang="nl" href="https://m1zz.github.io/SkyDex/nl/">
+  <link rel="alternate" hreflang="pl" href="https://m1zz.github.io/SkyDex/pl/">
+  <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/SkyDex/sv/">
+  <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/SkyDex/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/SkyDex/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SkyDex: päivän taivaanvärien lauta, joka täyttyy kuva kerrallaan">
+  <meta property="og:description" content="Jokainen taivaskuva täyttää yhden päivän 48 taivaanväristä ja saa nimen, joka muistuttaa sitä. Ilmainen, eikä tiliä tarvita.">
+  <meta property="og:url" content="https://m1zz.github.io/SkyDex/fi/">
+  <meta property="og:image" content="https://m1zz.github.io/SkyDex/img/fi/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../sitegen.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#2A74B6}@media (prefers-color-scheme:dark){:root{--accent:#7FA4CE}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-<main>
-  <nav class="langs" aria-label="Language">
-    <a href="../" hreflang="ko" lang="ko">한국어</a>
-    <a href="../en/" hreflang="en" lang="en">English</a>
-    <a href="../ja/" hreflang="ja" lang="ja">日本語</a>
-    <a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
-    <a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
-    <a href="../ru/" hreflang="ru" lang="ru">Русский</a>
-    <a href="../es/" hreflang="es" lang="es">Español</a>
-    <a href="../de/" hreflang="de" lang="de">Deutsch</a>
-    <a href="../fr/" hreflang="fr" lang="fr">Français</a>
-    <a href="../it/" hreflang="it" lang="it">Italiano</a>
-    <a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
-    <a href="../th/" hreflang="th" lang="th">ไทย</a>
-    <a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
-    <a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
-    <a href="../da/" hreflang="da" lang="da">Dansk</a>
-    <a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
-    <a href="../fi/" hreflang="fi" lang="fi" aria-current="true">Suomi</a>
-    <a href="../id/" hreflang="id" lang="id">Indonesia</a>
-    <a href="../nb/" hreflang="nb" lang="nb">Norsk</a>
-    <a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
-    <a href="../pl/" hreflang="pl" lang="pl">Polski</a>
-    <a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
-    <a href="../tr/" hreflang="tr" lang="tr">Türkçe</a>
-  </nav>
+  <a class="skip" href="#main">Siirry sisältöön</a>
+  <header class="bar">
+    <a class="brand" href="../fi/"><img src="../icon.png" alt="" width="32" height="32">SkyDex</a>
+    <a class="lang-link" href="#languages">Kieli</a>
+  </header>
 
-  <div class="strip" aria-hidden="true">
-    <span style="background:#080D18"></span>
-    <span style="background:#090E1A"></span>
-    <span style="background:#0A0F1C"></span>
-    <span style="background:#0A101E"></span>
-    <span style="background:#0B1120"></span>
-    <span style="background:#0C1221"></span>
-    <span style="background:#131B30"></span>
-    <span style="background:#1B263E"></span>
-    <span style="background:#6879A2"></span>
-    <span style="background:#99A7C5"></span>
-    <span style="background:#96ABCB"></span>
-    <span style="background:#7FA4CE"></span>
-    <span style="background:#709CCB"></span>
-    <span style="background:#5791C6"></span>
-    <span style="background:#508DC5"></span>
-    <span style="background:#3F83C1"></span>
-    <span style="background:#307BBE"></span>
-    <span style="background:#2B77BB"></span>
-    <span style="background:#1F6FB5"></span>
-    <span style="background:#1D6EB4"></span>
-    <span style="background:#2471B6"></span>
-    <span style="background:#2975B8"></span>
-    <span style="background:#3179BA"></span>
-    <span style="background:#4988C3"></span>
-    <span style="background:#558EC5"></span>
-    <span style="background:#6D9BCA"></span>
-    <span style="background:#7EA5CD"></span>
-    <span style="background:#8FA5BF"></span>
-    <span style="background:#B2A297"></span>
-    <span style="background:#C1A07E"></span>
-    <span style="background:#CC986A"></span>
-    <span style="background:#D68F56"></span>
-    <span style="background:#CC7C49"></span>
-    <span style="background:#B95B35"></span>
-    <span style="background:#A95239"></span>
-    <span style="background:#8F4440"></span>
-    <span style="background:#543852"></span>
-    <span style="background:#3B324D"></span>
-    <span style="background:#322F4B"></span>
-    <span style="background:#2B2A44"></span>
-    <span style="background:#20233A"></span>
-    <span style="background:#181D33"></span>
-    <span style="background:#161C30"></span>
-    <span style="background:#13192B"></span>
-    <span style="background:#0F1424"></span>
-    <span style="background:#0B111F"></span>
-    <span style="background:#0A101D"></span>
-    <span style="background:#080D19"></span>
-  </div>
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>Minkä värinen<br>taivas oli tänään?</h1>
+        <p class="lead">Kuvaa taivas, niin neljänkymmenenkahdeksan ruudun laudalla sen kellonajan ruutu täyttyy tavoittamallasi värillä. Väri saa myös nimen, jonka näkee mielessään: ohut jää, uima-altaan laatta, kypsä kaki.</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6802295390">Ilmaiseksi App Storesta</a><a class="try" href="#try">Kokeile lautaa ↓</a></div>
+        <p class="muted small">Ilmainen. Ei tiliä, ei kirjautumista.</p>
+      </div>
+      <div class="phone"><img src="../img/fi/01-board.jpg" alt="Minkä värinen taivas oli tänään?" width="600" height="1303" decoding="async"></div>
+    </section>
 
-  <h1>SkyDex</h1>
-  <p class="lede">Kerää päivän taivas väreinä.<br>On lauta, jossa on neljäkymmentäkahdeksan ruutua, ja sinä täytät sen tämän päivän taivaalla.</p>
-  <p class="platform">iPhone · iOS 17.0 tai uudempi</p>
 
-  <div class="board" aria-hidden="true">
-    <span class="bead" style="border-color:#55565A" title="00:00–00:50"></span>
-    <span class="bead" style="border-color:#55565B" title="00:50–01:40"></span>
-    <span class="bead" style="border-color:#55565C" title="01:40–02:30"></span>
-    <span class="bead" style="border-color:#55575D" title="02:30–03:20"></span>
-    <span class="bead" style="border-color:#55575D" title="03:20–04:10"></span>
-    <span class="bead" style="border-color:#56575E" title="04:10–05:00"></span>
-    <span class="bead" style="border-color:#595A64" title="05:00–05:30"></span>
-    <span class="bead" style="border-color:#5C5E69" title="05:30–06:00"></span>
-    <span class="bead" style="border-color:#767B8B" title="06:00–06:30"></span>
-    <span class="bead on" style="background:#99A7C5" title="06:30–07:00 · #99A7C5"></span>
-    <span class="bead" style="border-color:#848B97" title="07:00–07:30"></span>
-    <span class="bead" style="border-color:#7D8998" title="07:30–08:00"></span>
-    <span class="bead on" style="background:#709CCB" title="08:00–08:40 · #709CCB"></span>
-    <span class="bead" style="border-color:#728397" title="08:40–09:20"></span>
-    <span class="bead" style="border-color:#718196" title="09:20–10:00"></span>
-    <span class="bead" style="border-color:#6D7E96" title="10:00–10:40"></span>
-    <span class="bead" style="border-color:#6B7C95" title="10:40–11:20"></span>
-    <span class="bead" style="border-color:#6A7A95" title="11:20–12:00"></span>
-    <span class="bead on" style="background:#1F6FB5" title="12:00–12:40 · #1F6FB5"></span>
-    <span class="bead" style="border-color:#687793" title="12:40–13:20"></span>
-    <span class="bead" style="border-color:#687893" title="13:20–14:00"></span>
-    <span class="bead" style="border-color:#697A93" title="14:00–14:40"></span>
-    <span class="bead" style="border-color:#6B7B94" title="14:40–15:20"></span>
-    <span class="bead" style="border-color:#6F8096" title="15:20–16:00"></span>
-    <span class="bead" style="border-color:#728297" title="16:00–16:20"></span>
-    <span class="bead" style="border-color:#788697" title="16:20–16:40"></span>
-    <span class="bead on" style="background:#7EA5CD" title="16:40–17:00 · #7EA5CD"></span>
-    <span class="bead" style="border-color:#828993" title="17:00–17:20"></span>
-    <span class="bead" style="border-color:#8E8884" title="17:20–17:40"></span>
-    <span class="bead on" style="background:#C1A07E" title="17:40–18:00 · #C1A07E"></span>
-    <span class="bead" style="border-color:#998474" title="18:00–18:15"></span>
-    <span class="bead on" style="background:#D68F56" title="18:15–18:30 · #D68F56"></span>
-    <span class="bead" style="border-color:#9C7B68" title="18:30–18:45"></span>
-    <span class="bead on" style="background:#B95B35" title="18:45–19:00 · #B95B35"></span>
-    <span class="bead" style="border-color:#936E63" title="19:00–19:15"></span>
-    <span class="bead" style="border-color:#896A66" title="19:15–19:30"></span>
-    <span class="bead" style="border-color:#71656F" title="19:30–19:45"></span>
-    <span class="bead" style="border-color:#67636E" title="19:45–20:00"></span>
-    <span class="bead" style="border-color:#64626E" title="20:00–20:15"></span>
-    <span class="bead" style="border-color:#61606B" title="20:15–20:30"></span>
-    <span class="bead" style="border-color:#5D5D68" title="20:30–20:45"></span>
-    <span class="bead" style="border-color:#5A5B65" title="20:45–21:00"></span>
-    <span class="bead on" style="background:#161C30" title="21:00–21:30 · #161C30"></span>
-    <span class="bead" style="border-color:#585A62" title="21:30–22:00"></span>
-    <span class="bead" style="border-color:#56585F" title="22:00–22:30"></span>
-    <span class="bead" style="border-color:#55575D" title="22:30–23:00"></span>
-    <span class="bead" style="border-color:#55575C" title="23:00–23:30"></span>
-    <span class="bead" style="border-color:#55565A" title="23:30–00:00"></span>
-  </div>
-  <p class="caption">Ylhäällä on keskiyö; alaspäin mentäessä tulee päivä ja sitten taas pimeää. Täytetty ympyrä on taivas, jonka olet kuvannut; tyhjä rengas on vielä tulossa.</p>
+    <section class="reveal" id="try">
+      <h2>Kokeile lautaa</h2>
+      <p class="muted">Napauta ruutua, niin näet, mihin vuorokaudenaikaan se kuuluu. Lisää taivaskuva, niin tämän hetken ruutu täyttyy. Kelaa sitten päiviä eteenpäin ja katso, miten lauta muuttuu.</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;Kokeile lautaa&quot;, &quot;lead&quot;: &quot;Napauta ruutua, niin näet, mihin vuorokaudenaikaan se kuuluu. Lisää taivaskuva, niin tämän hetken ruutu täyttyy. Kelaa sitten päiviä eteenpäin ja katso, miten lauta muuttuu.&quot;, &quot;photo&quot;: &quot;Lisää taivaskuva&quot;, &quot;age&quot;: &quot;Kuvaamisesta&quot;, &quot;ageToday&quot;: &quot;Tänään&quot;, &quot;ageDay&quot;: &quot;{n} päivä myöhemmin&quot;, &quot;ageDays&quot;: &quot;{n} päivää myöhemmin&quot;, &quot;note&quot;: &quot;Laudalla on aluksi samat esimerkkitaivaat kuin sovelluksen kuvakaappauksissa. Kuvasi luetaan vain tässä selaimessa, eikä sitä lähetetä minnekään. Värin valinta, täytettävä ruutu ja haalistumisen tahti toimivat täsmälleen kuten sovelluksessa.&quot;, &quot;now&quot;: &quot;Nyt&quot;, &quot;bands&quot;: [&quot;Keskiyö&quot;, &quot;Aamunkoitto&quot;, &quot;Päivä&quot;, &quot;Myöhäinen iltapäivä&quot;, &quot;Auringonlasku&quot;, &quot;Yö&quot;], &quot;emptyTag&quot;: &quot;%@ · vielä tyhjä&quot;, &quot;spot&quot;: &quot;Tämä paikka täyttyy taivaalla, joka on kuvattu tuona vuorokaudenaikana. Mikä tahansa kuva menee sellaisenaan; väriltä ei vaadita vastaavuutta.&quot;, &quot;sims&quot;: [[&quot;Tussinmusta&quot;, &quot;Kivellä hierottu tussi. Syvin yö.&quot;], [&quot;Yöllinen meri&quot;, &quot;Vesi ylhäältä katsottuna, ilman valoja. Mustaa ja kerros sinistä.&quot;], [&quot;Palanut kattilanpohja&quot;, &quot;Jälki siitä, mikä paloi. Mustaa ilman sinistä sävyä.&quot;], [&quot;Kuivunut muste&quot;, &quot;Kesken jäänyt täytekynän jälki. Mustaa, jossa sinistä on jäljellä.&quot;], [&quot;Syvä vesi&quot;, &quot;Väri siellä, missä jalat eivät yllä pohjaan. Tumma, viileä laivastonsininen.&quot;], [&quot;Uudet farkut&quot;, &quot;Denimiä, jota ei ole vielä kertaakaan pesty. Syvä laivastonsininen.&quot;], [&quot;Yöjunan ikkuna&quot;, &quot;Lasi, kun valot ovat menneet ohi. Harmaata, melkein laivastonsinistä.&quot;], [&quot;Keskiyön ikkuna&quot;, &quot;Näkymä, kun vedät verhot sivuun. Vähän sinisempää kuin musta.&quot;], [&quot;Haalistunut muste&quot;, &quot;Vesi, jolla huuhdoit musteen käsistäsi. Haalea laivastonsininen.&quot;], [&quot;Koulupuvun sininen&quot;, &quot;Vuosia käytetyn takin laivastonsininen. Ei mustaa eikä sinistä.&quot;], [&quot;Märät farkut&quot;, &quot;Juuri ripustettu pyykki. Syvä, samea sininen.&quot;], [&quot;Makrillin selkä&quot;, &quot;Hopeanhohtoinen siniharmaa. Taivas ennen sadetta.&quot;], [&quot;Kulunut haalari&quot;, &quot;Sininen, joka on haalistunut vuosien käytössä.&quot;], [&quot;Haalistunut sininen verho&quot;, &quot;Verho, joka on nähnyt aurinkoa pitkään. Voimaton laivastonsininen.&quot;], [&quot;Huurre ikkunassa&quot;, &quot;Sisältä ulos katsoessa utuista. Sinertävä harmaa.&quot;], [&quot;Aamusumu&quot;, &quot;Aamu, jolloin talojen yläosat ovat pyyhkiytyneet pois. Vaalea, sinertävä harmaa.&quot;], [&quot;Märkä huppari&quot;, &quot;Sateesta tummunut harmaa. Pilvinen aamunkoitto.&quot;], [&quot;Haalistunut liila villapaita&quot;, &quot;Monta kertaa pesty violetti. Läntinen taivas juuri ennen aamunkoittoa.&quot;], [&quot;Persikankuori&quot;, &quot;Nukkainen puoli. Vaaleanpunaisen ja oranssin välissä.&quot;], [&quot;Aprikoosimaito&quot;, &quot;Maitoa ja soseutettua aprikoosia. Hyvin vaalea oranssi.&quot;], [&quot;Auringon valaisema valkoinen seinä&quot;, &quot;Aamulla seinä on hetken tämän värinen.&quot;], [&quot;Lohen liha&quot;, &quot;Se vaaleanpunainen, joka katoaa paistaessa.&quot;], [&quot;Mansikkamaito&quot;, &quot;Vaaleanpunainen ravistelun jälkeen.&quot;], [&quot;Raaka aprikoosi&quot;, &quot;Oranssi, jossa keltainen vielä voittaa.&quot;], [&quot;Vesilasi&quot;, &quot;Vaalea sininen, jonka läpi valo on kulkenut.&quot;], [&quot;Kylmä hanavesi&quot;, &quot;Kylmien käsien väri. Haalea, viileä sininen.&quot;], [&quot;Ohut jää&quot;, &quot;Keväällä kevyesti jäätynyt vesi. Hyvin vaalea sininen.&quot;], [&quot;Posliinikulho&quot;, &quot;Valkoiseen kulhoon jäänyt sininen vivahde.&quot;], [&quot;Silitetty valkoinen paita&quot;, &quot;Melkein valkoista, kerros sinistä. Hyvin kirkas keskipäivä.&quot;], [&quot;Tiskivaahto&quot;, &quot;Valkoinen vaahto tiskiveden pinnalla.&quot;], [&quot;Haalistuneet farkut&quot;, &quot;Polvista vaalentunut denim. Utuisen päivän sininen.&quot;], [&quot;Sininen väriliitu&quot;, &quot;Sininen, joka syntyy, kun painat lujaa piirustuspaperiin.&quot;], [&quot;Uima-altaan laatta&quot;, &quot;Sininen veden läpi nähtynä. Kirkkaan päivän keskipäivä.&quot;], [&quot;Sininen kuulakynä&quot;, &quot;Paperille vedetyn viivan sininen.&quot;], [&quot;Syvä uima-allas&quot;, &quot;Vesi siellä, missä et yllä pohjaan. Keskikesän keskipäivän huippu.&quot;], [&quot;Sinivärivesi&quot;, &quot;Purkki, jossa sivellin huuhdotaan. Kirkkaan iltapäivän sininen.&quot;], [&quot;Täytekynän muste&quot;, &quot;Pullossa sininen, joka on melkein mustaa.&quot;], [&quot;Limsapullo&quot;, &quot;Vaalea sininen, jossa on vihreää.&quot;], [&quot;Huurtunut peili&quot;, &quot;Peili suihkun jälkeen. Vaalea siniharmaa.&quot;], [&quot;Sumuinen lasi&quot;, &quot;Utuinen harmaa, jossa toinen puoli sumenee.&quot;], [&quot;Pyyhekumin muru&quot;, &quot;Pöydälle kertynyt valkoinen pöly. Hyvin vaalea harmaa.&quot;], [&quot;Liitupöly&quot;, &quot;Valkoinen, joka jää ilmaan taulun pyyhkimisen jälkeen.&quot;], [&quot;Kuiva sementti&quot;, &quot;Kauan sitten kovettunut lattia. Tasainen vaalea harmaa.&quot;], [&quot;Kylmä tuhka&quot;, &quot;Se, mikä jää, kun kaikki on palanut. Pilvisen päivän perusharmaa.&quot;], [&quot;Samea ikkunalasi&quot;, &quot;Väri, joka ei lähde pyyhkimällä. Sinertävä keskiharmaa.&quot;], [&quot;Märkä aaltopahvi&quot;, &quot;Sateessa seissyt laatikko. Lämpimän sävyinen harmaa.&quot;], [&quot;Sammunut näyttö&quot;, &quot;Mustanharmaa heti virran katkaisun jälkeen.&quot;], [&quot;Palanut tulitikku&quot;, &quot;Tikku, jonka vain pää on musta. Tumma harmaanvioletti.&quot;], [&quot;Tiskivesi&quot;, &quot;Haaleaa vettä ja rasvaa pinnalla. Samea harmaa.&quot;], [&quot;Pyykinkeittovesi&quot;, &quot;Höyryävä valkoinen vesi. Vaalea harmaa.&quot;], [&quot;Veitsenterä&quot;, &quot;Terästä valossa. Sinertävä harmaa.&quot;], [&quot;Vanha peltikatto&quot;, &quot;Vanhan varaston katto. Siniharmaa juuri ennen sadetta.&quot;], [&quot;Meri pilvisenä päivänä&quot;, &quot;Vesi, joka ottaa taivaan värin. Tumma siniharmaa.&quot;], [&quot;Märkä sementti&quot;, &quot;Lattia sateen jälkeen. Tumma, kostea harmaa.&quot;], [&quot;Lyijykynä&quot;, &quot;Tummanharmaa, kynän kyljellä väritetty. Sateinen iltapäivä.&quot;], [&quot;Märkä asfaltti&quot;, &quot;Tie yösateen jälkeen. Harmaa, melkein musta.&quot;], [&quot;Sammaloitunut muuri&quot;, &quot;Harmaa, johon vihreä on juurtunut. Joskus juuri ennen myrskyä.&quot;], [&quot;Vanha kolikko&quot;, &quot;Käsissä kulunut metalli. Kellertävä harmaa.&quot;], [&quot;Riisinhuuhteluvesi&quot;, &quot;Ensimmäinen vesi riisiä huuhdellessa. Lämmin valkoinen.&quot;], [&quot;Munankuori&quot;, &quot;Valkoinen, joka ei ole aivan valkoinen.&quot;], [&quot;Vanha paperi&quot;, &quot;Vanhan kirjan sivut. Kellastunut valkoinen.&quot;], [&quot;Vanha sanomalehti&quot;, &quot;Auringon haalistama paperi. Harmaan ja keltaisen välissä.&quot;], [&quot;Hiekkapölyinen ikkuna&quot;, &quot;Utuinen keltainen hohde, joka saa haluamaan pestä lasin.&quot;], [&quot;Paahdettu viljajuoma&quot;, &quot;Samea beige ennen kuin se laskeutuu pohjalle.&quot;], [&quot;Kellastunut lattiamatto&quot;, &quot;Pitkään painettu lattia. Samea keltainen.&quot;], [&quot;Keitetty kastanja&quot;, &quot;Kuoritun kastanjan keltainen sisus.&quot;], [&quot;Maito kahvissa&quot;, &quot;Juuri kaadettu, ei vielä sekoittunut.&quot;], [&quot;Pölyinen kirjahylly&quot;, &quot;Vaalea harmaanruskea, johon sormi jättää jäljen.&quot;], [&quot;Kuiva savi&quot;, &quot;Halkeilemaan alkanut savimaa. Vaaleanruskea.&quot;], [&quot;Jäähtynyt maitotee&quot;, &quot;Kesken jätetty kuppi. Samea punertavanruskea.&quot;], [&quot;Märkä pahvi&quot;, &quot;Sateessa turvonnut paperi. Haalean auringonlaskun väri.&quot;], [&quot;Sateen kastelema puuterassi&quot;, &quot;Kosteudesta tummunut puu.&quot;], [&quot;Tuhkainen tiili&quot;, &quot;Kohta, jota tuli on lämmittänyt. Tumma punaharmaa.&quot;], [&quot;Kahvitahra&quot;, &quot;Pyöreä tahra kupin nostamisen jälkeen.&quot;], [&quot;Keitetty punapapu&quot;, &quot;Pitkään vedessä liotetut pavut. Tumma purppuranharmaa.&quot;], [&quot;Paahdettu soijajauho&quot;, &quot;Soijajauhoon kieritetty riisikakku. Pehmeä ruskehtava beige.&quot;], [&quot;Munankeltuainen&quot;, &quot;Juuri ennen kuin se puhkeaa. Syvä keltainen.&quot;], [&quot;Leivänkuori&quot;, &quot;Kohta, jossa keltainen muuttuu ruskeaksi.&quot;], [&quot;Mandariininkuori&quot;, &quot;Se oranssi ennen kuorimista.&quot;], [&quot;Paistettu lohi&quot;, &quot;Vaaleanpunertava oranssi, jossa pinta on kypsynyt.&quot;], [&quot;Kuivattu kaki&quot;, &quot;Kuivattu kaki, jonka pinnalla on valkoista huurretta. Samea oranssi.&quot;], [&quot;Hiillos&quot;, &quot;Ei liekki, vaan punaisena hehkuva hiili.&quot;], [&quot;Kypsä kaki&quot;, &quot;Punaoranssi juuri ennen kuin hedelmä halkeaa.&quot;], [&quot;Tteokbokki-kastike&quot;, &quot;Punainen, kun kastike on kiehunut kokoon. Syvin auringonlasku.&quot;], [&quot;Vesimeloni&quot;, &quot;Makein kohta keskellä. Punertava vaaleanpunainen.&quot;], [&quot;Ruusuhillo&quot;, &quot;Sokeriin säilötyt terälehdet. Samea punertava vaaleanpunainen.&quot;], [&quot;Punatiili&quot;, &quot;Muuri, joka on seissyt sateessa monta vuotta.&quot;], [&quot;Hiipuva hiillos&quot;, &quot;Tuhkan peittämä tuli. Tumma punaruskea.&quot;], [&quot;Luumunkuori&quot;, &quot;Punavioletti, jonka päällä on valkoinen kerros.&quot;], [&quot;Punapapupuuro&quot;, &quot;Paksu punaruskea ennen kuin riisipallot lisätään.&quot;], [&quot;Viinin tilkka&quot;, &quot;Tumma punavioletti lasin pohjalla.&quot;], [&quot;Kuihtunut syreeni&quot;, &quot;Kuivuvan kukan haalea violetti.&quot;], [&quot;Mustikkamaito&quot;, &quot;Vaalea liila, jota ei ole sekoitettu loppuun.&quot;], [&quot;Viinirypäleen kuori&quot;, &quot;Syvä violetti, juuri huuhdottu ja vielä märkä.&quot;], [&quot;Munakoison kuori&quot;, &quot;Valon nielevä mustanvioletti. Päivän viimeinen väri.&quot;]]}"></div>
+    </section>
 
-  <h2>Lauta on tämä päivä</h2>
-  <p>Neljäkymmentäkahdeksan ruutua ovat <strong>värit, joiden läpi tämän päivän taivas kulkee</strong>. Ne lasketaan uudelleen joka päivä paikkakuntasi todellisesta auringonnoususta ja -laskusta sekä päivän pilvi- ja sadeennusteesta. Eilen täynnä ollut ruutu voi siis olla tänään tyhjä. Lauta ei kerro, kuinka monta olet kerännyt, vaan <strong>kuinka paljon tästä päivästä voit näyttää</strong>.</p>
-  <p>Kuvaa taivas nyt, niin <strong>sen hetken ruutu</strong> täyttyy tavoittamallasi värillä. Jos väri poikkeaa odotetusta, se menee silti sisään: ennuste on arvaus; kuva oli todella siellä.</p>
-  <p><strong>Mitään ei arvostella.</strong> Ei läpi eikä hylätty, ei toleranssia. Pilvisen päivän harmaa on myös sen päivän taivaan väri.</p>
+    <section class="problem reveal">
+      <h2>Katsot taivasta joka päivä, mutta et muista siitä yhtään väriä</h2>
+      <p>Taivas töihin mennessä, taivas lounaalta palatessa: illalla värit ovat jo poissa. Ne taivaskuvat, jotka sentään otit, hukkuvat kaiken muun sekaan kuvakirjastossa. SkyDex kerää ne väreinä ja näyttää yhdellä laudalla, mitä reittiä tämän päivän taivas kulki.</p>
+    </section>
 
-  <h2>Jokainen väri saa nimen</h2>
-  <p>Appi kertoo kahdella tavalla, minkä värinen taivaasi on, korean kielellä kirjoitettuna. Ensin tulee <strong>vertaus, jonka voi kuvitella</strong>, ja sen alla <strong>nimi lähteineen</strong>. ”Usuhanairo” on tarkempi vastaus, mutta lähes kukaan ei näe väriä tuossa sanassa, eikä nimi, jota ei näe, tee nimen tehtävää.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Jokainen taivas saa nimen</h2>
+        <p>Jokainen väri saa ensin nimen, jonka näkee silmissään, kuten ohut jää, uima-altaan laatta tai kypsä kaki. Sen alla on nimi, jolla on alkuperä: korealainen väri, japanilainen väri, pigmentti tai verkkoväri.<br>Kun osuma on lähellä, siinä lukee Nimi. Kun ei ole, siinä lukee rehellisesti Lähin nimi.</p>
+      </div>
+      <div class="phone"><img src="../img/fi/02-name.jpg" alt="Jokainen taivas saa nimen" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <div class="names">
-    <div class="name">
-      <span class="swatch" style="background:#7E90B6"></span>
-      <span>
-        <div class="simile">Haalistunut laivastonsininen verho</div>
-        <div class="real">Usuhanairo · perinteinen japanilainen väri 薄花色</div>
-      </span>
-    </div>
-    <div class="name">
-      <span class="swatch" style="background:#D68F55"></span>
-      <span>
-        <div class="simile">Paahtoleivän kuori</div>
-        <div class="real">Kadmiumoranssi · pigmentti</div>
-      </span>
-    </div>
-    <div class="name">
-      <span class="swatch" style="background:#1C6DB4"></span>
-      <span>
-        <div class="simile">Vesi, johon on sekoitettu sinistä maalia</div>
-        <div class="real">Cheongsaek · perinteinen korealainen väri</div>
-      </span>
-    </div>
-  </div>
-  <p>Lähteelliset nimet tulevat perinteisistä korealaisista ja japanilaisista väreistä, pigmenteistä ja vakiovärisarjoista, ja jokainen arvo on tarkistettu lähteestään. Appi on myös rehellinen siitä, kuinka lähellä se on: kun vastaavuus on riittävän tiivis, se sanoo ”nimi on”, ja muuten ”lähin nimi on”.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Jätä rivi</h2>
+        <p>Kortti avautuu heti kuvaamisen jälkeen. Kirjoita, mitä ajattelit katsoessasi ylös, niin teksti nousee taas taivaan päälle aina, kun napautat sitä ruutua laudalla.<br>Voit myös sävyttää kuvan toisen päivän taivaan värillä ja jakaa tuloksen kuvana.</p>
+      </div>
+      <div class="phone"><img src="../img/fi/03-card.jpg" alt="Jätä rivi" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>Täytetyt ruudut vanhenevat</h2>
-  <p>Kuva säilyttää todellisen värinsä viikon ja haalistuu sitten hitaasti seuraavien kahdeksan viikon aikana. Sitä ei poisteta, eikä se koskaan haalistu kokonaan. Kuvaa taivas samaan aikaan uudelleen, niin ruutu palaa heti täyteen väriin.</p>
-  <p>Se ei ole rangaistus. Ei ole putkea, joka katkeaisi, eikä mitään voitettavaa takaisin. Se on vain rehellinen tapa, jolla taivaasta tehty lauta sanoo ”se taivas oli jokin aika sitten”.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Tyhjät ruudut näyttävät tien</h2>
+        <p>Napauta tyhjää ruutua, niin näet, mihin vuorokaudenaikaan se kuuluu ja minkä väristä taivasta kannattaa etsiä. Se kertoo myös, miltä pilvetön taivas näyttää siihen aikaan, sijaintisi auringonnousun ja -laskun mukaan.<br>Värin ei tarvitse osua. Pilvisen päivän harmaa on sekin sen päivän taivaanväri.</p>
+      </div>
+      <div class="phone"><img src="../img/fi/05-empty.jpg" alt="Tyhjät ruudut näyttävät tien" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>Sama aika, eri taivas</h2>
-  <p>Päivät toistuvat. Sama herätyskello, sama reitti, sama ikkuna. Vain niiden yläpuolella oleva taivas ei ole koskaan kahdesti sama. <strong>Toistot</strong>-näkymä asettaa riviin ne päivät, jolloin olit siellä samaan aikaan, jotta näet sen. Rivi on toisto; värit ovat se osa, joka ei koskaan toistu.</p>
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Loki, paletti, toistot</h2>
+        <p>Selaa taivaitasi järjestyksessä ja kokoa värit paleteiksi, kuten sininen, harmaa ja hiekka. Kuvaa sama tunti toisena päivänä, niin taivaat asettuvat rinnakkain.<br>Kotivalikon widgetit näyttävät päivän laudan ja päivän taivaan yhdellä silmäyksellä.</p>
+      </div>
+      <div class="phone"><img src="../img/fi/04-palette.jpg" alt="Loki, paletti, toistot" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
 
-  <h2>Widgetit</h2>
-  <p><strong>Päivän lauta</strong> näyttää täsmälleen samalta kuin apissa: neljäkymmentäkahdeksan ruutua, täytetyille ympyrät ja tyhjille renkaat. <strong>Päivän taivas</strong> näyttää tänään ottamasi kuvan sen värin nimellä, ja se toimii myös lukitulla näytöllä.</p>
+    <section class="reveal">
+      <h2>Alkuun kolmella askeleella</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>Katso ylös</h3><p>Napauta laudan alla olevaa kamerapainiketta ja anna taivaan täyttää neliö.</p></li>
+<li class="card"><span class="n">2</span><h3>Ruutu täyttyy</h3><p>Tämän hetken ruutu saa tavoittamasi värin ja nimen.</p></li>
+<li class="card"><span class="n">3</span><h3>Jätä rivi</h3><p>Kirjoita avautuvaan korttiin, mitä ajattelit.</p></li></ol>
+    </section>
 
-  <h2>Se pysyy sinun</h2>
-  <div class="quiet">
-    <p>Ei tiliä eikä meidän palvelintamme. Kuvasi ja värisi ovat apin tallennustilassa laitteellasi ja, jos olet kirjautunut, omassa iCloudissasi. Niitä ei koskaan lähetetä kehittäjälle. Ei mainoksia, ei seurantaa, ei kolmannen osapuolen analytiikkaa.</p>
-    <p>Sijaintia käytetään vain auringonnousuun, -laskuun ja päivän ennusteeseen, ja sitä pyydetään kilometrin tarkkuudella. Appi toimii hyvin, vaikka kieltäytyisit. Tiedot ovat <a href="privacy.html">Tietosuojakäytännössä</a>.</p>
-  </div>
+    <section class="reveal" id="commands">
+      <h2>Näin lauta jakaa päivän</h2>
+      <div class="card table">
+        <dl><div><dt>Keskiyö · 0.00–5.00</dt><dd>kuusi ruutua</dd></div><div><dt>Aamunkoitto · 5.00–8.00</dt><dd>kuusi ruutua</dd></div><div><dt>Päivä · 8.00–16.00</dt><dd>kaksitoista ruutua</dd></div><div><dt>Myöhäinen iltapäivä · 16.00–18.00</dt><dd>kuusi ruutua</dd></div><div><dt>Auringonlasku · 18.00–21.00</dt><dd>kaksitoista ruutua, yksi vartin välein</dd></div><div><dt>Yö · 21.00–24.00</dt><dd>kuusi ruutua</dd></div></dl>
+      </div>
+      <p class="muted">Auringonlaskun aikaan, kun taivas muuttuu nopeasti, ruudut ovat tiheässä, ja keskellä yötä, kun se tuskin liikkuu, ne ovat leveitä. Ylimpänä on keskiyö, ja päivä kulkee alaspäin.</p>
+    </section>
+
+
+
+    <section class="reveal" id="faq">
+      <h2>Kysymyksiä</h2>
+      <div class="faq"><details><summary>Miten ruutu täyttyy?</summary><p>Tänään kuvaamasi taivas täyttää kuvaushetken ruudun, vaikka väri ei olisi sitä, mitä odotit. Sellainen taivas sillä hetkellä oikeasti oli. Aiempien päivien taivaat menevät sisään värin mukaan: jos taivas on tarpeeksi lähellä jonkin ruudun väriä, se täyttää sen, ja kukin taivas täyttää vain yhden ruudun.</p></details>
+<details><summary>Eilen täynnä ollut ruutu on tänään tyhjä.</summary><p>Lauta on aina tämä päivä. Ruutu, jonka eilinen taivas täytti kellonajan perusteella, sovitetaan päivän vaihtuessa uudelleen pelkän värin mukaan. Siksi lauta on joinakin päivinä lähes täynnä ja toisina tyhjän näköinen. Kuvasi eivät ole kadonneet: kaikki taivaat ovat Lokissa ja värijärjestyksessä Paletissa.</p></details>
+<details><summary>Täytetyt ruudut haalistuvat.</summary><p>Tarkoituksella. Kuva säilyttää oikean värinsä viikon ja haalistuu sitten hitaasti seuraavien kahdeksan viikon aikana. Sitä ei poisteta, eikä se koskaan haalistu kokonaan. Kuvaa taivas siihen aikaan uudelleen, niin ruutu palaa heti täyteen väriinsä. Ei katkeavaa putkea, ei takaisin ansaittavia pisteitä.</p></details>
+<details><summary>Pitääkö värin osua?</summary><p>Ei. Hyväksyttyä tai hylättyä ei ole. Jokainen kuva tallentuu, ja pilvisen päivän harmaa on sekin sen päivän taivaanväri.</p></details>
+<details><summary>Miksi sovellus kysyy sijaintiani?</summary><p>Vain siksi, että se voi tyhjää ruutua napauttaessasi kertoa, miltä pilvetön taivas näyttää siihen aikaan, sijaintisi auringonnousun ja -laskun mukaan. Se käyttää likimääräistä sijaintia kilometrin tarkkuudella, eikä koordinaatteja liitetä kuviin. Jos kiellät sijainnin, kaikki toimii silti, ja vertailukohtana on Soul.</p></details>
+<details><summary>Voinko lisätä taivaan kuvakirjastosta?</summary><p>Kyllä. Kameran sijaan Kuvat-apista valittu taivas rajataan sekin neliöksi ja täyttää tämän hetken ruudun aivan kuin juuri ottamasi kuva.</p></details>
+<details><summary>Miten poistan kuvan?</summary><p>Avaa kuva ja napauta Poista, tai pyyhkäise sitä vasemmalle Lokissa. Se poistuu laitteelta ja iCloudista yhtä aikaa. Jos poistat sovelluksen, kopio jää iCloudiin, joten taivaasi palaavat, kun asennat sen uudelleen.</p></details>
+<details><summary>Mitä tapahtuu, kun vaihdan puhelinta?</summary><p>Taivaasi tallentuvat omaan iCloudiisi, joten ne siirtyvät uudelle laitteelle, jolla on kirjauduttu samalle Apple-tilille. Ei erillistä tiliä eikä palvelinta, eikä kuviasi tai värejäsi lähetetä kehittäjälle. Ei mainoksia, ei seurantaa.</p></details>
+<details><summary>Onko se tosiaan ilmainen?</summary><p>Kyllä, kaikki ominaisuudet ovat ilmaisia. Jos pidät sovelluksesta, voit antaa kehittäjälle tipin sovelluksessa, mutta tippi ei avaa mitään uutta.</p></details>
+<details><summary>Millä laitteilla se toimii?</summary><p>iPhonessa, jossa on iOS 17.0 tai uudempi, vain pystysuunnassa.</p></details></div>
+      <p class="contact">Bugit, oudot toiminnot tai mitä tahansa haluat sanoa: kirjoita osoitteeseen <a href="mailto:leeo@kakao.com">leeo@kakao.com</a>. Kun kerrot, mitä olit tekemässä ja mikä iOS-versio sinulla on, syy löytyy paljon helpommin.</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>Huomenaamuna<br>katso ylös edes kerran</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6802295390">Ilmaiseksi App Storesta</a>
+    </section>
+  </main>
 
   <footer>
-    <a href="support.html">Tuki</a> ·
-    <a href="privacy.html">Tietosuojakäytäntö</a> ·
-    <a href="https://github.com/M1zz/SkyDex">GitHub</a>
-    <p style="margin:10px 0 0">Säätiedot tarjoaa <a href="https://weatherkit.apple.com/legal-attribution.html">Apple Sää</a>.</p>
+    <nav id="languages" class="langs" aria-label="Kieli"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="../es/" hreflang="es" lang="es">Español</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../th/" hreflang="th" lang="th">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi" aria-current="page">Suomi</a>
+<a href="../id/" hreflang="id" lang="id">Indonesia</a>
+<a href="../nb/" hreflang="nb" lang="nb">Norsk</a>
+<a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">Tietosuojakäytäntö</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 SkyDex</p>
   </footer>
 
-</main>
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>
