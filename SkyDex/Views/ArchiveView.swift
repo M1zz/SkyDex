@@ -1,3 +1,4 @@
+import LeeoKit
 import SwiftData
 import SwiftUI
 
@@ -55,6 +56,11 @@ struct ArchiveView: View {
                     // board sits on white made the two screens look like two
                     // apps, and the bar between them had to pick a side.
                     List {
+                        // 모은 하늘을 돌아보는 자리. 숫자가 쌓였을 때만, 드물게 응원을 부탁한다.
+                        LeeoTipAskSlot<SkyDexSpec>(tipJar: SkyDexSpec.tipJar,
+                                                   reached: SkyDexTipMoments.reached(collectedCount: entries.count))
+                            .listRowInsets(EdgeInsets())
+                            .listRowBackground(Color.clear)
                         ForEach(grouped, id: \.key) { section in
                             Section(Season.label(forKey: section.key)) {
                                 ForEach(section.value) { entry in

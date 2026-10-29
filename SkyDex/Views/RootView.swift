@@ -98,6 +98,8 @@ struct RootView: View {
             PhotoDetailView(entry: entry, borrowed: borrowedForCard)
         }
         .photosPicker(isPresented: $showLibrary, selection: $pickerItem, matching: .images)
+        // 팁 상품을 불러오고 끝나지 않은 팁을 마저 센다 (무료 앱이라 LeeoStore 대신 혼자)
+        .task { await SkyDexSpec.tipJar.startStandalone() }
         #if DEBUG
         .task {
             if ScreenshotDemo.screen == "palette" { screen = .archive }

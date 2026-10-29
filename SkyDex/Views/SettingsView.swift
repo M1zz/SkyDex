@@ -40,6 +40,8 @@ struct SettingsView: View {
                     // 앞으로 만들 기능 — 원본은 SkyDexRoadmap.swift. 설정을 늘리는 줄이 아니라 알리는 줄이다.
                     NavigationLink(LeeoRoadmapText.entry) { RoadmapScreen() }
                     LeeoShareAppLink<SkyDexSpec>()
+                    // 개발자 응원하기 — 판매 중인 팁이 있어야 선다.
+                    LeeoTipJarLink<SkyDexSpec>(tipJar: SkyDexSpec.tipJar)
                 } header: {
                     Text("지원")
                 }
