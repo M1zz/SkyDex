@@ -1,5 +1,6 @@
 import SwiftData
 import SwiftUI
+import LeeoKit
 
 /// One colour's history, newest first, full screen.
 ///
@@ -71,11 +72,12 @@ struct TimelineFeedView: View {
                     }
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("닫기") { dismiss() }
+                    Button("닫기", systemImage: "xmark") { dismiss() }
                 }
             }
             .fullScreenCover(item: $opened) { entry in
                 PhotoDetailView(entry: entry)
+                    .foldConfined()
             }
             .overlay {
                 if entries.isEmpty {

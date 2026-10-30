@@ -1,6 +1,7 @@
 import PhotosUI
 import SwiftData
 import SwiftUI
+import LeeoKit
 
 /// Which of the two screens is showing.
 enum Screen {
@@ -25,6 +26,7 @@ enum Screen {
 struct RootView: View {
     @Environment(\.modelContext) private var context
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.foldLayout) private var fold
 
     @State private var screen: Screen = .board
     @State private var place = Place()
@@ -55,6 +57,53 @@ struct RootView: View {
     @State private var reading: ReadingSky?
 
     var body: some View {
+        // 아이폰 듀오를 펴면 아래(가로면 왼쪽)에 판과 셔터, 위(오른쪽)에 기록이 선다.
+        // 찍은 하늘이 판에 앉는 동안 그날까지의 하늘이 옆에 쌓여 있다.
+        // 접혀 있으면 판만, 지금 화면 그대로.
+        FoldSplitView {
+            screens
+        } result: {
+            ArchiveView()
+                .environment(\.foldLayout, .single)
+        }
+        // 펼치면 기록은 옆 판에 늘 서 있으므로, 기록을 보던 중이었으면 판으로 돌아온다.
+        .onChange(of: fold.isUnfolded, initial: true) { _, unfolded in
+            if unfolded { screen = .board }
+        }
+        .fullScreenCover(isPresented: $showCamera) {
+            SquareCameraView(
+                onCapture: { data, date, borrowed in save(data, at: date, borrowed: borrowed) },
+                onPickFromLibrary: {
+                    // Presenting a picker while the full-screen cover is still
+                    // animating away silently does nothing.
+                    Task {
+                        try? await Task.sleep(for: .milliseconds(400))
+                        showLibrary = true
+                    }
+                }
+            )
+            .foldConfined()
+        }
+        .fullScreenCover(item: $writingCard) { entry in
+            PhotoDetailView(entry: entry, borrowed: borrowedForCard)
+                .foldConfined()
+        }
+        .photosPicker(isPresented: $showLibrary, selection: $pickerItem, matching: .images)
+        // 팁 상품을 불러오고 끝나지 않은 팁을 마저 센다 (무료 앱이라 LeeoStore 대신 혼자)
+        .task { await SkyDexSpec.tipJar.startStandalone() }
+        #if DEBUG
+        .task {
+            if ScreenshotDemo.screen == "palette" { screen = .archive }
+        }
+        #endif
+        .onChange(of: pickerItem) { _, item in
+            guard let item else { return }
+            Task { await loadFromLibrary(item) }
+        }
+    }
+
+    /// 판과 기록, 그리고 아래 막대. 펼친 화면에서는 고르는 쪽 판에 선다.
+    private var screens: some View {
         ZStack {
             // The archive lives to the right of the board, so it arrives from
             // the right and leaves the same way. Without that the two screens
@@ -82,34 +131,6 @@ struct RootView: View {
         // The bar sits outside the transition and does not move. It is the one
         // thing on screen that is in the same place before and after.
         .safeAreaInset(edge: .bottom) { bar }
-        .fullScreenCover(isPresented: $showCamera) {
-            SquareCameraView(
-                onCapture: { data, date, borrowed in save(data, at: date, borrowed: borrowed) },
-                onPickFromLibrary: {
-                    // Presenting a picker while the full-screen cover is still
-                    // animating away silently does nothing.
-                    Task {
-                        try? await Task.sleep(for: .milliseconds(400))
-                        showLibrary = true
-                    }
-                }
-            )
-        }
-        .fullScreenCover(item: $writingCard) { entry in
-            PhotoDetailView(entry: entry, borrowed: borrowedForCard)
-        }
-        .photosPicker(isPresented: $showLibrary, selection: $pickerItem, matching: .images)
-        // 팁 상품을 불러오고 끝나지 않은 팁을 마저 센다 (무료 앱이라 LeeoStore 대신 혼자)
-        .task { await SkyDexSpec.tipJar.startStandalone() }
-        #if DEBUG
-        .task {
-            if ScreenshotDemo.screen == "palette" { screen = .archive }
-        }
-        #endif
-        .onChange(of: pickerItem) { _, item in
-            guard let item else { return }
-            Task { await loadFromLibrary(item) }
-        }
     }
 
     /// The strip along the bottom: the shutter and the switch, on the same paper
@@ -160,18 +181,21 @@ struct RootView: View {
         // An overlay rather than a third item in a row, so the shutter stays on
         // the centre line and does not shift when the switch changes icon.
         .overlay(alignment: .trailing) {
-            Button {
-                screen = screen.other
-            } label: {
-                Image(systemName: screen == .board ? "list.bullet" : "circle.grid.3x3.fill")
-                    .font(.system(size: 17, weight: .medium))
-                    .frame(width: 46, height: 46)
+            // 펼친 화면에서는 기록이 옆 판에 늘 있어 오갈 곳이 없다.
+            if !fold.isUnfolded {
+                Button {
+                    screen = screen.other
+                } label: {
+                    Image(systemName: screen == .board ? "list.bullet" : "circle.grid.3x3.fill")
+                        .font(.system(size: 17, weight: .medium))
+                        .frame(width: 46, height: 46)
+                }
+                .buttonStyle(BarButton(prominent: false, subdued: reading != nil))
+                .accessibilityLabel(screen == .board ? "기록" : "하늘")
+                // The glyph changes at the moment the screens cross over, so it
+                // turns over rather than blinking.
+                .contentTransition(.symbolEffect(.replace))
             }
-            .buttonStyle(BarButton(prominent: false, subdued: reading != nil))
-            .accessibilityLabel(screen == .board ? "기록" : "하늘")
-            // The glyph changes at the moment the screens cross over, so it
-            // turns over rather than blinking.
-            .contentTransition(.symbolEffect(.replace))
         }
         // The shutter knocks, the switch ticks. Both are answers to a press
         // rather than decoration: the camera takes a moment to appear and the

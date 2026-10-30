@@ -1,6 +1,7 @@
 import PhotosUI
 import SwiftData
 import SwiftUI
+import LeeoKit
 import WidgetKit
 
 /// The board.
@@ -634,9 +635,11 @@ struct BoardView: View {
             // pressing a bead answers on the board now.
             .fullScreenCover(item: $openedSlot) { slot in
                 TimelineFeedView(slot: slot, target: target(of: slot))
+                    .foldConfined()
             }
             .fullScreenCover(item: $writingCard) { entry in
                 PhotoDetailView(entry: entry)
+                    .foldConfined()
             }
             // This one stays a sheet: it is a note about a slot, not a sky.
             .sheet(item: $tappedEmpty) { slot in
@@ -1011,7 +1014,7 @@ private struct EmptySlotSheet: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("닫기") { dismiss() }
+                    Button("닫기", systemImage: "xmark") { dismiss() }
                 }
             }
         }

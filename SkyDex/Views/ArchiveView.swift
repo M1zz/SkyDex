@@ -133,6 +133,7 @@ struct ArchiveView: View {
             // opposite ends of the screen.
             .fullScreenCover(item: $selected) { entry in
                 PhotoDetailView(entry: entry)
+                    .foldConfined()
             }
         }
     }
