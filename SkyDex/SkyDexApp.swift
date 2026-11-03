@@ -7,12 +7,13 @@ struct SkyDexApp: App {
     private let container: ModelContainer
 
     init() {
+        // 백업 금고 · 사용량 기록 · 분석 싱크 · 크래시 진단 · 사용현황 스냅샷. 전부 실패해도
+        // 앱은 그대로 돈다 — 이 줄이 앱의 동작을 좌우해서는 안 된다.
+        // 금고가 예약된 복원을 적용해야 하므로 저장소를 열기 전에 켠다.
+        LeeoKit.bootstrap(SkyDexSpec.self)
+
         let container = SkyDexApp.makeContainer()
         CloudSync.shared.begin(syncing: SkyDexApp.usesCloud)
-
-        // 사용량 기록 · 분석 싱크 · 크래시 진단 · 사용현황 스냅샷. 전부 실패해도
-        // 앱은 그대로 돈다 — 이 줄이 앱의 동작을 좌우해서는 안 된다.
-        LeeoKit.bootstrap(SkyDexSpec.self)
         // Before any `@Query` is live, so the repair is not racing a view that
         // is already reading the rows it rewrites.
         SkyEntry.repairLegacyRows(in: container.mainContext)

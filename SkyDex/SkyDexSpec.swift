@@ -42,6 +42,9 @@ enum SkyDexSpec: LeeoAppSpec {
     /// removes the paywall, restore and terms obligations.
     static let monetization = LeeoMonetization.free
 
+    /// 금고가 위젯과 함께 쓰는 공유 컨테이너도 백업한다.
+    static let appGroups = ["group.com.leeo.SkyDex"]
+
     /// Turning this from the default no-op to a real sink is what switches
     /// usage reporting on — `LeeoKit.bootstrap` sends nothing for an app that
     /// has not asked for it.
