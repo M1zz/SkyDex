@@ -31,6 +31,8 @@ struct RootView: View {
     @State private var screen: Screen = .board
     @State private var place = Place()
     @State private var showCamera = false
+    /// Siri 로 들어온 찍기 요청 (→ Support/SkyIntents.swift)
+    @Bindable private var skyRouter = SkyRouter.shared
     @State private var showLibrary = false
     @State private var pickerItem: PhotosPickerItem?
 
@@ -69,6 +71,9 @@ struct RootView: View {
         // 펼치면 기록은 옆 판에 늘 서 있으므로, 기록을 보던 중이었으면 판으로 돌아온다.
         .onChange(of: fold.isUnfolded, initial: true) { _, unfolded in
             if unfolded { screen = .board }
+        }
+        .onChange(of: skyRouter.cameraRequest, initial: true) { _, request in
+            if request > 0 { showCamera = true }
         }
         .fullScreenCover(isPresented: $showCamera) {
             SquareCameraView(
