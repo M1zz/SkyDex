@@ -75,6 +75,16 @@ struct RootView: View {
         .onChange(of: skyRouter.cameraRequest, initial: true) { _, request in
             if request > 0 { showCamera = true }
         }
+        // Siri · Spotlight 에서 고른 하늘 → 그 하늘 카드
+        .onChange(of: skyRouter.entryRequest, initial: true) { _, id in
+            guard let id else { return }
+            skyRouter.entryRequest = nil
+            let match = FetchDescriptor<SkyEntry>(predicate: #Predicate { $0.uuid == id })
+            guard let entry = try? context.fetch(match).first else { return }
+            showCamera = false
+            borrowedForCard = nil
+            writingCard = entry
+        }
         .fullScreenCover(isPresented: $showCamera) {
             SquareCameraView(
                 onCapture: { data, date, borrowed in save(data, at: date, borrowed: borrowed) },

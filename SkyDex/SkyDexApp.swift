@@ -1,3 +1,4 @@
+import AppIntents
 import LeeoKit
 import SwiftData
 import SwiftUI
@@ -5,6 +6,7 @@ import SwiftUI
 @main
 struct SkyDexApp: App {
     private let container: ModelContainer
+    @Environment(\.scenePhase) private var scenePhase
 
     init() {
         // 백업 금고 · 사용량 기록 · 분석 싱크 · 크래시 진단 · 사용현황 스냅샷. 전부 실패해도
@@ -18,6 +20,8 @@ struct SkyDexApp: App {
         // is already reading the rows it rewrites.
         SkyEntry.repairLegacyRows(in: container.mainContext)
         self.container = container
+        // Siri · Spotlight 인텐트가 같은 저장소를 읽게 한다 (→ Support/SkyIntents.swift).
+        AppDependencyManager.shared.add(dependency: container)
     }
 
     var body: some Scene {
@@ -26,6 +30,11 @@ struct SkyDexApp: App {
                 .storeFallbackNotice()
                 // 창 크기로 접힘을 재서 아래로 흘린다. 시트 · 알림창도 접힌 선을 비킨다 (LeeoKit Fold).
                 .foldAware()
+                // Spotlight 에 싣는 하늘을 지금 것에 맞춘다. 열 때 한 번, 뒤로 보낼 때마다.
+                .task { await SkyLibrary.reindex(container) }
+                .onChange(of: scenePhase) { _, phase in
+                    if phase == .background { Task { await SkyLibrary.reindex(container) } }
+                }
         }
         .modelContainer(container)
     }
