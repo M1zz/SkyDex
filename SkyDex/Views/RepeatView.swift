@@ -29,6 +29,10 @@ import SwiftUI
 struct RepeatView: View {
     let entries: [SkyEntry]
 
+    /// Set when this is the one free look (→ SkyFreeTaste): the screen is shown
+    /// whole, and says once, at the foot, that the next look is Plus.
+    var onUnlock: (() -> Void)? = nil
+
     /// Open one, the same way everything else in the archive opens.
     let onSelect: (SkyEntry) -> Void
 
@@ -54,6 +58,9 @@ struct RepeatView: View {
                         }
                         if let closest {
                             finding(closest)
+                        }
+                        if let onUnlock {
+                            taste(onUnlock)
                         }
                     }
                     .padding(.horizontal, 20)
@@ -161,6 +168,22 @@ struct RepeatView: View {
                 .foregroundStyle(.tertiary)
         }
         .padding(.top, 6)
+    }
+
+    /// Said once, under the one free look, so the next visit is not a surprise.
+    private func taste(_ unlock: @escaping () -> Void) -> some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Divider()
+            Text("처음 한 번은 그대로 보여 드려요. 다음부터는 Plus에서 열려요.")
+                .font(.body)
+                .foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
+            Button(action: unlock) {
+                Text("하늘색 Plus 보기")
+                    .font(.body.weight(.semibold))
+            }
+            .buttonStyle(.bordered)
+        }
     }
 
     private func swatch(_ entry: SkyEntry) -> some View {

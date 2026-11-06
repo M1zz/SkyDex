@@ -115,4 +115,30 @@ struct SkySnapshot: Codable {
 
     /// Whether a sky in this snapshot can still be called today's.
     var isToday: Bool { Calendar.current.isDateInToday(day) }
+
+    // MARK: - Pro, as the widgets may know it
+
+    /// Whether the widgets (and iCloud) are open — written by the app after it
+    /// has asked the App Store, read by the widgets, which cannot.
+    ///
+    /// A mirror, not the proof: the app checks the receipt every launch and
+    /// writes this again. `nil` means nobody has asked yet — an update that has
+    /// not been opened, a store that does not sell anything yet — and is read as
+    /// open, so a widget never locks on someone for want of an answer.
+    private static let proOpenKey = "skydex.pro.open"
+
+    private static var shared: UserDefaults? { UserDefaults(suiteName: group) }
+
+    static var proOpen: Bool? { shared?.object(forKey: proOpenKey) as? Bool }
+
+    /// - Returns: whether the value changed, so the caller knows to redraw.
+    @discardableResult
+    static func setProOpen(_ open: Bool) -> Bool {
+        guard proOpen != open else { return false }
+        shared?.set(open, forKey: proOpenKey)
+        return true
+    }
+
+    /// Where a locked widget sends you: straight to the paywall, with Pro in front.
+    static let paywallURL = URL(string: "skydex://paywall/widgets")!
 }

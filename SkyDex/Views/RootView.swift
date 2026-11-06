@@ -58,6 +58,10 @@ struct RootView: View {
     /// standing on paper or on a photograph.
     @State private var reading: ReadingSky?
 
+    @State private var plans = SkyStore.shared
+    @State private var paywall: SkyFeature?
+    @State private var showingGraduation = false
+
     var body: some View {
         // 아이폰 듀오를 펴면 아래(가로면 왼쪽)에 판과 셔터, 위(오른쪽)에 기록이 선다.
         // 찍은 하늘이 판에 앉는 동안 그날까지의 하늘이 옆에 쌓여 있다.
@@ -104,8 +108,22 @@ struct RootView: View {
                 .foldConfined()
         }
         .photosPicker(isPresented: $showLibrary, selection: $pickerItem, matching: .images)
-        // 팁 상품을 불러오고 끝나지 않은 팁을 마저 센다 (무료 앱이라 LeeoStore 대신 혼자)
-        .task { await SkyDexSpec.tipJar.startStandalone() }
+        // 잠긴 위젯을 누르고 들어온 사람 — 그 자리에서 Pro 를 앞에 세운 페이월 (→ SkySnapshot.paywallURL).
+        .onOpenURL { url in
+            if url == SkySnapshot.paywallURL { paywall = .widgets }
+        }
+        .paywall(for: $paywall)
+        // 구독 중인 사람에게 6개월째와 갱신 7일 전에 한 번씩, 평생으로 옮겨 가는 길.
+        .sheet(isPresented: $showingGraduation) {
+            LeeoGraduationOfferView(graduate: plans.product(SkyProducts.graduateID)) {
+                await plans.refresh()
+            }
+            .onAppear { plans.markGraduationOffered() }
+        }
+        .onChange(of: plans.graduationIsDue) { _, due in
+            // 찍는 중이거나 카드를 쓰는 중에는 끼어들지 않는다. 다음에 앱을 열 때 다시 묻는다.
+            if due, !showCamera, writingCard == nil, paywall == nil { showingGraduation = true }
+        }
         #if DEBUG
         .task {
             if ScreenshotDemo.screen == "palette" { screen = .archive }

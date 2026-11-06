@@ -447,6 +447,154 @@
           }
         }
       }
+    },
+    "NSPhotoLibraryAddUsageDescription" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nasbírané fotky nebe se ukládají do aplikace Fotky. Přístup se používá jen při ukládání a ostatní fotky v aplikaci Fotky se nečtou."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dine indsamlede himmelbilleder gemmes i appen Billeder. Adgangen bruges kun, når du gemmer, og dine andre billeder i Billeder læses ikke."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deine gesammelten Himmelsfotos werden in der Fotos-App gesichert. Der Zugriff wird nur beim Sichern genutzt, andere Fotos in der Fotos-App werden nicht gelesen."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Οι φωτογραφίες ουρανού που συλλέξατε αποθηκεύονται στην εφαρμογή Φωτογραφίες. Η πρόσβαση χρησιμοποιείται μόνο κατά την αποθήκευση και οι άλλες φωτογραφίες σας δεν διαβάζονται."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saves your collected sky photos to the Photos app. Access is used only when you save, and your other photos in Photos are never read."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saves your collected sky photos to the Photos app. Access is used only when you save, and your other photos in Photos are never read."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guarda tus fotos de cielo en la app Fotos. Solo se usa al guardar y nunca lee tus otras fotos."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keräämäsi taivaskuvat tallennetaan Kuvat-appiin. Käyttöoikeutta käytetään vain tallennettaessa, eikä Kuvat-apin muita kuvia lueta."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enregistre vos photos de ciel collectées dans l’app Photos. L’accès sert uniquement à l’enregistrement, et vos autres photos ne sont jamais lues."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menyimpan foto langit koleksimu ke app Foto. Akses hanya dipakai saat menyimpan, dan foto lain di app Foto tidak dibaca."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salva le foto di cielo raccolte nell’app Foto. L’accesso si usa solo quando salvi e le altre foto dell’app Foto non vengono lette."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "集めた空の写真を写真アプリに保存します。保存するときだけ使い、写真アプリのほかの写真は読み取りません。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "모은 하늘 사진을 사진 앱에 저장합니다. 저장할 때만 쓰고, 사진 앱의 다른 사진은 읽지 않습니다."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De innsamlede himmelbildene dine lagres i Bilder-appen. Tilgangen brukes bare når du lagrer, og andre bilder i Bilder leses ikke."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bewaart je verzamelde luchtfoto's in de Foto's-app. De toegang wordt alleen gebruikt bij het bewaren en je andere foto's worden nooit gelezen."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zebrane zdjęcia nieba są zapisywane w aplikacji Zdjęcia. Dostęp jest używany tylko przy zapisie, a inne zdjęcia w aplikacji Zdjęcia nie są odczytywane."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salva as fotos de céu que você reuniu no app Fotos. O acesso é usado só ao salvar, e as outras fotos do app Fotos não são lidas."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Собранные фото неба сохраняются в приложение «Фото». Доступ нужен только при сохранении, другие фото в «Фото» не читаются."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dina insamlade himmelsbilder sparas i appen Bilder. Åtkomsten används bara när du sparar, och dina andra bilder i Bilder läses aldrig."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "บันทึกภาพท้องฟ้าที่สะสมไว้ลงในแอปรูปภาพ ใช้เฉพาะตอนบันทึก และจะไม่อ่านรูปภาพอื่นในแอปรูปภาพ"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Topladığınız gökyüzü fotoğrafları Fotoğraflar uygulamasına kaydedilir. Erişim yalnızca kaydederken kullanılır ve Fotoğraflar’daki diğer fotoğraflar okunmaz."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lưu ảnh bầu trời đã sưu tầm vào ứng dụng Ảnh. Chỉ dùng khi lưu, và không đọc các ảnh khác trong ứng dụng Ảnh."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "将收集的天空照片存储到“照片”App。仅在存储时使用，不会读取“照片”中的其他照片。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "將收集的天空照片儲存到「照片」App。僅在儲存時使用，不會讀取「照片」中的其他照片。"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

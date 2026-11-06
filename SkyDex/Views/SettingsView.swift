@@ -1,19 +1,29 @@
 import LeeoKit
+import StoreKit
 import SwiftUI
 
 /// The gear behind the archive.
 ///
 /// This app has almost no settings and should keep it that way — the board is
 /// not configurable, the colours are not adjustable, and a screen full of
-/// switches would suggest otherwise. Three things earn a row: where the photos
-/// are kept, how to say something to whoever wrote this, and the version.
+/// switches would suggest otherwise. Four things earn a row: where the photos
+/// are kept, what you have paid for, how to say something to whoever wrote
+/// this, and the version.
 struct SettingsView: View {
     @Environment(\.dismiss) private var dismiss
 
     /// What the user asked for. What is actually running is
     /// `SkyDexApp.usesCloud`, decided when the store opened, and the two can
     /// disagree until the app is next launched.
-    @AppStorage(SkyDexApp.cloudEnabledKey) private var wantsCloud = true
+    @State private var wantsCloud = SkyDexApp.wantsCloud
+
+    @State private var plans = SkyStore.shared
+    @State private var paywall: SkyFeature?
+    /// 처음부터 고르는 페이월(들어온 기능 없이).
+    @State private var showingPlans = false
+    @State private var managingSubscription = false
+    @State private var showingGraduation = false
+    @State private var redeemingCode = false
 
     /// LeeoKit's developer switch — seven taps on the version row. The same
     /// flag gates its feedback inbox, so the two developer rows appear together
@@ -24,7 +34,14 @@ struct SettingsView: View {
         NavigationStack {
             List {
                 Section {
-                    Toggle("iCloud에 함께 보관", isOn: $wantsCloud)
+                    // iCloud 보관은 Pro 다. 잠겨 있으면 켜는 순간 Pro 를 앞에 세운 페이월이 뜨고, 스위치는 꺼진 채로 둔다.
+                    // 이미 이 기기에 있는 하늘은 그대로다 — 꺼도 지워지지 않는다.
+                    Toggle(isOn: cloudSwitch) {
+                        HStack {
+                            Text("iCloud에 함께 보관")
+                            if !plans.allows(.cloud) { PlanLockBadge(feature: .cloud) }
+                        }
+                    }
                 } header: {
                     Text("보관")
                 } footer: {
@@ -32,6 +49,8 @@ struct SettingsView: View {
                     // it applies — what is waiting on a relaunch.
                     Text(storageFooter)
                 }
+
+                planSection
 
                 Section {
                     // 피드백 보내기 · 리뷰 남기기 · 개인정보 처리방침 · 지원 페이지 ·
@@ -41,7 +60,7 @@ struct SettingsView: View {
                     NavigationLink(LeeoRoadmapText.entry) { RoadmapScreen() }
                     LeeoShareAppLink<SkyDexSpec>()
                     // 개발자 응원하기 — 판매 중인 팁이 있어야 선다.
-                    LeeoTipJarLink<SkyDexSpec>(tipJar: SkyDexSpec.tipJar)
+                    LeeoTipJarLink<SkyDexSpec>(tipJar: plans.tipJar)
                 } header: {
                     Text("지원")
                 }
@@ -60,6 +79,17 @@ struct SettingsView: View {
                     }
                 }
             }
+            .paywall(for: $paywall)
+            .sheet(isPresented: $showingPlans) { PaywallView() }
+            .sheet(isPresented: $showingGraduation) {
+                LeeoGraduationOfferView(graduate: plans.product(SkyProducts.graduateID)) {
+                    await plans.refresh()
+                }
+            }
+            .manageSubscriptionsSheet(isPresented: $managingSubscription)
+            .offerCodeRedemption(isPresented: $redeemingCode) { _ in
+                Task { await plans.refresh() }
+            }
             .navigationTitle("설정")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -70,9 +100,54 @@ struct SettingsView: View {
         }
     }
 
+    /// The switch as it is shown: on only when it is both asked for and open.
+    private var cloudSwitch: Binding<Bool> {
+        Binding {
+            wantsCloud && plans.allows(.cloud)
+        } set: { on in
+            if on, !plans.allows(.cloud) {
+                paywall = .cloud
+                return
+            }
+            wantsCloud = on
+            SkyDexApp.setWantsCloud(on)
+        }
+    }
+
+    /// 지금 쓰는 칸, 구독 관리, 평생으로 바꾸기, 복원.
+    private var planSection: some View {
+        Section {
+            HStack {
+                Text("지금 쓰는 칸")
+                Spacer()
+                Text(plans.tier.title).foregroundStyle(.secondary)
+            }
+            if plans.tier < .pro {
+                Button(plans.tier == .free ? "Plus · Pro 보기" : "Pro로 올리기") { showingPlans = true }
+            }
+            // 구독 중일 때만. 구독을 관리하는 자리 바로 옆에 평생으로 옮겨 가는 길을 늘 둔다.
+            if plans.subscription != nil {
+                Button("구독 관리") { managingSubscription = true }
+                if plans.product(SkyProducts.graduateID) != nil, !plans.ownsLifetime(.pro) {
+                    Button(LeeoLadderText.switchToLifetimeEntry) { showingGraduation = true }
+                }
+            }
+            Button("구매 복원") { Task { await plans.restore() } }
+                .disabled(plans.isWorking)
+            Button("코드 사용") { redeemingCode = true }
+                .disabled(plans.isWorking)
+        } header: {
+            Text("구독 관리")
+        } footer: {
+            Text(plans.isEarlySky
+                 ? String(localized: "먼저 하늘을 모아 주신 분께는 Pro를 그대로 드려요. 고마워요.")
+                 : String(localized: "판 · 기록 · 사진 저장과 공유는 값을 받지 않아요. Plus와 Pro는 구독이나 평생 중에서 골라요."))
+        }
+    }
+
     private var storageFooter: String {
         let now = CloudSync.shared.line
-        guard wantsCloud != SkyDexApp.usesCloud else { return now }
+        guard cloudSwitch.wrappedValue != SkyDexApp.usesCloud else { return now }
         return now + "\n" + String(localized: "바꾼 것은 앱을 다시 열 때 적용됩니다.")
     }
 }

@@ -21,6 +21,11 @@ struct SkyEntryTimeline: TimelineEntry {
     let date: Date
     let snapshot: SkySnapshot?
 
+    /// The widgets are Pro. The extension cannot ask the App Store, so it reads
+    /// the one line the app left (`SkySnapshot.proOpen`). The gallery is never
+    /// locked: what you are choosing has to be visible to be chosen.
+    var locked = false
+
     /// Which of the forty-eight this minute falls in. Worked out here rather
     /// than read from the file, because the file is written when the app is open
     /// and this has to be right at three in the morning.
@@ -53,8 +58,12 @@ struct SkyProvider: TimelineProvider {
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SkyEntryTimeline) -> Void) {
-        completion(SkyEntryTimeline(date: .now, snapshot: SkySnapshot.read()))
+        completion(SkyEntryTimeline(date: .now, snapshot: SkySnapshot.read(),
+                                    locked: !context.isPreview && SkyProvider.isLocked))
     }
+
+    /// Nobody having asked yet reads as open (→ SkySnapshot.proOpen).
+    static var isLocked: Bool { SkySnapshot.proOpen == false }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<SkyEntryTimeline>) -> Void) {
         let snapshot = SkySnapshot.read()
@@ -66,7 +75,8 @@ struct SkyProvider: TimelineProvider {
             dates.append(next)
             cursor = next
         }
-        let entries = dates.map { SkyEntryTimeline(date: $0, snapshot: snapshot) }
+        let locked = SkyProvider.isLocked
+        let entries = dates.map { SkyEntryTimeline(date: $0, snapshot: snapshot, locked: locked) }
         completion(Timeline(entries: entries, policy: .atEnd))
     }
 
@@ -80,5 +90,46 @@ struct SkyProvider: TimelineProvider {
         }
         // Past the last slot of the day, the next change is midnight.
         return calendar.date(byAdding: .day, value: 1, to: start)
+    }
+}
+
+/// What stands in a widget's place without Pro.
+///
+/// Never an empty square — a blank on the home screen reads as broken. It says
+/// which widget this is and where it opens, and the whole face is the way there
+/// (`SkySnapshot.paywallURL`).
+struct WidgetLockedView: View {
+    let name: LocalizedStringKey
+
+    @Environment(\.widgetFamily) private var family
+
+    var body: some View {
+        Group {
+            switch family {
+            case .accessoryInline:
+                Label("Pro에서 열려요", systemImage: "lock.fill")
+            case .accessoryRectangular:
+                VStack(alignment: .leading, spacing: 1) {
+                    Text(name).font(.caption2)
+                    Label("Pro에서 열려요", systemImage: "lock.fill").font(.headline)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+            default:
+                VStack(spacing: 6) {
+                    Image(systemName: "lock.fill")
+                        .font(.title3.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                    Text(name)
+                        .font(.headline)
+                    Text("Pro에서 열려요")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
+                .multilineTextAlignment(.center)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            }
+        }
+        .widgetURL(SkySnapshot.paywallURL)
+        .accessibilityElement(children: .combine)
     }
 }

@@ -35,7 +35,9 @@ struct BoardWidgetView: View {
     @Environment(\.widgetFamily) private var family
 
     var body: some View {
-        if family == .systemMedium {
+        if entry.locked {
+            WidgetLockedView(name: "오늘의 판")
+        } else if family == .systemMedium {
             HStack(spacing: 14) {
                 board
                     .aspectRatio(

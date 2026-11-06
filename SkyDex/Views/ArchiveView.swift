@@ -26,6 +26,11 @@ struct ArchiveView: View {
     @State private var showing: Showing = .list
     #endif
     @State private var groups: [PaletteGroup] = []
+    @State private var plans = SkyStore.shared
+    /// 잠긴 자리를 눌러 연 페이월.
+    @State private var paywall: SkyFeature?
+    /// 무료로 처음 한 번 보여 준 되풀이. 이 화면에 있는 동안은 그대로 둔다.
+    @State private var repeatTaste = false
 
     private enum Showing: String, CaseIterable, Identifiable {
         case list = "기록"
@@ -45,22 +50,34 @@ struct ArchiveView: View {
                         description: Text("밖을 한 번 올려다보는 것으로 시작합니다.")
                     )
                 } else if showing == .palette {
-                    palette
+                    if plans.allows(.palette) {
+                        palette
+                    } else {
+                        palettePreview
+                    }
                 } else if showing == .repeats {
                     // The same collection asked a different question: not what
                     // colours are in it, but whether any of them ever came back.
-                    RepeatView(entries: entries) { selected = $0 }
-                        .sensoryFeedback(.selection, trigger: selected?.uuid)
+                    if plans.allows(.repeats) || repeatTaste || !SkyFreeTaste.hasSeenRepeat {
+                        RepeatView(entries: entries, onUnlock: plans.allows(.repeats) ? nil : { paywall = .repeats }) { selected = $0 }
+                            .sensoryFeedback(.selection, trigger: selected?.uuid)
+                            .onAppear { tasteRepeatIfFree() }
+                    } else {
+                        repeatsLocked
+                    }
                 } else {
                     // Same paper as the board. A list on its own grey while the
                     // board sits on white made the two screens look like two
                     // apps, and the bar between them had to pick a side.
                     List {
                         // 모은 하늘을 돌아보는 자리. 숫자가 쌓였을 때만, 드물게 응원을 부탁한다.
-                        LeeoTipAskSlot<SkyDexSpec>(tipJar: SkyDexSpec.tipJar,
-                                                   reached: SkyDexTipMoments.reached(collectedCount: entries.count))
-                            .listRowInsets(EdgeInsets())
-                            .listRowBackground(Color.clear)
+                        // 응원 부탁은 이미 Pro 인 사람에게만. 아직 값을 내지 않은 사람에게 팁부터 청하지 않는다.
+                        if plans.tier == .pro {
+                            LeeoTipAskSlot<SkyDexSpec>(tipJar: plans.tipJar,
+                                                       reached: SkyDexTipMoments.reached(collectedCount: entries.count))
+                                .listRowInsets(EdgeInsets())
+                                .listRowBackground(Color.clear)
+                        }
                         ForEach(grouped, id: \.key) { section in
                             Section(Season.label(forKey: section.key)) {
                                 ForEach(section.value) { entry in
@@ -127,6 +144,9 @@ struct ArchiveView: View {
             .sheet(isPresented: $showingSettings) {
                 SettingsView()
             }
+            .paywall(for: $paywall)
+            // 떠날 때 맛보기를 접는다. 다음에 돌아오면 그때부터 Plus.
+            .onChange(of: showing) { _, now in if now != .repeats { repeatTaste = false } }
             // The way back to the board is in the bar at the bottom, in the
             // same place on both screens. It used to be up here, which meant the
             // control you pressed to arrive and the one to leave were at
@@ -218,6 +238,122 @@ struct ArchiveView: View {
         .task { regroup() }
         .onChange(of: entries.count) { _, _ in regroup() }
         .sensoryFeedback(.selection, trigger: selected?.uuid)
+    }
+
+    /// The palette for someone without Plus: their own colours, grouped and
+    /// counted, but out of focus. What is being sold is already theirs — the
+    /// families and the counts are legible, the chips are not.
+    ///
+    /// Under ten skies it only says where the palette opens. Past that there is
+    /// enough of a collection for the question "what colour have my skies been"
+    /// to be a real one, and the Plus card comes to the front.
+    private var palettePreview: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 18) {
+                if entries.count >= SkyFreeTaste.paletteCardAfter {
+                    lockedCard(.palette,
+                               title: String(localized: "내 하늘이 모인 색, 갈래별로"),
+                               body: String(localized: "지금까지 모은 \(entries.count)장의 하늘이 파랑 · 회색 · 노을빛으로 나뉘어 있어요. Plus에서 또렷하게 펼쳐 봐요."))
+                }
+                ForEach(groups) { group in
+                    VStack(alignment: .leading, spacing: 7) {
+                        HStack(alignment: .firstTextBaseline) {
+                            Text(group.family.title)
+                                .font(.subheadline.weight(.medium))
+                                .foregroundStyle(.secondary)
+                            Spacer()
+                            Text("\(group.entries.count)")
+                                .font(.caption2)
+                                .monospacedDigit()
+                                .foregroundStyle(.secondary)
+                        }
+                        .padding(.horizontal, 3)
+                        LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 3), count: 6), spacing: 3) {
+                            ForEach(group.entries.prefix(12)) { entry in
+                                RoundedRectangle(cornerRadius: 5, style: .continuous)
+                                    .fill(Color(entry.rgb))
+                                    .frame(height: 52)
+                            }
+                        }
+                        .blur(radius: 9)
+                        .clipped()
+                        .accessibilityHidden(true)
+                    }
+                }
+                if entries.count < SkyFreeTaste.paletteCardAfter {
+                    Button {
+                        paywall = .palette
+                    } label: {
+                        HStack {
+                            Text("팔레트는 Plus에서 또렷하게 열려요")
+                            Spacer()
+                            PlanLockBadge(feature: .palette)
+                        }
+                        .font(.body)
+                    }
+                    .buttonStyle(.plain)
+                    .padding(.top, 4)
+                }
+            }
+            .padding(.horizontal, 20)
+            .padding(.top, 12)
+            .padding(.bottom, 96)
+        }
+        .task { regroup() }
+        .onChange(of: entries.count) { _, _ in regroup() }
+    }
+
+    /// Repeats after the one free look. The rows are still counted, so it is
+    /// plain that the comparison is there and waiting.
+    private var repeatsLocked: some View {
+        let runs = RepeatView.runs(of: entries)
+        return ScrollView {
+            VStack(alignment: .leading, spacing: 16) {
+                lockedCard(.repeats,
+                           title: String(localized: "같은 시각, 다른 날의 하늘"),
+                           body: runs.isEmpty
+                               ? String(localized: "같은 시각의 하늘이 다른 날에 또 모이면, Plus에서 나란히 견줘 봐요.")
+                               : String(localized: "같은 시각의 하늘이 \(runs.count)곳에서 다른 날과 나란히 서 있어요. Plus에서 계속 견줘 봐요."))
+            }
+            .padding(.horizontal, 20)
+            .padding(.top, 12)
+            .padding(.bottom, 96)
+        }
+    }
+
+    private func lockedCard(_ feature: SkyFeature, title: String, body: String) -> some View {
+        VStack(alignment: .leading, spacing: 10) {
+            HStack {
+                Text(title)
+                    .font(.headline)
+                    .accessibilityAddTraits(.isHeader)
+                Spacer(minLength: 8)
+                PlanLockBadge(feature: feature)
+            }
+            Text(body)
+                .font(.body)
+                .foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
+            Button {
+                paywall = feature
+            } label: {
+                Text("\(feature.tier.title) 보기", comment: "Button on a locked screen: see this tier")
+                    .font(.body.weight(.semibold))
+                    .frame(maxWidth: .infinity, minHeight: 30)
+            }
+            .buttonStyle(.borderedProminent)
+        }
+        .padding(16)
+        .background(Color(.secondarySystemBackground), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+    }
+
+    /// The one free look at repeats: shown whole the first time two days meet
+    /// at the same hour, and spent when it is shown.
+    private func tasteRepeatIfFree() {
+        guard !plans.allows(.repeats), !SkyFreeTaste.hasSeenRepeat,
+              !RepeatView.runs(of: entries).isEmpty else { return }
+        SkyFreeTaste.markRepeatSeen()
+        repeatTaste = true
     }
 
     private struct PaletteGroup: Identifiable {

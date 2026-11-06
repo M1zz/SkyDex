@@ -40,6 +40,15 @@ struct TodaySkyWidgetView: View {
 
     @ViewBuilder
     private var content: some View {
+        if entry.locked {
+            WidgetLockedView(name: "오늘의 하늘")
+        } else {
+            face
+        }
+    }
+
+    @ViewBuilder
+    private var face: some View {
         switch family {
         case .accessoryInline:
             if let today = entry.today {
@@ -56,7 +65,7 @@ struct TodaySkyWidgetView: View {
 
     @ViewBuilder
     private var background: some View {
-        if family == .systemSmall, let today = entry.today {
+        if family == .systemSmall, !entry.locked, let today = entry.today {
             if let data = SkySnapshot.photo(), let image = UIImage(data: data) {
                 Image(uiImage: image)
                     .resizable()

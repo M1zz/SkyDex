@@ -47,15 +47,17 @@ https://m1zz.github.io/SkyDex/
 비어 있는 칸을 누르면 그 칸이 언제의 하늘인지, 어떤 색을 찾으면 되는지 알려줘요.
 
 기록, 팔레트, 되풀이
-찍은 하늘을 시간순으로 보고, 모은 색을 파랑, 회색, 노을빛 같은 갈래별 팔레트로 모아 보고, 같은 시각의 하늘을 다른 날 다시 찍으면 둘을 나란히 비교할 수 있어요.
+찍은 하늘을 시간순으로 보는 기록은 무료예요. Plus에서는 모은 색을 파랑, 회색, 노을빛 같은 갈래별 팔레트로 모아 보고, 같은 시각의 하늘을 다른 날 다시 찍어 둘을 나란히 비교할 수 있어요.
 
 위젯
-오늘 찍은 하늘과 오늘의 판을 홈 화면에서 바로 볼 수 있어요.
+Pro에서는 오늘 찍은 하늘과 오늘의 판을 홈 화면에서 바로 볼 수 있어요.
 
 사진에서 골라도 돼요
 카메라 대신 사진 앱에서 고른 하늘도 정사각형으로 잘려 들어갑니다.
 
-계정도 로그인도 없어요. 모은 하늘은 내 iCloud에 저장되어 기기를 바꿔도 이어집니다.
+계정도 로그인도 없어요. Pro에서는 모은 하늘이 내 iCloud에 저장되어 기기를 바꿔도 이어집니다.
+
+판은 무료로 채울 수 있어요. Plus와 Pro는 구독하거나 한 번 사서 평생 쓸 수 있어요.
 
 ## en-US
 
@@ -104,15 +106,17 @@ Empty cells show the way
 Tap an empty cell to see which time of day it belongs to and what colour to look for.
 
 Log, palette, repeats
-Browse your skies in order, gather your colours into palettes such as blues, greys and sunset tones, and shoot the same hour on another day to compare the two side by side.
+Browsing all your skies in order is free. With Plus, gather your colours into palettes such as blues, greys and sunset tones, and shoot the same hour on another day to compare the two side by side.
 
 Widgets
-See today's sky and today's board right on your Home Screen.
+With Pro, see today's sky and today's board right on your Home Screen.
 
 Pick from Photos
 A sky chosen from your library instead of the camera is cropped to a square as well.
 
-No account, no sign-in. Your skies are stored in your own iCloud, so they follow you to a new device.
+No account, no sign-in. With Pro, your skies are kept in your own iCloud and follow you to a new device.
+
+The board itself is free. Get Plus or Pro with a subscription, or once for life.
 
 ## en-GB
 
@@ -161,15 +165,17 @@ Empty cells show the way
 Tap an empty cell to see which time of day it belongs to and what colour to look for.
 
 Log, palette, repeats
-Browse your skies in order, gather your colours into palettes such as blues, greys and sunset tones, and shoot the same hour on another day to compare the two side by side.
+Browsing all your skies in order is free. With Plus, gather your colours into palettes such as blues, greys and sunset tones, and shoot the same hour on another day to compare the two side by side.
 
 Widgets
-See today's sky and today's board right on your Home Screen.
+With Pro, see today's sky and today's board right on your Home Screen.
 
 Pick from Photos
 A sky chosen from your library instead of the camera is cropped to a square as well.
 
-No account, no sign-in. Your skies are stored in your own iCloud, so they follow you to a new device.
+No account, no sign-in. With Pro, your skies are kept in your own iCloud and follow you to a new device.
+
+The board itself is free. Get Plus or Pro with a subscription, or once for life.
 
 ## ja
 
@@ -218,15 +224,17 @@ SkyDex: 毎日の空を集める
 空のマスをタップすると、それが一日のどの時間の空なのか、どんな色を探せばいいのかが分かります。
 
 記録、パレット、繰り返し
-撮った空を時間順に眺めたり、集めた色を青、グレー、夕焼け色などのグループごとのパレットにまとめたり、別の日の同じ時刻にもう一度撮って、ふたつを並べて見比べたりできます。
+撮った空を時間順に眺める記録は無料です。Plus では、集めた色を青、グレー、夕焼け色などのグループごとのパレットにまとめたり、別の日の同じ時刻にもう一度撮って、ふたつを並べて見比べたりできます。
 
 ウィジェット
-今日撮った空と今日のボードを、ホーム画面からすぐに見られます。
+Pro なら、今日撮った空と今日のボードをホーム画面からすぐに見られます。
 
 写真から選んでもOK
 カメラの代わりに写真アプリから選んだ空も、正方形に切り抜かれて入ります。
 
-アカウントもログインも要りません。集めた空はあなたの iCloud に保存され、機種変更をしても引き継がれます。
+アカウントもログインも要りません。Pro なら集めた空はあなたの iCloud に保存され、機種変更をしても引き継がれます。
+
+ボードそのものは無料です。Plus と Pro は、サブスクリプションでも買い切りでも選べます。
 
 ## zh-Hans
 
@@ -275,15 +283,17 @@ SkyDex：收集每天的天空
 点按空着的格子，就能知道它对应一天中的什么时刻，以及该去找什么颜色。
 
 记录、调色板、重复
-按时间顺序浏览拍下的天空；把收集的颜色按蓝色、灰色、晚霞色等分类，整理成调色板；在另一天的同一时刻再拍一次，就能把两张并排对比。
+按时间顺序浏览拍下的天空，完全免费。开通 Plus 后，可以把收集的颜色按蓝色、灰色、晚霞色等分类，整理成调色板；在另一天的同一时刻再拍一次，就能把两张并排对比。
 
 小组件
-在主屏幕上就能直接看到今天拍的天空和今日色板。
+开通 Pro 后，在主屏幕上就能直接看到今天拍的天空和今日色板。
 
 也可以从照片中选取
 不用相机，从“照片”App 中选一张天空，同样会裁成方形放进去。
 
-无需账号，也无需登录。收集的天空保存在你自己的 iCloud 中，换了设备也能接着用。
+无需账号，也无需登录。开通 Pro 后，收集的天空会保存在你自己的 iCloud 中，换了设备也能接着用。
+
+色板本身免费使用。Plus 和 Pro 可以订阅，也可以一次买断、永久使用。
 
 ## zh-Hant
 
@@ -332,15 +342,17 @@ SkyDex：收集每天的天空
 點一下空著的格子，就能知道它對應一天中的什麼時刻，以及該去找什麼顏色。
 
 紀錄、調色盤、重複
-依時間順序瀏覽拍下的天空；把收集的顏色依藍色、灰色、晚霞色等分類，整理成調色盤；在另一天的同一時刻再拍一次，就能把兩張並排比較。
+依時間順序瀏覽拍下的天空，完全免費。升級 Plus 後，可以把收集的顏色依藍色、灰色、晚霞色等分類，整理成調色盤；在另一天的同一時刻再拍一次，就能把兩張並排比較。
 
 小工具
-在主畫面上就能直接看到今天拍的天空和今日色板。
+升級 Pro 後，在主畫面上就能直接看到今天拍的天空和今日色板。
 
 也可以從照片中選取
 不用相機，從「照片」App 中選一張天空，同樣會裁成方形放進去。
 
-不需要帳號，也不需要登入。收集的天空儲存在你自己的 iCloud 中，換了裝置也能接著用。
+不需要帳號，也不需要登入。升級 Pro 後，收集的天空會儲存在你自己的 iCloud 中，換了裝置也能接著用。
+
+色板本身免費使用。Plus 和 Pro 可以訂閱，也可以一次買斷、永久使用。
 
 ## ru
 
@@ -389,15 +401,17 @@ SkyDex: небо каждый день
 Коснитесь пустой клетки: приложение скажет, к какому времени суток она относится и какой цвет искать.
 
 Журнал, палитра, повторы
-Просматривайте небо по порядку, собирайте цвета в палитры — синие, серые, закатные, — а сняв небо в тот же час в другой день, сравните два кадра рядом.
+Журнал, где всё небо собрано по порядку, бесплатный. С Plus можно собирать цвета в палитры — синие, серые, закатные, — а сняв небо в тот же час в другой день, сравнить два кадра рядом.
 
 Виджеты
-Небо и доска на сегодня — прямо на экране «Домой».
+С Pro небо и доска на сегодня — прямо на экране «Домой».
 
 Можно выбрать из Фото
 Небо, выбранное из медиатеки вместо камеры, тоже обрезается до квадрата.
 
-Без аккаунта и без входа. Собранное небо хранится в вашем iCloud и переезжает вместе с вами на новое устройство.
+Без аккаунта и без входа. С Pro собранное небо хранится в вашем iCloud и переезжает вместе с вами на новое устройство.
+
+Сама доска бесплатна. Plus и Pro можно оформить по подписке или купить один раз навсегда.
 
 ## es-MX
 
@@ -446,15 +460,17 @@ Las casillas vacías te guían
 Toca una casilla vacía para ver a qué hora del día corresponde y qué color buscar.
 
 Registro, paleta y repeticiones
-Recorre tus cielos en orden, reúne tus colores en paletas como azules, grises y tonos de atardecer, y fotografía la misma hora otro día para comparar las dos fotos lado a lado.
+Recorrer tus cielos en orden es gratis. Con Plus, reúne tus colores en paletas como azules, grises y tonos de atardecer, y fotografía la misma hora otro día para comparar las dos fotos lado a lado.
 
 Widgets
-Mira el cielo de hoy y el tablero de hoy directamente en tu pantalla de inicio.
+Con Pro, mira el cielo de hoy y el tablero de hoy directamente en tu pantalla de inicio.
 
 Elige desde Fotos
 Un cielo elegido de tu fototeca en lugar de la cámara también se recorta en cuadrado.
 
-Sin cuenta ni inicio de sesión. Tus cielos se guardan en tu propio iCloud, así que te acompañan a un dispositivo nuevo.
+Sin cuenta ni inicio de sesión. Con Pro, tus cielos se guardan en tu propio iCloud y te acompañan a un dispositivo nuevo.
+
+El tablero es gratis. Plus y Pro están disponibles con suscripción o con un solo pago para siempre.
 
 ## de-DE
 
@@ -503,15 +519,17 @@ Leere Felder zeigen den Weg
 Tippe ein leeres Feld an und sieh, zu welcher Tageszeit es gehört und welche Farbe du suchen musst.
 
 Verlauf, Palette, Wiederholungen
-Blättere der Reihe nach durch deine Himmel, sammle deine Farben in Paletten wie Blautöne, Grautöne und Abendrot und fotografiere dieselbe Stunde an einem anderen Tag, um beide nebeneinander zu vergleichen.
+Der Verlauf mit all deinen Himmeln ist kostenlos. Mit Plus sammelst du deine Farben in Paletten wie Blautöne, Grautöne und Abendrot und fotografierst dieselbe Stunde an einem anderen Tag, um beide nebeneinander zu vergleichen.
 
 Widgets
-Sieh den Himmel von heute und das Brett von heute direkt auf dem Home-Bildschirm.
+Mit Pro siehst du den Himmel von heute und das Brett von heute direkt auf dem Home-Bildschirm.
 
 Aus Fotos auswählen
 Ein Himmel aus deiner Mediathek statt von der Kamera wird ebenfalls quadratisch zugeschnitten.
 
-Kein Konto, keine Anmeldung. Deine Himmel liegen in deiner eigenen iCloud und ziehen mit auf ein neues Gerät.
+Kein Konto, keine Anmeldung. Mit Pro liegen deine Himmel in deiner eigenen iCloud und ziehen mit auf ein neues Gerät.
+
+Das Brett selbst ist kostenlos. Plus und Pro gibt es im Abo oder einmalig für immer.
 
 ## fr-FR
 
@@ -560,15 +578,17 @@ Les cases vides vous guident
 Touchez une case vide pour voir à quel moment de la journée elle correspond et quelle couleur chercher.
 
 Journal, palette, répétitions
-Parcourez vos ciels dans l’ordre, regroupez vos couleurs en palettes comme les bleus, les gris et les teintes du couchant, et photographiez la même heure un autre jour pour comparer les deux côte à côte.
+Parcourir vos ciels dans l’ordre est gratuit. Avec Plus, regroupez vos couleurs en palettes comme les bleus, les gris et les teintes du couchant, et photographiez la même heure un autre jour pour comparer les deux côte à côte.
 
 Widgets
-Retrouvez le ciel du jour et la planche du jour directement sur votre écran d’accueil.
+Avec Pro, retrouvez le ciel du jour et la planche du jour directement sur votre écran d’accueil.
 
 Choisir dans Photos
 Un ciel choisi dans votre photothèque plutôt qu’avec l’appareil photo est lui aussi recadré en carré.
 
-Pas de compte, pas de connexion. Vos ciels sont conservés dans votre propre iCloud et vous suivent sur un nouvel appareil.
+Pas de compte, pas de connexion. Avec Pro, vos ciels sont conservés dans votre propre iCloud et vous suivent sur un nouvel appareil.
+
+La planche elle-même est gratuite. Plus et Pro s’obtiennent par abonnement ou en un seul achat, pour toujours.
 
 ## it
 
@@ -617,15 +637,17 @@ Le caselle vuote ti indicano la strada
 Tocca una casella vuota per vedere a quale momento del giorno corrisponde e quale colore cercare.
 
 Diario, tavolozza, ripetizioni
-Sfoglia i tuoi cieli in ordine, raccogli i colori in tavolozze come azzurri, grigi e toni del tramonto, e fotografa la stessa ora in un altro giorno per confrontare le due foto affiancate.
+Sfogliare i tuoi cieli in ordine è gratis. Con Plus raccogli i colori in tavolozze come azzurri, grigi e toni del tramonto, e fotografi la stessa ora in un altro giorno per confrontare le due foto affiancate.
 
 Widget
-Guarda il cielo di oggi e il tabellone di oggi direttamente dalla schermata Home.
+Con Pro, guarda il cielo di oggi e il tabellone di oggi direttamente dalla schermata Home.
 
 Scegli da Foto
 Anche un cielo scelto dalla libreria al posto della fotocamera viene ritagliato in quadrato.
 
-Nessun account, nessun accesso. I tuoi cieli sono conservati nel tuo iCloud, così ti seguono su un nuovo dispositivo.
+Nessun account, nessun accesso. Con Pro i tuoi cieli sono conservati nel tuo iCloud e ti seguono su un nuovo dispositivo.
+
+Il tabellone è gratuito. Plus e Pro sono disponibili in abbonamento o con un unico acquisto per sempre.
 
 ## pt-BR
 
@@ -674,15 +696,17 @@ Os quadrados vazios mostram o caminho
 Toque em um quadrado vazio para ver a que hora do dia ele pertence e que cor procurar.
 
 Registro, paleta e repetições
-Navegue pelos seus céus em ordem, reúna as cores em paletas como azuis, cinzas e tons de pôr do sol, e fotografe a mesma hora em outro dia para comparar as duas fotos lado a lado.
+Navegar pelos seus céus em ordem é grátis. Com o Plus, reúna as cores em paletas como azuis, cinzas e tons de pôr do sol, e fotografe a mesma hora em outro dia para comparar as duas fotos lado a lado.
 
 Widgets
-Veja o céu de hoje e o quadro de hoje direto na tela de início.
+Com o Pro, veja o céu de hoje e o quadro de hoje direto na tela de início.
 
 Escolha em Fotos
 Um céu escolhido da sua biblioteca no lugar da câmera também é cortado em quadrado.
 
-Sem conta e sem login. Seus céus ficam no seu próprio iCloud e acompanham você em um aparelho novo.
+Sem conta e sem login. Com o Pro, seus céus ficam no seu próprio iCloud e acompanham você em um aparelho novo.
+
+O quadro é grátis. Plus e Pro podem ser assinados ou comprados uma única vez, para sempre.
 
 ## th
 
@@ -731,15 +755,17 @@ SkyDex: สะสมสีท้องฟ้า
 แตะช่องว่างเพื่อดูว่าเป็นช่วงเวลาไหนของวัน และควรมองหาสีอะไร
 
 บันทึก จานสี และการถ่ายซ้ำ
-เรียกดูท้องฟ้าตามลำดับเวลา รวมสีที่สะสมไว้เป็นจานสี เช่น โทนฟ้า โทนเทา และโทนพระอาทิตย์ตก และถ่ายท้องฟ้าเวลาเดิมในอีกวันเพื่อเปรียบเทียบสองภาพเคียงข้างกัน
+การเรียกดูท้องฟ้าตามลำดับเวลาใช้ได้ฟรี ส่วน Plus จะให้คุณรวมสีที่สะสมไว้เป็นจานสี เช่น โทนฟ้า โทนเทา และโทนพระอาทิตย์ตก และถ่ายท้องฟ้าเวลาเดิมในอีกวันเพื่อเปรียบเทียบสองภาพเคียงข้างกัน
 
 วิดเจ็ต
-ดูท้องฟ้าวันนี้และกระดานวันนี้ได้ตรงหน้าจอโฮม
+เมื่อใช้ Pro ดูท้องฟ้าวันนี้และกระดานวันนี้ได้ตรงหน้าจอโฮม
 
 เลือกจากรูปภาพได้
 ท้องฟ้าที่เลือกจากคลังรูปภาพแทนการใช้กล้อง จะถูกครอบเป็นสี่เหลี่ยมจัตุรัสเช่นกัน
 
-ไม่ต้องมีบัญชี ไม่ต้องลงชื่อเข้าใช้ ท้องฟ้าที่สะสมไว้จะเก็บใน iCloud ของคุณเอง จึงตามคุณไปยังอุปกรณ์เครื่องใหม่ได้
+ไม่ต้องมีบัญชี ไม่ต้องลงชื่อเข้าใช้ เมื่อใช้ Pro ท้องฟ้าที่สะสมไว้จะเก็บใน iCloud ของคุณเอง จึงตามคุณไปยังอุปกรณ์เครื่องใหม่ได้
+
+ตัวกระดานใช้ได้ฟรี ส่วน Plus และ Pro เลือกได้ทั้งแบบสมัครสมาชิกหรือซื้อครั้งเดียวใช้ได้ตลอดไป
 
 ## vi
 
@@ -788,15 +814,17 @@ Ngay sau khi chụp, một tấm thẻ sẽ mở ra. Hãy viết điều bạn n
 Chạm vào một ô trống để biết nó thuộc thời điểm nào trong ngày và nên tìm màu gì.
 
 Nhật ký, bảng màu, lặp lại
-Duyệt bầu trời của bạn theo thứ tự, gom các màu thành bảng màu như xanh lam, xám và sắc hoàng hôn, và chụp lại cùng một giờ vào ngày khác để so sánh hai ảnh cạnh nhau.
+Duyệt bầu trời của bạn theo thứ tự là miễn phí. Với Plus, bạn có thể gom các màu thành bảng màu như xanh lam, xám và sắc hoàng hôn, và chụp lại cùng một giờ vào ngày khác để so sánh hai ảnh cạnh nhau.
 
 Widget
-Xem bầu trời hôm nay và bảng hôm nay ngay trên Màn hình chính.
+Với Pro, xem bầu trời hôm nay và bảng hôm nay ngay trên Màn hình chính.
 
 Chọn từ Ảnh
 Bầu trời chọn từ thư viện thay cho camera cũng được cắt thành hình vuông.
 
-Không cần tài khoản, không cần đăng nhập. Bầu trời của bạn được lưu trong iCloud riêng của bạn, nên theo bạn sang thiết bị mới.
+Không cần tài khoản, không cần đăng nhập. Với Pro, bầu trời của bạn được lưu trong iCloud riêng của bạn và theo bạn sang thiết bị mới.
+
+Bảng luôn miễn phí. Plus và Pro có thể đăng ký theo kỳ hoặc mua một lần dùng mãi mãi.
 
 ## cs
 
@@ -845,15 +873,17 @@ Prázdné buňky ukazují cestu
 Klepněte na prázdnou buňku a uvidíte, ke které denní době patří a jakou barvu hledat.
 
 Deník, paleta, opakování
-Procházejte svá nebe popořadě, sbírejte barvy do palet jako modré, šedé a barvy západu slunce a vyfoťte stejnou hodinu jiný den, abyste obě fotky porovnali vedle sebe.
+Procházet svá nebe popořadě můžete zdarma. S verzí Plus sbíráte barvy do palet jako modré, šedé a barvy západu slunce a vyfotíte stejnou hodinu jiný den, abyste obě fotky porovnali vedle sebe.
 
 Widgety
-Dnešní nebe a dnešní tabuli uvidíte hned na ploše.
+S verzí Pro uvidíte dnešní nebe a dnešní tabuli hned na ploše.
 
 Výběr z Fotek
 Nebe vybrané z knihovny místo z fotoaparátu se také ořízne na čtverec.
 
-Bez účtu a bez přihlašování. Nasbíraná nebe jsou uložena ve vašem vlastním iCloudu, takže vás doprovodí i na nové zařízení.
+Bez účtu a bez přihlašování. S verzí Pro jsou nasbíraná nebe uložena ve vašem vlastním iCloudu, takže vás doprovodí i na nové zařízení.
+
+Samotná tabule je zdarma. Plus a Pro můžete mít s předplatným, nebo je jednou koupit navždy.
 
 ## da
 
@@ -902,15 +932,17 @@ Tomme felter viser vej
 Tryk på et tomt felt for at se, hvilket tidspunkt på dagen det hører til, og hvilken farve du skal lede efter.
 
 Log, palet, gentagelser
-Gennemse dine himle i rækkefølge, saml dine farver i paletter som blå, grå og solnedgangstoner, og tag samme time en anden dag for at sammenligne de to billeder side om side.
+Det er gratis at gennemse dine himle i rækkefølge. Med Plus kan du samle dine farver i paletter som blå, grå og solnedgangstoner og tage samme time en anden dag for at sammenligne de to billeder side om side.
 
 Widgets
-Se dagens himmel og dagens bræt direkte på hjemmeskærmen.
+Med Pro kan du se dagens himmel og dagens bræt direkte på hjemmeskærmen.
 
 Vælg fra Billeder
 En himmel, du vælger fra dit bibliotek i stedet for kameraet, beskæres også til en firkant.
 
-Ingen konto, ingen login. Dine himle gemmes i din egen iCloud, så de følger med dig til en ny enhed.
+Ingen konto, ingen login. Med Pro gemmes dine himle i din egen iCloud, så de følger med dig til en ny enhed.
+
+Selve brættet er gratis. Plus og Pro fås som abonnement eller som et engangskøb for altid.
 
 ## el
 
@@ -959,15 +991,17 @@ SkyDex: Τα χρώματα του ουρανού
 Πατήστε ένα άδειο τετράγωνο για να δείτε σε ποια ώρα της ημέρας ανήκει και ποιο χρώμα να αναζητήσετε.
 
 Ιστορικό, παλέτα, επαναλήψεις
-Περιηγηθείτε στους ουρανούς σας με τη σειρά, συγκεντρώστε τα χρώματά σας σε παλέτες όπως μπλε, γκρι και αποχρώσεις ηλιοβασιλέματος και φωτογραφίστε την ίδια ώρα μια άλλη μέρα για να συγκρίνετε τις δύο φωτογραφίες δίπλα-δίπλα.
+Η περιήγηση στους ουρανούς σας με τη σειρά είναι δωρεάν. Με το Plus συγκεντρώνετε τα χρώματά σας σε παλέτες όπως μπλε, γκρι και αποχρώσεις ηλιοβασιλέματος και φωτογραφίζετε την ίδια ώρα μια άλλη μέρα για να συγκρίνετε τις δύο φωτογραφίες δίπλα-δίπλα.
 
 Widgets
-Δείτε τον σημερινό ουρανό και τον σημερινό πίνακα κατευθείαν στην αρχική οθόνη.
+Με το Pro βλέπετε τον σημερινό ουρανό και τον σημερινό πίνακα κατευθείαν στην αρχική οθόνη.
 
 Επιλογή από τις Φωτογραφίες
 Ένας ουρανός που επιλέγετε από τη βιβλιοθήκη αντί για την κάμερα κόβεται επίσης σε τετράγωνο.
 
-Χωρίς λογαριασμό, χωρίς σύνδεση. Οι ουρανοί σας φυλάσσονται στο δικό σας iCloud, ώστε να σας ακολουθούν σε μια νέα συσκευή.
+Χωρίς λογαριασμό, χωρίς σύνδεση. Με το Pro οι ουρανοί σας φυλάσσονται στο δικό σας iCloud και σας ακολουθούν σε μια νέα συσκευή.
+
+Ο ίδιος ο πίνακας είναι δωρεάν. Το Plus και το Pro διατίθενται με συνδρομή ή με μία αγορά για πάντα.
 
 ## fi
 
@@ -1016,15 +1050,17 @@ Tyhjät ruudut näyttävät tien
 Napauta tyhjää ruutua nähdäksesi, mihin vuorokaudenaikaan se kuuluu ja minkä väriä kannattaa etsiä.
 
 Loki, paletti, toistot
-Selaa taivaitasi järjestyksessä, kokoa värisi paleteiksi, kuten siniset, harmaat ja auringonlaskun sävyt, ja kuvaa sama tunti toisena päivänä verrataksesi kahta kuvaa vierekkäin.
+Taivaiden selaaminen järjestyksessä on ilmaista. Plus-versiolla kokoat värisi paleteiksi, kuten siniset, harmaat ja auringonlaskun sävyt, ja kuvaat saman tunnin toisena päivänä verrataksesi kahta kuvaa vierekkäin.
 
 Widgetit
-Näe päivän taivas ja päivän lauta suoraan Koti-valikossa.
+Pro-versiolla näet päivän taivaan ja päivän laudan suoraan Koti-valikossa.
 
 Valitse Kuvista
 Kirjastosta kameran sijaan valittu taivas rajataan myös neliöksi.
 
-Ei tiliä, ei kirjautumista. Taivaasi tallentuvat omaan iCloudiisi, joten ne seuraavat sinua uudelle laitteelle.
+Ei tiliä, ei kirjautumista. Pro-versiolla taivaasi tallentuvat omaan iCloudiisi ja seuraavat sinua uudelle laitteelle.
+
+Itse lauta on ilmainen. Plus- ja Pro-version saat tilauksena tai kertaostona pysyvästi.
 
 ## id
 
@@ -1073,15 +1109,17 @@ Kotak kosong menunjukkan jalan
 Ketuk kotak kosong untuk melihat jam berapa kotak itu dan warna apa yang harus dicari.
 
 Log, palet, pengulangan
-Telusuri langitmu secara berurutan, kumpulkan warnamu ke dalam palet seperti biru, abu-abu, dan nuansa senja, lalu potret jam yang sama di hari lain untuk membandingkan kedua foto berdampingan.
+Menelusuri langitmu secara berurutan itu gratis. Dengan Plus, kumpulkan warnamu ke dalam palet seperti biru, abu-abu, dan nuansa senja, lalu potret jam yang sama di hari lain untuk membandingkan kedua foto berdampingan.
 
 Widget
-Lihat langit hari ini dan papan hari ini langsung di Layar Utama.
+Dengan Pro, lihat langit hari ini dan papan hari ini langsung di Layar Utama.
 
 Pilih dari Foto
 Langit yang dipilih dari pustaka, bukan dari kamera, juga dipotong menjadi persegi.
 
-Tanpa akun, tanpa login. Langitmu tersimpan di iCloud milikmu sendiri, jadi ikut berpindah ke perangkat baru.
+Tanpa akun, tanpa login. Dengan Pro, langitmu tersimpan di iCloud milikmu sendiri dan ikut berpindah ke perangkat baru.
+
+Papannya sendiri gratis. Plus dan Pro bisa didapat lewat langganan atau sekali beli untuk selamanya.
 
 ## nb
 
@@ -1130,15 +1168,17 @@ Tomme ruter viser vei
 Trykk på en tom rute for å se hvilket tidspunkt på dagen den hører til og hvilken farge du skal lete etter.
 
 Logg, palett, gjentakelser
-Bla gjennom himlene dine i rekkefølge, samle fargene dine i paletter som blått, grått og solnedgangstoner, og ta samme time en annen dag for å sammenligne de to bildene side om side.
+Det er gratis å bla gjennom himlene dine i rekkefølge. Med Plus kan du samle fargene dine i paletter som blått, grått og solnedgangstoner, og ta samme time en annen dag for å sammenligne de to bildene side om side.
 
 Widgets
-Se dagens himmel og dagens brett rett på Hjem-skjermen.
+Med Pro ser du dagens himmel og dagens brett rett på Hjem-skjermen.
 
 Velg fra Bilder
 En himmel du velger fra biblioteket i stedet for kameraet, beskjæres også til et kvadrat.
 
-Ingen konto, ingen pålogging. Himlene dine lagres i din egen iCloud, så de følger deg til en ny enhet.
+Ingen konto, ingen pålogging. Med Pro lagres himlene dine i din egen iCloud, så de følger deg til en ny enhet.
+
+Selve brettet er gratis. Plus og Pro får du som abonnement eller som et engangskjøp for alltid.
 
 ## nl-NL
 
@@ -1187,15 +1227,17 @@ Lege vakjes wijzen de weg
 Tik op een leeg vakje om te zien bij welk moment van de dag het hoort en welke kleur je moet zoeken.
 
 Logboek, palet, herhalingen
-Blader op volgorde door je luchten, verzamel je kleuren in paletten zoals blauwtinten, grijzen en zonsondergangskleuren, en fotografeer hetzelfde uur op een andere dag om de twee foto's naast elkaar te vergelijken.
+Op volgorde door je luchten bladeren is gratis. Met Plus verzamel je je kleuren in paletten zoals blauwtinten, grijzen en zonsondergangskleuren, en fotografeer je hetzelfde uur op een andere dag om de twee foto's naast elkaar te vergelijken.
 
 Widgets
-Zie de lucht en het bord van vandaag direct op je beginscherm.
+Met Pro zie je de lucht en het bord van vandaag direct op je beginscherm.
 
 Kies uit Foto's
 Een lucht die je uit je bibliotheek kiest in plaats van met de camera, wordt ook bijgesneden tot een vierkant.
 
-Geen account, geen inlog. Je luchten staan in je eigen iCloud, dus ze gaan met je mee naar een nieuw apparaat.
+Geen account, geen inlog. Met Pro staan je luchten in je eigen iCloud en gaan ze met je mee naar een nieuw apparaat.
+
+Het bord zelf is gratis. Plus en Pro krijg je met een abonnement of met één aankoop voor altijd.
 
 ## pl
 
@@ -1244,15 +1286,17 @@ Puste pola wskazują drogę
 Dotknij pustego pola, aby zobaczyć, do jakiej pory dnia należy i jakiego koloru szukać.
 
 Dziennik, paleta, powtórzenia
-Przeglądaj swoje niebo po kolei, zbieraj kolory w palety, takie jak błękity, szarości i barwy zachodu, i sfotografuj tę samą godzinę innego dnia, by porównać oba zdjęcia obok siebie.
+Przeglądanie nieba po kolei jest bezpłatne. W wersji Plus zbierasz kolory w palety, takie jak błękity, szarości i barwy zachodu, i fotografujesz tę samą godzinę innego dnia, by porównać oba zdjęcia obok siebie.
 
 Widżety
-Zobacz dzisiejsze niebo i dzisiejszą tablicę prosto na ekranie początkowym.
+W wersji Pro zobaczysz dzisiejsze niebo i dzisiejszą tablicę prosto na ekranie początkowym.
 
 Wybierz ze Zdjęć
 Niebo wybrane z biblioteki zamiast z aparatu również zostanie przycięte do kwadratu.
 
-Bez konta i bez logowania. Zebrane niebo jest przechowywane w twoim własnym iCloud, więc przenosi się razem z tobą na nowe urządzenie.
+Bez konta i bez logowania. W wersji Pro zebrane niebo jest przechowywane w twoim własnym iCloud i przenosi się razem z tobą na nowe urządzenie.
+
+Sama tablica jest bezpłatna. Plus i Pro możesz mieć w subskrypcji albo kupić raz na zawsze.
 
 ## sv
 
@@ -1301,15 +1345,17 @@ Tomma rutor visar vägen
 Tryck på en tom ruta för att se vilken tid på dagen den hör till och vilken färg du ska leta efter.
 
 Logg, palett, upprepningar
-Bläddra bland dina himlar i ordning, samla dina färger i paletter som blått, grått och solnedgångstoner, och fota samma timme en annan dag för att jämföra de två bilderna sida vid sida.
+Det är gratis att bläddra bland dina himlar i ordning. Med Plus kan du samla dina färger i paletter som blått, grått och solnedgångstoner, och fota samma timme en annan dag för att jämföra de två bilderna sida vid sida.
 
 Widgets
-Se dagens himmel och dagens bräde direkt på hemskärmen.
+Med Pro ser du dagens himmel och dagens bräde direkt på hemskärmen.
 
 Välj från Bilder
 En himmel du väljer från biblioteket i stället för kameran beskärs också till en kvadrat.
 
-Inget konto, ingen inloggning. Dina himlar sparas i din egen iCloud, så de följer med dig till en ny enhet.
+Inget konto, ingen inloggning. Med Pro sparas dina himlar i din egen iCloud, så de följer med dig till en ny enhet.
+
+Själva brädet är gratis. Plus och Pro finns som prenumeration eller som ett engångsköp för alltid.
 
 ## tr
 
@@ -1358,15 +1404,17 @@ Boş kareler yolu gösterir
 Boş bir kareye dokun, günün hangi saatine ait olduğunu ve hangi rengi aramak gerektiğini gör.
 
 Kayıt, palet, tekrarlar
-Gökyüzülerini sırayla gez, renklerini mavi, gri ve gün batımı tonları gibi paletlerde topla; başka bir gün aynı saati çek ve iki fotoğrafı yan yana karşılaştır.
+Gökyüzülerini sırayla gezmek ücretsiz. Plus ile renklerini mavi, gri ve gün batımı tonları gibi paletlerde topla; başka bir gün aynı saati çek ve iki fotoğrafı yan yana karşılaştır.
 
 Widget’lar
-Bugünün gökyüzünü ve bugünün tahtasını doğrudan Ana Ekran’da gör.
+Pro ile bugünün gökyüzünü ve bugünün tahtasını doğrudan Ana Ekran’da gör.
 
 Fotoğraflar’dan seç
 Kamera yerine kitaplığından seçtiğin gökyüzü de kareye kırpılır.
 
-Hesap yok, giriş yok. Gökyüzülerin kendi iCloud’unda saklanır, bu yüzden yeni bir cihaza da seninle gelir.
+Hesap yok, giriş yok. Pro ile gökyüzülerin kendi iCloud’unda saklanır ve yeni bir cihaza da seninle gelir.
+
+Tahtanın kendisi ücretsiz. Plus ve Pro’yu abonelikle ya da tek seferlik satın alımla ömür boyu alabilirsin.
 
 ## 손쉬운 사용
 

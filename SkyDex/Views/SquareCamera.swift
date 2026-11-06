@@ -208,7 +208,8 @@ struct SquareCameraView: View {
     /// is the picture in front of you and one tap from the share sheet.
     @ViewBuilder
     private var borrowing: some View {
-        if camera.state == .running, !chips.isEmpty {
+        // 다른 날의 하늘을 입혀 보는 것은 Plus 다(→ SkyPlan). 무료면 뷰파인더는 하늘 그대로, 띠가 없다.
+        if camera.state == .running, !chips.isEmpty, SkyStore.shared.allows(.recolor) {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 6) {
                     Button {

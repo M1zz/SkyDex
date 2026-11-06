@@ -32,8 +32,12 @@ struct SkyDexApp: App {
                 .foldAware()
                 // Spotlight 에 싣는 하늘을 지금 것에 맞춘다. 열 때 한 번, 뒤로 보낼 때마다.
                 .task { await SkyLibrary.reindex(container) }
+                // 산 것 · 먼저 쓴 사람 · 파는 상품을 켤 때 한 번 읽는다 (→ Support/SkyPlan.swift).
+                .task { await SkyStore.shared.refresh() }
                 .onChange(of: scenePhase) { _, phase in
                     if phase == .background { Task { await SkyLibrary.reindex(container) } }
+                    // 다른 기기에서 산 것 · 해지 · 환불을 앞으로 나올 때마다 다시 읽는다.
+                    if phase == .active { Task { await SkyStore.shared.refresh() } }
                 }
         }
         .modelContainer(container)
@@ -53,11 +57,12 @@ struct SkyDexApp: App {
         if ScreenshotDemo.isOn { return ScreenshotDemo.makeContainer() }
         #endif
         prepareStoreDirectory()
+        settleCloudDefault()
 
         // 1. iCloud, unless it was turned off in the settings. Rows already on
         //    disk stay put and start uploading; a fresh install on a new phone
         //    pulls back whatever the account holds.
-        if wantsCloud,
+        if wantsCloud, proOpenAtLaunch,
            let synced = try? ModelContainer(for: SkyEntry.self, configurations: cloudConfiguration) {
             usesCloud = true
             return synced
@@ -103,9 +108,45 @@ struct SkyDexApp: App {
     /// change waits for the next launch rather than pretending otherwise.
     static let cloudEnabledKey = "skydex.cloud.enabled"
 
-    private static var wantsCloud: Bool {
-        UserDefaults.standard.object(forKey: cloudEnabledKey) as? Bool ?? true
+    /// What the switch is when nobody has touched it.
+    ///
+    /// iCloud is Pro now. Before that it was on for everyone, and almost every
+    /// sky collected so far is in someone's iCloud — so a phone that already has
+    /// a collection on it keeps syncing, and so does someone who collected
+    /// before the paywall and is installing again (`SkyStore`). A new phone with
+    /// a new person on it starts with the switch off.
+    private static let cloudDefaultKey = "skydex.cloud.defaultOn"
+
+    static var wantsCloud: Bool {
+        let defaults = UserDefaults.standard
+        if let chosen = defaults.object(forKey: cloudEnabledKey) as? Bool { return chosen }
+        return defaults.bool(forKey: cloudDefaultKey)
     }
+
+    static func setWantsCloud(_ on: Bool) {
+        UserDefaults.standard.set(on, forKey: cloudEnabledKey)
+    }
+
+    /// Someone who collected before the paywall, back on a phone with nothing on it.
+    static func preferCloudByDefault() {
+        UserDefaults.standard.set(true, forKey: cloudDefaultKey)
+    }
+
+    /// Settled once, the first time this version opens: a collection already on
+    /// disk means a person who had iCloud on without ever being asked.
+    private static func settleCloudDefault() {
+        let defaults = UserDefaults.standard
+        guard defaults.object(forKey: cloudDefaultKey) == nil else { return }
+        let existing = FileManager.default.fileExists(atPath: storeDirectory.appending(path: "default.store").path)
+        defaults.set(existing, forKey: cloudDefaultKey)
+    }
+
+    /// Whether Pro was open the last time the App Store was asked. Read before
+    /// any of that can happen, so it is the last answer written down; nobody
+    /// having asked yet is read as open, and the receipt check that follows
+    /// corrects it from the next launch on. Losing Pro never touches a row —
+    /// the store simply opens on this phone without syncing, as step 2 does.
+    private static var proOpenAtLaunch: Bool { SkySnapshot.proOpen ?? true }
 
     /// Where `default.store` actually is.
     ///

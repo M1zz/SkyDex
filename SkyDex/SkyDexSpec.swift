@@ -38,9 +38,24 @@ enum SkyDexSpec: LeeoAppSpec {
         marketingURL: URL(string: "https://m1zz.github.io/SkyDex/")!
     )
 
-    /// Free, with no StoreKit anywhere in the target. Declaring it is what
-    /// removes the paywall, restore and terms obligations.
-    static let monetization = LeeoMonetization.free
+    /// **판은 무료로 끝까지, 모은 것을 다르게 보는 것은 Plus, 지키고 홈 화면에 꺼내는 것은 Pro.**
+    ///
+    /// 무료 다운로드 + 무료 · Plus · Pro. 유료 칸마다 주 · 월 · 연 구독(한 구독 그룹)과 평생.
+    /// 칸마다 무엇이 열리는지는 `SkyFeature.tier` 한 곳에 있다(→ Support/SkyPlan.swift).
+    /// 1.0.4 빌드 8까지 받은 사람은 Pro 를 그대로 쓴다(`SkyProducts.isEarlySky`).
+    ///
+    /// ⚠️ 칸 상품을 스토어에서 한 번도 못 불러온 기기는 아무것도 잠그지 않는다(`SkyStore.sellsPlans`).
+    static let monetization = LeeoMonetization.freemiumSubscription(
+        LeeoSubscriptionConfig(
+            productIDs: SkyProducts.productIDs,
+            // 자체 약관이 없으므로 애플 표준 사용권 계약(EULA)을 건다. 구독을 파는 앱의 심사 필수 항목이다.
+            termsURL: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!,
+            gate: LeeoGatePolicy(
+                // 되풀이는 처음 한 번은 그대로 보여 준다(→ SkyFreeTaste). 팔레트는 흐린 미리보기.
+                freeLimits: [SkyFeature.repeats.rawValue: 1],
+                proOnly: Set(SkyFeature.allCases.filter { $0 != .repeats }.map(\.rawValue))),
+            // 개발자 응원 팁. 아무것도 열지 않는다. 응원 부탁은 이미 Pro 인 사람에게만(→ ArchiveView).
+            tipJar: LeeoTipJarConfig(productIDs: SkyProducts.tipProductIDs)))
 
     /// 금고가 위젯과 함께 쓰는 공유 컨테이너도 백업한다.
     static let appGroups = ["group.com.leeo.SkyDex"]
@@ -68,24 +83,14 @@ enum SkyDexSpec: LeeoAppSpec {
             .emptyStates,
             .darkMode,
             .minimalPermissions,   // 카메라와 대략적 위치, 그 둘뿐
-            .widgets
+            .widgets,
+            .purchaseReliability   // LeeoStore: 거래 리스너 · 서명 확인 · 복원 · 오프라인 캐시
         ],
         notApplicable: [
             .accountDeletion: "계정이 없다. 로그인도 회원가입도 없고, 지울 것은 기기와 본인 iCloud에 있는 사진뿐이다.",
-            .pushNotifications: "사용자에게 보내는 알림이 없다. 배경 모드는 CloudKit이 변경을 알리는 조용한 푸시에만 쓴다.",
-            .purchaseReliability: "파는 것이 없다. 앱에 StoreKit 코드가 한 줄도 없다."
+            .pushNotifications: "사용자에게 보내는 알림이 없다. 배경 모드는 CloudKit이 변경을 알리는 조용한 푸시에만 쓴다."
         ]
     )
-}
-
-extension SkyDexSpec {
-    /// 무료 앱이라 LeeoStore 가 없다 — 팁만 혼자 받는다(앱을 열 때 `startStandalone()`, → RootView).
-    /// 소모성 상품 셋, 작은 것부터. ⚠️ 기능을 여는 상품이 아니다.
-    @MainActor static let tipJar = LeeoTipJar(config: LeeoTipJarConfig(productIDs: [
-        "com.leeo.SkyDex.tip.small",
-        "com.leeo.SkyDex.tip.medium",
-        "com.leeo.SkyDex.tip.large",
-    ]))
 }
 
 /// 팁을 부탁할 만한 순간 — 지금까지 모은 하늘 수. 한 장 찍을 때마다 하나씩 는다.

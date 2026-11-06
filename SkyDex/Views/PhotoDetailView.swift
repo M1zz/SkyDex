@@ -61,6 +61,9 @@ struct PhotoDetailView: View {
     @State private var lensed: UIImage?
     @State private var working = false
 
+    @State private var plans = SkyStore.shared
+    @State private var paywall: SkyFeature?
+
     private var written: Bool { !entry.note.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
 
     var body: some View {
@@ -81,7 +84,7 @@ struct PhotoDetailView: View {
             .task(id: borrowKey) { await borrow() }
             .task {
                 gatherLenses()
-                if let borrowed { lens = lenses.first { $0.hex == borrowed } }
+                if let borrowed, plans.allows(.recolor) { lens = lenses.first { $0.hex == borrowed } }
             }
             .onChange(of: collected.count) { _, _ in gatherLenses() }
             .task {
@@ -103,6 +106,20 @@ struct PhotoDetailView: View {
                         Image(systemName: "trash")
                     }
                     .accessibilityLabel("삭제")
+                }
+                // 사진을 밖으로 꺼내는 길. 무료다 — 공유 시트의 '이미지 저장'이 사진 앱에 담는다.
+                // 다른 날의 하늘을 입혀 보는 중이면 보이는 그대로 내보낸다.
+                if let shown = lensed ?? entry.photo {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        ShareLink(
+                            item: Image(uiImage: shown),
+                            preview: SharePreview("하늘색", image: Image(uiImage: shown))
+                        ) {
+                            Image(systemName: "square.and.arrow.up")
+                        }
+                        .accessibilityLabel("저장 · 공유")
+                        .disabled(working)
+                    }
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     // Once there is a line on the card, the way out stops being
@@ -134,6 +151,7 @@ struct PhotoDetailView: View {
                 }
             }
             .sensoryFeedback(.success, trigger: saves)
+            .paywall(for: $paywall)
             .confirmationDialog(
                 "이 하늘을 지울까요?",
                 isPresented: $confirmingDelete,
@@ -288,16 +306,9 @@ struct PhotoDetailView: View {
 
                     Spacer()
 
-                    if let lensed {
-                        ShareLink(
-                            item: Image(uiImage: lensed),
-                            preview: SharePreview("하늘색", image: Image(uiImage: lensed))
-                        ) {
-                            Image(systemName: "square.and.arrow.up")
-                                .font(.caption)
-                        }
-                        .accessibilityLabel("공유")
-                        .disabled(working)
+                    // 공유는 위 막대의 단추 하나로 한다. 여기에는 잠겨 있는지만.
+                    if !plans.allows(.recolor) {
+                        PlanLockBadge(feature: .recolor)
                     }
                 }
                 .padding(.horizontal, 4)
@@ -326,6 +337,8 @@ struct PhotoDetailView: View {
 
                         ForEach(lenses) { sky in
                             Button {
+                                // 처음 누를 때 Plus 를 앞에 세운 페이월. 칩은 그대로 보여서 무엇이 열리는지 안다.
+                                guard plans.allows(.recolor) else { paywall = .recolor; return }
                                 lens = lens?.uuid == sky.uuid ? nil : sky
                             } label: {
                                 RoundedRectangle(cornerRadius: 8, style: .continuous)

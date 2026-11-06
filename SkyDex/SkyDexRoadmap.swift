@@ -45,7 +45,7 @@ extension SkyDexSpec {
         .init(id: "shortcuts", status: .planned,
               title: NSLocalizedString("Siri와 단축어", comment: "Roadmap item: Siri and Shortcuts"),
               detail: NSLocalizedString("Siri에게 말하면 바로 하늘을 찍을 수 있어요.", comment: "Roadmap item detail: Siri and Shortcuts")),
-        .init(id: "backup", status: .planned,
+        .init(id: "backup", status: .building,
               title: NSLocalizedString("사진 백업과 내보내기", comment: "Roadmap item: backup and export"),
               detail: NSLocalizedString("모은 하늘 사진을 파일로 저장하고 다시 불러올 수 있어요.", comment: "Roadmap item detail: backup and export")),
         .init(id: "lock.faceid", status: .planned,
