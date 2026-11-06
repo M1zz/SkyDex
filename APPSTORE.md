@@ -59,6 +59,11 @@ Pro에서는 오늘 찍은 하늘과 오늘의 판을 홈 화면에서 바로 �
 
 판은 무료로 채울 수 있어요. Plus와 Pro는 구독하거나 한 번 사서 평생 쓸 수 있어요.
 
+구독 안내
+하늘색 Plus와 Pro 구독은 자동 갱신 구독입니다. 갱신일 24시간 전까지 해지하지 않으면 Apple 계정으로 자동 결제되며, 설정의 구독 관리에서 언제든 해지할 수 있습니다.
+이용약관(EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+개인정보처리방침: https://m1zz.github.io/SkyDex/privacy.html
+
 ## en-US
 
 ### 지원 URL
@@ -117,6 +122,11 @@ A sky chosen from your library instead of the camera is cropped to a square as w
 No account, no sign-in. With Pro, your skies are kept in your own iCloud and follow you to a new device.
 
 The board itself is free. Get Plus or Pro with a subscription, or once for life.
+
+Subscriptions
+SkyDex Plus and Pro are auto-renewing subscriptions. Payment is charged to your Apple Account, and the subscription renews unless canceled at least 24 hours before the current period ends. Manage or cancel anytime in Settings.
+Terms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Privacy Policy: https://m1zz.github.io/SkyDex/en/privacy.html
 
 ## en-GB
 
@@ -177,6 +187,11 @@ No account, no sign-in. With Pro, your skies are kept in your own iCloud and fol
 
 The board itself is free. Get Plus or Pro with a subscription, or once for life.
 
+Subscriptions
+SkyDex Plus and Pro are auto-renewing subscriptions. Payment is charged to your Apple Account, and the subscription renews unless cancelled at least 24 hours before the current period ends. Manage or cancel any time in Settings.
+Terms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Privacy Policy: https://m1zz.github.io/SkyDex/en/privacy.html
+
 ## ja
 
 ### 지원 URL
@@ -235,6 +250,11 @@ Pro なら、今日撮った空と今日のボードをホーム画面からす�
 アカウントもログインも要りません。Pro なら集めた空はあなたの iCloud に保存され、機種変更をしても引き継がれます。
 
 ボードそのものは無料です。Plus と Pro は、サブスクリプションでも買い切りでも選べます。
+
+サブスクリプションについて
+SkyDex の Plus と Pro は自動更新のサブスクリプションです。 期間終了の24時間前までに解約しない限り、Apple Account に自動で請求され更新されます。設定のサブスクリプション管理からいつでも解約できます。
+利用規約（EULA）: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+プライバシーポリシー: https://m1zz.github.io/SkyDex/ja/privacy.html
 
 ## zh-Hans
 
@@ -295,6 +315,11 @@ SkyDex：收集每天的天空
 
 色板本身免费使用。Plus 和 Pro 可以订阅，也可以一次买断、永久使用。
 
+订阅说明
+SkyDex Plus 和 Pro 均为自动续期订阅。 费用从你的 Apple 账户扣除，除非在当期结束前至少 24 小时取消，否则将自动续期。可随时在“设置”中管理或取消。
+使用条款（EULA）: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+隐私政策: https://m1zz.github.io/SkyDex/zh-Hans/privacy.html
+
 ## zh-Hant
 
 ### 지원 URL
@@ -353,6 +378,11 @@ SkyDex：收集每天的天空
 不需要帳號，也不需要登入。升級 Pro 後，收集的天空會儲存在你自己的 iCloud 中，換了裝置也能接著用。
 
 色板本身免費使用。Plus 和 Pro 可以訂閱，也可以一次買斷、永久使用。
+
+訂閱說明
+SkyDex Plus 與 Pro 皆為自動續訂訂閱。 費用會從你的 Apple 帳號扣款，除非在當期結束前至少 24 小時取消，否則將自動續訂。可隨時在「設定」中管理或取消。
+使用條款（EULA）: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+隱私權政策: https://m1zz.github.io/SkyDex/zh-Hant/privacy.html
 
 ## ru
 
@@ -413,6 +443,11 @@ SkyDex: небо каждый день
 
 Сама доска бесплатна. Plus и Pro можно оформить по подписке или купить один раз навсегда.
 
+Подписки
+SkyDex Plus и Pro — подписки с автопродлением. Оплата списывается с вашего Аккаунта Apple, и подписка продлевается, если не отменить её минимум за 24 часа до конца периода. Управлять подпиской и отменить её можно в Настройках.
+Условия использования (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Политика конфиденциальности: https://m1zz.github.io/SkyDex/ru/privacy.html
+
 ## es-MX
 
 ### 지원 URL
@@ -471,6 +506,11 @@ Un cielo elegido de tu fototeca en lugar de la cámara también se recorta en cu
 Sin cuenta ni inicio de sesión. Con Pro, tus cielos se guardan en tu propio iCloud y te acompañan a un dispositivo nuevo.
 
 El tablero es gratis. Plus y Pro están disponibles con suscripción o con un solo pago para siempre.
+
+Suscripciones
+Las suscripciones a SkyDex Plus y Pro son de renovación automática. El cargo se hace a tu cuenta de Apple y la suscripción se renueva a menos que la canceles al menos 24 horas antes de que termine el periodo. Puedes administrarla o cancelarla cuando quieras en Configuración.
+Términos de uso (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Política de privacidad: https://m1zz.github.io/SkyDex/es/privacy.html
 
 ## de-DE
 
@@ -531,6 +571,11 @@ Kein Konto, keine Anmeldung. Mit Pro liegen deine Himmel in deiner eigenen iClou
 
 Das Brett selbst ist kostenlos. Plus und Pro gibt es im Abo oder einmalig für immer.
 
+Abonnements
+SkyDex Plus und Pro sind sich automatisch verlängernde Abos. Die Zahlung erfolgt über deinen Apple Account. Das Abo verlängert sich, sofern du nicht mindestens 24 Stunden vor Ablauf des Zeitraums kündigst. Verwalten oder kündigen kannst du jederzeit in den Einstellungen.
+Nutzungsbedingungen (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Datenschutzerklärung: https://m1zz.github.io/SkyDex/de/privacy.html
+
 ## fr-FR
 
 ### 지원 URL
@@ -589,6 +634,11 @@ Un ciel choisi dans votre photothèque plutôt qu’avec l’appareil photo est 
 Pas de compte, pas de connexion. Avec Pro, vos ciels sont conservés dans votre propre iCloud et vous suivent sur un nouvel appareil.
 
 La planche elle-même est gratuite. Plus et Pro s’obtiennent par abonnement ou en un seul achat, pour toujours.
+
+Abonnements
+Les abonnements SkyDex Plus et Pro sont à renouvellement automatique. Le paiement est débité sur votre compte Apple, et l’abonnement est reconduit sauf résiliation au moins 24 heures avant la fin de la période en cours. Gérez-le ou résiliez-le à tout moment dans Réglages.
+Conditions d’utilisation (EULA) : https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Politique de confidentialité : https://m1zz.github.io/SkyDex/fr/privacy.html
 
 ## it
 
@@ -649,6 +699,11 @@ Nessun account, nessun accesso. Con Pro i tuoi cieli sono conservati nel tuo iCl
 
 Il tabellone è gratuito. Plus e Pro sono disponibili in abbonamento o con un unico acquisto per sempre.
 
+Abbonamenti
+Gli abbonamenti SkyDex Plus e Pro si rinnovano automaticamente. Il pagamento viene addebitato sul tuo Account Apple e l’abbonamento si rinnova se non lo disdici almeno 24 ore prima della fine del periodo. Puoi gestirlo o disdirlo in qualsiasi momento in Impostazioni.
+Condizioni d’uso (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Informativa sulla privacy: https://m1zz.github.io/SkyDex/it/privacy.html
+
 ## pt-BR
 
 ### 지원 URL
@@ -707,6 +762,11 @@ Um céu escolhido da sua biblioteca no lugar da câmera também é cortado em qu
 Sem conta e sem login. Com o Pro, seus céus ficam no seu próprio iCloud e acompanham você em um aparelho novo.
 
 O quadro é grátis. Plus e Pro podem ser assinados ou comprados uma única vez, para sempre.
+
+Assinaturas
+As assinaturas SkyDex Plus e Pro são renovadas automaticamente. A cobrança é feita na sua Conta Apple, e a assinatura é renovada a menos que você cancele pelo menos 24 horas antes do fim do período. Gerencie ou cancele quando quiser em Ajustes.
+Termos de Uso (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Política de Privacidade: https://m1zz.github.io/SkyDex/pt-BR/privacy.html
 
 ## th
 
@@ -767,6 +827,11 @@ SkyDex: สะสมสีท้องฟ้า
 
 ตัวกระดานใช้ได้ฟรี ส่วน Plus และ Pro เลือกได้ทั้งแบบสมัครสมาชิกหรือซื้อครั้งเดียวใช้ได้ตลอดไป
 
+การสมัครสมาชิก
+SkyDex Plus และ Pro เป็นการสมัครสมาชิกที่ต่ออายุอัตโนมัติ ระบบจะเรียกเก็บเงินจากบัญชี Apple ของคุณและต่ออายุให้ เว้นแต่จะยกเลิกอย่างน้อย 24 ชั่วโมงก่อนสิ้นสุดรอบ จัดการหรือยกเลิกได้ทุกเมื่อในการตั้งค่า
+ข้อกำหนดการใช้งาน (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+นโยบายความเป็นส่วนตัว: https://m1zz.github.io/SkyDex/th/privacy.html
+
 ## vi
 
 ### 지원 URL
@@ -825,6 +890,11 @@ Bầu trời chọn từ thư viện thay cho camera cũng được cắt thành
 Không cần tài khoản, không cần đăng nhập. Với Pro, bầu trời của bạn được lưu trong iCloud riêng của bạn và theo bạn sang thiết bị mới.
 
 Bảng luôn miễn phí. Plus và Pro có thể đăng ký theo kỳ hoặc mua một lần dùng mãi mãi.
+
+Gói đăng ký
+SkyDex Plus và Pro là các gói đăng ký tự động gia hạn. Phí được tính vào Tài khoản Apple của bạn và gói sẽ tự gia hạn trừ khi bạn hủy ít nhất 24 giờ trước khi kỳ hạn kết thúc. Bạn có thể quản lý hoặc hủy bất cứ lúc nào trong Cài đặt.
+Điều khoản sử dụng (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Chính sách quyền riêng tư: https://m1zz.github.io/SkyDex/vi/privacy.html
 
 ## cs
 
@@ -885,6 +955,11 @@ Bez účtu a bez přihlašování. S verzí Pro jsou nasbíraná nebe uložena v
 
 Samotná tabule je zdarma. Plus a Pro můžete mít s předplatným, nebo je jednou koupit navždy.
 
+Předplatné
+SkyDex Plus a Pro jsou automaticky obnovovaná předplatná. Platba se strhává z vašeho Apple účtu a předplatné se obnoví, pokud ho nezrušíte alespoň 24 hodin před koncem období. Spravovat nebo zrušit ho můžete kdykoli v Nastavení.
+Podmínky použití (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Zásady ochrany osobních údajů: https://m1zz.github.io/SkyDex/cs/privacy.html
+
 ## da
 
 ### 지원 URL
@@ -943,6 +1018,11 @@ En himmel, du vælger fra dit bibliotek i stedet for kameraet, beskæres også t
 Ingen konto, ingen login. Med Pro gemmes dine himle i din egen iCloud, så de følger med dig til en ny enhed.
 
 Selve brættet er gratis. Plus og Pro fås som abonnement eller som et engangskøb for altid.
+
+Abonnementer
+SkyDex Plus og Pro er abonnementer, der fornyes automatisk. Betalingen trækkes på din Apple-konto, og abonnementet fornyes, medmindre du opsiger det mindst 24 timer før perioden slutter. Administrer eller opsig når som helst i Indstillinger.
+Brugsvilkår (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Privatlivspolitik: https://m1zz.github.io/SkyDex/da/privacy.html
 
 ## el
 
@@ -1003,6 +1083,11 @@ Widgets
 
 Ο ίδιος ο πίνακας είναι δωρεάν. Το Plus και το Pro διατίθενται με συνδρομή ή με μία αγορά για πάντα.
 
+Συνδρομές
+Τα SkyDex Plus και Pro είναι συνδρομές με αυτόματη ανανέωση. Η χρέωση γίνεται στον λογαριασμό Apple σας και η συνδρομή ανανεώνεται, εκτός αν την ακυρώσετε τουλάχιστον 24 ώρες πριν λήξει η περίοδος. Διαχειριστείτε ή ακυρώστε τη συνδρομή οποτεδήποτε από τις Ρυθμίσεις.
+Όροι χρήσης (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Πολιτική απορρήτου: https://m1zz.github.io/SkyDex/el/privacy.html
+
 ## fi
 
 ### 지원 URL
@@ -1061,6 +1146,11 @@ Kirjastosta kameran sijaan valittu taivas rajataan myös neliöksi.
 Ei tiliä, ei kirjautumista. Pro-versiolla taivaasi tallentuvat omaan iCloudiisi ja seuraavat sinua uudelle laitteelle.
 
 Itse lauta on ilmainen. Plus- ja Pro-version saat tilauksena tai kertaostona pysyvästi.
+
+Tilaukset
+SkyDex Plus ja Pro ovat automaattisesti uusiutuvia tilauksia. Maksu veloitetaan Apple-tililtäsi, ja tilaus uusiutuu, ellei sitä peruta vähintään 24 tuntia ennen jakson päättymistä. Hallitse tai peru tilaus milloin tahansa Asetuksissa.
+Käyttöehdot (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Tietosuojakäytäntö: https://m1zz.github.io/SkyDex/fi/privacy.html
 
 ## id
 
@@ -1121,6 +1211,11 @@ Tanpa akun, tanpa login. Dengan Pro, langitmu tersimpan di iCloud milikmu sendir
 
 Papannya sendiri gratis. Plus dan Pro bisa didapat lewat langganan atau sekali beli untuk selamanya.
 
+Langganan
+SkyDex Plus dan Pro adalah langganan yang diperpanjang otomatis. Pembayaran ditagihkan ke Akun Apple Anda dan langganan diperpanjang kecuali dibatalkan paling lambat 24 jam sebelum periode berakhir. Kelola atau batalkan kapan saja di Pengaturan.
+Ketentuan Penggunaan (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Kebijakan Privasi: https://m1zz.github.io/SkyDex/id/privacy.html
+
 ## nb
 
 ### 지원 URL
@@ -1179,6 +1274,11 @@ En himmel du velger fra biblioteket i stedet for kameraet, beskjæres også til 
 Ingen konto, ingen pålogging. Med Pro lagres himlene dine i din egen iCloud, så de følger deg til en ny enhet.
 
 Selve brettet er gratis. Plus og Pro får du som abonnement eller som et engangskjøp for alltid.
+
+Abonnementer
+SkyDex Plus og Pro er abonnementer som fornyes automatisk. Betalingen belastes Apple-kontoen din, og abonnementet fornyes med mindre du sier det opp minst 24 timer før perioden er over. Administrer eller si opp når som helst i Innstillinger.
+Bruksvilkår (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Personvernerklæring: https://m1zz.github.io/SkyDex/nb/privacy.html
 
 ## nl-NL
 
@@ -1239,6 +1339,11 @@ Geen account, geen inlog. Met Pro staan je luchten in je eigen iCloud en gaan ze
 
 Het bord zelf is gratis. Plus en Pro krijg je met een abonnement of met één aankoop voor altijd.
 
+Abonnementen
+SkyDex Plus en Pro zijn automatisch verlengende abonnementen. De betaling loopt via je Apple Account en het abonnement wordt verlengd, tenzij je minstens 24 uur voor het einde van de periode opzegt. Beheer of zeg op wanneer je wilt in Instellingen.
+Gebruiksvoorwaarden (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Privacybeleid: https://m1zz.github.io/SkyDex/nl/privacy.html
+
 ## pl
 
 ### 지원 URL
@@ -1297,6 +1402,11 @@ Niebo wybrane z biblioteki zamiast z aparatu również zostanie przycięte do kw
 Bez konta i bez logowania. W wersji Pro zebrane niebo jest przechowywane w twoim własnym iCloud i przenosi się razem z tobą na nowe urządzenie.
 
 Sama tablica jest bezpłatna. Plus i Pro możesz mieć w subskrypcji albo kupić raz na zawsze.
+
+Subskrypcje
+SkyDex Plus i Pro to subskrypcje odnawiane automatycznie. Opłata jest pobierana z Twojego konta Apple, a subskrypcja odnawia się, jeśli nie anulujesz jej co najmniej 24 godziny przed końcem okresu. Zarządzaj subskrypcją lub anuluj ją w dowolnej chwili w Ustawieniach.
+Warunki korzystania (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Polityka prywatności: https://m1zz.github.io/SkyDex/pl/privacy.html
 
 ## sv
 
@@ -1357,6 +1467,11 @@ Inget konto, ingen inloggning. Med Pro sparas dina himlar i din egen iCloud, så
 
 Själva brädet är gratis. Plus och Pro finns som prenumeration eller som ett engångsköp för alltid.
 
+Prenumerationer
+SkyDex Plus och Pro är prenumerationer som förnyas automatiskt. Betalningen dras från ditt Apple-konto och prenumerationen förnyas om du inte avslutar den minst 24 timmar innan perioden slutar. Hantera eller avsluta när som helst i Inställningar.
+Användarvillkor (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Integritetspolicy: https://m1zz.github.io/SkyDex/sv/privacy.html
+
 ## tr
 
 ### 지원 URL
@@ -1415,6 +1530,11 @@ Kamera yerine kitaplığından seçtiğin gökyüzü de kareye kırpılır.
 Hesap yok, giriş yok. Pro ile gökyüzülerin kendi iCloud’unda saklanır ve yeni bir cihaza da seninle gelir.
 
 Tahtanın kendisi ücretsiz. Plus ve Pro’yu abonelikle ya da tek seferlik satın alımla ömür boyu alabilirsin.
+
+Abonelikler
+SkyDex Plus ve Pro otomatik yenilenen aboneliklerdir. Ödeme Apple Hesabınızdan alınır ve dönem bitmeden en az 24 saat önce iptal edilmezse abonelik yenilenir. Ayarlar'dan istediğiniz zaman yönetebilir veya iptal edebilirsiniz.
+Kullanım Koşulları (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Gizlilik Politikası: https://m1zz.github.io/SkyDex/tr/privacy.html
 
 ## 손쉬운 사용
 
