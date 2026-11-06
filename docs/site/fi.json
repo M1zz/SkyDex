@@ -1,11 +1,11 @@
 {
   "title": "SkyDex: päivän taivaanvärien lauta, joka täyttyy kuva kerrallaan",
-  "description": "Jokainen taivaskuva täyttää yhden päivän 48 taivaanväristä ja saa nimen, joka muistuttaa sitä. Ilmainen, eikä tiliä tarvita.",
+  "description": "Jokainen taivaskuva täyttää yhden päivän 48 taivaanväristä ja saa nimen, joka muistuttaa sitä. Itse lauta on ilmainen, eikä tiliä tarvita.",
   "hero": {
     "headline": "Minkä värinen\ntaivas oli tänään?",
     "lead": "Kuvaa taivas, niin neljänkymmenenkahdeksan ruudun laudalla sen kellonajan ruutu täyttyy tavoittamallasi värillä. Väri saa myös nimen, jonka näkee mielessään: ohut jää, uima-altaan laatta, kypsä kaki.",
     "cta": "Ilmaiseksi App Storesta",
-    "note": "Ilmainen. Ei tiliä, ei kirjautumista."
+    "note": "Itse lauta on ilmainen. Ei tiliä, ei kirjautumista."
   },
   "demo": {
     "title": "Kokeile lautaa",
@@ -422,7 +422,7 @@
     },
     {
       "title": "Jätä rivi",
-      "text": "Kortti avautuu heti kuvaamisen jälkeen. Kirjoita, mitä ajattelit katsoessasi ylös, niin teksti nousee taas taivaan päälle aina, kun napautat sitä ruutua laudalla.\nVoit myös sävyttää kuvan toisen päivän taivaan värillä ja jakaa tuloksen kuvana.",
+      "text": "Kortti avautuu heti kuvaamisen jälkeen. Kirjoita, mitä ajattelit katsoessasi ylös, niin teksti nousee taas taivaan päälle aina, kun napautat sitä ruutua laudalla.\nPlus-versiolla voit myös sävyttää kuvan toisen päivän taivaan värillä ja jakaa tuloksen kuvana.",
       "shot": "03-card"
     },
     {
@@ -432,7 +432,7 @@
     },
     {
       "title": "Loki, paletti, toistot",
-      "text": "Selaa taivaitasi järjestyksessä ja kokoa värit paleteiksi, kuten sininen, harmaa ja hiekka. Kuvaa sama tunti toisena päivänä, niin taivaat asettuvat rinnakkain.\nKotivalikon widgetit näyttävät päivän laudan ja päivän taivaan yhdellä silmäyksellä.",
+      "text": "Taivaiden selaaminen järjestyksessä on ilmaista. Plus-versiolla kokoat värit paleteiksi, kuten sininen, harmaa ja hiekka, ja kun kuvaat saman tunnin toisena päivänä, taivaat asettuvat rinnakkain.\nPro-versiossa kotivalikon widgetit näyttävät päivän laudan ja päivän taivaan yhdellä silmäyksellä.",
       "shot": "04-palette"
     }
   ],
@@ -512,15 +512,15 @@
       },
       {
         "q": "Miten poistan kuvan?",
-        "a": "Avaa kuva ja napauta Poista, tai pyyhkäise sitä vasemmalle Lokissa. Se poistuu laitteelta ja iCloudista yhtä aikaa. Jos poistat sovelluksen, kopio jää iCloudiin, joten taivaasi palaavat, kun asennat sen uudelleen."
+        "a": "Avaa kuva ja napauta Poista, tai pyyhkäise sitä vasemmalle Lokissa. Jos säilytät taivaasi Pro-version kanssa myös iCloudissa, kuva poistuu sieltäkin. Silloin kopio jää iCloudiin, vaikka poistaisit sovelluksen, joten taivaasi palaavat, kun asennat sen uudelleen."
       },
       {
         "q": "Mitä tapahtuu, kun vaihdan puhelinta?",
-        "a": "Taivaasi tallentuvat omaan iCloudiisi, joten ne siirtyvät uudelle laitteelle, jolla on kirjauduttu samalle Apple-tilille. Ei erillistä tiliä eikä palvelinta, eikä kuviasi tai värejäsi lähetetä kehittäjälle. Ei mainoksia, ei seurantaa."
+        "a": "Pro-versiossa taivaasi tallentuvat omaan iCloudiisi, joten ne siirtyvät uudelle laitteelle, jolla on kirjauduttu samalle Apple-tilille. Ei erillistä tiliä eikä palvelinta, eikä kuviasi tai värejäsi lähetetä kehittäjälle. Ei mainoksia, ei seurantaa."
       },
       {
-        "q": "Onko se tosiaan ilmainen?",
-        "a": "Kyllä, kaikki ominaisuudet ovat ilmaisia. Jos pidät sovelluksesta, voit antaa kehittäjälle tipin sovelluksessa, mutta tippi ei avaa mitään uutta."
+        "q": "Voiko sitä käyttää ilmaiseksi?",
+        "a": "Voi. Taivaan kuvaaminen, lauta, värien nimet, kirjoittamasi rivit ja Loki ovat ilmaisia. Plus avaa paletin, toistot ja sävyttämisen toisen päivän taivaan läpi; Pro lisää kaikkeen Plusin sisältöön iCloud-säilytyksen ja widgetit. Voit valita viikko-, kuukausi- tai vuositilauksen tai kertaoston pysyvästi."
       },
       {
         "q": "Millä laitteilla se toimii?",

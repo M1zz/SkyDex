@@ -1,11 +1,11 @@
 {
   "title": "SkyDex: un tabellone dei colori del cielo, uno scatto alla volta",
-  "description": "Ogni foto del cielo riempie uno dei quarantotto colori della giornata e riceve un nome che gli somiglia. Gratis, senza account.",
+  "description": "Ogni foto del cielo riempie uno dei quarantotto colori della giornata e riceve un nome che gli somiglia. Il tabellone è gratis, senza account.",
   "hero": {
     "headline": "Di che colore era\nil cielo oggi?",
     "lead": "Fotografa il cielo e, su un tabellone di quarantotto caselle, quella dell’ora si riempie del colore che hai colto. Riceve anche un nome che si vede subito, come Ghiaccio sottile, Piastrella di piscina o Caco maturo.",
     "cta": "Gratis sull’App Store",
-    "note": "Gratis. Niente account, niente accesso."
+    "note": "Il tabellone è gratis. Niente account, niente accesso."
   },
   "demo": {
     "title": "Prova il tabellone",
@@ -422,7 +422,7 @@
     },
     {
       "title": "Lascia una riga",
-      "text": "Appena scatti si apre una scheda. Scrivi cosa ti passava per la testa guardando in alto: tornerà a galleggiare sopra il cielo ogni volta che tocchi quella casella sul tabellone.\nPuoi anche stendere su questa foto il colore del cielo di un altro giorno e condividere il risultato come immagine.",
+      "text": "Appena scatti si apre una scheda. Scrivi cosa ti passava per la testa guardando in alto: tornerà a galleggiare sopra il cielo ogni volta che tocchi quella casella sul tabellone.\nCon Plus puoi anche stendere su questa foto il colore del cielo di un altro giorno e condividere il risultato come immagine.",
       "shot": "03-card"
     },
     {
@@ -432,7 +432,7 @@
     },
     {
       "title": "Diario, tavolozza, ripetizioni",
-      "text": "Sfoglia i tuoi cieli in ordine e raccogli i colori in tavolozze per famiglie, come blu, grigio e sabbia. Fotografa la stessa ora in un altro giorno e i due cieli stanno fianco a fianco.\nI widget della schermata Home mostrano a colpo d’occhio il tabellone di oggi e il cielo di oggi.",
+      "text": "Sfogliare i tuoi cieli in ordine è gratis. Con Plus raccogli i colori in tavolozze per famiglie, come blu, grigio e sabbia, e fotografando la stessa ora in un altro giorno vedi i due cieli fianco a fianco.\nCon Pro, i widget della schermata Home mostrano a colpo d’occhio il tabellone di oggi e il cielo di oggi.",
       "shot": "04-palette"
     }
   ],
@@ -512,15 +512,15 @@
       },
       {
         "q": "Come elimino una foto?",
-        "a": "Apri la foto e tocca Elimina, oppure scorri verso sinistra nel Diario. Viene rimossa insieme dal dispositivo e da iCloud. Se elimini l’app la copia su iCloud resta, e reinstallandola i tuoi cieli tornano."
+        "a": "Apri la foto e tocca Elimina, oppure scorri verso sinistra nel Diario. Se con Pro conservi i tuoi cieli anche su iCloud, viene rimossa anche da lì; in quel caso, anche se elimini l’app, la copia su iCloud resta e reinstallandola i tuoi cieli tornano."
       },
       {
         "q": "Cosa succede se cambio dispositivo?",
-        "a": "I tuoi cieli sono salvati nel tuo iCloud e ti seguono su un nuovo dispositivo con lo stesso Account Apple. Non c’è nessun account né server, e foto e colori non vengono mai inviati allo sviluppatore. Niente pubblicità, niente tracciamento."
+        "a": "Con Pro i tuoi cieli sono salvati nel tuo iCloud e ti seguono su un nuovo dispositivo con lo stesso Account Apple. Non c’è nessun account né server, e foto e colori non vengono mai inviati allo sviluppatore. Niente pubblicità, niente tracciamento."
       },
       {
-        "q": "È davvero gratis?",
-        "a": "Sì, tutte le funzioni sono gratuite. Se ti piace puoi lasciare una mancia allo sviluppatore dall’app, ma la mancia non sblocca nulla."
+        "q": "Si può usare gratis?",
+        "a": "Sì. Fotografare il cielo, il tabellone, i nomi dei colori, le tue righe e il Diario sono gratis. Plus sblocca la tavolozza, le ripetizioni e il ricolorare attraverso il cielo di un altro giorno; Pro aggiunge a tutto Plus la conservazione su iCloud e i widget. Puoi scegliere un abbonamento settimanale, mensile o annuale, oppure un unico acquisto per sempre."
       },
       {
         "q": "Su quali dispositivi funziona?",

@@ -1,11 +1,11 @@
 {
   "title": "SkyDex: a board of the day's sky colours, filled one photo at a time",
-  "description": "Every photo of the sky fills one of the day's forty-eight sky colours and gets a name that looks like it. Free, with no account.",
+  "description": "Every photo of the sky fills one of the day's forty-eight sky colours and gets a name that looks like it. The board is free, with no account.",
   "hero": {
     "headline": "What colour was\nthe sky today?",
     "lead": "Photograph the sky and the cell for that time of day fills with the colour you caught, on a board of forty-eight. It also gets a name you can picture, like thin ice, pool tile or ripe persimmon.",
     "cta": "Get it free on the App Store",
-    "note": "Free. No account, no sign-in."
+    "note": "The board is free. No account, no sign-in."
   },
   "demo": {
     "title": "Try the board",
@@ -422,7 +422,7 @@
     },
     {
       "title": "Leave a line",
-      "text": "A card opens as soon as you shoot. Write down what you were thinking as you looked up, and it floats back over the sky whenever you tap that cell on the board.\nYou can also lay the colour of another day's sky over this photo and share the result as a picture.",
+      "text": "A card opens as soon as you shoot. Write down what you were thinking as you looked up, and it floats back over the sky whenever you tap that cell on the board.\nWith Plus, you can also lay the colour of another day's sky over this photo and share the result as a picture.",
       "shot": "03-card"
     },
     {
@@ -432,7 +432,7 @@
     },
     {
       "title": "Log, palette, repeats",
-      "text": "Browse your skies in order, and gather your colours into palettes such as blues, greys and sandy tones. Shoot the same hour on another day and the two stand side by side.\nHome Screen widgets show today's board and today's sky at a glance.",
+      "text": "Browsing your skies in order is free. With Plus, gather your colours into palettes such as blues, greys and sandy tones, and shoot the same hour on another day to see the two side by side.\nWith Pro, Home Screen widgets show today's board and today's sky at a glance.",
       "shot": "04-palette"
     }
   ],
@@ -512,15 +512,15 @@
       },
       {
         "q": "How do I delete a photo?",
-        "a": "Open the photo and tap Delete, or swipe left on it in the Log. It's removed from your device and your iCloud together. Deleting the app leaves the copy in iCloud, so your skies come back if you reinstall."
+        "a": "Open the photo and tap Delete, or swipe left on it in the Log. If you keep your skies in iCloud with Pro, it's removed from iCloud too, and deleting the app leaves the iCloud copy, so your skies come back when you reinstall."
       },
       {
         "q": "What happens when I switch phones?",
-        "a": "Your skies are stored in your own iCloud, so they carry over to a new device signed in to the same Apple Account. There's no account and no server, and your photos and colours are never sent to the developer. No ads, no tracking."
+        "a": "With Pro, your skies are kept in your own iCloud and carry over to a new device signed in to the same Apple Account. There's no account and no server, and your photos and colours are never sent to the developer. No ads, no tracking."
       },
       {
-        "q": "Is it really free?",
-        "a": "Yes, every feature is free. If you like it you can leave the developer a tip in the app, but tips don't unlock anything."
+        "q": "Is it free?",
+        "a": "Yes: shooting skies, the board, colour names, your notes and the Log are all free. Plus unlocks the palette, repeats and recolouring through another day's sky; Pro adds iCloud storage and widgets to everything in Plus. Choose a weekly, monthly or yearly subscription, or pay once for life."
       },
       {
         "q": "Which devices does it run on?",

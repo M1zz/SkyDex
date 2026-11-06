@@ -1,11 +1,11 @@
 {
   "title": "SkyDex: een bord met de kleuren van de lucht, foto voor foto",
-  "description": "Elke foto van de lucht vult een van de achtenveertig luchtkleuren van de dag en krijgt een naam die erbij past. Gratis, zonder account.",
+  "description": "Elke foto van de lucht vult een van de achtenveertig luchtkleuren van de dag en krijgt een naam die erbij past. Het bord is gratis, zonder account.",
   "hero": {
     "headline": "Welke kleur had\nde lucht vandaag?",
     "lead": "Fotografeer de lucht, en op een bord van achtenveertig vakjes vult het vakje van dat moment zich met de kleur die je vastlegde. Het krijgt ook een naam die je meteen voor je ziet, zoals Dun ijs, Zwembadtegel of Rijpe kaki.",
     "cta": "Gratis in de App Store",
-    "note": "Gratis. Geen account, niet inloggen."
+    "note": "Het bord is gratis. Geen account, niet inloggen."
   },
   "demo": {
     "title": "Probeer het bord",
@@ -422,7 +422,7 @@
     },
     {
       "title": "Laat een regel achter",
-      "text": "Meteen na de foto gaat een kaart open. Schrijf op wat je dacht toen je omhoogkeek, en het zweeft weer boven de lucht zodra je op dat vakje op het bord tikt.\nJe kunt ook de kleur van de lucht van een andere dag over deze foto leggen en het resultaat als afbeelding delen.",
+      "text": "Meteen na de foto gaat een kaart open. Schrijf op wat je dacht toen je omhoogkeek, en het zweeft weer boven de lucht zodra je op dat vakje op het bord tikt.\nMet Plus kun je ook de kleur van de lucht van een andere dag over deze foto leggen en het resultaat als afbeelding delen.",
       "shot": "03-card"
     },
     {
@@ -432,7 +432,7 @@
     },
     {
       "title": "Logboek, palet, herhalingen",
-      "text": "Blader op volgorde door je luchten en verzamel je kleuren in paletten per familie, zoals blauw, grijs en zandkleurig. Fotografeer hetzelfde uur op een andere dag en de twee staan naast elkaar.\nWidgets op je beginscherm laten in één oogopslag het bord van vandaag en de lucht van vandaag zien.",
+      "text": "Op volgorde door je luchten bladeren is gratis. Met Plus verzamel je je kleuren in paletten per familie, zoals blauw, grijs en zandkleurig, en fotografeer je hetzelfde uur op een andere dag om de twee naast elkaar te zien.\nMet Pro laten widgets op je beginscherm in één oogopslag het bord van vandaag en de lucht van vandaag zien.",
       "shot": "04-palette"
     }
   ],
@@ -512,15 +512,15 @@
       },
       {
         "q": "Hoe wis ik een foto?",
-        "a": "Open de foto en tik op Wis, of veeg hem in het Logboek naar links. Hij verdwijnt tegelijk van je apparaat en uit iCloud. Verwijder je de app, dan blijft de kopie in iCloud staan en komen je luchten terug als je hem opnieuw installeert."
+        "a": "Open de foto en tik op Wis, of veeg hem in het Logboek naar links. Bewaar je je luchten met Pro ook in iCloud, dan verdwijnt hij daar ook. In dat geval blijft de kopie in iCloud staan als je de app verwijdert, en komen je luchten terug als je hem opnieuw installeert."
       },
       {
         "q": "Wat gebeurt er als ik een ander apparaat neem?",
-        "a": "Je luchten staan in je eigen iCloud en gaan mee naar een nieuw apparaat met hetzelfde Apple Account. Er is geen account en geen server, en je foto's en kleuren worden nooit naar de ontwikkelaar gestuurd. Geen advertenties, geen tracking."
+        "a": "Met Pro staan je luchten in je eigen iCloud en gaan ze mee naar een nieuw apparaat met hetzelfde Apple Account. Er is geen account en geen server, en je foto's en kleuren worden nooit naar de ontwikkelaar gestuurd. Geen advertenties, geen tracking."
       },
       {
-        "q": "Is het echt gratis?",
-        "a": "Ja, alle functies zijn gratis. Vind je de app fijn, dan kun je de ontwikkelaar in de app een fooi geven, maar een fooi ontgrendelt niets."
+        "q": "Kan ik het gratis gebruiken?",
+        "a": "Ja. De lucht fotograferen, het bord, de kleurnamen, je regels en het Logboek zijn gratis. Plus ontgrendelt het palet, herhalingen en inkleuren door de lucht van een andere dag; Pro voegt daar bewaren in iCloud en de widgets aan toe. Je kiest een abonnement per week, maand of jaar, of betaalt één keer voor altijd."
       },
       {
         "q": "Op welke apparaten werkt het?",

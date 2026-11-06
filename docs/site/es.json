@@ -1,11 +1,11 @@
 {
   "title": "SkyDex: un tablero con los colores del cielo, foto a foto",
-  "description": "Cada foto del cielo llena uno de los cuarenta y ocho colores del día y recibe un nombre que se le parece. Gratis y sin cuenta.",
+  "description": "Cada foto del cielo llena uno de los cuarenta y ocho colores del día y recibe un nombre que se le parece. El tablero es gratis y no necesitas cuenta.",
   "hero": {
     "headline": "¿De qué color fue\nel cielo hoy?",
     "lead": "Toma una foto del cielo y, en un tablero de cuarenta y ocho casillas, la de esa hora se llena con el color que captaste. También recibe un nombre que se ve con solo leerlo, como Hielo delgado, Azulejo de alberca o Caqui maduro.",
     "cta": "Gratis en el App Store",
-    "note": "Gratis. Sin cuenta y sin iniciar sesión."
+    "note": "El tablero es gratis. Sin cuenta y sin iniciar sesión."
   },
   "demo": {
     "title": "Prueba el tablero",
@@ -422,7 +422,7 @@
     },
     {
       "title": "Deja una línea",
-      "text": "Justo después de la foto se abre una tarjeta. Escribe lo que pensabas al mirar hacia arriba y volverá a flotar sobre el cielo cada vez que toques esa casilla del tablero.\nTambién puedes poner sobre esta foto el color del cielo de otro día y compartir el resultado como imagen.",
+      "text": "Justo después de la foto se abre una tarjeta. Escribe lo que pensabas al mirar hacia arriba y volverá a flotar sobre el cielo cada vez que toques esa casilla del tablero.\nCon Plus también puedes poner sobre esta foto el color del cielo de otro día y compartir el resultado como imagen.",
       "shot": "03-card"
     },
     {
@@ -432,7 +432,7 @@
     },
     {
       "title": "Registro, paleta, repetición",
-      "text": "Recorre tus cielos en orden y reúne tus colores en paletas por familias, como azul, gris y arena. Si fotografías la misma hora otro día, los dos cielos quedan lado a lado.\nLos widgets de la pantalla de inicio te muestran de un vistazo el tablero de hoy y el cielo de hoy.",
+      "text": "Recorrer tus cielos en orden es gratis. Con Plus, reúne tus colores en paletas por familias, como azul, gris y arena, y fotografía la misma hora otro día para ver los dos cielos lado a lado.\nCon Pro, los widgets de la pantalla de inicio te muestran de un vistazo el tablero de hoy y el cielo de hoy.",
       "shot": "04-palette"
     }
   ],
@@ -512,15 +512,15 @@
       },
       {
         "q": "¿Cómo elimino una foto?",
-        "a": "Abre la foto y toca Eliminar, o deslízala hacia la izquierda en el Registro. Se borra del dispositivo y de iCloud a la vez. Si eliminas la app, la copia en iCloud se queda, así que tus cielos regresan al reinstalarla."
+        "a": "Abre la foto y toca Eliminar, o deslízala hacia la izquierda en el Registro. Si guardas tus cielos en iCloud con Pro, también se borra de ahí; en ese caso, aunque elimines la app, la copia en iCloud se queda y tus cielos regresan al reinstalarla."
       },
       {
         "q": "¿Qué pasa si cambio de dispositivo?",
-        "a": "Tus cielos se guardan en tu propio iCloud, así que pasan a un dispositivo nuevo con la misma cuenta de Apple. No hay cuenta ni servidor, y tus fotos y colores nunca se envían al desarrollador. Sin anuncios ni rastreo."
+        "a": "Con Pro, tus cielos se guardan en tu propio iCloud y pasan a un dispositivo nuevo con la misma cuenta de Apple. No hay cuenta ni servidor, y tus fotos y colores nunca se envían al desarrollador. Sin anuncios ni rastreo."
       },
       {
-        "q": "¿De verdad es gratis?",
-        "a": "Sí, todas las funciones son gratis. Si te gusta, puedes dejarle una propina al desarrollador desde la app, pero la propina no desbloquea nada."
+        "q": "¿Se puede usar gratis?",
+        "a": "Sí. Fotografiar el cielo, el tablero, los nombres de colores, tus notas y el Registro son gratis. Plus desbloquea la paleta, la repetición y teñir con el cielo de otro día; Pro suma el guardado en iCloud y los widgets a todo lo de Plus. Puedes elegir una suscripción semanal, mensual o anual, o un solo pago para siempre."
       },
       {
         "q": "¿En qué dispositivos funciona?",

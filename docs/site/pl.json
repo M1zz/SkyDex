@@ -1,11 +1,11 @@
 {
   "title": "SkyDex: tablica dzisiejszych kolorów nieba, wypełniana zdjęcie po zdjęciu",
-  "description": "Każde zdjęcie nieba wypełnia jeden z czterdziestu ośmiu kolorów dnia i dostaje nazwę, która go przypomina. Za darmo i bez konta.",
+  "description": "Każde zdjęcie nieba wypełnia jeden z czterdziestu ośmiu kolorów dnia i dostaje nazwę, która go przypomina. Tablica jest za darmo i bez konta.",
   "hero": {
     "headline": "Jaki kolor miało\ndziś niebo?",
     "lead": "Zrób zdjęcie nieba, a na tablicy z czterdziestu ośmiu pól pole tej pory dnia wypełni się złapanym kolorem. Kolor dostanie też nazwę, którą łatwo zobaczyć oczami wyobraźni: cienki lód, płytki basenowe, dojrzały kaki.",
     "cta": "Za darmo w App Store",
-    "note": "Za darmo. Bez konta i bez logowania."
+    "note": "Tablica jest za darmo. Bez konta i bez logowania."
   },
   "demo": {
     "title": "Wypróbuj tablicę",
@@ -422,7 +422,7 @@
     },
     {
       "title": "Zostaw linijkę",
-      "text": "Karta otwiera się zaraz po zrobieniu zdjęcia. Zapisz myśl, która przyszła ci do głowy przy patrzeniu w górę, a wróci nad niebem za każdym razem, gdy dotkniesz tego pola na tablicy.\nMożesz też nałożyć na to zdjęcie kolor nieba z innego dnia i udostępnić efekt jako obraz.",
+      "text": "Karta otwiera się zaraz po zrobieniu zdjęcia. Zapisz myśl, która przyszła ci do głowy przy patrzeniu w górę, a wróci nad niebem za każdym razem, gdy dotkniesz tego pola na tablicy.\nW wersji Plus możesz też nałożyć na to zdjęcie kolor nieba z innego dnia i udostępnić efekt jako obraz.",
       "shot": "03-card"
     },
     {
@@ -432,7 +432,7 @@
     },
     {
       "title": "Dziennik, paleta, powtórzenia",
-      "text": "Przeglądaj swoje nieba po kolei i zbieraj kolory w palety, takie jak niebieski, szary czy piaskowy. Sfotografuj tę samą godzinę innego dnia, a oba nieba staną obok siebie.\nWidżety na ekranie początkowym pokazują dzisiejszą tablicę i dzisiejsze niebo na pierwszy rzut oka.",
+      "text": "Przeglądanie nieba po kolei jest bezpłatne. W wersji Plus zbierasz kolory w palety, takie jak niebieski, szary czy piaskowy, a gdy sfotografujesz tę samą godzinę innego dnia, oba nieba staną obok siebie.\nW wersji Pro widżety na ekranie początkowym pokazują dzisiejszą tablicę i dzisiejsze niebo na pierwszy rzut oka.",
       "shot": "04-palette"
     }
   ],
@@ -512,15 +512,15 @@
       },
       {
         "q": "Jak usunąć zdjęcie?",
-        "a": "Otwórz zdjęcie i dotknij Usuń albo przesuń je w lewo w Dzienniku. Znika jednocześnie z urządzenia i z iCloud. Jeśli usuniesz aplikację, kopia w iCloud zostaje, więc po ponownej instalacji twoje nieba wrócą."
+        "a": "Otwórz zdjęcie i dotknij Usuń albo przesuń je w lewo w Dzienniku. Jeśli w wersji Pro przechowujesz nieba także w iCloud, zdjęcie zniknie również stamtąd. Wtedy kopia w iCloud zostaje nawet po usunięciu aplikacji, więc po ponownej instalacji twoje nieba wrócą."
       },
       {
         "q": "Co się stanie, gdy zmienię telefon?",
-        "a": "Zebrane nieba są zapisane w twoim własnym iCloud, więc przechodzą na nowe urządzenie zalogowane na to samo konto Apple. Nie ma osobnego konta ani serwera, a zdjęcia i kolory nigdy nie trafiają do dewelopera. Bez reklam i bez śledzenia."
+        "a": "W wersji Pro zebrane nieba są zapisane w twoim własnym iCloud, więc przechodzą na nowe urządzenie zalogowane na to samo konto Apple. Nie ma osobnego konta ani serwera, a zdjęcia i kolory nigdy nie trafiają do dewelopera. Bez reklam i bez śledzenia."
       },
       {
-        "q": "Czy to naprawdę za darmo?",
-        "a": "Tak, wszystkie funkcje są bezpłatne. Jeśli aplikacja ci się spodoba, możesz w niej dać deweloperowi napiwek, ale napiwek niczego nie odblokowuje."
+        "q": "Czy można korzystać za darmo?",
+        "a": "Tak. Fotografowanie nieba, tablica, nazwy kolorów, twoje linijki i Dziennik są bezpłatne. Plus odblokowuje paletę, powtórzenia i przebarwianie przez niebo z innego dnia; Pro dodaje do wszystkiego z Plus przechowywanie w iCloud i widżety. Możesz wybrać subskrypcję tygodniową, miesięczną lub roczną albo kupić raz na zawsze."
       },
       {
         "q": "Na jakich urządzeniach działa?",

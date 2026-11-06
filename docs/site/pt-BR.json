@@ -1,11 +1,11 @@
 {
   "title": "SkyDex: um quadro com as cores do céu, foto por foto",
-  "description": "Cada foto do céu preenche uma das quarenta e oito cores do dia e ganha um nome parecido com ela. Grátis e sem conta.",
+  "description": "Cada foto do céu preenche uma das quarenta e oito cores do dia e ganha um nome parecido com ela. O quadro é grátis e não precisa de conta.",
   "hero": {
     "headline": "De que cor estava\no céu hoje?",
     "lead": "Fotografe o céu e, num quadro de quarenta e oito quadrados, o daquela hora se enche com a cor que você captou. Ele ganha também um nome que dá para enxergar, como Gelo fino, Azulejo de piscina ou Caqui maduro.",
     "cta": "Baixe grátis na App Store",
-    "note": "Grátis. Sem conta e sem login."
+    "note": "O quadro é grátis. Sem conta e sem login."
   },
   "demo": {
     "title": "Experimente o quadro",
@@ -422,7 +422,7 @@
     },
     {
       "title": "Deixe uma linha",
-      "text": "Assim que você tira a foto, um cartão se abre. Escreva o que pensou ao olhar para cima, e a frase volta a flutuar sobre o céu sempre que você tocar naquele quadrado do quadro.\nVocê também pode pôr sobre esta foto a cor do céu de outro dia e compartilhar o resultado como imagem.",
+      "text": "Assim que você tira a foto, um cartão se abre. Escreva o que pensou ao olhar para cima, e a frase volta a flutuar sobre o céu sempre que você tocar naquele quadrado do quadro.\nCom o Plus, você também pode pôr sobre esta foto a cor do céu de outro dia e compartilhar o resultado como imagem.",
       "shot": "03-card"
     },
     {
@@ -432,7 +432,7 @@
     },
     {
       "title": "Registro, paleta, repetições",
-      "text": "Veja seus céus em ordem e reúna as cores em paletas por família, como azul, cinza e areia. Fotografe a mesma hora em outro dia e os dois céus ficam lado a lado.\nOs widgets da tela de início mostram num relance o quadro de hoje e o céu de hoje.",
+      "text": "Ver seus céus em ordem é grátis. Com o Plus, reúna as cores em paletas por família, como azul, cinza e areia, e fotografe a mesma hora em outro dia para ver os dois céus lado a lado.\nCom o Pro, os widgets da tela de início mostram num relance o quadro de hoje e o céu de hoje.",
       "shot": "04-palette"
     }
   ],
@@ -512,15 +512,15 @@
       },
       {
         "q": "Como apago uma foto?",
-        "a": "Abra a foto e toque em Apagar, ou deslize para a esquerda no Registro. Ela é removida do aparelho e do iCloud ao mesmo tempo. Se você apagar o app, a cópia no iCloud continua lá, e seus céus voltam quando você reinstalar."
+        "a": "Abra a foto e toque em Apagar, ou deslize para a esquerda no Registro. Se você guarda seus céus no iCloud com o Pro, ela também sai de lá; nesse caso, mesmo apagando o app, a cópia no iCloud continua, e seus céus voltam quando você reinstalar."
       },
       {
         "q": "O que acontece se eu trocar de aparelho?",
-        "a": "Seus céus ficam no seu próprio iCloud e seguem para um aparelho novo conectado à mesma Conta Apple. Não há conta nem servidor, e suas fotos e cores nunca são enviadas ao desenvolvedor. Sem anúncios e sem rastreamento."
+        "a": "Com o Pro, seus céus ficam no seu próprio iCloud e seguem para um aparelho novo conectado à mesma Conta Apple. Não há conta nem servidor, e suas fotos e cores nunca são enviadas ao desenvolvedor. Sem anúncios e sem rastreamento."
       },
       {
-        "q": "É grátis mesmo?",
-        "a": "É, todos os recursos são grátis. Se gostar, você pode deixar uma gorjeta para o desenvolvedor dentro do app, mas a gorjeta não libera nada."
+        "q": "Dá para usar de graça?",
+        "a": "Dá. Fotografar o céu, o quadro, os nomes das cores, suas linhas e o Registro são grátis. O Plus libera a paleta, as repetições e o recolorir pelo céu de outro dia; o Pro soma a tudo do Plus o armazenamento no iCloud e os widgets. Você escolhe uma assinatura semanal, mensal ou anual, ou paga uma vez só para sempre."
       },
       {
         "q": "Em quais aparelhos funciona?",

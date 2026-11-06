@@ -1,11 +1,11 @@
 {
   "title": "SkyDex: fotoğraf fotoğraf dolan günün gökyüzü renkleri tahtası",
-  "description": "Gökyüzünün her fotoğrafı, günün kırk sekiz gökyüzü renginden birini doldurur ve ona benzeyen bir ad alır. Ücretsiz, hesap gerekmez.",
+  "description": "Gökyüzünün her fotoğrafı, günün kırk sekiz gökyüzü renginden birini doldurur ve ona benzeyen bir ad alır. Tahta ücretsiz, hesap gerekmez.",
   "hero": {
     "headline": "Bugün gökyüzü\nne renkti?",
     "lead": "Gökyüzünü fotoğrafla, kırk sekiz karelik tahtada o saatin karesi yakaladığın renkle dolsun. Renk, gözünün önüne getirebileceğin bir ad da alır: ince buz, havuz fayansı, olgun hurma gibi.",
     "cta": "App Store’dan ücretsiz al",
-    "note": "Ücretsiz. Hesap yok, giriş yok."
+    "note": "Tahta ücretsiz. Hesap yok, giriş yok."
   },
   "demo": {
     "title": "Tahtayı dene",
@@ -422,7 +422,7 @@
     },
     {
       "title": "Bir satır bırak",
-      "text": "Fotoğrafı çeker çekmez bir kart açılır. Yukarı bakarken aklından geçeni yaz, tahtada o kareye her dokunduğunda yazı yeniden gökyüzünün üstünde belirir.\nBaşka bir günün gökyüzü rengini bu fotoğrafın üstüne serip sonucu görsel olarak da paylaşabilirsin.",
+      "text": "Fotoğrafı çeker çekmez bir kart açılır. Yukarı bakarken aklından geçeni yaz, tahtada o kareye her dokunduğunda yazı yeniden gökyüzünün üstünde belirir.\nPlus ile başka bir günün gökyüzü rengini bu fotoğrafın üstüne serip sonucu görsel olarak da paylaşabilirsin.",
       "shot": "03-card"
     },
     {
@@ -432,7 +432,7 @@
     },
     {
       "title": "Kayıt, palet, tekrarlar",
-      "text": "Gökyüzü fotoğraflarına sırayla göz at, renklerini mavi, gri ve kum rengi gibi paletlerde topla. Aynı saati başka bir gün yeniden çek, ikisi yan yana dursun.\nAna Ekran widget’ları bugünün tahtasını ve bugünün gökyüzünü bir bakışta gösterir.",
+      "text": "Gökyüzü fotoğraflarına sırayla göz atmak ücretsiz. Plus ile renklerini mavi, gri ve kum rengi gibi paletlerde topla; aynı saati başka bir gün yeniden çek, ikisi yan yana dursun.\nPro ile Ana Ekran widget’ları bugünün tahtasını ve bugünün gökyüzünü bir bakışta gösterir.",
       "shot": "04-palette"
     }
   ],
@@ -512,15 +512,15 @@
       },
       {
         "q": "Bir fotoğrafı nasıl silerim?",
-        "a": "Fotoğrafı aç ve Sil’e dokun ya da Kayıt’ta üzerinde sola kaydır. Hem cihazından hem iCloud’undan birlikte silinir. Uygulamayı silsen de iCloud’daki kopya kalır, yeniden yüklediğinde topladığın gökyüzü fotoğrafları geri gelir."
+        "a": "Fotoğrafı aç ve Sil’e dokun ya da Kayıt’ta üzerinde sola kaydır. Gökyüzü fotoğraflarını Pro ile iCloud’da da saklıyorsan oradan da silinir. Bu durumda uygulamayı silsen de iCloud’daki kopya kalır, yeniden yüklediğinde topladığın gökyüzü fotoğrafları geri gelir."
       },
       {
         "q": "Telefon değiştirince ne olur?",
-        "a": "Topladığın gökyüzü fotoğrafları kendi iCloud’unda saklanır, bu yüzden aynı Apple Hesabı ile giriş yapılmış yeni cihazda kaldığın yerden devam eder. Ayrı bir hesap ya da sunucu yok, fotoğrafların ve renklerin geliştiriciye asla gönderilmez. Reklam yok, takip yok."
+        "a": "Pro ile topladığın gökyüzü fotoğrafları kendi iCloud’unda saklanır, bu yüzden aynı Apple Hesabı ile giriş yapılmış yeni cihazda kaldığın yerden devam eder. Ayrı bir hesap ya da sunucu yok, fotoğrafların ve renklerin geliştiriciye asla gönderilmez. Reklam yok, takip yok."
       },
       {
-        "q": "Gerçekten ücretsiz mi?",
-        "a": "Evet, tüm özellikler ücretsiz. Beğenirsen uygulama içinden geliştiriciye bahşiş bırakabilirsin ama bahşiş hiçbir şeyin kilidini açmaz."
+        "q": "Ücretsiz kullanabilir miyim?",
+        "a": "Evet. Gökyüzünü çekmek, tahta, renk adları, yazdığın satırlar ve Kayıt ücretsiz. Plus paleti, tekrarları ve başka bir günün gökyüzünden renklendirmeyi açar; Pro, Plus’taki her şeye iCloud’da saklamayı ve widget’ları ekler. Haftalık, aylık ya da yıllık abonelik veya ömür boyu tek seferlik satın alma arasından seçebilirsin."
       },
       {
         "q": "Hangi cihazlarda çalışır?",

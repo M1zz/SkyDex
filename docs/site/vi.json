@@ -1,11 +1,11 @@
 {
   "title": "SkyDex: bảng màu trời hôm nay, đầy dần sau mỗi lần chụp",
-  "description": "Mỗi lần chụp bầu trời, một trong bốn mươi tám ô màu trời của ngày được lấp đầy và có một cái tên giống màu ấy. Miễn phí, không cần tài khoản.",
+  "description": "Mỗi lần chụp bầu trời, một trong bốn mươi tám ô màu trời của ngày được lấp đầy và có một cái tên giống màu ấy. Bảng luôn miễn phí, không cần tài khoản.",
   "hero": {
     "headline": "Hôm nay bầu trời\nmang màu gì?",
     "lead": "Chụp một tấm bầu trời, ô ứng với giờ ấy trên bảng bốn mươi tám ô sẽ mang màu bạn vừa chụp. Màu còn được đặt một cái tên gợi hình, như màu băng mỏng, màu gạch bể bơi hay màu hồng chín mềm.",
     "cta": "Tải miễn phí ở App Store",
-    "note": "Miễn phí. Không tài khoản, không đăng nhập."
+    "note": "Bảng luôn miễn phí. Không tài khoản, không đăng nhập."
   },
   "demo": {
     "title": "Thử chạm vào bảng",
@@ -422,7 +422,7 @@
     },
     {
       "title": "Để lại một dòng",
-      "text": "Chụp xong, một tấm thẻ mở ra ngay. Hãy ghi lại điều bạn nghĩ khi nhìn bầu trời ấy; mỗi khi chạm vào ô đó trên bảng, dòng chữ sẽ lại hiện lên trên nền trời.\nBạn còn có thể khoác màu của bầu trời ngày khác lên bầu trời trong ảnh này, rồi chia sẻ thành một bức hình.",
+      "text": "Chụp xong, một tấm thẻ mở ra ngay. Hãy ghi lại điều bạn nghĩ khi nhìn bầu trời ấy; mỗi khi chạm vào ô đó trên bảng, dòng chữ sẽ lại hiện lên trên nền trời.\nVới Plus, bạn còn có thể khoác màu của bầu trời ngày khác lên bầu trời trong ảnh này, rồi chia sẻ thành một bức hình.",
       "shot": "03-card"
     },
     {
@@ -432,7 +432,7 @@
     },
     {
       "title": "Nhật ký, Bảng màu, Lặp lại",
-      "text": "Xem lại những bầu trời đã chụp theo thứ tự thời gian, và gom các màu đã sưu tầm thành bảng màu theo nhóm như xanh lam, xám, màu cát. Chụp lại cùng một giờ vào ngày khác, hai bầu trời sẽ đứng cạnh nhau.\nWidget trên Màn hình chính cho bạn xem ngay Bảng hôm nay và Bầu trời hôm nay.",
+      "text": "Xem lại những bầu trời đã chụp theo thứ tự thời gian là miễn phí. Với Plus, bạn gom các màu đã sưu tầm thành bảng màu theo nhóm như xanh lam, xám, màu cát, và chụp lại cùng một giờ vào ngày khác để thấy hai bầu trời đứng cạnh nhau.\nVới Pro, widget trên Màn hình chính cho bạn xem ngay Bảng hôm nay và Bầu trời hôm nay.",
       "shot": "04-palette"
     }
   ],
@@ -512,15 +512,15 @@
       },
       {
         "q": "Làm sao để xóa ảnh?",
-        "a": "Mở ảnh rồi chạm Xóa, hoặc vuốt sang trái trong Nhật ký. Ảnh sẽ bị xóa cùng lúc trên thiết bị và trong iCloud. Nếu gỡ ứng dụng, bản sao trên iCloud vẫn còn, nên khi cài lại, những bầu trời đã sưu tầm sẽ quay về."
+        "a": "Mở ảnh rồi chạm Xóa, hoặc vuốt sang trái trong Nhật ký. Nếu bạn lưu bầu trời trong iCloud với Pro, ảnh cũng bị xóa khỏi iCloud. Khi đó, dù gỡ ứng dụng, bản sao trên iCloud vẫn còn, nên khi cài lại, những bầu trời đã sưu tầm sẽ quay về."
       },
       {
         "q": "Đổi máy thì bầu trời đã sưu tầm ra sao?",
-        "a": "Bầu trời của bạn được lưu trong iCloud của chính bạn, nên tiếp tục trên thiết bị mới đăng nhập cùng Tài khoản Apple. Không có tài khoản riêng, không có máy chủ, ảnh và màu không bao giờ được gửi cho nhà phát triển. Không quảng cáo, không theo dõi."
+        "a": "Với Pro, bầu trời của bạn được lưu trong iCloud của chính bạn, nên tiếp tục trên thiết bị mới đăng nhập cùng Tài khoản Apple. Không có tài khoản riêng, không có máy chủ, ảnh và màu không bao giờ được gửi cho nhà phát triển. Không quảng cáo, không theo dõi."
       },
       {
-        "q": "Có thật là miễn phí không?",
-        "a": "Thật. Mọi tính năng đều miễn phí. Nếu thích, bạn có thể gửi một khoản ủng hộ nhỏ cho nhà phát triển ngay trong ứng dụng, nhưng khoản ủng hộ không mở khóa tính năng nào cả."
+        "q": "Có dùng miễn phí được không?",
+        "a": "Được. Chụp bầu trời, Bảng, tên màu, những dòng bạn viết và Nhật ký đều miễn phí. Plus mở khóa Bảng màu, Lặp lại và việc phủ màu qua bầu trời của ngày khác; Pro có mọi thứ của Plus, thêm lưu trong iCloud và widget. Bạn có thể chọn gói theo tuần, tháng, năm, hoặc mua một lần dùng mãi mãi."
       },
       {
         "q": "Dùng được trên thiết bị nào?",

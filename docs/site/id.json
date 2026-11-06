@@ -1,11 +1,11 @@
 {
   "title": "SkyDex: papan warna langit hari ini, terisi setiap kali kamu memotret",
-  "description": "Setiap foto langit mengisi satu dari empat puluh delapan warna langit hari itu dan mendapat nama yang mirip warnanya. Gratis, tanpa akun.",
+  "description": "Setiap foto langit mengisi satu dari empat puluh delapan warna langit hari itu dan mendapat nama yang mirip warnanya. Papannya gratis, tanpa akun.",
   "hero": {
     "headline": "Hari ini langit\nberwarna apa?",
     "lead": "Potret langit, dan di papan empat puluh delapan kotak, kotak untuk jam itu terisi warna yang kamu tangkap. Warnanya juga mendapat nama yang mudah dibayangkan, seperti es tipis, ubin kolam renang, atau kesemek matang.",
     "cta": "Unduh gratis di App Store",
-    "note": "Gratis. Tanpa akun, tanpa login."
+    "note": "Papannya gratis. Tanpa akun, tanpa login."
   },
   "demo": {
     "title": "Coba ketuk papannya",
@@ -422,7 +422,7 @@
     },
     {
       "title": "Tinggalkan satu baris",
-      "text": "Begitu selesai memotret, sebuah kartu langsung terbuka. Tulis satu baris tentang apa yang kamu pikirkan saat menatap langit itu, dan tulisan itu muncul lagi di atas langit setiap kali kamu mengetuk kotaknya di papan.\nKamu juga bisa memakaikan warna langit dari hari lain ke langit di foto ini, lalu membagikannya sebagai gambar.",
+      "text": "Begitu selesai memotret, sebuah kartu langsung terbuka. Tulis satu baris tentang apa yang kamu pikirkan saat menatap langit itu, dan tulisan itu muncul lagi di atas langit setiap kali kamu mengetuk kotaknya di papan.\nDengan Plus, kamu juga bisa memakaikan warna langit dari hari lain ke langit di foto ini, lalu membagikannya sebagai gambar.",
       "shot": "03-card"
     },
     {
@@ -432,7 +432,7 @@
     },
     {
       "title": "Log, Palet, Pengulangan",
-      "text": "Lihat langit yang kamu potret menurut urutan waktu, dan kumpulkan warnanya ke dalam palet per kelompok seperti biru, abu-abu, dan warna pasir. Potret langit di jam yang sama pada hari lain, dan keduanya akan berdiri berdampingan.\nWidget di Layar Utama menampilkan Papan Hari Ini dan Langit Hari Ini sekilas.",
+      "text": "Melihat langit yang kamu potret menurut urutan waktu itu gratis. Dengan Plus, kumpulkan warnanya ke dalam palet per kelompok seperti biru, abu-abu, dan warna pasir, lalu potret langit di jam yang sama pada hari lain untuk melihat keduanya berdampingan.\nDengan Pro, widget di Layar Utama menampilkan Papan Hari Ini dan Langit Hari Ini sekilas.",
       "shot": "04-palette"
     }
   ],
@@ -512,15 +512,15 @@
       },
       {
         "q": "Bagaimana cara menghapus foto?",
-        "a": "Buka fotonya lalu ketuk Hapus, atau geser ke kiri di Log. Foto terhapus dari perangkat dan iCloud sekaligus. Menghapus aplikasi tidak menghapus salinan di iCloud, jadi langitmu kembali saat aplikasi dipasang ulang."
+        "a": "Buka fotonya lalu ketuk Hapus, atau geser ke kiri di Log. Kalau kamu menyimpan langitmu di iCloud dengan Pro, foto juga terhapus dari sana. Dalam hal itu, menghapus aplikasi tidak menghapus salinan di iCloud, jadi langitmu kembali saat aplikasi dipasang ulang."
       },
       {
         "q": "Bagaimana kalau aku ganti ponsel?",
-        "a": "Langitmu tersimpan di iCloud milikmu sendiri, jadi berlanjut di perangkat baru yang masuk dengan Akun Apple yang sama. Tidak ada akun aplikasi, tidak ada server, dan foto serta warnamu tidak pernah dikirim ke pengembang. Tanpa iklan, tanpa pelacakan."
+        "a": "Dengan Pro, langitmu tersimpan di iCloud milikmu sendiri, jadi berlanjut di perangkat baru yang masuk dengan Akun Apple yang sama. Tidak ada akun aplikasi, tidak ada server, dan foto serta warnamu tidak pernah dikirim ke pengembang. Tanpa iklan, tanpa pelacakan."
       },
       {
-        "q": "Benar-benar gratis?",
-        "a": "Ya, semua fitur gratis. Kalau suka, kamu bisa memberi tip kepada pengembang dari dalam aplikasi, tapi tip tidak membuka fitur apa pun."
+        "q": "Bisa dipakai gratis?",
+        "a": "Bisa. Memotret langit, Papan, nama warna, baris yang kamu tulis, dan Log semuanya gratis. Plus membuka Palet, Pengulangan, dan mewarnai lewat langit hari lain; Pro menambahkan penyimpanan di iCloud dan widget ke semua isi Plus. Kamu bisa pilih langganan mingguan, bulanan, atau tahunan, atau sekali beli untuk selamanya."
       },
       {
         "q": "Bisa dipakai di perangkat apa?",

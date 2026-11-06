@@ -1,11 +1,11 @@
 {
   "title": "SkyDex: tabule dnešních barev nebe, plněná fotkou po fotce",
-  "description": "Každá fotka nebe zaplní jednu ze čtyřiceti osmi barev dne a dostane jméno, které se k ní hodí. Zdarma a bez účtu.",
+  "description": "Každá fotka nebe zaplní jednu ze čtyřiceti osmi barev dne a dostane jméno, které se k ní hodí. Tabule je zdarma a bez účtu.",
   "hero": {
     "headline": "Jakou barvu mělo\ndnes nebe?",
     "lead": "Vyfoťte nebe a na tabuli o čtyřiceti osmi buňkách se buňka pro tu denní dobu zaplní barvou, kterou jste zachytili. Dostane i jméno, které si snadno představíte: tenký led, bazénové dlaždičky, zralý kaki.",
     "cta": "Zdarma v App Store",
-    "note": "Zdarma. Bez účtu a bez přihlašování."
+    "note": "Tabule je zdarma. Bez účtu a bez přihlašování."
   },
   "demo": {
     "title": "Vyzkoušejte si tabuli",
@@ -422,7 +422,7 @@
     },
     {
       "title": "Zanechte řádek",
-      "text": "Hned po vyfocení se otevře karta. Napište, co se vám honilo hlavou při pohledu vzhůru, a pokaždé, když na tabuli klepnete na tu buňku, objeví se to znovu nad nebem.\nPřes tuto fotku můžete také položit barvu nebe z jiného dne a výsledek sdílet jako obrázek.",
+      "text": "Hned po vyfocení se otevře karta. Napište, co se vám honilo hlavou při pohledu vzhůru, a pokaždé, když na tabuli klepnete na tu buňku, objeví se to znovu nad nebem.\nS verzí Plus můžete přes tuto fotku také položit barvu nebe z jiného dne a výsledek sdílet jako obrázek.",
       "shot": "03-card"
     },
     {
@@ -432,7 +432,7 @@
     },
     {
       "title": "Deník, paleta, opakování",
-      "text": "Procházejte svá nebe popořadě a sbírejte barvy do palet, jako je modrá, šedá nebo písková. Vyfoťte stejnou hodinu jiný den a obě nebe se postaví vedle sebe.\nWidgety na ploše ukážou dnešní tabuli i dnešní nebe na první pohled.",
+      "text": "Procházet svá nebe popořadě můžete zdarma. S verzí Plus sbíráte barvy do palet, jako je modrá, šedá nebo písková, a když vyfotíte stejnou hodinu jiný den, obě nebe se postaví vedle sebe.\nS verzí Pro ukážou widgety na ploše dnešní tabuli i dnešní nebe na první pohled.",
       "shot": "04-palette"
     }
   ],
@@ -512,15 +512,15 @@
       },
       {
         "q": "Jak smažu fotku?",
-        "a": "Otevřete fotku a klepněte na Smazat, nebo ji v Deníku přejeďte doleva. Zmizí ze zařízení i z iCloudu zároveň. Když smažete aplikaci, kopie v iCloudu zůstane, takže se vám nebe po nové instalaci vrátí."
+        "a": "Otevřete fotku a klepněte na Smazat, nebo ji v Deníku přejeďte doleva. Pokud s verzí Pro ukládáte nebe i do iCloudu, zmizí i odtud. Pak kopie v iCloudu zůstane, i když smažete aplikaci, takže se vám nebe po nové instalaci vrátí."
       },
       {
         "q": "Co se stane, když vyměním telefon?",
-        "a": "Nasbíraná nebe jsou ve vašem vlastním iCloudu, takže pokračují na novém zařízení přihlášeném ke stejnému účtu Apple. Žádný účet ani server, fotky a barvy se vývojáři nikdy neposílají. Žádné reklamy ani sledování."
+        "a": "S verzí Pro jsou nasbíraná nebe ve vašem vlastním iCloudu, takže pokračují na novém zařízení přihlášeném ke stejnému účtu Apple. Žádný účet ani server, fotky a barvy se vývojáři nikdy neposílají. Žádné reklamy ani sledování."
       },
       {
-        "q": "Je to opravdu zdarma?",
-        "a": "Ano, všechny funkce jsou zdarma. Pokud se vám aplikace líbí, můžete vývojáři v aplikaci poslat spropitné, ale nic se tím neodemyká."
+        "q": "Dá se používat zdarma?",
+        "a": "Ano. Focení nebe, tabule, názvy barev, vaše řádky i Deník jsou zdarma. Plus odemyká paletu, opakování a přebarvení přes nebe jiného dne; Pro ke všemu z Plus přidává ukládání do iCloudu a widgety. Vybrat si můžete týdenní, měsíční nebo roční předplatné, nebo jednorázový nákup navždy."
       },
       {
         "q": "Na jakých zařízeních funguje?",

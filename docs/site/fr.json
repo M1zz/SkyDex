@@ -1,11 +1,11 @@
 {
   "title": "SkyDex : une planche des couleurs du ciel, remplie photo après photo",
-  "description": "Chaque photo du ciel remplit l’une des quarante-huit couleurs de la journée et reçoit un nom qui lui ressemble. Gratuit, sans compte.",
+  "description": "Chaque photo du ciel remplit l’une des quarante-huit couleurs de la journée et reçoit un nom qui lui ressemble. La planche est gratuite, sans compte.",
   "hero": {
     "headline": "De quelle couleur\nétait le ciel aujourd’hui ?",
     "lead": "Photographiez le ciel : sur une planche de quarante-huit cases, celle de l’heure se remplit de la couleur captée. Elle reçoit aussi un nom qui fait aussitôt image, comme Fine glace, Carrelage de piscine ou Kaki bien mûr.",
     "cta": "Gratuit sur l’App Store",
-    "note": "Gratuit. Sans compte ni connexion."
+    "note": "La planche est gratuite. Sans compte ni connexion."
   },
   "demo": {
     "title": "Essayez la planche",
@@ -422,7 +422,7 @@
     },
     {
       "title": "Laissez une ligne",
-      "text": "Une carte s’ouvre dès la prise de vue. Notez ce qui vous passait par la tête en levant les yeux : la phrase reviendra flotter sur le ciel chaque fois que vous toucherez cette case sur la planche.\nVous pouvez aussi poser sur cette photo la couleur du ciel d’un autre jour, et partager le résultat en image.",
+      "text": "Une carte s’ouvre dès la prise de vue. Notez ce qui vous passait par la tête en levant les yeux : la phrase reviendra flotter sur le ciel chaque fois que vous toucherez cette case sur la planche.\nAvec Plus, vous pouvez aussi poser sur cette photo la couleur du ciel d’un autre jour, et partager le résultat en image.",
       "shot": "03-card"
     },
     {
@@ -432,7 +432,7 @@
     },
     {
       "title": "Journal, palette, répétitions",
-      "text": "Parcourez vos ciels dans l’ordre et rassemblez vos couleurs en palettes par familles : bleu, gris, sable. Photographiez la même heure un autre jour, et les deux ciels se tiennent côte à côte.\nLes widgets de l’écran d’accueil affichent d’un coup d’œil la planche du jour et le ciel du jour.",
+      "text": "Parcourir vos ciels dans l’ordre est gratuit. Avec Plus, rassemblez vos couleurs en palettes par familles : bleu, gris, sable, et photographiez la même heure un autre jour pour voir les deux ciels côte à côte.\nAvec Pro, les widgets de l’écran d’accueil affichent d’un coup d’œil la planche du jour et le ciel du jour.",
       "shot": "04-palette"
     }
   ],
@@ -512,15 +512,15 @@
       },
       {
         "q": "Comment supprimer une photo ?",
-        "a": "Ouvrez la photo et touchez « Supprimer », ou balayez-la vers la gauche dans le Journal. Elle disparaît à la fois de l’appareil et d’iCloud. Si vous supprimez l’app, la copie reste dans iCloud : vos ciels reviennent à la réinstallation."
+        "a": "Ouvrez la photo et touchez « Supprimer », ou balayez-la vers la gauche dans le Journal. Si vous conservez vos ciels dans iCloud avec Pro, elle disparaît aussi d’iCloud ; dans ce cas, même si vous supprimez l’app, la copie reste dans iCloud et vos ciels reviennent à la réinstallation."
       },
       {
         "q": "Que se passe-t-il si je change d’appareil ?",
-        "a": "Vos ciels sont stockés dans votre propre iCloud et vous suivent sur un nouvel appareil connecté au même compte Apple. Pas de compte, pas de serveur : vos photos et vos couleurs ne sont jamais envoyées au développeur. Ni publicité ni pistage."
+        "a": "Avec Pro, vos ciels sont stockés dans votre propre iCloud et vous suivent sur un nouvel appareil connecté au même compte Apple. Pas de compte, pas de serveur : vos photos et vos couleurs ne sont jamais envoyées au développeur. Ni publicité ni pistage."
       },
       {
-        "q": "C’est vraiment gratuit ?",
-        "a": "Oui, toutes les fonctions sont gratuites. Si l’app vous plaît, vous pouvez laisser un pourboire au développeur depuis l’app, mais il ne débloque rien."
+        "q": "Peut-on l’utiliser gratuitement ?",
+        "a": "Oui. Photographier le ciel, la planche, les noms de couleurs, vos lignes et le Journal sont gratuits. Plus débloque la palette, les répétitions et la recoloration à travers le ciel d’un autre jour ; Pro ajoute à tout Plus la conservation dans iCloud et les widgets. Au choix : abonnement hebdomadaire, mensuel ou annuel, ou un seul achat pour toujours."
       },
       {
         "q": "Sur quels appareils fonctionne-t-elle ?",

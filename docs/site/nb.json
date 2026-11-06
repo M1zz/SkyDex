@@ -1,11 +1,11 @@
 {
   "title": "SkyDex: et brett med dagens himmelfarger, fylt ett bilde om gangen",
-  "description": "Hvert bilde av himmelen fyller én av dagens førtiåtte himmelfarger og får et navn som ligner den. Gratis og uten konto.",
+  "description": "Hvert bilde av himmelen fyller én av dagens førtiåtte himmelfarger og får et navn som ligner den. Selve brettet er gratis og uten konto.",
   "hero": {
     "headline": "Hvilken farge hadde\nhimmelen i dag?",
     "lead": "Ta et bilde av himmelen, så fylles ruten for det tidspunktet med fargen du fanget, på et brett med førtiåtte ruter. Fargen får også et navn du kan se for deg, som tynn is, bassengflis eller moden kaki.",
     "cta": "Hent gratis i App Store",
-    "note": "Gratis. Ingen konto, ingen pålogging."
+    "note": "Selve brettet er gratis. Ingen konto, ingen pålogging."
   },
   "demo": {
     "title": "Prøv brettet",
@@ -422,7 +422,7 @@
     },
     {
       "title": "Legg igjen en linje",
-      "text": "Et kort åpner seg med en gang du har tatt bildet. Skriv hva du tenkte mens du så opp, så dukker det fram over himmelen igjen hver gang du trykker på ruten på brettet.\nDu kan også legge fargen fra en annen dags himmel over bildet og dele resultatet som et bilde.",
+      "text": "Et kort åpner seg med en gang du har tatt bildet. Skriv hva du tenkte mens du så opp, så dukker det fram over himmelen igjen hver gang du trykker på ruten på brettet.\nMed Plus kan du også legge fargen fra en annen dags himmel over bildet og dele resultatet som et bilde.",
       "shot": "03-card"
     },
     {
@@ -432,7 +432,7 @@
     },
     {
       "title": "Logg, palett, gjentakelse",
-      "text": "Bla gjennom himlene dine i rekkefølge, og samle fargene i paletter som blå, grå og sandfarget. Ta samme time en annen dag, så står de to side om side.\nWidgets på Hjem-skjermen viser dagens brett og dagens himmel med ett blikk.",
+      "text": "Det er gratis å bla gjennom himlene dine i rekkefølge. Med Plus kan du samle fargene i paletter som blå, grå og sandfarget, og ta samme time en annen dag, så står de to side om side.\nMed Pro viser widgets på Hjem-skjermen dagens brett og dagens himmel med ett blikk.",
       "shot": "04-palette"
     }
   ],
@@ -512,15 +512,15 @@
       },
       {
         "q": "Hvordan sletter jeg et bilde?",
-        "a": "Åpne bildet og trykk på Slett, eller sveip mot venstre på det i Logg. Det fjernes fra både enheten og iCloud. Sletter du appen, blir kopien i iCloud liggende, så himlene dine kommer tilbake hvis du installerer den på nytt."
+        "a": "Åpne bildet og trykk på Slett, eller sveip mot venstre på det i Logg. Tar du vare på himlene dine i iCloud med Pro, fjernes det derfra også. Da blir kopien i iCloud liggende selv om du sletter appen, så himlene dine kommer tilbake når du installerer den på nytt."
       },
       {
         "q": "Hva skjer når jeg bytter telefon?",
-        "a": "Himlene dine lagres i din egen iCloud, så de følger med til en ny enhet som er logget på med den samme Apple-kontoen. Ingen konto og ingen server, og bildene og fargene dine sendes aldri til utvikleren. Ingen reklame, ingen sporing."
+        "a": "Med Pro lagres himlene dine i din egen iCloud, så de følger med til en ny enhet som er logget på med den samme Apple-kontoen. Ingen konto og ingen server, og bildene og fargene dine sendes aldri til utvikleren. Ingen reklame, ingen sporing."
       },
       {
-        "q": "Er den virkelig gratis?",
-        "a": "Ja, alle funksjoner er gratis. Liker du appen, kan du gi utvikleren tips i appen, men tips låser ikke opp noe."
+        "q": "Kan jeg bruke den gratis?",
+        "a": "Ja. Å fotografere himmelen, brettet, fargenavnene, linjene dine og Logg er gratis. Plus låser opp paletten, gjentakelse og farging gjennom en annen dags himmel; Pro legger iCloud-lagring og widgets til alt i Plus. Du velger abonnement per uke, måned eller år, eller et engangskjøp for alltid."
       },
       {
         "q": "Hvilke enheter fungerer den på?",
