@@ -9,6 +9,176 @@
 영어는 한국어를 옮긴 문장이 아니라 그 언어로 다시 쓴 문장이되,
 항목 수와 순서는 한국어와 맞춘다.
 
+## 1.0.4
+
+### 앱스토어 (한국어)
+
+Siri에게 하늘을 찍자고 하면 카메라가 바로 열립니다
+iPhone 검색에서 모은 하늘을 찾아 바로 열 수 있습니다
+모은 하늘이 매일, 업데이트 직전에도 자동으로 백업됩니다
+백업은 iCloud나 파일에서 언제든 되살릴 수 있습니다
+
+### App Store (en-US)
+
+Ask Siri to capture the sky and the camera opens
+Find your skies in iPhone search and open them
+Your skies back up daily and right before updates
+Restore a backup from iCloud or a file anytime
+
+### App Store (en-GB)
+
+Ask Siri to capture the sky and the camera opens
+Find your skies in iPhone search and open them
+Your skies back up daily and right before updates
+Restore a backup from iCloud or a file at any time
+
+### 앱스토어 (日本語)
+
+Siriに空を撮りたいと言えばカメラがすぐ開きます
+iPhoneの検索で集めた空を見つけてすぐ開けます
+集めた空が毎日とアップデート直前に自動でバックアップされます
+バックアップはiCloudやファイルからいつでも復元できます
+
+### 앱스토어 (简体中文)
+
+让 Siri 拍天空，相机会立即打开
+在 iPhone 搜索中找到收集的天空并直接打开
+收集的天空每天以及更新前都会自动备份
+可随时从 iCloud 或文件恢复备份
+
+### 앱스토어 (繁體中文)
+
+請 Siri 拍天空，相機會立即開啟
+在 iPhone 搜尋中找到收集的天空並直接打開
+收集的天空每天以及更新前都會自動備份
+可隨時從 iCloud 或檔案還原備份
+
+### 앱스토어 (Русский)
+
+Попросите Siri снять небо, и камера откроется
+Ищите своё небо в поиске iPhone и сразу открывайте
+Коллекция сохраняется каждый день и перед обновлением
+Копию можно восстановить из iCloud или из файла
+
+### 앱스토어 (Español)
+
+Pídele a Siri fotografiar el cielo y se abre la cámara
+Busca tus cielos en el iPhone y ábrelos al instante
+Tus cielos se respaldan cada día y antes de actualizar
+Restaura un respaldo desde iCloud o un archivo
+
+### 앱스토어 (Deutsch)
+
+Bitte Siri um ein Himmelsfoto, und die Kamera öffnet sich
+Finde deine Himmel in der iPhone-Suche und öffne sie
+Deine Sammlung wird täglich und vor Updates gesichert
+Stelle Sicherungen aus iCloud oder einer Datei wieder her
+
+### 앱스토어 (Français)
+
+Demandez à Siri de photographier le ciel, l’appareil s’ouvre
+Trouvez vos ciels dans la recherche de l’iPhone
+Vos ciels sont sauvegardés chaque jour et avant mise à jour
+Restaurez une sauvegarde depuis iCloud ou un fichier
+
+### 앱스토어 (Italiano)
+
+Chiedi a Siri di fotografare il cielo e si apre la fotocamera
+Trova i tuoi cieli nella ricerca di iPhone e aprili
+La raccolta viene salvata ogni giorno e prima degli aggiornamenti
+Ripristina un backup da iCloud o da un file
+
+### 앱스토어 (Português (Brasil))
+
+Peça à Siri para fotografar o céu e a câmera abre
+Ache seus céus na busca do iPhone e abra na hora
+Seus céus ganham backup todo dia e antes de atualizar
+Restaure um backup do iCloud ou de um arquivo
+
+### 앱스토어 (ไทย)
+
+บอก Siri ให้ถ่ายท้องฟ้า กล้องจะเปิดทันที
+ค้นหาท้องฟ้าที่สะสมในการค้นหาของ iPhone แล้วเปิดได้เลย
+ท้องฟ้าที่สะสมสำรองอัตโนมัติทุกวันและก่อนอัปเดต
+กู้คืนข้อมูลสำรองจาก iCloud หรือไฟล์ได้ทุกเมื่อ
+
+### 앱스토어 (Tiếng Việt)
+
+Nhờ Siri chụp bầu trời, máy ảnh sẽ mở ngay
+Tìm bầu trời đã lưu trong tìm kiếm của iPhone và mở ngay
+Bộ sưu tập được sao lưu mỗi ngày và trước khi cập nhật
+Khôi phục bản sao lưu từ iCloud hoặc tệp bất cứ lúc nào
+
+### 앱스토어 (Čeština)
+
+Řekněte Siri, ať vyfotí oblohu, a otevře se fotoaparát
+Najděte své oblohy ve vyhledávání na iPhonu
+Sbírka se zálohuje každý den a před aktualizací
+Zálohu obnovíte z iCloudu nebo ze souboru
+
+### 앱스토어 (Dansk)
+
+Bed Siri om at fotografere himlen, så åbner kameraet
+Find dine himle i iPhone-søgning og åbn dem
+Samlingen sikkerhedskopieres dagligt og før opdateringer
+Gendan en sikkerhedskopi fra iCloud eller en fil
+
+### 앱스토어 (Ελληνικά)
+
+Ζητήστε από τη Siri να φωτογραφίσει τον ουρανό
+Βρείτε τους ουρανούς σας στην αναζήτηση του iPhone
+Η συλλογή αποθηκεύεται κάθε μέρα και πριν από ενημερώσεις
+Επαναφέρετε αντίγραφο από το iCloud ή από αρχείο
+
+### 앱스토어 (Suomi)
+
+Pyydä Siriä kuvaamaan taivas, niin kamera aukeaa
+Löydä taivaasi iPhonen haulla ja avaa ne heti
+Kokoelma varmuuskopioidaan päivittäin ja ennen päivitystä
+Palauta varmuuskopio iCloudista tai tiedostosta
+
+### 앱스토어 (Indonesia)
+
+Minta Siri memotret langit, kamera langsung terbuka
+Temukan langit koleksi Anda di pencarian iPhone
+Koleksi dicadangkan otomatis setiap hari dan sebelum pembaruan
+Pulihkan cadangan dari iCloud atau file kapan saja
+
+### 앱스토어 (Norsk bokmål) (nb)
+
+Be Siri ta bilde av himmelen, så åpnes kameraet
+Finn himlene dine i iPhone-søk og åpne dem
+Samlingen sikkerhetskopieres daglig og før oppdateringer
+Gjenopprett en sikkerhetskopi fra iCloud eller en fil
+
+### 앱스토어 (Nederlands)
+
+Vraag Siri de lucht te fotograferen en de camera opent
+Vind je luchten via zoeken op iPhone en open ze
+Je verzameling krijgt elke dag en vóór een update een back-up
+Zet een back-up terug vanuit iCloud of een bestand
+
+### 앱스토어 (Polski)
+
+Poproś Siri o zdjęcie nieba, a aparat się otworzy
+Znajdź swoje niebo w wyszukiwaniu iPhone’a
+Kolekcja jest kopiowana codziennie i przed aktualizacją
+Przywróć kopię z iCloud lub z pliku
+
+### 앱스토어 (Svenska)
+
+Be Siri fota himlen så öppnas kameran
+Hitta dina himlar i iPhone-sökningen och öppna dem
+Samlingen säkerhetskopieras dagligen och före uppdateringar
+Återställ en säkerhetskopia från iCloud eller en fil
+
+### 앱스토어 (Türkçe)
+
+Siri'den gökyüzünü çekmesini isteyin, kamera hemen açılır
+Gökyüzlerinizi iPhone aramasında bulup hemen açın
+Koleksiyonunuz her gün ve güncellemeden önce yedeklenir
+Yedeği iCloud’dan veya bir dosyadan geri yükleyin
+
 ## 1.0.3
 
 ### 앱스토어 (한국어)
