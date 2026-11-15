@@ -171,21 +171,29 @@ func drawGround(_ ground: (String, String), in context: CGContext, space: CGColo
 }
 
 func drawRing(lift: Double, in context: CGContext) {
-    // The ring, as one arc per segment. There is no conic gradient in
-    // CoreGraphics, and a few hundred slightly overlapping arcs is
-    // indistinguishable from one at this size.
+    // The colour and the shape are drawn apart. There is no conic gradient in
+    // CoreGraphics, so the colour is a fan of hard-edged wedges; the ring's
+    // outline is one antialiased mask laid over it. Stroking hundreds of
+    // antialiased arcs instead stacks their soft edges back up to solid and
+    // the ring comes out stair-stepped — which the glass's edge light then
+    // traces line for line.
     let centre = CGPoint(x: side / 2, y: side / 2)
     let radius = side * 0.313
     let width = side * 0.125
     let segments = 900
-    context.setLineWidth(width)
-    context.setLineCap(.butt)
+
+    context.saveGState()
+    context.clip(to: CGRect(x: 0, y: 0, width: side, height: side), mask: ringMask(
+        centre: centre, outer: radius + width / 2, inner: radius - width / 2
+    ))
+    context.setShouldAntialias(false)
 
     for index in 0..<segments {
         let from = Double(index) / Double(segments)
         let to = Double(index + 1) / Double(segments)
         // Midnight at the top, running clockwise, so the icon reads as a
-        // twenty-four hour clock of sky.
+        // twenty-four hour clock of sky. Each wedge runs a hair past the next
+        // so no seam of background shows between them.
         let start = .pi / 2 - from * 2 * .pi
         let end = .pi / 2 - (to * 2 * .pi + 0.004)
 
@@ -197,15 +205,33 @@ func drawRing(lift: Double, in context: CGContext) {
         colour.a *= 1 + lift
         colour.b *= 1 + lift
         let (r, g, b) = rgb(colour)
-        context.setStrokeColor(CGColor(red: r, green: g, blue: b, alpha: 1))
+        context.setFillColor(CGColor(red: r, green: g, blue: b, alpha: 1))
 
         context.beginPath()
+        context.move(to: centre)
         context.addArc(
-            center: centre, radius: radius,
+            center: centre, radius: side,
             startAngle: start, endAngle: end, clockwise: true
         )
-        context.strokePath()
+        context.closePath()
+        context.fillPath()
     }
+    context.restoreGState()
+}
+
+/// The ring's outline alone, white on black, antialiased once.
+func ringMask(centre: CGPoint, outer: Double, inner: Double) -> CGImage {
+    let mask = CGContext(
+        data: nil, width: Int(side), height: Int(side),
+        bitsPerComponent: 8, bytesPerRow: 0, space: CGColorSpaceCreateDeviceGray(),
+        bitmapInfo: CGImageAlphaInfo.none.rawValue
+    )!
+    mask.setShouldAntialias(true)
+    mask.setFillColor(gray: 1, alpha: 1)
+    mask.addEllipse(in: CGRect(x: centre.x - outer, y: centre.y - outer, width: outer * 2, height: outer * 2))
+    mask.addEllipse(in: CGRect(x: centre.x - inner, y: centre.y - inner, width: inner * 2, height: inner * 2))
+    mask.fillPath(using: .evenOdd)
+    return mask.makeImage()!
 }
 
 func write(_ image: CGImage, to url: URL) {
