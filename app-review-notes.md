@@ -162,7 +162,7 @@ Settings. Subscription terms, price and auto-renewal, the Terms of Use (Apple st
 and the Privacy Policy are shown at the bottom of the purchase screen.
 
 Tips: Settings → **Support the Developer** offers three optional consumable tips
-(`com.leeo.SkyDex.tip.small` / `.medium` / `.large`). They unlock nothing.
+(`com.leeo.SkyDex.tip.small`, `com.leeo.SkyDex.tip.medium`, `com.leeo.SkyDex.tip.large`). They unlock nothing.
 
 Product IDs: `com.leeo.SkyDex.plus.weekly`, `com.leeo.SkyDex.plus.monthly`,
 `com.leeo.SkyDex.plus.yearly`, `com.leeo.SkyDex.plus.lifetime`, `com.leeo.SkyDex.pro.weekly`,
