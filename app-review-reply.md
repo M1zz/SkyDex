@@ -1,7 +1,7 @@
 # App Review 답장 — Guideline 2.1(b) (인앱결제를 찾을 수 없음)
 
 Submission ID: 0785d57d-74f7-4e02-94ba-c6fd9142a277
-대상: 1.0.4 (8) 리젝. **페이월이 든 새 빌드(1.0.4 (9))를 DeployBar 로 올린 뒤** 보낸다.
+대상: 1.0.4 (8) 리젝. **페이월이 든 새 빌드(1.0.4 (10))를 DeployBar 로 올린 뒤** 보낸다.
 
 까닭: 빌드 8 은 페이월 커밋(23d0b93) 전에 만든 빌드라 앱 안에 결제 코드가 없었다.
 그런데 상품 10개가 그 제출에 붙어 나갔고, 심사 노트도 "인앱결제 없음" 이었다.
@@ -17,7 +17,7 @@ Hello, and thank you for the review.
 
 We are sorry for the confusion. Build 1.0.4 (8) was built before the purchase screen was added
 to the app, so the In-App Purchases attached to that submission could not be found in it. We
-have uploaded build 1.0.4 (9), which contains the purchase screen, and selected it for this
+have uploaded build 1.0.4 (10), which contains the purchase screen, and selected it for this
 version. We have also updated the App Review Information notes with the steps below.
 
 All products are Apple In-App Purchases. They are not restricted by storefront, device, or
