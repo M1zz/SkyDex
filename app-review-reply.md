@@ -7,7 +7,7 @@ Submission ID: 0785d57d-74f7-4e02-94ba-c6fd9142a277
 그런데 상품 10개가 그 제출에 붙어 나갔고, 심사 노트도 "인앱결제 없음" 이었다.
 
 순서:
-1. App Store Connect ▸ 1.0.4 ▸ 빌드를 9 로 바꾼다 (DeployBar 배포가 한다).
+1. App Store Connect ▸ 1.0.4 ▸ 빌드를 10 으로 바꾼다 (DeployBar 배포가 한다).
 2. App Review Information ▸ Notes 를 `app-review-notes.md` 의 영문 블록으로 바꾼다.
 3. 아래 영문을 심사 메시지에 답장으로 붙여 넣는다.
 
