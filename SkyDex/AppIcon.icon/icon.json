@@ -1,0 +1,74 @@
+{
+  "fill-specializations": [
+    {
+      "value": {
+        "linear-gradient": [
+          "display-p3:0.96933,0.97242,0.97963,1.00000",
+          "display-p3:0.90869,0.92105,0.94635,1.00000"
+        ],
+        "orientation": {
+          "start": {
+            "x": 0.5,
+            "y": 0
+          },
+          "stop": {
+            "x": 0.5,
+            "y": 1
+          }
+        }
+      }
+    },
+    {
+      "appearance": "dark",
+      "value": {
+        "linear-gradient": [
+          "display-p3:0.10210,0.13221,0.20568,1.00000",
+          "display-p3:0.03424,0.04658,0.07954,1.00000"
+        ],
+        "orientation": {
+          "start": {
+            "x": 0.5,
+            "y": 0
+          },
+          "stop": {
+            "x": 0.5,
+            "y": 1
+          }
+        }
+      }
+    }
+  ],
+  "groups": [
+    {
+      "layers": [
+        {
+          "glass": true,
+          "name": "ring",
+          "image-name-specializations": [
+            {
+              "value": "ring.png"
+            },
+            {
+              "appearance": "dark",
+              "value": "ring-dark.png"
+            }
+          ]
+        }
+      ],
+      "lighting": "individual",
+      "name": "하루",
+      "shadow": {
+        "kind": "neutral",
+        "opacity": 0.5
+      },
+      "specular": true,
+      "translucency": {
+        "enabled": true,
+        "value": 0.15
+      }
+    }
+  ],
+  "supported-platforms": {
+    "squares": "shared"
+  }
+}

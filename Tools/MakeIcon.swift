@@ -9,7 +9,11 @@
 // board uses, so the icon is sampling the app's day and not an approximation
 // of it.
 //
-//   swift MakeIcon.swift <out-dir>
+//   swift MakeIcon.swift <appiconset-dir> <icon-composer-assets-dir>
+//
+// The first gets the flat icons older systems use. The second gets the ring
+// alone on a clear ground, one per appearance, for AppIcon.icon: there the
+// ground is the file's fill and the ring becomes a pane of glass.
 
 import CoreGraphics
 import Foundation
@@ -128,16 +132,25 @@ let side = 1024.0
 ///     midnight sky is the strongest mark on the icon. On a night ground the
 ///     same colour is invisible, so the sweep is lifted toward the middle of
 ///     the range to keep the ring whole.
-func icon(ground: (String, String), lift: Double) -> CGImage {
+///   - ground: nil leaves the canvas clear, for an Icon Composer layer.
+func icon(ground: (String, String)?, lift: Double) -> CGImage {
     let space = CGColorSpaceCreateDeviceRGB()
     let context = CGContext(
         data: nil, width: Int(side), height: Int(side),
         bitsPerComponent: 8, bytesPerRow: 0, space: space,
-        bitmapInfo: CGImageAlphaInfo.noneSkipLast.rawValue
+        // The store refuses an icon with alpha, so only the clear layer keeps it.
+        bitmapInfo: (ground == nil
+            ? CGImageAlphaInfo.premultipliedLast : .noneSkipLast).rawValue
     )!
     context.setShouldAntialias(true)
     context.interpolationQuality = .high
 
+    if let ground { drawGround(ground, in: context, space: space) }
+    drawRing(lift: lift, in: context)
+    return context.makeImage()!
+}
+
+func drawGround(_ ground: (String, String), in context: CGContext, space: CGColorSpace) {
     // Background. A flat field would be fine; the slight ramp gives the ring
     // something to sit in and answers the ask for a gradient twice.
     let top = rgb(lab(fromHex: ground.0)), bottom = rgb(lab(fromHex: ground.1))
@@ -155,7 +168,9 @@ func icon(ground: (String, String), lift: Double) -> CGImage {
         end: CGPoint(x: 0, y: 0),
         options: []
     )
+}
 
+func drawRing(lift: Double, in context: CGContext) {
     // The ring, as one arc per segment. There is no conic gradient in
     // CoreGraphics, and a few hundred slightly overlapping arcs is
     // indistinguishable from one at this size.
@@ -191,8 +206,6 @@ func icon(ground: (String, String), lift: Double) -> CGImage {
         )
         context.strokePath()
     }
-
-    return context.makeImage()!
 }
 
 func write(_ image: CGImage, to url: URL) {
@@ -204,6 +217,13 @@ func write(_ image: CGImage, to url: URL) {
     print("wrote \(url.lastPathComponent)")
 }
 
-let out = URL(fileURLWithPath: CommandLine.arguments[1], isDirectory: true)
-write(icon(ground: ("#F7F8FA", "#E7EBF2"), lift: 0), to: out.appending(path: "AppIcon.png"))
-write(icon(ground: ("#182236", "#080C15"), lift: 0.34), to: out.appending(path: "AppIcon-Dark.png"))
+let light = (ground: ("#F7F8FA", "#E7EBF2"), lift: 0.0)
+let dark = (ground: ("#182236", "#080C15"), lift: 0.34)
+
+let flat = URL(fileURLWithPath: CommandLine.arguments[1], isDirectory: true)
+write(icon(ground: light.ground, lift: light.lift), to: flat.appending(path: "AppIcon.png"))
+write(icon(ground: dark.ground, lift: dark.lift), to: flat.appending(path: "AppIcon-Dark.png"))
+
+let glass = URL(fileURLWithPath: CommandLine.arguments[2], isDirectory: true)
+write(icon(ground: nil, lift: light.lift), to: glass.appending(path: "ring.png"))
+write(icon(ground: nil, lift: dark.lift), to: glass.appending(path: "ring-dark.png"))
