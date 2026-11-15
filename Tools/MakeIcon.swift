@@ -122,6 +122,30 @@ func ringLab(at fraction: Double) -> Lab {
     return Lab(l: a.l + (b.l - a.l) * t, a: a.a + (b.a - a.a) * t, b: a.b + (b.b - a.b) * t)
 }
 
+/// The ring's colours, walked once and softened along the ring. Between slot
+/// centres the colour runs in straight lines, and where the day turns quickly —
+/// dawn, the last of the sunset — those lines meet at a visible crease. A
+/// circular Gaussian, a few percent of the way round wide, rounds the creases
+/// off without moving any colour to another hour.
+func smoothRing(count: Int, sigma: Double) -> [Lab] {
+    let raw = (0..<count).map { ringLab(at: (Double($0) + 0.5) / Double(count)) }
+    let spread = sigma * Double(count)
+    guard spread > 0 else { return raw }
+    let reach = Int(ceil(spread * 3))
+    let weights = (-reach...reach).map { exp(-Double($0 * $0) / (2 * spread * spread)) }
+    let total = weights.reduce(0, +)
+    return (0..<count).map { index in
+        var sum = Lab(l: 0, a: 0, b: 0)
+        for (offset, weight) in zip(-reach...reach, weights) {
+            let c = raw[((index + offset) % count + count) % count]
+            sum.l += c.l * weight; sum.a += c.a * weight; sum.b += c.b * weight
+        }
+        return Lab(l: sum.l / total, a: sum.a / total, b: sum.b / total)
+    }
+}
+
+let ringSmoothing = 0.04
+
 // MARK: - Drawing
 
 let side = 1024.0
@@ -181,6 +205,7 @@ func drawRing(lift: Double, in context: CGContext) {
     let radius = side * 0.313
     let width = side * 0.125
     let segments = 900
+    let colours = smoothRing(count: segments, sigma: ringSmoothing)
 
     context.saveGState()
     context.clip(to: CGRect(x: 0, y: 0, width: side, height: side), mask: ringMask(
@@ -197,7 +222,7 @@ func drawRing(lift: Double, in context: CGContext) {
         let start = .pi / 2 - from * 2 * .pi
         let end = .pi / 2 - (to * 2 * .pi + 0.004)
 
-        var colour = ringLab(at: (from + to) / 2)
+        var colour = colours[index]
         // Lifting lightness alone turns midnight grey — it had little chroma to
         // begin with. Scale the chroma by the same lift and the night arc stays
         // a night sky.
