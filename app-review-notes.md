@@ -8,9 +8,10 @@ App Store Connect → 앱 버전 → **App Review Information → Notes** 에 �
 
 ## 1. Demo account
 
-Not applicable. The app has **no accounts, no login screen, and no server of ours**. Every
-feature is available immediately on first launch. There is nothing to unlock, purchase, or
-subscribe to.
+Not applicable. The app has **no accounts, no login screen, and no server of ours**. The
+app opens straight to its main screen on first launch. Optional paid features are sold with
+Apple In-App Purchase and need no account of ours — see **7. Purchases and subscriptions**
+for exactly where every product appears.
 
 The app does sync the user's own photos to **their own iCloud** (CloudKit private database)
 so their collection survives losing or replacing a device. This uses whatever Apple Account
@@ -98,7 +99,7 @@ No setup, no credentials, no sample files are required.
   here.** This is separate from the private container that syncs the user's collection.
 
 There are no third-party SDKs, no advertising, no third-party analytics or crash
-reporters, no AI or machine-learning services, no payment processors, no authentication
+reporters, no AI or machine-learning services, no payment processor other than Apple In-App Purchase, no authentication
 providers, and no backend server of any kind — every service above is Apple's, and the
 only non-Apple code is the developer's own package. No third-party data processors are
 involved.
@@ -113,15 +114,65 @@ only between that same user's own devices. Consequently there is no third-party 
 anyone to report or block. Users can delete any of their own photos at any time, which
 removes it from the device and from their iCloud (see step 6 above).
 
-## 7. Purchases and subscriptions
+## 7. Purchases and subscriptions — where to find every In-App Purchase
 
-None. The app is free, contains no in-app purchases, no subscriptions, and no paid or
-locked content. There is no StoreKit code in the target at all.
+The app is a free download with two optional paid tiers, **SkyDex Plus** and **SkyDex Pro**,
+each sold as weekly, monthly and yearly auto-renewable subscriptions (one subscription group,
+Pro above Plus) or as a one-time lifetime purchase. Everything is Apple In-App Purchase
+(StoreKit 2). There is no account, no storefront or device restriction, and no server check:
+every product is offered to every user in every region, including the review sandbox.
+The colour board, taking photos, the log, and saving/sharing/deleting photos are always free.
+
+**Open the purchase screen (3 taps, no setup):**
+
+1. Launch the app. The colour board appears.
+2. Tap the **list button** at the bottom right, next to the round camera button. The Log
+   screen opens.
+3. Tap the **gear** at the top right. Settings opens.
+4. In the **Manage Subscription** section, tap **See Plus · Pro**. The purchase screen opens
+   with a SkyDex Plus card and a SkyDex Pro card.
+
+On each card, **Yearly** and **Lifetime** are shown first. Tap **Show Weekly and Monthly Too**
+to reveal **Weekly** and **Monthly**. That is all eight base products:
+
+| Product | Where |
+|---|---|
+| SkyDex Plus (Weekly / Monthly / Yearly / Lifetime) | Plus card |
+| SkyDex Pro (Weekly / Monthly / Yearly) | Pro card |
+| SkyDex Pro (Lifetime) — Pro Lifetime | Pro card, "Lifetime" |
+
+Two products are offered only to people who have already bought something, because they
+exist to avoid charging the same person twice:
+
+- **SkyDex Pro (Lifetime Upgrade)** — for someone who already owns Plus Lifetime. Buy
+  **SkyDex Plus → Lifetime** with the sandbox account, then reopen the purchase screen. On the
+  Pro card the Lifetime option now reads **Upgrade to Pro Lifetime** and sells this product
+  instead of the full Pro Lifetime.
+- **SkyDex Pro (Lifetime) — Pro Graduate** — for someone with an active subscription who wants
+  to switch to a one-time purchase. Start any Plus or Pro subscription with the sandbox
+  account, then open Settings again. In **Manage Subscription**, a **Switch to Lifetime** row
+  appears; it opens an offer for this product.
+
+Other places the purchase screen opens from (each one shows the tier that feature belongs to):
+on the Log screen, the **Palette** and **Repeats** tabs (Plus); a colour lens on a photo's
+detail screen (Plus); and the **Also keep in iCloud** switch in Settings (Pro).
+
+**Restore Purchases** and **Redeem Code** are in the same Manage Subscription section in
+Settings. Subscription terms, price and auto-renewal, the Terms of Use (Apple standard EULA)
+and the Privacy Policy are shown at the bottom of the purchase screen.
+
+Tips: Settings → **Support the Developer** offers three optional consumable tips
+(`com.leeo.SkyDex.tip.small` / `.medium` / `.large`). They unlock nothing.
+
+Product IDs: `com.leeo.SkyDex.plus.weekly`, `com.leeo.SkyDex.plus.monthly`,
+`com.leeo.SkyDex.plus.yearly`, `com.leeo.SkyDex.plus.lifetime`, `com.leeo.SkyDex.pro.weekly`,
+`com.leeo.SkyDex.pro.monthly`, `com.leeo.SkyDex.pro.yearly`, `com.leeo.SkyDex.pro.lifetime`,
+`com.leeo.SkyDex.pro.upgrade`, `com.leeo.SkyDex.pro.graduate`.
 
 ## 7a. Settings and feedback
 
-A gear button on the archive screen opens a settings sheet with: a switch for iCloud
-storage, a **Send Feedback** form, a **Write a Review** row, links to the privacy policy and
+A gear button on the Log screen opens a settings sheet with: a switch for iCloud
+storage (Pro), the purchase rows described in 7, a **Send Feedback** form, a **Write a Review** row, links to the privacy policy and
 support page, and the version. No account or credential is needed to reach any of it.
 
 ## 8. Regional differences

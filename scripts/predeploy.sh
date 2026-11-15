@@ -8,6 +8,16 @@ set -eu
 
 cd "$(dirname "$0")/.."
 
+# 심사 노트가 파는 상품을 다 말하는가. 1.0.4 (8) 은 노트가 "인앱결제 없음" 인 채로
+# 상품만 붙어 나가 2.1(b) 로 막혔다. 상품을 늘리면 노트의 7번(어디서 사는가)도 같이 고친다.
+missing=$(grep -o '"productID" : "[^"]*"' SkyDex/Products.storekit | cut -d'"' -f4 |
+    while read -r id; do grep -qF "$id" app-review-notes.md || echo "$id"; done)
+if [ -n "$missing" ]; then
+    echo "predeploy: app-review-notes.md 7번에 없는 상품 — 어디서 사는지 적을 것:" >&2
+    echo "$missing" >&2
+    exit 1
+fi
+
 PROJECT="SkyDex.xcodeproj"
 SCHEME="${SCHEME:-SkyDex}"
 DESTINATION="platform=iOS Simulator,name=iPhone 17 Pro"
