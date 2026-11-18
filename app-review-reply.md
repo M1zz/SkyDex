@@ -1,53 +1,47 @@
-# App Review 답장 — Guideline 2.1(b) (인앱결제를 찾을 수 없음)
+# App Review 답장 — Guideline 2.1(b) 두 번째 (Pro 를 찾을 수 없음)
 
-Submission ID: 0785d57d-74f7-4e02-94ba-c6fd9142a277
-대상: 1.0.4 (8) 리젝. **페이월이 든 새 빌드(1.0.4 (10))를 DeployBar 로 올린 뒤** 보낸다.
+대상: 1.0.4 두 번째 리젝. 심사관이 "Support the Developer 의 팁 3개만 보인다" 고 답했다.
 
-까닭: 빌드 8 은 페이월 커밋(23d0b93) 전에 만든 빌드라 앱 안에 결제 코드가 없었다.
-그런데 상품 10개가 그 제출에 붙어 나갔고, 심사 노트도 "인앱결제 없음" 이었다.
+까닭: 심사관이 보낸 캡처의 설정 화면 버전이 **1.0.4 (8)** 이다. 빌드 8 에는 결제 화면이 없다
+(빌드 8 의 설정에는 '구독 관리' 칸이 없고, iCloud 스위치에도 잠금 표시가 없다). 결제 화면은 빌드 10 에 있다.
+즉 심사가 아직 빌드 8 로 돌았다.
 
 순서:
-1. App Store Connect ▸ 1.0.4 ▸ 빌드를 10 으로 바꾼다 (DeployBar 배포가 한다).
-2. App Review Information ▸ Notes 를 `app-review-notes.md` 의 영문 블록으로 바꾼다.
-3. 아래 영문을 심사 메시지에 답장으로 붙여 넣는다.
+1. App Store Connect ▸ 1.0.4 ▸ 빌드 칸이 **10** 인지 본다. 8 이면 10 으로 바꾼다.
+2. 아래 영문을 심사 메시지에 답장으로 붙여 넣고 다시 제출한다.
 
 ---
 
-Hello, and thank you for the review.
+Hello, and thank you for checking again.
 
-We are sorry for the confusion. Build 1.0.4 (8) was built before the purchase screen was added
-to the app, so the In-App Purchases attached to that submission could not be found in it. We
-have uploaded build 1.0.4 (10), which contains the purchase screen, and selected it for this
-version. We have also updated the App Review Information notes with the steps below.
+We believe the review was done on an earlier build. The screenshot of Settings shows
+Version 1.0.4 (8) at the bottom of the Support section. Build 8 was made before the purchase
+screen was added, so it only contains the three tips under Support the Developer. The Plus and
+Pro products are in build 1.0.4 (10), which is now selected for this version.
 
-All products are Apple In-App Purchases. They are not restricted by storefront, device, or
-any account of ours, and they are offered to every user, including in the review sandbox.
-
-To open the purchase screen:
+Please install build 10 and check that Settings shows Version 1.0.4 (10). Then:
 
 1. Launch the app. The colour board appears.
 2. Tap the list button at the bottom right, next to the round camera button. The Log screen opens.
 3. Tap the gear at the top right. Settings opens.
-4. In the Manage Subscription section, tap "See Plus · Pro".
+4. Directly below the Storage section, there is a section titled "Manage Subscription".
+   It is not present in build 8. It shows "Your plan: Free" and a button "See Plus · Pro".
+5. Tap "See Plus · Pro". The purchase screen opens with a SkyDex Plus card and a SkyDex Pro card.
+   Each card shows Yearly and Lifetime. Tap "Show Weekly and Monthly Too" to see Weekly and Monthly.
 
-The screen shows a SkyDex Plus card and a SkyDex Pro card. Each card shows Yearly and Lifetime;
-tap "Show Weekly and Monthly Too" to see Weekly and Monthly. This covers:
+In build 10 the purchase screen also opens from:
 
-- SkyDex Plus (Weekly), (Monthly), (Yearly), (Lifetime)
-- SkyDex Pro (Weekly), (Monthly), (Yearly)
-- SkyDex Pro (Lifetime) (Pro Lifetime)
+- the "Also keep in iCloud" switch in Settings, which now has a Pro lock and opens the Pro card
+  when turned on;
+- the Palette and Repeats tabs on the Log screen, which open the Plus card.
 
-Two products are only offered after an earlier purchase, so that no one pays twice:
+The two remaining products appear only after an earlier purchase, so that no one pays twice:
 
 - SkyDex Pro (Lifetime Upgrade): buy SkyDex Plus (Lifetime), then reopen the purchase screen.
-  The Pro card's Lifetime option becomes "Upgrade to Pro Lifetime" and sells this product.
+  The Pro card's Lifetime option becomes "Upgrade to Pro Lifetime".
 - SkyDex Pro (Lifetime) (Pro Graduate): start any Plus or Pro subscription, then open Settings
-  again. A "Switch to Lifetime" row appears in Manage Subscription and offers this product.
+  again. A "Switch to Lifetime" row appears in the Manage Subscription section.
 
-The purchase screen also opens from the locked features themselves: the Palette and Repeats
-tabs on the Log screen (Plus), and the "Also keep in iCloud" switch in Settings (Pro).
-Restore Purchases and Redeem Code are in the same section of Settings.
+Restore Purchases and Redeem Code are in the same Manage Subscription section.
 
-Please let us know if anything else would help.
-
-Thank you.
+Thank you for your patience.
