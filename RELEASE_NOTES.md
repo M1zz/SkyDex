@@ -9,6 +9,158 @@
 영어는 한국어를 옮긴 문장이 아니라 그 언어로 다시 쓴 문장이되,
 항목 수와 순서는 한국어와 맞춘다.
 
+## 1.0.5
+
+### 앱스토어 (한국어)
+
+이제 아랍어로도 쓸 수 있어요
+아랍어에서는 화면이 오른쪽에서 왼쪽으로 놓여요
+아랍어 화면에서도 시각과 날짜가 바르게 보여요
+
+### App Store (en-US)
+
+SkyDex now speaks Arabic
+Arabic screens run right to left
+Times and dates read correctly in Arabic
+
+### App Store (en-GB)
+
+SkyDex now speaks Arabic
+Arabic screens run right to left
+Times and dates read correctly in Arabic
+
+### 앱스토어 (日本語)
+
+アラビア語で使えるようになりました
+アラビア語では画面が右から左に並びます
+アラビア語でも時刻と日付が正しく表示されます
+
+### 앱스토어 (简体中文)
+
+现已支持阿拉伯语
+阿拉伯语界面从右向左排列
+阿拉伯语下时间和日期也能正确显示
+
+### 앱스토어 (繁體中文)
+
+現已支援阿拉伯語
+阿拉伯語介面由右至左排列
+阿拉伯語下時間與日期也能正確顯示
+
+### 앱스토어 (Русский)
+
+Теперь приложение доступно на арабском
+На арабском экраны идут справа налево
+Время и даты верно показаны на арабском
+
+### 앱스토어 (Español)
+
+Ahora también en árabe
+En árabe, todo va de derecha a izquierda
+Horas y fechas se ven bien en árabe
+
+### 앱스토어 (Deutsch)
+
+Jetzt auch auf Arabisch
+Auf Arabisch von rechts nach links
+Uhrzeiten und Daten stimmen auf Arabisch
+
+### 앱스토어 (Français)
+
+Désormais disponible en arabe
+En arabe, tout se lit de droite à gauche
+Heures et dates correctes en arabe
+
+### 앱스토어 (Italiano)
+
+Ora disponibile anche in arabo
+In arabo tutto va da destra a sinistra
+Orari e date corretti anche in arabo
+
+### 앱스토어 (Português (Brasil))
+
+Agora também em árabe
+Em árabe, tudo vai da direita à esquerda
+Horários e datas certos em árabe
+
+### 앱스토어 (ไทย)
+
+ใช้งานเป็นภาษาอาหรับได้แล้ว
+ภาษาอาหรับแสดงหน้าจอจากขวาไปซ้าย
+เวลาและวันที่แสดงถูกต้องในภาษาอาหรับ
+
+### 앱스토어 (Tiếng Việt)
+
+Giờ đã có tiếng Ả Rập
+Tiếng Ả Rập hiển thị từ phải sang trái
+Giờ và ngày hiển thị đúng khi dùng Ả Rập
+
+### 앱스토어 (Čeština)
+
+Nově také v arabštině
+V arabštině jdou obrazovky zprava doleva
+Časy a data v arabštině sedí
+
+### 앱스토어 (Dansk)
+
+Nu også på arabisk
+Arabisk vises fra højre mod venstre
+Tider og datoer vises rigtigt på arabisk
+
+### 앱스토어 (Ελληνικά)
+
+Τώρα και στα αραβικά
+Στα αραβικά όλα από δεξιά προς αριστερά
+Ώρες και ημερομηνίες σωστά στα αραβικά
+
+### 앱스토어 (Suomi)
+
+Nyt myös arabiaksi
+Arabiaksi kaikki oikealta vasemmalle
+Ajat ja päivät näkyvät oikein arabiaksi
+
+### 앱스토어 (Indonesia)
+
+Kini tersedia dalam bahasa Arab
+Bahasa Arab tampil dari kanan ke kiri
+Jam dan tanggal tepat dalam bahasa Arab
+
+### 앱스토어 (Norsk bokmål) (nb)
+
+Nå også på arabisk
+På arabisk går alt fra høyre mot venstre
+Tider og datoer vises riktig på arabisk
+
+### 앱스토어 (Nederlands)
+
+Nu ook in het Arabisch
+In het Arabisch van rechts naar links
+Tijden en datums kloppen in het Arabisch
+
+### 앱스토어 (Polski)
+
+Teraz także po arabsku
+Po arabsku wszystko od prawej do lewej
+Godziny i daty poprawne po arabsku
+
+### 앱스토어 (Svenska)
+
+Nu även på arabiska
+Arabiska visas från höger till vänster
+Tider och datum visas rätt på arabiska
+
+### 앱스토어 (Türkçe)
+
+Artık Arapça da kullanılabilir
+Arapçada ekranlar sağdan sola dizilir
+Saat ve tarihler Arapçada doğru görünür
+
+### 앱스토어 (아랍어)
+
+SkyDex متاح الآن بالعربية
+الشاشات بالعربية من اليمين إلى اليسار
+الأوقات والتواريخ تظهر صحيحة بالعربية
+
 ## 1.0.4
 
 ### 앱스토어 (한국어)
