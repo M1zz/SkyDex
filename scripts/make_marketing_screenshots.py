@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """마케팅 스크린샷 목업 생성: HTML 생성 → 헤드리스 Chrome 렌더링.
 
 슬라이드마다 layout 이 달라 배치가 다양함:
@@ -656,6 +657,33 @@ SHOTS_BY_LOCALE = {
             "Boş daire<br>zamanı söyler",
             "O saatteki gök rengini önceden gör"
         ]
+    ],
+    "ar": [
+        [
+            "01-board.png",
+            "ما لون سماء<br>اليوم؟",
+            "كل صورة للسماء تملأ دائرة من 48"
+        ],
+        [
+            "02-name.png",
+            "لكل سماء<br>اسم يشبهها",
+            "جليد رقيق، بلاط المسبح، كاكا ناضج"
+        ],
+        [
+            "03-card.png",
+            "اكتب ما خطر لك<br>فوق السماء",
+            "سطر واحد لكل صورة"
+        ],
+        [
+            "04-palette.png",
+            "ألوانك تصير<br>لوحة ألوان",
+            "أزرق، أزرق فاتح، رمادي مصفرّ وغيرها"
+        ],
+        [
+            "05-empty.png",
+            "الخانات الفارغة<br>تخبرك متى",
+            "اعرف لون السماء في تلك الساعة مسبقًا"
+        ]
     ]
 }
 
@@ -678,9 +706,13 @@ body {{ background:#EEF4F8; font-family:system-ui, -apple-system, "Helvetica Neu
 :lang(ja) body {{ font-family:-apple-system, "Hiragino Sans", sans-serif; }}
 :lang(zh-Hans) body {{ font-family:-apple-system, "PingFang SC", sans-serif; }}
 :lang(zh-Hant) body {{ font-family:-apple-system, "PingFang TC", sans-serif; }}
+:lang(ar) body {{ font-family:"SF Arabic", "Geeza Pro", system-ui, sans-serif; }}
 .headline {{ font-size:100px; font-weight:800; color:#1B2733; letter-spacing:-2px; line-height:1.2; }}
 .sub {{ font-size:52px; font-weight:500; color:#6F7E90; letter-spacing:-1px; padding:0 60px; }}
 :lang(ko) .headline, :lang(ko) .sub {{ word-break:keep-all; }}
+/* 아랍어는 글자가 이어지므로 자간을 좁히지 않는다(붙으면 단어가 뭉친다) */
+:lang(ar) .headline, :lang(ar) .sub {{ letter-spacing:0; }}
+:lang(ar) .headline {{ line-height:1.35; }}
 .phone {{ background:#17171a; border-radius:116px; border:3px solid #3a3a3e; padding:25px;
   box-shadow: 60px 90px 120px rgba(0,0,0,.28), 20px 30px 50px rgba(0,0,0,.18); }}
 .phone img {{ width:100%; display:block; border-radius:92px; }}
@@ -726,11 +758,31 @@ body { background:#131316; }
 """,
 }
 
+# 오른쪽에서 왼쪽으로 읽는 언어(아랍어): 글을 오른쪽에 붙이고, 폰의 기울기와 치우침을 거울처럼 뒤집는다.
+RTL_LANGS = {"ar"}
+RTL_LAYOUTS = {
+    "hero-bleed": "",
+    "left-text": """
+.headline { text-align:right; margin:300px 110px 0 0; }
+.sub { text-align:right; margin:48px 114px 0 0; }
+.wrap { perspective-origin:70% 30%; left:auto; right:300px; }
+.phone { transform:rotateY(-16deg) rotateX(2deg); }
+""",
+    "text-bottom": """
+.phone { transform:rotateY(10deg) rotateX(2deg); }
+""",
+    "flat-rotate": """
+.wrap { left:auto; right:120px; }
+.phone { transform:rotate(6deg); }
+""",
+    "dark": "",
+}
+
 # text-bottom 은 폰이 먼저 오는 DOM 순서
 BODY_TEXT_FIRST = '<div class="headline">{headline}</div><div class="sub">{sub}</div><div class="wrap"><div class="phone"><img src="{img}"></div></div>'
 BODY_PHONE_FIRST = '<div class="wrap"><div class="phone"><img src="{img}"></div></div><div class="headline">{headline}</div><div class="sub">{sub}</div>'
 
-HTML = """<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><style>
+HTML = """<!doctype html><html lang="{lang}" dir="{dir}"><head><meta charset="utf-8"><style>
 {base}{layout}
 </style></head><body>{body}</body></html>"""
 
@@ -741,7 +793,9 @@ def main(locale):
         body_tpl = BODY_PHONE_FIRST if layout == "text-bottom" else BODY_TEXT_FIRST
         body = body_tpl.format(headline=headline, sub=sub, img=(src / fname).as_uri())
         html_path = WORK / f"skydex-{locale}-{fname.replace('.png', '.html')}"
-        html_path.write_text(HTML.format(lang=locale, base=BASE_CSS, layout=LAYOUTS[layout], body=body), encoding="utf-8")
+        rtl = locale in RTL_LANGS
+        css = LAYOUTS[layout] + (RTL_LAYOUTS[layout] if rtl else "")
+        html_path.write_text(HTML.format(lang=locale, dir="rtl" if rtl else "ltr", base=BASE_CSS, layout=css, body=body), encoding="utf-8")
         out_png = out / fname
         # Chrome 은 다른 창과 겹치면 가끔 실패한다 — 따로 쓰는 프로필로 세 번까지
         for _ in range(3):

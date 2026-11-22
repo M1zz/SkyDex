@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """App Store 크리에이티브 자산(제품 페이지 헤더 · 검색 결과) 생성: HTML → 헤드리스 Chrome.
 
 사용법: python3 scripts/make_creative_assets.py [언어 ...]     (없으면 전부)
@@ -67,6 +68,7 @@ SEARCH = {
     "pl": ("Dziennik nieba", "Zbierz 48<br>odcieni nieba", "Każde niebo, które złapiesz, wypełnia kółko"),
     "sv": ("Himmelsdagbok", "Samla 48<br>nyanser av himmel", "Varje himmel du fångar fyller en cirkel"),
     "tr": ("Gökyüzü fotoğraf günlüğü", "48 gökyüzü<br>tonunu topla", "Çektiğin her gökyüzü bir daireyi doldurur"),
+    "ar": ("يوميات السماء بالصور", "اجمع 48<br>لونًا للسماء", "كل سماء تصوّرها تملأ دائرة بلونها"),
 }
 
 # 헤더는 처음 온 사람에게 한 가지 약속만 한다: 하늘을 찍으면 그 색이 모인다.
@@ -95,7 +97,16 @@ HEADER = {
     "pl": ("Kolory nieba", "Złap niebo.<br>Zachowaj jego kolor."),
     "sv": ("Himlens färger", "Fota himlen.<br>Behåll dess färg."),
     "tr": ("Gökyüzü renkleri", "Gökyüzünü çek.<br>Rengini sakla."),
+    "ar": ("ألوان السماء", "صوّر السماء.<br>واحتفظ بلونها."),
 }
+
+# 오른쪽에서 왼쪽으로 읽는 언어. 글 기둥과 기기 · 구슬 장식을 거울처럼 맞바꾼다.
+RTL = {"ar"}
+
+
+def mirror(lang, left, width, W):
+    """오른쪽에서 왼쪽 언어면 가로 위치를 뒤집는다."""
+    return W - left - width if lang in RTL else left
 
 # 판에서 실제로 뽑은 색(시뮬레이터 캡처 01-board.png 의 채운 칸). 헤더 오른쪽 장식에 쓴다.
 BEADS = ["#26272c", "#303d60", "#6c6461", "#4c648a", "#7e91a1", "#8396bb", "#acb9cc", "#c6e1ee",
@@ -116,6 +127,10 @@ body { background:linear-gradient(170deg, #f7fafc 0%%, #edf3f8 55%%, #e3edf6 100
 .headline { font-weight:800; color:#1b2635; letter-spacing:-0.03em; line-height:1.12; text-wrap:balance; }
 .sub { font-weight:500; color:#66788a; letter-spacing:-0.01em; line-height:1.35; text-wrap:balance; }
 :lang(ko) .headline, :lang(ko) .sub, :lang(ko) .eyebrow { word-break:keep-all; }
+/* 아랍어: 이어 쓰는 글자라 자간을 좁히지 않는다 */
+:lang(ar) body { font-family:"SF Arabic", "Geeza Pro", system-ui, sans-serif; }
+:lang(ar) .headline, :lang(ar) .sub, :lang(ar) .eyebrow { letter-spacing:0; }
+:lang(ar) .headline { line-height:1.3; }
 .phone { position:absolute; background:#17181b; border:6px solid #3a3b40; padding:40px; border-radius:190px;
   box-shadow: 0 60px 160px rgba(30,60,100,.28), 0 0 0 2px #26272b inset; }
 .phone img { width:100%%; display:block; border-radius:152px; }
@@ -177,13 +192,14 @@ def search_html(lang):
     col = int(sw * 0.56)
     # 기기는 안전 영역 오른쪽 몫에 서서, 위아래로 넘쳐 화면 밖까지 이어진다(기기 그림은 잘려도 된다).
     ph_w = 1040
-    ph_left = l + col + int(sw * 0.04)
+    ph_left = mirror(lang, l + col + int(sw * 0.04), ph_w, W)
+    text_left = mirror(lang, l, col, W)
     img = board_image(lang)
     return f"""
 <div class="glow" style="left:{ph_left - 300}px;top:400px;width:1700px;height:1700px;background:rgba(10,132,255,.14)"></div>
-<div class="glow" style="left:{l - 700}px;top:{t - 500}px;width:1400px;height:1000px;background:rgba(240,182,75,.12)"></div>
+<div class="glow" style="left:{mirror(lang, l - 700, 1400, W)}px;top:{t - 500}px;width:1400px;height:1000px;background:rgba(240,182,75,.12)"></div>
 {phone(img, ph_left, t - 360, ph_w, 0)}
-<div class="text" style="left:{l}px;top:{t}px;width:{col}px;height:{sh}px">
+<div class="text" style="left:{text_left}px;top:{t}px;width:{col}px;height:{sh}px">
   <div class="eyebrow" style="font-size:96px">{eyebrow}</div>
   <div class="headline" data-max="250" data-min="140" style="margin-top:36px">{headline}</div>
   <div class="sub" style="font-size:84px;margin-top:52px">{sub}</div>
@@ -197,8 +213,8 @@ def header_html(lang):
     img = board_image(lang)
     return f"""
 <div class="glow" style="left:{l - 200}px;top:{t - 400}px;width:{sw + 400}px;height:{sh + 800}px;background:rgba(10,132,255,.10)"></div>
-{phone(img, 300, 360, 640, -9)}
-{beads(2860, 150, 4, 5, 230, 40, 9, rings=(1, 6, 8, 13, 15, 18))}
+{phone(img, mirror(lang, 300, 640, W), 360, 640, 9 if lang in RTL else -9)}
+{beads(mirror(lang, 2860, 4 * 270 - 40, W), 150, 4, 5, 230, 40, -9 if lang in RTL else 9, rings=(1, 6, 8, 13, 15, 18))}
 <div class="text" style="left:{l}px;top:{t}px;width:{sw}px;height:{sh}px;align-items:center;text-align:center">
   <div class="eyebrow" style="font-size:76px">{eyebrow}</div>
   <div class="headline" data-max="210" data-min="110" style="margin-top:22px">{headline}</div>
@@ -208,7 +224,7 @@ def header_html(lang):
 def render(lang, kind):
     W, H, _ = SPEC[kind]
     body = search_html(lang) if kind == "search" else header_html(lang)
-    page = (f'<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><style>'
+    page = (f'<!doctype html><html lang="{lang}" dir="{"rtl" if lang in RTL else "ltr"}"><head><meta charset="utf-8"><style>'
             f'{BASE_CSS % {"W": W, "H": H}}</style></head><body>{body}{FIT_JS}</body></html>')
     html_path = pathlib.Path(tempfile.gettempdir()) / f"skydex-creative-{lang}-{kind}.html"
     html_path.write_text(page, encoding="utf-8")
