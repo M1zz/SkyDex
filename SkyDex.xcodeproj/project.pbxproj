@@ -13,6 +13,7 @@
 		A1B2C3D40000000000000042 /* SkyDex/Models/SkySlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000032 /* SkyDex/Models/SkySlot.swift */; };
 		A1B2C3D40000000000000043 /* SkyDex/Models/SkyBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000033 /* SkyDex/Models/SkyBoard.swift */; };
 		A1B2C3D40000000000000044 /* SkyDex/Support/SkySnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000034 /* SkyDex/Support/SkySnapshot.swift */; };
+		A1B2C3D400000000000000F2 /* SkyDex/Support/SkyLocale.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D400000000000000F1 /* SkyDex/Support/SkyLocale.swift */; };
 		A1B2C3D40000000000000050 /* LeeoKit in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D40000000000000051 /* LeeoKit */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		A1B2C3D40000000000000032 /* SkyDex/Models/SkySlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyDex/Models/SkySlot.swift; sourceTree = "<group>"; };
 		A1B2C3D40000000000000033 /* SkyDex/Models/SkyBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyDex/Models/SkyBoard.swift; sourceTree = "<group>"; };
 		A1B2C3D40000000000000034 /* SkyDex/Support/SkySnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyDex/Support/SkySnapshot.swift; sourceTree = "<group>"; };
+		A1B2C3D400000000000000F1 /* SkyDex/Support/SkyLocale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyDex/Support/SkyLocale.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -111,6 +113,7 @@
 				A1B2C3D40000000000000032 /* SkyDex/Models/SkySlot.swift */,
 				A1B2C3D40000000000000033 /* SkyDex/Models/SkyBoard.swift */,
 				A1B2C3D40000000000000034 /* SkyDex/Support/SkySnapshot.swift */,
+				A1B2C3D400000000000000F1 /* SkyDex/Support/SkyLocale.swift */,
 			);
 			name = "Shared with the widgets";
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				pl,
 				sv,
 				tr,
+				ar,
 			);
 			mainGroup = A1B2C3D40000000000000002;
 			minimizedProjectReferenceProxies = 1;
@@ -263,6 +267,7 @@
 				A1B2C3D40000000000000042 /* SkyDex/Models/SkySlot.swift in Sources */,
 				A1B2C3D40000000000000043 /* SkyDex/Models/SkyBoard.swift in Sources */,
 				A1B2C3D40000000000000044 /* SkyDex/Support/SkySnapshot.swift in Sources */,
+				A1B2C3D400000000000000F2 /* SkyDex/Support/SkyLocale.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

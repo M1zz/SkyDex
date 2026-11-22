@@ -154,6 +154,8 @@ final class CloudSync {
 
     private static let stamp: DateFormatter = {
         let formatter = DateFormatter()
+        formatter.locale = SkyLocale.current
+        formatter.calendar = SkyLocale.calendar
         formatter.setLocalizedDateFormatFromTemplate("MMMd HH:mm")
         return formatter
     }()

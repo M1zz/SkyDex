@@ -15,6 +15,7 @@ import UIKit
 ///   card     that sky's card
 ///   palette  the archive, on the palette
 ///   empty    the sheet for an empty slot
+///   log · repeats · settings   the archive's other screens (for checking a language)
 ///
 /// Nothing here exists in a release build, and nothing here touches the real
 /// store: the container is memory-only and goes away with the process.
@@ -145,7 +146,8 @@ enum ScreenshotDemo {
         "nl": "Op weg terug van de lunch was de lucht zo bleek",
         "pl": "Kiedy wracałam z obiadu, niebo było wyjątkowo blade",
         "sv": "På väg från lunchen var himlen ovanligt blek",
-        "tr": "Öğle yemeğinden dönerken gökyüzü bir tuhaf solgundu"
+        "tr": "Öğle yemeğinden dönerken gökyüzü bir tuhaf solgundu",
+        "ar": "في طريق العودة من الغداء، كانت السماء باهتة على غير العادة"
     ]
 
     static func notedEntry(in entries: [SkyEntry]) -> SkyEntry? {

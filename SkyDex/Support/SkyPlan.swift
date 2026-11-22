@@ -223,7 +223,13 @@ final class SkyStore {
     }
 
     /// 이 기능을 써도 되는가. 아직 팔지 않는 기기에서는 모두 열려 있다.
-    func allows(_ feature: SkyFeature) -> Bool { !sellsPlans || tier >= feature.tier }
+    func allows(_ feature: SkyFeature) -> Bool {
+        #if DEBUG
+        // 스크린샷 데모는 모든 칸을 연 화면으로 찍는다 (시뮬레이터가 스토어 상품을 불러와 잠기는 일 없이).
+        if ScreenshotDemo.isOn { return true }
+        #endif
+        return !sellsPlans || tier >= feature.tier
+    }
 
     func ownsLifetime(_ tier: SkyTier) -> Bool {
         ownedProductIDs.contains { SkyProducts.lifetimeIDs.contains($0) && SkyProducts.tierByProduct[$0] == tier }

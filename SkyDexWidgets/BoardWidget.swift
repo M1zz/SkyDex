@@ -21,6 +21,9 @@ struct BoardWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: "SkyDexBoard", provider: SkyProvider()) { entry in
             BoardWidgetView(entry: entry)
+                // 아랍어에서는 숫자 0-9 · 그레고리력 (앱과 같게)
+                .environment(\.locale, SkyLocale.current)
+                .environment(\.calendar, SkyLocale.calendar)
                 .containerBackground(for: .widget) { Color(.systemBackground) }
         }
         .configurationDisplayName("오늘의 판")

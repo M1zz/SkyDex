@@ -230,7 +230,7 @@ struct BoardView: View {
             HStack(alignment: .firstTextBaseline, spacing: 7) {
                 Text(like.simile.name)
                     .font(.title2.weight(.semibold))
-                Image(systemName: "chevron.right")
+                Image(systemName: "chevron.forward")
                     .font(.caption2.weight(.semibold))
                     .foregroundStyle(.white.opacity(0.4))
             }

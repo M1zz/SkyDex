@@ -140,6 +140,12 @@
             "state" : "translated",
             "value" : "今日格板"
           }
+        },
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لوحة اليوم"
+          }
         }
       }
     },
@@ -281,6 +287,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "一天四十八格。收集到的天空會填上，目前時刻則標有一個圓環。"
+          }
+        },
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ثمانٍ وأربعون خانة في اليوم. تمتلئ بالسماوات التي تجمعها، وتحيط حلقةٌ بخانة الساعة الحالية."
           }
         }
       }
@@ -424,6 +436,12 @@
             "state" : "translated",
             "value" : "今日天空"
           }
+        },
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "سماء اليوم"
+          }
         }
       }
     },
@@ -565,6 +583,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "目前沒有"
+          }
+        },
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لا شيء بعد"
           }
         }
       }
@@ -708,6 +732,12 @@
             "state" : "translated",
             "value" : "到外面抬頭看一眼，這個時刻的格子就會被填上。"
           }
+        },
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انظر إلى السماء مرة واحدة وتمتلئ خانة هذه الساعة."
+          }
         }
       }
     },
@@ -849,6 +879,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "用話來說，今天的天空"
+          }
+        },
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "سماء اليوم بالكلمات"
           }
         }
       }
@@ -992,6 +1028,12 @@
             "state" : "translated",
             "value" : "今天的天空，硬要說的話"
           }
+        },
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "سماء اليوم، لو اضطررنا إلى وصفها"
+          }
         }
       }
     },
@@ -1133,6 +1175,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gece yarısı"
+          }
+        },
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "منتصف الليل"
           }
         }
       }
@@ -1276,6 +1324,12 @@
             "state" : "translated",
             "value" : "Şafak"
           }
+        },
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الفجر"
+          }
         }
       }
     },
@@ -1417,6 +1471,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gündüz"
+          }
+        },
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "النهار"
           }
         }
       }
@@ -1560,6 +1620,12 @@
             "state" : "translated",
             "value" : "İkindi"
           }
+        },
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "آخر العصر"
+          }
         }
       }
     },
@@ -1701,6 +1767,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gün batımı"
+          }
+        },
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الغروب"
           }
         }
       }
@@ -1844,6 +1916,12 @@
             "state" : "translated",
             "value" : "Gece"
           }
+        },
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الليل"
+          }
         }
       }
     },
@@ -1985,6 +2063,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "今天拍的天空，以及它是什麼顏色。"
+          }
+        },
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "سماء اليوم، وما لونها."
           }
         }
       }
@@ -2128,6 +2212,12 @@
             "state" : "translated",
             "value" : "今日天空 · %@"
           }
+        },
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "سماء اليوم · %@"
+          }
         }
       }
     },
@@ -2269,6 +2359,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "今日天空 · 尚未拍攝"
+          }
+        },
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "سماء اليوم · ليس بعد"
           }
         }
       }
@@ -2417,6 +2513,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "在 Pro 中解鎖"
+          }
+        },
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تُفتح مع Pro"
           }
         }
       }

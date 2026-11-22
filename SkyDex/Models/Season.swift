@@ -15,7 +15,7 @@ enum Season: String, CaseIterable {
     }
 
     static func of(_ date: Date) -> Season {
-        let month = Calendar.current.component(.month, from: date)
+        let month = SkyLocale.calendar.component(.month, from: date)
         switch month {
         case 3...5: return .spring
         case 6...8: return .summer
@@ -27,7 +27,7 @@ enum Season: String, CaseIterable {
     /// Winter spans a year boundary, so January and February are filed under
     /// the preceding December's year — otherwise a circle would split in two.
     static func key(for date: Date) -> String {
-        let calendar = Calendar.current
+        let calendar = SkyLocale.calendar
         let month = calendar.component(.month, from: date)
         var year = calendar.component(.year, from: date)
         let season = of(date)

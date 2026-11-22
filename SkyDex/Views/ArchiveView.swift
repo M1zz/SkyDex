@@ -19,10 +19,12 @@ struct ArchiveView: View {
     @Environment(\.modelContext) private var context
 
     @State private var selected: SkyEntry?
-    @State private var showingSettings = false
     #if DEBUG
-    @State private var showing: Showing = ScreenshotDemo.screen == "palette" ? .palette : .list
+    @State private var showingSettings = ScreenshotDemo.screen == "settings"
+    @State private var showing: Showing = ScreenshotDemo.screen == "palette" ? .palette
+        : ScreenshotDemo.screen == "repeats" ? .repeats : .list
     #else
+    @State private var showingSettings = false
     @State private var showing: Showing = .list
     #endif
     @State private var groups: [PaletteGroup] = []
@@ -253,7 +255,7 @@ struct ArchiveView: View {
                 if entries.count >= SkyFreeTaste.paletteCardAfter {
                     lockedCard(.palette,
                                title: String(localized: "내 하늘이 모인 색, 갈래별로"),
-                               body: String(localized: "지금까지 모은 \(entries.count)장의 하늘이 파랑 · 회색 · 노을빛으로 나뉘어 있어요. Plus에서 또렷하게 펼쳐 봐요."))
+                               body: String(localized: "지금까지 모은 \(entries.count)장의 하늘이 파랑 · 회색 · 노을빛으로 나뉘어 있어요. Plus에서 또렷하게 펼쳐 봐요.", locale: SkyLocale.current))
                 }
                 ForEach(groups) { group in
                     VStack(alignment: .leading, spacing: 7) {
@@ -313,7 +315,7 @@ struct ArchiveView: View {
                            title: String(localized: "같은 시각, 다른 날의 하늘"),
                            body: runs.isEmpty
                                ? String(localized: "같은 시각의 하늘이 다른 날에 또 모이면, Plus에서 나란히 견줘 봐요.")
-                               : String(localized: "같은 시각의 하늘이 \(runs.count)곳에서 다른 날과 나란히 서 있어요. Plus에서 계속 견줘 봐요."))
+                               : String(localized: "같은 시각의 하늘이 \(runs.count)곳에서 다른 날과 나란히 서 있어요. Plus에서 계속 견줘 봐요.", locale: SkyLocale.current))
             }
             .padding(.horizontal, 20)
             .padding(.top, 12)

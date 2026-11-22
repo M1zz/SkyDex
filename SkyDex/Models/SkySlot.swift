@@ -14,11 +14,12 @@ struct SkySlot: Identifiable, Hashable {
     let endMinute: Int
     let band: String
 
+    /// "07:30–08:00". 오른쪽에서 왼쪽 문장 안에서도 앞뒤가 바뀌지 않게 묶어 둔다.
     var timeLabel: String {
-        String(
+        SkyLocale.isolated(String(
             format: "%02d:%02d–%02d:%02d",
             startMinute / 60, startMinute % 60,
             (endMinute / 60) % 24, endMinute % 60
-        )
+        ))
     }
 }

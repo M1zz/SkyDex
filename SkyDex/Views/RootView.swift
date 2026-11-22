@@ -126,7 +126,7 @@ struct RootView: View {
         }
         #if DEBUG
         .task {
-            if ScreenshotDemo.screen == "palette" { screen = .archive }
+            if ["palette", "log", "repeats", "settings"].contains(ScreenshotDemo.screen) { screen = .archive }
         }
         #endif
         .onChange(of: pickerItem) { _, item in

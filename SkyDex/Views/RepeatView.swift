@@ -200,7 +200,7 @@ struct RepeatView: View {
     }
 
     private static func day(_ date: Date) -> String {
-        date.formatted(.dateTime.month(.defaultDigits).day())
+        date.formatted(Date.FormatStyle(locale: SkyLocale.current, calendar: SkyLocale.calendar).month(.defaultDigits).day())
     }
 
     // MARK: - The arithmetic

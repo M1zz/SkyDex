@@ -147,6 +147,12 @@
             "state" : "translated",
             "value" : "SkyDex"
           }
+        },
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkyDex"
+          }
         }
       }
     },
@@ -295,6 +301,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gökyüzünü kare biçimde çekip panele eklemek için kamera kullanılır. Fotoğraflar yalnızca bu cihazda ve kendi iCloud hesabınızda saklanır, cihaz değiştirseniz de kalır ve geliştirici dahil hiç kimseye gönderilmez."
+          }
+        },
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "صوّر السماء بإطار مربع لتضيفها إلى لوحتك. تُحفظ الصور على هذا الجهاز وفي حسابك على iCloud فقط، فتبقى معك حين تغيّر جهازك، ولا تُرسل إلى أي أحد، ولا حتى إلى المطوّر."
           }
         }
       }
@@ -445,6 +457,12 @@
             "state" : "translated",
             "value" : "Bu konumun referans gök rengini gerçek gün doğumu ve gün batımı saatlerine göre ayarlamak için konumunuz bir kez yaklaşık olarak kullanılır. Koordinatlar fotoğraflara eklenmez ve hiçbir yere gönderilmez."
           }
+        },
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يُستخدم موقعك التقريبي مرة واحدة لمطابقة ألوان السماء المرجعية لهذا المكان مع أوقات الشروق والغروب الفعلية. لا تُرفق الإحداثيات بالصور ولا تُرسل إلى أي مكان."
+          }
         }
       }
     },
@@ -592,6 +610,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "將收集的天空照片儲存到「照片」App。僅在儲存時使用，不會讀取「照片」中的其他照片。"
+          }
+        },
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يحفظ صور السماء التي جمعتها في تطبيق الصور. يُستخدم الإذن عند الحفظ فقط، ولا تُقرأ صورك الأخرى أبدًا."
           }
         }
       }

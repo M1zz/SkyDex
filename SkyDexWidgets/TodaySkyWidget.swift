@@ -18,6 +18,9 @@ struct TodaySkyWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: "SkyDexToday", provider: SkyProvider()) { entry in
             TodaySkyWidgetView(entry: entry)
+                // 아랍어에서는 숫자 0-9 · 그레고리력 (앱과 같게)
+                .environment(\.locale, SkyLocale.current)
+                .environment(\.calendar, SkyLocale.calendar)
         }
         .configurationDisplayName("오늘의 하늘")
         .description("오늘 찍은 하늘과, 그 색이 어떤 색인지.")

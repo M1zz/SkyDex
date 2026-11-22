@@ -27,6 +27,9 @@ struct SkyDexApp: App {
     var body: some Scene {
         WindowGroup {
             RootView()
+                // 아랍어에서는 숫자 0-9 · 그레고리력. 다른 언어는 기기 그대로 (→ Support/SkyLocale.swift).
+                .environment(\.locale, SkyLocale.current)
+                .environment(\.calendar, SkyLocale.calendar)
                 // 개발자가 보낸 의견에 답장하면, 앱이 앞으로 올 때 답장을 시트로 보여 준다 (LeeoKit).
                 .leeoFeedbackReplyNotice(SkyDexSpec.self)
                 .storeFallbackNotice()

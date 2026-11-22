@@ -140,6 +140,12 @@
             "state" : "translated",
             "value" : "用${applicationName}拍天空"
           }
+        },
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "صوّر السماء باستخدام ${applicationName}"
+          }
         }
       }
     },
@@ -281,6 +287,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "${applicationName}相機"
+          }
+        },
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "كاميرا ${applicationName}"
           }
         }
       }

@@ -103,6 +103,7 @@ enum SkyDexTipMoments {
         collected.filter { count >= $0 }.map { threshold in
             LeeoTipMoment(id: "skies.\(threshold)",
                           message: String(localized: "지금까지 하늘 \(count)장을 모았어요",
+                                          locale: SkyLocale.current,
                                           comment: "Tip ask card: how many skies the person has collected"))
         }
     }

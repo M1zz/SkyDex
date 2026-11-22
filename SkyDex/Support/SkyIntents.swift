@@ -53,7 +53,7 @@ struct SkyEntity: AppEntity {
     var displayRepresentation: DisplayRepresentation {
         DisplayRepresentation(
             title: "\(note.isEmpty ? color : note)",
-            subtitle: "\(capturedAt.formatted(date: .abbreviated, time: .shortened))",
+            subtitle: "\(capturedAt.formatted(Date.FormatStyle(date: .abbreviated, time: .shortened, locale: SkyLocale.current, calendar: SkyLocale.calendar)))",
             image: thumbnail.map { .init(data: $0) }
         )
     }
