@@ -32,6 +32,8 @@ struct SkyDexApp: App {
                 .environment(\.calendar, SkyLocale.calendar)
                 // 개발자가 보낸 의견에 답장하면, 앱이 앞으로 올 때 답장을 시트로 보여 준다 (LeeoKit).
                 .leeoFeedbackReplyNotice(SkyDexSpec.self)
+                // App Store 이벤트 링크(<번들 ID>://paywall)로 열리면 요금제를 띄운다 (LeeoKit).
+                .leeoPaywallLink { PaywallView() }
                 .storeFallbackNotice()
                 // 창 크기로 접힘을 재서 아래로 흘린다. 시트 · 알림창도 접힌 선을 비킨다 (LeeoKit Fold).
                 .foldAware()

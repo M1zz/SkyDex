@@ -12,6 +12,14 @@
 				<string>skydex</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.leeo.skydex</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.leeo.skydex</string>
+			</array>
+		</dict>
 	</array>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
