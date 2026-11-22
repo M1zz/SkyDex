@@ -104,7 +104,9 @@
     return result;
   }
 
-  const time = s => [s.start, s.end].map(m => `${String(Math.floor(m / 60) % 24).padStart(2, "0")}:${String(m % 60).padStart(2, "0")}`).join("–");
+  // 오른쪽에서 왼쪽 문장(아랍어) 안에서도 "05:30–06:00" · "#A1B2C3" 이 뒤집히지 않게 묶는다(LRI … PDI, 보이지 않는 글자).
+  const ltr = x => `\u2066${x}\u2069`;
+  const time = s => ltr([s.start, s.end].map(m => `${String(Math.floor(m / 60) % 24).padStart(2, "0")}:${String(m % 60).padStart(2, "0")}`).join("–"));
   root.innerHTML = `
     <div class="sky-board" role="group"></div>
     <div class="sky-side">
@@ -118,7 +120,7 @@
 
   function render() {
     const filled = board(), now = nowSlot(), days = AGES[state.age], f = freshness(days), sel = state.selected ?? now;
-    out.textContent = days === 0 ? T.ageToday : (days === 1 ? T.ageDay : T.ageDays).replace("{n}", days);
+    out.textContent = days === 0 ? T.ageToday : (days === 1 ? T.ageDay : (T.ageFew && days <= 10) ? T.ageFew : T.ageDays).replace("{n}", days);
     grid.querySelectorAll(".bead").forEach((b, id) => {
       const e = filled[id], s = SLOTS[id];
       b.style.setProperty("--c", e ? "#" + faded(e.c, f) : "#" + toHex(rgb(ghost(SIM_LAB[BEAD[id]]))));
@@ -127,7 +129,7 @@
     });
     const e = filled[sel], s = SLOTS[sel], k = e ? nearest(e.l) : BEAD[sel];
     info.innerHTML = `<p class="sky-time">${time(s)}${sel === now ? ` · <b>${T.now}</b>` : ""}</p>
-      <p class="muted small">${e ? `${T.bands[s.band]} · #${toHex(e.c)}` : T.emptyTag.replace("%@", T.bands[s.band])}</p>
+      <p class="muted small">${e ? `${T.bands[s.band]} · ${ltr("#" + toHex(e.c))}` : T.emptyTag.replace("%@", T.bands[s.band])}</p>
       <div class="sky-name">${e && e.url ? `<img src="${e.url}" alt="">` : `<i style="background:#${e ? toHex(e.c) : SIM[k]}"></i>`}
       <div><b>${T.sims[k][0]}</b><span class="muted small">${T.sims[k][1]}</span></div></div>
       ${e ? "" : `<p class="muted small">${T.spot}</p>`}`;
