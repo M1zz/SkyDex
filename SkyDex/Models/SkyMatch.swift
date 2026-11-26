@@ -97,10 +97,18 @@ enum SkyMatch {
         // going pairing by pairing means the closest call in the whole grid is
         // settled first, and a bead that has just lost its best answer is still
         // free to take its second.
+        //
+        // Each entry's colour and date are read out of the store once, up front.
+        // Reading them inside the loop asked SwiftData for the same three numbers
+        // forty-eight times per photo, on the main thread — with a collection in
+        // the thousands that alone held the board for most of a second.
+        let spare = entries.indices.filter { !spoken.contains(entries[$0].uuid) }
+        let labs = spare.map { entries[$0].lab }
+        let dates = entries.map(\.capturedAt)
         var pairings: [(slot: Int, entry: Int, distance: Double)] = []
         for (id, target) in targets.enumerated() where result[id] == nil {
-            for index in entries.indices where !spoken.contains(entries[index].uuid) {
-                let distance = deltaE2000(target, entries[index].lab)
+            for (index, lab) in zip(spare, labs) {
+                let distance = deltaE2000(target, lab)
                 if distance <= radius { pairings.append((id, index, distance)) }
             }
         }
@@ -109,8 +117,8 @@ enum SkyMatch {
         // earlier bead, so the answer does not depend on dictionary order.
         pairings.sort { left, right in
             if left.distance != right.distance { return left.distance < right.distance }
-            let a = entries[left.entry], b = entries[right.entry]
-            if a.capturedAt != b.capturedAt { return a.capturedAt > b.capturedAt }
+            let a = dates[left.entry], b = dates[right.entry]
+            if a != b { return a > b }
             return left.slot < right.slot
         }
 
@@ -159,14 +167,53 @@ enum SkyMatch {
 ///
 /// Deliberately not observable. It publishes nothing and exists only so the
 /// board can ask the same question repeatedly without paying for it.
+///
+/// One for the whole app, not one per board. The shell swaps the board out for
+/// the archive and back, and a cache held in the board's own state went with it:
+/// every return to the board matched the whole collection again — twice, once to
+/// draw and once for the widgets — and wrote the widgets out again for nothing.
 final class SkyMatchCache {
+    static let board = SkyMatchCache()
+
     private var key: String?
     private var value: [Int: SkyEntry] = [:]
+    private var nearKey: String?
+    private var nearCount = 0
+
+    /// What was last left out for the widgets, so an answer that has not changed
+    /// is not written again and the home screen is not asked to redraw for
+    /// nothing. Kept here so it outlives the board, like the match.
+    var published: String?
 
     func map(targets: [Lab], entries: [SkyEntry], on date: Date, key: String) -> [Int: SkyEntry] {
         if key == self.key { return value }
         value = SkyMatch.map(targets: targets, entries: entries, on: date)
         self.key = key
         return value
+    }
+
+    /// How many skies would fill this bead — the count under a sky being read.
+    /// Asked on every redraw of the board while a sky is up, including each bead
+    /// a dragging finger crosses, so it is answered once per slot and collection.
+    func countNear(_ target: Lab, slot: SkySlot, entries: [SkyEntry], on date: Date, key: String) -> Int {
+        let key = "\(key)#\(slot.id)"
+        if key == nearKey { return nearCount }
+        nearCount = SkyMatch.all(near: target, in: entries, filling: slot, on: date).count
+        nearKey = key
+        return nearCount
+    }
+
+    /// The key the board's answer stands on: the day, the place and the collection.
+    static func key(on date: Date, latitude: Double, longitude: Double, entries: [SkyEntry]) -> String {
+        [
+            ISO8601DateFormatter.string(
+                from: Calendar.current.startOfDay(for: date),
+                timeZone: .current,
+                formatOptions: [.withFullDate]
+            ),
+            String(format: "%.2f,%.2f", latitude, longitude),
+            "\(entries.count)",
+            entries.last?.uuid.uuidString ?? "none"
+        ].joined(separator: "|")
     }
 }

@@ -249,10 +249,36 @@ struct RootView: View {
     }
 
     private func save(_ data: Data, at date: Date, borrowed: String?) {
+        // Decoding a 12 MP frame, squaring it, two JPEG encodes and reading the
+        // colour out of it took a few hundred milliseconds — on the main thread,
+        // right as the camera was animating away. It is pure work on bytes, so it
+        // goes off the main thread and only the insert comes back.
+        Task {
+            let developed = await Task.detached(priority: .userInitiated) {
+                Self.develop(data)
+            }.value
+            keep(developed, at: date, borrowed: borrowed)
+        }
+    }
+
+    private struct Developed: Sendable {
+        let rgb: RGB
+        let lab: Lab
+        let photo: Data?
+        let thumbnail: Data?
+    }
+
+    private nonisolated static func develop(_ data: Data) -> Developed {
         let prepared = SkyImage.prepare(data: data)
         let grey = RGB(r: 0.5, g: 0.5, b: 0.5)
         let colour: (rgb: RGB, lab: Lab) = prepared
             .map { SkyColorExtractor.skyColor(from: $0.square) } ?? (grey, Lab(grey))
+        return Developed(rgb: colour.rgb, lab: colour.lab, photo: prepared?.photo, thumbnail: prepared?.thumbnail)
+    }
+
+    private func keep(_ developed: Developed, at date: Date, borrowed: String?) {
+        let colour = (rgb: developed.rgb, lab: developed.lab)
+        let prepared = (photo: developed.photo, thumbnail: developed.thumbnail)
 
         borrowedForCard = borrowed
 
@@ -260,8 +286,8 @@ struct RootView: View {
             capturedAt: date,
             rgb: colour.rgb,
             lab: colour.lab,
-            photoData: prepared?.photo,
-            thumbnailData: prepared?.thumbnail
+            photoData: prepared.photo,
+            thumbnailData: prepared.thumbnail
         )
         context.insert(entry)
 

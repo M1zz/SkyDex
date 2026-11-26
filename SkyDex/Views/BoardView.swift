@@ -88,14 +88,13 @@ struct BoardView: View {
     @Environment(\.scenePhase) private var scenePhase
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
-    /// What was last left out for the widgets, so an answer that has not changed
-    /// is not written again and the home screen is not asked to redraw for
-    /// nothing.
-    @State private var published: String?
-
     /// Matching every photo against today's forty-eight is done once per day,
-    /// not once per frame. The cache is state so it survives the redraws.
-    @State private var cache = SkyMatchCache()
+    /// not once per frame — and not once per visit: the cache outlives the board.
+    private let cache = SkyMatchCache.board
+
+    private func matchKey(on date: Date) -> String {
+        SkyMatchCache.key(on: date, latitude: place.latitude, longitude: place.longitude, entries: entries)
+    }
 
     private let sidePadding: CGFloat = 16
     private let gap: CGFloat = 10
@@ -215,12 +214,13 @@ struct BoardView: View {
     private func caption(_ sky: ReadingSky) -> some View {
         let like = SkySimiles.nearest(to: sky.entry.lab)
         let named = SkyNames.nearest(to: sky.entry.lab)
-        let sameColour = SkyMatch.all(
-            near: target(of: sky.slot),
-            in: entries,
-            filling: sky.slot,
-            on: .now
-        ).count
+        let sameColour = cache.countNear(
+            target(of: sky.slot),
+            slot: sky.slot,
+            entries: entries,
+            on: .now,
+            key: matchKey(on: .now)
+        )
 
         return VStack(alignment: .leading, spacing: 5) {
             Text(like.isClose ? "말로 하면" : "굳이 말하자면")
@@ -351,14 +351,14 @@ struct BoardView: View {
             last?.uuid.uuidString ?? "none",
             last?.note ?? ""
         ].joined(separator: "|")
-        guard signature != published else { return }
+        guard signature != cache.published else { return }
 
         let day = SkyDay(
             date: now,
             latitude: place.latitude,
             longitude: place.longitude
         )
-        let fills = SkyMatch.map(targets: day.targets, entries: entries, on: now)
+        let fills = cache.map(targets: day.targets, entries: entries, on: now, key: matchKey(on: now))
             .map { slot, entry in
                 SkySnapshot.Fill(
                     slot: slot,
@@ -390,7 +390,7 @@ struct BoardView: View {
             ),
             photo: last?.thumbnailData
         )
-        published = signature
+        cache.published = signature
         WidgetCenter.shared.reloadAllTimelines()
     }
 
@@ -472,16 +472,7 @@ struct BoardView: View {
                         targets: day.targets,
                         entries: entries,
                         on: clock.date,
-                        key: [
-                            ISO8601DateFormatter.string(
-                                from: Calendar.current.startOfDay(for: clock.date),
-                                timeZone: .current,
-                                formatOptions: [.withFullDate]
-                            ),
-                            String(format: "%.2f,%.2f", place.latitude, place.longitude),
-                            "\(entries.count)",
-                            entries.last?.uuid.uuidString ?? "none"
-                        ].joined(separator: "|")
+                        key: matchKey(on: clock.date)
                     )
 
                     // The bead a photo taken right now would fill. It used to be
