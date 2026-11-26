@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		A1B2C3D4000000000000002A /* SkyDexWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000020 /* SkyDexWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		A1B2C3D40000000000000040 /* SkyDex/ColorScience/RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000030 /* SkyDex/ColorScience/RGB.swift */; };
-		A1B2C3D40000000000000041 /* SkyDex/ColorScience/Lab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000031 /* SkyDex/ColorScience/Lab.swift */; };
-		A1B2C3D40000000000000042 /* SkyDex/Models/SkySlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000032 /* SkyDex/Models/SkySlot.swift */; };
-		A1B2C3D40000000000000043 /* SkyDex/Models/SkyBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000033 /* SkyDex/Models/SkyBoard.swift */; };
-		A1B2C3D40000000000000044 /* SkyDex/Support/SkySnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000034 /* SkyDex/Support/SkySnapshot.swift */; };
-		A1B2C3D400000000000000F2 /* SkyDex/Support/SkyLocale.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D400000000000000F1 /* SkyDex/Support/SkyLocale.swift */; };
+		A1B2C3D40000000000000040 /* RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000030 /* RGB.swift */; };
+		A1B2C3D40000000000000041 /* Lab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000031 /* Lab.swift */; };
+		A1B2C3D40000000000000042 /* SkySlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000032 /* SkySlot.swift */; };
+		A1B2C3D40000000000000043 /* SkyBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000033 /* SkyBoard.swift */; };
+		A1B2C3D40000000000000044 /* SkySnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000034 /* SkySnapshot.swift */; };
 		A1B2C3D40000000000000050 /* LeeoKit in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D40000000000000051 /* LeeoKit */; };
+		A1B2C3D400000000000000F2 /* SkyLocale.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D400000000000000F1 /* SkyLocale.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,6 +24,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = A1B2C3D40000000000000022;
 			remoteInfo = SkyDexWidgets;
+		};
+		B570515F34CCE5EB45E35C13 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1B2C3D40000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1B2C3D40000000000000006;
+			remoteInfo = SkyDex;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -42,31 +49,50 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A1B2C3D40000000000000060 /* Config/Version.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config/Version.xcconfig; sourceTree = "<group>"; };
+		05F2614816D65AACA1E09F7F /* SkyDexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkyDexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1B2C3D40000000000000005 /* SkyDex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyDex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1B2C3D40000000000000020 /* SkyDexWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SkyDexWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		A1B2C3D40000000000000030 /* SkyDex/ColorScience/RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyDex/ColorScience/RGB.swift; sourceTree = "<group>"; };
-		A1B2C3D40000000000000031 /* SkyDex/ColorScience/Lab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyDex/ColorScience/Lab.swift; sourceTree = "<group>"; };
-		A1B2C3D40000000000000032 /* SkyDex/Models/SkySlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyDex/Models/SkySlot.swift; sourceTree = "<group>"; };
-		A1B2C3D40000000000000033 /* SkyDex/Models/SkyBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyDex/Models/SkyBoard.swift; sourceTree = "<group>"; };
-		A1B2C3D40000000000000034 /* SkyDex/Support/SkySnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyDex/Support/SkySnapshot.swift; sourceTree = "<group>"; };
-		A1B2C3D400000000000000F1 /* SkyDex/Support/SkyLocale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyDex/Support/SkyLocale.swift; sourceTree = "<group>"; };
+		A1B2C3D40000000000000030 /* RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyDex/ColorScience/RGB.swift; sourceTree = "<group>"; };
+		A1B2C3D40000000000000031 /* Lab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyDex/ColorScience/Lab.swift; sourceTree = "<group>"; };
+		A1B2C3D40000000000000032 /* SkySlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyDex/Models/SkySlot.swift; sourceTree = "<group>"; };
+		A1B2C3D40000000000000033 /* SkyBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyDex/Models/SkyBoard.swift; sourceTree = "<group>"; };
+		A1B2C3D40000000000000034 /* SkySnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyDex/Support/SkySnapshot.swift; sourceTree = "<group>"; };
+		A1B2C3D40000000000000060 /* Version.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config/Version.xcconfig; sourceTree = "<group>"; };
+		A1B2C3D400000000000000F1 /* SkyLocale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyDex/Support/SkyLocale.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		6B49FC33EB264D0671394EBF /* SkyDexTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			path = SkyDexTests;
+			sourceTree = "<group>";
+		};
 		A1B2C3D40000000000000004 /* SkyDex */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = SkyDex;
 			sourceTree = "<group>";
 		};
 		A1B2C3D40000000000000021 /* SkyDexWidgets */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = SkyDexWidgets;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		61E914AA17525C24E400C7B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A1B2C3D40000000000000008 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -91,8 +117,9 @@
 				A1B2C3D40000000000000004 /* SkyDex */,
 				A1B2C3D40000000000000021 /* SkyDexWidgets */,
 				A1B2C3D40000000000000035 /* Shared with the widgets */,
-				A1B2C3D40000000000000060 /* Config/Version.xcconfig */,
+				A1B2C3D40000000000000060 /* Version.xcconfig */,
 				A1B2C3D40000000000000003 /* Products */,
+				6B49FC33EB264D0671394EBF /* SkyDexTests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +128,7 @@
 			children = (
 				A1B2C3D40000000000000005 /* SkyDex.app */,
 				A1B2C3D40000000000000020 /* SkyDexWidgets.appex */,
+				05F2614816D65AACA1E09F7F /* SkyDexTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,12 +136,12 @@
 		A1B2C3D40000000000000035 /* Shared with the widgets */ = {
 			isa = PBXGroup;
 			children = (
-				A1B2C3D40000000000000030 /* SkyDex/ColorScience/RGB.swift */,
-				A1B2C3D40000000000000031 /* SkyDex/ColorScience/Lab.swift */,
-				A1B2C3D40000000000000032 /* SkyDex/Models/SkySlot.swift */,
-				A1B2C3D40000000000000033 /* SkyDex/Models/SkyBoard.swift */,
-				A1B2C3D40000000000000034 /* SkyDex/Support/SkySnapshot.swift */,
-				A1B2C3D400000000000000F1 /* SkyDex/Support/SkyLocale.swift */,
+				A1B2C3D40000000000000030 /* RGB.swift */,
+				A1B2C3D40000000000000031 /* Lab.swift */,
+				A1B2C3D40000000000000032 /* SkySlot.swift */,
+				A1B2C3D40000000000000033 /* SkyBoard.swift */,
+				A1B2C3D40000000000000034 /* SkySnapshot.swift */,
+				A1B2C3D400000000000000F1 /* SkyLocale.swift */,
 			);
 			name = "Shared with the widgets";
 			sourceTree = "<group>";
@@ -121,6 +149,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0CD32E77B4CC207650987D9C /* SkyDexTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52019C416C06B3B4C99D7DE1 /* Build configuration list for PBXNativeTarget "SkyDexTests" */;
+			buildPhases = (
+				4728D7184DBB07CAF9758F24 /* Sources */,
+				61E914AA17525C24E400C7B7 /* Frameworks */,
+				D0A99F9F1C8AA54BF05CBE5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC2D62B2C0D6B82F6A0F4367 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				6B49FC33EB264D0671394EBF /* SkyDexTests */,
+			);
+			name = SkyDexTests;
+			productName = SkyDexTests;
+			productReference = 05F2614816D65AACA1E09F7F /* SkyDexTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		A1B2C3D40000000000000006 /* SkyDex */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A1B2C3D4000000000000000B /* Build configuration list for PBXNativeTarget "SkyDex" */;
@@ -162,8 +211,6 @@
 				A1B2C3D40000000000000021 /* SkyDexWidgets */,
 			);
 			name = SkyDexWidgets;
-			packageProductDependencies = (
-			);
 			productName = SkyDexWidgets;
 			productReference = A1B2C3D40000000000000020 /* SkyDexWidgets.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -229,6 +276,7 @@
 			targets = (
 				A1B2C3D40000000000000006 /* SkyDex */,
 				A1B2C3D40000000000000022 /* SkyDexWidgets */,
+				0CD32E77B4CC207650987D9C /* SkyDexTests */,
 			);
 		};
 /* End PBXProject section */
@@ -248,9 +296,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D0A99F9F1C8AA54BF05CBE5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4728D7184DBB07CAF9758F24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A1B2C3D40000000000000007 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -262,12 +324,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1B2C3D40000000000000040 /* SkyDex/ColorScience/RGB.swift in Sources */,
-				A1B2C3D40000000000000041 /* SkyDex/ColorScience/Lab.swift in Sources */,
-				A1B2C3D40000000000000042 /* SkyDex/Models/SkySlot.swift in Sources */,
-				A1B2C3D40000000000000043 /* SkyDex/Models/SkyBoard.swift in Sources */,
-				A1B2C3D40000000000000044 /* SkyDex/Support/SkySnapshot.swift in Sources */,
-				A1B2C3D400000000000000F2 /* SkyDex/Support/SkyLocale.swift in Sources */,
+				A1B2C3D40000000000000040 /* RGB.swift in Sources */,
+				A1B2C3D40000000000000041 /* Lab.swift in Sources */,
+				A1B2C3D40000000000000042 /* SkySlot.swift in Sources */,
+				A1B2C3D40000000000000043 /* SkyBoard.swift in Sources */,
+				A1B2C3D40000000000000044 /* SkySnapshot.swift in Sources */,
+				A1B2C3D400000000000000F2 /* SkyLocale.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,12 +341,38 @@
 			target = A1B2C3D40000000000000022 /* SkyDexWidgets */;
 			targetProxy = A1B2C3D4000000000000002C /* PBXContainerItemProxy */;
 		};
+		DC2D62B2C0D6B82F6A0F4367 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SkyDex;
+			target = A1B2C3D40000000000000006 /* SkyDex */;
+			targetProxy = B570515F34CCE5EB45E35C13 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		528827D2E23CD1805DDE77DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QGAQ3AY3R3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.leeo.SkyDex.SkyDexTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SkyDex.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SkyDex";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		A1B2C3D4000000000000000C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A1B2C3D40000000000000060 /* Config/Version.xcconfig */;
+			baseConfigurationReference = A1B2C3D40000000000000060 /* Version.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -325,7 +413,7 @@
 		};
 		A1B2C3D4000000000000000D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A1B2C3D40000000000000060 /* Config/Version.xcconfig */;
+			baseConfigurationReference = A1B2C3D40000000000000060 /* Version.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -371,8 +459,8 @@
 				INFOPLIST_FILE = "SkyDex-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "하늘색";
 				INFOPLIST_KEY_NSCameraUsageDescription = "하늘을 정사각형으로 촬영해 판에 담습니다. 사진은 이 기기와 본인의 iCloud에만 보관되어 기기를 바꿔도 남으며, 개발자를 비롯한 누구에게도 전송되지 않습니다.";
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "모은 하늘 사진을 사진 앱에 저장합니다. 저장할 때만 쓰고, 사진 앱의 다른 사진은 읽지 않습니다.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "이 자리의 기준 하늘색을 실제 일출·일몰 시각에 맞추기 위해 위치를 한 번 대략적으로 씁니다. 좌표는 사진에 붙지 않고 어디로도 전송되지 않습니다.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "모은 하늘 사진을 사진 앱에 저장합니다. 저장할 때만 쓰고, 사진 앱의 다른 사진은 읽지 않습니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -403,8 +491,8 @@
 				INFOPLIST_FILE = "SkyDex-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "하늘색";
 				INFOPLIST_KEY_NSCameraUsageDescription = "하늘을 정사각형으로 촬영해 판에 담습니다. 사진은 이 기기와 본인의 iCloud에만 보관되어 기기를 바꿔도 남으며, 개발자를 비롯한 누구에게도 전송되지 않습니다.";
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "모은 하늘 사진을 사진 앱에 저장합니다. 저장할 때만 쓰고, 사진 앱의 다른 사진은 읽지 않습니다.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "이 자리의 기준 하늘색을 실제 일출·일몰 시각에 맞추기 위해 위치를 한 번 대략적으로 씁니다. 좌표는 사진에 붙지 않고 어디로도 전송되지 않습니다.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "모은 하늘 사진을 사진 앱에 저장합니다. 저장할 때만 쓰고, 사진 앱의 다른 사진은 읽지 않습니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -469,9 +557,37 @@
 			};
 			name = Release;
 		};
+		BA6990C62734E3772E39C20E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QGAQ3AY3R3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.leeo.SkyDex.SkyDexTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SkyDex.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SkyDex";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		52019C416C06B3B4C99D7DE1 /* Build configuration list for PBXNativeTarget "SkyDexTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				528827D2E23CD1805DDE77DC /* Release */,
+				BA6990C62734E3772E39C20E /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A1B2C3D4000000000000000A /* Build configuration list for PBXProject "SkyDex" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
