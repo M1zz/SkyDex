@@ -290,6 +290,7 @@ struct RootView: View {
             thumbnailData: prepared.thumbnail
         )
         context.insert(entry)
+        LeeoAnalyticsCenter.track(.custom(name: "sky_saved", parameters: [:]))
 
         // A capture taken from the archive has no bead to pulse, so go and show
         // the board it just landed on.
